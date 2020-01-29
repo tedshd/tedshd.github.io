@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AMP on tedshd&#39;s DevNote</title>
-    <link>http://blog.tedshd.io/categories/amp/</link>
+    <link>https://blog.tedshd.io/categories/amp/</link>
     <description>Recent content in AMP on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
     <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.tedshd.io/categories/amp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.tedshd.io/categories/amp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AMP - amp analytics &amp; conversion</title>
-      <link>http://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/</link>
+      <link>https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/</link>
       <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/</guid>
+      <guid>https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/</guid>
       <description>AMP - amp analytics &amp;amp; conversion Use google analytics must use amp-analytics component
 It can use PHP print template function to view
 First include
@@ -27,10 +27,10 @@ function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, 
     
     <item>
       <title>AMP - Accelerated Mobile Pages key point</title>
-      <link>http://blog.tedshd.io/posts/2017-08-25-amp-accelerated-mobile-pages-key-point/</link>
+      <link>https://blog.tedshd.io/posts/2017-08-25-amp-accelerated-mobile-pages-key-point/</link>
       <pubDate>Fri, 25 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.tedshd.io/posts/2017-08-25-amp-accelerated-mobile-pages-key-point/</guid>
+      <guid>https://blog.tedshd.io/posts/2017-08-25-amp-accelerated-mobile-pages-key-point/</guid>
       <description>Intro Provide some key point &amp;amp; something we need notice
 1. meta In normal page
 &amp;lt;link rel=&amp;#34;amphtml&amp;#34; href=&amp;#34;https://www.example.com/url/to/amp/document.html&amp;#34;&amp;gt;In AMP page
@@ -40,10 +40,10 @@ function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, 
     
     <item>
       <title>AMP - Accelerated Mobile Pages 研究筆記</title>
-      <link>http://blog.tedshd.io/posts/2017-02-24-amp-accelerated-mobile-pages/</link>
+      <link>https://blog.tedshd.io/posts/2017-02-24-amp-accelerated-mobile-pages/</link>
       <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.tedshd.io/posts/2017-02-24-amp-accelerated-mobile-pages/</guid>
+      <guid>https://blog.tedshd.io/posts/2017-02-24-amp-accelerated-mobile-pages/</guid>
       <description>AMP - develop log Intro 這是針對對 AMP 有基本概念的筆記, 基本概念請去 amp project 看就好 知道 AMP 是啥的再來看這文章會較有用 &amp;ndash; 我是分隔線 &amp;mdash; 會被 cache 在 Google domain 下 更新分主動 / 被動 主</description>
     </item>
     
