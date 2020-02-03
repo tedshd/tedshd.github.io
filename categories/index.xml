@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Mon, 23 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2020 17:51:34 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>node</title>
+      <link>https://blog.tedshd.io/categories/node/</link>
+      <pubDate>Mon, 03 Feb 2020 17:51:34 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/node/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>SEO</title>
@@ -31,7 +40,7 @@
     </item>
     
     <item>
-      <title>firebase</title>
+      <title>Firebase</title>
       <link>https://blog.tedshd.io/categories/firebase/</link>
       <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
       
@@ -166,7 +175,7 @@
     </item>
     
     <item>
-      <title>Paypal</title>
+      <title>paypal</title>
       <link>https://blog.tedshd.io/categories/paypal/</link>
       <pubDate>Sat, 20 Oct 2018 00:00:00 +0000</pubDate>
       
@@ -184,7 +193,7 @@
     </item>
     
     <item>
-      <title>amp</title>
+      <title>AMP</title>
       <link>https://blog.tedshd.io/categories/amp/</link>
       <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
       
@@ -247,7 +256,7 @@
     </item>
     
     <item>
-      <title>Nodejs</title>
+      <title>nodejs</title>
       <link>https://blog.tedshd.io/categories/nodejs/</link>
       <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
       

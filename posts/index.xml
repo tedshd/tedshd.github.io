@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Mon, 23 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2020 17:51:34 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.tedshd.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Npm_install_local</title>
+      <link>https://blog.tedshd.io/posts/npm_install_local/</link>
+      <pubDate>Mon, 03 Feb 2020 17:51:34 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/npm_install_local/</guid>
+      <description>How to install package use local package? If you want install package from other local directory
+npm link &amp;lt;package path&amp;gt; Refer - Installing a local module using npm?</description>
+    </item>
     
     <item>
       <title>SEO - 增強 Youtube video SEO</title>
