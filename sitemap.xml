@@ -3,8 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.tedshd.io/posts/canvas_research_log/</loc>
+    <lastmod>2020-02-11T15:16:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/posts/</loc>
+    <lastmod>2020-02-11T15:16:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/</loc>
+    <lastmod>2020-02-11T15:16:11+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2020-02-03T17:51:34+08:00</lastmod>
+    <lastmod>2020-02-04T11:21:49+08:00</lastmod>
   </url>
   
   <url>
@@ -14,16 +29,6 @@
   
   <url>
     <loc>https://blog.tedshd.io/posts/npm_install_local/</loc>
-    <lastmod>2020-02-03T17:51:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2020-02-03T17:51:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tedshd.io/</loc>
     <lastmod>2020-02-03T17:51:34+08:00</lastmod>
   </url>
   
@@ -739,12 +744,12 @@
   
   <url>
     <loc>https://blog.tedshd.io/categories/docker/</loc>
-    <lastmod>2020-01-29T17:42:46+08:00</lastmod>
+    <lastmod>2020-02-04T11:21:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/</loc>
-    <lastmod>2020-01-29T17:42:46+08:00</lastmod>
+    <lastmod>2020-02-04T11:21:49+08:00</lastmod>
   </url>
   
   <url>

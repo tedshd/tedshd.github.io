@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-02-03T17:51:34+08:00" />
+<meta property="og:updated_time" content="2020-02-04T15:20:23+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -192,6 +192,85 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-10-14-javascript-get-some-value-about-form-input-type-and-select/">JavaScript - Get &amp; Set some value about form input type and select</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-10-14
+</p>
+                
+
+                
+                <p><h2 id="javascript---get-some-value-about-form-input-type-and-select">JavaScript - Get some value about form input type and select</h2>
+<h3 id="select">Select</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;select_data&#34;</span>&gt;
+  &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>&gt;test1&lt;/<span style="color:#f92672">option</span>&gt;
+  &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#a6e22e">selected</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;selected&#34;</span>&gt;test2&lt;/<span style="color:#f92672">option</span>&gt;
+  &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span>&gt;test3&lt;/<span style="color:#f92672">option</span>&gt;
+&lt;/<span style="color:#f92672">select</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">e</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;select_data&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strUser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">options</span>[<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">selectedIndex</span>].<span style="color:#a6e22e">value</span>;
+</code></pre></div><p>If want to set selected</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">e</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;select_data&#39;</span>);
+<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;option&#39;</span>)[<span style="color:#ae81ff">2</span>].<span style="color:#a6e22e">selected</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</code></pre></div><p>Get change option</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#select_data&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;change&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_this</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">options</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">selectedIndex</span>];
+});
+</code></pre></div><h3 id="radio">radio</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+  &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;device&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row col s12 m2&#34;</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;group1&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;radio&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;device_water_1&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">checked</span> /&gt;
+    &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;device_water_1&#34;</span>&gt;True&lt;/<span style="color:#f92672">label</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row col s12 m2&#34;</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;group1&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;radio&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;device_water_2&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;device_water_2&#34;</span>&gt;False&lt;/<span style="color:#f92672">label</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// for IE9 up
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;input[name=&#34;group1&#34;]:checked&#39;</span>).<span style="color:#a6e22e">value</span>;
+
+<span style="color:#75715e">// full support
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">rates</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByName</span>(<span style="color:#e6db74">&#39;rate&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">rate_value</span>;
+<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">rates</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">rates</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">checked</span>){
+  	<span style="color:#a6e22e">rate_value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rates</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">value</span>;
+  }
+}
+</code></pre></div><p><a href="http://stackoverflow.com/questions/1085801/get-selected-value-in-dropdown-list-using-javascript">Refer - html select - Get selected value in dropdown list using JavaScript? - Stack Overflow</a></p>
+<p><a href="http://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button">Refer - javascript - How to get value of selected radio button? - Stack Overflow</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2015-10-14-javascript-get-some-value-about-form-input-type-and-select/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2015-09-30-linux-unix-terminal-control/">Linux / Unix - terminal control</a></h3>
 
                 
@@ -220,70 +299,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2015-09-30-linux-unix-terminal-control/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-09-30-nginx-study-log/">nginx - study log</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-09-30
-</p>
-                
-
-                
-                <p><h2 id="nginx---study-log">nginx - Study Log</h2>
-<p>半調子的紀錄&hellip;</p>
-<h3 id="command-line">Command Line</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
-sudo service nginx start
-
-sudo service nginx restart
-
-sudo service nginx stop
-
-<span style="color:#75715e"># 測試 nginx 設定</span>
-sudo nginx -t
-</code></pre></div><h3 id="config">config</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
-<span style="color:#75715e"># document root</span>
-root /usr/share/nginx/html;
-
-<span style="color:#75715e"># set page show</span>
-index index.html index.htm index.php;
-
-<span style="color:#75715e"># 把 lib 目錄打開</span>
-location /lib <span style="color:#f92672">{</span>
-    autoindex on;
-<span style="color:#f92672">}</span>
-
-</code></pre></div><p><a href="http://serverfault.com/questions/214242/can-i-hide-all-server-os-info">refer - Can I hide all server / os info?</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-09-30-nginx-study-log/">Read more</a></p>
                 
             </div>
         </div>

@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-02-03T17:51:34+08:00" />
+<meta property="og:updated_time" content="2020-02-04T15:20:23+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -192,6 +192,91 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-09-23-kbtalking-pure-pro-programming/">KBtalking pure pro programming</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-09-23
+</p>
+                
+
+                
+                <p><h2 id="kbtalking-pure-pro-programming">KBtalking pure pro programming</h2>
+<h3 id="reset">Reset</h3>
+<p>Fn + R
+這時右邊 Fn LED 會亮一下
+再按 Fn + R 不放
+這時右邊 Fn LED 會一直閃直到它停止
+放開 Fn + R
+重設完畢</p>
+<h3 id="programming">programming</h3>
+<ul>
+<li>
+<p><strong>錄製巨集</strong>
+按 Fn + right Ctrl
+表示進入錄製巨集的模式(Pn 開始閃)
+按一個要用的巨集鍵(按完 Pn 不閃)
+開始錄巨集
+按 Pn(按完 Pn 開始閃, 表示可以開始設定其他巨集)
+按 Fn + right Ctrl
+結束錄製巨集的模式</p>
+</li>
+<li>
+<p><strong>使用巨集模式</strong>
+Fn + right Shift
+此時 right Fn LED 亮起來, 表示可以使用錄製的巨集鍵</p>
+</li>
+<li>
+<p><strong>Win &amp; Alt 互換(for Mac)</strong>
+按 Fn + right Ctrl
+表示進入錄製巨集的模式
+Pn 開始閃
+表示要設定跑巨集的按鍵
+按 Alt Pn 不閃
+表示要開始錄巨集
+按 Win
+按 Pn
+表示結束此次的錄製
+按 Win Pn 不閃
+按 Alt
+按 Pn
+表示結束此次的錄製
+按 Fn + right Ctrl
+結束錄製巨集的模式
+這樣就達到 Win &amp; Alt 互換</p>
+</li>
+</ul>
+<h3 id="refer">Refer</h3>
+<p><a href="http://tedshd.github.io/keyboard_test_page/">鍵盤測試網頁</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-09-23-kbtalking-pure-pro-programming/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-09-20-git-command/">Git - command</a></h3>
 
                 
@@ -283,66 +368,6 @@ git checkout --track -b &lt;local branch&gt; origin/&lt;remote branch&gt;
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-09-20-git-command/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-09-18-git-uses-someone-elses-repository/">Git - 使用別人的 repository</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-09-18
-</p>
-                
-
-                
-                <p><h2 id="git---使用別人的-repository">Git - 使用別人的 repository</h2>
-<p>in GitHub</p>
-<p>sample
-use <a href="https://github.com/tedshd/javascript-htmlspecialchars">javascript-htmlspecialchars</a>
-use SSH</p>
-<pre><code>git clone git@github.com:tedshd/javascript-htmlspecialchars.git
-// use SSH
-</code></pre><p>單純的 clone 別人的 repository 只是只能使用它
-如 commit 之後是無法 push 上去, 因為不是這 repository 的擁有者
-只要進去該 repository 的 <code>.git/config</code>
-只要看見</p>
-<pre><code>[remote &quot;origin&quot;]
-        url = git@github.com:tedshd/javascript-htmlspecialchars.git
-</code></pre><p>url 中 <code>git@github.com:</code> 之後不是自己的 GitHub 帳號就代表是無法 push 的
-就算在這改成自己的 GitHub 帳號也是無用的
-因為沒有該 repository 在自己的 repositories 中</p>
-<h3 id="把別人的-repository-改成自己用的">把別人的 repository 改成自己用的</h3>
-<ol>
-<li>fork 一份到自己的 GitHub</li>
-<li>從自己的 repositories git clone fork 來的 repository</li>
-<li>之後 commit 就可以 push 到自己 fork 的 repository</li>
-</ol>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-09-18-git-uses-someone-elses-repository/">Read more</a></p>
                 
             </div>
         </div>

@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-02-03T17:51:34+08:00" />
+<meta property="og:updated_time" content="2020-02-04T15:20:23+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -192,6 +192,58 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2018-04-19-webview-handle-ios-status-bar-empty-height-in-webview/">webview - handle iOS status bar empty height in webview</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2018-04-19
+</p>
+                
+
+                
+                <p><h2 id="webview---handle-ios-status-bar-empty-height-in-webview">webview - handle iOS status bar empty height in webview</h2>
+<p>in iOS</p>
+<p>If you use fullscreen webview in app and set app size over iOS device navigation bar.</p>
+<p>So need add height to fill status bar height.</p>
+<p>iPhone6/7/8 is <code>20px</code></p>
+<p>iPhoneX is <code>44px</code></p>
+<p>You can use is sample code</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">ios</span> {
+    <span style="color:#a6e22e">padding</span><span style="color:#f92672">-</span><span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span><span style="color:#a6e22e">px</span>;
+}
+<span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">media</span> (<span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">375</span><span style="color:#a6e22e">px</span>) <span style="color:#a6e22e">and</span> (<span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">832</span><span style="color:#a6e22e">px</span>)  {
+    <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">ios</span> {
+        <span style="color:#a6e22e">padding</span><span style="color:#f92672">-</span><span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">44</span><span style="color:#a6e22e">px</span>;
+    }
+}
+</code></pre></div><p>iPhoneX fullscreen webview width is <code>375px</code>, height is <code>832px</code></p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2018-04-18-image-load-error-handle/">HTML - image load error handle</a></h3>
 
                 
@@ -233,72 +285,6 @@ img.imgd4:after {
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2018-03-15-something-about-favicon-on-website/">Something about favicon on website</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2018-03-15
-</p>
-                
-
-                
-                <p><h2 id="something-about-favicon-on-website">Something about favicon on website</h2>
-<p>Favicon is a icon on browser tab.</p>
-<p>But now we must do more thing on mobile device handle favicon.</p>
-<h3 id="2-way-add-browser-favicon">2 way add browser favicon</h3>
-<ol>
-<li>
-<p>Put icon in url path <code>&lt;example.com&gt;/favicon.png</code></p>
-</li>
-<li>
-<p>Add meta tag <code>&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;favicon.png&quot; /&gt;</code></p>
-</li>
-</ol>
-<p>Notice: I like use png as my favicon, because i can reuse this file.</p>
-<p>Icon format case</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> IE </span><span style="color:#75715e">--&gt;</span>
-&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;shortcut icon&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image/x-icon&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;favicon.ico&#34;</span> /&gt;
-<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> other browsers </span><span style="color:#75715e">--&gt;</span>
-&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image/x-icon&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;favicon.ico&#34;</span> /&gt;
-</code></pre></div><p><a href="https://stackoverflow.com/questions/13827325/correct-mime-type-for-favicon-ico">Refer - Correct MIME Type for favicon.ico?</a></p>
-<h2 id="other-icon-for-web-case">Other icon for web case</h2>
-<p>For iOS device icon</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;icon url&gt;&#34;</span>&gt;
-&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon&#34;</span> <span style="color:#a6e22e">sizes</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;76x76&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;icon url&gt;&#34;</span>&gt;
-&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon&#34;</span> <span style="color:#a6e22e">sizes</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;120x120&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;icon url&gt;&#34;</span>&gt;
-&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon&#34;</span> <span style="color:#a6e22e">sizes</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;152x152&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;icon url&gt;&#34;</span>&gt;
-</code></pre></div><p>For PWA add to home screen</p>
-<p>Use manifest.json</p>
-<p><a href="https://developers.google.com/web/fundamentals/web-app-manifest/">The Web App Manifest | Web Fundamentals | Google Developers</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2018-03-15-something-about-favicon-on-website/">Read more</a></p>
                 
             </div>
         </div>
