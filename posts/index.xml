@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>Canvas_research_log</title>
+      <title>Canvas research log</title>
       <link>https://blog.tedshd.io/posts/canvas_research_log/</link>
       <pubDate>Tue, 04 Feb 2020 15:20:23 +0800</pubDate>
       
@@ -28,7 +28,7 @@ var canvas = document.getElementById(&amp;#39;canvas&amp;#39;); // Set display s
     </item>
     
     <item>
-      <title>Npm_install_local</title>
+      <title>Npm install local</title>
       <link>https://blog.tedshd.io/posts/npm_install_local/</link>
       <pubDate>Mon, 03 Feb 2020 17:51:34 +0800</pubDate>
       
