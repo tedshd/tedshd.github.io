@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-02-04T15:20:23+08:00" />
+<meta property="og:updated_time" content="2020-03-04T17:27:19+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -192,6 +192,166 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-07-01-git-tip/">Git -Tip &amp; Note</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-07-01
+</p>
+                
+
+                
+                <p><h2 id="git--tip--note">Git -Tip &amp; Note</h2>
+<h3 id="git-pull-出現-conflict-要回復到-pull-之前">git pull 出現 <code>CONFLICT</code> 要回復到 pull 之前</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git reset --hard &lt;commit id&gt;
+</code></pre></div><h3 id="強制-push-取代-remote">強制 push 取代 remote</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push -f
+</code></pre></div><h3 id="取消-merage-須知道-merage-前的-commit-id">取消 merage (須知道 merage 前的 commit id)</h3>
+<pre><code>git reset --hard &lt;commit id&gt;
+</code></pre><h3 id="拉-remote-的新-branch-到-locallocal-不存在該-branch">拉 remote 的新 branch 到 local(local 不存在該 branch)</h3>
+<pre><code>git checkout --track -b &lt;local new branch&gt; &lt;remote branch&gt;
+</code></pre><h3 id="不小心把-remote--local-的-branch-刪掉">不小心把 remote &amp; local 的 branch 刪掉</h3>
+<p>先用 git reflog</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git reflog
+
+<span style="color:#75715e"># show</span>
+<span style="color:#75715e"># df4bb25 HEAD@{0}: checkout: moving from master to dev</span>
+<span style="color:#75715e"># df4bb25 HEAD@{1}: checkout: moving from webtv_dev to master</span>
+<span style="color:#75715e"># 9e920fb HEAD@{2}: commit: [Dev] Modify keycode to keyboard.</span>
+<span style="color:#75715e"># 16b9a83 HEAD@{3}: checkout: moving from webtv to webtv_dev</span>
+<span style="color:#75715e"># 16b9a83 HEAD@{4}: checkout: moving from master to webtv</span>
+<span style="color:#75715e"># df4bb25 HEAD@{5}: checkout: moving from webtv to master</span>
+<span style="color:#75715e"># 16b9a83 HEAD@{6}: commit: Responsive video list.</span>
+<span style="color:#75715e"># 5eee322 HEAD@{7}: commit: Modify ico_enter to SVG.</span>
+<span style="color:#75715e"># ...</span>
+
+</code></pre></div><p>找到要回復的 commit id, 再把它重建起來</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout -b &lt;new branch name&gt; &lt;git commit id&gt;
+</code></pre></div><p><a href="http://ihower.tw/blog/archives/2620">Git 版本控制系統(2) 開 branch 分支和操作遠端 repo.</a>
+<a href="http://ithelp.ithome.com.tw/question/10138150?tag=ithome.nq">30 天精通 Git 版本控管 (16)：善用版本日誌 git reflog 追蹤變更軌跡</a></p>
+<h3 id="delete-remote-branch">delete remote branch</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push origin --delete &lt;branchName&gt;
+</code></pre></div><h3 id="git-log-file">git log file</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log -p &lt;file name&gt;
+</code></pre></div><h3 id="view-remote-log">view remote log</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log origin/master
+</code></pre></div><h3 id="push-commit-id">push commit id</h3>
+<p>Need follow commit log order</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push &lt;remotename&gt; &lt;commit SHA&gt;:&lt;remotebranchname&gt;
+<span style="color:#75715e"># example</span>
+git push origin 712acff81033eddc90bb2b45e1e4cd031fefc50f:master
+</code></pre></div><h3 id="push-local-branch-to-remote">push local branch to remote</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push -u origin &lt;branch-name&gt;
+</code></pre></div><h3 id="修改-commit">修改 commit</h3>
+<h4 id="修改最後一次-commit">修改最後一次 commit</h4>
+<p>在 push 前處理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit --amend
+</code></pre></div><h4 id="修改之前的-commit使用-rebase">修改之前的 commit(使用 rebase)</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git rebase -i HEAD~7
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pick d32cf12 Add a README file
+pick d120793 Update year and copyright holders
+pick 6a78547 Add agenda section in README
+pick 1b263b5 br2 add file.
+pick ee5f588 br2 Add again.
+pick 8c19bf6 <span style="color:#f92672">[</span>test<span style="color:#f92672">]</span> Add readme add22.
+pick 71bf708 Modify br2.txt2.
+
+<span style="color:#75715e"># Rebase 505b0cf..71bf708 onto 505b0cf (7 command(s))</span>
+#
+<span style="color:#75715e"># Commands:</span>
+<span style="color:#75715e"># p, pick = use commit</span>
+<span style="color:#75715e"># r, reword = use commit, but edit the commit message</span>
+<span style="color:#75715e"># e, edit = use commit, but stop for amending</span>
+<span style="color:#75715e"># s, squash = use commit, but meld into previous commit</span>
+<span style="color:#75715e"># f, fixup = like &#34;squash&#34;, but discard this commit&#39;s log message</span>
+<span style="color:#75715e"># x, exec = run command (the rest of the line) using shell</span>
+#
+<span style="color:#75715e"># These lines can be re-ordered; they are executed from top to bottom.</span>
+#
+<span style="color:#75715e"># If you remove a line here THAT COMMIT WILL BE LOST.</span>
+#
+<span style="color:#75715e"># However, if you remove everything, the rebase will be aborted.</span>
+#
+<span style="color:#75715e"># Note that empty commits are commented out</span>
+</code></pre></div><p>利用 r 處理要改的 commit</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pick d32cf12 Add a README file
+pick d120793 Update year and copyright holders
+pick 6a78547 Add agenda section in README
+r 1b263b5 br2 add file.
+pick ee5f588 br2 Add again.
+pick 8c19bf6 <span style="color:#f92672">[</span>test<span style="color:#f92672">]</span> Add readme add22.
+pick 71bf708 Modify br2.txt2.
+
+<span style="color:#75715e"># Rebase 505b0cf..71bf708 onto 505b0cf (7 command(s))</span>
+#
+<span style="color:#75715e"># Commands:</span>
+<span style="color:#75715e"># p, pick = use commit</span>
+<span style="color:#75715e"># r, reword = use commit, but edit the commit message</span>
+<span style="color:#75715e"># e, edit = use commit, but stop for amending</span>
+<span style="color:#75715e"># s, squash = use commit, but meld into previous commit</span>
+<span style="color:#75715e"># f, fixup = like &#34;squash&#34;, but discard this commit&#39;s log message</span>
+<span style="color:#75715e"># x, exec = run command (the rest of the line) using shell</span>
+#
+<span style="color:#75715e"># These lines can be re-ordered; they are executed from top to bottom.</span>
+#
+<span style="color:#75715e"># If you remove a line here THAT COMMIT WILL BE LOST.</span>
+#
+<span style="color:#75715e"># However, if you remove everything, the rebase will be aborted.</span>
+#
+<span style="color:#75715e"># Note that empty commits are commented out</span>
+</code></pre></div><p>這操作會修改所有之後的 commit 因為相當於重新 commit, 建議在 push 前處理</p>
+<p><a href="https://git-scm.com/book/zh-tw/v1/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%AF%AB%E6%AD%B7%E5%8F%B2">Refer - Git 工具 - 重寫歷史</a></p>
+<h3 id="清理不存在的-remote-branch">清理不存在的 remote branch</h3>
+<p>有時 remote 協作的 branch 砍了</p>
+<p>但是 <code>git branch -r</code> 還在就需要清理一下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git remote prune origin
+</code></pre></div><h3 id="check-branch-is-create-from">check branch is create from</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git reflog --date<span style="color:#f92672">=</span>local &lt;branch&gt;
+</code></pre></div><h3 id="移除-commit">移除 commit</h3>
+<p>有時要捨棄最後一次 commit</p>
+<p>那就可以使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git reset &lt;commit id&gt;^
+</code></pre></div><p>就會切到該 commit 的修改狀態</p>
+<p>reset 有參數可以控制是否要直接連同該 commit 的變動丟掉還是回到修改狀態</p>
+<p>這時在自己決定即可</p>
+<p>如果已經 push 的話就很麻煩</p>
+<p>必須維持在最後一筆且 remote 得是和 local 的 commit 一樣</p>
+<p>用</p>
+<pre><code>git push origin +&lt;branch name&gt;
+</code></pre><p>強制推上去</p>
+<p>如果 remote 有別的 commit 更新就需要調整 commit 再來處理以避免強制推送時蓋掉最新的 commit</p>
+<p><a href="https://gitbook.tw/chapters/using-git/reset-commit.html">ref - 【狀況題】剛才的 Commit 後悔了，想要拆掉重做…</a>
+<a href="https://ncona.com/2011/07/how-to-delete-a-commit-in-git-local-and-remote/">ref - How to delete a commit in git, local and remote</a>
+<a href="https://www.ojit.com/article/187397">ref - git - Git Force推送语法，“ - f”与“+ branch”</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2014-07-01-git-tip/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2014-07-01-javascript-handle-load-img-fail/">JavaScript - handle load img fail</a></h3>
 
                 
@@ -216,85 +376,6 @@ if (!doNotTrack) {
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-06-23-windows-81-app-develop-introduction/">Windows 8.1 app develop - Introduction</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-06-23
-</p>
-                
-
-                
-                <p><h2 id="windows-81-app---introduction">Windows 8.1 app - Introduction</h2>
-<p>Develop Win 8.1 app with JavaScript.</p>
-<ol>
-<li>
-<p>死心吧, 請準備一台 Windows 8.1 的電腦(一直以來我都以為生為前端攻城獅只要用 Mac 就可以打天下了)</p>
-</li>
-<li>
-<p>下載 <a href="http://www.visualstudio.com/zh-tw/downloads">Visual Studio 2013</a>, 要下載 Visual Studio Express 的版本</p>
-</li>
-<li>
-<p>開始努力地讀文件 <del><a href="http://msdn.microsoft.com/en-us/library/windows/apps/br211385.aspx">Doc</a></del></p>
-</li>
-</ol>
-<h3 id="strong-stylecolorrednotice--tipstrong"><!-- raw HTML omitted -->Notice &amp; Tip<!-- raw HTML omitted --></h3>
-<p>先了解一些限制與規範以免踩雷</p>
-<ul>
-<li>
-<p>Microsoft 提供 <a href="https://github.com/winjs/winjs">WinJS</a> 來協助開發 Windows 8.1 app</p>
-</li>
-<li>
-<p>無法使用網路的 source</p>
-<ul>
-<li>無法使用 remote 的 CSS or JavaScript, 必須全部 download 下來</li>
-</ul>
-</li>
-<li>
-<p>無法直接使用 iframe</p>
-<ul>
-<li><code>package.appxmainifest</code> -&gt; <code>內容 URI</code>, 把 iframe url 設成例外, 但是該 url 必須用 https</li>
-<li>使用 <code>x-ms-webview</code> tag 來代替 <code>iframe</code>, <a href="http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx">x-ms-webview element | x-ms-webview object</a></li>
-</ul>
-</li>
-</ul>
-<h4 id="handle-ajax">Handle AJAX</h4>
-<p>在開發 Windows 8.1 時, 並不能直接的 <code>XMLHttpRequest</code> 處理 AJAX 行為, 需用 WinJS 來處理
-<a href="http://msdn.microsoft.com/en-us/library/windows/apps/xaml/br229787.aspx">WinJS.xhr function</a></p>
-<p><a href="https://software.intel.com/sites/landingpage/tw/windows8-college-10.php">Refer - Windows8軟體開發小學堂(十)：使用WinJS自訂Javascript類</a>
-<a href="https://software.intel.com/sites/landingpage/tw/windows8-college-11.php">Refer - Windows8軟體開發小學堂(十一)：使用WinJS自訂Javascript的名字空間</a>
-<a href="https://software.intel.com/sites/landingpage/tw/windows8-college-12.php">Refer - Windows8軟體開發小學堂(十二)：使用WinJS在已有Namespace中添加新成員</a>
-<a href="https://software.intel.com/sites/landingpage/tw/windows8-college-13.php">Refer - Windows8軟體開發小學堂(十三)：給Metro應用添加Wide Logo</a>
-<a href="https://software.intel.com/sites/landingpage/tw/windows8-metro-splash-screen.php">Refer - Windows8軟體開發小學堂(十四) : 修改Metro應用的Splash Screen</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-06-23-windows-81-app-develop-introduction/">Read more</a></p>
                 
             </div>
         </div>

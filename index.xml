@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Tue, 04 Feb 2020 15:20:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2020 17:27:19 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mobile web remove touch background</title>
+      <link>https://blog.tedshd.io/posts/mobile_web_remove_touch_background/</link>
+      <pubDate>Wed, 04 Mar 2020 17:27:19 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/mobile_web_remove_touch_background/</guid>
+      <description>Intro Mobile web touch fire event or a link can show blue background
+How to remove -webkit-tap-highlight-color: transparent; Refer - How to remove the blue background of button on mobile?</description>
+    </item>
     
     <item>
       <title>Canvas research log</title>
@@ -1249,7 +1259,7 @@ A simple way
       <pubDate>Mon, 02 Jun 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2014-06-02-css-font-family/</guid>
-      <description>CSS - font-family font-family: Microsoft JhengHei, Arial, Tahoma, Geneva, sans-serif; CSS font-family 字型 - Wibibi Choosing Fonts for Your Mobile Website Common fonts to all versions of Windows &amp;amp; Mac equivalents CSS Web Safe Font Combinations</description>
+      <description>CSS - font-family font-family: Microsoft JhengHei, Arial, Tahoma, Geneva, sans-serif; Add use mobile device default font font-family: Microsoft JhengHei, Heiti, Roboto, Helvetica, Arial, monospace, Tahoma, Geneva, sans-serif !important; CSS font-family 字型 - Wibibi Choosing Fonts for Your Mobile Website Common fonts to all versions of Windows &amp;amp; Mac equivalents CSS Web Safe Font Combinations</description>
     </item>
     
     <item>

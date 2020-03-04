@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-02-04T15:20:23+08:00" />
+<meta property="og:updated_time" content="2020-03-04T17:27:19+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -192,6 +192,54 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2018-05-11-paypal-paypal-ec/">paypal - 利用 paypal 開發一個簡單的 EC</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2018-05-11
+</p>
+                
+
+                
+                <p><h2 id="paypal---利用-paypal-開發一個簡單的-ec">paypal - 利用 paypal 開發一個簡單的 EC</h2>
+<h3 id="intro">Intro</h3>
+<p>Paypal 大致分兩種方式來處理支付功能</p>
+<ol>
+<li>
+<p>api</p>
+</li>
+<li>
+<p>paypal button</p>
+</li>
+</ol>
+<p>這邊大致上會以paypal button 的方式來處理, 相對起來較為簡易</p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2018-04-19-webview-handle-ios-status-bar-empty-height-in-webview/">webview - handle iOS status bar empty height in webview</a></h3>
 
                 
@@ -224,63 +272,6 @@ if (!doNotTrack) {
 }
 </code></pre></div><p>iPhoneX fullscreen webview width is <code>375px</code>, height is <code>832px</code></p>
 </p>
-                
-
-                
-
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2018-04-18-image-load-error-handle/">HTML - image load error handle</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2018-04-18
-</p>
-                
-
-                
-                <p><h2 id="html---image-load-error-handle">HTML - image load error handle</h2>
-<p>2 way</p>
-<h3 id="use-onerror">Use <code>onerror</code></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;image url&gt;&#34;</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;this.src=&#39;&lt;d4 image url&gt;&#39;&#34;</span> /&gt;
-</code></pre></div><h3 id="use-magic-image-pseudo-element">Use Magic Image Pseudo Element</h3>
-<pre><code>img.imgd4 {
-    position: relative;
-    display: block;
-}
-
-img.imgd4:after {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url(&lt;d4 image url&gt;) no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 100%;
-    content: '';
-}
-</code></pre></p>
                 
 
                 

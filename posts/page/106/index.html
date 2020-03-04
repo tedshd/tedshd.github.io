@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-02-04T15:20:23+08:00" />
+<meta property="og:updated_time" content="2020-03-04T17:27:19+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1055,6 +1055,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1065,6 +1069,217 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-14-linux-unix-command/">Linux/unix command</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-08-14
+</p>
+                
+
+                
+                <p><h2 id="command">command</h2>
+<h3 id="user">User</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">su / sudo
+<span style="color:#75715e"># 最高權限使用者</span>
+
+su -u &lt;user name&gt; bash
+<span style="color:#75715e"># 切換使用者</span>
+
+exit
+<span style="color:#75715e"># 跳出最高權限使用者</span>
+
+shutdown
+<span style="color:#75715e"># 關機</span>
+shutdown -h now 立即關機
+shutdown -h +m m分鐘後關機
+shutdown -h hh:mm 幾點幾分關機
+
+reboot
+<span style="color:#75715e"># 重開機</span>
+
+login
+<span style="color:#75715e"># 登入使用者</span>
+
+logout / exit
+<span style="color:#75715e"># 登出</span>
+
+passwd
+<span style="color:#75715e"># 修改密碼</span>
+useradd / adduser
+<span style="color:#75715e"># 新增帳號</span>
+
+passwd
+<span style="color:#75715e"># 修改密碼</span>
+
+sudo -u &lt;user name&gt; &lt;shell&gt;
+<span style="color:#75715e"># 切換使用者</span>
+
+date
+<span style="color:#75715e"># 顯示時間</span>
+date 月日時分<span style="color:#f92672">(</span>root修改<span style="color:#f92672">)</span>
+
+history
+<span style="color:#75715e"># 顯示輸入過的指令</span>
+
+ps
+<span style="color:#75715e"># 顯示目前執行的工作</span>
+
+chmod &lt;777&gt;
+<span style="color:#75715e"># 修改權限</span>
+<span style="color:#75715e"># rwx</span>
+<span style="color:#75715e"># 2*2 2 1</span>
+
+chown &lt;user&gt;:&lt;user&gt; &lt;file&gt;
+<span style="color:#75715e"># 修改該 file owner</span>
+
+uname -a
+<span style="color:#75715e"># 確認 system OS</span>
+
+uanme -r
+<span style="color:#75715e"># linux kernel</span>
+
+df
+<span style="color:#75715e"># 確認硬碟空間</span>
+
+</code></pre></div><h3 id="file-management">File Management</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ls
+<span style="color:#75715e"># 列出檔案</span>
+ls -a 列出以.開頭的檔案
+ls -l 列出檔案詳細
+ls -- directory 查看該目錄內容
+
+cd
+<span style="color:#75715e"># 切換目錄</span>
+cd .. 回上一層
+cd / 切換到系統根目錄
+cd 目錄
+cd 路徑
+
+pwd
+<span style="color:#75715e"># 顯示目前所在目錄</span>
+
+clear
+<span style="color:#75715e"># 清空畫面</span>
+
+info / man
+<span style="color:#75715e"># 查詢指令</span>
+
+tab
+<span style="color:#75715e"># 同DOS的tab功用,切換下一個選擇的項目</span>
+
+mkdir
+<span style="color:#75715e"># 建立目錄</span>
+
+rmdir
+<span style="color:#75715e"># 刪除目錄</span>
+
+touch
+<span style="color:#75715e"># 建立檔案</span>
+
+cp
+<span style="color:#75715e"># 複製檔案</span>
+cp -v 顯示複製過程
+cp -r &lt;folder&gt; &lt;directory&gt; 把資料夾複製到某目錄
+cp &lt;file&gt; &lt;path&gt;
+
+rm
+<span style="color:#75715e"># 刪除檔案或目錄</span>
+rm -f 強制刪除檔案
+rm -rf 強制刪除目錄
+
+mv
+<span style="color:#75715e"># 搬移或更名檔案或目錄</span>
+mv &lt;file&gt; &lt;path&gt;
+mv &lt;舊檔名&gt; &lt;新檔名&gt;
+
+cat
+<span style="color:#75715e"># 瀏覽檔案內容</span>
+
+less
+<span style="color:#75715e"># 分頁瀏覽檔案內容</span>
+q 離開
+
+find / locate
+<span style="color:#75715e"># 尋找檔案</span>
+<span style="color:#75715e"># find -name &#34;php.ini&#34;</span>
+
+more
+<span style="color:#75715e"># 顯示畫面暫停</span>
+
+|
+<span style="color:#75715e"># 管線</span>
+將指令結果輸出給另一個指令
+
+&gt;
+<span style="color:#75715e"># 重導</span>
+將指令結果輸出到檔案中檔案原有內容被刪除
+
+&gt;&gt;
+<span style="color:#75715e"># 重導</span>
+將指令結果輸出到檔案中檔案原有內容不被刪除
+
+grep -r <span style="color:#e6db74">&#39;XXX&#39;</span> *
+<span style="color:#75715e"># 找內含XXX的檔案</span>
+
+scp
+<span style="color:#75715e"># ssh copy</span>
+scp &lt;username@tohostname&gt;:&lt;remote file&gt; &lt;local path&gt;
+scp &lt;local file&gt; &lt;username@tohostname&gt;:&lt;remote path&gt;
+scp -r &lt;username@tohostname&gt;:&lt;remote directory&gt; &lt;local path&gt;
+scp -r &lt;local directory&gt; &lt;username@tohostname&gt;:&lt;remote path&gt;
+scp -i &lt;key&gt; &lt;local directory&gt; &lt;username@tohostname&gt;:&lt;remote path&gt;
+</code></pre></div><p>tar -zcvf <!-- raw HTML omitted -->.tar.gz <!-- raw HTML omitted --></p>
+<h1 id="壓縮資料夾">壓縮資料夾</h1>
+<p>tar -zxvf <!-- raw HTML omitted -->.tar.gz <!-- raw HTML omitted --></p>
+<h1 id="解壓縮資料夾">解壓縮資料夾</h1>
+<p>sudo lsof -i -P -n | grep LISTEN</p>
+<h1 id="確認開啟的port">確認開啟的port</h1>
+<h3 id="apt">apt</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt --installed list
+<span style="color:#75715e"># 列出已安裝套件</span>
+
+sudo aptitude update
+<span style="color:#75715e"># 修復損毀的相依性</span>
+
+sudo aptitude safe-upgrade
+<span style="color:#75715e"># 較為安全的升級方式</span>
+sudo aptitude full-upgrade
+<span style="color:#75715e"># 針對整個系統做升級, 可能會更動系統核心的版號</span>
+sudo aptitude dist-upgrade
+<span style="color:#75715e"># 同於 full-upgrade</span>
+</code></pre></div><h3 id="mail-server">Mail server</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">host -t mx &lt;mail domain&gt;
+<span style="color:#75715e"># 查詢是否已紀錄此 mail domain</span>
+</code></pre></div></p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-08-14-linux-unix-command/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
         
 
         
@@ -1208,75 +1423,6 @@ $account === $to_array[&#39;account&#39;]
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-08-13-login-forget-pwd/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-08-jquery-design-pattern/">jQuery-design pattern</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-08-08
-</p>
-                
-
-                
-                <p><h2 id="modulize">modulize</h2>
-<ul>
-<li>modulize selector</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">module</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>);
-<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#66d9ef">function</span>() {
-		<span style="color:#75715e">// dosomething...
-</span><span style="color:#75715e"></span>});
-</code></pre></div><ul>
-<li>initialize</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">length</span>) {
-		<span style="color:#75715e">// dosomething
-</span><span style="color:#75715e"></span>}
-</code></pre></div><h2 id="selector">selector</h2>
-<p>id is better than tag and class</p>
-<p>HTML</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">ul</span>&gt;
-    	&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;class&#34;</span>&gt;text&lt;/<span style="color:#f92672">li</span>&gt;
-    &lt;/<span style="color:#f92672">ul</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>JavaScript</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#id&#39;</span>).<span style="color:#a6e22e">html</span>();
-<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;#id&#39;</span>);
-</code></pre></div><p><a href="http://jsperf.com/jquery-getnode-test/2">jsperf</a></p>
-<p>##bind event
-use on
-bind on parent selector</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;li&#39;</span>, <span style="color:#66d9ef">function</span> () {
-	<span style="color:#75715e">// dosomething
-</span><span style="color:#75715e"></span>});
-</code></pre></div><p><a href="http://jsbin.com/ijovot/1/edit">js Bin</a></p>
-</p>
-                
-
-                
-
                 
             </div>
         </div>

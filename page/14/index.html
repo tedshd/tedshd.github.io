@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-02-04T15:20:23+08:00" />
+<meta property="og:updated_time" content="2020-03-04T17:27:19+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -192,7 +192,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2018-10-25-mac-stat-get-owner-name/">Mac - stat get owner name</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2018-10-25-mac-shell-script-check-os/">Mac - shell script check OS</a></h3>
 
                 
                 
@@ -207,9 +207,17 @@ if (!doNotTrack) {
                 
 
                 
-                <p><h2 id="mac---stat-get-owner-name">Mac - stat get owner name</h2>
-<p>stat -f &lsquo;%Su&rsquo; <!-- raw HTML omitted --></p>
-</p>
+                <p><h2 id="mac---shell-script-check-os">Mac - shell script check OS</h2>
+<p>Use shell script check Linux or Mac</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/usr/bin/env bash
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">`</span>uname<span style="color:#e6db74">`</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Linux&#39;</span> <span style="color:#f92672">]</span>;
+<span style="color:#66d9ef">then</span>
+    echo <span style="color:#e6db74">&#39;Linux&#39;</span>
+<span style="color:#66d9ef">else</span>
+    echo <span style="color:#e6db74">&#39;Mac&#39;</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div></p>
                 
 
                 
@@ -230,7 +238,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2018-10-24-mac-use-readlink-in-mac-os-x/">Mac - Use readlink in Mac OS X</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2018-10-25-mac-stat-get-owner-name/">Mac - stat get owner name</a></h3>
 
                 
                 
@@ -240,25 +248,13 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2018-10-24
+2018-10-25
 </p>
                 
 
                 
-                <p><h2 id="mac---use-readlink-in-mac-os-x">Mac - Use readlink in Mac OS X</h2>
-<ol>
-<li>install <code>coreutils</code></li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install coreutils
-</code></pre></div><ol start="2">
-<li>test greadlink</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">greadlink -f &lt;file name&gt;
-</code></pre></div><ol start="3">
-<li>alias command line</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alias readlink<span style="color:#f92672">=</span>greadlink
-</code></pre></div><p><a href="https://stackoverflow.com/questions/1055671/how-can-i-get-the-behavior-of-gnus-readlink-f-on-a-mac">refer - How can I get the behavior of GNU&rsquo;s readlink -f on a Mac?</a>;</p>
+                <p><h2 id="mac---stat-get-owner-name">Mac - stat get owner name</h2>
+<p>stat -f &lsquo;%Su&rsquo; <!-- raw HTML omitted --></p>
 </p>
                 
 
