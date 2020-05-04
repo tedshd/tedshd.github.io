@@ -1,9 +1,5 @@
 html {
-  font-weight: 400;
-}
-
-p {
-  max-width: 100%;
+  font-weight: $font-weight-normal;
 }
 
 h1,
@@ -12,18 +8,32 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-weight: $font-weight-bold;
+}
+
+p,
+td,
+th,
+pre,
+code,
+samp,
+kbd {
+  font-weight: $font-weight-normal;
+}
+
+p {
+  @extend .u-no-max-width;
 }
 
 .p-link--logo,
 .title-logo {
-  color: #111 !important;
-  font-weight: bold;
+  color: $color-dark !important;
+  font-weight: $font-weight-bold;
   text-decoration: none !important;
 }
 
 .p-link--hashtag {
-  color: #666 !important;
+  color: $color-mid-dark !important;
 }
 
 .p-inline-list-icons--share-links .p-inline-list__item {
@@ -38,12 +48,13 @@ h6 {
   }
 }
 
-.u-inline {
-  display: inline;
+.u-sticky {
+  position: sticky;
+  top: 0;
 }
 
-.u-margin-bottom--small {
-  margin-bottom: 1.1rem;
+.u-inline {
+  display: inline;
 }
 
 .u-capitalized {
@@ -70,15 +81,16 @@ h6 {
   a {
     color: darken($color-link, 10%);
   }
-  .col-8 {
-    align-items: center;
-  }
 }
 
-.page-banner
+.posts {
+  .row:first-child .col-12:first-child .p-card {
+    margin-top: 1.5rem;
+  }
 
-.posts .row:first-child .col-12:first-child .p-card {
-  margin-top: 1.5rem;
+  .p-card h3 a {
+    color: $color-dark;
+  }
 }
 
 // Instagram card styling
@@ -98,13 +110,4 @@ h6 {
   .col--share-links {
     text-align: right;
   }
-}
-
-.sub_menu {
-  text-align: center;
-}
-
-.p-card {
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .3);
-  border: solid 1px #eee;
 }
