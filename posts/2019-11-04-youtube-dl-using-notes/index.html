@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>youtube-dl - 使用筆記 | tedshd&#39;s DevNote</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='youtube-dl - 使用筆記 youtube-dl 是一個跟影音相關方便使用的 cli 工具 這裡筆記一下一些用法 列出該影片可以下載的 format youtube-dl -F &lt;URL&gt; output [youtube] e17Um7wExuQ: Downloading webpage [youtube] e17Um7wExuQ: Downloading video info webpage [info] Available formats for e17Um7wExuQ: format code extension resolution note 249 webm'>
+<meta name="keywords" content=''>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="http://blog.tedshd.io/posts/2019-11-04-youtube-dl-using-notes/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="youtube-dl - 使用筆記" />
+<meta property="og:description" content="youtube-dl - 使用筆記 youtube-dl 是一個跟影音相關方便使用的 cli 工具 這裡筆記一下一些用法 列出該影片可以下載的 format youtube-dl -F &lt;URL&gt; output [youtube] e17Um7wExuQ: Downloading webpage [youtube] e17Um7wExuQ: Downloading video info webpage [info] Available formats for e17Um7wExuQ: format code extension resolution note 249 webm" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.tedshd.io/posts/2019-11-04-youtube-dl-using-notes/" />
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="article:published_time" content="2019-11-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="youtube-dl - 使用筆記"/>
+<meta name="twitter:description" content="youtube-dl - 使用筆記 youtube-dl 是一個跟影音相關方便使用的 cli 工具 這裡筆記一下一些用法 列出該影片可以下載的 format youtube-dl -F &lt;URL&gt; output [youtube] e17Um7wExuQ: Downloading webpage [youtube] e17Um7wExuQ: Downloading video info webpage [info] Available formats for e17Um7wExuQ: format code extension resolution note 249 webm"/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="http://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="http://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>youtube-dl - 使用筆記</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2019-11-04
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        <h2 id="youtube-dl---使用筆記">youtube-dl - 使用筆記</h2>
+<p><a href="https://ytdl-org.github.io/youtube-dl/index.html">youtube-dl</a> 是一個跟影音相關方便使用的 cli 工具</p>
+<p>這裡筆記一下一些用法</p>
+<p>列出該影片可以下載的 format</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -F &lt;URL&gt;
+</code></pre></div><p>output</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>youtube<span style="color:#f92672">]</span> e17Um7wExuQ: Downloading webpage
+<span style="color:#f92672">[</span>youtube<span style="color:#f92672">]</span> e17Um7wExuQ: Downloading video info webpage
+<span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Available formats <span style="color:#66d9ef">for</span> e17Um7wExuQ:
+format code  extension  resolution note
+<span style="color:#ae81ff">249</span>          webm       audio only tiny   54k , opus @ 50k <span style="color:#f92672">(</span>48000Hz<span style="color:#f92672">)</span>, 192.69KiB
+<span style="color:#ae81ff">250</span>          webm       audio only tiny   72k , opus @ 70k <span style="color:#f92672">(</span>48000Hz<span style="color:#f92672">)</span>, 255.58KiB
+<span style="color:#ae81ff">140</span>          m4a        audio only tiny  130k , m4a_dash container, mp4a.40.2@128k <span style="color:#f92672">(</span>44100Hz<span style="color:#f92672">)</span>, 476.29KiB
+<span style="color:#ae81ff">251</span>          webm       audio only tiny  138k , opus @160k <span style="color:#f92672">(</span>48000Hz<span style="color:#f92672">)</span>, 500.94KiB
+<span style="color:#ae81ff">278</span>          webm       82x144     144p   32k , webm container, vp9, 30fps, video only, 105.14KiB
+<span style="color:#ae81ff">160</span>          mp4        82x144     144p   43k , avc1.4d400b, 30fps, video only, 147.87KiB
+<span style="color:#ae81ff">242</span>          webm       136x240    144p   72k , vp9, 30fps, video only, 224.00KiB
+<span style="color:#ae81ff">133</span>          mp4        136x240    144p   90k , avc1.4d400c, 30fps, video only, 303.08KiB
+<span style="color:#ae81ff">243</span>          webm       202x360    240p  130k , vp9, 30fps, video only, 379.65KiB
+<span style="color:#ae81ff">134</span>          mp4        202x360    240p  219k , avc1.4d400d, 30fps, video only, 659.67KiB
+<span style="color:#ae81ff">244</span>          webm       270x480    240p  235k , vp9, 30fps, video only, 670.44KiB
+<span style="color:#ae81ff">135</span>          mp4        270x480    240p  375k , avc1.4d4015, 30fps, video only, 1.10MiB
+<span style="color:#ae81ff">247</span>          webm       406x720    360p  428k , vp9, 30fps, video only, 1.19MiB
+<span style="color:#ae81ff">248</span>          webm       608x1080   480p  737k , vp9, 30fps, video only, 2.03MiB
+<span style="color:#ae81ff">136</span>          mp4        406x720    360p  761k , avc1.4d401e, 30fps, video only, 2.09MiB
+<span style="color:#ae81ff">137</span>          mp4        608x1080   480p 1458k , avc1.64001f, 30fps, video only, 3.95MiB
+<span style="color:#ae81ff">271</span>          webm       810x1440   720p 2767k , vp9, 30fps, video only, 6.69MiB
+<span style="color:#ae81ff">313</span>          webm       1080x1920  1080p 4410k , vp9, 30fps, video only, 12.22MiB
+<span style="color:#ae81ff">43</span>           webm       640x360    360p , vp8.0, vorbis@128k, 1.28MiB
+<span style="color:#ae81ff">18</span>           mp4        202x360    240p  359k , avc1.42001E, mp4a.40.2@ 96k <span style="color:#f92672">(</span>44100Hz<span style="color:#f92672">)</span>, 1.29MiB
+<span style="color:#ae81ff">22</span>           mp4        406x720    360p  713k , avc1.64001F, mp4a.40.2@192k <span style="color:#f92672">(</span>44100Hz<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>best<span style="color:#f92672">)</span>
+</code></pre></div><p>下載指定的 format</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -f &lt;format code&gt; &lt;URL&gt;
+</code></pre></div><p>下載最好的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -f best &lt;URL&gt;
+</code></pre></div><p>下載指定的 format</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -f mp4 &lt;URL&gt;
+</code></pre></div>
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="http://blog.tedshd.io/posts/2019-10-29-php-float-float-ingress-scientific-marker-conversion/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            php - float 浮點數科學記號轉換
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="http://blog.tedshd.io/posts/2019-11-18-2019-mozilla-developer-roadshow-asia-taipei-record/">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            2019 Mozilla Developer Roadshow Asia Taipei 與會紀錄
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+<div class="p-strip u-no-padding--bottom is-shallow">
+    <div class="row">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tedshd" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</div>
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2020 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49247550-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

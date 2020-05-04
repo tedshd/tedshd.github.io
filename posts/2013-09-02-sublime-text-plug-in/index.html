@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>‎Sublime Text - Plug-In | tedshd&#39;s DevNote</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Plug-In Install by Package Control Fisrt use sublime need install Package Control Ctrl &#43; ~ show command line enter import urllib2,os; pf=&#39;Package Control.sublime-package&#39;; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),&#39;wb&#39;).write(urllib2.urlopen(&#39;http://sublime.wbond.net/&#39;&#43;pf.replace(&#39; &#39;,&#39;%20&#39;)).read()); print &#39;Please restart Sublime Text to finish installation&#39; restart sublime finish ZenCoding jsFormat 讓 js 整齊 ctrl &#43; alt &#43; f GitHub SublimeTmpl 載入預設的樣板 Emmet 快速輸入 Gist'>
+<meta name="keywords" content=''>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="http://blog.tedshd.io/posts/2013-09-02-sublime-text-plug-in/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="‎Sublime Text - Plug-In" />
+<meta property="og:description" content="Plug-In Install by Package Control Fisrt use sublime need install Package Control Ctrl &#43; ~ show command line enter import urllib2,os; pf=&#39;Package Control.sublime-package&#39;; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),&#39;wb&#39;).write(urllib2.urlopen(&#39;http://sublime.wbond.net/&#39;&#43;pf.replace(&#39; &#39;,&#39;%20&#39;)).read()); print &#39;Please restart Sublime Text to finish installation&#39; restart sublime finish ZenCoding jsFormat 讓 js 整齊 ctrl &#43; alt &#43; f GitHub SublimeTmpl 載入預設的樣板 Emmet 快速輸入 Gist" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.tedshd.io/posts/2013-09-02-sublime-text-plug-in/" />
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="article:published_time" content="2013-09-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="‎Sublime Text - Plug-In"/>
+<meta name="twitter:description" content="Plug-In Install by Package Control Fisrt use sublime need install Package Control Ctrl &#43; ~ show command line enter import urllib2,os; pf=&#39;Package Control.sublime-package&#39;; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),&#39;wb&#39;).write(urllib2.urlopen(&#39;http://sublime.wbond.net/&#39;&#43;pf.replace(&#39; &#39;,&#39;%20&#39;)).read()); print &#39;Please restart Sublime Text to finish installation&#39; restart sublime finish ZenCoding jsFormat 讓 js 整齊 ctrl &#43; alt &#43; f GitHub SublimeTmpl 載入預設的樣板 Emmet 快速輸入 Gist"/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="http://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="http://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>‎Sublime Text - Plug-In</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2013-09-02
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        <h2 id="plug-in">Plug-In</h2>
+<p><strong>Install by Package Control</strong></p>
+<p>Fisrt use sublime need install Package Control
+Ctrl + ~
+show command line
+enter</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">import urllib2,os; pf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Package Control.sublime-package&#39;</span>; ipp<span style="color:#f92672">=</span>sublime.installed_packages_path<span style="color:#f92672">(</span><span style="color:#f92672">)</span>; os.makedirs<span style="color:#f92672">(</span>ipp<span style="color:#f92672">)</span> <span style="color:#66d9ef">if</span> not os.path.exists<span style="color:#f92672">(</span>ipp<span style="color:#f92672">)</span> <span style="color:#66d9ef">else</span> None; urllib2.install_opener<span style="color:#f92672">(</span>urllib2.build_opener<span style="color:#f92672">(</span>urllib2.ProxyHandler<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span>; open<span style="color:#f92672">(</span>os.path.join<span style="color:#f92672">(</span>ipp,pf<span style="color:#f92672">)</span>,<span style="color:#e6db74">&#39;wb&#39;</span><span style="color:#f92672">)</span>.write<span style="color:#f92672">(</span>urllib2.urlopen<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;http://sublime.wbond.net/&#39;</span>+pf.replace<span style="color:#f92672">(</span><span style="color:#e6db74">&#39; &#39;</span>,<span style="color:#e6db74">&#39;%20&#39;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span>.read<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span>; print <span style="color:#e6db74">&#39;Please restart Sublime Text to finish installation&#39;</span>
+</code></pre></div><p>restart sublime
+finish</p>
+<h3 id="zencoding">ZenCoding</h3>
+<h3 id="jsformat">jsFormat</h3>
+<p>讓 js 整齊
+ctrl + alt + f
+<a href="https://github.com/jdc0589/JsFormat">GitHub</a></p>
+<h3 id="sublimetmpl">SublimeTmpl</h3>
+<p>載入預設的樣板</p>
+<h3 id="emmethttpdocsemmetio"><a href="http://docs.emmet.io/">Emmet</a></h3>
+<p>快速輸入</p>
+<h3 id="gist">Gist</h3>
+<h3 id="brackethighlighter">BracketHighlighter</h3>
+<h3 id="themes">Themes</h3>
+<ul>
+<li>Dayle Rees Color Schemes</li>
+<li>Farzher</li>
+<li><a href="https://sublime.wbond.net/packages/Theme%20-%20Fox">Fox</a></li>
+</ul>
+<h3 id="sublime-jslint">sublime-jslint</h3>
+<p><a href="https://github.com/fbzhong/sublime-jslint">GitHub</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#960050;background-color:#1e0010">P</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">h</span> <span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span> <span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">j</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">t</span> <span style="color:#960050;background-color:#1e0010">j</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">.</span>
+    <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#960050;background-color:#1e0010">L</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">v</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">b</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">k</span> <span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span> <span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">b</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">d</span> <span style="color:#960050;background-color:#1e0010">j</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">.</span>
+    <span style="color:#f92672">&#34;jslint_jar&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+
+    <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#960050;background-color:#1e0010">O</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">s</span> <span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">s</span> <span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span> <span style="color:#960050;background-color:#1e0010">j</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">.</span>
+    <span style="color:#f92672">&#34;jslint_options&#34;</span>: <span style="color:#e6db74">&#34;--continue --nomen --regexp --sloppy&#34;</span>,
+
+    <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#960050;background-color:#1e0010">I</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">x</span><span style="color:#960050;background-color:#1e0010">.</span>
+    <span style="color:#f92672">&#34;ignore_errors&#34;</span>:
+    [
+        <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#e6db74">&#34;Expected an identifier and instead saw &#39;undefined&#39; \(a reserved word\)&#34;</span>
+    ],
+
+    <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">n</span> <span style="color:#960050;background-color:#1e0010">j</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">t</span> <span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">n</span> <span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">v</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">.</span>
+    <span style="color:#f92672">&#34;run_on_save&#34;</span>: <span style="color:#66d9ef">true</span>,
+
+    <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">b</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">g</span> <span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">.</span>
+    <span style="color:#f92672">&#34;debug&#34;</span>: <span style="color:#66d9ef">false</span>
+}
+</code></pre></div><h3 id="javascript-and-jquery-api-completions">javascript and jQuery API Completions</h3>
+<p><a href="https://github.com/slene/Sublime-JavaScript-API-Completions">GitHub</a></p>
+<h3 id="better-completion">Better Completion</h3>
+<h3 id="phplntel">PHPLntel</h3>
+<h3 id="sublimelinter">SublimeLinter</h3>
+<p><a href="https://github.com/SublimeLinter/SublimeLinter-for-ST2">SublimeLinter-for-ST2</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#34;sublimelinter_popup_errors_on_save&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+<span style="color:#e6db74">&#34;sublimelinter_mark_style&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;fill&#34;</span>
+<span style="color:#e6db74">&#34;sublimelinter_gutter_marks&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</code></pre></div><h3 id="colorpicker">ColorPicker</h3>
+<p>調色盤
+<a href="http://weslly.github.io/ColorPicker/">GitHub</a></p>
+<h3 id="scss">SCSS</h3>
+<p><a href="https://github.com/MarioRicalde/SCSS.tmbundle">GiHub</a></p>
+<h3 id="sftp">SFTP</h3>
+<p>利用 SFTP 連 server
+<a href="http://wbond.net/sublime_packages/sftp">Sublime SFTP</a></p>
+<h3 id="docblockr">DocBlockr</h3>
+<p>加強添加注釋
+/** 按 <code>tab</code>
+<a href="https://github.com/spadgos/sublime-jsdocs">GitHub</a></p>
+<h3 id="ascii-decorator">ASCII-Decorator</h3>
+<p>利用 ASCII 文字當注釋
+選擇要轉的文字後, 選選單的 Edit -&gt; ASCII-Decorator, 就會轉換了
+<a href="https://github.com/viisual/ASCII-Decorator">GitHub</a></p>
+<h3 id="bootstrap-3-snippets">Bootstrap 3 Snippets</h3>
+<p><a href="https://github.com/JasonMortonNZ/bs3-sublime-plugin">GitHub</a></p>
+<h3 id="marking-changed-rows">Marking Changed Rows</h3>
+<p><a href="https://github.com/Harurow/sublime_markingchangedrows">GitHub</a></p>
+<h3 id="colorhighlighter">ColorHighlighter</h3>
+<p>顯示 HEX 顏色
+<a href="https://github.com/Monnoroch/ColorHighlighter">GitHub</a></p>
+<h3 id="aligntab">AlignTab</h3>
+<p>對齊 :, =, &hellip;
+<a href="https://github.com/randy3k/AlignTab">GitHub</a></p>
+<h3 id="find-function-definition">Find Function Definition</h3>
+<p>找到 function 定義的位置
+<a href="https://sublime.wbond.net/packages/Find%20Function%20Definition">Find Function Definition</a></p>
+<h3 id="sublimetext-markdown-preview">sublimetext-markdown-preview</h3>
+<p>Preview Markdown 文件
+<a href="https://github.com/revolunet/sublimetext-markdown-preview">sublimetext-markdown-preview</a></p>
+<h3 id="sublimebookmark">sublimeBookmark</h3>
+<p>可以 mark line, 方便臨時標記找 code
+<a href="https://github.com/bollu/sublimeBookmark">sublimeBookmark</a></p>
+<h3 id="css-format">CSS format</h3>
+<p><a href="https://packagecontrol.io/packages/CSS%20Format">CSS Format</a></p>
+<h2 id="sublime-text-3">Sublime text 3</h2>
+<h3 id="jslint">JSLint</h3>
+<p><a href="https://github.com/73rhodes/Sublime-JSLint">JSLint</a></p>
+<h3 id="jshint">JSHint</h3>
+<p><a href="https://github.com/jshint/jshint">jshint</a></p>
+<h3 id="sublimelinter-1">sublimeLinter</h3>
+<h3 id="sublimelinter-annotations">SublimeLinter-annotations</h3>
+<p>highlight TODO, README and FIXME
+<a href="https://github.com/SublimeLinter/SublimeLinter-annotations">SublimeLinter-annotations</a></p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="http://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Sublime Text - initial setting
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="http://blog.tedshd.io/posts/2013-09-02-codeigniter-note/">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Codeigniter - Note
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+<div class="p-strip u-no-padding--bottom is-shallow">
+    <div class="row">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tedshd" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</div>
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2020 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49247550-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

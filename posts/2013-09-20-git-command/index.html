@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Git - command | tedshd&#39;s DevNote</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Git - command git status # 查看修改哪些檔案 git diff # 比對修改了的地方與上一個 commit 有何不同 git diff &lt;file&gt; # 比對修改的檔案與上一個 commit 有何不同 git diff &lt;old commit id&gt;..&lt;new commit id&gt; # 比對不同 commit id 的檔'>
+<meta name="keywords" content=''>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="http://blog.tedshd.io/posts/2013-09-20-git-command/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Git - command" />
+<meta property="og:description" content="Git - command git status # 查看修改哪些檔案 git diff # 比對修改了的地方與上一個 commit 有何不同 git diff &lt;file&gt; # 比對修改的檔案與上一個 commit 有何不同 git diff &lt;old commit id&gt;..&lt;new commit id&gt; # 比對不同 commit id 的檔" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.tedshd.io/posts/2013-09-20-git-command/" />
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="article:published_time" content="2013-09-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="Git - command"/>
+<meta name="twitter:description" content="Git - command git status # 查看修改哪些檔案 git diff # 比對修改了的地方與上一個 commit 有何不同 git diff &lt;file&gt; # 比對修改的檔案與上一個 commit 有何不同 git diff &lt;old commit id&gt;..&lt;new commit id&gt; # 比對不同 commit id 的檔"/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="http://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="http://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Git - command</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2013-09-20
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        <h2 id="git---command">Git - command</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git status
+<span style="color:#75715e"># 查看修改哪些檔案</span>
+
+git diff
+<span style="color:#75715e"># 比對修改了的地方與上一個 commit 有何不同</span>
+git diff &lt;file&gt;
+<span style="color:#75715e"># 比對修改的檔案與上一個 commit 有何不同</span>
+git diff &lt;old commit id&gt;..&lt;new commit id&gt;
+<span style="color:#75715e"># 比對不同 commit id 的檔案差異</span>
+
+git coheckout -- &lt;file&gt;
+<span style="color:#75715e"># 把檔案回復到修改前的樣子</span>
+
+git add &lt;file&gt;
+<span style="color:#75715e"># 加入要 commit 的檔案</span>
+
+git rm &lt;file&gt;
+<span style="color:#75715e"># 移除檔案(有 commit 過的檔案要移除, rm &lt;file&gt; 之後要執行的指令)</span>
+
+git reset HEAD &lt;file&gt;
+<span style="color:#75715e"># 把 git add 之後的檔案回復到 git add 前</span>
+
+git commit -m <span style="color:#e6db74">&#39;註解&#39;</span>
+<span style="color:#75715e"># or</span>
+git commit
+<span style="color:#75715e"># commit 檔案進入版本控管系統</span>
+git commit --no-verify
+<span style="color:#75715e"># 不驗證 commit</span>
+
+git log
+<span style="color:#75715e"># git commit log 紀錄</span>
+git log -p
+<span style="color:#75715e"># 詳細的log紀錄(修改哪些部分)</span>
+
+git blame &lt;file&gt;
+<span style="color:#75715e"># 查看修改的紀錄</span>
+
+git clone &lt;repository&gt;
+<span style="color:#75715e"># 拉 repository 下來到 local 端</span>
+
+git branch &lt;branch name&gt;
+<span style="color:#75715e"># 建立一個 local 端的 branch</span>
+
+git checkout &lt;branch&gt;
+<span style="color:#75715e"># 切換到該 branch</span>
+
+git branch
+<span style="color:#75715e"># 查看本地端的 branch</span>
+
+git branch -r
+<span style="color:#75715e"># 查看 remote 端的 branch</span>
+
+git stash
+<span style="color:#75715e"># 檔案 不commit 跳 branch (暫存)</span>
+git stash pop
+<span style="color:#75715e"># 回復檔案不 commit 狀態(讀回)</span>
+
+git branch -d &lt;local branch&gt;
+<span style="color:#75715e"># 刪除本地端的 branch</span>
+
+git branch -r -d &lt;remote branch&gt;
+<span style="color:#75715e"># 刪除 remote 端的 branch</span>
+
+git checkout --track -b &lt;local branch&gt; origin/&lt;remote branch&gt;
+<span style="color:#75715e"># 將遠端的 branch 並在 local 建立 branch</span>
+
+</code></pre></div><p><a href="http://blog.longwin.com.tw/2009/05/git-learn-initial-command-2009/">Refer</a>
+<a href="http://ihower.tw/blog/archives/2620">Refer</a></p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="http://blog.tedshd.io/posts/2013-09-18-git-uses-someone-elses-repository/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Git - 使用別人的 repository
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="http://blog.tedshd.io/posts/2013-09-23-kbtalking-pure-pro-programming/">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            KBtalking pure pro programming
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+<div class="p-strip u-no-padding--bottom is-shallow">
+    <div class="row">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tedshd" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</div>
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2020 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49247550-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

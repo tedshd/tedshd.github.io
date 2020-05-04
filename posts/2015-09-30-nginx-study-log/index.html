@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>nginx - study log | tedshd&#39;s DevNote</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='nginx - Study Log 半調子的紀錄&hellip; Command Line sudo service nginx start sudo service nginx restart sudo service nginx stop # 測試 nginx 設定 sudo nginx -t config # document root root /usr/share/nginx/html; # set page show index index.html index.htm index.php; # 把 lib 目錄打開 location /lib { autoindex on; } refer -'>
+<meta name="keywords" content=''>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="http://blog.tedshd.io/posts/2015-09-30-nginx-study-log/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="nginx - study log" />
+<meta property="og:description" content="nginx - Study Log 半調子的紀錄&hellip; Command Line sudo service nginx start sudo service nginx restart sudo service nginx stop # 測試 nginx 設定 sudo nginx -t config # document root root /usr/share/nginx/html; # set page show index index.html index.htm index.php; # 把 lib 目錄打開 location /lib { autoindex on; } refer -" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.tedshd.io/posts/2015-09-30-nginx-study-log/" />
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="article:published_time" content="2015-09-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="nginx - study log"/>
+<meta name="twitter:description" content="nginx - Study Log 半調子的紀錄&hellip; Command Line sudo service nginx start sudo service nginx restart sudo service nginx stop # 測試 nginx 設定 sudo nginx -t config # document root root /usr/share/nginx/html; # set page show index index.html index.htm index.php; # 把 lib 目錄打開 location /lib { autoindex on; } refer -"/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="http://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="http://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>nginx - study log</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2015-09-30
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        <h2 id="nginx---study-log">nginx - Study Log</h2>
+<p>半調子的紀錄&hellip;</p>
+<h3 id="command-line">Command Line</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+sudo service nginx start
+
+sudo service nginx restart
+
+sudo service nginx stop
+
+<span style="color:#75715e"># 測試 nginx 設定</span>
+sudo nginx -t
+</code></pre></div><h3 id="config">config</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<span style="color:#75715e"># document root</span>
+root /usr/share/nginx/html;
+
+<span style="color:#75715e"># set page show</span>
+index index.html index.htm index.php;
+
+<span style="color:#75715e"># 把 lib 目錄打開</span>
+location /lib <span style="color:#f92672">{</span>
+    autoindex on;
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p><a href="http://serverfault.com/questions/214242/can-i-hide-all-server-os-info">refer - Can I hide all server / os info?</a></p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="http://blog.tedshd.io/posts/2015-09-28-google-cloud-platform-study-log/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Google Cloud Platform - Study Log
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="http://blog.tedshd.io/posts/2015-09-30-linux-unix-terminal-control/">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Linux / Unix - terminal control
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+<div class="p-strip u-no-padding--bottom is-shallow">
+    <div class="row">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tedshd" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</div>
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2020 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49247550-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Something about XSS(Cross-site scripting) | tedshd&#39;s DevNote</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Something about XSS(Cross-site scripting) If not set anything Use like &lt;?php echo $_GET[&#39;name&#39;];?&gt; and querystring name = &lt;script&gt;alert(document.cookie)&lt;/script&gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer'>
+<meta name="keywords" content=''>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="http://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Something about XSS(Cross-site scripting)" />
+<meta property="og:description" content="Something about XSS(Cross-site scripting) If not set anything Use like &lt;?php echo $_GET[&#39;name&#39;];?&gt; and querystring name = &lt;script&gt;alert(document.cookie)&lt;/script&gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/" />
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="article:published_time" content="2015-11-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="Something about XSS(Cross-site scripting)"/>
+<meta name="twitter:description" content="Something about XSS(Cross-site scripting) If not set anything Use like &lt;?php echo $_GET[&#39;name&#39;];?&gt; and querystring name = &lt;script&gt;alert(document.cookie)&lt;/script&gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer"/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="http://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="http://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Something about XSS(Cross-site scripting)</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2015-11-01
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        <h2 id="something-about-xsscross-site-scripting">Something about XSS(Cross-site scripting)</h2>
+<p>If not set anything</p>
+<p>Use like</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span> <span style="color:#66d9ef">echo</span> $_GET[<span style="color:#e6db74">&#39;name&#39;</span>];<span style="color:#75715e">?&gt;</span>
+</code></pre></div><p>and querystring <code>name</code> = <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
+<p>And not defence XSS</p>
+<p>In Firefox</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/307308/G2Ec0H05TgG5yNFaRS6K_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.40.08.png" alt="螢幕快照 2015-11-01 下午8.40.08.png"></p>
+<p>In Chrome</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/307308/tyAndfVzTqy50xBAJmhI_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.42.45.png" alt="螢幕快照 2015-11-01 下午8.42.45.png"></p>
+<p>In Safari</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/307308/xfWYDtAnQ7SoVIKdlTIL_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.43.16.png" alt="螢幕快照 2015-11-01 下午8.43.16.png"></p>
+<h3 id="result">Result</h3>
+<p>Chrome &amp; Safari browser has handle XSS default</p>
+<h3 id="defence">Defence</h3>
+<p>Set header <code>X-XSS-Protection: 1</code></p>
+<p>if use PHP, can use</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">htmlspecialchars()
+// or
+ htmlentities()
+</code></pre></div><h3 id="important">Important!</h3>
+<p>Finally</p>
+<p>We must know it is handle encode to avoid run JavaScript on page</p>
+<p><a href="https://github.com/tedshd/javascript-htmlspecialchars">JavaScript ver htmlspecialchars</a></p>
+<p><a href="http://www.qa-knowhow.com/?p=2992">Refer - XSS攻擊的深入探討與防護之道</a></p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="http://blog.tedshd.io/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="http://blog.tedshd.io/posts/2015-11-20-css4-css4-thoughts-and-postcss/">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            CSS4 - 關於 css4 and postcss 的一些想法
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+<div class="p-strip u-no-padding--bottom is-shallow">
+    <div class="row">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tedshd" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</div>
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2020 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49247550-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

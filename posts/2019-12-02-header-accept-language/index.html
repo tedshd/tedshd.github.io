@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Header -  Accept-Language & Content-Language | tedshd&#39;s DevNote</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Header - Accept-Language &amp; Content-Language Intro 多國語系的判定主要靠這兩個來處理 Accept-Language Content-Language 這裡的語言代碼一率遵循 ISO 639-1 codes Accept-Language 系統或是 client 需要帶在 request header 中 表示 client 所使用的語言 有時會帶有 location 資訊(l'>
+<meta name="keywords" content=''>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="http://blog.tedshd.io/posts/2019-12-02-header-accept-language/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Header -  Accept-Language &amp; Content-Language" />
+<meta property="og:description" content="Header - Accept-Language &amp; Content-Language Intro 多國語系的判定主要靠這兩個來處理 Accept-Language Content-Language 這裡的語言代碼一率遵循 ISO 639-1 codes Accept-Language 系統或是 client 需要帶在 request header 中 表示 client 所使用的語言 有時會帶有 location 資訊(l" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.tedshd.io/posts/2019-12-02-header-accept-language/" />
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="article:published_time" content="2019-12-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="Header -  Accept-Language &amp; Content-Language"/>
+<meta name="twitter:description" content="Header - Accept-Language &amp; Content-Language Intro 多國語系的判定主要靠這兩個來處理 Accept-Language Content-Language 這裡的語言代碼一率遵循 ISO 639-1 codes Accept-Language 系統或是 client 需要帶在 request header 中 表示 client 所使用的語言 有時會帶有 location 資訊(l"/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="http://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="http://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Header -  Accept-Language &amp; Content-Language</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2019-12-02
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        <h2 id="header----accept-language--content-language">Header -  Accept-Language &amp; Content-Language</h2>
+<h3 id="intro">Intro</h3>
+<p>多國語系的判定主要靠這兩個來處理</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language">Accept-Language</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language">Content-Language</a></p>
+<p>這裡的語言代碼一率遵循 <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1 codes</a></p>
+<h3 id="accept-language">Accept-Language</h3>
+<p>系統或是 client 需要帶在 request header 中</p>
+<p>表示 client 所使用的語言</p>
+<p>有時會帶有 location 資訊(location 依照 <a href="https://en.wikipedia.org/wiki/ISO_3166-2">ISO 3166-2</a> 標準且都是大寫</p>
+<p>多語言時用 <code>,</code> 分隔</p>
+<p>會在後面用 <code>q</code> 表示權重</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#960050;background-color:#1e0010">z</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#960050;background-color:#1e0010">T</span><span style="color:#960050;background-color:#1e0010">W</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#960050;background-color:#1e0010">z</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">q</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">9</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#960050;background-color:#1e0010">U</span><span style="color:#960050;background-color:#1e0010">S</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">q</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">8</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">q</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">7</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>這個  header 常被用來判斷 client 的主要語言來判斷處理要回給 client 用哪個語言</p>
+<h3 id="content-language">Content-Language</h3>
+<p>server 帶在 response header 中</p>
+<p>用以表示該 response 是提供哪些語言的內容</p>
+<p>一樣可以是單純的 <code>lang</code> 或是 <code>&lt;lang&gt;-&lt;location&gt;</code> 也可以用 <code>,</code> 分隔多語言</p>
+<p>也可以在 HTML 中宣告</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;de&#34;</span>&gt;
+</code></pre></div><h3 id="w3c-i18n-checker">W3C I18n Checker</h3>
+<p>W3C 提供一個可以確認的網站</p>
+<p><a href="https://validator.w3.org/i18n-checker/">W3C I18n Checker</a></p>
+<h3 id="向-google-提供網頁的本地化版本httpssupportgooglecomwebmastersanswer189077"><a href="https://support.google.com/webmasters/answer/189077">向 Google 提供網頁的本地化版本</a></h3>
+<ol>
+<li>HTML meta tag</li>
+<li>HTTP header</li>
+<li>Sitemap</li>
+</ol>
+<p>使用以上三種方法來讓 Google 爬</p>
+<h3 id="keypoint">Keypoint</h3>
+<ol>
+<li>可以依照 <code>Accept-Language</code> 裡面的多語系權重去判斷要給予使用者適合的語系</li>
+<li>不管是 W3C 還是 Google 其實都建議不能單純的依靠上述來判斷語系, 還是需要有提供能讓使用者手動切換語言的選項</li>
+<li>Chrome 的同步設定會連 browser 慣用語言的設定一起同步&hellip;</li>
+</ol>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="http://blog.tedshd.io/posts/2019-12-02-php-check-http-protocol/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            PHP -  check HTTP protocol
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="http://blog.tedshd.io/posts/2019-12-20-firebase-firebase-functions/">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Firebase - Firebase functions 使用紀錄
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+<div class="p-strip u-no-padding--bottom is-shallow">
+    <div class="row">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tedshd" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</div>
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2020 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49247550-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

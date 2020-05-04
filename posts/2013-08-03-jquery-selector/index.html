@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>jQuery selector | tedshd&#39;s DevNote</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='* 所有元素 E 所有E元素， E:nth-child(n) 傳回在所屬父元素下，排行第 n 的元素 E。(注意: 從 1 開始算，而非從 0) E:first-child 傳回在所屬父元素下，排行第一的元素(老大) E:last-child 傳'>
+<meta name="keywords" content=''>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="http://blog.tedshd.io/posts/2013-08-03-jquery-selector/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="jQuery selector" />
+<meta property="og:description" content="* 所有元素 E 所有E元素， E:nth-child(n) 傳回在所屬父元素下，排行第 n 的元素 E。(注意: 從 1 開始算，而非從 0) E:first-child 傳回在所屬父元素下，排行第一的元素(老大) E:last-child 傳" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.tedshd.io/posts/2013-08-03-jquery-selector/" />
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="article:published_time" content="2013-08-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="jQuery selector"/>
+<meta name="twitter:description" content="* 所有元素 E 所有E元素， E:nth-child(n) 傳回在所屬父元素下，排行第 n 的元素 E。(注意: 從 1 開始算，而非從 0) E:first-child 傳回在所屬父元素下，排行第一的元素(老大) E:last-child 傳"/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="http://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="http://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>jQuery selector</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2013-08-03
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        <pre><code>* 所有元素
+E 所有E元素，
+E:nth-child(n) 傳回在所屬父元素下，排行第 n 的元素 E。(注意: 從 1 開始算，而非從 0)
+E:first-child 傳回在所屬父元素下，排行第一的元素(老大)
+E:last-child 傳回在所屬父元素下，排行最後的元素(老么)
+E:only-child 傳回在所屬父元素下，是唯一子元素(獨子)
+E:empty 沒有任何子元素者(有文字也不算，例如 &lt;span&gt;TEXT&lt;/span&gt; 就不合格)
+E:enabled 未被停用的 UI 元素 E
+E:disabled 被停用的 UI 元素 E
+E:checked 被勾選的 UI 元素 E(適用於 Radio, Checkbox)
+E:selected 被選取的 UI 元素 E(適用於 Select 下的 Option 元素)
+E.myClassName CSS 類別設為 myClassName 的元素 E
+E#myId id=&quot;myId&quot; 的元素 E
+E:not(s) 不符合 s 條件的元素 E，例如: $(&quot;span:not(:empty)&quot;) 即為找出有包含子元素的 span
+E F 由包含在 E 底下的 F 元素，不必直接為父子關係，例如: F 可以是 E 的子元素的子元素。
+E &gt; F 找出父元素為 E 的 F 元素
+E + F 找出緊接在 E 元素後方的 F 元素
+E ~ F 找出緊接在 E 元素前方的 F 元素
+E,F,G 利用逗號可以呈現 &quot; 或 &quot; 的聯集效果，指 E 元素或 F 元素或 G 元素
+E[foo] 具有 foo 屬性 (Attribute) 的E元素(1.2.6 以前的版本亦可用 E[@foo] 表示，1.3 版本起取消 @ 符號的使用)
+E[foo=bar] 有 foo 屬性，且 foo 屬性值為 bar 的 E 元素
+E[foo!=bar] 有 foo 屬性，且 foo 屬性值不等於 bar 的 E 元素
+E[foo^=bar] 有 foo 屬性，且 foo 屬性值以 bar 開頭的 E 元素
+E[foo$=bar] 有 foo 屬性，且 foo 屬性值以 bar 結尾的 E 元素
+E[foo*=bar] 有 foo 屬性，且 foo 屬性值中包含 bar 字眼的 E 元素
+E[foo=bar][baz=bop] 同時具備 foo 及 baz 屬性，且其值分別為 bar 及 bop 的 E 元素
+:even 由選取結果中只挑出第雙數個
+:odd 由選取結果中只挑出第單數個
+:eq(N) and :nth(N) 由選取結果中取出第 N 個，由 0 起算
+:gt(N) 由選取結果中只保留第 N 個以後者(不含 N)
+:lt(N) 由選取結果中只保留第 N 個以前者(不含 N)
+:first 選取結果中的第一個，等同於 :eq(0)
+:last 選取結果中的最後一個
+:parent 選取包含子元素者(文字內容也算，例如:&lt;span&gt;Text&lt;/span&gt;)
+:contains('test') 選取元素內的文字包含特定字串者
+:visible 選取所有可見的元素(包含 CSS display=block 或 inline, visibility=visible 但不含 &lt;input type=&quot;hidden&quot;&gt;)
+:hidden 選取所有不可見的元素(包含 CSS display=none, visibility=hidden以及&lt;input type=&quot;hidden&quot;&gt;)
+:input 選取所有表單輸入元素(包含 input, select, textarea, button).
+:text 選取所有 &lt;input type=&quot;text&quot;&gt;
+:password 選取所有 &lt;input type=&quot;password &quot;&gt;
+:radio 選取所有 &lt;input type=&quot;radio &quot;&gt;
+:checkbox 選取所有 &lt;input type=&quot;checkbox&quot;&gt;
+:submit 選取所有 &lt;input type=&quot;submit&quot;&gt;
+:image 選取所有 &lt;input type=&quot;image&quot;&gt;
+:reset 選取所有 &lt;input type=&quot;reset&quot;&gt;
+:button 選取所有 &lt;input type=&quot;button&quot;&gt;
+:file 選取所有 &lt;input type=&quot;file&quot;&gt;
+
+size() 或 length 傳回群組的物件個數
+eq(N) 取出群組中第 N 個 jQuery 物件
+get() 傳回元素的陣列
+get(N) 取出第 N 個元素
+index(element 或 jQuery 物件) 用來找某元素在選取結果中的排名順序，例如網頁上有五個 &lt;div&gt;，&lt;div id=&quot;dvX&quot;&gt; 為第三個，則$(&quot;div&quot;).index(document.getElementById(&quot;dvX&quot;)) 可以得到 2 (由 0 起算，故第三個為 2)，$(&quot;div&quot;).index($(&quot;#dvX&quot;)) 也可得到同樣結果。元素不在群組時傳回 -1。
+</code></pre>
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="http://blog.tedshd.io/posts/2013-08-03-performance-test-javascript/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            performance-test
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="http://blog.tedshd.io/posts/2013-08-03-innerheight-innerwidth/">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            innerHeight &amp; innerWidth
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+<div class="p-strip u-no-padding--bottom is-shallow">
+    <div class="row">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tedshd" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</div>
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2020 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49247550-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

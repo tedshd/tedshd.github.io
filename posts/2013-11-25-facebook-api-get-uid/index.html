@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Facebook api get UID & AccessToken | tedshd&#39;s DevNote</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Facebook api get UID &amp; AccessToken Build App in facebook APP_ID is a facebook App id Must set facebook App&#39;s web url and use code in it&#39;s domain &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;title&gt;fb_oauth&lt;/title&gt; &lt;script src=&#34;http://code.jquery.com/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;fb-root&#34;&gt;&lt;/div&gt; &lt;p&gt; &lt;input id=&#34;FBLogin&#34; type=&#34;button&#34; value=&#34;登入臉書&#34; /&gt; &lt;/p&gt; &lt;p&gt; &lt;span id=&#34;uid&#34;&gt;&lt;/span&gt;'>
+<meta name="keywords" content=''>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="http://blog.tedshd.io/posts/2013-11-25-facebook-api-get-uid/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Facebook api get UID &amp; AccessToken" />
+<meta property="og:description" content="Facebook api get UID &amp; AccessToken Build App in facebook APP_ID is a facebook App id Must set facebook App&#39;s web url and use code in it&#39;s domain &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;title&gt;fb_oauth&lt;/title&gt; &lt;script src=&#34;http://code.jquery.com/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;fb-root&#34;&gt;&lt;/div&gt; &lt;p&gt; &lt;input id=&#34;FBLogin&#34; type=&#34;button&#34; value=&#34;登入臉書&#34; /&gt; &lt;/p&gt; &lt;p&gt; &lt;span id=&#34;uid&#34;&gt;&lt;/span&gt;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.tedshd.io/posts/2013-11-25-facebook-api-get-uid/" />
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="article:published_time" content="2013-11-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="Facebook api get UID &amp; AccessToken"/>
+<meta name="twitter:description" content="Facebook api get UID &amp; AccessToken Build App in facebook APP_ID is a facebook App id Must set facebook App&#39;s web url and use code in it&#39;s domain &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;title&gt;fb_oauth&lt;/title&gt; &lt;script src=&#34;http://code.jquery.com/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;fb-root&#34;&gt;&lt;/div&gt; &lt;p&gt; &lt;input id=&#34;FBLogin&#34; type=&#34;button&#34; value=&#34;登入臉書&#34; /&gt; &lt;/p&gt; &lt;p&gt; &lt;span id=&#34;uid&#34;&gt;&lt;/span&gt;"/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="http://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="http://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Facebook api get UID &amp; AccessToken</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2013-11-25
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        <h2 id="facebook-api-get-uid--accesstoken">Facebook api get UID &amp; AccessToken</h2>
+<ol>
+<li>Build App in facebook</li>
+<li><code>APP_ID</code> is a facebook App id</li>
+<li>Must set facebook App's web url and use code in it's domain</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">title</span>&gt;fb_oauth&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://code.jquery.com/jquery-1.10.2.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb-root&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FBLogin&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;登入臉書&#34;</span> /&gt;
+    &lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;uid&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;
+        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accessToken&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+    &lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://connect.facebook.net/zh_TW/all.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span>&gt;
+    <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">init</span>({
+        <span style="color:#a6e22e">appId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;APP_ID&#39;</span>,
+        <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+        <span style="color:#a6e22e">cookie</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+        <span style="color:#a6e22e">xfbml</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+        <span style="color:#a6e22e">oauth</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+    });
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#FBLogin&#39;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#66d9ef">function</span> () {
+        <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">login</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">response</span>) {
+            <span style="color:#75715e">// 登入之後執行的語法
+</span><span style="color:#75715e"></span>        },
+        {
+            <span style="color:#a6e22e">scope</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;email&#39;</span>
+        });
+    });
+    <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">getLoginStatus</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">response</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;connected&#39;</span>) {
+            <span style="color:#75715e">// 程式有連結到 Facebook 帳號
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// 取得 UID
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">uid</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">authResponse</span>.<span style="color:#a6e22e">userID</span>;
+            <span style="color:#75715e">// 取得 accessToken
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">accessToken</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">authResponse</span>.<span style="color:#a6e22e">accessToken</span>;
+            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#uid&#39;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#e6db74">&#39;UID：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">uid</span>);
+            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#accessToken&#39;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#e6db74">&#39;accessToken：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">accessToken</span>);
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;not_authorized&#39;</span>) {
+            <span style="color:#75715e">// 帳號沒有連結到 Facebook 程式
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;請允許授權！&#39;</span>);
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#75715e">// 帳號沒有登入
+</span><span style="color:#75715e"></span>        }
+    });
+&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p><a href="http://tedshd.lionfree.net/demo/facebook_oauth/fb_oauth.html">Demo</a></p>
+<p><a href="http://coding.anyun.tw/2012/03/07/using-facebook-javascript-sdk-get-uid-or-accesstoken/">Refer - 使用 Facebook JavaScript SDK 來取得使用者 UID 或 AccessToken</a></p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="http://blog.tedshd.io/posts/2013-11-20-sass-compile-two-spaces/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Sass compile two spaces
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="http://blog.tedshd.io/posts/2013-12-03-google-map-api-research-log/">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Google map api - research log
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+<div class="p-strip u-no-padding--bottom is-shallow">
+    <div class="row">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tedshd" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</div>
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2020 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49247550-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

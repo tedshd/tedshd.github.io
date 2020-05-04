@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>MySQL command | tedshd&#39;s DevNote</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='MySQL Monitor Setting mysql -u root -h &lt;HOST&gt; -P &lt;PORT&gt; &lt;DATABASE_NAME&gt; -p -A Command 每一個 command 最後都要加 ; status; create database 資料庫名稱; drop database 資料庫名稱; show databases; use 資料庫名稱; select database(); create table 資料表名稱(欄位名稱1 資料型別1'>
+<meta name="keywords" content=''>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="http://blog.tedshd.io/posts/2013-08-28-mysql-command/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="MySQL command" />
+<meta property="og:description" content="MySQL Monitor Setting mysql -u root -h &lt;HOST&gt; -P &lt;PORT&gt; &lt;DATABASE_NAME&gt; -p -A Command 每一個 command 最後都要加 ; status; create database 資料庫名稱; drop database 資料庫名稱; show databases; use 資料庫名稱; select database(); create table 資料表名稱(欄位名稱1 資料型別1" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.tedshd.io/posts/2013-08-28-mysql-command/" />
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="article:published_time" content="2013-08-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="MySQL command"/>
+<meta name="twitter:description" content="MySQL Monitor Setting mysql -u root -h &lt;HOST&gt; -P &lt;PORT&gt; &lt;DATABASE_NAME&gt; -p -A Command 每一個 command 最後都要加 ; status; create database 資料庫名稱; drop database 資料庫名稱; show databases; use 資料庫名稱; select database(); create table 資料表名稱(欄位名稱1 資料型別1"/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="http://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="http://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>MySQL command</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2013-08-28
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        <h2 id="mysql-monitor">MySQL Monitor</h2>
+<h3 id="setting">Setting</h3>
+<pre><code>mysql -u root -h &lt;HOST&gt; -P &lt;PORT&gt; &lt;DATABASE_NAME&gt; -p -A
+</code></pre><h3 id="command">Command</h3>
+<p>每一個 command 最後都要加 ;</p>
+<pre><code>status;
+create database 資料庫名稱;
+drop database 資料庫名稱;
+show databases;
+use 資料庫名稱;
+select database();
+create table 資料表名稱(欄位名稱1 資料型別1,欄位名稱2 資料型別2);
+create table 資料表名稱(欄位名稱1 資料型別1,欄位名稱2 資料型別2) charset=utf8;
+show tables;
+確認資料表的欄位結構
+desc 資料表名稱;
+show create table &lt;table name&gt;
+</code></pre><table>
+<thead>
+<tr>
+<th>欄位1</th>
+<th>欄位2</th>
+<th>欄位3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>資料1</td>
+<td>資料2</td>
+<td>資料3</td>
+</tr>
+</tbody>
+</table>
+<p>寫入資料</p>
+<pre><code>insert into 資料表名稱 (欄位名稱1,欄位名稱2) value(資料1,資料2);
+</code></pre><p>顯示資料</p>
+<pre><code>select 欄位名稱1,欄位名稱2 from 資料表名稱;
+select * from 資料表名稱;
+select * from &lt;table name&gt; limit 5;
+select id,create_time from &lt;table name&gt; limit 5;
+select * from &lt;table name&gt; where id = '123';
+</code></pre><h3 id="資料型別">資料型別</h3>
+<p>int
+float
+double</p>
+<p>顯示欄位型別</p>
+<pre><code>show columns from &lt;table&gt;
+</code></pre><h3 id="字串型別">字串型別</h3>
+<p>varchar &ndash; 最多到255字
+text
+輸入時要加引號
+如要輸入’
+\’</p>
+<h3 id="日期時間型別">日期時間型別</h3>
+<p>datetime&ndash;2011-8-8 00:00:00
+date&ndash;2011-8-8
+year&ndash;2011
+time&ndash;00:00:00</p>
+<p>sql TYPE timestamp</p>
+<pre><code>// PHP
+$timestamp = date(&quot;Y-m-d H:i:s&quot;);
+</code></pre><h3 id="troubleshooting">troubleshooting</h3>
+<p>On Mac
+Q:</p>
+<pre><code>ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
+</code></pre><p>A:
+mysql 沒啟動</p>
+<pre><code>mysql.server start
+</code></pre>
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="http://blog.tedshd.io/posts/2013-08-27-computer-science/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Computer Science
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="http://blog.tedshd.io/posts/2013-08-29-codeigniter-ajaxpost/">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Codeigniter - AJAX(post)
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+<div class="p-strip u-no-padding--bottom is-shallow">
+    <div class="row">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tedshd" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</div>
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2020 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49247550-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

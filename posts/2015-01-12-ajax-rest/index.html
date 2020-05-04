@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>AJAX - REST | tedshd&#39;s DevNote</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='AJAX - REST 在 REST 當道的現在, 不得不了解一下如何實作 CRUD(create, read, update, delete) 本文 server side 以 php 為例子 var xhr = new XMLHttpRequest(); xhr.open(&#39;GET&#39;, &#39;example.html&#39;, true); xhr.onreadystatechange = function() { if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) { document.getElementById(&#39;myDiv&#39;).innerHTML = xhr.responseText; } }; xhr.send(); 上面為一個簡單的'>
+<meta name="keywords" content=''>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="http://blog.tedshd.io/posts/2015-01-12-ajax-rest/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="AJAX - REST" />
+<meta property="og:description" content="AJAX - REST 在 REST 當道的現在, 不得不了解一下如何實作 CRUD(create, read, update, delete) 本文 server side 以 php 為例子 var xhr = new XMLHttpRequest(); xhr.open(&#39;GET&#39;, &#39;example.html&#39;, true); xhr.onreadystatechange = function() { if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) { document.getElementById(&#39;myDiv&#39;).innerHTML = xhr.responseText; } }; xhr.send(); 上面為一個簡單的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.tedshd.io/posts/2015-01-12-ajax-rest/" />
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="article:published_time" content="2015-01-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="AJAX - REST"/>
+<meta name="twitter:description" content="AJAX - REST 在 REST 當道的現在, 不得不了解一下如何實作 CRUD(create, read, update, delete) 本文 server side 以 php 為例子 var xhr = new XMLHttpRequest(); xhr.open(&#39;GET&#39;, &#39;example.html&#39;, true); xhr.onreadystatechange = function() { if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) { document.getElementById(&#39;myDiv&#39;).innerHTML = xhr.responseText; } }; xhr.send(); 上面為一個簡單的"/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="http://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link" href="http://blog.tedshd.io/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="http://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>AJAX - REST</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2015-01-12
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        <h2 id="ajax---rest">AJAX - REST</h2>
+<p>在 <a href="http://zh.wikipedia.org/wiki/REST">REST</a> 當道的現在, 不得不了解一下如何實作 CRUD(create, read, update, delete)
+本文 server side 以 php 為例子</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#e6db74">&#39;example.html&#39;</span>, <span style="color:#66d9ef">true</span>);
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>) {
+        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseText</span>;
+    }
+};
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>();
+</code></pre></div><p>上面為一個簡單的 AJAX 行為</p>
+<p>在此之前須了解在做 AJAX 行為時, 資料是如何跟 request 一起帶到 server side
+大致上有 3 種</p>
+<ul>
+<li>FormData</li>
+<li>application/x-www-form-urlencoded</li>
+<li>payload</li>
+</ul>
+<p>前面 2 種是用傳統的 form 包起來一起帶到 server side
+再經由 php 解析 GET / POST
+由於 php 只有 <code>$_GET</code> &amp; <code>$POST</code> 這無法達到真正的 rest(不過有人硬幹出來 <a href="https://github.com/tronice/epv">tronice/epv</a>)
+所以必須由其他方式實作
+最簡單的實作就是使用 <code>$_SERVER['REQUEST_METHOD']</code> 來捕捉 4 種 request 的 method</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$method = $_SERVER[&#39;REQUEST_METHOD&#39;];
+print_r($method);
+switch($method)
+{
+    case &#34;PUT&#34;:
+        // do somethong
+    break;
+    case &#34;GET&#34;:
+        // do somethong
+    break;
+    case &#34;DELETE&#34;:
+        // do somethong
+    break;
+    case &#34;POST&#34;:
+        // do somethong
+    break;
+}
+</code></pre></div><p>這是最簡單實作 rest 的方式
+目前 php framework 大部份都有實作 rest, 所以也不用擔心加重開發上的負擔</p>
+<h3 id="formdata-or-applicationx-www-form-urlencoded-or-payload">FormData or application/x-www-form-urlencoded or payload?</h3>
+<p>接下來介紹一下這 3 種方式在前後端的行為差異
+相信大家都了解 <code>form</code> 表單 submit
+那在 AJAX 崛起之後把 <code>Content-Type</code> 設定成 <code>application/x-www-form-urlencoded</code> 是一個普遍的做法
+jQuery 也是採用這方式實作的</p>
+<h4 id="setrequestheadercontent-type-applicationx-www-form-urlencoded">setRequestHeader(&lsquo;Content-Type&rsquo;, &lsquo;application/x-www-form-urlencoded&rsquo;)</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ted&#39;</span>,
+        <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;123456&#39;</span>
+    },
+    <span style="color:#a6e22e">jsonData</span>;
+<span style="color:#a6e22e">jsonData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">obj</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;test.php&#39;</span>, <span style="color:#66d9ef">true</span>);
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">setRequestHeader</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;application/x-www-form-urlencoded&#39;</span>);
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>) {
+        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseText</span>;
+    }
+};
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;json=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">jsonData</span>);
+</code></pre></div><h4 id="formdata">FormData</h4>
+<p>之後出現 <code>FormData</code> 這個物件, 它的優勢在於使用比 <code>application/x-www-form-urlencoded</code> 的方式簡單而且 <code>Content-Type</code> 是 <code>multipart/form-data</code> 用 <code>boundary</code> 的方式傳送
+這有一個好處就是可以實作 AJAX 的 file upload, 而不是傳統的 form 表單檔案上傳
+至於 AJAX 上傳的好處就是可以捕捉上傳進度、取消上傳, 做多檔上傳的排程(目前常見的 cloud storage service 幾乎都是這樣做)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
+<span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;str&#39;</span>, <span style="color:#e6db74">&#39;string&#39;</span>);
+<span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;num&#39;</span>, <span style="color:#ae81ff">123</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;test.php&#39;</span>);
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>) {
+        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseText</span>;
+    }
+};
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">formData</span>);
+</code></pre></div><p>以上兩種方式在 PHP 中皆是以 <code>$_GET</code> or <code>$_POST</code> 接下來處理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">if (isset($_POST[&#39;json&#39;]))
+{
+    echo $_POST[&#39;json&#39;];
+}
+if (isset($_POST[&#39;str&#39;]))
+{
+    echo $_POST[&#39;str&#39;];
+}
+if (isset($_POST[&#39;num&#39;]))
+{
+    echo $_POST[&#39;num&#39;];
+}
+</code></pre></div><h4 id="payload">payload</h4>
+<p>這方法是個高端的方法, 第一次遇到這方法是在 AngularJS 上, 不過貌似國外開始漸漸這樣做了
+這有方式個好處, 就是接收端不須經由 <code>$_POST</code> or <code>$_GET</code> 進來, 直接用 <code>file_get_contents(&quot;php://input&quot;)</code> 接收 client 端的 data
+還有效能上的優勢, 因為不經由 <code>$_POST</code> or <code>$_GET</code> 進來可以減少成本增進效能
+在 AngularJS 中會把 <code>Content-Type</code> 指定為 <code>application/json</code> 方便 server side 識別與處理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ted&#39;</span>,
+        <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;123456&#39;</span>
+    },
+    <span style="color:#a6e22e">jsonData</span>;
+<span style="color:#a6e22e">jsonData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">obj</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;test.php&#39;</span>, <span style="color:#66d9ef">true</span>);
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>) {
+        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseText</span>;
+    }
+};
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;json=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">jsonData</span>);
+</code></pre></div><p>在 PHP 必須用 <code>file_get_contents(&quot;php://input&quot;)</code> 來接資料</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$request = file_get_contents(&#34;php://input&#34;);
+var_dump($request);
+$data = json_decode($request);
+echo &#39;&lt;<span style="color:#f92672">br</span>&gt;&#39;;
+echo &#39;data:&#39;;
+echo &#39;&lt;<span style="color:#f92672">br</span>&gt;&#39;;
+echo &#39;User:&#39; . $data-&gt;user;
+echo &#39;&lt;<span style="color:#f92672">br</span>&gt;&#39;;
+echo &#39;Pwd:&#39; . $data-&gt;password;
+</code></pre></div><h3 id="finally">Finally</h3>
+<p>關於使用 FormData 與 payload 處理 file upload 之後會有文章補充</p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="http://blog.tedshd.io/posts/2015-01-10-ajax-xmlhttprequest-introduction/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            AJAX - XMLHttpRequest Introduction
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="http://blog.tedshd.io/posts/2015-01-27-javascript-cross-module-communication/">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            JavaScript - Cross Module Communication
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+<div class="p-strip u-no-padding--bottom is-shallow">
+    <div class="row">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tedshd" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</div>
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2020 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49247550-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>
