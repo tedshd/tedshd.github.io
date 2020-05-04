@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-03-04T17:27:19+08:00" />
+<meta property="og:updated_time" content="2020-05-04T13:53:19+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -192,6 +192,60 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-04-24-pgrest-build-note/">PgREST - build note</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-04-24
+</p>
+                
+
+                
+                <p><h2 id="pgrest---build-note">PgREST - build note</h2>
+<h3 id="githubhttpsgithubcompgrestpgrest"><a href="https://github.com/pgrest/pgrest/">GitHub</a></h3>
+<h2 id="strong-stylecolorredthis-is-mac-os-x-buildstrong"><!-- raw HTML omitted -->This is Mac OS X build<!-- raw HTML omitted --></h2>
+<h3 id="install-postgresql">install PostgreSQL</h3>
+<p><a href="http://postgresapp.com/">postgres.app</a>
+<a href="http://www.tutorialspoint.com/postgresql/index.htm">PostgreSQL Tutorial</a></p>
+<ol>
+<li>set PATH in shell(.bashrc, .zshrc, &hellip;)</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/Applications/Postgres.app/Contents/Versions/9.3/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+</code></pre></div><ol start="2">
+<li>create the plv8 extension</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">-&gt; psql -U Ted_Shiu -c <span style="color:#e6db74">&#34;create extension plv8&#34;</span>
+CREATE EXTENSION
+</code></pre></div><h3 id="install-pgrestmust-install-nodejs-before">install PgREST(Must install node.js before)</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm i -g pgrest
+</code></pre></div><p><a href="http://pgre.st/">Refer - PgREST: Node.js in the Database</a></p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2014-04-07-css-vertical-reset/">CSS - 垂直置中</a></h3>
 
                 
@@ -243,55 +297,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2014-04-07-css-vertical-reset/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-04-05-vim-colorscheme/">Vim - colorscheme</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-04-05
-</p>
-                
-
-                
-                <p><h2 id="vim---colorscheme">Vim - colorscheme</h2>
-<p>Vim 主題</p>
-<ol>
-<li><code>mkdir ~/.vim/colors/</code></li>
-<li>找到 <code>&lt;colorscheme&gt;.vim</code> 並丟到 <code>~/.vim/colors/</code> 即可</li>
-<li>在 <code>.vimrc</code> 設定 <code>colorscheme &lt;colorscheme&gt;</code> 就會變成該主題</li>
-</ol>
-<h3 id="some-colorscheme">Some Colorscheme</h3>
-<p><a href="http://cocopon.me/app/vim-color-gallery/">Vim Colorscheme Gallery</a>
-<a href="https://code.google.com/p/vimcolorschemetest/">vimcolorschemetest</a>
-<a href="http://www.vim.org/scripts/script_search_results.php?keywords=&amp;script_type=color+scheme&amp;order_by=creation_date&amp;direction=descending&amp;search=search">vim online</a>
-<a href="http://vimcolors.com/">Newest - Vim Colors</a></p>
-<p><a href="http://blog.longwin.com.tw/2009/03/choose-vim-color-scheme-2009/">Refer - 挑選 Vim 顏色(Color Scheme)</a></p>
-</p>
-                
-
-                
-
                 
             </div>
         </div>
