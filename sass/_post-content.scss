@@ -1,17 +1,13 @@
 .post-content {
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .3);
+  border: solid 1px #eee;
   table,
   blockquote,
   pre,
   div,
   ul,
   ol,
-  dl,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  dl {
     & + h1 {
       @extend %sp--ph1;
     }
@@ -39,31 +35,15 @@
   }
 
   > hr {
-    margin-top: $sp-unit * 1.5;
-    margin-bottom: $sp-unit * 3.5;
+    margin-top: .75rem;
+    margin-bottom: 1.75rem;
   }
 
   > div {
-    margin-bottom: $sp-unit * 2.2;
+    @extend .u-margin-bottom--small;
   }
 
   .footnotes {
     @extend %sp--ph1;
-  }
-}
-
-.p-aside {
-  @extend .u-sticky;
-}
-
-#TableOfContents {
-  @extend .p-table-of-contents__nav;
-
-  ul {
-    @extend .p-list;
-
-    li a {
-      @extend .p-table-of-contents__link;
-    }
   }
 }
