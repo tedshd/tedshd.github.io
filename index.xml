@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Mon, 04 May 2020 13:53:19 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2020 10:13:23 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何在網頁載入比較大量的資料時增加效能?</title>
+      <link>https://blog.tedshd.io/posts/load_large_table_improve_performance/</link>
+      <pubDate>Thu, 21 May 2020 10:13:23 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/load_large_table_improve_performance/</guid>
+      <description>前言 在後台系統會常遇到的問題就是要呈現大量的資料(表單) 通常在這情況下會有兩種方式呈現資料 分頁 無限滾動 但是這都要在 model 額外做不少工 例如: 處理分</description>
+    </item>
+    
+    <item>
+      <title>php - 載入文字轉成圖片</title>
+      <link>https://blog.tedshd.io/posts/php_load_font_to_image/</link>
+      <pubDate>Thu, 14 May 2020 09:50:42 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/php_load_font_to_image/</guid>
+      <description>需求 讀取一段文字後 可以決定字型 最後要轉成圖片 使用的工具 php7.2 freetype 提前說明需要用到 GD(這通常預設就啟動了) freetype 通常會需要另外安裝 如何先檢查有沒有 GD 和</description>
+    </item>
     
     <item>
       <title>Google search result with structured data</title>

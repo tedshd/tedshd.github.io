@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-04T13:53:19+08:00" />
+<meta property="og:updated_time" content="2020-05-21T10:13:23+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1063,6 +1063,14 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1079,7 +1087,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2019-03-25-vue-vue-cli-note/">Vue - Vue cli note</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2019-06-19-mac-php-redis-install/">Mac - php redis install</a></h3>
 
                 
                 
@@ -1089,45 +1097,52 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2019-03-25
+2019-06-19
 </p>
                 
 
                 
-                <p><h2 id="vue---vue-cli-note">Vue - Vue cli note</h2>
-<p><a href="https://cli.vuejs.org/">https://cli.vuejs.org/</a></p>
-<h3 id="vuetify">vuetify</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vue create &lt;project folder name&gt;
+                <p><h2 id="mac---php-redis-install">Mac - php redis install</h2>
+<h3 id="mac-env">Mac Env</h3>
+<p>Mac OSX 10.14.5</p>
+<h3 id="step">Step</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://www.github.com/phpredis/phpredis.git
 
-cd &lt;project folder name&gt;
+cd phpredis
 
-vue add vuetify
+phpize <span style="color:#f92672">&amp;&amp;</span> ./configure <span style="color:#f92672">&amp;&amp;</span> make <span style="color:#f92672">&amp;&amp;</span> sudo make install
+</code></pre></div><p><strong>test</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">php -r <span style="color:#e6db74">&#34;if (new Redis() == true){ echo \&#34;\r\n OK \r\n\&#34;; }&#34;</span>
+</code></pre></div><h3 id="troubleshooting">Troubleshooting</h3>
+<h4 id="phpize">phpize</h4>
+<p>1.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ phpize
+grep: /usr/include/php/main/php.h: No such file or directory
+grep: /usr/include/php/Zend/zend_modules.h: No such file or directory
+grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory
+Configuring <span style="color:#66d9ef">for</span>:
+PHP Api Version:
+Zend Module Api No:
+Zend Extension Api No:
+</code></pre></div><p><strong>Solution</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /Library/Developer/CommandLineTools/Packages/
 
-npm run serve
-</code></pre></div><h3 id="use-spa">Use SPA</h3>
-<p>App.vue</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">router-view</span>&gt;&lt;/<span style="color:#f92672">router-view</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;App&#39;</span>,
-  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
-  },
-  <span style="color:#a6e22e">data</span> () {
-    <span style="color:#66d9ef">return</span> {
-    }
-  }
-}
-&lt;/<span style="color:#f92672">script</span>&gt;
-
-</code></pre></div></p>
+open macOS_SDK_headers_for_macOS_10.14.pkg
+</code></pre></div><p>2.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ phpize
+Cannot find autoconf. Please check your autoconf installation and the $PHP_AUTOCONF environment variable. Then, rerun this script.
+</code></pre></div><p><strong>Solution</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install autoconf
+</code></pre></div><p><a href="https://stackoverflow.com/questions/51908004/install-phpredis-mac-osx">Refer - install-phpredis-mac-osx</a></p>
+<p><a href="https://zhile.io/2018/09/26/macOS-10.14-install-sdk-headers.html">Refer - macOS 10.14软件编译时找不到头文件的解决方法</a></p>
+<p><a href="http://www.mayanlong.com/archives/2016/349.html">Refer - macOS 中使用 phpize 动态添加 PHP 扩展的错误解决方法</a></p>
+</p>
                 
 
                 
 
+                
+                <p><a href="https://blog.tedshd.io/posts/2019-06-19-mac-php-redis-install/">Read more</a></p>
                 
             </div>
         </div>
@@ -1144,7 +1159,7 @@ npm run serve
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">JavaScript - 半形 全形 轉換</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2019-06-14-golang-gvm-golang-version-manger/">Golang - gvm Golang version manger</a></h3>
 
                 
                 
@@ -1154,40 +1169,48 @@ npm run serve
 <span class=" u-capitalized ">
     on
 </span>
-2019-01-30
+2019-06-14
 </p>
                 
 
                 
-                <p><h2 id="javascript---半形-全形-轉換">JavaScript - 半形 全形 轉換</h2>
-<p>因為一個奇怪的需求?</p>
-<p>需要把使用者輸入的東西轉成可以方便驗證的格式(這應該後端做吧?)</p>
-<p>反正因為以前也做過半形轉成全形(痛苦的回憶, 為啥政府的 opendata 各縣市格式不一致就算了, 竟然還有全形半形的問題&hellip;)</p>
-<p>這邊就簡單的只針對最前面的基本拉丁字母字元符號集作轉換</p>
-<p>因為大部分的需求應該這樣就可以應付了?</p>
-<p>但是空白字元要特殊處理</p>
-<p>那接下來只要知道需要轉換的字元範圍即可</p>
-<p>全形從 <code>U+FF01</code> 到 <code>U+FF5E</code></p>
-<p>半形從 <code>U+0021</code> 到 <code>U+007E</code></p>
-<p>把 16 進制轉換回來就是</p>
-<p>65281 到 65374</p>
-<p>33 到 126</p>
-<p>上述怎麼轉的?</p>
-<p>就是這樣</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">parseInt(<span style="color:#e6db74">&#39;0xFF01&#39;</span>, <span style="color:#ae81ff">16</span>)
-</code></pre></div><p>只要判斷輸入的字元這這些編碼區間就進行轉換</p>
-<p><a href="https://tedshd.io/demo/trans.html">trans char</a></p>
-<p>所以簡單做了一個 demo 頁面</p>
-<p>程式檢視原始碼即可</p>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%85%A8%E5%BD%A2%E5%92%8C%E5%8D%8A%E5%BD%A2">Refer - Wiki</a></p>
-<p><a href="https://blog.longwin.com.tw/2013/12/unicode-utf8-char-range-table-2013/">Refer - Unicode / UTF-8 字元編碼區間表 - 2013</a></p>
+                <p><h2 id="gvm">gvm</h2>
+<h3 id="intro">Intro</h3>
+<p><a href="https://github.com/moovweb/gvm">gvm</a></p>
+<p>Golang version manger</p>
+<h3 id="usage">Usage</h3>
+<ol>
+<li>Install</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bash &lt; &lt;<span style="color:#f92672">(</span>curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer<span style="color:#f92672">)</span>
+</code></pre></div><ol start="2">
+<li>Add to .bashrc or .zshrc</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># added gvm command to shell</span>
+source <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.gvm/scripts/gvm</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#75715e"># directory path for GO</span>
+export GOPATH<span style="color:#f92672">=</span>$HOME/gopath
+export GOROOT<span style="color:#f92672">=</span>$HOME/go
+export PATH<span style="color:#f92672">=</span>$PATH:$GOROOT/bin
+</code></pre></div><ol start="3">
+<li>Install go</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gvm install go1.4 -B
+gvm use go1.4
+export GOROOT_BOOTSTRAP<span style="color:#f92672">=</span>$GOROOT
+gvm install go1.9
+</code></pre></div><ol start="4">
+<li>Finall add command to .bashrc or .zshrc</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gvm use go1.9
+</code></pre></div><p><a href="https://codingluka.com/gvm-in-osx/">Refer - Go - 在 OSX 安裝 GVM</a></p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2019-06-14-golang-gvm-golang-version-manger/">Read more</a></p>
                 
             </div>
         </div>

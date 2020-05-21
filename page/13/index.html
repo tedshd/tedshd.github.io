@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-04T13:53:19+08:00" />
+<meta property="og:updated_time" content="2020-05-21T10:13:23+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -192,7 +192,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2018-11-21-javascript-calculate-exposure-of-web-page-components/">JavaScript - 計算網頁元件的曝光</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2018-12-26-chrome-headless-research-notes/">Chrome headless 研究筆記</a></h3>
 
                 
                 
@@ -202,66 +202,79 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2018-11-21
+2018-12-26
 </p>
                 
 
                 
-                <p><h2 id="javascript---計算網頁元件的曝光">JavaScript - 計算網頁元件的曝光</h2>
-<p>因為某些需求需要精確計算某些網頁上的 UI 元件的曝光</p>
-<p>沒錯</p>
-<p>就是要像廣告計算 impression 一樣</p>
-<p>之前只要確認有該元件的 request 就好了</p>
-<p>但是為了精確追求計算曝光, 所以必須做到像 Google Ad 一樣</p>
-<p>要到該網頁元件讓使用者看到後才能計算曝光</p>
-<p>聽起來這要求不太容易</p>
-<p>但是實作下去其實發現還好誒!!</p>
-<h3 id="概念">概念</h3>
-<p>DOM 元件進入可視範圍觸發 impression</p>
-<p>所以需要能夠釐清一些問題</p>
+                <p><h2 id="chrome-headless-研究筆記">Chrome headless 研究筆記</h2>
+<p>最近要用到 chrome headless 的部分功能</p>
+<p>且得在 ubuntu or debian server 實踐</p>
+<p>所以筆記一下</p>
+<h3 id="intro">Intro</h3>
+<p>headless 大致分兩種用法</p>
 <ol>
 <li>
-<p>如何確認可視範圍?</p>
+<p>CLI</p>
 </li>
 <li>
-<p>如何確認要記錄 impression 的 DOM 元件在可視範圍?</p>
-</li>
-<li>
-<p>如何在進入可視範圍時觸發?</p>
+<p>libary</p>
 </li>
 </ol>
-<p>看似困難</p>
-<p>但是如果熟悉 JavaScript Window 物件和 DOM 物件的話就會發現很好解</p>
-<h3 id="實作">實作</h3>
-<h4 id="如何確認可視範圍">如何確認可視範圍?</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
+<p><a href="https://developers.google.com/web/updates/2017/04/headless-chrome">Refer - Getting Started with Headless Chrome</a></p>
+<p>CLI 用法簡單但是受限很多且沒有找到具體詳細完整的文件, 就連用 man 查都查不到&hellip;</p>
+<p>也有可能是我自己沒有認真找</p>
+<p>libary 就相對容易, 連 Google 自己都有提供部分語言的版本, 且有前端工程師很熟的 Node 版本</p>
+<h3 id="on-ubuntu-server">on ubuntu server</h3>
+<pre><code>sudo apt-get install chromium-browser
+</code></pre><p>ex:</p>
+<pre><code>chromium-browser --headless --screenshot=test.png --disable-gpu --window-size=320,480 --user-agent=&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D257 Safari/9537.53&quot; http://tedshd.logdown.com
+</code></pre><p>這指令下了截圖, 設定寬高, 模擬 UserAgent</p>
+<p>當然也有 <code>--dump-dom</code> 可以看 source code</p>
+<h3 id="使用-puppeteer-處理">使用 puppeteer 處理</h3>
+<p><a href="https://github.com/GoogleChrome/puppeteer">puppeteer</a></p>
+<p>puppeteer 是 Google 維護的用 node 處理 headless 的套件</p>
+<p>用了一下真是感到清爽好用</p>
+<p>放一段最簡單的 smaple code</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">puppeteer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;puppeteer&#39;</span>);
 
-window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span>
-</code></pre></div><p>完美解決</p>
-<h4 id="如何確認要記錄-impression-的-dom-元件在可視範圍">如何確認要記錄 impression 的 DOM 元件在可視範圍?</h4>
-<pre><code>&lt;DOM Object&gt;.getBoundingClientRect();
-</code></pre><p>完美解決</p>
-<p>但是要取到對應可是範圍的位置建議使用(<code>top</code>, <code>left</code>), <code>x</code> <code>y</code> IE 和 Edge 不支援</p>
-<p>還有一點要注意就是該 DOM 要先長在 browser 上面且不是 <code>display: none</code> 的狀態才能拿到值</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect">Refer - Element.getBoundingClientRect() - Web API 接口 | MDN</a></p>
-<p><a href="https://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx">Refer - ClientRect object (Internet Explorer)</a></p>
-<h4 id="如何在進入可視範圍時觸發">如何在進入可視範圍時觸發?</h4>
-<p>這就得取決於使用情境了</p>
-<p>在適當的 Event 去觸發</p>
-<p>Ex:</p>
-<p>在 list view 時就單純的用 scroll 事件觸發確認是否是進入可視範圍(當然得做 debounce 處理)</p>
-<p>在 carousel view 就滑動或點擊觸發轉動時確認是否是進入可視範圍(如果有做動畫效果, 得等到動畫效果結束再去確認)</p>
-<h3 id="結論">結論</h3>
-<p>熟悉基本 API 後就可以很輕鬆地解決很多問題 XD</p>
-<p>最後附上包好的套件</p>
-<p><a href="https://github.com/tedshd/impression">GitHub - impression</a></p>
+(<span style="color:#a6e22e">async</span> () =&gt; {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">browser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">puppeteer</span>.<span style="color:#a6e22e">launch</span>();
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">page</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">browser</span>.<span style="color:#a6e22e">newPage</span>();
+    <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">setUserAgent</span>(<span style="color:#e6db74">&#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:64.0) Gecko/20100101 Firefox/64.0&#39;</span>);
+		<span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#66d9ef">goto</span>(<span style="color:#e6db74">&#39;https://tysh310246.blogspot.com&#39;</span>);
+
+    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">screenshot</span>({<span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;example.png&#39;</span>, <span style="color:#a6e22e">fullPage</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>});
+    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">browser</span>.<span style="color:#a6e22e">close</span>();
+
+})();
+</code></pre></div><p>就是如此清爽</p>
+<p>且有很多包好的 function 可以用</p>
+<p>看了一下文件根本可以用 headless 取代 selenium + webdriver.io 了</p>
+<p>但是目前的需求也不需要用到太多其他的功能</p>
+<p>有空再慢慢研究</p>
+<p><a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md">Puppeteer API Tip-Of-Tree</a></p>
+<h3 id="字型">字型</h3>
+<p>在一台 server 上除非要截的網站是用 webfont 不然就會發現截的圖因為沒有字型所以中文會是方塊字</p>
+<p>這部分就得處理一下</p>
+<p>可以直接裝 Google 的 noto 字型</p>
+<pre><code>wget -c https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip
+</code></pre><p>把字型檔載下來放在</p>
+<pre><code>/usr/local/share/fonts/
+</code></pre><p>設定 owner</p>
+<p>設定權限</p>
+<p>安裝字型</p>
+<pre><code>sudo fc-cache -fv
+</code></pre><p>搞定</p>
+<p>這邊建議直接裝全部語系的字型較為完整, 以免會遇到其他語系還是會有問題</p>
+<p><a href="http://samwhelp.github.io/blog/read/linux/ubuntu/font/font-noto/">Refer - Ubuntu環境下，手動安裝思源字型</a></p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2018-11-21-javascript-calculate-exposure-of-web-page-components/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2018-12-26-chrome-headless-research-notes/">Read more</a></p>
                 
             </div>
         </div>
@@ -278,7 +291,7 @@ window.document.<span style="color:#a6e22e">documentElement</span>.<span style="
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2018-11-16-mac-get-file-user-name/">Mac - Get file user(owner) name &amp; user id</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2018-12-18-2018-google-cloud-training-camp-notes/">2018 Google cloud 訓練營 筆記</a></h3>
 
                 
                 
@@ -288,34 +301,232 @@ window.document.<span style="color:#a6e22e">documentElement</span>.<span style="
 <span class=" u-capitalized ">
     on
 </span>
-2018-11-16
+2018-12-18
 </p>
                 
 
                 
-                <p><h2 id="mac---get-file-user-name--user-id">Mac - Get file user name &amp; user id</h2>
-<h3 id="get-file-owner-name">Get file owner name</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">stat -f <span style="color:#e6db74">&#39;%Su&#39;</span> &lt;file or folder name&gt;
-</code></pre></div><h3 id="get-user-id">Get user id</h3>
-<h4 id="show-user">show user</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">id
-// or
-id &lt;user name&gt;
-</code></pre></div><h4 id="get-uid">get uid</h4>
-<pre><code>id -u
-// or
-id -u &lt;user name&gt;
-</code></pre><h3 id="get-file-owner-uid">get file owner uid</h3>
-<p><del>stat -f &lsquo;%Su&rsquo; <code>&lt;file or folder name&gt;</code> | xargs id -u</del></p>
-<pre><code>stat -f '%u' &lt;file or folder name&gt;
-</code></pre><p><a href="https://my.oschina.net/leopardsaga/blog/112335">Refer - 将Linux命令的结果作为下一个命令的参数</a></p>
+                <p><h1 id="2018-google-cloud-訓練營-筆記">2018 Google cloud 訓練營 筆記</h1>
+<p><a href="https://google.qwiklabs.com/quests/23?locale=en">Become a Google Cloud Platform expert with hands-on training. GCP Essentials</a></p>
+<h2 id="gcloud-cli">Gcloud cli</h2>
+<h3 id="project_id">PROJECT_ID:</h3>
+<pre><code>gcloud auth list
+
+gcloud config list project
+</code></pre><h3 id="basic">BASIC</h3>
+<pre><code>gcloud -h
+
+gcloud config --help || gcloud help config
+
+gcloud config list --all
+</code></pre><h2 id="managing-cloud-storage-data">Managing Cloud Storage data</h2>
+<p>Try creating a Cloud Storage bucket. Bucket names must be unique, so replace unique-name with something else, or append the name to make it unique.</p>
+<pre><code>gsutil mb gs://&lt;unique-name&gt;
+</code></pre><p>Upload file to bucket</p>
+<pre><code>gsutil cp &lt;file&gt; gs://&lt;unique-name&gt;
+</code></pre><h2 id="create-a-new-persistent-disk">Create a new persistent disk</h2>
+<p>Because we want to attach this disk to the virtual machine instance we created in the previous step, the zone must be the same.</p>
+<pre><code>gcloud compute disks create &lt;mydisk name&gt; --size=200GB \ --zone us-central1-c
+</code></pre><p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-12-18%20%E4%B8%8A%E5%8D%8811.31.26.png?alt=media&amp;token=7170d434-2bd3-46de-ba25-b9733ba9880f" alt=""></p>
+<h3 id="attaching-a-disk">Attaching a disk</h3>
+<p>Attaching the persistent disk</p>
+<p>You can attach a disk to a running virtual machine. Let&rsquo;s attach the new disk (mydisk) to the virtual machine instance you just created (gcelab).</p>
+<p>gcloud compute instances attach-disk <!-- raw HTML omitted --> &ndash;disk <!-- raw HTML omitted --> &ndash;zone us-central1-c</p>
+<h3 id="finding-the-persistent-disk-in-the-virtual-machine">Finding the persistent disk in the virtual machine</h3>
+<p>The persistent disk is now available as a block device in the virtual machine instance. Let&rsquo;s take a look.</p>
+<p>go to this instance</p>
+<pre><code>ls -l /dev/disk/by-id/
+</code></pre><p>You found the file, the default name is:</p>
+<pre><code>scsi-0Google_PersistentDisk_persistent-disk-1.
+</code></pre><p>If you want a different device name, when you attach the disk, you would specify the device-name parameter. For example, to specify a device name, when you attach the disk you would use the command:</p>
+<pre><code>gcloud compute instances attach-disk gcelab --disk mydisk --device-name &lt;YOUR_DEVICE_NAME&gt; --zone us-central1-c
+</code></pre><h3 id="formatting-and-mounting-the-persistent-disk">Formatting and mounting the persistent disk</h3>
+<p>Once you find the block device, you can partition the disk, format it, and then mount it using the following Linux utilities:</p>
+<ul>
+<li>mkfs: creates a filesystem</li>
+<li>mount: attaches to a filesystem</li>
+</ul>
+<p>Make a mount point:</p>
+<pre><code>sudo mkdir /mnt/mydisk
+</code></pre><p>Next, format the disk with a single ext4 filesystem using the mkfs tool. This command deletes all data from the specified disk:</p>
+<pre><code>sudo mkfs.ext4 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1
+</code></pre><p>Last lines of the output.</p>
+<pre><code>Allocating group tables: done
+Writing inode tables: done
+Creating journal (262144 blocks): done
+Writing superblocks and filesystem accounting information: done
+</code></pre><p>Now use the mount tool to mount the disk to the instance with the discard option enabled:</p>
+<pre><code>sudo mount -o discard,defaults /dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1 /mnt/mydisk
+</code></pre><p>Q: Can you prevent the destruction of an attached persistent disk when the instance is deleted?</p>
+<p>A: Yes, deselect the option <code>Delete boot disk when instance is deleted</code> when creating an instance</p>
+<p>A:Yes, use the <code>–keep-disks</code> option with the <code>gcloud compute instances delete</code> command</p>
+<p>Q: For migrating data from a persistent disk to another region, reorder the following steps in which they should be performed:</p>
+<ol>
+<li>Unmount file system(s)</li>
+<li>Create snapshot</li>
+<li>Create disk</li>
+<li>Create instance</li>
+<li>Attach disk</li>
+</ol>
+<h2 id="hello-node-kubernetes">Hello Node Kubernetes</h2>
+<p>push docker image to instance</p>
+<pre><code>gcloud docker -- push gcr.io/&lt;PROJECT_ID&gt;/&lt;hello-node&gt;:&lt;v1&gt;
+</code></pre><p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-12-18%20%E4%B8%8B%E5%8D%881.31.39.png?alt=media&amp;token=954769f2-dd42-4586-bf25-9a65b7662012" alt=""></p>
+<h3 id="create-your-cluster">Create your cluster</h3>
+<pre><code>gcloud config set project &lt;PROJECT_ID&gt;
+</code></pre><p>Create a cluster with two n1-standard-1 nodes (this will take a few minutes to complete):</p>
+<pre><code>gcloud container clusters create &lt;cluster name&gt; \
+                --num-nodes 2 \
+                --machine-type n1-standard-1 \
+                --zone us-central1-a
+</code></pre><p>Note: You can also create this cluster through the Console, image shown above: Kubernetes Engine &gt; Kubernetes clusters &gt; Create cluster.</p>
+<p><strong>It is recommended to create the cluster in the same zone as the storage bucket used by the container registry (see previous step).</strong></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-12-18%20%E4%B8%8B%E5%8D%881.42.05.png?alt=media&amp;token=116b1f1c-9aa7-41b4-b34b-2104216d375d" alt=""></p>
+<h3 id="create-your-pod">Create your pod</h3>
+<p>A Kubernetes pod is a group of containers tied together for administration and networking purposes. It can contain single or multiple containers. Here you&rsquo;ll use one container built with your Node.js image stored in your private container registry. It will serve content on port 8080.</p>
+<p>Create a pod with the kubectl run command (replace PROJECT_ID with your GCP Project ID, found in the console and in the Connection Details section of the lab):</p>
+<pre><code>kubectl run &lt;hello-node&gt; \
+    --image=gcr.io/&lt;PROJECT_ID&gt;/&lt;hello-node&gt;:v1 \
+    --port=8080
+</code></pre><p><!-- raw HTML omitted -->hello-node is container image name<!-- raw HTML omitted --></p>
+<p>To view the deployment, run:</p>
+<pre><code>kubectl get deployments
+</code></pre><p>To view the pod created by the deployment, run:</p>
+<pre><code>kubectl get pods
+</code></pre><pre><code>kubectl cluster-info
+</code></pre><p><a href="https://kubernetes.io/docs/reference/kubectl/overview/">Overview of kubectl</a></p>
+<p>And for troubleshooting :</p>
+<pre><code>kubectl get events
+
+kubectl logs &lt;pod-name&gt;
+</code></pre><h3 id="allow-external-traffic">Allow external traffic</h3>
+<p>By default, the pod is only accessible by its internal IP within the cluster. In order to make the hello-node container accessible from outside the Kubernetes virtual network, you have to expose the pod as a Kubernetes service.(預設只有內部 IP 可以讀取)</p>
+<p>From Cloud Shell you can expose the pod to the public internet with the kubectl expose command combined with the &ndash;type=&quot;LoadBalancer&rdquo; flag. This flag is required for the creation of an externally accessible IP:</p>
+<pre><code>kubectl expose deployment &lt;container image name&gt; --type=&quot;LoadBalancer&quot;
+</code></pre><p>To find the publicly-accessible IP address of the service, request kubectl to list all the cluster services:</p>
+<pre><code>kubectl get services
+</code></pre><p>This is the output you should see:</p>
+<pre><code>NAME         CLUSTER-IP     EXTERNAL-IP      PORT(S)    AGE
+hello-node   10.3.250.149   104.154.90.147   8080/TCP   1m
+kubernetes   10.3.240.1     &lt;none&gt;           443/TCP    5m
+</code></pre><p>open <code>104.154.90.147:8080</code></p>
+<h3 id="scale-up-your-service">Scale up your service</h3>
+<p>One of the powerful features offered by Kubernetes is how easy it is to scale your application. Suppose you suddenly need more capacity for your application. You can tell the replication controller to manage a new number of replicas for your pod:</p>
+<pre><code>kubectl scale deployment &lt;hello-node&gt; --replicas=4
+</code></pre><p>You can request a description of the updated deployment:</p>
+<pre><code>kubectl get deployment
+</code></pre><p>You can also list the all pods:</p>
+<pre><code>kubectl get pods
+</code></pre><h3 id="roll-out-an-upgrade-to-your-service">Roll out an upgrade to your service</h3>
+<p>At some point the application that you&rsquo;ve deployed to production will require bug fixes or additional features. Kubernetes helps you deploy a new version to production without impacting your users.</p>
+<p>Modify files &amp; rebuild &amp; push</p>
+<pre><code>docker build -t gcr.io/&lt;PROJECT_ID&gt;/&lt;hello-node&gt;:v2 .
+gcloud docker -- push gcr.io/&lt;PROJECT_ID&gt;/&lt;hello-node&gt;:v2
+</code></pre><p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-12-18%20%E4%B8%8B%E5%8D%882.13.30.png?alt=media&amp;token=f3bf4752-a5f5-48d0-881e-224ecdff6858" alt=""></p>
+<p>New version image</p>
+<p>To do this, use the kubectl edit command. It opens a text editor displaying the full deployment yaml configuration. It isn&rsquo;t necessary to understand the full yaml config right now, just understand that by updating the spec.template.spec.containers.image field in the config you are telling the deployment to update the pods with the new image.</p>
+<pre><code>kubectl edit deployment &lt;hello-node&gt;
+</code></pre><p>Modify <code>image</code> &amp; save</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-12-18%20%E4%B8%8B%E5%8D%882.19.57.png?alt=media&amp;token=02c0746c-cc40-4f9e-9886-70f59d9a8d1a" alt=""></p>
+<p>Run the following to update the deployment with the new image. New pods will be created with the new image and the old pods will be deleted.</p>
+<pre><code>kubectl get deployments
+</code></pre><p>While this is happening, the users of your services shouldn&rsquo;t see any interruption. After a little while they&rsquo;ll start accessing the new version of your application. You can find more details on rolling updates in <a href="https://kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/">this documentation</a>.</p>
+<p>Hopefully with these deployment, scaling, and updated features, once you&rsquo;ve set up your Kubernetes Engine cluster, you&rsquo;ll agree that Kubernetes will help you focus on the application rather than the infrastructure.</p>
+<h2 id="set-up-network-and-http-load-balancers">Set Up Network and HTTP Load Balancers</h2>
+<p>In this hands-on lab, you&rsquo;ll learn the differences between a network load balancer and a HTTP load balancer, and how to set them up for your applications running on Google Compute Engine virtual machines.</p>
+<p>There are several ways you can load balance in Google Cloud Platform. This lab takes you through the setup of the following load balancers.:</p>
+<ul>
+<li>L3 <a href="https://cloud.google.com/compute/docs/load-balancing/network/">Network Load Balancer</a></li>
+<li>L7 <a href="https://cloud.google.com/compute/docs/load-balancing/http/">HTTP(s) Load Balancer</a></li>
+</ul>
+<h3 id="set-the-default-region-and-zone-for-all-resources">Set the default region and zone for all resources</h3>
+<p>In Cloud Shell, set the default zone:</p>
+<pre><code>gcloud config set compute/zone us-central1-a
+</code></pre><p>Set the default region:</p>
+<pre><code>gcloud config set compute/region us-central1
+</code></pre><p><a href="https://cloud.google.com/compute/docs/regions-zones/">Regions &amp; Zones documentation</a></p>
+<h3 id="create-multiple-web-server-instances">Create multiple web server instances</h3>
+<p>To simulate serving from a cluster of machines, create a simple cluster of Nginx web servers to serve static content using <strong>Instance Templates</strong> and <strong>Managed Instance Groups</strong>. Instance Templates define the look of every virtual machine in the cluster (disk, CPUs, memory, etc). Managed Instance Groups instantiate a number of virtual machine instances using the Instance Template.</p>
+<p>To create the Nginx web server clusters, create the following:</p>
+<ul>
+<li>A startup script to be used by every virtual machine instance to setup Nginx server upon startup</li>
+<li>An instance template to use the startup script</li>
+<li>A target pool</li>
+<li>A managed instance group using the instance template</li>
+</ul>
+<p>Still in Cloud Shell, create a startup script to be used by every virtual machine instance. This script sets up the Nginx server upon startup:</p>
+<pre><code>cat &lt;&lt; EOF &gt; startup.sh
+#! /bin/bash
+apt-get update
+apt-get install -y nginx
+service nginx start
+sed -i -- 's/nginx/Google Cloud Platform - '&quot;\$HOSTNAME&quot;'/' /var/www/html/index.nginx-debian.html
+EOF
+</code></pre><p>Create an instance template, which uses the startup script:</p>
+<pre><code>gcloud compute instance-templates create nginx-template \
+         --metadata-from-file startup-script=startup.sh
+</code></pre><p>Create a target pool. A target pool allows a single access point to all the instances in a group and is necessary for load balancing in the future steps.</p>
+<pre><code>gcloud compute target-pools create nginx-pool
+</code></pre><p>Create a managed instance group using the instance template:</p>
+<pre><code>gcloud compute instance-groups managed create nginx-group \
+         --base-instance-name nginx \
+         --size 2 \
+         --template nginx-template \
+         --target-pool nginx-pool \
+</code></pre><p>List instance</p>
+<pre><code>gcloud compute instances list
+</code></pre><p>Now configure a firewall so that you can connect to the machines on port 80 via the EXTERNAL_IP addresses:</p>
+<pre><code>gcloud compute firewall-rules create www-firewall --allow tcp:80
+</code></pre><h3 id="create-a-network-load-balancer">Create a Network Load Balancer</h3>
+<p>Network load balancing allows you to balance the load of your systems based on incoming IP protocol data, such as address, port, and protocol type. You also get some options that are not available, with HTTP(S) load balancing. For example, you can load balance additional TCP/UDP-based protocols such as SMTP traffic. And if your application is interested in TCP-connection-related characteristics, network load balancing allows your app to inspect the packets, where HTTP(S) load balancing does not.</p>
+<p>For more information, see <a href="https://cloud.google.com/compute/docs/load-balancing/network/">Setting Up Network Load Balancing</a>.</p>
+<p>Create an L3 network load balancer targeting your instance group:</p>
+<pre><code>gcloud compute forwarding-rules create nginx-lb \
+         --region us-central1 \
+         --ports=80 \
+         --target-pool nginx-pool
+</code></pre><p>List all Google Compute Engine forwarding rules in your project.</p>
+<pre><code>gcloud compute forwarding-rules list
+</code></pre><h3 id="create-a-https-load-balancer">Create a HTTP(s) Load Balancer</h3>
+<p>HTTP(S) load balancing provides global load balancing for HTTP(S) requests destined for your instances. You can configure URL rules that route some URLs to one set of instances and route other URLs to other instances. Requests are always routed to the instance group that is closest to the user, provided that group has enough capacity and is appropriate for the request. If the closest group does not have enough capacity, the request is sent to the closest group that does have capacity.</p>
+<p>Learn more about the <a href="https://cloud.google.com/compute/docs/load-balancing/http/">HTTP(s) Load Balancer in the documentation</a>.</p>
+<p>First, create a health check. Health checks verify that the instance is responding to HTTP or HTTPS traffic:</p>
+<pre><code>gcloud compute http-health-checks create http-basic-check
+</code></pre><p>Define an HTTP service and map a port name to the relevant port for the instance group. Now the load balancing service can forward traffic to the named port:</p>
+<pre><code>gcloud compute instance-groups managed \
+       set-named-ports nginx-group \
+       --named-ports http:80
+</code></pre><p>Create a <a href="https://cloud.google.com/compute/docs/reference/latest/backendServices">backend service</a>:</p>
+<pre><code>gcloud compute backend-services create nginx-backend \
+      --protocol HTTP --http-health-checks http-basic-check --global
+</code></pre><p>Add the instance group into the backend service:</p>
+<pre><code>gcloud compute backend-services add-backend nginx-backend \
+    --instance-group nginx-group \
+    --instance-group-zone us-central1-a \
+    --global
+</code></pre><p>Create a default URL map that directs all incoming requests to all your instances:</p>
+<pre><code>gcloud compute url-maps create web-map \
+    --default-service nginx-backend
+</code></pre><p>To direct traffic to different instances based on the URL being requested, see <a href="https://cloud.google.com/compute/docs/load-balancing/http/content-based-example">content-based routing</a>.</p>
+<p>Create a target HTTP proxy to route requests to your URL map:</p>
+<pre><code>gcloud compute target-http-proxies create http-lb-proxy \
+    --url-map web-map
+</code></pre><p>Create a global forwarding rule to handle and route incoming requests. A forwarding rule sends traffic to a specific target HTTP or HTTPS proxy depending on the IP address, IP protocol, and port specified. The global forwarding rule does not support multiple ports.</p>
+<pre><code>gcloud compute forwarding-rules create http-content-rule \
+        --global \
+        --target-http-proxy http-lb-proxy \
+        --ports 80
+</code></pre><p>After creating the global forwarding rule, it can take several minutes for your configuration to propagate.</p>
+<pre><code>gcloud compute forwarding-rules list
+</code></pre><h2 id="finally">Finally</h2>
+<p><a href="https://google.qwiklabs.com/public_profiles/041a2178-a884-4c58-8d19-29612e95164c">GCP Essentials</a></p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2018-11-16-mac-get-file-user-name/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2018-12-18-2018-google-cloud-training-camp-notes/">Read more</a></p>
                 
             </div>
         </div>

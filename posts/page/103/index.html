@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-04T13:53:19+08:00" />
+<meta property="og:updated_time" content="2020-05-21T10:13:23+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1063,6 +1063,14 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1079,7 +1087,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-23-gitconfig/">gitconfig</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-27-vim-config-in-mac/">Vim config in Mac</a></h3>
 
                 
                 
@@ -1089,43 +1097,21 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2013-08-23
+2013-08-27
 </p>
                 
 
                 
-                <p><h2 id="gitconfig">gitconfig</h2>
-<p>Mac gitconfig
-path</p>
-<pre><code>~/.gitconfig
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>user<span style="color:#f92672">]</span>
-		name <span style="color:#f92672">=</span> tedshd
-		email <span style="color:#f92672">=</span> tedshd@gmail.com
-<span style="color:#f92672">[</span>alias<span style="color:#f92672">]</span>
-		st <span style="color:#f92672">=</span> status
-		co <span style="color:#f92672">=</span> checkout
-		br <span style="color:#f92672">=</span> branch
-		d <span style="color:#f92672">=</span> difftool
-<span style="color:#f92672">[</span>color<span style="color:#f92672">]</span>
-		diff <span style="color:#f92672">=</span> auto
-		status <span style="color:#f92672">=</span> auto
-		branch <span style="color:#f92672">=</span> auto
-		ui <span style="color:#f92672">=</span> auto
-<span style="color:#f92672">[</span>credential<span style="color:#f92672">]</span>
-		helper <span style="color:#f92672">=</span> osxkeychain
-<span style="color:#f92672">[</span>push<span style="color:#f92672">]</span>
-		default <span style="color:#f92672">=</span> simple
-<span style="color:#f92672">[</span>core<span style="color:#f92672">]</span>
-		editor <span style="color:#f92672">=</span> vim
-<span style="color:#f92672">[</span>diff<span style="color:#f92672">]</span>
-		tool <span style="color:#f92672">=</span> vimdiff
-<span style="color:#f92672">[</span>difftool<span style="color:#f92672">]</span>
-		prompt <span style="color:#f92672">=</span> false
-</code></pre></div><p>vim diff</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git d
-</code></pre></div><p>terminal</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git diff
-</code></pre></div></p>
+                <p><h2 id="some-different-in-mac">Some different in Mac</h2>
+<h3 id="pagedown-pageup-home-end">PageDown, PageUp, Home, End</h3>
+<p>It is not useful in setting vimrc.</p>
+<p><strong>Solution</strong>
+Terminal-&gt;Preference-&gt;KeyBoard</p>
+<pre><code class="language-config" data-lang="config">Home:     \033[1~
+End:      \033[4~
+PageUp:   \033[5~
+PageDown: \033[6~
+</code></pre></p>
                 
 
                 
@@ -1146,7 +1132,7 @@ path</p>
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-21-css-attribute/">CSS attribute</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-25-javascript-type/">JavaScript type</a></h3>
 
                 
                 
@@ -1156,81 +1142,57 @@ path</p>
 <span class=" u-capitalized ">
     on
 </span>
-2013-08-21
+2013-08-25
 </p>
                 
 
                 
-                <p><h2 id="css-attribute">CSS attribute</h2>
-<h3 id="顏色與背景">顏色與背景</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">color</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">background-color</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">background-images</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">background-repeat</span><span style="color:#f92672">:</span> <span style="color:#f92672">no-repeat</span> <span style="color:#f92672">repeat-x</span> <span style="color:#f92672">repeat-y</span> <span style="color:#f92672">repeat</span>
-<span style="color:#f92672">background-position</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span>
-<span style="color:#f92672">background-attachment</span><span style="color:#f92672">:</span> <span style="color:#f92672">fixed</span> <span style="color:#f92672">scroll</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">background</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">left</span> <span style="color:#f92672">center</span> <span style="color:#f92672">no-repeat</span><span style="color:#f92672">;</span>
-</code></pre></div><h3 id="文字">文字</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">text-align</span><span style="color:#f92672">:</span> <span style="color:#f92672">left</span> <span style="color:#f92672">right</span> <span style="color:#f92672">center</span>
-<span style="color:#f92672">vertical-align</span><span style="color:#f92672">:</span> <span style="color:#f92672">top</span> <span style="color:#f92672">bottom</span> <span style="color:#f92672">text-top</span> <span style="color:#f92672">text-bottom</span> <span style="color:#f92672">middle</span> <span style="color:#f92672">baseline</span> <span style="color:#f92672">super</span> <span style="color:#f92672">sub</span>
-<span style="color:#f92672">line-height</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">letter-spacing</span><span style="color:#f92672">:</span> <span style="color:#f92672">(</span><span style="color:#f92672">字距</span><span style="color:#f92672">)</span>
-<span style="color:#f92672">word-spacing</span><span style="color:#f92672">:</span> <span style="color:#f92672">(</span><span style="color:#f92672">單字間距</span><span style="color:#f92672">)</span>
-<span style="color:#f92672">text-indent</span><span style="color:#f92672">:</span> <span style="color:#f92672">(</span><span style="color:#f92672">首行縮排</span><span style="color:#f92672">)</span>
-<span style="color:#f92672">font-family</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">font-size</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">font-weight</span><span style="color:#f92672">:</span> <span style="color:#f92672">100</span><span style="color:#f92672">~</span><span style="color:#f92672">900</span>
-<span style="color:#f92672">font-style</span><span style="color:#f92672">:</span> <span style="color:#f92672">italic</span> <span style="color:#f92672">oblique</span>
-<span style="color:#f92672">text-decoration</span><span style="color:#f92672">:</span> <span style="color:#f92672">underline</span> <span style="color:#f92672">overline</span> <span style="color:#f92672">line-through</span> <span style="color:#f92672">none</span>
-<span style="color:#f92672">text-decoration</span><span style="color:#f92672">:</span> <span style="color:#f92672">blink</span> <span style="color:#f92672">文字閃爍</span><span style="color:#f92672">(</span><span style="color:#f92672">部分瀏覽器有用</span><span style="color:#f92672">)</span>
-<span style="color:#f92672">text-decoration</span><span style="color:#f92672">:</span> <span style="color:#f92672">line-through</span> <span style="color:#f92672">刪除線</span>
-<span style="color:#f92672">text-decoration</span><span style="color:#f92672">:</span> <span style="color:#f92672">overline</span> <span style="color:#f92672">文字頂部加線</span>
-<span style="color:#f92672">text-decoration</span><span style="color:#f92672">:</span> <span style="color:#f92672">underline</span> <span style="color:#f92672">文字底部加線</span>
-<span style="color:#f92672">text-decoration</span><span style="color:#f92672">:</span> <span style="color:#f92672">none</span> <span style="color:#f92672">沒有改變</span>
-</code></pre></div><h3 id="區塊">區塊</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">margin</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">padding</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">border-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">transparent</span>
-<span style="color:#f92672">border-width</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">border-style</span><span style="color:#f92672">:</span> <span style="color:#f92672">solid</span> <span style="color:#f92672">double</span> <span style="color:#f92672">dotted</span> <span style="color:#f92672">dashed</span> <span style="color:#f92672">inset</span> <span style="color:#f92672">outset</span> <span style="color:#f92672">groove</span> <span style="color:#f92672">ridge</span>
-<span style="color:#f92672">width</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">height</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">vertical-align</span><span style="color:#f92672">:</span> <span style="color:#f92672">middle</span>
-</code></pre></div><h3 id="編排與顯示">編排與顯示</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">float</span>:<span style="color:#a6e22e">left</span> <span style="color:#f92672">right</span>
-<span style="color:#f92672">clear</span>:<span style="color:#a6e22e">left</span> <span style="color:#f92672">right</span> <span style="color:#f92672">both</span>
-<span style="color:#f92672">position</span>:<span style="color:#a6e22e">relative</span> <span style="color:#f92672">absolute</span> <span style="color:#f92672">fixed</span>
-<span style="color:#f92672">top</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">left</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">right</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">bottom</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">z-index</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">display</span><span style="color:#f92672">:</span> <span style="color:#f92672">block</span> <span style="color:#f92672">inline-block</span> <span style="color:#f92672">none</span> <span style="color:#f92672">inline</span>
-<span style="color:#f92672">visibility</span><span style="color:#f92672">:</span> <span style="color:#f92672">hidden</span> <span style="color:#f92672">visible</span>
-<span style="color:#f92672">overflow</span><span style="color:#f92672">:</span> <span style="color:#f92672">hidden</span> <span style="color:#f92672">scroll</span> <span style="color:#f92672">auto</span>
-</code></pre></div><h3 id="條列項目">條列項目</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">list-style</span><span style="color:#f92672">:</span> <span style="color:#f92672">none</span> <span style="color:#f92672">disc</span> <span style="color:#f92672">square</span>
-</code></pre></div><h3 id="其他">其他</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">cursor</span><span style="color:#f92672">:</span> <span style="color:#f92672">pointer</span> <span style="color:#f92672">crosshair</span> <span style="color:#f92672">wait</span> <span style="color:#f92672">help</span> <span style="color:#f92672">text</span> <span style="color:#f92672">move</span>
-</code></pre></div><h3 id="虛擬樣式">虛擬樣式</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS">:<span style="color:#a6e22e">link</span> <span style="color:#f92672">當文字或圖案是連結時</span>
-:<span style="color:#a6e22e">hover</span> <span style="color:#f92672">當滑鼠指標移到連結文字或圖案</span>
-:<span style="color:#a6e22e">avctive</span> <span style="color:#f92672">當滑鼠按下連結文字或圖案</span>
-:<span style="color:#a6e22e">visited</span> <span style="color:#f92672">當連結已經點過時</span>
-:<span style="color:#a6e22e">focus</span> <span style="color:#f92672">focus</span>
-:<span style="color:#a6e22e">before</span> {
-	<span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>;
-}
-:<span style="color:#a6e22e">after</span> {
-	<span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>;
-}
+                <p><h2 id="javascript-type">JavaScript Type</h2>
+<ul>
+<li>number</li>
+<li>string</li>
+<li>boolean</li>
+<li>null</li>
+<li>undefind</li>
+</ul>
+<p>減少 type 轉換以加快執行速度</p>
+<h2 id="object">Object</h2>
+<h3 id="var">var</h3>
+<ul>
+<li>宣告後即擁有物件的屬性</li>
+<li>宣告之後無法刪除</li>
+<li>區域變數</li>
+</ul>
+<p>function 內宣告</p>
+<ul>
+<li>全域變數</li>
+</ul>
+<p>小心使用</p>
+<h3 id="property">property</h3>
+<ul>
+<li>建立在物件中</li>
+<li>可刪除</li>
+</ul>
+<h2 id="array">Array</h2>
+<ul>
+<li>method 1</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
+</code></pre></div><p>bug</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">10</span>);
+<span style="color:#a6e22e">arr</span>
+<span style="color:#75715e">// [undefined × 10]
+</span></code></pre></div><ul>
+<li>method 2</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
 </code></pre></div></p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2013-08-21-css-attribute/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2013-08-25-javascript-type/">Read more</a></p>
                 
             </div>
         </div>

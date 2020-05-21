@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-04T13:53:19+08:00" />
+<meta property="og:updated_time" content="2020-05-21T10:13:23+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1063,6 +1063,14 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1079,7 +1087,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-09-03-javascript-onbeforeunload/">JavaScript - onbeforeunload</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2013-09-06-git-note/">Git - Note</a></h3>
 
                 
                 
@@ -1089,125 +1097,20 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2013-09-03
+2013-09-06
 </p>
                 
 
                 
-                <p><h2 id="onbeforeunload">onbeforeunload</h2>
-<p>onbeforeunload 是在 browser 在轉換頁面時會觸發的事件
-當有 return 值時, 會出現 confirm 視窗, 並停住觸發的行為
-目前試過會觸發的行為有</p>
-<ul>
-<li>上一頁 / 下一頁</li>
-<li>重新整理</li>
-<li>關閉視窗</li>
-<li>前往其它 URL</li>
-<li>submit 事件</li>
-<li>URL 改變時</li>
-</ul>
-<p>這幾種較常見
-用法如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Exit?&#39;</span>;
-}
-window.<span style="color:#a6e22e">onbeforeunload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun</span>;
-</code></pre></div><p>return 的值是 confirm 的訊息
-可 return <strong>string</strong> or <strong>array</strong>
-無法 return <strong>fuinction</strong></p>
-<p>也可以用條件判斷</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;textarea&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">value</span>;
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">value</span>) {
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Exit?&#39;</span>;
-    }
-    <span style="color:#66d9ef">return</span>;
-}
-window.<span style="color:#a6e22e">onbeforeunload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun</span>;
-</code></pre></div><p>上面說明了當 textarea 有值時, 觸發 onbeforeunload 才 return 訊息出來</p>
-<h3 id="issue">Issue</h3>
-<p>當使用 <code>&lt;a href=&quot;&quot;&gt;&lt;/a&gt;</code> 時, 通常會用 <code>&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;</code> or <code>&lt;a href=&quot;javascript:void(0)&quot;&gt;&lt;/a&gt;</code> 來使 href 沒有作用, 但用 # 會在 URL 的最後產生 # , 且頁面會捲動到頂部, 這是因為 ＃ 的特性, 所以通常不會用 <code>&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;</code></p>
-<p>但是當使用 <code>&lt;a href=&quot;javascript:void(0)&quot;&gt;&lt;/a&gt;</code> 時, 再與 onbeforeunload 一起用時就會有問題</p>
-<p><a href="http://tedshd.lionfree.net/demo/onbeforeunload/onbeforeunload_void(0)_2.html">demo</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span>&gt;
-&lt;<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-&lt;<span style="color:#f92672">title</span>&gt;onbeforeunload_javascript.void(0)&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;exit?&#39;</span>;
-}
-window.<span style="color:#a6e22e">onbeforeunload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun</span>;
-&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:void(0)&#34;</span>&gt;javascript:void(0)&lt;/<span style="color:#f92672">a</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p>上面的 HTML 在執行時都沒問題, 但是在 <strong>IE</strong> 中, 會把 href=&quot;javascript:void(0)&rdquo; 當成一個無效的連結
-所以就觸發了 onbeforeunload 事件
-而解決辦法也很簡單, 就是 <strong>e.preventDefault()</strong></p>
-<ul>
-<li>JavaScript(IE9 up)
-<a href="http://tedshd.lionfree.net/demo/onbeforeunload/onbeforeunload_void(0).html">demo</a></li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span>&gt;
-&lt;<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-&lt;<span style="color:#f92672">title</span>&gt;onbeforeunload_e.preventDefault()&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">body</span>&gt;
-    by javascript&lt;<span style="color:#f92672">br</span>&gt;
-    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:void(0)&#34;</span>&gt;e.preventDefault()&lt;/<span style="color:#f92672">a</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;<span style="color:#f92672">script</span>&gt;
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;exit?&#39;</span>;
-    }
-    window.<span style="color:#a6e22e">onbeforeunload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun</span>;
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">tag</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;a&#39;</span>)[<span style="color:#ae81ff">0</span>];
-    <span style="color:#a6e22e">tag</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
-        <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
-    });
-&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><ul>
-<li>jQuery
-<a href="http://tedshd.lionfree.net/demo/onbeforeunload/onbeforeunload_preventDefault().html">demo</a></li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span>&gt;
-&lt;<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-&lt;<span style="color:#f92672">title</span>&gt;onbeforeunload_e.preventDefault()&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">function</span> () {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;exit?&#39;</span>;
-    }
-    window.<span style="color:#a6e22e">onbeforeunload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun</span>;
-    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;a&#39;</span>).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
-        <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
-    });
-});
-&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:void(0)&#34;</span>&gt;e.preventDefault()&lt;/<span style="color:#f92672">a</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p><a href="http://xieyu.blog.51cto.com/213338/55796">Refer</a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/API/window.onbeforeunload">MDN</a></p>
+                <p><h2 id="git">Git</h2>
+<p><a href="http://git-scm.com/docs">Doc</a>
+<a href="http://git-scm.com/book/zh">中文導讀</a></p>
+<p><a href="http://pcottle.github.io/learnGitBranching/">LearnGitBranching</a></p>
 </p>
                 
 
                 
 
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-09-03-javascript-onbeforeunload/">Read more</a></p>
                 
             </div>
         </div>
@@ -1224,7 +1127,7 @@ window.<span style="color:#a6e22e">onbeforeunload</span> <span style="color:#f92
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-09-02-codeigniter-note/">Codeigniter - Note</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2013-09-05-effecktcss-note/">Effeckt.css - Note</a></h3>
 
                 
                 
@@ -1234,20 +1137,76 @@ window.<span style="color:#a6e22e">onbeforeunload</span> <span style="color:#f92
 <span class=" u-capitalized ">
     on
 </span>
-2013-09-02
+2013-09-05
 </p>
                 
 
                 
-                <p><h2 id="something-about-ci-note">Something about CI note</h2>
-<p><a href="http://www.codeigniter.org.tw/user_guide/">user guide</a></p>
-<h3 id="redirect">redirect</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP">$this-&gt;load-&gt;helper(&#39;url&#39;);
+                <p><h2 id="effecktcss">Effeckt.css</h2>
+<p><a href="http://h5bp.github.io/Effeckt.css/dist/">demo</a></p>
+<p>上面頁面都是利用 CSS3 的 Animations 與 Transitions 效果做出來的</p>
+<p><a href="https://github.com/h5bp/Effeckt.css">GitHub</a></p>
+<p>使用該 library 須載入 <a href="http://modernizr.com/">Modernizr</a> 這個 library
+Modernizr 是用來判斷 browser 是否支援 HTML5 or CSS3 所用的 library, 並能把相同功能但在不同 browser 實作的 API 或 CSS3 property 一致化</p>
+<p>主要是透過添加 class or data attribute 的方式, Modernizer 就在其中做了整合各 browser 的事情</p>
+<h3 id="how-does-it-work">How does it work</h3>
+<p>動畫部分是利用 CSS3 的 Animations 與 Transitions
+至於事件的觸發是利用 <a href="http://www.w3.org/TR/css3-transitions/#transition-events-">CSS3 Transition Events</a>, 由於各個 browser 實作都不一樣, 所以這裡加載了一個 <code>/js/demo/demo.js</code> 的 js, 但在這 js 有個有趣的地方就是有用 ajax 去載入開發者名單, 所以就另開個 js 來載入</p>
+<p><strong>CSS3-event.js</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">EffecktDemos</span> <span style="color:#f92672">=</span> {
+
+  <span style="color:#a6e22e">init</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+
+    <span style="color:#a6e22e">$</span>(window).<span style="color:#a6e22e">load</span>(<span style="color:#66d9ef">function</span>() {
+      <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.no-transitions&#34;</span>).<span style="color:#a6e22e">removeClass</span>(<span style="color:#e6db74">&#34;no-transitions&#34;</span>);
+    });
+
+    <span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">transitionEndEventName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">transitionEndEventNames</span>[<span style="color:#a6e22e">Modernizr</span>.<span style="color:#a6e22e">prefixed</span>(<span style="color:#e6db74">&#39;transition&#39;</span>)];
+    <span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">animationEndEventName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">animationEndEventNames</span>[<span style="color:#a6e22e">Modernizr</span>.<span style="color:#a6e22e">prefixed</span>(<span style="color:#e6db74">&#39;animation&#39;</span>)];
+
+  },
+
+  <span style="color:#a6e22e">animationEndEventNames</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#39;WebkitAnimation&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;webkitAnimationEnd&#39;</span>,
+    <span style="color:#e6db74">&#39;OAnimation&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;oAnimationEnd&#39;</span>,
+    <span style="color:#e6db74">&#39;msAnimation&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;MSAnimationEnd&#39;</span>,
+    <span style="color:#e6db74">&#39;animation&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;animationend&#39;</span>
+  },
+
+  <span style="color:#a6e22e">transitionEndEventNames</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#39;WebkitTransition&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;webkitTransitionEnd&#39;</span>,
+    <span style="color:#e6db74">&#39;OTransition&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;oTransitionEnd&#39;</span>,
+    <span style="color:#e6db74">&#39;msTransition&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;MSTransitionEnd&#39;</span>,
+    <span style="color:#e6db74">&#39;transition&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;transitionend&#39;</span>
+  }
+
+}
+
+<span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">init</span>();
+</code></pre></div><p>這 library 也是用 jQuery
+所以載入順序</p>
+<ol>
+<li>jQuery</li>
+<li>Modernizer</li>
+<li>CSS3-event</li>
+</ol>
+<h3 id="list">list</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;effeckt-list&#34;</span> <span style="color:#a6e22e">data-effeckt-type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pop-in&#34;</span>&gt;
+    &lt;<span style="color:#f92672">li</span>&gt;list&lt;/<span style="color:#f92672">li</span>&gt;
+    &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;new-item&#34;</span>&gt;new list&lt;/<span style="color:#f92672">li</span>&gt;
+    &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove-item&#34;</span>&gt;remove list&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;/<span style="color:#f92672">ul</span>&gt;
+
+<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> data</span><span style="color:#75715e">-</span><span style="color:#75715e">effect</span><span style="color:#75715e">-</span><span style="color:#75715e">type 放入要呈現的動畫效果
+</span><span style="color:#75715e">     new</span><span style="color:#75715e">-</span><span style="color:#75715e">item 入場
+</span><span style="color:#75715e">     remove</span><span style="color:#75715e">-</span><span style="color:#75715e">item 退場 </span><span style="color:#75715e">--&gt;</span>
 </code></pre></div></p>
                 
 
                 
 
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-09-05-effecktcss-note/">Read more</a></p>
                 
             </div>
         </div>

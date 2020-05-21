@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-04T13:53:19+08:00" />
+<meta property="og:updated_time" content="2020-05-21T10:13:23+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1063,6 +1063,14 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1079,7 +1087,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-04-05-vim-colorscheme/">Vim - colorscheme</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2014-04-24-pgrest-build-note/">PgREST - build note</a></h3>
 
                 
                 
@@ -1089,24 +1097,29 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2014-04-05
+2014-04-24
 </p>
                 
 
                 
-                <p><h2 id="vim---colorscheme">Vim - colorscheme</h2>
-<p>Vim 主題</p>
+                <p><h2 id="pgrest---build-note">PgREST - build note</h2>
+<h3 id="githubhttpsgithubcompgrestpgrest"><a href="https://github.com/pgrest/pgrest/">GitHub</a></h3>
+<h2 id="strong-stylecolorredthis-is-mac-os-x-buildstrong"><!-- raw HTML omitted -->This is Mac OS X build<!-- raw HTML omitted --></h2>
+<h3 id="install-postgresql">install PostgreSQL</h3>
+<p><a href="http://postgresapp.com/">postgres.app</a>
+<a href="http://www.tutorialspoint.com/postgresql/index.htm">PostgreSQL Tutorial</a></p>
 <ol>
-<li><code>mkdir ~/.vim/colors/</code></li>
-<li>找到 <code>&lt;colorscheme&gt;.vim</code> 並丟到 <code>~/.vim/colors/</code> 即可</li>
-<li>在 <code>.vimrc</code> 設定 <code>colorscheme &lt;colorscheme&gt;</code> 就會變成該主題</li>
+<li>set PATH in shell(.bashrc, .zshrc, &hellip;)</li>
 </ol>
-<h3 id="some-colorscheme">Some Colorscheme</h3>
-<p><a href="http://cocopon.me/app/vim-color-gallery/">Vim Colorscheme Gallery</a>
-<a href="https://code.google.com/p/vimcolorschemetest/">vimcolorschemetest</a>
-<a href="http://www.vim.org/scripts/script_search_results.php?keywords=&amp;script_type=color+scheme&amp;order_by=creation_date&amp;direction=descending&amp;search=search">vim online</a>
-<a href="http://vimcolors.com/">Newest - Vim Colors</a></p>
-<p><a href="http://blog.longwin.com.tw/2009/03/choose-vim-color-scheme-2009/">Refer - 挑選 Vim 顏色(Color Scheme)</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/Applications/Postgres.app/Contents/Versions/9.3/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+</code></pre></div><ol start="2">
+<li>create the plv8 extension</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">-&gt; psql -U Ted_Shiu -c <span style="color:#e6db74">&#34;create extension plv8&#34;</span>
+CREATE EXTENSION
+</code></pre></div><h3 id="install-pgrestmust-install-nodejs-before">install PgREST(Must install node.js before)</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm i -g pgrest
+</code></pre></div><p><a href="http://pgre.st/">Refer - PgREST: Node.js in the Database</a></p>
 </p>
                 
 
@@ -1128,7 +1141,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-04-04-nodejs-install/">Node.js - install</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2014-04-07-css-vertical-reset/">CSS - 垂直置中</a></h3>
 
                 
                 
@@ -1138,39 +1151,47 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2014-04-04
+2014-04-07
 </p>
                 
 
                 
-                <p><h2 id="nodejs---install">Node.js - install</h2>
-<h3 id="mac">Mac</h3>
-<p>利用 homebrew 安裝</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install node
-</code></pre></div><p><a href="http://nodejs.org/">node.js</a>
-<a href="http://thechangelog.com/install-node-js-with-homebrew-on-os-x/">Refer - Install Node.js and npm using Homebrew on OS X</a></p>
-<h3 id="ubuntu">Ubuntu</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install nodejs-legacy
+                <p><h2 id="css---垂直置中">CSS - 垂直置中</h2>
+<h3 id="文字垂直置中">文字垂直置中</h3>
+<p>之前 ApplyBOY 在網路上分享了一個 CSS 垂直置中的一個解法
+這裡整理出個小小模組出來</p>
+<p>假如那一個區域內的東西需做垂直置中, 在該區域的 element 加上 class <code>vertical-centering</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">vertical-centering</span>:<span style="color:#a6e22e">before</span> {
+  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#39;&#39;</span>;
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span><span style="color:#f92672">-</span><span style="color:#66d9ef">block</span>;
+  <span style="color:#66d9ef">vertical-align</span>: <span style="color:#66d9ef">middle</span> ;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+}
+</code></pre></div><p>該區域的文字就會垂直置中</p>
+<p><strong>Example</strong></p>
+<!-- raw HTML omitted -->
+<h3 id="區域垂直置中">區域垂直置中</h3>
+<p>如要在一區域內有一小塊區域置中則需把該區域做 <code>vertical-align: middle;</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">vertical-centering-area</span> {
+  <span style="color:#66d9ef">vertical-align</span>: <span style="color:#66d9ef">middle</span>;
+}
 
-sudo apt-get install npm
-</code></pre></div><p><a href="http://stackoverflow.com/questions/21168141/can-not-install-packages-using-node-package-manager-in-ubuntu">Refer - Can not install packages using node package manager in Ubuntu</a></p>
-<h3 id="update">Update</h3>
-<p>Now node merge iojs and version update to v4</p>
-<p>But now homebrew not updgrade to v4</p>
-<p>So i use nvm</p>
-<p><a href="http://icarus4.logdown.com/posts/175092-nodejs-installation-guide">Refer - Node.js 安裝與版本切換教學 (for MAC)</a></p>
-<h3 id="npm-upgrade-node-version">npm upgrade node version</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo npm cache clean -f
-sudo npm install -g n
-sudo n stable
-</code></pre></div><p><a href="http://davidwalsh.name/upgrade-nodejs">Refer - Upgrade Node.js via NPM</a></p>
+.<span style="color:#a6e22e">vertical-centering</span>:<span style="color:#a6e22e">before</span> {
+  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#39;&#39;</span>;
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span><span style="color:#f92672">-</span><span style="color:#66d9ef">block</span>;
+  <span style="color:#66d9ef">vertical-align</span>: <span style="color:#66d9ef">middle</span> ;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+}
+</code></pre></div><p><strong>Example</strong></p>
+<!-- raw HTML omitted -->
+<p><a href="http://blog.wu-boy.com/2013/07/css-vertical-align-center/">Refer - CSS 垂直置中解法</a></p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2014-04-04-nodejs-install/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2014-04-07-css-vertical-reset/">Read more</a></p>
                 
             </div>
         </div>

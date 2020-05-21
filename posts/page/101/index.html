@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-04T13:53:19+08:00" />
+<meta property="og:updated_time" content="2020-05-21T10:13:23+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1063,6 +1063,14 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1079,7 +1087,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science-of-quantum-computation/">Computer Science - 量子計算</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science-capable/">Computer Science - 計算能力</a></h3>
 
                 
                 
@@ -1094,22 +1102,21 @@ if (!doNotTrack) {
                 
 
                 
-                <p><h2 id="量子計算">量子計算</h2>
-<p>電腦所產生的假隨機數列看起來是雜亂的,但它仍是靠某種潛在的演算法計算出來,若知道序列產生的方式,就可以預測它,而它就不再是隨機.而唯一真正達到不可預測效果的,就是量子力學(quantum mechanics).它所產生的效應是隨機性的, Ex.我們無法預測某個鈾原子經過多久會蛻變成鉛.因此我們可以用蓋格計數器(Geiger counter)產生真正隨機的資料,這是通用電腦在原理上所無法辦到的.</p>
-<p>量子力學在通用電腦這個議題上引發了一些尚無人能解的問題.初步看來,量子力學似乎和數位電腦非常契合,因為[量子]這個字眼所要表達的基本概念與[數位]是一致的.量子現象和數位的東西一樣,只存在於不連續的狀態中.從量子的觀點來看,物理世界中(外觀上)的連續,類比性質,只限於巨觀尺度下,肉眼所產生的幻覺,但在原子這樣的小尺度中卻不然.在原子的尺度中,幾乎所有的東西都是不連續的,所有現象都是數位的,帶電粒子可以帶數個電子,但無法帶半個電子.不幸的是,主控粒子間交互作用的法則是無法憑直覺得知. Ex.正常情況下,一樣東西無法同時存在於兩個地方,但在量子力學的世界裡卻非如此,因為在量子力學中根本沒有任何東西有其確定位置.一個次原子粒子其實是同時存在於所有地方的,只是我們比較可能會在某個地方觀測到它罷了.一搬來說,我們可以認定某個粒子就在我們所觀測的位置上,但綜合了觀測到的現象,令我們不得不承認它是同時存在於不同地方的.包括物理學家在內,幾乎所有人都覺得這概念難以理解.</p>
-<p>目前尚未確認是否可以利用量子效應建構一部強大的電腦,但卻是可能的.原子似乎擅長計算一些特定的問題,如它們的結合方式,這在傳統電腦上很難計算, Ex.當2個氫原子和1個氧原子結合時,這些原子本身以某種方式計算出2個結合鍵之間的角度為107度,我們可以利用量子力學的觀念在數位電腦上算出近似值,但所花的時間會很長,而要得到精確的結果更是費日費時,但一杯水中的每個分子都在一瞬間完成這樣的計算.</p>
-<p>電腦之所以要花這麼多時間計算這個量子力學的問題,是因為它必須考慮無限多種可能的水分子型態,才能得到答案.由於原子在組成分子時,可能立刻形成各種不同的組態,所以這樣的計算是必要的,這也就是為什麼數位電腦在有限的時間內只能得到近似值.若要解釋水分子何以能進行這樣的運算,我們想像它是同時嘗試所有可能的組態,就是利用平行處理(parallel processing).</p>
-<p>也許可以利用量子中所謂的纏結(entanglement)現象來建構量子電腦.在量子力學系統中,兩個粒子交互作用之後,它們的命運會以某種方式結合在一起,與古典力學看到的截然不同,也就是當我們測量其中一者的某項特性時,也會對另一者的該項特性產生影響,即使兩個粒子實際上並未接觸.愛因斯坦稱這種在時間上沒有任何延遲的現象為超距幽靈效應(spooky action at a distance),他非常不認同世界會以這種方式運作.</p>
-<p>量子電腦正是利用這種纏結效應-一個一位元量子暫存器不只能儲存一個0或1,而是可以儲存非常多的0和1,就好像原子可以存在許多地方一樣,一個位元也可以同時有許多狀態(0或1).不是處在0或1之間,因為每個疊置得0和1可以再量子電腦中與其他位元糾結在一起.若以兩個這種量子位元組合成一個量子邏輯區組,則它們的所有疊置狀態可以用不同的方式互動,產生更複雜的纏結組合,而一個利用量子邏輯區組完成的計算量非常龐大,甚至可能到無限多.</p>
-<p>量子計算背後的理論已金建立了,但要真正實用仍有些困難.物理學家蕭爾(Peter Shor)最近發現一個利用這些量子效應的方法,至少,在理論上用它來計算因式分解這類重要且困難的計算,而他的成果也使量子電腦重新燃起一片生機,但眼前還有許多難題要去克服.其中一個問題在於,量子電腦中位元在運作時必須保持有秩序的糾結在一起,才能進行計算,然而即使是最細微的干擾,如宇宙射線或甚值處於真空中,都可能破壞纏結狀態.這種現象稱為脫散(decoherence),在量子電腦中,它等於阿契里斯的腳踝.蕭爾所提出的方法似乎僅限於可以利用一般化傅立葉轉換(generalized Fourier transform)這個快速運算方法求值的計算.而這類的問題可能在一般的杜林機就可以輕易的計算出來,若是這樣的話,蕭爾的量子計算只相當於傳統電腦中的某些程式.</p>
-<p>若量子電腦可以同時在無限多個可能做搜尋,則它的本質就勝過傳統的計算設備.</p>
+                <p><h2 id="計算能力">計算能力</h2>
+<p>雖然通用電腦可以做任何計算裝置所能計算的事物,但還是有它無法計算的東西,像是定義含糊籠統的問題,實際上我們很少遇到不可計算的問題,因為要找一個定義周詳且大家都想解決的不可計算的問題非常困難,終止問題(halting problem)就是這樣的一個罕見例子.假設我要寫一個電腦程式,用它來檢驗另一個程式最後是否會終止,若被檢驗的程式不包含任何迴圈或遞迴結構,則它最後一定會結束,但若它包含了迴圈或遞迴結構,則程式可能會一直執行下去,因此還是找不到可以檢驗某個程式是否會落入無窮循環的演算法.終止問題是個不可計算的問題.</p>
+<p>杜林憑空想像出來的終止問題是不可計算問題的典範,現實中所發生的大部分不可計算的問題都和他一樣或類似.但無法解決終止問題並不能說是電腦的弱點,因為終止問題本來就是不可解的,也就是說沒有一部可以解決終止問題的機器.到目前為止,就我們所了解,沒有任何東西能執行通用電腦所不能執行的計算,數位電腦所能計算的問題顯然也包括任何計算裝置能夠計算的問題.最後這段敘述也稱為邱奇論題(Church thesis),它以與杜林同時期的學者邱奇(Alonzo Church)為名.關於計算及邏輯問題研究,數學家已經討論好幾個世紀了,但科學史上最令人讚嘆的同步學術研究之ㄧ就是杜林 邱奇及波斯特(Emil Post)幾乎同時提出通用計算的觀念.他們的描述方式迴異,但都在1937年發表這些結果,也為以後的計算機革命奠定基礎.</p>
+<p>另一個與終止問題很相近的不可計算函數,就是要決定某個已知的數學陳述是真或假的問題.就在杜林提出終止問題不久前,1931年,歌爾德以其不完全定理證明了這個問題亦沒有演算法可解.歌爾德的定理提到,在嚴謹而有效的數學系統中,存在一些無法證明真假的陳述,數學家以證明或反證陳述真假為職責,而歌爾德卻證明他們在某些情況下無法履行這個[職責].</p>
+<p>有些數學家及哲學家認為歌爾德的不完全定理是近乎神秘,不可思議的論調,少部分的人則認為,這個定理證明了人類的直覺終究勝過電腦,也就是說人類或許可以用[直覺]來判斷電腦無法證明的問題.這是一種感情上的爭議,對那些不喜歡和電腦相提並論的哲學家而言,反而成為他們的把柄.但這種事是荒謬的,不論人類是否一瞬間以直覺勝過電腦,從歌爾德的不完全定理來看,我們沒有理由相信世界上存在著任何數學家可以證明但電腦無法證明的數學陳述.據我們目前所知,任何人類所能證明的理論,電腦也可以證明,然而,人類無法計算那些電腦無法解決的不可計算問題.</p>
+<p>雖然人類絞盡腦汁才提出一些不可計算問題的例子,但我們卻可以輕易的證明大部分的數學函數是不可計算的.因為任何程式都能以有限個位元表示,而描述一個函數通常都要無限多個位元,因此函數數目要比程式多得多.</p>
+<p>函數是什麼?Ex.餘弦或自然對數.數學家可以定義出各類怪異的函數,不一定有其用處,但在數學家眼中,仍是一個合理的函數,因為它能將任一數值完全轉換成另一個數值.</p>
+<p>我們可以用數學方式證明函數的個數無限多於程式個數,因此,對大部分的函數而言,都沒有相對應的程式可以計算,若要確實計算出它們的個數相當的困難(包括計算無限多個數,還要分辨不同程度的無限),但結論是正確的,就統計的觀點來說,絕大部分的數學函數都是不可計算的.幸運的是,幾乎所有的不可計算函數都沒什麼用處,事實上所有我們想用來計算的函數都是可計算的.</p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science-of-quantum-computation/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science-capable/">Read more</a></p>
                 
             </div>
         </div>
@@ -1126,7 +1133,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-27-logdown-tab-test/">logdown Tab test</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-27-computer-translation-of-science-language/">Computer Science - 語言轉譯</a></h3>
 
                 
                 
@@ -1141,41 +1148,20 @@ if (!doNotTrack) {
                 
 
                 
-                <p><h2 id="tab-problem">Tab problem</h2>
-<h3 id="problem">Problem</h3>
-<p>Mac 的 function 中 console.log(&lsquo;hihi&rsquo;) 是按一次 Tab 有 4 個空白
-but
-alert(&lsquo;hihi&rsquo;) 這一行在按 Tab 縮排就有問題，再接續上一行按 enter 下來之後縮排剩 2 個空白，之後再按 Tab 縮排會變成只有 2 個空白
-在 fun2 的 function 中都是直接按 4 個空白鍵來作縮排，都正常</p>
-<h3 id="發生現象">發生現象</h3>
-<p>在按 Tab 縮排過，打完那一行直接按 enter 到下一行，縮排就從 4 個空白變成 2個空白</p>
-<h3 id="期望">期望</h3>
-<p>希望用 Tab 時在 Edit 和 Preview(最終結果)的結果是一樣的</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Mac</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
-  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">console</span>) {
-  	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
-  }
-}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#66d9ef">function</span>() {
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span>);
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">2</span>);
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;reset 重新從最左邊按一次 Tab&#39;</span>);
-}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
-    <span style="color:#a6e22e">condsole</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;ok&#39;</span>);
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fun</span>) {
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;good&#39;</span>);
-    }
-}
-</code></pre></div></p>
+                <p><h2 id="語言轉譯">語言轉譯</h2>
+<p>目前已將技術和指令兩者串連起來,但語言是以文字撰寫的,而指令是一些位元組合,電腦本身必須自己將程式轉換成位元組合.</p>
+<p>電腦翻譯程式語言的方法就像一個極有耐性的翻譯員一樣,靠著一本字典翻譯用某種其實自己並不熟悉的語言所寫的文件一樣.翻譯員可以在字典中查閱任何他不懂的單字,若定義裡仍出現不懂的字,一樣可以查閱字典,直到完全了解整個意思.在這裡,翻譯員的字典 = 程式,而電腦所認識的文字 = 程式語言原詞.這些原詞是以一連串簡單的機械指令定義出來的.</p>
+<p>把一連串的字元儲存在相鄰的記憶體中,每個字元佔一個位置.電腦的記憶體中也有一本字典,它紀錄了每個指令名稱所對應的指令順序位址.電腦可以在字典中搜尋,找出特定的指令名稱及所對應的位址,不只如此,電腦要執行某個特殊指令時,就會從這些字典中找出這個指令定義儲存的地方.</p>
+<p>這個搜尋指令的動作可以在程式執行前完成,如此可省掉許多時間,因為假使有個程式要執行很多次,實在沒有道理叫它每次都重複做同樣的搜尋.弱大部分轉換的工作都事先完成的話,則我們稱這過程為編譯(compilaction),而執行編譯動作的程式稱為編譯器.若這些轉換大部分都在程式執行時才做,稱之為直譯(interpretation),而執行這動作的程式稱為直譯器,但兩者不一定是如此壁壘分明.</p>
+<p>電腦所執行的動作是由程式指定的,而程式是由程式語言寫成.程式語言會由直譯器或編譯器,透過一組成為作業系統的副程式,轉譯成一連串的機械語言指令.指令定義了資料所要執行的運算,而不論指令或資料,都會儲存在記憶體中.至於有限狀態機的功能,就是將這些指令叫出並加以執行.指令及運算資料都是以位元組合表示,有限狀態機和記憶體則由暫存器及布林邏輯區組所構成,而布林邏輯區組又是以 And Or Invert 這些簡單的邏輯函數所組成.邏輯函數由串聯或並聯的開關操作出來,而這些開關控制了水或電流等物質,以傳遞兩種訊號1或0.</p>
+<p>這就是電腦賴以運作的分離階層架構.</p>
+</p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2013-08-27-logdown-tab-test/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2013-08-27-computer-translation-of-science-language/">Read more</a></p>
                 
             </div>
         </div>
