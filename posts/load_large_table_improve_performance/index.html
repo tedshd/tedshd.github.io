@@ -32,7 +32,7 @@
 <meta property="og:url" content="https://blog.tedshd.io/posts/load_large_table_improve_performance/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 <meta property="article:published_time" content="2020-05-21T10:13:23+08:00" />
-<meta property="article:modified_time" content="2020-05-21T15:49:25+08:00" />
+<meta property="article:modified_time" content="2020-05-25T16:27:57+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -268,11 +268,22 @@ if (!doNotTrack) {
 <p>所以換分頁後得再重新觀察當前頁面的圖片</p>
 <p>DataTables 有 page 的 event 可以監聽分頁切換</p>
 <p><a href="https://datatables.net/reference/event/page">Refer - page</a></p>
+<p>但是當使用 搜尋 , 排序等會造成畫面重新出現的情況的話</p>
+<p>要有效地處理就是使用 datatable 的 draw event</p>
+<p><a href="https://datatables.net/reference/event/draw">Refer - page</a></p>
+<p>只要表單重繪就會觸發</p>
 <p>這邊圖片延遲載入是使用自己參照 Google 的開發文件寫的 code <a href="https://github.com/tedshd/simpleImgLazyLoad">simpleImgLazyLoad</a></p>
+<p>這邊 image lazy 只要圖片載完後 observer 物件就會回收</p>
+<p>不過沒有載到的圖片還是會持續觀察</p>
+<p>只是應該是不會有太大的影響</p>
 <h3 id="datatables-版面寬度問題">DataTables 版面寬度問題</h3>
 <p>因為 DataTables 處理完後有時會自動加上寬度</p>
 <p>所以可以直接先使用 <code>width: 100%</code> 處理</p>
 <p><a href="https://datatables.net/examples/basic_init/flexible_width.html">Refer - DataTables example - Flexible table width</a></p>
+<p>因為 datatable 預設的 table 是固定的</p>
+<p>如果有 responsive 的需求</p>
+<p>要額外用 responsive 的套件來協助</p>
+<p><a href="https://datatables.net/extensions/responsive/">Refer - responsive</a></p>
 
     </main>
 </section>
