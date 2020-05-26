@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-21T10:13:23+08:00" />
+<meta property="og:updated_time" content="2020-05-25T16:56:05+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -192,6 +192,85 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-06-23-windows-81-app-develop-introduction/">Windows 8.1 app develop - Introduction</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-06-23
+</p>
+                
+
+                
+                <p><h2 id="windows-81-app---introduction">Windows 8.1 app - Introduction</h2>
+<p>Develop Win 8.1 app with JavaScript.</p>
+<ol>
+<li>
+<p>死心吧, 請準備一台 Windows 8.1 的電腦(一直以來我都以為生為前端攻城獅只要用 Mac 就可以打天下了)</p>
+</li>
+<li>
+<p>下載 <a href="http://www.visualstudio.com/zh-tw/downloads">Visual Studio 2013</a>, 要下載 Visual Studio Express 的版本</p>
+</li>
+<li>
+<p>開始努力地讀文件 <del><a href="http://msdn.microsoft.com/en-us/library/windows/apps/br211385.aspx">Doc</a></del></p>
+</li>
+</ol>
+<h3 id="strong-stylecolorrednotice--tipstrong"><!-- raw HTML omitted -->Notice &amp; Tip<!-- raw HTML omitted --></h3>
+<p>先了解一些限制與規範以免踩雷</p>
+<ul>
+<li>
+<p>Microsoft 提供 <a href="https://github.com/winjs/winjs">WinJS</a> 來協助開發 Windows 8.1 app</p>
+</li>
+<li>
+<p>無法使用網路的 source</p>
+<ul>
+<li>無法使用 remote 的 CSS or JavaScript, 必須全部 download 下來</li>
+</ul>
+</li>
+<li>
+<p>無法直接使用 iframe</p>
+<ul>
+<li><code>package.appxmainifest</code> -&gt; <code>內容 URI</code>, 把 iframe url 設成例外, 但是該 url 必須用 https</li>
+<li>使用 <code>x-ms-webview</code> tag 來代替 <code>iframe</code>, <a href="http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx">x-ms-webview element | x-ms-webview object</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="handle-ajax">Handle AJAX</h4>
+<p>在開發 Windows 8.1 時, 並不能直接的 <code>XMLHttpRequest</code> 處理 AJAX 行為, 需用 WinJS 來處理
+<a href="http://msdn.microsoft.com/en-us/library/windows/apps/xaml/br229787.aspx">WinJS.xhr function</a></p>
+<p><a href="https://software.intel.com/sites/landingpage/tw/windows8-college-10.php">Refer - Windows8軟體開發小學堂(十)：使用WinJS自訂Javascript類</a>
+<a href="https://software.intel.com/sites/landingpage/tw/windows8-college-11.php">Refer - Windows8軟體開發小學堂(十一)：使用WinJS自訂Javascript的名字空間</a>
+<a href="https://software.intel.com/sites/landingpage/tw/windows8-college-12.php">Refer - Windows8軟體開發小學堂(十二)：使用WinJS在已有Namespace中添加新成員</a>
+<a href="https://software.intel.com/sites/landingpage/tw/windows8-college-13.php">Refer - Windows8軟體開發小學堂(十三)：給Metro應用添加Wide Logo</a>
+<a href="https://software.intel.com/sites/landingpage/tw/windows8-metro-splash-screen.php">Refer - Windows8軟體開發小學堂(十四) : 修改Metro應用的Splash Screen</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2014-06-23-windows-81-app-develop-introduction/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2014-06-02-css-font-family/">CSS - font-family</a></h3>
 
                 
@@ -220,176 +299,6 @@ if (!doNotTrack) {
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-06-01-angularjs-http/">AngularJS - $http</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-06-01
-</p>
-                
-
-                
-                <p><h2 id="angularjs---http">AngularJS - $http</h2>
-<p>Angular use $http handle AJAX behavior.
-It support method to handle rest API and basic usage.
-<strong>But its default <code>Content-type</code> is <code>application/json</code></strong></p>
-<h3 id="basic-usage">Basic usage</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$http</span>({
-    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#75715e">// support GET, POST, PUT, DELETE
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;../php/response.php&#39;</span>,
-    <span style="color:#a6e22e">params</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>, <span style="color:#75715e">// GET method query string
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>,
-    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
-        <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/x-www-form-urlencoded; charset=UTF-8&#39;</span>
-    },
-    <span style="color:#a6e22e">timeout</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">30000</span>, <span style="color:#75715e">// timeout abort AJAX
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">cache</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
-}).
-<span style="color:#a6e22e">success</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">status</span>, <span style="color:#a6e22e">headers</span>, <span style="color:#a6e22e">config</span>) {
-    <span style="color:#75715e">// this callback will be called asynchronously
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// when the response is available
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
-}).
-<span style="color:#a6e22e">error</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">status</span>, <span style="color:#a6e22e">headers</span>, <span style="color:#a6e22e">config</span>) {
-    <span style="color:#75715e">// called asynchronously if an error occurs
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// or server returns response with an error status.
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">data</span>);
-});
-</code></pre></div><p><a href="https://docs.angularjs.org/api/ng/service/$http#usage">Refer - $http</a>
-<a href="http://tutorials.jenkov.com/angularjs/ajax.html">Refer - AngularJS AJAX</a></p>
-<h3 id="get-post-put-delete-head-jsonp">get, post, put, delete, head, jsonp</h3>
-<p>data is a object like</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">user</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Ted&#39;</span>, <span style="color:#a6e22e">pwd</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12345</span>};
-</code></pre></div><h4 id="httpgeturl-config">$http.get(url, config)</h4>
-<h4 id="httpposturl-dataconfig">$http.post(url, data,config)</h4>
-<h4 id="httpputurl-data-config">$http.put(url, data, config)</h4>
-<h4 id="httpdeleteurl-config">$http.delete(url, config)</h4>
-<h4 id="httpheadurl-config">$http.head(url, config)</h4>
-<h4 id="httpjsonpurl-config">$http.jsonp(url, config)</h4>
-<p>jsonp url must add callback</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$http</span>.<span style="color:#a6e22e">jsonp</span>(<span style="color:#a6e22e">url</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;?callback=JSON_CALLBACK&#39;</span>).
-<span style="color:#a6e22e">success</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">status</span>, <span style="color:#a6e22e">headers</span>, <span style="color:#a6e22e">config</span>) {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
-    <span style="color:#75715e">// this callback will be called asynchronously
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// when the response is available
-</span><span style="color:#75715e"></span>}).
-<span style="color:#a6e22e">error</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">status</span>, <span style="color:#a6e22e">headers</span>, <span style="color:#a6e22e">config</span>) {
-    <span style="color:#75715e">// called asynchronously if an error occurs
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// or server returns response with an error status.
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">data</span>);
-});
-</code></pre></div><h3 id="php-handle-request">PHP handle request</h3>
-<h4 id="rest-api">rest API</h4>
-<p>Beacuse AngularJS default request <code>Content-type</code> is <code>application/json</code>
-So we must use <code>json_decode</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-
-$request <span style="color:#f92672">=</span> <span style="color:#a6e22e">file_get_contents</span>(<span style="color:#e6db74">&#34;php://input&#34;</span>);
-$method <span style="color:#f92672">=</span> $_SERVER[<span style="color:#e6db74">&#39;REQUEST_METHOD&#39;</span>];
-<span style="color:#66d9ef">switch</span>($method)
-{
-    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;PUT&#34;</span><span style="color:#f92672">:</span>
-        <span style="color:#a6e22e">print_r</span>($method);
-        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
-        <span style="color:#a6e22e">print_r</span>(<span style="color:#a6e22e">json_decode</span>($request, <span style="color:#66d9ef">true</span>));
-        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
-        <span style="color:#a6e22e">print_r</span>(<span style="color:#a6e22e">json_decode</span>($request, <span style="color:#66d9ef">true</span>)[<span style="color:#e6db74">&#39;user&#39;</span>]);
-    <span style="color:#66d9ef">break</span>;
-    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;GET&#34;</span><span style="color:#f92672">:</span>
-        <span style="color:#a6e22e">print_r</span>($method);
-        <span style="color:#a6e22e">print_r</span>($_GET);
-        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
-        <span style="color:#a6e22e">print_r</span>($_GET[<span style="color:#e6db74">&#39;user&#39;</span>]);
-    <span style="color:#66d9ef">break</span>;
-    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;DELETE&#34;</span><span style="color:#f92672">:</span>
-        <span style="color:#a6e22e">print_r</span>($method);
-        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
-        <span style="color:#a6e22e">print_r</span>(<span style="color:#a6e22e">json_decode</span>($request, <span style="color:#66d9ef">true</span>));
-        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
-        <span style="color:#a6e22e">print_r</span>(<span style="color:#a6e22e">json_decode</span>($request, <span style="color:#66d9ef">true</span>)[<span style="color:#e6db74">&#39;user&#39;</span>]);
-    <span style="color:#66d9ef">break</span>;
-    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;POST&#34;</span><span style="color:#f92672">:</span>
-        <span style="color:#a6e22e">print_r</span>($method);
-        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
-        <span style="color:#a6e22e">print_r</span>(<span style="color:#a6e22e">json_decode</span>($request, <span style="color:#66d9ef">true</span>));
-        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
-        <span style="color:#a6e22e">print_r</span>(<span style="color:#a6e22e">json_decode</span>($request, <span style="color:#66d9ef">true</span>)[<span style="color:#e6db74">&#39;user&#39;</span>]);
-    <span style="color:#66d9ef">break</span>;
-}
-
-<span style="color:#75715e">?&gt;</span>
-</code></pre></div><h4 id="other-wayonly-use-get--post">Other way(only use GET &amp; POST)</h4>
-<p>Set <code>Content-type</code> as <code>application/x-www-form-urlencoded; charset=UTF-8</code></p>
-<ol>
-<li>Set all request as &lsquo;application/x-www-form-urlencoded; charset=UTF-8&rsquo;</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">module</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;module&#39;</span>, []);
-<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">config</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$httpProvider</span>) {
-	<span style="color:#a6e22e">$httpProvider</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">post</span>[<span style="color:#e6db74">&#39;Content-Type&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;application/x-www-form-urlencoded; charset=UTF-8&#39;</span>;
-});
-</code></pre></div><ol start="2">
-<li>Set request header if it need</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$http</span>({
-    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST&#39;</span>,
-    <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;../php/response.php&#39;</span>,
-    <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>,
-    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/x-www-form-urlencoded; charset=UTF-8&#39;</span>}
-}).
-<span style="color:#a6e22e">success</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">status</span>, <span style="color:#a6e22e">headers</span>, <span style="color:#a6e22e">config</span>) {
-    <span style="color:#75715e">// this callback will be called asynchronously
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// when the response is available
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
-}).
-<span style="color:#a6e22e">error</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">status</span>, <span style="color:#a6e22e">headers</span>, <span style="color:#a6e22e">config</span>) {
-    <span style="color:#75715e">// called asynchronously if an error occurs
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// or server returns response with an error status.
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">data</span>);
-});
-</code></pre></div><p>And then data is stringify object like</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">user</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Ted&#39;</span>, <span style="color:#a6e22e">pwd</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12345</span>};
-<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;data=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">data</span>);
-</code></pre></div><p>So php is</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-
-$data <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_decode</span>($_POST[<span style="color:#e6db74">&#39;data&#39;</span>], <span style="color:#66d9ef">true</span>);
-<span style="color:#66d9ef">echo</span> $data[<span style="color:#e6db74">&#39;user&#39;</span>];
-<span style="color:#75715e">// or
-</span><span style="color:#75715e"></span>$data <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_decode</span>($_GET[<span style="color:#e6db74">&#39;data&#39;</span>], <span style="color:#66d9ef">true</span>);
-<span style="color:#66d9ef">echo</span> $data[<span style="color:#e6db74">&#39;user&#39;</span>];
-
-<span style="color:#75715e">?&gt;</span>
-</code></pre></div><p><a href="http://stackoverflow.com/questions/15485354/angular-http-post-to-php-and-undefined/">Refer - Angular HTTP post to PHP and undefined</a></p>
-<p><a href="http://msdn.microsoft.com/zh-tw/library/aa287673(v=vs.71).aspx">HTTP 標頭參照</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-06-01-angularjs-http/">Read more</a></p>
                 
             </div>
         </div>

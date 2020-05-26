@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Thu, 21 May 2020 10:13:23 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2020 16:56:05 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.tedshd.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在數位中所定義與使用語言與文字的規範</title>
+      <link>https://blog.tedshd.io/posts/language_and_character_in_digital/</link>
+      <pubDate>Mon, 25 May 2020 16:56:05 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/language_and_character_in_digital/</guid>
+      <description>前言 因為最近在做一些語系的整理 為了字型的關係 就整理了一下一些在數位資訊上面有關於文字與語言的一些規範 這裡會概括了系統與軟體開發與輸入裝置的處</description>
+    </item>
     
     <item>
       <title>如何在網頁載入比較大量的資料時增加效能?</title>

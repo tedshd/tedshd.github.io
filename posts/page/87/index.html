@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-21T10:13:23+08:00" />
+<meta property="og:updated_time" content="2020-05-25T16:56:05+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1071,6 +1071,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1081,6 +1085,87 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-09-29-file-upload-using-ajax/">file upload using ajax</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-09-29
+</p>
+                
+
+                
+                <p><h2 id="file-upload-using-ajax">File upload using ajax</h2>
+<p>Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">FormData</a> objects
+<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Using_FormData_Objects">Using FormData Objects</a></p>
+<p>FormData object only IE 10 up
+if IE use ajax upload, only use iframe method.</p>
+<h3 id="sample">sample</h3>
+<p><strong>HTML</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">title</span>&gt;upload_AJAX&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;upload_one.php&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#a6e22e">enctype</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multipart/form-data&#34;</span>&gt;
+        &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span>&gt;File:&lt;/<span style="color:#f92672">label</span>&gt;
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Upfile&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;select&#34;</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;
+    &lt;/<span style="color:#f92672">form</span>&gt;
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:upload()&#34;</span>&gt;AJAX_upload&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p><strong>JavaScript</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">upload</span> () {
+    <span style="color:#75715e">// init FormData object
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
+    <span style="color:#75715e">// use append method append upload file
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;Upfile&#39;</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;select&#39;</span>).<span style="color:#a6e22e">files</span>[<span style="color:#ae81ff">0</span>]);
+    <span style="color:#75715e">// init XMLHttpRequest object
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlHttpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+    <span style="color:#75715e">// init to backend
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;upload_one.php&#39;</span>);
+    <span style="color:#75715e">// check ajax status
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>) {
+                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;upload&#39;</span>);
+            }
+        }
+    };
+    <span style="color:#75715e">// post to backend
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">formData</span>);
+}
+</code></pre></div></p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-09-29-file-upload-using-ajax/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
         
 
         
@@ -1156,113 +1241,6 @@ Pn 開始閃
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-09-23-kbtalking-pure-pro-programming/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-09-20-git-command/">Git - command</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-09-20
-</p>
-                
-
-                
-                <p><h2 id="git---command">Git - command</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git status
-<span style="color:#75715e"># 查看修改哪些檔案</span>
-
-git diff
-<span style="color:#75715e"># 比對修改了的地方與上一個 commit 有何不同</span>
-git diff &lt;file&gt;
-<span style="color:#75715e"># 比對修改的檔案與上一個 commit 有何不同</span>
-git diff &lt;old commit id&gt;..&lt;new commit id&gt;
-<span style="color:#75715e"># 比對不同 commit id 的檔案差異</span>
-
-git coheckout -- &lt;file&gt;
-<span style="color:#75715e"># 把檔案回復到修改前的樣子</span>
-
-git add &lt;file&gt;
-<span style="color:#75715e"># 加入要 commit 的檔案</span>
-
-git rm &lt;file&gt;
-<span style="color:#75715e"># 移除檔案(有 commit 過的檔案要移除, rm &lt;file&gt; 之後要執行的指令)</span>
-
-git reset HEAD &lt;file&gt;
-<span style="color:#75715e"># 把 git add 之後的檔案回復到 git add 前</span>
-
-git commit -m <span style="color:#e6db74">&#39;註解&#39;</span>
-<span style="color:#75715e"># or</span>
-git commit
-<span style="color:#75715e"># commit 檔案進入版本控管系統</span>
-git commit --no-verify
-<span style="color:#75715e"># 不驗證 commit</span>
-
-git log
-<span style="color:#75715e"># git commit log 紀錄</span>
-git log -p
-<span style="color:#75715e"># 詳細的log紀錄(修改哪些部分)</span>
-
-git blame &lt;file&gt;
-<span style="color:#75715e"># 查看修改的紀錄</span>
-
-git clone &lt;repository&gt;
-<span style="color:#75715e"># 拉 repository 下來到 local 端</span>
-
-git branch &lt;branch name&gt;
-<span style="color:#75715e"># 建立一個 local 端的 branch</span>
-
-git checkout &lt;branch&gt;
-<span style="color:#75715e"># 切換到該 branch</span>
-
-git branch
-<span style="color:#75715e"># 查看本地端的 branch</span>
-
-git branch -r
-<span style="color:#75715e"># 查看 remote 端的 branch</span>
-
-git stash
-<span style="color:#75715e"># 檔案 不commit 跳 branch (暫存)</span>
-git stash pop
-<span style="color:#75715e"># 回復檔案不 commit 狀態(讀回)</span>
-
-git branch -d &lt;local branch&gt;
-<span style="color:#75715e"># 刪除本地端的 branch</span>
-
-git branch -r -d &lt;remote branch&gt;
-<span style="color:#75715e"># 刪除 remote 端的 branch</span>
-
-git checkout --track -b &lt;local branch&gt; origin/&lt;remote branch&gt;
-<span style="color:#75715e"># 將遠端的 branch 並在 local 建立 branch</span>
-
-</code></pre></div><p><a href="http://blog.longwin.com.tw/2009/05/git-learn-initial-command-2009/">Refer</a>
-<a href="http://ihower.tw/blog/archives/2620">Refer</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-09-20-git-command/">Read more</a></p>
                 
             </div>
         </div>

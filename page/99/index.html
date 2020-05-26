@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-21T10:13:23+08:00" />
+<meta property="og:updated_time" content="2020-05-25T16:56:05+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -192,6 +192,57 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science-of-finite-state-machine/">Computer Science - 有限狀態機</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-08-27
+</p>
+                
+
+                
+                <p><h2 id="有限狀態機">有限狀態機</h2>
+<p>它可以執行隨時間而改變的函數,也就是不但與目前的輸入值有關,也受之前輸入值影響的函數.</p>
+<p>有限狀態機的基本構想是將一個對照表與記憶元件加以結合,而這個對照表則是以布林邏輯建構的,記憶元件儲存過去的概要,本身就是有限狀態機的[狀態].</p>
+<p>密碼鎖就是簡單的例子,它的狀態就是記住一連串數字輸入鎖中的結果.鎖並不記得撥過的所有數字,但它可以記住最後輸入的幾組數
+字,而這幾組數字就足以在數字序列正確的時候把鎖打開.</p>
+<p>自動筆是一個更簡單的例子,它有兩種可能的狀態,伸出筆芯和縮回筆芯,而且還記得它的按鈕被按了奇數次還是偶數次.
+所有有限狀態機都有一組固定的可能狀態、一組可以改變狀態的輸入(按原子筆的按鈕or撥動鎖上的數字盤)以及一組可能的輸出(筆
+芯的縮回或伸出or開鎖).輸出只由狀態決定,而狀態則取決於輸入的順序.</p>
+<p>為了儲存有限狀態機的狀態,需再介紹最後一個建構區域,也就是可以儲存位元的暫存器.n位元的暫存器有n個輸入及輸出端外,另加一個輸入端以告知暫存器何時該改變狀態.將新資訊存入暫存器的動作叫寫入(writing),當定時輸入端告知暫存器要寫入新狀態時,暫存器的狀態便會改變使與輸入訊號相符.至於暫存器的輸出,則總是顯示目前的狀態.</p>
+<p>暫存器的裝置有很多種,其中之一是以布林邏輯區組將狀態訊息推入一個圓圈循環中,這種暫存器是電腦中最常用的一種,所以當電源突然中斷時,電腦便不會繼續當時所做的工作.</p>
+<p>有限狀態機包含了一個布林邏輯區組及一個暫存器,有限狀態機將布林邏輯區組的輸出寫入暫存器中,然後邏輯區組會依新的輸入及當時的狀態計算出下一個狀態,並再下一個循環寫入暫存器中,如此週而復始的重複,有限狀態機因此不斷更新其狀態.</p>
+<p>包括電腦在內的許多數位計算裝置也都已固定的時間間隔變換其狀態,而變換的頻率則稱為這部機器的時脈(clock rate),在電腦的世界裡,時間並不是連續的,而是一組固定的變換序列.電腦的時脈決定這些狀態變換的速度,因此也決定了實際時間與計算機時間的對應關係.</p>
+<p>雖然有限狀態機的功能非常強大,但它卻無法辨識所有序列形式.例如,我們不可能建構一個用迴文開鎖的有限狀態機,所謂迴文就是由前往後唸和由後往前唸都一樣.因為迴文的長度不一定,且必須要記住迴文前半部中的每個字,才能辨識後半部,又由於前半部有無限多種可能,因此需要一部具有無限個狀態的機器才能處理.</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science-of-finite-state-machine/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science-du-linji/">Computer Science - 杜林機</a></h3>
 
                 
@@ -223,48 +274,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science-du-linji/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science-fluid-machine/">Computer Science - 流體電腦</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-08-27
-</p>
-                
-
-                
-                <p><h2 id="流體電腦">流體電腦</h2>
-<p>管路以水壓來表示兩種不同的訊號.在液壓活門中,控制端的水流可以操作輸出端水流,但輸出端的水流並不會影響控制端的水流,這限制了訊息的傳遞方向,就某方面來說,也決定了時間順序.同樣的它也提供了了一個增強(amplification)的附加功能,使每一段訊號強度都能回到最大值.即使當輸入的水流因流過細長的管路或因漏損造成壓力減低,輸出的水壓仍然會因活門的開關動作而達到最大壓力.這就是數位(digital)和類比(analog)最大的不同.數位活門不是開就是關,類比就像是水龍頭一樣,可以任意控制水量大小.在流體電腦中,所有輸入訊號只要強到足以移動活塞就可以了,因此這裡所謂[造成顯著改變的差異]就是推動活塞的水壓大小.</p>
-<p>既然由於輸入一個微弱訊號仍可以得到最強的輸出訊號,我們就可以連接上千層的邏輯函數,用其中一層的輸出訊號控制下一層邏輯,而不用擔心會有壓力減弱的情形發生,因為每個閘門的輸出訊號都是最強.</p>
-<p>這設計型態稱為復原邏輯(restoring logic),而這個流體裝置的例子也特別有趣,因為它與現今電子計算機所用的邏輯幾乎相同.水管的水壓=電路的電壓,液壓活門=用金屬氧化物作成的電晶體,活門上的控制端 輸入端 輸出端=電晶體中的三個接點 閘極(gate) 源極(source) 汲極(drain)</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science-fluid-machine/">Read more</a></p>
                 
             </div>
         </div>

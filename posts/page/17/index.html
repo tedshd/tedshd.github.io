@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-21T10:13:23+08:00" />
+<meta property="og:updated_time" content="2020-05-25T16:56:05+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1071,6 +1071,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1081,6 +1085,56 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2018-10-24-mac-use-readlink-in-mac-os-x/">Mac - Use readlink in Mac OS X</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2018-10-24
+</p>
+                
+
+                
+                <p><h2 id="mac---use-readlink-in-mac-os-x">Mac - Use readlink in Mac OS X</h2>
+<ol>
+<li>install <code>coreutils</code></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install coreutils
+</code></pre></div><ol start="2">
+<li>test greadlink</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">greadlink -f &lt;file name&gt;
+</code></pre></div><ol start="3">
+<li>alias command line</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alias readlink<span style="color:#f92672">=</span>greadlink
+</code></pre></div><p><a href="https://stackoverflow.com/questions/1055671/how-can-i-get-the-behavior-of-gnus-readlink-f-on-a-mac">refer - How can I get the behavior of GNU&rsquo;s readlink -f on a Mac?</a>;</p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
         
 
         
@@ -1119,62 +1173,6 @@ API 電子簽章</p>
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-            data-ad-slot="6176993325" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2018-09-20-javascript-use-the-right-time/">JavaScript - 使用與處理正確的時間</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2018-09-20
-</p>
-                
-
-                
-                <p><h2 id="javascript---使用與處理正確的時間">JavaScript - 使用與處理正確的時間</h2>
-<p>這是個很有趣的議題</p>
-<p>舉凡使用倒數計時器或限時開賣等</p>
-<p>只要在網頁上牽扯到時間的動態呈現都需要處理這問題</p>
-<p>會列舉了幾個情況與介紹一些跟時間相關的的概念與 API</p>
-<p><a href="https://www.cnblogs.com/xiaohuochai/p/5773183.html">Refer - 深入理解定时器系列第一篇——理解setTimeout和setInterval</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">timeZone</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Europe/London&#39;</span>,
-    <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;numeric&#39;</span>, <span style="color:#a6e22e">month</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;numeric&#39;</span>, <span style="color:#a6e22e">day</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;numeric&#39;</span>,
-    <span style="color:#a6e22e">hour</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;numeric&#39;</span>, <span style="color:#a6e22e">minute</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;numeric&#39;</span>, <span style="color:#a6e22e">second</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;numeric&#39;</span>,
-};
-<span style="color:#a6e22e">formatter</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Intl</span>.<span style="color:#a6e22e">DateTimeFormat</span>([], <span style="color:#a6e22e">options</span>);
-<span style="color:#a6e22e">formatter</span>.<span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">new</span> Date());
-
-</code></pre></div><p><a href="https://stackoverflow.com/questions/8207655/get-time-of-specific-timezone">Refer - Get time of specific timezone [duplicate]
-</a></p>
-<p><a href="https://netbasal.com/getting-to-know-the-javascript-internationalization-api-cb893b3908e0">Refer - Getting To Know The JavaScript Internationalization API</a></p>
-<p><a href="https://github.com/HXWfromDJTU/blog/blob/master/JS/eventloop.md">Refer - Javascript 的 EventLoop</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2018-09-20-javascript-use-the-right-time/">Read more</a></p>
                 
             </div>
         </div>
