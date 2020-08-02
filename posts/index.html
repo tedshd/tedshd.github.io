@@ -1311,6 +1311,9 @@ if (!doNotTrack) {
 <li>有擔任過技術研討會講者請列出來(不用寫你參加過什麼研討會, 公司只關心你是不是站在台上演講的那個)</li>
 </ol>
 <p>公司內部分享也可以寫進去(如果沒有所謂的保密條款的話)</p>
+<ol start="8">
+<li>列出作品集或 side project</li>
+</ol>
 <h3 id="履歷的內容">履歷的內容</h3>
 <p>首先</p>
 <p>在找工作時</p>
@@ -1512,7 +1515,7 @@ if (!doNotTrack) {
 <li>language - 語言</li>
 <li>extlang - 地方語言擴充</li>
 <li>script - 文字</li>
-<li>region - 國家</li>
+<li>region - 地區</li>
 <li>variant - 方言 <a href="https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority">IANA</a> 定義</li>
 <li>extension</li>
 <li>privateuse</li>
@@ -1592,11 +1595,13 @@ if (!doNotTrack) {
 <p>這條規則目前沒找到規範</p>
 <p>但是文件也提到如果要更詳細的話也是要遵循 <a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a> 的格式定義</p>
 <h3 id="linux">Linux</h3>
-<p>沒有標準的定義格式</p>
+<p>走 POSIX 平台所定義的標準 <a href="https://en.wikipedia.org/wiki/ISO/IEC_15897">ISO/IEC 15897</a></p>
 <p><a href="https://zh.wikipedia.org/wiki/%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">地區設定</a></p>
 <p><code>language[_territory[.codeset]][@modifier]</code></p>
 <p>language 用 ISO 639-1</p>
 <p>territory 用 ISO 3166-1</p>
+<h3 id="mac-os">Mac OS</h3>
+<p>一樣走 POSIX 平台所定義的標準 <a href="https://en.wikipedia.org/wiki/ISO/IEC_15897">ISO/IEC 15897</a></p>
 <h3 id="windows">Windows</h3>
 <p>Windowa Vista 之後使用 <a href="https://tools.ietf.org/html/rfc4646">RFC 4646</a></p>
 <p><code>&lt;language&gt;-&lt;Script&gt;-&lt;REGION&gt;_&lt;sort order&gt;</code></p>
