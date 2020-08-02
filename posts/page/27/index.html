@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-25T16:56:05+08:00" />
+<meta property="og:updated_time" content="2020-08-03T00:44:28+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1075,6 +1075,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1085,6 +1089,84 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2017-05-12-1822543/">JavaScript - web call native app</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2017-05-12
+</p>
+                
+
+                
+                <p><h2 id="web-call-native-app">web call native app</h2>
+<h3 id="緣由">緣由</h3>
+<p>因為一些原因要 mobile web 可以 call native 的一些東西來分享當前頁面或幹啥事(其實最常用的是聯絡資訊點了直接 call native app)</p>
+<p>眾所皆知 HTML5 預設有</p>
+<ul>
+<li>mailto:</li>
+<li>tel:</li>
+<li>sms:</li>
+</ul>
+<p>但每個都要個別寫入好麻煩
+且 sms 還有 iOS 和 Android 格式不一樣的問題
+於是失心瘋的寫了一個 object 整合一下</p>
+<p>有空再寫 PHP 版
+(但是需求好像偏向會從 PHP 出誒)</p>
+<p>我前端工程師當然先寫 js 版
+突然覺得 isomorphic 好好喔&hellip;</p>
+<h3 id="github">GitHub</h3>
+<p><a href="https://github.com/tedshd/webClientProtocol">webClientProtocol</a></p>
+<h3 id="題外話">題外話</h3>
+<p>關於 web share content 這件事
+Google 有正在搞一個 web share api
+可以針對你想分享的東西去做到複製到剪貼簿或把內容分享給可以使用的 mobile native app
+但是還在測試狀態&hellip;
+相關文章在底下</p>
+<p><a href="https://developers.google.com/web/updates/2016/10/navigator-share">Introducing the Web Share API</a></p>
+<h3 id="題外話中的題外話">題外話中的題外話</h3>
+<p>在早期會是用 <a href="https://en.wikipedia.org/wiki/Web_Intents">Web Intents</a> 去開 native app</p>
+<p>但很麻煩, 且預設是不支持 iOS 的(因為這是 Android 上定義的</p>
+<p>然後 iOS 早期要處理也是 native app 自己定義 protocol, 然後 web 自己用 native app 定義好的 protocol 去開</p>
+<p>且要個別處理 failback 的行為</p>
+<p>然後, 很麻煩的是不同的 native app 的 intent 寫法是不一樣的(因為要 call 的 app 的 package 都不一樣</p>
+<p>iOS 亦是如此, 因為定義的 protocol 不一樣(廢話</p>
+<p>一般早期是用來當 app link 用(當然現在很少這樣用了, 因為 app link 已經發展成熟了, 這又是另一件事了</p>
+<p>順帶一提 iOS 目前最新的是 <a href="https://developer.apple.com/ios/universal-links/">universal link</a></p>
+<p>不過上述算是 app link 發展簡史, 沒有寫得很詳細</p>
+<p>當然 Google 也發現 intent 不夠理想所以想要發展 share api 來達到真正的需求</p>
+<p>share api 期望能達到像是 Android intent 所觸發的 share 的機制</p>
+<p>當然就目前的情況 iOS 的支援應該還是遙遙無期</p>
+<p>不過如果 iOS 的 Chrome 內部有個 interface 轉接去 call App Extension 也許就可以了(我的猜測</p>
+<h3 id="結語">結語</h3>
+<p>目前做的這個功能是指支持 HTML5 原生的</p>
+<p>如果是要像是要 call Line 或 twitter 或 fb 等等的請自己處理</p>
+<p>有看到一個專案在記錄常用的 native app, 但我是沒試過就是了</p>
+<p><a href="http://chriswren.github.io/native-social-interactions/">Native app social interactions on mobile and tablet web</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2017-05-12-1822543/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1122,63 +1204,6 @@ if (!doNotTrack) {
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2017-04-25-1747072/">JavaScript - browser zoom detect</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2017-04-25
-</p>
-                
-
-                
-                <p><h2 id="javascript---browser-zoom-detect">JavaScript - browser zoom detect</h2>
-<p>強者我朋友身為一個設計師問我一個很奇耙的需求</p>
-<p>就是可不可以知道瀏覽器的縮放狀態</p>
-<p>因為她的 BOSS 要求縮放不破版, 所以她希望設計在縮放狀態時的 layout 讓工程師套版</p>
-<p>於是來問我說是否有辦法知道瀏覽器的縮放狀態</p>
-<p>先說一下其實要縮放不破版只要設計彈性的 layout 例如使用 grid 的設計基本上都不會破版, 以我的經驗縮放破版通常是一些特殊的 layout 或用一些奇特的 CSS 的寫法</p>
-<p>但正妹設計師求助</p>
-<p>魯蛇工程師只好默默的來看看有啥方法</p>
-<p>在新的 JavaScript api 有個 <code>devicePixelRatio</code> 可以取得目前 device 的像素比</p>
-<p>一般是用來判斷是否是 high resolution 的螢幕</p>
-<p>但是當 browser 縮放時其實這個值也會改變(尚未在 mobile device 試驗</p>
-<p>所以可以用這特性來做處理</p>
-<p>但這有問題就是當本身螢幕就是 high resolution 得螢幕像是 2K or 4K or MBPR 的螢幕</p>
-<p>它們的 <code>window.devicePixelRatio</code> 就不會是 1</p>
-<p>所以縮放後也不好知道縮放的比例</p>
-<p>所以非完美解&hellip;</p>
-<p>且目前 browser 支援度不佳</p>
-<p>下面是範例</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">browserZoomLevel</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>(window.<span style="color:#a6e22e">devicePixelRatio</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">browserZoomLevel</span>);
-</code></pre></div><p>目前看來與其去處理縮放不如把 layout 設計好才是正解</p>
-<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Window/devicePixelRatio">MDN - Window.devicePixelRatio</a></p>
-<p><a href="http://stackoverflow.com/questions/1713771/how-to-detect-page-zoom-level-in-all-modern-browsers">Refer - How to detect page zoom level in all modern browsers?</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2017-04-25-1747072/">Read more</a></p>
                 
             </div>
         </div>

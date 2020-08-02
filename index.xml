@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Mon, 25 May 2020 16:56:05 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2020 00:44:28 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何準備網路資訊業工程師的履歷/簡歷</title>
+      <link>https://blog.tedshd.io/posts/prepare_resume/</link>
+      <pubDate>Mon, 03 Aug 2020 00:44:28 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/prepare_resume/</guid>
+      <description>這邊會以我自己的經驗/經歷 與我是參考哪些東西來準備的部分來說明 為啥會有這篇文章主要是因為這部影片 https://www.youtube.com/watch?v=HIbZ5hH5XW4 因為這部影片在一些 FB 社群上面有貼文 我特地看</description>
+    </item>
     
     <item>
       <title>在數位中所定義與使用語言與文字的規範</title>

@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-25T16:56:05+08:00" />
+<meta property="og:updated_time" content="2020-08-03T00:44:28+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -192,6 +192,62 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2019-09-05-redis-note/">redis - note</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2019-09-05
+</p>
+                
+
+                
+                <p><h2 id="redis---note">redis - note</h2>
+<p>doc</p>
+<p><a href="http://redisdoc.com/index.html">http://redisdoc.com/index.html</a></p>
+<p>php redis</p>
+<p><a href="https://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html">https://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html</a></p>
+<p>go redis</p>
+<p><a href="https://godoc.org/github.com/go-redis/redis">https://godoc.org/github.com/go-redis/redis</a></p>
+<h3 id="連到-redis-server">連到 redis server</h3>
+<ul>
+<li>local server</li>
+</ul>
+<pre><code>redis-cli
+</code></pre><ul>
+<li>remote server</li>
+</ul>
+<pre><code>redis-cli -h host -p port -a password
+</code></pre><h3 id="get-all-key">Get all key</h3>
+<pre><code>KEYS '*'
+</code></pre><h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="err-operation-against-a-key-holding-the-wrong-kind-of-value">ERR Operation against a key holding the wrong kind of value</h3>
+<p>取 Key 的類型不對</p>
+<p>用</p>
+<pre><code>type &lt;KEY&gt;
+</code></pre><p>來確認存的類型</p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2019-09-03-golang-note/">golang - note</a></h3>
 
                 
@@ -230,69 +286,6 @@ if (!doNotTrack) {
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2019-07-03-web-icon-use-notes/">web - favicon 使用筆記</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2019-07-03
-</p>
-                
-
-                
-                <p><h2 id="favicon-使用筆記">favicon 使用筆記</h2>
-<p>隨著 web 發展越來越久</p>
-<p>所需要準備的 favicon 等 icon 需要用到越來越多地方了</p>
-<p>且這也是一個服務重要的依據</p>
-<p>有設定 favicon 就是能夠給人對這個服務有個既定的印象</p>
-<p>能夠讓人快速的記憶這個服務</p>
-<p>所以不可忽視它在 web 上的使用</p>
-<p>這裡會持續記錄需要設定的地方與格式</p>
-<h3 id="wiki-faviconhttpsenwikipediaorgwikifavicon">Wiki <a href="https://en.wikipedia.org/wiki/Favicon">Favicon</a></h3>
-<h3 id="suggest">Suggest</h3>
-<p>Format <code>PNG</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;shortcut icon&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://example.com/myicon.ico&#34;</span>&gt;
-</code></pre></div><h3 id="safari-pin">Safari pin</h3>
-<p>SVG, 16x16 viewbox</p>
-<p><a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html">Creating Pinned Tab Icons</a></p>
-<h3 id="ios-add-to-home-screen">iOS add to home screen</h3>
-<p><a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a></p>
-<h3 id="show-in-google-search-result">show in Google search result</h3>
-<p>Update in 2019</p>
-<p>會在 mobile browser 加強顯示</p>
-<p><a href="https://support.google.com/webmasters/answer/9290858">Define a favicon to show in search results</a></p>
-<h3 id="pwa">PWA</h3>
-<p>這是 PWA 會在行動裝置顯示的 icon</p>
-<p><a href="https://developers.google.com/web/fundamentals/web-app-manifest/">The Web App Manifest</a></p>
-<h3 id="更新">更新</h3>
-<p>有網友補充提供服務</p>
-<p><a href="https://www.facebook.com/groups/f2e.tw/permalink/2253070994730253/">https://www.facebook.com/groups/f2e.tw/permalink/2253070994730253/</a></p>
-<p><a href="https://realfavicongenerator.net/favicon_checker">Favicon checker</a></p>
-<p><a href="http://www.favicomatic.com/">Favic-o-Matic</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2019-07-03-web-icon-use-notes/">Read more</a></p>
                 
             </div>
         </div>

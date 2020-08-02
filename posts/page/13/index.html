@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-25T16:56:05+08:00" />
+<meta property="og:updated_time" content="2020-08-03T00:44:28+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1075,6 +1075,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1085,6 +1089,67 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2019-03-25-vue-vue-cli-note/">Vue - Vue cli note</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2019-03-25
+</p>
+                
+
+                
+                <p><h2 id="vue---vue-cli-note">Vue - Vue cli note</h2>
+<p><a href="https://cli.vuejs.org/">https://cli.vuejs.org/</a></p>
+<h3 id="vuetify">vuetify</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vue create &lt;project folder name&gt;
+
+cd &lt;project folder name&gt;
+
+vue add vuetify
+
+npm run serve
+</code></pre></div><h3 id="use-spa">Use SPA</h3>
+<p>App.vue</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">router-view</span>&gt;&lt;/<span style="color:#f92672">router-view</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;App&#39;</span>,
+  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+  },
+  <span style="color:#a6e22e">data</span> () {
+    <span style="color:#66d9ef">return</span> {
+    }
+  }
+}
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+</code></pre></div></p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1135,101 +1200,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2018-12-26-chrome-headless-research-notes/">Chrome headless 研究筆記</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2018-12-26
-</p>
-                
-
-                
-                <p><h2 id="chrome-headless-研究筆記">Chrome headless 研究筆記</h2>
-<p>最近要用到 chrome headless 的部分功能</p>
-<p>且得在 ubuntu or debian server 實踐</p>
-<p>所以筆記一下</p>
-<h3 id="intro">Intro</h3>
-<p>headless 大致分兩種用法</p>
-<ol>
-<li>
-<p>CLI</p>
-</li>
-<li>
-<p>libary</p>
-</li>
-</ol>
-<p><a href="https://developers.google.com/web/updates/2017/04/headless-chrome">Refer - Getting Started with Headless Chrome</a></p>
-<p>CLI 用法簡單但是受限很多且沒有找到具體詳細完整的文件, 就連用 man 查都查不到&hellip;</p>
-<p>也有可能是我自己沒有認真找</p>
-<p>libary 就相對容易, 連 Google 自己都有提供部分語言的版本, 且有前端工程師很熟的 Node 版本</p>
-<h3 id="on-ubuntu-server">on ubuntu server</h3>
-<pre><code>sudo apt-get install chromium-browser
-</code></pre><p>ex:</p>
-<pre><code>chromium-browser --headless --screenshot=test.png --disable-gpu --window-size=320,480 --user-agent=&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D257 Safari/9537.53&quot; http://tedshd.logdown.com
-</code></pre><p>這指令下了截圖, 設定寬高, 模擬 UserAgent</p>
-<p>當然也有 <code>--dump-dom</code> 可以看 source code</p>
-<h3 id="使用-puppeteer-處理">使用 puppeteer 處理</h3>
-<p><a href="https://github.com/GoogleChrome/puppeteer">puppeteer</a></p>
-<p>puppeteer 是 Google 維護的用 node 處理 headless 的套件</p>
-<p>用了一下真是感到清爽好用</p>
-<p>放一段最簡單的 smaple code</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">puppeteer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;puppeteer&#39;</span>);
-
-(<span style="color:#a6e22e">async</span> () =&gt; {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">browser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">puppeteer</span>.<span style="color:#a6e22e">launch</span>();
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">page</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">browser</span>.<span style="color:#a6e22e">newPage</span>();
-    <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">setUserAgent</span>(<span style="color:#e6db74">&#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:64.0) Gecko/20100101 Firefox/64.0&#39;</span>);
-		<span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#66d9ef">goto</span>(<span style="color:#e6db74">&#39;https://tysh310246.blogspot.com&#39;</span>);
-
-    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">screenshot</span>({<span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;example.png&#39;</span>, <span style="color:#a6e22e">fullPage</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>});
-    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">browser</span>.<span style="color:#a6e22e">close</span>();
-
-})();
-</code></pre></div><p>就是如此清爽</p>
-<p>且有很多包好的 function 可以用</p>
-<p>看了一下文件根本可以用 headless 取代 selenium + webdriver.io 了</p>
-<p>但是目前的需求也不需要用到太多其他的功能</p>
-<p>有空再慢慢研究</p>
-<p><a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md">Puppeteer API Tip-Of-Tree</a></p>
-<h3 id="字型">字型</h3>
-<p>在一台 server 上除非要截的網站是用 webfont 不然就會發現截的圖因為沒有字型所以中文會是方塊字</p>
-<p>這部分就得處理一下</p>
-<p>可以直接裝 Google 的 noto 字型</p>
-<pre><code>wget -c https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip
-</code></pre><p>把字型檔載下來放在</p>
-<pre><code>/usr/local/share/fonts/
-</code></pre><p>設定 owner</p>
-<p>設定權限</p>
-<p>安裝字型</p>
-<pre><code>sudo fc-cache -fv
-</code></pre><p>搞定</p>
-<p>這邊建議直接裝全部語系的字型較為完整, 以免會遇到其他語系還是會有問題</p>
-<p><a href="http://samwhelp.github.io/blog/read/linux/ubuntu/font/font-noto/">Refer - Ubuntu環境下，手動安裝思源字型</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2018-12-26-chrome-headless-research-notes/">Read more</a></p>
                 
             </div>
         </div>

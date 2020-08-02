@@ -183,8 +183,15 @@ if (!doNotTrack) {
     </div>
 </header>
 
+
 <section class="p-strip is-shallow">
     <main class="row post-content">
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2019-12-02
+        </p>
+        
         <p>PHP -  check HTTP protocol</p>
 <p>Use</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP">$protocol    = (isset($_SERVER[&#39;HTTPS&#39;]) <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">&amp;</span> ($_SERVER[&#39;HTTPS&#39;] == &#39;on&#39; || $_SERVER[&#39;HTTPS&#39;] == 1) || isset($_SERVER[&#39;HTTP_X_FORWARDED_PROTO&#39;]) <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">&amp;</span> $_SERVER[&#39;HTTP_X_FORWARDED_PROTO&#39;] == &#39;https&#39;) ? &#39;https&#39; : &#39;http&#39;;
