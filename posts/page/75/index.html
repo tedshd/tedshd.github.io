@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-08-03T00:44:28+08:00" />
+<meta property="og:updated_time" content="2020-08-04T21:41:00+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,6 +53,7 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
+
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -1152,7 +1153,7 @@ zsh 附加換 theme 的功能
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">source ~/.zshrc
 </code></pre></div><p>常用的 alias</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#mysql</span>
-export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/usr/local/mysql/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/mysql/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
 
 <span style="color:#75715e"># java</span>
 export PATH<span style="color:#f92672">=</span>/opt/local/bin:/opt/local/sbin:$PATH:/path/to/java/bin
@@ -1203,8 +1204,8 @@ colorscheme torte
 </span><span style="color:#e6db74">set tabstop=4
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">&#34;</span>  indent
-set softtabstop<span style="color:#f92672">=</span>4
-set shiftwidth<span style="color:#f92672">=</span>4
+set softtabstop<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+set shiftwidth<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
 
 <span style="color:#e6db74">&#34; smart alignment
 </span><span style="color:#e6db74">set smartindent
@@ -1216,7 +1217,7 @@ set autoindent
 </span><span style="color:#e6db74">set number
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">&#34;</span> history
-set history<span style="color:#f92672">=</span>50
+set history<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>
 
 <span style="color:#e6db74">&#34; 在状态行显示目前所执行的命令，未完成的指令片段亦会显示出来
 </span><span style="color:#e6db74">&#34;</span> set showcmd
@@ -1280,7 +1281,7 @@ Install MySQL(<a href="http://dev.mysql.com/downloads/mysql/5.5.html">http://dev
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim ~/.zshrc
 // add
 <span style="color:#75715e">#mysql</span>
-export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/usr/local/mysql/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/mysql/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
 // save and <span style="color:#66d9ef">then</span> restart shell
 source ~/.zshrc
 </code></pre></div><h4 id="homebrew-install">Homebrew install</h4>
@@ -1329,11 +1330,11 @@ source ~/.zshrc
 <ul>
 <li>HTML</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> for volume SOD </span><span style="color:#75715e">--&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- for volume SOD --&gt;</span>
 &lt;<span style="color:#f92672">object</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pluginObjectNNavi&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">classid</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clsid:SAMSUNG-INFOLINK-NNAVI&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;opacity:0.0;background-color:#000000;width:0px;height:0px;&#34;</span>&gt;&lt;/<span style="color:#f92672">object</span>&gt;
 &lt;<span style="color:#f92672">object</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pluginObjectTVMW&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">classid</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clsid:SAMSUNG-INFOLINK-TVMW&#34;</span>  <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;opacity:0.0;background-color:#000000;width:0px;height:0px;&#34;</span>&gt;&lt;/<span style="color:#f92672">object</span>&gt;
 
-<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> add plugin js </span><span style="color:#75715e">--&gt;</span>
+<span style="color:#75715e">&lt;!-- add plugin js --&gt;</span>
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;text/javascript&#39;</span> <span style="color:#a6e22e">language</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;javascript&#39;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;$MANAGER_WIDGET/Common/API/Plugin.js&#39;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><ul>
 <li>JavaScript</li>
@@ -1368,30 +1369,30 @@ source ~/.zshrc
 		&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span>&gt;
 		&lt;<span style="color:#f92672">title</span>&gt;Samsung_miiiTV&lt;/<span style="color:#f92672">title</span>&gt;
 
-		<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> TODO : Style sheets code </span><span style="color:#75715e">--&gt;</span>
+		<span style="color:#75715e">&lt;!-- TODO : Style sheets code --&gt;</span>
 		&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app/stylesheets/Main.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
 
-		<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> TODO: Plugins </span><span style="color:#75715e">--&gt;</span>
+		<span style="color:#75715e">&lt;!-- TODO: Plugins --&gt;</span>
 
 	&lt;/<span style="color:#f92672">head</span>&gt;
 
 	&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">onload</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Main.onLoad();&#34;</span> <span style="color:#a6e22e">onunload</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Main.onUnload();&#34;</span>&gt;
 
-		<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> Dummy anchor as focus for key events </span><span style="color:#75715e">--&gt;</span>
+		<span style="color:#75715e">&lt;!-- Dummy anchor as focus for key events --&gt;</span>
 		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:void(0);&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anchor&#34;</span> <span style="color:#a6e22e">onkeydown</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Main.keyDown();&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
 
-		<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> for volume SOD </span><span style="color:#75715e">--&gt;</span>
+		<span style="color:#75715e">&lt;!-- for volume SOD --&gt;</span>
 		&lt;<span style="color:#f92672">object</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pluginObjectNNavi&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">classid</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clsid:SAMSUNG-INFOLINK-NNAVI&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;opacity:0.0;background-color:#000000;width:0px;height:0px;&#34;</span>&gt;&lt;/<span style="color:#f92672">object</span>&gt;
 		&lt;<span style="color:#f92672">object</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pluginObjectTVMW&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">classid</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clsid:SAMSUNG-INFOLINK-TVMW&#34;</span>  <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;opacity:0.0;background-color:#000000;width:0px;height:0px;&#34;</span>&gt;&lt;/<span style="color:#f92672">object</span>&gt;
 
-		<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> TODO: your code here </span><span style="color:#75715e">--&gt;</span>
+		<span style="color:#75715e">&lt;!-- TODO: your code here --&gt;</span>
 	&lt;/<span style="color:#f92672">body</span>&gt;
-	<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> TODO : Common API </span><span style="color:#75715e">--&gt;</span>
+	<span style="color:#75715e">&lt;!-- TODO : Common API --&gt;</span>
 	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;text/javascript&#39;</span> <span style="color:#a6e22e">language</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;javascript&#39;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;$MANAGER_WIDGET/Common/API/Plugin.js&#39;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">language</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;$MANAGER_WIDGET/Common/API/Widget.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">language</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;$MANAGER_WIDGET/Common/API/TVKeyValue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 
-	<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> TODO : Javascript code </span><span style="color:#75715e">--&gt;</span>
+	<span style="color:#75715e">&lt;!-- TODO : Javascript code --&gt;</span>
 	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">language</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app/javascript/Main.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
 

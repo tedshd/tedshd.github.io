@@ -27,7 +27,7 @@
       <pubDate>Wed, 24 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2018-10-24-mac-use-readlink-in-mac-os-x/</guid>
-      <description>Mac - Use readlink in Mac OS X  install coreutils  brew install coreutilstest greadlink  greadlink -f &amp;lt;file name&amp;gt;alias command line  alias readlink=greadlinkrefer - How can I get the behavior of GNU&amp;rsquo;s readlink -f on a Mac?;</description>
+      <description>Mac - Use readlink in Mac OS X  install coreutils  brew install coreutils test greadlink  greadlink -f &amp;lt;file name&amp;gt; alias command line  alias readlink=greadlink refer - How can I get the behavior of GNU&amp;rsquo;s readlink -f on a Mac?;</description>
     </item>
     
     <item>
@@ -45,9 +45,9 @@
       <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2015-07-22-mac-hide-desktop-icon/</guid>
-      <description>Mac - hide desktop icon Hide defaults write com.apple.finder CreateDesktop -bool falseThen
-killall FinderShow defaults write com.apple.finder CreateDesktop -bool trueThen
-killall FinderRefer - Hide All Desktop Icons in Mac OS X</description>
+      <description>Mac - hide desktop icon Hide defaults write com.apple.finder CreateDesktop -bool false Then
+killall Finder Show defaults write com.apple.finder CreateDesktop -bool true Then
+killall Finder Refer - Hide All Desktop Icons in Mac OS X</description>
     </item>
     
     <item>

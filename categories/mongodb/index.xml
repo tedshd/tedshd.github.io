@@ -24,8 +24,8 @@ Wiki
 Install MongoDB
 2nd. Getting Started Getting Started with MongoDB
 In Mac, if show message
-** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000input command
-launchctl limit maxfiles 1024 1024Refer</description>
+** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000 input command
+launchctl limit maxfiles 1024 1024 Refer</description>
     </item>
     
   </channel>

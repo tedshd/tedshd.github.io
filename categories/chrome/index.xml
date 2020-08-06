@@ -18,7 +18,7 @@
       <pubDate>Wed, 03 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2016-08-03-linux-install-gogole-chrome-in-debian-linux/</guid>
-      <description>Linux - install gogole chrome in debian Linux wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -sudo sh -c &amp;#39;echo &amp;#34;deb http://dl.google.com/linux/chrome/deb/ stable main&amp;#34; &amp;gt;&amp;gt; /etc/apt/sources.list.d/google.list&amp;#39;sudo apt-get updatesudo apt-get install google-chrome-stablerefer - How to install Chrome browser properly via command line?</description>
+      <description>Linux - install gogole chrome in debian Linux wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - sudo sh -c &amp;#39;echo &amp;#34;deb http://dl.google.com/linux/chrome/deb/ stable main&amp;#34; &amp;gt;&amp;gt; /etc/apt/sources.list.d/google.list&amp;#39; sudo apt-get update sudo apt-get install google-chrome-stable refer - How to install Chrome browser properly via command line?</description>
     </item>
     
   </channel>
