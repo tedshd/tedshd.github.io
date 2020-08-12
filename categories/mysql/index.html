@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/categories/mysql/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-01-29T17:42:46+08:00" />
+<meta property="og:updated_time" content="2020-08-12T11:22:13+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -215,6 +215,7 @@ create table 資料表名稱(欄位名稱1 資料型別1,欄位名稱2 資料型
 create table 資料表名稱(欄位名稱1 資料型別1,欄位名稱2 資料型別2) charset=utf8;
 show tables;
 確認資料表的欄位結構
+drop table 資料表名稱;
 desc 資料表名稱;
 show create table &lt;table name&gt;
 </code></pre><table>
@@ -270,6 +271,12 @@ Q:</p>
 </code></pre><p>A:
 mysql 沒啟動</p>
 <pre><code>mysql.server start
+</code></pre><p>or 設定沒有設定 socket 的路徑</p>
+<p>for mac brew 安裝的 mysql 在 <code>/usr/local/var/mysql</code> 所以設定就設定該路徑(底下不必有 mysql.sock)</p>
+<pre><code>[client]
+socket=/usr/local/var/mysql/mysql.sock
+[mysqld]
+socket=/usr/local/var/mysql/mysql.sock
 </code></pre></p>
                 
 
