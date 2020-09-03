@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-08-12T11:22:13+08:00" />
+<meta property="og:updated_time" content="2020-09-03T16:07:40+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -193,6 +193,47 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-27-computer-translation-of-science-language/">Computer Science - 語言轉譯</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-08-27
+</p>
+                
+
+                
+                <p><h2 id="語言轉譯">語言轉譯</h2>
+<p>目前已將技術和指令兩者串連起來,但語言是以文字撰寫的,而指令是一些位元組合,電腦本身必須自己將程式轉換成位元組合.</p>
+<p>電腦翻譯程式語言的方法就像一個極有耐性的翻譯員一樣,靠著一本字典翻譯用某種其實自己並不熟悉的語言所寫的文件一樣.翻譯員可以在字典中查閱任何他不懂的單字,若定義裡仍出現不懂的字,一樣可以查閱字典,直到完全了解整個意思.在這裡,翻譯員的字典 = 程式,而電腦所認識的文字 = 程式語言原詞.這些原詞是以一連串簡單的機械指令定義出來的.</p>
+<p>把一連串的字元儲存在相鄰的記憶體中,每個字元佔一個位置.電腦的記憶體中也有一本字典,它紀錄了每個指令名稱所對應的指令順序位址.電腦可以在字典中搜尋,找出特定的指令名稱及所對應的位址,不只如此,電腦要執行某個特殊指令時,就會從這些字典中找出這個指令定義儲存的地方.</p>
+<p>這個搜尋指令的動作可以在程式執行前完成,如此可省掉許多時間,因為假使有個程式要執行很多次,實在沒有道理叫它每次都重複做同樣的搜尋.弱大部分轉換的工作都事先完成的話,則我們稱這過程為編譯(compilaction),而執行編譯動作的程式稱為編譯器.若這些轉換大部分都在程式執行時才做,稱之為直譯(interpretation),而執行這動作的程式稱為直譯器,但兩者不一定是如此壁壘分明.</p>
+<p>電腦所執行的動作是由程式指定的,而程式是由程式語言寫成.程式語言會由直譯器或編譯器,透過一組成為作業系統的副程式,轉譯成一連串的機械語言指令.指令定義了資料所要執行的運算,而不論指令或資料,都會儲存在記憶體中.至於有限狀態機的功能,就是將這些指令叫出並加以執行.指令及運算資料都是以位元組合表示,有限狀態機和記憶體則由暫存器及布林邏輯區組所構成,而布林邏輯區組又是以 And Or Invert 這些簡單的邏輯函數所組成.邏輯函數由串聯或並聯的開關操作出來,而這些開關控制了水或電流等物質,以傳遞兩種訊號1或0.</p>
+<p>這就是電腦賴以運作的分離階層架構.</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-08-27-computer-translation-of-science-language/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science-of-quantum-computation/">Computer Science - 量子計算</a></h3>
 
                 
@@ -224,68 +265,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science-of-quantum-computation/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-27-logdown-tab-test/">logdown Tab test</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-08-27
-</p>
-                
-
-                
-                <p><h2 id="tab-problem">Tab problem</h2>
-<h3 id="problem">Problem</h3>
-<p>Mac 的 function 中 console.log(&lsquo;hihi&rsquo;) 是按一次 Tab 有 4 個空白
-but
-alert(&lsquo;hihi&rsquo;) 這一行在按 Tab 縮排就有問題，再接續上一行按 enter 下來之後縮排剩 2 個空白，之後再按 Tab 縮排會變成只有 2 個空白
-在 fun2 的 function 中都是直接按 4 個空白鍵來作縮排，都正常</p>
-<h3 id="發生現象">發生現象</h3>
-<p>在按 Tab 縮排過，打完那一行直接按 enter 到下一行，縮排就從 4 個空白變成 2個空白</p>
-<h3 id="期望">期望</h3>
-<p>希望用 Tab 時在 Edit 和 Preview(最終結果)的結果是一樣的</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Mac</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
-  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">console</span>) {
-  	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
-  }
-}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#66d9ef">function</span>() {
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span>);
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">2</span>);
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;reset 重新從最左邊按一次 Tab&#39;</span>);
-}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
-    <span style="color:#a6e22e">condsole</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;ok&#39;</span>);
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fun</span>) {
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;good&#39;</span>);
-    }
-}
-</code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-08-27-logdown-tab-test/">Read more</a></p>
                 
             </div>
         </div>

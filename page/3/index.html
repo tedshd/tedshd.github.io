@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-08-12T11:22:13+08:00" />
+<meta property="og:updated_time" content="2020-09-03T16:07:40+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -193,6 +193,143 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/php_load_font_to_image/">php - 載入文字轉成圖片</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2020-05-14
+</p>
+                
+
+                
+                <p><h2 id="需求">需求</h2>
+<p>讀取一段文字後</p>
+<p>可以決定字型</p>
+<p>最後要轉成圖片</p>
+<h2 id="使用的工具">使用的工具</h2>
+<ul>
+<li>
+<p>php7.2</p>
+</li>
+<li>
+<p>freetype</p>
+</li>
+</ul>
+<p>提前說明需要用到 GD(這通常預設就啟動了)</p>
+<p>freetype 通常會需要另外安裝</p>
+<p>如何先檢查有沒有 GD 和 freetype</p>
+<p>先用 phpinfo 檢查即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">-&gt; % php -a
+Interactive shell
+
+php &gt;
+</code></pre></div><p>之後再打</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP">echo phpinfo();
+</code></pre></div><p>就會 output 資訊了</p>
+<p>在搜尋 <code>gd</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gd
+
+GD Support <span style="color:#f92672">=</span>&gt; enabled
+GD Version <span style="color:#f92672">=</span>&gt; bundled <span style="color:#f92672">(</span>2.1.0 compatible<span style="color:#f92672">)</span>
+GIF Read Support <span style="color:#f92672">=</span>&gt; enabled
+GIF Create Support <span style="color:#f92672">=</span>&gt; enabled
+JPEG Support <span style="color:#f92672">=</span>&gt; enabled
+libJPEG Version <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">9</span> compatible
+PNG Support <span style="color:#f92672">=</span>&gt; enabled
+libPNG Version <span style="color:#f92672">=</span>&gt; 1.6.32
+WBMP Support <span style="color:#f92672">=</span>&gt; enabled
+XBM Support <span style="color:#f92672">=</span>&gt; enabled
+</code></pre></div><p>有安裝過 freetype 的話</p>
+<p>就會一起顯示 <strong>FreeType Support</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gd
+
+GD Support <span style="color:#f92672">=</span>&gt; enabled
+GD Version <span style="color:#f92672">=</span>&gt; bundled <span style="color:#f92672">(</span>2.1.0 compatible<span style="color:#f92672">)</span>
+FreeType Support <span style="color:#f92672">=</span>&gt; enabled
+FreeType Linkage <span style="color:#f92672">=</span>&gt; with freetype
+FreeType Version <span style="color:#f92672">=</span>&gt; 2.10.1
+GIF Read Support <span style="color:#f92672">=</span>&gt; enabled
+GIF Create Support <span style="color:#f92672">=</span>&gt; enabled
+JPEG Support <span style="color:#f92672">=</span>&gt; enabled
+libJPEG Version <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">9</span> compatible
+PNG Support <span style="color:#f92672">=</span>&gt; enabled
+libPNG Version <span style="color:#f92672">=</span>&gt; 1.6.37
+WBMP Support <span style="color:#f92672">=</span>&gt; enabled
+XBM Support <span style="color:#f92672">=</span>&gt; enabled
+WebP Support <span style="color:#f92672">=</span>&gt; enabled
+</code></pre></div><p>目前環境是 Mac OSX 10.14.6</p>
+<p>安裝 freetype 的方式大致上有三種</p>
+<ol>
+<li>
+<p>重新編譯 PHP</p>
+</li>
+<li>
+<p>brew 安裝新的 PHP</p>
+</li>
+<li>
+<p><a href="https://php-osx.liip.ch/">用別人寫的安裝 PHP 的指令</a></p>
+</li>
+</ol>
+<p>因為剛好之前是用 Mac 自帶的 PHP 來用(PHP 7.1.23)</p>
+<p>就順便用 brew 安裝 PHP 7.2 也順便改成用 brew 安裝的 PHP 7.2 當之後本地端的開發</p>
+<p>brew 安裝完後其實就也一起裝好 freetype 了</p>
+<p>這裡額外提一下自己其實有部分的開發都用 docker 開發了, 因為 PHP 版本不一(升級成本太高了, 且 PHP 不是開發主力) 所以就用 docker 封裝管理不同的服務</p>
+<p>所以得注意一下 PHP 語法和 extension 的支援</p>
+<p><a href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/41900/">Refer - macos缺少freetype終極解決方案</a></p>
+<p><a href="https://blog.si-yee.com/2019/03/19/Mac%E7%BC%BA%E5%B0%91freetype%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Refer - Mac缺少freetype解决方案</a></p>
+<h2 id="code">Code</h2>
+<p>先使用 <code>imagettftext</code></p>
+<p><a href="https://www.php.net/manual/zh/function.imagettftext.php">Refer</a></p>
+<p>需要再使用 <code>imagepng</code> 來輸出成圖片</p>
+<p><a href="https://www.php.net/manual/en/function.imagepng.php">Refer</a></p>
+<p>以下為簡單的範例</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP">
+// 先建立一個畫布
+$im = imagecreatetruecolor(1400, 320);
+
+// 建立顏色
+$white = imagecolorallocate($im, 255, 255, 255);
+$black = imagecolorallocate($im, 0, 0, 0);
+// 建立一個塗滿背景的區域
+imagefilledrectangle($im, 0, 0, 1400, 320, $white);
+
+// 文字
+$text = &#39;中文繁體 text&#39;;
+// 字型
+$font = &#39;NotoSansTC-Regular.otf&#39;;
+// 輸出的檔案
+$file = &#39;font.png&#39;;
+
+// 添加文字到圖片中
+imagettftext($im, 112, 0, 10, 160, $black, $font, $text);
+// 輸出成 PNG
+imagepng($im, $file, 9);
+</code></pre></div><p>當然要輸出成其他圖片格式 PHP 也有 <code>imagejpeg</code> 等 function 可以使用</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/php_load_font_to_image/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/google_search_result_structure_data_research_log/">Google search result with structured data</a></h3>
 
                 
@@ -244,43 +381,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/google_search_result_structure_data_research_log/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/mobile_web_remove_touch_background/">Mobile web remove touch background</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2020-03-04
-</p>
-                
-
-                
-                <p><h2 id="intro">Intro</h2>
-<p>Mobile web touch fire event or a link can show blue background</p>
-<h2 id="how-to-remove">How to remove</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">-webkit-tap-highlight-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">transparent</span><span style="color:#f92672">;</span>
-</code></pre></div><p><a href="https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-background-of-button-on-mobile">Refer - How to remove the blue background of button on mobile?</a></p>
-</p>
-                
-
-                
-
                 
             </div>
         </div>
