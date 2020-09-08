@@ -363,8 +363,10 @@ scp -i &lt;key&gt; &lt;local directory&gt; &lt;username@tohostname&gt;:&lt;remot
 <h1 id="壓縮資料夾">壓縮資料夾</h1>
 <p>tar -zxvf <!-- raw HTML omitted -->.tar.gz <!-- raw HTML omitted --></p>
 <h1 id="解壓縮資料夾">解壓縮資料夾</h1>
-<p>sudo lsof -i -P -n | grep LISTEN</p>
+<p>sudo lsof -i -P -n | grep LISTEN
+netstat -tulpn | grep LISTEN</p>
 <h1 id="確認開啟的port">確認開啟的port</h1>
+<p>lsof -n -i | grep LISTEN <strong>(for Mac)</strong></p>
 <h3 id="apt">apt</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt --installed list
 <span style="color:#75715e"># 列出已安裝套件</span>
