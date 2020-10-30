@@ -18,7 +18,7 @@
       <pubDate>Wed, 28 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2013-08-28-mysql-command/</guid>
-      <description>MySQL Monitor Setting mysql -u root -h &amp;lt;HOST&amp;gt; -P &amp;lt;PORT&amp;gt; &amp;lt;DATABASE_NAME&amp;gt; -p -A Command 每一個 command 最後都要加 ; status; create database 資料庫名稱; drop database 資料庫名稱; show databases; use 資料庫名稱; select database(); create table 資料表名稱(欄位名稱1 資料型別1</description>
+      <description>MySQL Monitor Setting mysql -u root -h &amp;lt;HOST&amp;gt; -P &amp;lt;PORT&amp;gt; &amp;lt;DATABASE_NAME&amp;gt; -p -A database 每一個 command 最後都要加 ; status; create database database_name; drop database database_name; show databases; show tables; use database_name; table create table table_name( column1 type1, column2 type2); create table table_name( column1 type1, column2 type2) charset=utf8; desc table_name; show create table &amp;lt;table_name&amp;gt; MySQL 8.0 Reference Manual :: 3.3.2 Creating a Table - MySQL</description>
     </item>
     
   </channel>

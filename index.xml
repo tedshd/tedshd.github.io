@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Thu, 03 Sep 2020 16:05:40 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2020 15:39:19 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTML form submit same name in php, nodejs, golang</title>
+      <link>https://blog.tedshd.io/posts/form_multi_checked_in_php_nodejs_golang/</link>
+      <pubDate>Sat, 24 Oct 2020 15:39:19 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/form_multi_checked_in_php_nodejs_golang/</guid>
+      <description>一直以來大部分時間都在用 PHP 開發 所以也用 PHP 來處理 HTML Form 所以都下意識地認為 &amp;lt;input type=&amp;quot;checkbox&amp;quot; name=&amp;quot;game[]&amp;quot; value=&amp;quot;FGO&amp;quot;&amp;gt; 這樣的 name=&amp;quot;game[]&amp;quot; 的處理方式是正規的處理 HTML Form 的多選的方式 也疑惑為何大多的 HTML</description>
+    </item>
     
     <item>
       <title>Html2canvas</title>
@@ -1964,7 +1973,7 @@ $.post( &amp;#39;/api/post&amp;#39;, { val: &amp;#39;string&amp;#39;, val2: 1 },
       <pubDate>Wed, 28 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2013-08-28-mysql-command/</guid>
-      <description>MySQL Monitor Setting mysql -u root -h &amp;lt;HOST&amp;gt; -P &amp;lt;PORT&amp;gt; &amp;lt;DATABASE_NAME&amp;gt; -p -A Command 每一個 command 最後都要加 ; status; create database 資料庫名稱; drop database 資料庫名稱; show databases; use 資料庫名稱; select database(); create table 資料表名稱(欄位名稱1 資料型別1</description>
+      <description>MySQL Monitor Setting mysql -u root -h &amp;lt;HOST&amp;gt; -P &amp;lt;PORT&amp;gt; &amp;lt;DATABASE_NAME&amp;gt; -p -A database 每一個 command 最後都要加 ; status; create database database_name; drop database database_name; show databases; show tables; use database_name; table create table table_name( column1 type1, column2 type2); create table table_name( column1 type1, column2 type2) charset=utf8; desc table_name; show create table &amp;lt;table_name&amp;gt; MySQL 8.0 Reference Manual :: 3.3.2 Creating a Table - MySQL</description>
     </item>
     
     <item>

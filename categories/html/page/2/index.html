@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/categories/html/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-01-29T17:42:46+08:00" />
+<meta property="og:updated_time" content="2020-10-30T15:20:10+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -185,6 +185,84 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2017-09-11-html-dns-prefetch-preconnect-prefetch-and-prerender-research-notes/">HTML - dns-prefetch, preconnect, prefetch, prerender 研究筆記</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2017-09-11
+</p>
+                
+
+                
+                <p><h2 id="html---dns-prefetch-preconnect-prefetch-prerender-研究筆記">HTML - dns-prefetch, preconnect, prefetch, prerender 研究筆記</h2>
+<h3 id="intro">Intro</h3>
+<p>這幾個 meta 屬性早在幾年前就有不少外國文章和少部分的國內大神介紹過了</p>
+<p>但當時我一直抱持這它還在 <a href="https://www.w3.org/TR/resource-hints/">W3C 草案</a>, 所以不急著用的心態, 且瀏覽器支持不高, 所以一直無視它&hellip;</p>
+<p>直到最近不知怎麼地想說來繼續增加我們服務的 head 中的 HTML tag 的數量吧 XD</p>
+<p>就來研究一下這些屬性</p>
+<h3 id="dns-prefetch">dns-prefetch</h3>
+<p>預先解析 DNS, 簡單說一句就是把你的網站會用到的 domain 都塞上去</p>
+<p>但我有點質疑實用性就是了, 因為通常會用到的 domain 都幾乎在該頁面用到了, 幾乎功效不大</p>
+<p>因為在 head 預讀時有可能還沒解析完, 實際頁面已經需要對該 domain 發 request 了&hellip;</p>
+<p><strong>結論: 會改善但感覺改善幅度不大, 且你的服務內有用到多個 domain 或 subdomain 才有影響</strong></p>
+<h3 id="preconnect">preconnect</h3>
+<p>會對設定的 domain 做 DNS 解析與 handshake</p>
+<p>不過我覺得最大的好處是預先對該 domain 做 handshake</p>
+<p>但就像上述所說大部分的情況是會用到的 domain 幾乎都在頁面上了</p>
+<p><strong>結論: 會改善但感覺改善幅度不大, 且你的服務內有用到多個 domain 或 subdomain 才有影響</strong></p>
+<h3 id="prefetch">prefetch</h3>
+<p>可以設定權重讓你去決定使用者可能會點擊的下一個頁面或其他需要的 resource 的權重比例</p>
+<p>在當前頁面載入時瀏覽器會依照權重決定何時去載入該 resource</p>
+<p>提前在當前頁面去要該 resource, 所以 server log 會發現在載入該頁面時 prefetch 設定的 resource 也會被拉</p>
+<p>等到要用到該 resource 時然後會加快 response 的時間</p>
+<p>但跟我期望的有點落差</p>
+<p>我期望是先 cache 起來</p>
+<p>然後再從 cache 拿就好了, 不用在重拿(測試時 header 的 cache-control 是設定 max-age)</p>
+<p>但目前測試還是會重新跟 server 拿&hellip;(但我是設定 html 就是了, 不知 CSS JS 是否有差, 因為我們的服務 CSS JS 都會自己 cache 所以根本用不到這機制)</p>
+<p>且時間也沒縮短(可能前提也是我們的服務 response 太快?</p>
+<p><strong>結論: 實測後無感, 時間都差不多, 且又多了一個 prefetch 的 request access</strong></p>
+<p>後端跟我說為啥 access 量增加了&hellip;</p>
+<p>然後我去看 access log&hellip;</p>
+<p>變兩倍&hellip;</p>
+<h3 id="prerender">prerender</h3>
+<p>這很有趣</p>
+<p>看定義是說會預先幫你 render 你所指定的頁面</p>
+<p>它也表示會額外耗費 CPU 或 GPU 資源</p>
+<p>但其實在你換頁時現今的 browser 都有處理一件事</p>
+<p>就是當 browser 發現該頁面上的 layout 或 UI 與上一個幾乎一樣時</p>
+<p>這部分的 layout 或 UI 是不會進行重繪的動作以增進效能</p>
+<p>尤其這在 mobile browser 上更明顯</p>
+<p>所以其實我對這 feature 感覺還好</p>
+<p><strong>結論: 目前測不出來, 但實用性似乎不高誒, 又要額外耗費資源, 就看取捨</strong></p>
+<p>以上是目前測試的結果</p>
+<p>但不保證之後也是這樣的結果</p>
+<p>畢竟還在草案</p>
+<p>所以可能會有變動或翻掉都說不定</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2017-09-11-html-dns-prefetch-preconnect-prefetch-and-prerender-research-notes/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2016-01-31-466975/">HTML - redirect page from http-equiv</a></h3>
 
                 
@@ -229,88 +307,6 @@ And http status is 301</p>
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2016-01-31-466975/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-08-27-web-develop-flexible-footer/">Web Develop - Flexible Footer</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-08-27
-</p>
-                
-
-                
-                <p><h2 id="web-develop---flexible-footer">Web Develop - Flexible Footer</h2>
-<p>Sometimes we think footer must fixed in website bottom or put it in last of content.</p>
-<p>I provide a idea may be a good way.
-Content less browser view height, footer fixed in bottom.
-When content too much over browser view height, footer be put last of content.</p>
-<h3 id="feature">Feature</h3>
-<ul>
-<li>flexible</li>
-<li>only use CSS</li>
-</ul>
-<h3 id="usage">Usage</h3>
-<p><code>min-height: calc(100% - &lt;footer height&gt;);</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">    #hd {
-        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
-        <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#aaa</span>;
-        <span style="color:#75715e">/*display: none;*/</span>
-    }
-    #bd {
-        <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
-        <span style="color:#66d9ef">min-height</span>: calc(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>); <span style="color:#75715e">/* important */</span>
-        <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#ccc</span>;
-    }
-    #content {
-        <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">60</span><span style="color:#66d9ef">px</span>;
-    }
-    #footer {
-        <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
-        <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
-        <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
-        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
-        <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#999</span>;
-    }
-</code></pre></div><p><code>50px</code> is footer height</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hd&#34;</span>&gt;
-        &lt;<span style="color:#f92672">h1</span>&gt;Head&lt;/<span style="color:#f92672">h1</span>&gt;
-    &lt;/<span style="color:#f92672">header</span>&gt;
-    &lt;<span style="color:#f92672">article</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bd&#34;</span>&gt;
-        &lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;
-            &lt;<span style="color:#f92672">button</span>&gt;build content&lt;/<span style="color:#f92672">button</span>&gt;
-            &lt;<span style="color:#f92672">h1</span>&gt;Content&lt;/<span style="color:#f92672">h1</span>&gt;
-            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loop&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-        &lt;/<span style="color:#f92672">section</span>&gt;
-    &lt;/<span style="color:#f92672">article</span>&gt;
-    &lt;<span style="color:#f92672">footer</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
-        &lt;<span style="color:#f92672">h2</span>&gt;Footer&lt;/<span style="color:#f92672">h2</span>&gt;
-    &lt;/<span style="color:#f92672">footer</span>&gt;
-</code></pre></div><p><a href="http://tedshd.lionfree.net/demo/view_UI/footer.html">demo</a></p>
-<p><a href="http://www.siteinspire.com/">Refer - siteInspire - Web Design Inspiration</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-08-27-web-develop-flexible-footer/">Read more</a></p>
                 
             </div>
         </div>

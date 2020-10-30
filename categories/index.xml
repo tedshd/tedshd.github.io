@@ -7,10 +7,64 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Thu, 03 Sep 2020 16:05:40 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2020 15:39:19 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>form</title>
+      <link>https://blog.tedshd.io/categories/form/</link>
+      <pubDate>Sat, 24 Oct 2020 15:39:19 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/form/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://blog.tedshd.io/categories/go/</link>
+      <pubDate>Sat, 24 Oct 2020 15:39:19 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://blog.tedshd.io/categories/golang/</link>
+      <pubDate>Sat, 24 Oct 2020 15:39:19 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
+      <link>https://blog.tedshd.io/categories/html/</link>
+      <pubDate>Sat, 24 Oct 2020 15:39:19 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nodejs</title>
+      <link>https://blog.tedshd.io/categories/nodejs/</link>
+      <pubDate>Sat, 24 Oct 2020 15:39:19 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>https://blog.tedshd.io/categories/php/</link>
+      <pubDate>Sat, 24 Oct 2020 15:39:19 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/php/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>canvas</title>
@@ -18,15 +72,6 @@
       <pubDate>Thu, 03 Sep 2020 16:05:40 +0800</pubDate>
       
       <guid>https://blog.tedshd.io/categories/canvas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>php</title>
-      <link>https://blog.tedshd.io/categories/php/</link>
-      <pubDate>Thu, 14 May 2020 09:50:42 +0800</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/php/</guid>
       <description></description>
     </item>
     
@@ -108,15 +153,6 @@
       <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/categories/redis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://blog.tedshd.io/categories/golang/</link>
-      <pubDate>Tue, 03 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/golang/</guid>
       <description></description>
     </item>
     
@@ -229,15 +265,6 @@
     </item>
     
     <item>
-      <title>html</title>
-      <link>https://blog.tedshd.io/categories/html/</link>
-      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>PHP geoip</title>
       <link>https://blog.tedshd.io/categories/php-geoip/</link>
       <pubDate>Tue, 09 Jan 2018 00:00:00 +0000</pubDate>
@@ -261,15 +288,6 @@
       <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/categories/ios/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nodejs</title>
-      <link>https://blog.tedshd.io/categories/nodejs/</link>
-      <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/nodejs/</guid>
       <description></description>
     </item>
     

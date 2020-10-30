@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-09-03T17:40:09+08:00" />
+<meta property="og:updated_time" content="2020-10-30T15:20:10+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -193,6 +193,175 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-02-27-sublime-change-layout-view-in-2-columns/">Sublime - change layout view in 2 columns</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-02-27
+</p>
+                
+
+                
+                <p><h2 id="sublime---change-layout-view-in-2-columns">Sublime - change layout view in 2 columns</h2>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/181166/n0cayJWESiKZXwNBOvJa_output_T7Ok8b.gif" alt="output_T7Ok8b.gif"></p>
+<p>Video</p>
+<!-- raw HTML omitted -->
+<h3 id="setting">Setting</h3>
+<p><code>Preferences</code> -&gt; <code>Key Bindings - User</code></p>
+<p>set key to use</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    {
+        <span style="color:#f92672">&#34;keys&#34;</span>: [<span style="color:#e6db74">&#34;super+ctrl+left&#34;</span>],
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;set_layout&#34;</span>,
+        <span style="color:#f92672">&#34;args&#34;</span>:
+        {
+            <span style="color:#f92672">&#34;cols&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.95</span>, <span style="color:#ae81ff">1.0</span>],
+            <span style="color:#f92672">&#34;rows&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>],
+            <span style="color:#f92672">&#34;cells&#34;</span>: [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]]
+        }
+    },
+    {
+        <span style="color:#f92672">&#34;keys&#34;</span>: [<span style="color:#e6db74">&#34;super+ctrl+right&#34;</span>],
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;set_layout&#34;</span>,
+        <span style="color:#f92672">&#34;args&#34;</span>:
+        {
+            <span style="color:#f92672">&#34;cols&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.05</span>, <span style="color:#ae81ff">1.0</span>],
+            <span style="color:#f92672">&#34;rows&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>],
+            <span style="color:#f92672">&#34;cells&#34;</span>: [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]]
+        }
+    }
+]
+</code></pre></div><h2 id="update"><strong>Update</strong></h2>
+<h3 id="add-focus">Add focus</h3>
+<p>If add focus, it need 2 commands so need write a python plugin</p>
+<ol>
+<li><code>Tools</code> -&gt; <code>New Plugin</code></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># save as run_multiple.py</span>
+<span style="color:#f92672">import</span> sublime<span style="color:#f92672">,</span> sublime_plugin
+
+<span style="color:#75715e"># Takes an array of commands (same as those you&#39;d provide to a key binding) with</span>
+<span style="color:#75715e"># an optional context (defaults to view commands) &amp; runs each command in order.</span>
+<span style="color:#75715e"># Valid contexts are &#39;text&#39;, &#39;window&#39;, and &#39;app&#39; for running a TextCommand,</span>
+<span style="color:#75715e"># WindowCommands, or ApplicationCommand respectively.</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RunMultipleCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exec_command</span>(self, command):
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> <span style="color:#e6db74">&#39;command&#39;</span> <span style="color:#f92672">in</span> command:
+      <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">&#39;No command name provided.&#39;</span>)
+
+    args <span style="color:#f92672">=</span> None
+    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;args&#39;</span> <span style="color:#f92672">in</span> command:
+      args <span style="color:#f92672">=</span> command[<span style="color:#e6db74">&#39;args&#39;</span>]
+
+    <span style="color:#75715e"># default context is the view since it&#39;s easiest to get the other contexts</span>
+    <span style="color:#75715e"># from the view</span>
+    context <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>view
+    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;context&#39;</span> <span style="color:#f92672">in</span> command:
+      context_name <span style="color:#f92672">=</span> command[<span style="color:#e6db74">&#39;context&#39;</span>]
+      <span style="color:#66d9ef">if</span> context_name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;window&#39;</span>:
+        context <span style="color:#f92672">=</span> context<span style="color:#f92672">.</span>window()
+      <span style="color:#66d9ef">elif</span> context_name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;app&#39;</span>:
+        context <span style="color:#f92672">=</span> sublime
+      <span style="color:#66d9ef">elif</span> context_name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;text&#39;</span>:
+        <span style="color:#66d9ef">pass</span>
+      <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">&#39;Invalid command context &#34;&#39;</span><span style="color:#f92672">+</span>context_name<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&#34;.&#39;</span>)
+
+    <span style="color:#75715e"># skip args if not needed</span>
+    <span style="color:#66d9ef">if</span> args <span style="color:#f92672">is</span> None:
+      context<span style="color:#f92672">.</span>run_command(command[<span style="color:#e6db74">&#39;command&#39;</span>])
+    <span style="color:#66d9ef">else</span>:
+      context<span style="color:#f92672">.</span>run_command(command[<span style="color:#e6db74">&#39;command&#39;</span>], args)
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit, commands <span style="color:#f92672">=</span> None):
+    <span style="color:#66d9ef">if</span> commands <span style="color:#f92672">is</span> None:
+      <span style="color:#66d9ef">return</span> <span style="color:#75715e"># not an error</span>
+    <span style="color:#66d9ef">for</span> command <span style="color:#f92672">in</span> commands:
+      self<span style="color:#f92672">.</span>exec_command(command)
+</code></pre></div><ol start="2">
+<li><code>Preferences</code> -&gt; <code>Key Bindings - User</code></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    {
+        <span style="color:#f92672">&#34;keys&#34;</span>: [<span style="color:#e6db74">&#34;super+ctrl+left&#34;</span>],
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;run_multiple&#34;</span>,
+        <span style="color:#f92672">&#34;args&#34;</span>:
+        {
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                {
+                    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;set_layout&#34;</span>,
+                    <span style="color:#f92672">&#34;args&#34;</span>:
+                    {
+                        <span style="color:#f92672">&#34;cols&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.95</span>, <span style="color:#ae81ff">1.0</span>],
+                        <span style="color:#f92672">&#34;rows&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>],
+                        <span style="color:#f92672">&#34;cells&#34;</span>: [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]]
+                    },
+                    <span style="color:#f92672">&#34;context&#34;</span>: <span style="color:#e6db74">&#34;window&#34;</span>
+                },
+                {
+                    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;focus_group&#34;</span>,
+                    <span style="color:#f92672">&#34;args&#34;</span>: { <span style="color:#f92672">&#34;group&#34;</span>: <span style="color:#ae81ff">0</span> },
+                    <span style="color:#f92672">&#34;context&#34;</span>: <span style="color:#e6db74">&#34;window&#34;</span>
+                }
+            ]
+        }
+    },
+    {
+        <span style="color:#f92672">&#34;keys&#34;</span>: [<span style="color:#e6db74">&#34;super+ctrl+right&#34;</span>],
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;run_multiple&#34;</span>,
+        <span style="color:#f92672">&#34;args&#34;</span>:
+        {
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                {
+                    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;set_layout&#34;</span>,
+                    <span style="color:#f92672">&#34;args&#34;</span>:
+                    {
+                        <span style="color:#f92672">&#34;cols&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.05</span>, <span style="color:#ae81ff">1.0</span>],
+                        <span style="color:#f92672">&#34;rows&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>],
+                        <span style="color:#f92672">&#34;cells&#34;</span>: [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]]
+                    },
+                    <span style="color:#f92672">&#34;context&#34;</span>: <span style="color:#e6db74">&#34;window&#34;</span>
+                },
+                {
+                    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;focus_group&#34;</span>,
+                    <span style="color:#f92672">&#34;args&#34;</span>: { <span style="color:#f92672">&#34;group&#34;</span>: <span style="color:#ae81ff">1</span> },
+                    <span style="color:#f92672">&#34;context&#34;</span>: <span style="color:#e6db74">&#34;window&#34;</span>
+                }
+            ]
+        }
+    }
+]
+</code></pre></div><p><a href="http://stackoverflow.com/questions/10913138/how-to-create-a-custom-layout-in-sublime-text-2">Refer - how to create a custom layout in sublime text 2?</a>
+<a href="http://stackoverflow.com/questions/13149800/custom-layouts-sublime-text-2">Refer - Custom layouts, Sublime text 2</a>
+<a href="http://www.sublimetext.com/forum/viewtopic.php?f=6&amp;t=7284&amp;start=0&amp;hilit=set+layout">Refer - set_layout reference</a>
+Update
+<a href="http://stackoverflow.com/questions/9646552/is-it-possible-to-chain-key-binding-commands-in-sublime-text-2">Refer - Is it possible to chain key binding commands in sublime text 2?</a>
+<a href="https://gist.github.com/nilium/3327730">Refer - nilium / key-bindings.json</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2014-02-27-sublime-change-layout-view-in-2-columns/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2014-02-19-javascript-jquery-index-in-javascript/">JavaScript - jQuery index() in JavaScript</a></h3>
 
                 
@@ -252,53 +421,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2014-02-19-javascript-jquery-index-in-javascript/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-02-06-javascript-encryption/">JavaScript - Encryption</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-02-06
-</p>
-                
-
-                
-                <p><h2 id="javascript---encryption">JavaScript - Encryption</h2>
-<p>弱弱的加密</p>
-<h3 id="base64">base64</h3>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Base64_encoding_and_decoding">Base64 encoding and decoding</a></p>
-<h3 id="sha1only-js-to-js">sha1(only js to js)</h3>
-<p>Need utf8 encode
-<a href="http://phpjs.org/functions/sha1/">JavaScript sha1 function</a></p>
-<h3 id="utf8only-js-to-js">utf8(only js to js)</h3>
-<p><a href="http://phpjs.org/functions/utf8_encode/">JavaScript utf8_encode function</a>
-<a href="http://phpjs.org/functions/utf8_decode/">JavaScript utf8_decode function</a>
-decode can handle php utf8_encode()</p>
-<h3 id="encryptjs-to-php">Encrypt(js to php)</h3>
-<p>Use <a href="https://code.google.com/p/crypto-js/">crypto-js</a></p>
-<p><a href="https://code.google.com/p/crypto-js/#HMAC">HMAC</a></p>
-<p><a href="http://stackoverflow.com/questions/12099092/javascript-equivalent-of-phps-hash-hmac-with-raw-binary-output">Refer - Javascript: Equivalent of PHP&rsquo;s hash_hmac() with RAW BINARY output?</a></p>
-</p>
-                
-
-                
-
                 
             </div>
         </div>

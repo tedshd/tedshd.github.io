@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/categories/php/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-05-14T11:23:13+08:00" />
+<meta property="og:updated_time" content="2020-10-30T15:20:10+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -185,6 +185,50 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/">php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-10-31
+</p>
+                
+
+                
+                <p><h2 id="php---ubuntu-14-php-56-or-to-upgrade-from-php-55">php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get -y update
+
+sudo add-apt-repository ppa:ondrej/php5-5.6
+
+sudo apt-get -y update
+
+sudo apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl php5-bcmath
+</code></pre></div><p>if use <code>php -v</code> check version is 5.5.x</p>
+<p>I use</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get -u install php5-cli
+</code></pre></div><p><a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/php-ubuntu.html#instgde-prereq-php56-install-ubuntu">Refer - PHP 5.5 or 5.6—Ubuntu</a></p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2015-08-16-php-auto-update-static-files-cache/">PHP - Auto update static files cache</a></h3>
 
                 
@@ -235,74 +279,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2015-08-16-php-auto-update-static-files-cache/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-12-18-php-install-phpcsphp-codesniffer/">PHP - install phpcs(PHP CodeSniffer)</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-12-18
-</p>
-                
-
-                
-                <p><h2 id="php---install-phpcsphp-codesniffer">PHP - install phpcs(PHP CodeSniffer)</h2>
-<p>Use pear install phpcs</p>
-<h3 id="in-linuxubuntu-1404">in Linux(Ubuntu 14.04)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pear install --alldeps php_codesniffer
-</code></pre></div><h3 id="in-macmac-os-x-10101-yosemite">in Mac(Mac OS X 10.10.1 Yosemite)</h3>
-<h4 id="install-pear">install pear</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo curl -O  http://pear.php.net/go-pear.phar
-</code></pre></div><p>then</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo php -d detect_unicode<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> go-pear.phar
-</code></pre></div><p>Update</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pear upgrade pear
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pear upgrade
-</code></pre></div><h4 id="install-codesniffer">install codesniffer</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pear install --alldeps php_codesniffer
-</code></pre></div><p>check</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">phpcs -i
-</code></pre></div><p>return</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">The installed coding standards are MySource, PEAR, PHPCS, PSR1, PSR2, Squiz and Zend
-</code></pre></div><p>if return</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Warning: include_once<span style="color:#f92672">(</span>PHP/CodeSniffer/CLI.php<span style="color:#f92672">)</span>: failed to open stream: No such file or directory in /usr/bin/phpcs on line <span style="color:#ae81ff">22</span>
-
-Warning: include_once<span style="color:#f92672">()</span>: Failed opening <span style="color:#e6db74">&#39;PHP/CodeSniffer/CLI.php&#39;</span> <span style="color:#66d9ef">for</span> inclusion <span style="color:#f92672">(</span>include_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.:&#39;</span><span style="color:#f92672">)</span> in /usr/bin/phpcs on line <span style="color:#ae81ff">22</span>
-
-Fatal error: Class <span style="color:#e6db74">&#39;PHP_CodeSniffer_CLI&#39;</span> not found in /usr/bin/phpcs on line <span style="color:#ae81ff">25</span>
-</code></pre></div><p>Must include pear path</p>
-<p>Modify php.ini</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo vim /etc/php.ini
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">include_path</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;.:/usr/share/pear&#34;</span>
-</code></pre></div><h3 id="usage">Usage</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">phpcs &lt;php file&gt;
-</code></pre></div><p><a href="http://pear.php.net/">Refer - PEAR - PHP Extension and Application Repository</a>
-<a href="http://pear.php.net/package/PHP_CodeSniffer/download">Refer - PHP_CodeSniffer</a>
-<a href="https://rtcamp.com/tutorials/standards/php/code-sniffer/">Refer - Code Sniffer</a>
-<a href="http://coolestguidesontheplanet.com/installing-pear-osx-10-9-mavericks-osx10-810-7/">Refer - Installing PEAR on OSX 10.9 Mavericks and OSX10.8/10.7</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-12-18-php-install-phpcsphp-codesniffer/">Read more</a></p>
                 
             </div>
         </div>
