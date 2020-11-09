@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/categories/mysql/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-10-30T15:20:10+08:00" />
+<meta property="og:updated_time" content="2020-11-09T16:02:15+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -292,6 +292,10 @@ $timestamp = date(&#34;Y-m-d H:i:s&#34;);
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">modify</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">column</span><span style="color:#f92672">&gt;</span> varchar(<span style="color:#ae81ff">255</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4
 </code></pre></div><h3 id="where-多筆資料">where 多筆資料</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">where</span> id <span style="color:#66d9ef">in</span> (<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>);
+</code></pre></div><h3 id="dump-table">dump table</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mysqldump -A --ssl-mode<span style="color:#f92672">=</span>DISABLED -u &lt;user&gt; -p&lt;password&gt; -h &lt;host&gt; &lt;database&gt; &lt;table&gt; | mysql -u root -h &lt;host&gt; -P &lt;post&gt; &lt;database&gt;
+</code></pre></div><h3 id="直接把-query-出來的一筆資料新增複製">直接把 query 出來的一筆資料新增(複製)</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span> (<span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">1</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">2</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">select</span> <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">1</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">2</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">3</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>;
 </code></pre></div><h3 id="troubleshooting">troubleshooting</h3>
 <p>On Mac
 Q:</p>
