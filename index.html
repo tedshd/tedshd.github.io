@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-11-18T10:39:00+08:00" />
+<meta property="og:updated_time" content="2020-11-18T11:04:12+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -431,7 +431,14 @@ if (!doNotTrack) {
 }
 </code></pre></div><p>這個也不太難理解</p>
 <p>第一個迴圈依照 <strong>liked</strong> 跑了一個降冪的氣泡排序(一般情況都是跑升冪)</p>
-<p>第二個迴圈就是取出前 9 筆的 <strong>liked</strong> 數</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">temp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>];
+<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>];
+<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp</span>;
+</code></pre></div><p>這邊使用 variable swap 的技巧來做前後兩個值的交換</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>;
+<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>;
+<span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>;
+</code></pre></div><p>第二個迴圈就是取出前 9 筆的 <strong>liked</strong> 數</p>
 <p>一樣是在 <code>data.length &gt;= 9 ? 9 : data.length</code> 確認未滿 9 筆的話就有多少取多少</p>
 </p>
                 
