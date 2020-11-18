@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Wed, 30 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2020 03:52:33 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.tedshd.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript - 處理一些排序的方式</title>
+      <link>https://blog.tedshd.io/posts/sort_case_handle_in_javascript/</link>
+      <pubDate>Wed, 18 Nov 2020 03:52:33 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/sort_case_handle_in_javascript/</guid>
+      <description>常常會遇到用 JavaScript 處理一些資料結構的排序 這裡會列舉一些使用情境與案例 取出排名前幾名的資料(排名的值不重複) 資料 var data = { 123: { count: 123, type: &amp;#34;video&amp;#34;, source: &amp;#34;&amp;#34;, }, 345: { count: 345,</description>
+    </item>
     
     <item>
       <title>JavaScript - 半形 全形 轉換</title>
