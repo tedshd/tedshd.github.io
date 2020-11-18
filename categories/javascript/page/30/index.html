@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/categories/javascript/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-11-18T10:34:59+08:00" />
+<meta property="og:updated_time" content="2020-11-18T10:39:00+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -185,6 +185,151 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-09-30-ajax-xmlhttprequest/">AJAX - XMLHttpRequest</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-09-30
+</p>
+                
+
+                
+                <p><h2 id="ajax---xmlhttprequest">AJAX - XMLHttpRequest</h2>
+<p>Use XMLHttpRequest object handle AJAX</p>
+<p>client -&gt; server
+Front-end - request -&gt; back-end
+client &lt;- server
+Front-end &lt;- response - back-end</p>
+<h3 id="build-xmlhttprequestold-method"><del>build XMLHttpRequest</del>(old method)</h3>
+<p><strong>JavaScript</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">httpRequest</span>;
+<span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">XMLHttpRequest</span>) {
+    <span style="color:#75715e">//IE7,Mozila,Safari...
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">httpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">ActiveXObject</span>) {
+    <span style="color:#75715e">//IE5,IE6
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//找出最新版MSXML剖析器
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">msxmls</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;MSXML2.XMLHttp.4.0&#34;</span>,<span style="color:#e6db74">&#34;MSXML2.XMLHttp.3.0&#34;</span>,<span style="color:#e6db74">&#34;MSXML2.XMLHttp&#34;</span>,<span style="color:#e6db74">&#34;Mircosoft.XMLHttp&#34;</span>];
+    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">msxmls</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">try</span> {
+            <span style="color:#75715e">//建立XMLHttpRequest物件
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">httpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#a6e22e">msxmls</span>[<span style="color:#a6e22e">i</span>]);
+            <span style="color:#66d9ef">break</span>;
+        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+            <span style="color:#75715e">// do something
+</span><span style="color:#75715e"></span>        }
+    }
+}
+</code></pre></div><p><!-- raw HTML omitted -->New browser have XMLHttpRequest object now.<!-- raw HTML omitted -->
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">MDN</a>
+<strong>JavaScript</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlHttpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</code></pre></div><h3 id="2-type-to-post-data-to-backendsend-request">2 type to post data to backend(send request)</h3>
+<p>1 <strong>FormData</strong>(if IE, 10 up)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// init FormData
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
+<span style="color:#75715e">// add data
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;user&#39;</span>, <span style="color:#e6db74">&#39;Ted_Shiu&#39;</span>);
+<span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;password&#39;</span>, <span style="color:#e6db74">&#39;123456&#39;</span>);
+<span style="color:#75715e">// init XMLHttpRequest
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlHttpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+<span style="color:#75715e">// build poet method and backend target
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;ajax.php&#39;</span>);
+<span style="color:#75715e">// send request
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">formData</span>);
+</code></pre></div><p>2 <strong>JSON</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// obj is data want to post to backend
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ted_shiu&#39;</span>,
+        <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;123456&#39;</span>
+    },
+    <span style="color:#a6e22e">jsonData</span>;
+<span style="color:#75715e">// init XMLHttpRequest
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlHttpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+<span style="color:#75715e">// build poet method and backend target
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;json.php&#39;</span>);
+<span style="color:#75715e">// build content type
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">setRequestHeader</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;application/x-www-form-urlencoded&#39;</span>);
+<span style="color:#75715e">// obj to url string
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">formUrlEncode</span>(<span style="color:#a6e22e">obj</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">urlData</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>) {
+        <span style="color:#a6e22e">urlData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">urlData</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">x</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&amp;&#39;</span>;
+    }
+    <span style="color:#a6e22e">urlData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">urlData</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#ae81ff">0</span>, (<span style="color:#a6e22e">urlData</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>));
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">urlData</span>;
+}
+<span style="color:#75715e">// send request
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">formUrlEncode</span>(<span style="color:#a6e22e">obj</span>));
+<span style="color:#75715e">// if want ajax get data
+</span><span style="color:#75715e">// use xmlHttpRequest.send();
+</span><span style="color:#75715e">// xmlHttpRequest.send(&#39;user=ted_shiu&amp;password=123456&#39;);
+</span></code></pre></div><h3 id="backendhandle-request-and-response-browser">Backend(handle request and response browser)</h3>
+<p><strong>PHP</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// ajax.php
+<span style="color:#75715e">&lt;?php</span>
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_POST[<span style="color:#e6db74">&#39;user&#39;</span>])) {
+        <span style="color:#75715e">// do something
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> ($_POST[<span style="color:#e6db74">&#39;password&#39;</span>]) {
+            <span style="color:#75715e">// do something
+</span><span style="color:#75715e"></span>            $output <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+                <span style="color:#e6db74">&#39;status&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;ok&#39;</span>,
+                <span style="color:#e6db74">&#39;message&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;msg&#39;</span>
+            );
+            <span style="color:#75715e">// echo is reponse browser, must use json_encode()
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">json_encode</span>($output);
+        }
+    }
+<span style="color:#75715e">?&gt;</span>
+// json.php
+<span style="color:#75715e">&lt;?php</span>
+<span style="color:#a6e22e">var_dump</span>($_POST);
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#66d9ef">echo</span> $_POST[<span style="color:#e6db74">&#39;user&#39;</span>];
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#66d9ef">echo</span> $_POST[<span style="color:#e6db74">&#39;password&#39;</span>];
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div><p><a href="http://blog.wu-boy.com/2011/04/%E4%BD%A0%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84-json-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9/">Refer - 你不可不知的 JSON 基本介紹</a>
+<a href="http://coursesweb.net/ajax/ajax-json">Refer - Ajax and JSON</a></p>
+<h3 id="response">Response</h3>
+<p>AJAX handle response from backend
+check response state, use XMLHttpRequest properties</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>) {
+        <span style="color:#75715e">// do something
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>) {
+            <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">responseText</span>);
+            <span style="color:#75715e">// parse response to object
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">responseText</span>);
+            <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">status</span>);
+        }
+    }
+}
+</code></pre></div></p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-09-30-ajax-xmlhttprequest/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-09-29-file-upload-using-ajax/">file upload using ajax</a></h3>
 
                 
@@ -250,113 +395,6 @@ if IE use ajax upload, only use iframe method.</p>
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-09-29-file-upload-using-ajax/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-09-10-coding-style/">Coding Style</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-09-10
-</p>
-                
-
-                
-                <p><h2 id="coding-style">Coding Style</h2>
-<h3 id="條件判斷">條件判斷</h3>
-<p>在 PHP &amp; JavaScript 中有許多邏輯判斷
-當有許多條件要去檢查時, 一般來說就是用 <strong>if</strong> 一直寫下去
-最後就造成下面的情況(以 PHP 為例)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">if ($a === $b)
-{
-    if ($c)
-    {
-        if ($c &gt;= 10)
-        {
-            if ($d)
-            {
-                // do something
-                // ...
-            }
-        return;
-        }
-    return;
-    }
-}
-</code></pre></div><p>這樣下去就沒完沒了, 而且縮排會越來越多, 要看 code 也很不方便
-所以假如就已作條件檢查來說
-可以用以下的做法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// check condition 1
-if ($a !== $b)
-{
-    return;
-}
-
-// check condition 2
-if (!$c || $c === &#39;&#39;)
-{
-    return;
-}
-
-// check condition 3
-if ($c &lt; <span style="color:#f92672">9</span><span style="color:#960050;background-color:#1e0010">)</span>
-<span style="color:#960050;background-color:#1e0010">{</span>
-    <span style="color:#a6e22e">return</span><span style="color:#960050;background-color:#1e0010">;</span>
-<span style="color:#960050;background-color:#1e0010">}</span>
-
-<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#a6e22e">check</span> <span style="color:#a6e22e">condition</span> <span style="color:#a6e22e">4</span>
-<span style="color:#a6e22e">if</span> <span style="color:#960050;background-color:#1e0010">(!</span><span style="color:#a6e22e">d</span><span style="color:#960050;background-color:#1e0010">)</span>
-<span style="color:#960050;background-color:#1e0010">{</span>
-    <span style="color:#a6e22e">return</span><span style="color:#960050;background-color:#1e0010">;</span>
-<span style="color:#960050;background-color:#1e0010">}</span>
-
-<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#a6e22e">do</span> <span style="color:#a6e22e">something</span>
-<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">...</span>
-</code></pre></div><p>做個 <strong>反向思考</strong> , 把不適合的條件列出再一一 return or 作處理
-剩下的便是所需要的</p>
-<blockquote>
-<p>從巢狀式結構變成區域式
-結構也較為清晰
-debug 也較容易</p>
-</blockquote>
-<p>有時也會遇到應該用 <strong>switch</strong> 卻用 <strong>if</strong> 去一直加下去的情況
-所以當 <strong>if</strong> 用到 <strong><em>3 個</em></strong> 以上時, 就要思考要用什麼敘述來達到目的比較好
-也許可以用 <code>switch</code></p>
-<h3 id="function">function</h3>
-<p>有時遇到很多 code 重複時, 我們可以抽離這些重複的部分, 把它放到一個 function 中
-要用時在再去呼叫那個 function</p>
-<p><a href="http://www.ruanyifeng.com/blog/2013/01/abstraction_principles.html">Refer-代码的抽象三原则</a></p>
-<h3 id="以錯誤為優先處理">以錯誤為優先處理</h3>
-<p>JavaScript</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doSomething</span>(<span style="color:#a6e22e">data</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;fail&#39;</span>) {
-        <span style="color:#75715e">// handle error
-</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
-        <span style="color:#75715e">// handle ok
-</span><span style="color:#75715e"></span>    }
-}
-</code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-09-10-coding-style/">Read more</a></p>
                 
             </div>
         </div>

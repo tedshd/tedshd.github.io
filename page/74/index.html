@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-11-18T10:34:59+08:00" />
+<meta property="og:updated_time" content="2020-11-18T10:39:00+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -213,13 +213,24 @@ if (!doNotTrack) {
 <p>This used scroll event
 Progress bar must handle scroll position and scroll total height, and show it for percent
 View MDN document can find it can&rsquo;t use <code>scrollHeight</code>, because when scroll bar scroll to bottom, <code>scrollTop</code> not equal <code>scrollHeight</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;body&#39;</span>);
-<span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">/</span>(<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>))<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;%&#39;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;body&#34;</span>);
+<span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
+  (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">/</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
+    <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
+  <span style="color:#e6db74">&#34;%&#34;</span>;
 </code></pre></div><p>Then find <code>scrollTop</code> didn&rsquo;t work in firefox</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span>) {
-	<span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">/</span>(<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>))<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;%&#39;</span>;
+  <span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
+    (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">/</span>
+      (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
+      <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
+    <span style="color:#e6db74">&#34;%&#34;</span>;
 } <span style="color:#66d9ef">else</span> {
-	<span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span> (window.<span style="color:#a6e22e">pageYOffset</span><span style="color:#f92672">/</span>(<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>))<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;%&#39;</span>;
+  <span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
+    (window.<span style="color:#a6e22e">pageYOffset</span> <span style="color:#f92672">/</span>
+      (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
+      <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
+    <span style="color:#e6db74">&#34;%&#34;</span>;
 }
 </code></pre></div><p><a href="https://github.com/tedshd/scroll_progress">GitHub</a></p>
 <p><a href="http://help.dottoro.com/ljurkcpe.php">Refer - onscroll event | scroll event</a>

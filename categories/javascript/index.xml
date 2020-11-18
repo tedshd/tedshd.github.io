@@ -454,6 +454,17 @@ Refer - JavaScript: remove element by id</description>
     </item>
     
     <item>
+      <title>JavaScript - Scroll Progress</title>
+      <link>https://blog.tedshd.io/posts/2014-03-02-javascript-scroll-progress/</link>
+      <pubDate>Sun, 02 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/2014-03-02-javascript-scroll-progress/</guid>
+      <description>JavaScript - Scroll Progress Show a progress bar about page scroll position.
+This used scroll event Progress bar must handle scroll position and scroll total height, and show it for percent View MDN document can find it can&amp;rsquo;t use scrollHeight, because when scroll bar scroll to bottom, scrollTop not equal scrollHeight
+dom = document.querySelector(&amp;#34;body&amp;#34;); percent = (dom.scrollTop / (dom.scrollHeight - document.documentElement.clientHeight)) * 100 + &amp;#34;%&amp;#34;; Then find scrollTop didn&amp;rsquo;t work in firefox</description>
+    </item>
+    
+    <item>
       <title>JavaScript - jQuery index() in JavaScript</title>
       <link>https://blog.tedshd.io/posts/2014-02-19-javascript-jquery-index-in-javascript/</link>
       <pubDate>Wed, 19 Feb 2014 00:00:00 +0000</pubDate>
