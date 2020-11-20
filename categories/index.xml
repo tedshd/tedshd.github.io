@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Wed, 18 Nov 2020 03:52:33 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2020 10:52:35 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gcp</title>
+      <link>https://blog.tedshd.io/categories/gcp/</link>
+      <pubDate>Fri, 20 Nov 2020 10:52:35 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/gcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>puppeteer</title>
+      <link>https://blog.tedshd.io/categories/puppeteer/</link>
+      <pubDate>Fri, 20 Nov 2020 10:52:35 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/puppeteer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://blog.tedshd.io/categories/ubuntu/</link>
+      <pubDate>Fri, 20 Nov 2020 10:52:35 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/ubuntu/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>javascript</title>
@@ -450,15 +477,6 @@
       <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/categories/xss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ubuntu</title>
-      <link>https://blog.tedshd.io/categories/ubuntu/</link>
-      <pubDate>Sat, 31 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/ubuntu/</guid>
       <description></description>
     </item>
     

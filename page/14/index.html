@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-11-18T11:04:12+08:00" />
+<meta property="og:updated_time" content="2020-11-20T14:19:05+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -193,6 +193,74 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2019-06-19-mac-php-redis-install/">Mac - php redis install</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2019-06-19
+</p>
+                
+
+                
+                <p><h2 id="mac---php-redis-install">Mac - php redis install</h2>
+<h3 id="mac-env">Mac Env</h3>
+<p>Mac OSX 10.14.5</p>
+<h3 id="step">Step</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://www.github.com/phpredis/phpredis.git
+
+cd phpredis
+
+phpize <span style="color:#f92672">&amp;&amp;</span> ./configure <span style="color:#f92672">&amp;&amp;</span> make <span style="color:#f92672">&amp;&amp;</span> sudo make install
+</code></pre></div><p><strong>test</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">php -r <span style="color:#e6db74">&#34;if (new Redis() == true){ echo \&#34;\r\n OK \r\n\&#34;; }&#34;</span>
+</code></pre></div><h3 id="troubleshooting">Troubleshooting</h3>
+<h4 id="phpize">phpize</h4>
+<p>1.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ phpize
+grep: /usr/include/php/main/php.h: No such file or directory
+grep: /usr/include/php/Zend/zend_modules.h: No such file or directory
+grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory
+Configuring <span style="color:#66d9ef">for</span>:
+PHP Api Version:
+Zend Module Api No:
+Zend Extension Api No:
+</code></pre></div><p><strong>Solution</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /Library/Developer/CommandLineTools/Packages/
+
+open macOS_SDK_headers_for_macOS_10.14.pkg
+</code></pre></div><p>2.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ phpize
+Cannot find autoconf. Please check your autoconf installation and the $PHP_AUTOCONF environment variable. Then, rerun this script.
+</code></pre></div><p><strong>Solution</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install autoconf
+</code></pre></div><p><a href="https://stackoverflow.com/questions/51908004/install-phpredis-mac-osx">Refer - install-phpredis-mac-osx</a></p>
+<p><a href="https://zhile.io/2018/09/26/macOS-10.14-install-sdk-headers.html">Refer - macOS 10.14软件编译时找不到头文件的解决方法</a></p>
+<p><a href="http://www.mayanlong.com/archives/2016/349.html">Refer - macOS 中使用 phpize 动态添加 PHP 扩展的错误解决方法</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2019-06-19-mac-php-redis-install/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2019-06-14-golang-gvm-golang-version-manger/">Golang - gvm Golang version manger</a></h3>
 
                 
@@ -245,67 +313,6 @@ gvm install go1.9
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2019-06-14-golang-gvm-golang-version-manger/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2019-03-25-vue-vue-cli-note/">Vue - Vue cli note</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2019-03-25
-</p>
-                
-
-                
-                <p><h2 id="vue---vue-cli-note">Vue - Vue cli note</h2>
-<p><a href="https://cli.vuejs.org/">https://cli.vuejs.org/</a></p>
-<h3 id="vuetify">vuetify</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vue create &lt;project folder name&gt;
-
-cd &lt;project folder name&gt;
-
-vue add vuetify
-
-npm run serve
-</code></pre></div><h3 id="use-spa">Use SPA</h3>
-<p>App.vue</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">template</span>&gt;
-  &lt;<span style="color:#f92672">router-view</span>&gt;&lt;/<span style="color:#f92672">router-view</span>&gt;
-&lt;/<span style="color:#f92672">template</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;App&#39;</span>,
-  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
-  },
-  <span style="color:#a6e22e">data</span> () {
-    <span style="color:#66d9ef">return</span> {
-    }
-  }
-}
-&lt;/<span style="color:#f92672">script</span>&gt;
-
-</code></pre></div></p>
-                
-
-                
-
                 
             </div>
         </div>

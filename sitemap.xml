@@ -4,7 +4,37 @@
   
   <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2020-11-18T11:04:12+08:00</lastmod>
+    <lastmod>2020-11-20T14:19:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/categories/gcp/</loc>
+    <lastmod>2020-11-20T14:19:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/posts/</loc>
+    <lastmod>2020-11-20T14:19:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/categories/puppeteer/</loc>
+    <lastmod>2020-11-20T14:19:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/posts/puppeteer_on_ubuntu_server/</loc>
+    <lastmod>2020-11-20T14:19:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/</loc>
+    <lastmod>2020-11-20T14:19:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/categories/ubuntu/</loc>
+    <lastmod>2020-11-20T14:19:05+08:00</lastmod>
   </url>
   
   <url>
@@ -14,16 +44,6 @@
   
   <url>
     <loc>https://blog.tedshd.io/posts/sort_case_handle_in_javascript/</loc>
-    <lastmod>2020-11-18T11:04:12+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2020-11-18T11:04:12+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tedshd.io/</loc>
     <lastmod>2020-11-18T11:04:12+08:00</lastmod>
   </url>
   
@@ -674,11 +694,6 @@
   
   <url>
     <loc>https://blog.tedshd.io/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/</loc>
-    <lastmod>2020-01-29T17:42:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tedshd.io/categories/ubuntu/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url>
   

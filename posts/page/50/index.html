@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-11-18T11:04:12+08:00" />
+<meta property="og:updated_time" content="2020-11-20T14:19:05+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1092,6 +1092,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1102,6 +1106,45 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-06-16-linux-set-encoding-in-linux-environment/">Linux - Set Encoding In Linux Environment</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-06-16
+</p>
+                
+
+                
+                <p><h2 id="linux---set-encoding-in-linux-environment">Linux - Set Encoding In Linux Environment</h2>
+<p>Add</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export LC_ALL<span style="color:#f92672">=</span>en_US.UTF-8
+export LANG<span style="color:#f92672">=</span>en_US.UTF-8
+export LANGUAGE<span style="color:#f92672">=</span>en_US.UTF-8
+</code></pre></div><p>in <code>.bashrc</code> or <code>.zshrc</code></p>
+<p><a href="http://perlgeek.de/en/article/set-up-a-clean-utf8-environment">Refer - How to set up a clean UTF-8 environment in Linux</a></p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1198,76 +1241,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2015-06-08-javascript-dynamic-load-script-jsonp-callback/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/">Docker - Mac research log</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-05-15
-</p>
-                
-
-                
-                <p><h2 id="docker---mac-research-log">Docker - Mac research log</h2>
-<p><del><a href="http://docs.docker.com/installation/mac/">Install by Mac</a></del></p>
-<h3 id="register-docker-hub">Register Docker Hub</h3>
-<p><a href="https://hub.docker.com/">Docker Hub</a></p>
-<h3 id="use-kitematic">Use Kitematic</h3>
-<p><a href="https://kitematic.com/">kitematic</a></p>
-<h3 id="install-ubuntu">Install Ubuntu</h3>
-<p>Search ubuntu on docker hub</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/276146/Ff44CHSxS5qn7co6RsdJ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-05-27_%E4%B8%8A%E5%8D%8812_36_02.png" alt="螢幕快照_2015-05-27_上午12_36_02.png"></p>
-<p>Run command</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/276146/qDNHEI6YQcS9QbfQsbio_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-05-27_%E4%B8%8A%E5%8D%8812_36_51.png" alt="螢幕快照_2015-05-27_上午12_36_51.png"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker pull ubuntu
-</code></pre></div><h4 id="use-docker-images">Use <code>docker images</code></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-ubuntu              latest              07f8e8c5e660        <span style="color:#ae81ff">3</span> weeks ago         188.3 MB
-</code></pre></div><h4 id="build-dockerfile">build dockerfile</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build . -t ubuntu_dev:16.04 -f local.Dockerfile
-</code></pre></div><h4 id="run-container">run container</h4>
-<p><code>docker run -t -i ubuntu /bin/bash</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -t -i ubuntu /bin/bash
-root@b0cdeb409841:/#
-</code></pre></div><h4 id="docker-run">docker run</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -idt --name &lt;container name&gt; -v &lt;mount absolute path or ~ path&gt;:&lt;docker path&gt; &lt;IMAGE&gt;:&lt;TAG&gt;
-</code></pre></div><h4 id="end-container">end container</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">exit
-</code></pre></div><h4 id="show-container">show container</h4>
-<p><code>docker ps -a</code></p>
-<h4 id="show-running-container">show running container</h4>
-<p><code>docker ps</code></p>
-<h4 id="show-images">show images</h4>
-<p><code>docker images</code></p>
-<h4 id="enter-docker-container">enter docker container</h4>
-<p><code>docker exec -it &lt;container id&gt; bash</code></p>
-<h4 id="show-log">show log</h4>
-<p><code>docker logs &lt;container id&gt;</code></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/">Read more</a></p>
                 
             </div>
         </div>
