@@ -1128,7 +1128,7 @@ if (!doNotTrack) {
 
                 
                 <p><h2 id="online-edit-image">Online edit image</h2>
-<h3 id="use-canvas--flow">Use canvas &amp; flow</h3>
+<h3 id="use-canvas--how-to-do">Use canvas &amp; how to do</h3>
 <p>Upload image -&gt; trans to canvas -&gt; download canvas to png</p>
 <p>upload use files api</p>
 <p>new canvas object</p>
@@ -1142,7 +1142,7 @@ if (!doNotTrack) {
 <li>Need notice device pixelRatio</li>
 </ul>
 <p>Use <code>Window.devicePixelRatio</code> as base on canvas width &amp; height</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">canvas</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;canvas&#39;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">canvas</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;canvas&#34;</span>);
 <span style="color:#75715e">// Set display size (css pixels).
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>;
 <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;px&#34;</span>;
@@ -1161,7 +1161,7 @@ if (!doNotTrack) {
 <tr>
 <th>Browser</th>
 <th>Maximum height</th>
-<th>Maximum  width</th>
+<th>Maximum width</th>
 <th>Maximum area</th>
 </tr>
 </thead>
@@ -1194,10 +1194,11 @@ if (!doNotTrack) {
 </table>
 <h2 id="upload-use-file-api">Upload use file API</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">accept</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image/*&#34;</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;input[type=file]&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;change&#39;</span>, <span style="color:#66d9ef">function</span> () {
-  <span style="color:#a6e22e">handleFiles</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">files</span>);
-})
-
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document
+  .<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;input[type=file]&#34;</span>)
+  .<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;change&#34;</span>, <span style="color:#66d9ef">function</span> () {
+    <span style="color:#a6e22e">handleFiles</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">files</span>);
+  });
 
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleFiles</span>(<span style="color:#a6e22e">files</span>) {
   <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">files</span>.<span style="color:#a6e22e">length</span>) {
@@ -1206,44 +1207,45 @@ if (!doNotTrack) {
     <span style="color:#66d9ef">return</span> window.<span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">createObjectURL</span>(<span style="color:#a6e22e">files</span>[<span style="color:#ae81ff">0</span>]);
   }
 }
-
 </code></pre></div><h2 id="download-canvas-to-png">Download canvas to PNG</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;download&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Download Canvas&lt;/<span style="color:#f92672">a</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
-document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#download&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#download&#34;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#66d9ef">function</span> () {
   <span style="color:#a6e22e">downloadCanvas</span>({
     <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>,
-    <span style="color:#a6e22e">canvasDom</span><span style="color:#f92672">:</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;canvas&#39;</span>),
-  })
+    <span style="color:#a6e22e">canvasDom</span><span style="color:#f92672">:</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;canvas&#34;</span>),
+  });
 });
 
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">downloadCanvas</span>(<span style="color:#a6e22e">arg</span>) {
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">link</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arg</span>.<span style="color:#a6e22e">link</span>,
     <span style="color:#a6e22e">canvasDom</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arg</span>.<span style="color:#a6e22e">canvasDom</span>,
-    <span style="color:#a6e22e">filename</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arg</span>.<span style="color:#a6e22e">filename</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;canvas.png&#39;</span>;
+    <span style="color:#a6e22e">filename</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arg</span>.<span style="color:#a6e22e">filename</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;canvas.png&#34;</span>;
 
   <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">link</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">canvasDom</span>) {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;downloadCanvas: link or canvasDom not set&#39;</span>);
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;downloadCanvas: link or canvasDom not set&#34;</span>);
     <span style="color:#66d9ef">return</span>;
   }
 
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">canvasDom</span>.<span style="color:#a6e22e">toDataURL</span>(<span style="color:#e6db74">&#39;image/png&#39;</span>);
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">canvasDom</span>.<span style="color:#a6e22e">toDataURL</span>(<span style="color:#e6db74">&#34;image/png&#34;</span>);
   <span style="color:#75715e">/* Change MIME type to trick the browser to downlaod the file instead of displaying it */</span>
-  <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/^data:image\/[^;]*/</span>, <span style="color:#e6db74">&#39;data:application/octet-stream&#39;</span>);
+  <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/^data:image\/[^;]*/</span>, <span style="color:#e6db74">&#34;data:application/octet-stream&#34;</span>);
   <span style="color:#75715e">/* In addition to &lt;a&gt;&#39;s &#34;download&#34; attribute, you can define HTTP-style headers */</span>
-  <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/^data:application\/octet-stream/</span>, <span style="color:#e6db74">&#39;data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">filename</span>);
+  <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">replace</span>(
+    <span style="color:#e6db74">/^data:application\/octet-stream/</span>,
+    <span style="color:#e6db74">&#34;data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=&#34;</span> <span style="color:#f92672">+</span>
+      <span style="color:#a6e22e">filename</span>
+  );
 
   <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>;
 }
-
 </code></pre></div><p><a href="https://stackoverflow.com/questions/12796513/html5-canvas-to-png-file">Refer - HTML5 Canvas to PNG File</a></p>
 <h2 id="edit-canvas">Edit canvas</h2>
 <p>Use <a href="https://konvajs.org/">konvajs</a> edit canvass</p>
 <h3 id="init-canvass">Init Canvass</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">stage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Konva</span>.<span style="color:#a6e22e">Stage</span>({
-  <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;container&#39;</span>,
+  <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;container&#34;</span>,
   <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> window.<span style="color:#a6e22e">innerWidth</span>,
-  <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> window.<span style="color:#a6e22e">innerHeight</span>
+  <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> window.<span style="color:#a6e22e">innerHeight</span>,
 });
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">layer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Konva</span>.<span style="color:#a6e22e">Layer</span>();
@@ -1258,13 +1260,13 @@ document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6
     <span style="color:#a6e22e">shape</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arg</span>.<span style="color:#a6e22e">shape</span>;
   <span style="color:#75715e">// main API:
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">imageObj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Image</span>();
-  <span style="color:#a6e22e">imageObj</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+  <span style="color:#a6e22e">imageObj</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">yoda</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Konva</span>.<span style="color:#a6e22e">Image</span>({
       <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">x</span>,
       <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">y</span>,
       <span style="color:#a6e22e">image</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">imageObj</span>,
       <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">width</span>,
-      <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">height</span>
+      <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">height</span>,
     });
 
     <span style="color:#75715e">// add the shape to the layer
@@ -1274,15 +1276,21 @@ document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6
   <span style="color:#a6e22e">imageObj</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arg</span>.<span style="color:#a6e22e">path</span>;
 }
 </code></pre></div><h3 id="download-use-konvajs">Download use konvajs</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">downloadURI</span>(<span style="color:#a6e22e">uri</span>, <span style="color:#a6e22e">name</span>) {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;grid_&#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">new</span> Date() <span style="color:#f92672">+</span><span style="color:#e6db74">&#39;.png&#39;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">downloadURI</span>(<span style="color:#a6e22e">uri</span>, <span style="color:#a6e22e">name</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;grid_&#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">new</span> Date() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.png&#34;</span>;
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dataURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">stage</span>.<span style="color:#a6e22e">toDataURL</span>({ <span style="color:#a6e22e">pixelRatio</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> });
 
-  <span style="color:#a6e22e">dataURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dataURL</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/^data:image\/[^;]*/</span>, <span style="color:#e6db74">&#39;data:application/octet-stream&#39;</span>);
-  <span style="color:#a6e22e">dataURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dataURL</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/^data:application\/octet-stream/</span>, <span style="color:#e6db74">&#39;data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">fileName</span>);
+  <span style="color:#a6e22e">dataURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dataURL</span>.<span style="color:#a6e22e">replace</span>(
+    <span style="color:#e6db74">/^data:image\/[^;]*/</span>,
+    <span style="color:#e6db74">&#34;data:application/octet-stream&#34;</span>
+  );
+  <span style="color:#a6e22e">dataURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dataURL</span>.<span style="color:#a6e22e">replace</span>(
+    <span style="color:#e6db74">/^data:application\/octet-stream/</span>,
+    <span style="color:#e6db74">&#34;data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=&#34;</span> <span style="color:#f92672">+</span>
+      <span style="color:#a6e22e">fileName</span>
+  );
 
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">link</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;a&#39;</span>);
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">link</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;a&#34;</span>);
   <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">download</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fileName</span>;
   <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dataURL</span>;
   document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">link</span>);
@@ -1291,14 +1299,13 @@ document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6
   <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">link</span>;
 }
 
-document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;save&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(
-  <span style="color:#e6db74">&#39;click&#39;</span>,
-  <span style="color:#66d9ef">function</span>() {
+document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;save&#34;</span>).<span style="color:#a6e22e">addEventListener</span>(
+  <span style="color:#e6db74">&#34;click&#34;</span>,
+  <span style="color:#66d9ef">function</span> () {
     <span style="color:#a6e22e">downloadURI</span>();
   },
   <span style="color:#66d9ef">false</span>
 );
-
 </code></pre></div><p><a href="https://konvajs.org/docs/data_and_serialization/High-Quality-Export.html">Refer - HTML5 Canvas Export to Hight Quality Image Tutorial | Konva - JavaScript 2d canvas library</a></p>
 </p>
                 
