@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Fri, 20 Nov 2020 10:52:35 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Dec 2020 10:12:17 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.tedshd.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker 使用紀錄</title>
+      <link>https://blog.tedshd.io/posts/docker_usage/</link>
+      <pubDate>Thu, 24 Dec 2020 10:12:17 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/docker_usage/</guid>
+      <description>docker images 列出所有拉下來的 docker image docker images REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE ubuntu latest 07f8e8c5e660 3 weeks ago 188.3 MB build dockerfile 使用 dockerfile 建立 docker image 直接建立 docker build . 預設會找當前的目錄的 Dockerfile -t 可以設定建立的 image &amp;amp; tag name docker build</description>
+    </item>
     
     <item>
       <title>Puppeteer 安裝在 ubuntu server 使用紀錄</title>

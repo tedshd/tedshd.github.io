@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-12-10T17:17:28+08:00" />
+<meta property="og:updated_time" content="2020-12-24T13:45:42+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -187,6 +187,95 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-12-25-javascript-jsonp/">JavaScript - jsonp</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-12-25
+</p>
+                
+
+                
+                <p><h2 id="javascript---jsonp">JavaScript - jsonp</h2>
+<h3 id="if-only-get-dataread">If only get data(read)</h3>
+<p>Use callback</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// javascript
+</span><span style="color:#75715e">// build from javascript
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scriptEl</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
+<span style="color:#a6e22e">scriptEl</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;callback=myFunction&#34;</span>;
+document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;head&#34;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">scriptEl</span>);
+</code></pre></div><p>or</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- html --&gt;</span>
+<span style="color:#75715e">&lt;!-- embed from HTML --&gt;</span>
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;callback=myFunction&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>myFunction is callback function handle json data</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// javascript
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myFunction</span>(<span style="color:#a6e22e">data</span>) {
+    <span style="color:#75715e">// data is json
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+}
+</code></pre></div><h4 id="example">example</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">title</span>&gt;Examples&lt;/<span style="color:#f92672">title</span>&gt;
+<span style="color:#75715e">&lt;!-- &lt;script src=&#34;http://tedshd.lionfree.net/demo/php/api_test.php?callback=test&#34;&gt;&lt;/script&gt; --&gt;</span>
+&lt;<span style="color:#f92672">script</span>&gt;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scriptEl</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
+    <span style="color:#a6e22e">scriptEl</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://tedshd.lionfree.net/demo/php/api_test.php?callback=test&#34;</span>;
+    document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;head&#34;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">scriptEl</span>);
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+    }
+&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>PHP must support to handle jsonp</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// PHP
+$request_json = json_encode($data, true);
+echo $_GET[&#39;callback&#39;] . &#34;(&#34; . $request_json . &#34;);&#34;;
+</code></pre></div><p>這樣就會回傳用 callback 包起來的 json data
+由於 callback 是 url query string ,所以不是用 callback 用其他名稱也是 ok 的</p>
+<h3 id="if-want-to-write-datasave">If want to write data(Save)</h3>
+<p>Use XMLHttpRequest send data
+<a href="http://tedshd.logdown.com/posts/143110-ajax-xmlhttprequest">AJAX - XMLHttpRequest</a></p>
+<p>PHP 加入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// PHP
+header(&#34;Access-Control-Allow-Origin: *&#34;);
+// header(&#34;Access-Control-Allow-Origin: http://example.com&#34;);
+</code></pre></div><p>其中 * 也可改成所允許的 url</p>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/HTTP/Access_control_CORS">Refer - HTTP access control (CORS)</a>
+<a href="https://developer.mozilla.org/en-US/docs/Server-Side_Access_Control">Refer - Server-Side Access Control</a>
+<a href="http://blog.caesarchi.com/2011/08/xmlhttprequestajax.html">Refer - XMLHttpRequest執行AJAX 跨網域存取</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-12-25-javascript-jsonp/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -427,87 +516,6 @@ We can use javascript control player</p>
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-12-20-javascript-youtube-api-note/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-12-19-konami-cheat-simple-javascript-implementation/">Konami 密技 JavaScript 簡單實作</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-12-19
-</p>
-                
-
-                
-                <p><h2 id="konami-密技-javascript-簡單實作">Konami 密技 JavaScript 簡單實作</h2>
-<p>最近有一個網站很紅
-<a href="http://www.vogue.co.uk/">vogue</a>
-上上下下左右左右BA
-接下來就狂按 A</p>
-<p><a href="http://zh.wikipedia.org/zh-tw/%E7%A7%91%E4%B9%90%E7%BE%8E%E7%A7%98%E6%8A%80">KONAMI 密技</a>阿</p>
-<p>身為一個宅宅前端攻城獅一定要學起來這招(<del>以後就藏一些東西在程式中</del>)</p>
-<p><a href="http://tedshd.lionfree.net/demo/konami.html">Demo</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    window.<span style="color:#a6e22e">onkeydown</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">konami</span>;
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">konami</span>(<span style="color:#a6e22e">e</span>) {
-        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">38</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-            <span style="color:#a6e22e">keyCount</span><span style="color:#f92672">++</span>;
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">keyCount</span>);
-        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">38</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
-            <span style="color:#a6e22e">keyCount</span><span style="color:#f92672">++</span>;
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">keyCount</span>);
-        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">2</span>) {
-            <span style="color:#a6e22e">keyCount</span><span style="color:#f92672">++</span>;
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">keyCount</span>);
-        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">3</span>) {
-            <span style="color:#a6e22e">keyCount</span><span style="color:#f92672">++</span>;
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">keyCount</span>);
-        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">37</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span>) {
-            <span style="color:#a6e22e">keyCount</span><span style="color:#f92672">++</span>;
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">keyCount</span>);
-        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">39</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">5</span>) {
-            <span style="color:#a6e22e">keyCount</span><span style="color:#f92672">++</span>;
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">keyCount</span>);
-        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">37</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">6</span>) {
-            <span style="color:#a6e22e">keyCount</span><span style="color:#f92672">++</span>;
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">keyCount</span>);
-        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">39</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">7</span>) {
-            <span style="color:#a6e22e">keyCount</span><span style="color:#f92672">++</span>;
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">keyCount</span>);
-        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">66</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">8</span>) {
-            <span style="color:#a6e22e">keyCount</span><span style="color:#f92672">++</span>;
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">keyCount</span>);
-        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">65</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">9</span>) {
-            <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Konami&#39;</span>);
-            <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;打密技阿你&#39;</span>);
-        } <span style="color:#66d9ef">else</span> {
-            <span style="color:#a6e22e">keyCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;fail&#39;</span>);
-        }
-    }
-</code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-12-19-konami-cheat-simple-javascript-implementation/">Read more</a></p>
                 
             </div>
         </div>

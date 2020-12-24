@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-12-10T17:17:28+08:00" />
+<meta property="og:updated_time" content="2020-12-24T13:45:42+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1096,6 +1096,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1106,6 +1110,57 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-09-08-javascript-design-pattern/">JavaScript - design pattern</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-09-08
+</p>
+                
+
+                
+                <p><h2 id="javascript---design-pattern">JavaScript - design pattern</h2>
+<h3 id="避免與減少全域變數global-variable">避免與減少全域變數(global variable)</h3>
+<p>全域變數非常方遍使用, 但使用的不好會使 JavaScript 有問題
+因為有可能重複使用且有可能別的 library 也有用到該名稱
+在 <strong><em>JavaScript: 優良部分</em></strong> 書中提到可用物件的方式包起來</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">GlobalObj</span> <span style="color:#f92672">=</span> {};
+<span style="color:#75715e">// 開始定義
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">GlobalObj</span>.<span style="color:#a6e22e">var1</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;string&#39;</span>;
+<span style="color:#a6e22e">GlobalObj</span>.<span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
+...
+
+<span style="color:#75715e">// or
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">GlobalObj</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">var1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;string&#39;</span>,
+        <span style="color:#a6e22e">arr</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+    };
+</code></pre></div><p>使用 <strong>閉包(Closure)</strong> 也是一個避免全域變數的方法</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-09-08-javascript-design-pattern/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1136,98 +1191,6 @@ if (!doNotTrack) {
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-09-05-effecktcss-note/">Effeckt.css - Note</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-09-05
-</p>
-                
-
-                
-                <p><h2 id="effecktcss">Effeckt.css</h2>
-<p><a href="http://h5bp.github.io/Effeckt.css/dist/">demo</a></p>
-<p>上面頁面都是利用 CSS3 的 Animations 與 Transitions 效果做出來的</p>
-<p><a href="https://github.com/h5bp/Effeckt.css">GitHub</a></p>
-<p>使用該 library 須載入 <a href="http://modernizr.com/">Modernizr</a> 這個 library
-Modernizr 是用來判斷 browser 是否支援 HTML5 or CSS3 所用的 library, 並能把相同功能但在不同 browser 實作的 API 或 CSS3 property 一致化</p>
-<p>主要是透過添加 class or data attribute 的方式, Modernizer 就在其中做了整合各 browser 的事情</p>
-<h3 id="how-does-it-work">How does it work</h3>
-<p>動畫部分是利用 CSS3 的 Animations 與 Transitions
-至於事件的觸發是利用 <a href="http://www.w3.org/TR/css3-transitions/#transition-events-">CSS3 Transition Events</a>, 由於各個 browser 實作都不一樣, 所以這裡加載了一個 <code>/js/demo/demo.js</code> 的 js, 但在這 js 有個有趣的地方就是有用 ajax 去載入開發者名單, 所以就另開個 js 來載入</p>
-<p><strong>CSS3-event.js</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">EffecktDemos</span> <span style="color:#f92672">=</span> {
-
-  <span style="color:#a6e22e">init</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-
-    <span style="color:#a6e22e">$</span>(window).<span style="color:#a6e22e">load</span>(<span style="color:#66d9ef">function</span>() {
-      <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.no-transitions&#34;</span>).<span style="color:#a6e22e">removeClass</span>(<span style="color:#e6db74">&#34;no-transitions&#34;</span>);
-    });
-
-    <span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">transitionEndEventName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">transitionEndEventNames</span>[<span style="color:#a6e22e">Modernizr</span>.<span style="color:#a6e22e">prefixed</span>(<span style="color:#e6db74">&#39;transition&#39;</span>)];
-    <span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">animationEndEventName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">animationEndEventNames</span>[<span style="color:#a6e22e">Modernizr</span>.<span style="color:#a6e22e">prefixed</span>(<span style="color:#e6db74">&#39;animation&#39;</span>)];
-
-  },
-
-  <span style="color:#a6e22e">animationEndEventNames</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#39;WebkitAnimation&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;webkitAnimationEnd&#39;</span>,
-    <span style="color:#e6db74">&#39;OAnimation&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;oAnimationEnd&#39;</span>,
-    <span style="color:#e6db74">&#39;msAnimation&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;MSAnimationEnd&#39;</span>,
-    <span style="color:#e6db74">&#39;animation&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;animationend&#39;</span>
-  },
-
-  <span style="color:#a6e22e">transitionEndEventNames</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#39;WebkitTransition&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;webkitTransitionEnd&#39;</span>,
-    <span style="color:#e6db74">&#39;OTransition&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;oTransitionEnd&#39;</span>,
-    <span style="color:#e6db74">&#39;msTransition&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;MSTransitionEnd&#39;</span>,
-    <span style="color:#e6db74">&#39;transition&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;transitionend&#39;</span>
-  }
-
-}
-
-<span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">init</span>();
-</code></pre></div><p>這 library 也是用 jQuery
-所以載入順序</p>
-<ol>
-<li>jQuery</li>
-<li>Modernizer</li>
-<li>CSS3-event</li>
-</ol>
-<h3 id="list">list</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;effeckt-list&#34;</span> <span style="color:#a6e22e">data-effeckt-type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pop-in&#34;</span>&gt;
-    &lt;<span style="color:#f92672">li</span>&gt;list&lt;/<span style="color:#f92672">li</span>&gt;
-    &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;new-item&#34;</span>&gt;new list&lt;/<span style="color:#f92672">li</span>&gt;
-    &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove-item&#34;</span>&gt;remove list&lt;/<span style="color:#f92672">li</span>&gt;
-&lt;/<span style="color:#f92672">ul</span>&gt;
-
-<span style="color:#75715e">&lt;!-- data-effect-type 放入要呈現的動畫效果
-</span><span style="color:#75715e">     new-item 入場
-</span><span style="color:#75715e">     remove-item 退場 --&gt;</span>
-</code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-09-05-effecktcss-note/">Read more</a></p>
                 
             </div>
         </div>

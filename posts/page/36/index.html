@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-12-10T17:17:28+08:00" />
+<meta property="og:updated_time" content="2020-12-24T13:45:42+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1096,6 +1096,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1106,6 +1110,48 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2016-07-17-lets-encrypt-has-a-certificate-problem-in-android-chrome/">Let&rsquo;s Encrypt - Has a certificate problem in Android Chrome</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-07-17
+</p>
+                
+
+                
+                <p><h2 id="lets-encrypt---has-a-certificate-problem-in-android-chrome">Let&rsquo;s Encrypt - Has a certificate problem in Android Chrome</h2>
+<p>If you use Let&rsquo;s Encrypt as SSL certificate</p>
+<p>Then setting this in Nginx</p>
+<pre><code class="language-config" data-lang="config">ssl_certificate /etc/letsencrypt/live/&lt;domain&gt;/cert.pem;
+</code></pre><p>You can find it maybe has problem in Android Chrome</p>
+<p>Now you can modify this</p>
+<pre><code class="language-config" data-lang="config">ssl_certificate /etc/letsencrypt/live/&lt;domain&gt;/fullchain.pem;
+</code></pre><h3 id="test-your-ssl">Test your SSL</h3>
+<p><a href="https://www.ssllabs.com/ssltest/index.html">SSL Server Test</a></p>
+<p><a href="https://community.letsencrypt.org/t/lets-encrypt-certificate-not-working-for-andriods-google-chrome/7184">Refer - Let’s encrypt certificate not working for Andriod’s Google Chrome</a></p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1174,97 +1220,6 @@ webpack --watch
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2016-06-10-javascript-the-abstract-an-action-instance/">JavaScript - 動作行為抽象化實例</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2016-06-10
-</p>
-                
-
-                
-                <p><h2 id="javascript---動作行為抽象化實例">JavaScript - 動作行為抽象化實例</h2>
-<p>其實標題真的不知道要怎麼定</p>
-<p>因為只是要說明一個實例, 但又不想扯到其他太制式的東西(設計模式), 但這範例又可用於其他地方, 所以到最後就用了個似是而非的標題了&hellip;</p>
-<p>先說一下可能的使用情境</p>
-<p>當你在做一個動作時要做一件事 ex: 呼叫 API、紀錄 GA、狀態改變之類的事情</p>
-<p>sample code</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;a&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
-    <span style="color:#75715e">// GA or call API or do somethong
-</span><span style="color:#75715e"></span>});
-</code></pre></div><p>以紀錄 GA 為例</p>
-<p>但是如果是紀錄 GA 點擊事件就會有許多區域要記錄點擊來瞭解使用者點哪個區域較多, 就要在不同區域綁定不同的 GA 但日子一久或程式變大的情況要找哪有綁 GA 就很不好找, 所以這時就需要有個 interface 來統整這事情</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#item&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
-    <span style="color:#75715e">// GA or call API or do somethong
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">interfaceGa</span>(<span style="color:#66d9ef">this</span>);
-});
-
-document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#banner&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
-    <span style="color:#75715e">// GA or call API or do somethong
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">interfaceGa</span>(<span style="color:#66d9ef">this</span>);
-});
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">interfaceGa</span>(<span style="color:#a6e22e">argument</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">argument</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-ga&#39;</span>);
-    <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">name</span>) {
-        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;product-items&#39;</span><span style="color:#f92672">:</span>
-            <span style="color:#a6e22e">ga</span>(<span style="color:#e6db74">&#39;send&#39;</span>, <span style="color:#e6db74">&#39;event&#39;</span>, <span style="color:#e6db74">&#39;items&#39;</span>, <span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#a6e22e">argument</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-name&#39;</span>));
-            <span style="color:#66d9ef">break</span>;
-        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;product-banner&#39;</span><span style="color:#f92672">:</span>
-            <span style="color:#a6e22e">ga</span>(<span style="color:#e6db74">&#39;send&#39;</span>, <span style="color:#e6db74">&#39;event&#39;</span>, <span style="color:#e6db74">&#39;banner&#39;</span>, <span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#a6e22e">argument</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-name&#39;</span>));
-            <span style="color:#66d9ef">break</span>;
-    }
-}
-</code></pre></div><p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/736758/kBxO0u4RPmhv5InIM6zW_interface.png" alt="interface.png"></p>
-<p>這樣就很好管理 GA 事件且在頁面上的 DOM 也可以快速知道該 component 是負責什麼 GA 事件, 因為可以快速查到</p>
-<p>在其他用法上 interface 重要的是有個能判別的點, 然後再用 <code>switch</code> 去選擇該做的事, 只是該例子是把 switch 要判斷的東西擺在 DOM 的 data attribute</p>
-<p>還可加個有趣的用法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">interfaceGa</span>(<span style="color:#a6e22e">argument</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">argument</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-ga&#39;</span>),
-        <span style="color:#a6e22e">status</span>;
-    <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">name</span>) {
-        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;product-items&#39;</span><span style="color:#f92672">:</span>
-            <span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">status</span>) {
-                <span style="color:#a6e22e">ga</span>(<span style="color:#e6db74">&#39;send&#39;</span>, <span style="color:#e6db74">&#39;event&#39;</span>, <span style="color:#e6db74">&#39;items&#39;</span>, <span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#a6e22e">argument</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-name&#39;</span>));
-            }
-            <span style="color:#66d9ef">break</span>;
-        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;product-banner&#39;</span><span style="color:#f92672">:</span>
-            <span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">status</span>) {
-                <span style="color:#a6e22e">ga</span>(<span style="color:#e6db74">&#39;send&#39;</span>, <span style="color:#e6db74">&#39;event&#39;</span>, <span style="color:#e6db74">&#39;banner&#39;</span>, <span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#a6e22e">argument</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-name&#39;</span>));
-            }
-            <span style="color:#66d9ef">break</span>;
-    }
-}
-</code></pre></div><p>當你要管理的事情如果臨時要開開關關或是依需求需要開關, 這也會方便管理</p>
-<p>所以以上要說的就是在程式變複雜時可以適當地把許多定義出有要做的事情做一層 interface 管理</p>
-<p>這似乎是某個設計模式, 但我也臨時找不出這是叫啥設計模式&hellip;</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2016-06-10-javascript-the-abstract-an-action-instance/">Read more</a></p>
                 
             </div>
         </div>

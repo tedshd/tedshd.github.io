@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Fri, 20 Nov 2020 10:52:35 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Dec 2020 10:12:17 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker</title>
+      <link>https://blog.tedshd.io/categories/docker/</link>
+      <pubDate>Thu, 24 Dec 2020 10:12:17 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mac</title>
+      <link>https://blog.tedshd.io/categories/mac/</link>
+      <pubDate>Thu, 24 Dec 2020 10:12:17 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/mac/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>gcp</title>
@@ -225,15 +243,6 @@
       <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/categories/google-gcp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mac</title>
-      <link>https://blog.tedshd.io/categories/mac/</link>
-      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/mac/</guid>
       <description></description>
     </item>
     
@@ -549,15 +558,6 @@
       <pubDate>Mon, 08 Jun 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/categories/jsonp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://blog.tedshd.io/categories/docker/</link>
-      <pubDate>Fri, 15 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/docker/</guid>
       <description></description>
     </item>
     

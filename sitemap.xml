@@ -4,17 +4,37 @@
   
   <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2020-12-10T14:19:29+08:00</lastmod>
+    <lastmod>2020-12-24T13:45:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/categories/docker/</loc>
+    <lastmod>2020-12-24T13:45:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/posts/docker_usage/</loc>
+    <lastmod>2020-12-24T13:45:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/categories/mac/</loc>
+    <lastmod>2020-12-24T13:45:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/posts/</loc>
+    <lastmod>2020-12-24T13:45:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/</loc>
+    <lastmod>2020-12-24T13:45:42+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.tedshd.io/categories/gcp/</loc>
     <lastmod>2020-11-20T14:19:05+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2020-12-10T17:17:28+08:00</lastmod>
   </url>
   
   <url>
@@ -25,11 +45,6 @@
   <url>
     <loc>https://blog.tedshd.io/posts/puppeteer_on_ubuntu_server/</loc>
     <lastmod>2020-11-20T14:19:05+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tedshd.io/</loc>
-    <lastmod>2020-12-10T17:17:28+08:00</lastmod>
   </url>
   
   <url>
@@ -299,11 +314,6 @@
   
   <url>
     <loc>https://blog.tedshd.io/posts/2018-11-21-javascript-calculate-exposure-of-web-page-components/</loc>
-    <lastmod>2020-01-29T17:42:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tedshd.io/categories/mac/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url>
   
@@ -815,11 +825,6 @@
   <url>
     <loc>https://blog.tedshd.io/categories/jsonp/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tedshd.io/categories/docker/</loc>
-    <lastmod>2020-02-04T11:21:49+08:00</lastmod>
   </url>
   
   <url>

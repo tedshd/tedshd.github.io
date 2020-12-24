@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-12-10T17:17:28+08:00" />
+<meta property="og:updated_time" content="2020-12-24T13:45:42+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1096,6 +1096,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1106,6 +1110,68 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-27-logdown-tab-test/">logdown Tab test</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-08-27
+</p>
+                
+
+                
+                <p><h2 id="tab-problem">Tab problem</h2>
+<h3 id="problem">Problem</h3>
+<p>Mac 的 function 中 console.log(&lsquo;hihi&rsquo;) 是按一次 Tab 有 4 個空白
+but
+alert(&lsquo;hihi&rsquo;) 這一行在按 Tab 縮排就有問題，再接續上一行按 enter 下來之後縮排剩 2 個空白，之後再按 Tab 縮排會變成只有 2 個空白
+在 fun2 的 function 中都是直接按 4 個空白鍵來作縮排，都正常</p>
+<h3 id="發生現象">發生現象</h3>
+<p>在按 Tab 縮排過，打完那一行直接按 enter 到下一行，縮排就從 4 個空白變成 2個空白</p>
+<h3 id="期望">期望</h3>
+<p>希望用 Tab 時在 Edit 和 Preview(最終結果)的結果是一樣的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Mac</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">console</span>) {
+  	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
+  }
+}
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#66d9ef">function</span>() {
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span>);
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">2</span>);
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;reset 重新從最左邊按一次 Tab&#39;</span>);
+}
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
+    <span style="color:#a6e22e">condsole</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;ok&#39;</span>);
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fun</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;good&#39;</span>);
+    }
+}
+</code></pre></div></p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-08-27-logdown-tab-test/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1141,79 +1207,6 @@ PageDown: \033[6~
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-25-javascript-type/">JavaScript type</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-08-25
-</p>
-                
-
-                
-                <p><h2 id="javascript-type">JavaScript Type</h2>
-<ul>
-<li>number</li>
-<li>string</li>
-<li>boolean</li>
-<li>null</li>
-<li>undefind</li>
-</ul>
-<p>減少 type 轉換以加快執行速度</p>
-<h2 id="object">Object</h2>
-<h3 id="var">var</h3>
-<ul>
-<li>宣告後即擁有物件的屬性</li>
-<li>宣告之後無法刪除</li>
-<li>區域變數</li>
-</ul>
-<p>function 內宣告</p>
-<ul>
-<li>全域變數</li>
-</ul>
-<p>小心使用</p>
-<h3 id="property">property</h3>
-<ul>
-<li>建立在物件中</li>
-<li>可刪除</li>
-</ul>
-<h2 id="array">Array</h2>
-<ul>
-<li>method 1</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
-</code></pre></div><p>bug</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">10</span>);
-<span style="color:#a6e22e">arr</span>
-<span style="color:#75715e">// [undefined × 10]
-</span></code></pre></div><ul>
-<li>method 2</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
-</code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-08-25-javascript-type/">Read more</a></p>
                 
             </div>
         </div>

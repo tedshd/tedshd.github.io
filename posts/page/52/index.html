@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-12-10T17:17:28+08:00" />
+<meta property="og:updated_time" content="2020-12-24T13:45:42+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1096,6 +1096,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1106,6 +1110,54 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-05-07-apache-dir-permission-cnfig/">Apache - dir permission cnfig</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-05-07
+</p>
+                
+
+                
+                <p><h2 id="apache---dir-permission-cnfig">Apache - dir permission cnfig</h2>
+<p>If yooouo want use virtual host</p>
+<p>Yoou can set <code>/etc/apache2/extra/httpd-vhosts.conf</code> this file</p>
+<p>Add</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;Directory /Users/ted/tedadev/local/bomb01&gt;
+    AllowOverride All
+    Options Indexes MultiViews FollowSymLinks
+    Require all granted
+&lt;/Directory&gt;
+&lt;VirtualHost *:80&gt;
+    DocumentRoot <span style="color:#e6db74">&#34;/Users/ted/tedadev/local/bomb01&#34;</span>
+    ServerName www.bomb01.com
+    ErrorLog <span style="color:#e6db74">&#34;/Volumes/RamDisk/ysm-error.log&#34;</span>
+    CustomLog <span style="color:#e6db74">&#34;/Volumes/RamDisk/ysm-access.log&#34;</span> common
+&lt;/VirtualHost&gt;
+</code></pre></div><p><a href="http://coolestguidesontheplanet.com/forbidden-403-you-dont-have-permission-to-access-username-on-this-server/">Refer - Forbidden 403, You don’t have permission to access /~username/ on this server</a></p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1256,48 +1308,6 @@ PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/lo
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2015-05-02-maker-gh60-revchn/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-04-14-javascript-use-createelement-or-string/">JavaScript - Use createElement or string?</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-04-14
-</p>
-                
-
-                
-                <p><h2 id="javascript---use-createelement-or-string">JavaScript - Use createElement or string?</h2>
-<p>常常討論在頁面上塞入新的 DOM 究竟是用哪種方式好</p>
-<p>其實在現今是要看 browser 如何解析 JavaScript</p>
-<p>所以目前沒一定的答案</p>
-<p>以下為效能測試的數據</p>
-<p><a href="http://jsperf.com/dom-test-string-vs-createelement">jsperf - dom-test-string-vs-createelement</a></p>
-<p>雖然樣本數少</p>
-<p>但依據上面的結果用 <code>createElement</code> 還是較有優勢</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-04-14-javascript-use-createelement-or-string/">Read more</a></p>
                 
             </div>
         </div>
