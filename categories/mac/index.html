@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/categories/mac/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-12-24T13:45:42+08:00" />
+<meta property="og:updated_time" content="2020-12-24T16:12:11+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -249,6 +249,10 @@ ubuntu              latest              07f8e8c5e660        <span style="color:#
 <p>先在其他 image 編譯完</p>
 <p>最後在把執行環境包成 image</p>
 <p><a href="https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds">Refer</a></p>
+<p>但是 build 完之後會有個問題, 就是之前 stage build 出來的 image 基本上沒有必要保留</p>
+<p>所以可以用 <code>docker image prune f</code> 移除掉之前 stage 建立的 image</p>
+<p><a href="https://stackoverflow.com/questions/50126741/how-to-remove-intermediate-images-from-a-build-after-the-build">Refer - How to remove intermediate images from a build after the build?</a></p>
+<p><a href="https://docs.docker.com/config/pruning/">Refer - Prune unused Docker objects</a></p>
 <h2 id="建立-container-docker-run">建立 container <code>docker run</code></h2>
 <p><code>docker run -t -i ubuntu /bin/bash</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -t -i ubuntu /bin/bash
