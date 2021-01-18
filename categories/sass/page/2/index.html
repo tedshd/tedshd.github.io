@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/categories/sass/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-01-29T17:42:46+08:00" />
+<meta property="og:updated_time" content="2014-07-10T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +53,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -207,10 +206,10 @@ We can use this method in <strong>scss</strong></p>
 $animation-support<span style="color:#f92672">:</span> webkit<span style="color:#f92672">,</span> moz<span style="color:#f92672">,</span> o<span style="color:#f92672">,</span> ms<span style="color:#f92672">,</span> <span style="color:#f92672">not</span> khtml;
 
 <span style="color:#75715e">/* use */</span>
-<span style="color:#a6e22e">.animation</span> {
-    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-name&#39;</span><span style="color:#f92672">,</span> move<span style="color:#f92672">,</span> $animation-support);
-    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-duration&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">s</span><span style="color:#f92672">,</span> $animation-support);
-    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-iteration-count&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> $animation-support);
+<span style="color:#a6e22e">.</span><span style="color:#a6e22e">animation</span> {
+    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">animation-name</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">,</span> move<span style="color:#f92672">,</span> $animation-support);
+    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">animation-duration</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">s</span><span style="color:#f92672">,</span> $animation-support);
+    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">animation-iteration-count</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef"></span><span style="color:#f92672">,</span> $animation-support);
 }
 </code></pre></div><p>and add <code>keyframes</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#75715e">/* define */</span>
@@ -231,10 +230,10 @@ $animation-support<span style="color:#f92672">:</span> webkit<span style="color:
 }
 
 <span style="color:#75715e">/* use */</span>
-<span style="color:#a6e22e">.animation</span> {
-    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-name&#39;</span><span style="color:#f92672">,</span> move<span style="color:#f92672">,</span> $animation-support);
-    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-duration&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">s</span><span style="color:#f92672">,</span> $animation-support);
-    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-iteration-count&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> $animation-support);
+<span style="color:#a6e22e">.</span><span style="color:#a6e22e">animation</span> {
+    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">animation-name</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">,</span> move<span style="color:#f92672">,</span> $animation-support);
+    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">animation-duration</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">s</span><span style="color:#f92672">,</span> $animation-support);
+    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">animation-iteration-count</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef"></span><span style="color:#f92672">,</span> $animation-support);
 }
 
 <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> keyframes</span>(move) {

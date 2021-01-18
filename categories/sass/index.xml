@@ -28,7 +28,7 @@
       
       <guid>https://blog.tedshd.io/posts/2013-11-20-sass-compile-two-spaces/</guid>
       <description>Sass compile two spaces Use Sass compile to css css lndent is 2 spaces if want 4 spaces Must modify this sass source code
-sass-3.2.10/lib/sass/tree/visitors/to_css.rb # before tab_str = &amp;#39; &amp;#39; * (@tabs + node.tabs) # after tab_str = &amp;#39; &amp;#39; * (@tabs + node.tabs) Refer - Change indentation in Sass</description>
+sass-3.2.10/lib/sass/tree/visitors/to_css.rb# before tab_str = &amp;#39; &amp;#39; * (@tabs + node.tabs)# after tab_str = &amp;#39; &amp;#39; * (@tabs + node.tabs)Refer - Change indentation in Sass</description>
     </item>
     
     <item>
@@ -38,8 +38,8 @@ sass-3.2.10/lib/sass/tree/visitors/to_css.rb # before tab_str = &amp;#39; &amp;#
       
       <guid>https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/</guid>
       <description>Use CSS3 Animation In Compass Compass default dosen&amp;rsquo;t have mixin in CSS3 animation We can use this method in scss
-/* define */ $animation-support: webkit, moz, o, ms, not khtml; /* use */ .animation { @includeexperimental(&amp;#39;animation-name&amp;#39;, move, $animation-support); @includeexperimental(&amp;#39;animation-duration&amp;#39;, 5s, $animation-support); @includeexperimental(&amp;#39;animation-iteration-count&amp;#39;, 1, $animation-support); } and add keyframes
-/* define */ $animation-support: webkit, moz, o, ms, not khtml; @mixinkeyframes($name) { @-webkit-keyframes #{$name} { @content; } @-moz-keyframes #{$name} { @content; } @-ms-keyframes #{$name} { @content; } @keyframes #{$name} { @content; } } /* use */ .</description>
+/* define */$animation-support: webkit, moz, o, ms, not khtml;/* use */.animation {@includeexperimental(&amp;#39;animation-name&amp;#39;, move, $animation-support);@includeexperimental(&amp;#39;animation-duration&amp;#39;, 5s, $animation-support);@includeexperimental(&amp;#39;animation-iteration-count&amp;#39;, 1, $animation-support);}and add keyframes
+/* define */$animation-support: webkit, moz, o, ms, not khtml;@mixinkeyframes($name) {@-webkit-keyframes #{$name} {@content;}@-moz-keyframes #{$name} {@content;}@-ms-keyframes #{$name} {@content;}@keyframes #{$name} {@content;}}/* use */.</description>
     </item>
     
   </channel>

@@ -10,7 +10,7 @@
 <meta name="google" content="notranslate">
 <meta id="viewport" name="viewport"
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='HTML Design Pattern 語意化(影響 SEO) 去 CSS 還可維持可讀性 去 JavaScript 頁面還能 work -&gt; 現在較不適用 避免樣式標籤 &lt;!-- not recommended --&gt; &lt;b&gt;&lt;/b&gt; &lt;i&gt;&lt;/i&gt; &lt;!-- use --&gt; &lt;strong&gt;&lt;/strong&gt; &lt;em&gt;&lt;/em&gt; 避免將 style 寫在 HTML tag 上 善用標籤以維持可讀性與'>
+<meta name="description" content='HTML Design Pattern 語意化(影響 SEO) 去 CSS 還可維持可讀性 去 JavaScript 頁面還能 work -&gt; 現在較不適用 避免樣式標籤 &lt;!--not recommended --&gt; &lt;b&gt;&lt;/b&gt; &lt;i&gt;&lt;/i&gt; &lt;!--use --&gt; &lt;strong&gt;&lt;/strong&gt; &lt;em&gt;&lt;/em&gt; 避免將 style 寫在 HTML tag 上 善用標籤以維持可讀性與語意'>
 <meta name="keywords" content=''>
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/2013-08-21-html-design-pattern/">
 <link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/2013-08-21-html-design-pattern/" />
@@ -27,7 +27,7 @@
 <meta name="copyright" content="Tedshd">
 
 <meta property="og:title" content="HTML Design Pattern" />
-<meta property="og:description" content="HTML Design Pattern 語意化(影響 SEO) 去 CSS 還可維持可讀性 去 JavaScript 頁面還能 work -&gt; 現在較不適用 避免樣式標籤 &lt;!-- not recommended --&gt; &lt;b&gt;&lt;/b&gt; &lt;i&gt;&lt;/i&gt; &lt;!-- use --&gt; &lt;strong&gt;&lt;/strong&gt; &lt;em&gt;&lt;/em&gt; 避免將 style 寫在 HTML tag 上 善用標籤以維持可讀性與" />
+<meta property="og:description" content="HTML Design Pattern 語意化(影響 SEO) 去 CSS 還可維持可讀性 去 JavaScript 頁面還能 work -&gt; 現在較不適用 避免樣式標籤 &lt;!--not recommended --&gt; &lt;b&gt;&lt;/b&gt; &lt;i&gt;&lt;/i&gt; &lt;!--use --&gt; &lt;strong&gt;&lt;/strong&gt; &lt;em&gt;&lt;/em&gt; 避免將 style 寫在 HTML tag 上 善用標籤以維持可讀性與語意" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/2013-08-21-html-design-pattern/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -38,7 +38,7 @@
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
 <meta name="twitter:title" content="HTML Design Pattern"/>
-<meta name="twitter:description" content="HTML Design Pattern 語意化(影響 SEO) 去 CSS 還可維持可讀性 去 JavaScript 頁面還能 work -&gt; 現在較不適用 避免樣式標籤 &lt;!-- not recommended --&gt; &lt;b&gt;&lt;/b&gt; &lt;i&gt;&lt;/i&gt; &lt;!-- use --&gt; &lt;strong&gt;&lt;/strong&gt; &lt;em&gt;&lt;/em&gt; 避免將 style 寫在 HTML tag 上 善用標籤以維持可讀性與"/>
+<meta name="twitter:description" content="HTML Design Pattern 語意化(影響 SEO) 去 CSS 還可維持可讀性 去 JavaScript 頁面還能 work -&gt; 現在較不適用 避免樣式標籤 &lt;!--not recommended --&gt; &lt;b&gt;&lt;/b&gt; &lt;i&gt;&lt;/i&gt; &lt;!--use --&gt; &lt;strong&gt;&lt;/strong&gt; &lt;em&gt;&lt;/em&gt; 避免將 style 寫在 HTML tag 上 善用標籤以維持可讀性與語意"/>
 
 
 <script type="application/javascript">
@@ -54,7 +54,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -192,10 +191,10 @@ if (!doNotTrack) {
 <h3 id="去-css-還可維持可讀性">去 CSS 還可維持可讀性</h3>
 <h3 id="去-javascript-頁面還能-work---現在較不適用">去 JavaScript 頁面還能 work -&gt; 現在較不適用</h3>
 <h3 id="避免樣式標籤">避免樣式標籤</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- not recommended --&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> not recommended </span><span style="color:#75715e">--&gt;</span>
 &lt;<span style="color:#f92672">b</span>&gt;&lt;/<span style="color:#f92672">b</span>&gt;
 &lt;<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
-<span style="color:#75715e">&lt;!-- use --&gt;</span>
+<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> use </span><span style="color:#75715e">--&gt;</span>
 &lt;<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">strong</span>&gt;
 &lt;<span style="color:#f92672">em</span>&gt;&lt;/<span style="color:#f92672">em</span>&gt;
 </code></pre></div><h3 id="避免將-style-寫在-html-tag-上">避免將 style 寫在 HTML tag 上</h3>

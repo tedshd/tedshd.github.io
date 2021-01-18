@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/categories/php/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-10-30T15:20:10+08:00" />
+<meta property="og:updated_time" content="2021-01-14T17:21:53+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +53,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -185,6 +184,58 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-12-07-detect-mobile-device/">Detect mobile device</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-12-07
+</p>
+                
+
+                
+                <p><h2 id="detect-mobile-device">Detect mobile device</h2>
+<p>Use PHP or JavaScript detect mobile device like iPhone, iPad, iPod or Android&hellip;</p>
+<h3 id="android">Android</h3>
+<h4 id="php">PHP</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$ua <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtolower</span>($_SERVER[<span style="color:#e6db74">&#39;HTTP_USER_AGENT&#39;</span>]);
+<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">stripos</span>($ua, <span style="color:#e6db74">&#39;android&#39;</span>) <span style="color:#f92672">!==</span> <span style="color:#66d9ef">false</span>) {
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;Android!!&#39;</span>;
+    <span style="color:#66d9ef">exit</span>;
+}
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div><h4 id="javascript">JavaScript</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ua</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">userAgent</span>.<span style="color:#a6e22e">toLowerCase</span>();
+<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">ua</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#34;android&#34;</span>) <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+    document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;Android!!&#39;</span>);
+}
+</code></pre></div><p><a href="http://davidwalsh.name/detect-android">Refer - Android Detection with JavaScript or PHP</a></p>
+<h3 id="apple-mobile-device">Apple mobile device</h3>
+<p><a href="http://php.quicoto.com/how-to-detect-iphone-ipod-and-ipad-with-php/">Refer - How to detect iPhone, iPod and iPad with PHP</a>
+<a href="http://www.sitepoint.com/identify-apple-iphone-ipod-ipad-visitors/">Refer - How to Identify an Apple iPhone, iPod or iPad Visitor to Your Website</a></p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-08-30-php-note/">PHP Note</a></h3>
 
                 
@@ -268,14 +319,14 @@ if ($c &lt; <span style="color:#f92672">9</span><span style="color:#960050;backg
     <span style="color:#a6e22e">return</span><span style="color:#960050;background-color:#1e0010">;</span>
 <span style="color:#960050;background-color:#1e0010">}</span>
 
-<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#a6e22e">check</span> <span style="color:#a6e22e">condition</span> <span style="color:#a6e22e">4</span>
-<span style="color:#a6e22e">if</span> <span style="color:#960050;background-color:#1e0010">(!</span><span style="color:#a6e22e">d</span><span style="color:#960050;background-color:#1e0010">)</span>
+<span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#a6e22e">check</span> <span style="color:#a6e22e">condition</span> <span style="color:#a6e22e">4</span>
+<span style="color:#a6e22e">if</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#a6e22e">d</span><span style="color:#960050;background-color:#1e0010">)</span>
 <span style="color:#960050;background-color:#1e0010">{</span>
     <span style="color:#a6e22e">return</span><span style="color:#960050;background-color:#1e0010">;</span>
 <span style="color:#960050;background-color:#1e0010">}</span>
 
-<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#a6e22e">do</span> <span style="color:#a6e22e">something</span>
-<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">...</span>
+<span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#a6e22e">do</span> <span style="color:#a6e22e">something</span>
+<span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span>
 </code></pre></div><p>做個 <strong>反向思考</strong> , 把不適合的條件列出再一一 return or 作處理
 剩下的便是所需要的</p>
 <p>有時也會遇到應該用 <strong>switch</strong> 卻用 <strong>if</strong> 去一直加下去的情況

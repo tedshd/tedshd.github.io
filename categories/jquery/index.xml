@@ -18,12 +18,12 @@
       <pubDate>Thu, 08 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2013-08-08-jquery-design-pattern/</guid>
-      <description>modulize  modulize selector  var module = $(&amp;#39;body&amp;#39;); module.on(&amp;#39;click&amp;#39;, &amp;#39;a&amp;#39;, function() { // dosomething... });  initialize  if ($(&amp;#39;body&amp;#39;).length) { // dosomething } selector id is better than tag and class
+      <description>modulize  modulize selector  var module = $(&amp;#39;body&amp;#39;);module.on(&amp;#39;click&amp;#39;, &amp;#39;a&amp;#39;, function() {// dosomething...}); initialize  if ($(&amp;#39;body&amp;#39;).length) {// dosomething}selector id is better than tag and class
 HTML
-&amp;lt;div&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li id=&amp;#34;id&amp;#34; class=&amp;#34;class&amp;#34;&amp;gt;text&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; JavaScript
-$(&amp;#39;#id&amp;#39;).html(); $(&amp;#39;body&amp;#39;).find(&amp;#39;#id&amp;#39;); jsperf
+&amp;lt;div&amp;gt;&amp;lt;ul&amp;gt;&amp;lt;li id=&amp;#34;id&amp;#34; class=&amp;#34;class&amp;#34;&amp;gt;text&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;lt;/div&amp;gt;JavaScript
+$(&amp;#39;#id&amp;#39;).html();$(&amp;#39;body&amp;#39;).find(&amp;#39;#id&amp;#39;);jsperf
 ##bind event use on bind on parent selector
-$(&amp;#39;ul&amp;#39;).on(&amp;#39;click&amp;#39;, &amp;#39;li&amp;#39;, function () { // dosomething }); js Bin</description>
+$(&amp;#39;ul&amp;#39;).on(&amp;#39;click&amp;#39;, &amp;#39;li&amp;#39;, function () {// dosomething});js Bin</description>
     </item>
     
     <item>

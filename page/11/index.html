@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.63.1" />
     
 
 
@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-12-24T16:49:59+08:00" />
+<meta property="og:updated_time" content="2021-01-14T17:21:53+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -52,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -193,7 +192,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2019-10-29-php-float-float-ingress-scientific-marker-conversion/">php - float 浮點數科學記號轉換</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2019-11-18-2019-mozilla-developer-roadshow-asia-taipei-record/">2019 Mozilla Developer Roadshow Asia Taipei 與會紀錄</a></h3>
 
                 
                 
@@ -203,30 +202,87 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2019-10-29
+2019-11-18
 </p>
                 
 
                 
-                <p><h2 id="php---float-浮點數科學記號轉換">php - float 浮點數科學記號轉換</h2>
-<p><a href="https://www.php.net/manual/en/language.types.float.php">php - float</a></p>
-<p>php 的浮點數大小受限於系統, 且會自動轉換成科學記號呈現, 但是一般人不會去看科學記號</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">echo 0.0000234;
-// 2.34E-5
-</code></pre></div><p>在呈現上希望轉換回小數點的呈現</p>
-<p>可以用以下方法做到</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$s = 0.0000234;
-trim(rtrim(sprintf(&#34;%.10f&#34;, $s), &#39;0&#39;), &#39;.&#39;);
-// 0.0000234
-</code></pre></div><p>這邊 <code>sprintf</code> 只取 10 位數</p>
-<p>因為就之前遇到的系統超過 10 位數都會是不精確的浮點數</p>
+                <p><h2 id="2019-developer-roadshow-asia-taipei">2019 Developer Roadshow Asia: Taipei</h2>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_135334.jpg?alt=media&amp;token=6621fb56-7bb0-44b6-951f-00f7e76869d4" alt=""></p>
+<p><a href="https://ti.to/mdn/mozilla-developer-roadshow-2019-Asia-Taipei">2019 Developer Roadshow Asia: Taipei</a></p>
+<p>上次在台灣的 Roadshow 應該是 17 年的那場吧</p>
+<p>發表 Quantum 的那次</p>
+<p>如果之後我沒錯過台灣的場次的話</p>
+<p>這次有趣的是竟然是在 2019 Meet Taipei 創新創業嘉年華的展覽中佔一塊場地</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_134430.jpg?alt=media&amp;token=fbd21862-a1ac-459a-b677-d5488b3150e9" alt=""></p>
+<p>所以也自動幫你報名創業展的 VIP, 期間都可以入場參觀</p>
+<p>前面在簡介 Mozilla</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_144603_HDR.jpg?alt=media&amp;token=6944db24-0c16-492d-b156-eab8389dabbd" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_144915_HDR.jpg?alt=media&amp;token=9906ebea-0e33-417b-a7cd-be3147509b6c" alt=""></p>
+<p>前面先啥扯到東南亞市場趨勢</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_144316.jpg?alt=media&amp;token=d936c093-5cee-4e6b-bd28-9272a5b571e8" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_144423_HDR.jpg?alt=media&amp;token=d641ec94-0cff-47dd-b127-7b187e54a10f" alt=""></p>
+<p>感覺 Mozilla 會有些計畫會針對東南亞</p>
+<p>大致上分幾個主軸</p>
+<ol>
+<li>Firefox lite</li>
+<li>Firefox Develop tool</li>
+<li>Web VR</li>
+<li>IOT</li>
+<li>Firefox collect data</li>
+</ol>
+<h3 id="firefox-support-feature">Firefox support feature</h3>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_143608_HDR.jpg?alt=media&amp;token=dd4557f0-3c6c-497a-b788-f654bdf6dafa" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_143632_HDR.jpg?alt=media&amp;token=4610c311-ced9-4e45-8eec-48ee57960d63" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_143717.jpg?alt=media&amp;token=1db92498-578f-48ba-a331-95dd0b9935b8" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_143543_HDR.jpg?alt=media&amp;token=e89cc1ae-2569-4d6d-a8fd-6ebd39417067" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_143453_HDR.jpg?alt=media&amp;token=4a046413-9cd9-4fd0-8bf8-2f6ceff82647" alt=""></p>
+<p>更安全且具有隱私性</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_143739.jpg?alt=media&amp;token=ec1195f1-a3fd-43f4-bcf0-af15ef89856a" alt=""></p>
+<h3 id="firefox-lite">Firefox lite</h3>
+<p>在歷經上次失敗的 Firefox app 之後(之前用過 Android 版, 整體的順暢度根本沒法跟 Chrome 比</p>
+<p>這次在行動裝置出了 Firefox lite</p>
+<p>簡單的說, 它也想要整合許多功能在 lite 中, 但這樣不就不 lite 了?</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_143927_HDR.jpg?alt=media&amp;token=a1989462-832d-4b48-8628-6b13d4815015" alt=""></p>
+<h3 id="develop-tool-for-css-grid">Develop tool for CSS Grid</h3>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_145652.jpg?alt=media&amp;token=5e25d250-d5d2-4ed6-a581-d894da6d8d24" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_145535_HDR.jpg?alt=media&amp;token=c59fc043-79e4-40e8-8cb4-2f1ca45a660f" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_145839_HDR.jpg?alt=media&amp;token=75c45058-4cd5-47f1-9f91-9ee769c2bb99" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_150954_HDR.jpg?alt=media&amp;token=45fbc20f-138f-447f-8b4f-052fb80f0f5b" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_150748_HDR.jpg?alt=media&amp;token=117ffa1a-dfc6-4d5f-a381-73c9070f0faa" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_150145_HDR.jpg?alt=media&amp;token=f04e9303-8dd5-433f-9c7f-15b431aec40d" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_150439_HDR.jpg?alt=media&amp;token=d2f453b0-04f7-45ec-a38a-f0fbfa6878b8" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_151237_HDR.jpg?alt=media&amp;token=2bae0428-90f6-4ddd-a9f0-2e48680afa74" alt=""></p>
+<h3 id="web-xr">Web XR</h3>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_154418_HDR.jpg?alt=media&amp;token=dcc0a3c8-8907-489d-9050-b958b75eab56" alt=""></p>
+<p>正式宣佈 2019 為 MR 元年?</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_152710_HDR.jpg?alt=media&amp;token=7329ddf9-c67b-4b9c-b60d-0f6dc680f418" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_153553_HDR.jpg?alt=media&amp;token=ee7c59ec-d10b-4147-bd18-1783cfc5e6d5" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_153340_HDR.jpg?alt=media&amp;token=08f3b0d5-66e0-4b28-9f0a-32297644e4f8" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_153718_HDR.jpg?alt=media&amp;token=f9650609-3c43-431c-b037-b3f2192adc45" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_154545_HDR.jpg?alt=media&amp;token=183487b2-8002-4ead-97e1-029bc5a69123" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_154024_HDR.jpg?alt=media&amp;token=84c84314-7755-47a8-8154-bb76f62929ba" alt=""></p>
+<p>VR 聊天室</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_154113_HDR.jpg?alt=media&amp;token=4e7a0c10-a5cb-479b-a87c-52e9d2871b35" alt=""></p>
+<h3 id="mozilla-webthings">Mozilla WebThings</h3>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_155536.jpg?alt=media&amp;token=49017764-0473-4ddb-a9cd-4716cd81a76f" alt=""></p>
+<p><a href="https://iot.mozilla.org/docs/gateway-getting-started-guide.html">WebThings Gateway for Raspberry Pi®</a></p>
+<p><a href="https://github.com/mozilla-iot/wiki/wiki/Gateway-Remote-Access">Gateway remote access</a></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_160153.jpg?alt=media&amp;token=cce1e88f-afbb-492c-8db9-e26c141cbbfc" alt=""></p>
+<p>視覺化呈現</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_160123.jpg?alt=media&amp;token=2c30a8e2-3c8e-436d-b76f-bfac0cfadeef" alt=""></p>
+<p>視覺化的行為操作</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_160830_HDR.jpg?alt=media&amp;token=e090dbbb-f288-42fb-a290-07516d69dbd2" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_155900_HDR.jpg?alt=media&amp;token=656615ef-df0b-4c24-adee-61b4217ce323" alt=""></p>
+<p>類似 IFTTT</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F20191115_160613.jpg?alt=media&amp;token=d5ed1394-2e6e-49cc-8d73-bb6e2cc7b19b" alt=""></p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2019-10-29-php-float-float-ingress-scientific-marker-conversion/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2019-11-18-2019-mozilla-developer-roadshow-asia-taipei-record/">Read more</a></p>
                 
             </div>
         </div>
@@ -239,7 +295,7 @@ trim(rtrim(sprintf(&#34;%.10f&#34;, $s), &#39;0&#39;), &#39;.&#39;);
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2019-10-03-web-html-metadata-image-size-with-open-graph-etc/">Web - HTML metadata image size with open graph&hellip;etc</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2019-11-04-youtube-dl-using-notes/">youtube-dl - 使用筆記</a></h3>
 
                 
                 
@@ -249,54 +305,55 @@ trim(rtrim(sprintf(&#34;%.10f&#34;, $s), &#39;0&#39;), &#39;.&#39;);
 <span class=" u-capitalized ">
     on
 </span>
-2019-10-03
+2019-11-04
 </p>
                 
 
                 
-                <p><h2 id="web---html-metadata-image-size-with-open-graphetc">Web - HTML metadata image size with open graph&hellip;etc</h2>
-<p>HTML use some meta tag for SEO, social media or App link&hellip;</p>
-<p>List some limit with image size or logo size</p>
-<h3 id="facebook-open-graph">Facebook open graph</h3>
-<p><a href="https://developers.facebook.com/docs/sharing/webmasters/images">Refers - Images in Link Shares</a></p>
-<blockquote>
-<ul>
-<li>The minimum allowed image dimension is 200 x 200 pixels.</li>
-<li>The size of the image file must not exceed 8 MB.</li>
-<li>Use images that are at least 1200 x 630 pixels for the best display on high resolution devices. At the minimum, you should use images that are 600 x 315 pixels to display link page posts with larger images.</li>
-</ul>
-</blockquote>
-<h3 id="twitter-card">Twitter card</h3>
-<blockquote>
-<p>A URL to a unique image representing the content of the page. You should not use a generic image such as your website logo, author photo, or other image that spans multiple pages. Images for this Card support an aspect ratio of 1:1 with minimum dimensions of 144x144 or maximum of 4096x4096 pixels. Images must be less than 5MB in size. The image will be cropped to a square on all platforms. JPG, PNG, WEBP and GIF formats are supported. Only the first frame of an animated GIF will be used. SVG is not supported.</p>
-</blockquote>
-<p><a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary">Refers - Optimize Tweets with Cards</a></p>
-<h3 id="pinterest">Pinterest</h3>
-<p>No limit</p>
-<p><a href="https://developers.pinterest.com/docs/rich-pins/overview/">Refers - Rich Pins</a></p>
-<h3 id="logo">Logo</h3>
-<blockquote>
-<ul>
-<li>The image must be 112x112px, at minimum.</li>
-<li>The image URL must be crawlable and indexable.</li>
-<li>The image must be in .jpg, .png, or. gif format.</li>
-</ul>
-</blockquote>
-<p><a href="https://developers.google.com/search/docs/data-types/logo">Refers - Logo  |  Search  |  Google Developers</a></p>
-<h3 id="summary">Summary</h3>
-<p>Use <strong>600x350</strong> or <strong>1200x630</strong> <code>PNG</code> or <code>JPG</code></p>
-<p>If use for other type</p>
-<p>Can reference Google developer <a href="https://developers.google.com/search/reference/overview">Structured data</a></p>
-<h3 id="refers">Refers</h3>
-<p><a href="https://ogp.me/">The Open Graph protocol</a></p>
-<p>Some tip: <a href="https://developers.facebook.com/docs/sharing/webmasters/crawler">The Facebook Crawler</a></p>
-</p>
+                <p><h2 id="youtube-dl---使用筆記">youtube-dl - 使用筆記</h2>
+<p><a href="https://ytdl-org.github.io/youtube-dl/index.html">youtube-dl</a> 是一個跟影音相關方便使用的 cli 工具</p>
+<p>這裡筆記一下一些用法</p>
+<p>列出該影片可以下載的 format</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -F &lt;URL&gt;
+</code></pre></div><p>output</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>youtube<span style="color:#f92672">]</span> e17Um7wExuQ: Downloading webpage
+<span style="color:#f92672">[</span>youtube<span style="color:#f92672">]</span> e17Um7wExuQ: Downloading video info webpage
+<span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Available formats <span style="color:#66d9ef">for</span> e17Um7wExuQ:
+format code  extension  resolution note
+<span style="color:#ae81ff">249</span>          webm       audio only tiny   54k , opus @ 50k <span style="color:#f92672">(</span>48000Hz<span style="color:#f92672">)</span>, 192.69KiB
+<span style="color:#ae81ff">250</span>          webm       audio only tiny   72k , opus @ 70k <span style="color:#f92672">(</span>48000Hz<span style="color:#f92672">)</span>, 255.58KiB
+<span style="color:#ae81ff">140</span>          m4a        audio only tiny  130k , m4a_dash container, mp4a.40.2@128k <span style="color:#f92672">(</span>44100Hz<span style="color:#f92672">)</span>, 476.29KiB
+<span style="color:#ae81ff">251</span>          webm       audio only tiny  138k , opus @160k <span style="color:#f92672">(</span>48000Hz<span style="color:#f92672">)</span>, 500.94KiB
+<span style="color:#ae81ff">278</span>          webm       82x144     144p   32k , webm container, vp9, 30fps, video only, 105.14KiB
+<span style="color:#ae81ff">160</span>          mp4        82x144     144p   43k , avc1.4d400b, 30fps, video only, 147.87KiB
+<span style="color:#ae81ff">242</span>          webm       136x240    144p   72k , vp9, 30fps, video only, 224.00KiB
+<span style="color:#ae81ff">133</span>          mp4        136x240    144p   90k , avc1.4d400c, 30fps, video only, 303.08KiB
+<span style="color:#ae81ff">243</span>          webm       202x360    240p  130k , vp9, 30fps, video only, 379.65KiB
+<span style="color:#ae81ff">134</span>          mp4        202x360    240p  219k , avc1.4d400d, 30fps, video only, 659.67KiB
+<span style="color:#ae81ff">244</span>          webm       270x480    240p  235k , vp9, 30fps, video only, 670.44KiB
+<span style="color:#ae81ff">135</span>          mp4        270x480    240p  375k , avc1.4d4015, 30fps, video only, 1.10MiB
+<span style="color:#ae81ff">247</span>          webm       406x720    360p  428k , vp9, 30fps, video only, 1.19MiB
+<span style="color:#ae81ff">248</span>          webm       608x1080   480p  737k , vp9, 30fps, video only, 2.03MiB
+<span style="color:#ae81ff">136</span>          mp4        406x720    360p  761k , avc1.4d401e, 30fps, video only, 2.09MiB
+<span style="color:#ae81ff">137</span>          mp4        608x1080   480p 1458k , avc1.64001f, 30fps, video only, 3.95MiB
+<span style="color:#ae81ff">271</span>          webm       810x1440   720p 2767k , vp9, 30fps, video only, 6.69MiB
+<span style="color:#ae81ff">313</span>          webm       1080x1920  1080p 4410k , vp9, 30fps, video only, 12.22MiB
+<span style="color:#ae81ff">43</span>           webm       640x360    360p , vp8.0, vorbis@128k, 1.28MiB
+<span style="color:#ae81ff">18</span>           mp4        202x360    240p  359k , avc1.42001E, mp4a.40.2@ 96k <span style="color:#f92672">(</span>44100Hz<span style="color:#f92672">)</span>, 1.29MiB
+<span style="color:#ae81ff">22</span>           mp4        406x720    360p  713k , avc1.64001F, mp4a.40.2@192k <span style="color:#f92672">(</span>44100Hz<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>best<span style="color:#f92672">)</span>
+</code></pre></div><p>下載指定的 format</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -f &lt;format code&gt; &lt;URL&gt;
+</code></pre></div><p>下載最好的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -f best &lt;URL&gt;
+</code></pre></div><p>下載指定的 format</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -f mp4 &lt;URL&gt;
+</code></pre></div></p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2019-10-03-web-html-metadata-image-size-with-open-graph-etc/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2019-11-04-youtube-dl-using-notes/">Read more</a></p>
                 
             </div>
         </div>

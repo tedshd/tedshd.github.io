@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.63.1" />
     
 
 
@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-12-24T16:49:59+08:00" />
+<meta property="og:updated_time" content="2021-01-14T17:21:53+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -52,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -193,7 +192,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-06-27-javascript-insertbefore/">JavaScript - insertBefore &amp; insertAfter</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2015-07-22-mac-hide-desktop-icon/">Mac - hide desktop icon</a></h3>
 
                 
                 
@@ -203,39 +202,26 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2015-06-27
+2015-07-22
 </p>
                 
 
                 
-                <p><h2 id="javascript---insertbefore--insertafter">JavaScript - insertBefore &amp; insertAfter</h2>
-<h3 id="insertbefore">insertBefore</h3>
-<p>This is native JavaScript api</p>
-<p><code>var insertedElement = parentElement.insertBefore(newElement, referenceElement);</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vDom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>),
-    <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#list&#39;</span>);
-<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">vDom</span>, <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">childNodes</span>[<span style="color:#ae81ff">1</span>]);
-
-<span style="color:#75715e">// or
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vDom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>),
-    <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#target&#39;</span>);
-<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">vDom</span>, <span style="color:#a6e22e">dom</span>);
-</code></pre></div><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore">Refer - Node.insertBefore()</a></p>
-<h3 id="insertafter">insertAfter</h3>
-<p>JavaScript doesn&rsquo;t have any api handle insert DOM after reference DOM</p>
-<p>We can use this way</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">insertAfter</span>(<span style="color:#a6e22e">newNode</span>, <span style="color:#a6e22e">referenceNode</span>) {
-    <span style="color:#a6e22e">referenceNode</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">newNode</span>, <span style="color:#a6e22e">referenceNode</span>.<span style="color:#a6e22e">nextSibling</span>);
-}
-</code></pre></div><p><a href="http://stackoverflow.com/questions/4793604/how-to-do-insert-after-in-javascript-without-using-a-library">Refer - How to do insert After() in JavaScript without using a library?</a></p>
+                <p><h2 id="mac---hide-desktop-icon">Mac - hide desktop icon</h2>
+<h3 id="hide">Hide</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">defaults write com.apple.finder CreateDesktop -bool false
+</code></pre></div><p>Then</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">killall Finder
+</code></pre></div><h3 id="show">Show</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">defaults write com.apple.finder CreateDesktop -bool true
+</code></pre></div><p>Then</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">killall Finder
+</code></pre></div><p><a href="http://osxdaily.com/2009/09/23/hide-all-desktop-icons-in-mac-os-x/">Refer - Hide All Desktop Icons in Mac OS X</a></p>
 </p>
                 
 
                 
 
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-06-27-javascript-insertbefore/">Read more</a></p>
                 
             </div>
         </div>
@@ -248,7 +234,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-06-16-linux-set-encoding-in-linux-environment/">Linux - Set Encoding In Linux Environment</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2015-07-11-css3-object-fit/">CSS3 - object-fit</a></h3>
 
                 
                 
@@ -258,18 +244,18 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2015-06-16
+2015-07-11
 </p>
                 
 
                 
-                <p><h2 id="linux---set-encoding-in-linux-environment">Linux - Set Encoding In Linux Environment</h2>
-<p>Add</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export LC_ALL<span style="color:#f92672">=</span>en_US.UTF-8
-export LANG<span style="color:#f92672">=</span>en_US.UTF-8
-export LANGUAGE<span style="color:#f92672">=</span>en_US.UTF-8
-</code></pre></div><p>in <code>.bashrc</code> or <code>.zshrc</code></p>
-<p><a href="http://perlgeek.de/en/article/set-up-a-clean-utf8-environment">Refer - How to set up a clean UTF-8 environment in Linux</a></p>
+                <p><h2 id="css3---object-fit">CSS3 - object-fit</h2>
+<p>We can use CSS3 property <code>object-fit</code> handle image show area and fit it.</p>
+<p>But only IE no support.</p>
+<p>Example</p>
+<!-- raw HTML omitted -->
+<p><a href="https://css-tricks.com/almanac/properties/o/object-fit/">Refer - object-fit</a>
+<a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/object-fit">Refer - object-fit</a></p>
 </p>
                 
 

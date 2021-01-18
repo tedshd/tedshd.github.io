@@ -13,8 +13,8 @@
 <meta name="description" content='AMP - amp analytics &amp; conversion Use google analytics must use amp-analytics component
 It can use PHP print template function to view
 First include
-&lt;script async custom-element=&#34;amp-analytics&#34; src=&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;&gt;&lt;/script&gt; ga click event Refer - Adding Analytics to your AMP pages
-function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &#34;0&#34;) { $template = &lt;&lt;&lt;EOF &lt;amp-analytics type=&#34;googleanalytics&#34;&gt; &lt;script type=&#34;application/json&#34;&gt; { &#34;vars&#34;: { &#34;account&#34;: &#34;%s&#34; }, &#34;triggers&#34;: { &#34;trackClickOnHeader&#34; : { &#34;on&#34;: &#34;click&#34;, &#34;selector&#34;: &#34;%s&#34;, &#34;request&#34;: &#34;event&#34;, &#34;vars&#34;: { &#34;eventCategory&#34;: &#34;%s&#34;, &#34;eventAction&#34;: &#34;%s&#34;, &#34;eventLabel&#34;: &#34;%s&#34; }, &#34;extraUrlParams&#34;: { &#34;ni&#34;: &#34;%s&#34; } } } } &lt;/script&gt; &lt;/amp-analytics&gt; EOF; return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction); } google adwords conversion Refer - Using AMP for your AdWords Landing Pages'>
+&lt;script async custom-element=&#34;amp-analytics&#34; src=&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;&gt;&lt;/script&gt;ga click event Refer - Adding Analytics to your AMP pages
+function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &#34;0&#34;){$template = &lt;&lt;&lt;EOF&lt;amp-analytics type=&#34;googleanalytics&#34;&gt;&lt;script type=&#34;application/json&#34;&gt;{&#34;vars&#34;: {&#34;account&#34;: &#34;%s&#34;},&#34;triggers&#34;: {&#34;trackClickOnHeader&#34; : {&#34;on&#34;: &#34;click&#34;,&#34;selector&#34;: &#34;%s&#34;,&#34;request&#34;: &#34;event&#34;,&#34;vars&#34;: {&#34;eventCategory&#34;: &#34;%s&#34;,&#34;eventAction&#34;: &#34;%s&#34;,&#34;eventLabel&#34;: &#34;%s&#34;},&#34;extraUrlParams&#34;: {&#34;ni&#34;: &#34;%s&#34;}}}}&lt;/script&gt;&lt;/amp-analytics&gt;EOF;return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction);}google adwords conversion Refer - Using AMP for your AdWords Landing Pages'>
 <meta name="keywords" content=''>
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/">
 <link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/" />
@@ -34,8 +34,8 @@ function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, 
 <meta property="og:description" content="AMP - amp analytics &amp; conversion Use google analytics must use amp-analytics component
 It can use PHP print template function to view
 First include
-&lt;script async custom-element=&#34;amp-analytics&#34; src=&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;&gt;&lt;/script&gt; ga click event Refer - Adding Analytics to your AMP pages
-function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &#34;0&#34;) { $template = &lt;&lt;&lt;EOF &lt;amp-analytics type=&#34;googleanalytics&#34;&gt; &lt;script type=&#34;application/json&#34;&gt; { &#34;vars&#34;: { &#34;account&#34;: &#34;%s&#34; }, &#34;triggers&#34;: { &#34;trackClickOnHeader&#34; : { &#34;on&#34;: &#34;click&#34;, &#34;selector&#34;: &#34;%s&#34;, &#34;request&#34;: &#34;event&#34;, &#34;vars&#34;: { &#34;eventCategory&#34;: &#34;%s&#34;, &#34;eventAction&#34;: &#34;%s&#34;, &#34;eventLabel&#34;: &#34;%s&#34; }, &#34;extraUrlParams&#34;: { &#34;ni&#34;: &#34;%s&#34; } } } } &lt;/script&gt; &lt;/amp-analytics&gt; EOF; return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction); } google adwords conversion Refer - Using AMP for your AdWords Landing Pages" />
+&lt;script async custom-element=&#34;amp-analytics&#34; src=&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;&gt;&lt;/script&gt;ga click event Refer - Adding Analytics to your AMP pages
+function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &#34;0&#34;){$template = &lt;&lt;&lt;EOF&lt;amp-analytics type=&#34;googleanalytics&#34;&gt;&lt;script type=&#34;application/json&#34;&gt;{&#34;vars&#34;: {&#34;account&#34;: &#34;%s&#34;},&#34;triggers&#34;: {&#34;trackClickOnHeader&#34; : {&#34;on&#34;: &#34;click&#34;,&#34;selector&#34;: &#34;%s&#34;,&#34;request&#34;: &#34;event&#34;,&#34;vars&#34;: {&#34;eventCategory&#34;: &#34;%s&#34;,&#34;eventAction&#34;: &#34;%s&#34;,&#34;eventLabel&#34;: &#34;%s&#34;},&#34;extraUrlParams&#34;: {&#34;ni&#34;: &#34;%s&#34;}}}}&lt;/script&gt;&lt;/amp-analytics&gt;EOF;return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction);}google adwords conversion Refer - Using AMP for your AdWords Landing Pages" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -49,8 +49,8 @@ function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, 
 <meta name="twitter:description" content="AMP - amp analytics &amp; conversion Use google analytics must use amp-analytics component
 It can use PHP print template function to view
 First include
-&lt;script async custom-element=&#34;amp-analytics&#34; src=&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;&gt;&lt;/script&gt; ga click event Refer - Adding Analytics to your AMP pages
-function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &#34;0&#34;) { $template = &lt;&lt;&lt;EOF &lt;amp-analytics type=&#34;googleanalytics&#34;&gt; &lt;script type=&#34;application/json&#34;&gt; { &#34;vars&#34;: { &#34;account&#34;: &#34;%s&#34; }, &#34;triggers&#34;: { &#34;trackClickOnHeader&#34; : { &#34;on&#34;: &#34;click&#34;, &#34;selector&#34;: &#34;%s&#34;, &#34;request&#34;: &#34;event&#34;, &#34;vars&#34;: { &#34;eventCategory&#34;: &#34;%s&#34;, &#34;eventAction&#34;: &#34;%s&#34;, &#34;eventLabel&#34;: &#34;%s&#34; }, &#34;extraUrlParams&#34;: { &#34;ni&#34;: &#34;%s&#34; } } } } &lt;/script&gt; &lt;/amp-analytics&gt; EOF; return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction); } google adwords conversion Refer - Using AMP for your AdWords Landing Pages"/>
+&lt;script async custom-element=&#34;amp-analytics&#34; src=&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;&gt;&lt;/script&gt;ga click event Refer - Adding Analytics to your AMP pages
+function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &#34;0&#34;){$template = &lt;&lt;&lt;EOF&lt;amp-analytics type=&#34;googleanalytics&#34;&gt;&lt;script type=&#34;application/json&#34;&gt;{&#34;vars&#34;: {&#34;account&#34;: &#34;%s&#34;},&#34;triggers&#34;: {&#34;trackClickOnHeader&#34; : {&#34;on&#34;: &#34;click&#34;,&#34;selector&#34;: &#34;%s&#34;,&#34;request&#34;: &#34;event&#34;,&#34;vars&#34;: {&#34;eventCategory&#34;: &#34;%s&#34;,&#34;eventAction&#34;: &#34;%s&#34;,&#34;eventLabel&#34;: &#34;%s&#34;},&#34;extraUrlParams&#34;: {&#34;ni&#34;: &#34;%s&#34;}}}}&lt;/script&gt;&lt;/amp-analytics&gt;EOF;return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction);}google adwords conversion Refer - Using AMP for your AdWords Landing Pages"/>
 
 
 <script type="application/javascript">
@@ -66,7 +66,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -209,7 +208,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &#34;0&#34;)
 {
 
-$template = <span style="color:#960050;background-color:#1e0010">&lt;&lt;</span>&lt;<span style="color:#f92672">EOF</span>
+$template = <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span>&lt;<span style="color:#f92672">EOF</span>
 <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">amp-analytics</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;googleanalytics&#34;</span>&gt;
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;application/json&#34;</span>&gt;
     {
@@ -243,7 +242,7 @@ EOF;
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">function amp_ga_conversion_pageview_template($conversion_id, $lang = &#34;en&#34;, $conversion_label)
 {
 
-$template = <span style="color:#960050;background-color:#1e0010">&lt;&lt;</span>&lt;<span style="color:#f92672">EOF</span>
+$template = <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span>&lt;<span style="color:#f92672">EOF</span>
 <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">amp-analytics</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;googleadwords&#34;</span>&gt;
   &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;application/json&#34;</span>&gt;
   {
@@ -270,7 +269,7 @@ EOF;
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">function amp_ga_conversion_click_template($ga_id, $selector, $conversion_id, $conversion_label, $non_interaction = &#34;0&#34;)
 {
 
-$template = <span style="color:#960050;background-color:#1e0010">&lt;&lt;</span>&lt;<span style="color:#f92672">EOF</span>
+$template = <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span>&lt;<span style="color:#f92672">EOF</span>
 <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">amp-analytics</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;googleadwords&#34;</span>&gt;
   &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;application/json&#34;</span>&gt;
   {

@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/categories/google/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-01-29T17:42:46+08:00" />
+<meta property="og:updated_time" content="2019-11-21T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +53,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -455,13 +454,13 @@ We can use javascript control player</p>
 <p><a href="https://code.google.com/p/google-maps-utility-library-v3/wiki/Libraries">Library</a></p>
 <h3 id="init-map">Init map</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-<span style="color:#75715e">&lt;!--使用 &lt;!DOCTYPE html&gt; 宣告，將應用程式宣告為 HTML5--&gt;</span>
+<span style="color:#75715e">&lt;!--</span><span style="color:#75715e">使用 &lt;!DOCTYPE html&gt; 宣告，將應用程式宣告為 HTML5</span><span style="color:#75715e">--&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
 &lt;<span style="color:#f92672">head</span>&gt;
 &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
 &lt;<span style="color:#f92672">title</span>&gt;Google_map_api_basic&lt;/<span style="color:#f92672">title</span>&gt;
 &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1.0, user-scalable=no&#34;</span> /&gt;
-<span style="color:#75715e">&lt;!--最新的瀏覽器會將使用此 DOCTYPE 宣告的內容以「標準模式」呈現，也就是說，您的應用程式應更具備跨瀏覽器相容性。此外，DOCTYPE 也設計成會逐漸適應，但無法理解它的瀏覽器將會忽略它，而採用「快速模式」顯示內容。請注意，有些 CSS 在快速模式中可以運作，但在標準模式中卻無效。具體來說，所有百分比的大小都必須繼承父區塊項目，但這些上階中如有任何一個無法指定大小，就會假設為 0 x 0 像素大小。基於這個理由，我們加入了下列 &lt;style&gt; 宣告--&gt;</span>
+<span style="color:#75715e">&lt;!--</span><span style="color:#75715e">最新的瀏覽器會將使用此 DOCTYPE 宣告的內容以「標準模式」呈現，也就是說，您的應用程式應更具備跨瀏覽器相容性。此外，DOCTYPE 也設計成會逐漸適應，但無法理解它的瀏覽器將會忽略它，而採用「快速模式」顯示內容。請注意，有些 CSS 在快速模式中可以運作，但在標準模式中卻無效。具體來說，所有百分比的大小都必須繼承父區塊項目，但這些上階中如有任何一個無法指定大小，就會假設為 0 x 0 像素大小。基於這個理由，我們加入了下列 &lt;style&gt; 宣告</span><span style="color:#75715e">--&gt;</span>
 &lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
 <span style="color:#f92672">html</span> {
     <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
@@ -475,18 +474,18 @@ We can use javascript control player</p>
     <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
 }
 &lt;/<span style="color:#f92672">style</span>&gt;
-<span style="color:#75715e">&lt;!--這個 CSS 宣告表示地圖容器 &lt;div&gt; (名為 map_canvas) 應使用 HTML 主體的 100% 高度。請注意，我們也必須特別宣告 &lt;body&gt; 和 &lt;html&gt; 的這些百分比--&gt;</span>
+<span style="color:#75715e">&lt;!--</span><span style="color:#75715e">這個 CSS 宣告表示地圖容器 &lt;div&gt; (名為 map_canvas) 應使用 HTML 主體的 100% 高度。請注意，我們也必須特別宣告 &lt;body&gt; 和 &lt;html&gt; 的這些百分比</span><span style="color:#75715e">--&gt;</span>
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://maps.google.com/maps/api/js?sensor=true&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-<span style="color:#75715e">&lt;!--使用 script 標記來涵蓋 Maps API JavaScript--&gt;</span>
-<span style="color:#75715e">&lt;!--請注意，我們也必須設定 sensor 參數，以指出這個應用程式是否有使用感應器來判斷使用者的位置。必須明確地將這個值設為 true 或 false--&gt;</span>
+<span style="color:#75715e">&lt;!--</span><span style="color:#75715e">使用 script 標記來涵蓋 Maps API JavaScript</span><span style="color:#75715e">--&gt;</span>
+<span style="color:#75715e">&lt;!--</span><span style="color:#75715e">請注意，我們也必須設定 sensor 參數，以指出這個應用程式是否有使用感應器來判斷使用者的位置。必須明確地將這個值設為 true 或 false</span><span style="color:#75715e">--&gt;</span>
 &lt;/<span style="color:#f92672">head</span>&gt;
 &lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">onload</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initialize()&#34;</span>&gt;
-<span style="color:#75715e">&lt;!--從 body 標記的 onload 事件初始化地圖物件--&gt;</span>
+<span style="color:#75715e">&lt;!--</span><span style="color:#75715e">從 body 標記的 onload 事件初始化地圖物件</span><span style="color:#75715e">--&gt;</span>
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map_canvas&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width:100%; height:100%&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-  <span style="color:#75715e">&lt;!--建立 div 元素 (名稱為「map_canvas」) 來容納「地圖」--&gt;</span>
+  <span style="color:#75715e">&lt;!--</span><span style="color:#75715e">建立 div 元素 (名稱為「map_canvas」) 來容納「地圖」</span><span style="color:#75715e">--&gt;</span>
 &lt;/<span style="color:#f92672">body</span>&gt;
-<span style="color:#75715e">&lt;!--建立 JavaScript 物件實字以存放多個地圖屬性--&gt;</span>
-<span style="color:#75715e">&lt;!--JavaScript 函式以建立「地圖」物件--&gt;</span>
+<span style="color:#75715e">&lt;!--</span><span style="color:#75715e">建立 JavaScript 物件實字以存放多個地圖屬性</span><span style="color:#75715e">--&gt;</span>
+<span style="color:#75715e">&lt;!--</span><span style="color:#75715e">JavaScript 函式以建立「地圖」物件</span><span style="color:#75715e">--&gt;</span>
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">initialize</span>() {
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myOptions</span> <span style="color:#f92672">=</span> {

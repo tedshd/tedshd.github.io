@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-12-24T16:49:59+08:00" />
+<meta property="og:updated_time" content="2021-01-14T17:21:53+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +53,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -1100,6 +1099,14 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1116,7 +1123,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-07-15-miiitv-web-player-structure/">miiiTV - web player structure</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2014-08-07-gulpjs-use-log/">gulp.js - Use Log</a></h3>
 
                 
                 
@@ -1126,26 +1133,113 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2014-07-15
+2014-08-07
 </p>
                 
 
                 
-                <p><h2 id="miiitv---web-player-structure">miiiTV - web player structure</h2>
-<h3 id="function">function</h3>
-<ul>
-<li>loadChannel</li>
-<li>loadVideo</li>
-<li>switchChannel</li>
-<li>switchVideo</li>
-<li>playLoop</li>
-<li>initPlayer</li>
-</ul>
-</p>
+                <p><h2 id="gulpjs---use-log">gulp.js - Use Log</h2>
+<h3 id="intro">Intro</h3>
+<p><a href="http://gulpjs.com/">gulp.js</a></p>
+<p><a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started">Getting Started</a></p>
+<p><a href="http://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/">Grunt vs Gulp - Beyond the Numbers</a></p>
+<h3 id="packagejson-version-setting">package.json version setting</h3>
+<p><a href="https://docs.npmjs.com/files/package.json#dependencies">dependencies</a></p>
+<h3 id="how-to-pipe-to-another-task-in-gulp">How to pipe to another task in Gulp?</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;first&#39;</span>, <span style="color:#66d9ef">function</span>() {
+   <span style="color:#75715e">// first task
+</span><span style="color:#75715e"></span>});
+
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;second&#39;</span>, [<span style="color:#e6db74">&#39;first&#39;</span>], <span style="color:#66d9ef">function</span>() {
+   <span style="color:#75715e">// this occurs after &#39;first&#39; finishes
+</span><span style="color:#75715e"></span>});
+</code></pre></div><p><a href="http://stackoverflow.com/questions/23458428/how-to-pipe-to-another-task-in-gulp">Refer - How to pipe to another task in Gulp?</a></p>
+<h3 id="use-package">Use Package</h3>
+<h3 id="compass">Compass</h3>
+<p>First, must install <a href="http://compass-style.org/install/">compass</a></p>
+<p><a href="https://www.npmjs.org/package/gulp-compass">gulp-compass</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>);
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">compass</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-compass&#39;</span>);
+
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;default&#39;</span>, <span style="color:#66d9ef">function</span>() {
+  <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">run</span>(<span style="color:#e6db74">&#39;compass&#39;</span>);
+
+    <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">watch</span>([
+        <span style="color:#e6db74">&#39;./sass/**&#39;</span>,
+        <span style="color:#e6db74">&#39;./img/**&#39;</span>
+        ], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+        <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">run</span>(<span style="color:#e6db74">&#39;compass&#39;</span>);
+    });
+});
+
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;compass&#39;</span>, <span style="color:#66d9ef">function</span>() {
+  <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;./sass/*.scss&#39;</span>)
+    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">compass</span>({
+        <span style="color:#a6e22e">comments</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+        <span style="color:#a6e22e">css</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;css&#39;</span>, <span style="color:#75715e">// css folder
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">sass</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sass&#39;</span>, <span style="color:#75715e">// scss folder
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">image</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;img&#39;</span> <span style="color:#75715e">// image folder
+</span><span style="color:#75715e"></span>    }));
+});
+</code></pre></div><p>commond</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gulp
+<span style="color:#75715e"># or</span>
+gulp compass
+</code></pre></div><h3 id="jshint">Jshint</h3>
+<p><a href="https://www.npmjs.org/package/gulp-jshint">gulp-jshint</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">jshint</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-jshint&#39;</span>);
+
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;lint&#39;</span>, <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;./*.js&#39;</span>) <span style="color:#75715e">// js file
+</span><span style="color:#75715e"></span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">jshint</span>())
+    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">jshint</span>.<span style="color:#a6e22e">reporter</span>(<span style="color:#e6db74">&#39;jshint-stylish&#39;</span>));
+    <span style="color:#75715e">// .pipe(jshint.reporter(&#39;default&#39;))
+</span><span style="color:#75715e"></span>});
+</code></pre></div><p>commond</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gulp lint
+</code></pre></div><h3 id="minify-html">Minify Html</h3>
+<p><a href="https://www.npmjs.org/package/gulp-minify-html">gulp-minify-html</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minifyHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-minify-html&#39;</span>);
+
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;minify-html&#39;</span>, <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">opts</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">comments</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>,<span style="color:#a6e22e">spare</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>};
+
+    <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;./*.html&#39;</span>) <span style="color:#75715e">// html file
+</span><span style="color:#75715e"></span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">minifyHTML</span>(<span style="color:#a6e22e">opts</span>))
+    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;./dist/&#39;</span>)); <span style="color:#75715e">// result minify html
+</span><span style="color:#75715e"></span>});
+</code></pre></div><p>commond</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gulp minify-html
+</code></pre></div><h3 id="minify-css">Minify CSS</h3>
+<p><a href="https://www.npmjs.org/package/gulp-minify-css">gulp-minify-css</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minifyCSS</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-minify-css&#39;</span>);
+
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;minify-css&#39;</span>, <span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;./css/*.css&#39;</span>) <span style="color:#75715e">// css files
+</span><span style="color:#75715e"></span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">minifyCSS</span>({<span style="color:#a6e22e">keepBreaks</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>}))
+    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;./dist/&#39;</span>)); <span style="color:#75715e">// result minify css
+</span><span style="color:#75715e"></span>});
+</code></pre></div><p>commond</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gulp minify-css
+</code></pre></div><h3 id="minify-javascript">Minify JavaScript</h3>
+<p><a href="https://www.npmjs.org/package/gulp-uglify">gulp-uglify</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">uglify</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-uglify&#39;</span>);
+
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;uglify&#39;</span>, <span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;./*.js&#39;</span>)
+    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">uglify</span>())
+    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;dist&#39;</span>));
+});
+</code></pre></div><p>commond</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gulp compress
+</code></pre></div></p>
                 
 
                 
 
+                
+                <p><a href="https://blog.tedshd.io/posts/2014-08-07-gulpjs-use-log/">Read more</a></p>
                 
             </div>
         </div>
@@ -1158,7 +1252,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-07-14-youku-api/">Youku Api &amp; player</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2014-08-06-miiitv-20-f2e/">miiiTV 2.0 - F2E</a></h3>
 
                 
                 
@@ -1168,39 +1262,54 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2014-07-14
+2014-08-06
 </p>
                 
 
                 
-                <p><h2 id="youku-api--player">Youku Api &amp; player</h2>
-<p>Youku is popular video web in China.</p>
-<p><a href="http://www.youku.com/i/">youku(优酷)</a></p>
-<p>Try use youku(优酷) api &amp; javascript player</p>
-<ol>
-<li>
-<p>Create a account in <a href="http://open.youku.com/">优酷开放平台</a></p>
+                <p><h2 id="miiitv-20---f2e">miiiTV 2.0 - F2E</h2>
+<p>Dev</p>
+<ul>
+<li>compress(JS, CSS, IMG)</li>
+<li>jshint</li>
+<li><a href="https://github.com/angular/material">Material Design</a>?</li>
+<li>SVG replace PNG?</li>
+<li>Browser support?</li>
+</ul>
+<p>Tool</p>
+<ul>
+<li><a href="http://purecss.io/">PURE</a></li>
+<li>jQuery
+<ul>
+<li>jQuery 2.X run IE 9 up</li>
+<li>jQuery 1.X run IE 6/7/8</li>
+</ul>
 </li>
-<li>
-<p>Create a application(创建应用)</p>
+<li>gulp.js
+<ul>
+<li><a href="https://developers.google.com/web/fundamentals/tools/build/build_site">gulp plugin</a></li>
+</ul>
 </li>
-<li>
-<p>You can get a client_id as a api id</p>
+<li>Base CSS</li>
+<li><a href="http://slidesjs.com/">SlidesJS, a responsive slideshow plug-in for jQuery (1.7.1+) with features like touch and CSS3</a></li>
+</ul>
+<p>Backend</p>
+<ul>
+<li><a href="http://laravel.com/">laravel</a>
+<ul>
+<li><a href="http://kejyun.github.io/Laravel-4-Documentation-Traditional-Chinese/docs/introduction/">Laravel 4 PHP Framework Documentation 繁體中文教學文件</a></li>
+</ul>
 </li>
-<li>
-<p>Create a player <a href="http://open.youku.com/tools">工具箱 - 优酷开放平台</a></p>
-</li>
-<li>
-<p>Fin</p>
-</li>
-</ol>
+</ul>
+<p>1680
+1440
+1280
+1024</p>
 </p>
                 
 
                 
 
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-07-14-youku-api/">Read more</a></p>
                 
             </div>
         </div>

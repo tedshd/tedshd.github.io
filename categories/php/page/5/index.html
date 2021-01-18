@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/categories/php/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-10-30T15:20:10+08:00" />
+<meta property="og:updated_time" content="2021-01-14T17:21:53+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +53,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -185,6 +184,65 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/">Something about XSS(Cross-site scripting)</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-11-01
+</p>
+                
+
+                
+                <p><h2 id="something-about-xsscross-site-scripting">Something about XSS(Cross-site scripting)</h2>
+<p>If not set anything</p>
+<p>Use like</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span> <span style="color:#66d9ef">echo</span> $_GET[<span style="color:#e6db74">&#39;name&#39;</span>];<span style="color:#75715e">?&gt;</span>
+</code></pre></div><p>and querystring <code>name</code> = <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
+<p>And not defence XSS</p>
+<p>In Firefox</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/307308/G2Ec0H05TgG5yNFaRS6K_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.40.08.png" alt="螢幕快照 2015-11-01 下午8.40.08.png"></p>
+<p>In Chrome</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/307308/tyAndfVzTqy50xBAJmhI_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.42.45.png" alt="螢幕快照 2015-11-01 下午8.42.45.png"></p>
+<p>In Safari</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/307308/xfWYDtAnQ7SoVIKdlTIL_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.43.16.png" alt="螢幕快照 2015-11-01 下午8.43.16.png"></p>
+<h3 id="result">Result</h3>
+<p>Chrome &amp; Safari browser has handle XSS default</p>
+<h3 id="defence">Defence</h3>
+<p>Set header <code>X-XSS-Protection: 1</code></p>
+<p>if use PHP, can use</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">htmlspecialchars()
+// or
+ htmlentities()
+</code></pre></div><h3 id="important">Important!</h3>
+<p>Finally</p>
+<p>We must know it is handle encode to avoid run JavaScript on page</p>
+<p><a href="https://github.com/tedshd/javascript-htmlspecialchars">JavaScript ver htmlspecialchars</a></p>
+<p><a href="http://www.qa-knowhow.com/?p=2992">Refer - XSS攻擊的深入探討與防護之道</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/">php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5</a></h3>
 
                 
@@ -217,68 +275,6 @@ sudo apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysq
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-08-16-php-auto-update-static-files-cache/">PHP - Auto update static files cache</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-08-16
-</p>
-                
-
-                
-                <p><h2 id="php---auto-update-static-files-cache">PHP - Auto update static files cache</h2>
-<p>We can cache static files(CSS, JavaScript) to client</p>
-<p>When Server update static code.</p>
-<p>We want to update cache then we can modify file or add query string update version.</p>
-<p>We have some choice like modify url <code>?v=1</code> to <code>?v=2</code></p>
-<p>But I want to auto modify version.</p>
-<p>This is a way i use</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
-<span style="color:#75715e">&lt;?php</span>
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">autoversion</span>($url) {
-    $ver <span style="color:#f92672">=</span> <span style="color:#a6e22e">stat</span>($_SERVER[<span style="color:#e6db74">&#39;DOCUMENT_ROOT&#39;</span>] <span style="color:#f92672">.</span> $url)[<span style="color:#a6e22e">mtime</span>];
-    <span style="color:#66d9ef">return</span> $url <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;?v=&#34;</span> <span style="color:#f92672">.</span> $ver;
-}
-<span style="color:#75715e"># example
-</span><span style="color:#75715e"></span><span style="color:#75715e">?&gt;</span>
-
-&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#75715e">&lt;?php</span> <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">autoversion</span>(<span style="color:#e6db74">&#39;/path/to/theme.css&#39;</span>); <span style="color:#75715e">?&gt;</span><span style="color:#e6db74">&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>&gt;
-</code></pre></div><p>This way use file last modify time as a version.</p>
-<p><del>First i want to use <code>filemtime</code> but it fail.</del></p>
-<p><del>So i give up this way.</del></p>
-<h3 id="update">Update</h3>
-<p>Before use <code>filemtime()</code>, must use <code>clearstatcache();</code></p>
-<p>And my friend say <code>stat</code> has IO behavior, so this way is not perfect solution.</p>
-<p>If service has lot of <code>stat()</code> or mass request, so many IO can influences performance.</p>
-<p>Then we can write a script add update version and run it when service deploy.</p>
-<p><a href="https://css-tricks.com/strategies-for-cache-busting-css/">Refer - Strategies for Cache-Busting CSS</a></p>
-<p><a href="http://php.net/manual/en/function.stat.php">Refer - stat</a></p>
-<p><a href="http://php.net/manual/en/function.filemtime.php">filemtime</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-08-16-php-auto-update-static-files-cache/">Read more</a></p>
                 
             </div>
         </div>

@@ -24,7 +24,7 @@ So need add height to fill status bar height.
 iPhone6/7/8 is 20px
 iPhoneX is 44px
 You can use is sample code
-header.ios { padding-top: 20px; } @media (width: 375px) and (height: 832px) { header.ios { padding-top: 44px; } } iPhoneX fullscreen webview width is 375px, height is 832px</description>
+header.ios {padding-top: 20px;}@media (width: 375px) and (height: 832px) {header.ios {padding-top: 44px;}}iPhoneX fullscreen webview width is 375px, height is 832px</description>
     </item>
     
   </channel>

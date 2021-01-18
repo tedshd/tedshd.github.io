@@ -67,9 +67,9 @@ Different with use pure web notification Using the Notifications API
       <pubDate>Thu, 03 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2016-11-03-javascript-get-text-from-dom-object-not-include-wrap-html-tag-in-child/</guid>
-      <description>JavaScript - get text from dom object not include wrap html tag in child Intro Case 1 &amp;lt;div id=&amp;#34;case_1&amp;#34;&amp;gt; Hi, This is a &amp;lt;em&amp;gt;Apple&amp;lt;/em&amp;gt; &amp;lt;/div&amp;gt; I want to get Hi, This is a 
-Case 2 &amp;lt;div id=&amp;#34;case_2&amp;#34;&amp;gt; &amp;lt;p&amp;gt;I have a pen.&amp;lt;/p&amp;gt;PPAP &amp;lt;/div&amp;gt; I want to get PPAP
-Case 3 &amp;lt;div id=&amp;#34;case_3&amp;#34;&amp;gt; Apple&amp;lt;span&amp;gt; and pen&amp;lt;/span&amp;gt; and pineapple pen &amp;lt;/div&amp;gt; I want to get Apple and  and pineapple pen
+      <description>JavaScript - get text from dom object not include wrap html tag in child Intro Case 1 &amp;lt;div id=&amp;#34;case_1&amp;#34;&amp;gt;Hi, This is a &amp;lt;em&amp;gt;Apple&amp;lt;/em&amp;gt;&amp;lt;/div&amp;gt;I want to get Hi, This is a 
+Case 2 &amp;lt;div id=&amp;#34;case_2&amp;#34;&amp;gt;&amp;lt;p&amp;gt;I have a pen.&amp;lt;/p&amp;gt;PPAP&amp;lt;/div&amp;gt;I want to get PPAP
+Case 3 &amp;lt;div id=&amp;#34;case_3&amp;#34;&amp;gt;Apple&amp;lt;span&amp;gt; and pen&amp;lt;/span&amp;gt; and pineapple pen&amp;lt;/div&amp;gt;I want to get Apple and  and pineapple pen
 Than you can use this</description>
     </item>
     
@@ -116,10 +116,10 @@ In this case(suggest use mobile browser)</description>
       <guid>https://blog.tedshd.io/posts/2016-03-22-667492/</guid>
       <description>JavaScript - DOM object check array &amp;amp; isArray polyfill One day my colleague find a question.
 ECMA script isArray is not work when object is DOM element
-Array.isArray(document.querySelectorAll(&amp;#39;div&amp;#39;)); // false And polyfill for old browser
-Object.prototype.toString.call(arg) === &amp;#39;[object Array]&amp;#39;; Still fail
-Object.prototype.toString.call(document.getElementsByClassName(&amp;#39;product-img&amp;#39;)); // [object HTMLCollection] Object.prototype.toString.call(document.querySelectorAll(&amp;#39;div&amp;#39;)); // [object NodeList] So i try to make a polyfill
-Array.isArray = function(arg) { var type = Object.prototype.toString.call(arg); if (type === &amp;#39;[object Array]&amp;#39; || type === &amp;#39;[object HTMLCollection]&amp;#39; || type === &amp;#39;[object NodeList]&amp;#39;) { return true; } return false; }; </description>
+Array.isArray(document.querySelectorAll(&amp;#39;div&amp;#39;));// falseAnd polyfill for old browser
+Object.prototype.toString.call(arg) === &amp;#39;[object Array]&amp;#39;;Still fail
+Object.prototype.toString.call(document.getElementsByClassName(&amp;#39;product-img&amp;#39;));// [object HTMLCollection]Object.prototype.toString.call(document.querySelectorAll(&amp;#39;div&amp;#39;));// [object NodeList]So i try to make a polyfill
+Array.isArray = function(arg) {var type = Object.prototype.toString.call(arg);if (type === &amp;#39;[object Array]&amp;#39; ||type === &amp;#39;[object HTMLCollection]&amp;#39; ||type === &amp;#39;[object NodeList]&amp;#39;) {return true;}return false;};</description>
     </item>
     
     <item>
@@ -132,7 +132,7 @@ Array.isArray = function(arg) { var type = Object.prototype.toString.call(arg); 
 Use DOM.currentStyle and window.getComputedStyle(DOM)
 For IE use DOM.currentStyle
 Other use window.getComputedStyle(DOM)
-var dom = document.getElementById(&amp;#34;target&amp;#34;), style = dom.currentStyle || window.getComputedStyle(dom); console.log(style.marginTop); refer - Window.getComputedStyle() - Web APIs | MDN
+var dom = document.getElementById(&amp;#34;target&amp;#34;),style = dom.currentStyle || window.getComputedStyle(dom);console.log(style.marginTop);refer - Window.getComputedStyle() - Web APIs | MDN
 refer - currentStyle object (Internet Explorer)</description>
     </item>
     
@@ -151,9 +151,9 @@ refer - currentStyle object (Internet Explorer)</description>
       <pubDate>Wed, 14 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2015-10-14-javascript-get-some-value-about-form-input-type-and-select/</guid>
-      <description>JavaScript - Get some value about form input type and select Select &amp;lt;select id=&amp;#34;select_data&amp;#34;&amp;gt; &amp;lt;option value=&amp;#34;1&amp;#34;&amp;gt;test1&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;2&amp;#34; selected=&amp;#34;selected&amp;#34;&amp;gt;test2&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;3&amp;#34;&amp;gt;test3&amp;lt;/option&amp;gt; &amp;lt;/select&amp;gt; var e = document.getElementById(&amp;#39;select_data&amp;#39;); var strUser = e.options[e.selectedIndex].value; If want to set selected
-var e = document.getElementById(&amp;#39;select_data&amp;#39;); e.querySelectorAll(&amp;#39;option&amp;#39;)[2].selected = true; Get change option
-document.querySelector(&amp;#39;#select_data&amp;#39;).addEventListener(&amp;#39;change&amp;#39;, function (e) { var _this = this.options[this.selectedIndex]; }); radio &amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt; &amp;lt;p class=&amp;#34;col&amp;#34;&amp;gt;device&amp;lt;/p&amp;gt; &amp;lt;div class=&amp;#34;row col s12 m2&amp;#34;&amp;gt; &amp;lt;input name=&amp;#34;group1&amp;#34; type=&amp;#34;radio&amp;#34; id=&amp;#34;device_water_1&amp;#34; value=&amp;#34;1&amp;#34; checked /&amp;gt; &amp;lt;label for=&amp;#34;device_water_1&amp;#34;&amp;gt;True&amp;lt;/label&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;row col s12 m2&amp;#34;&amp;gt; &amp;lt;input name=&amp;#34;group1&amp;#34; type=&amp;#34;radio&amp;#34; id=&amp;#34;device_water_2&amp;#34; value=&amp;#34;2&amp;#34; /&amp;gt; &amp;lt;label for=&amp;#34;device_water_2&amp;#34;&amp;gt;False&amp;lt;/label&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; // for IE9 up var val = document.</description>
+      <description>JavaScript - Get some value about form input type and select Select &amp;lt;select id=&amp;#34;select_data&amp;#34;&amp;gt;&amp;lt;option value=&amp;#34;1&amp;#34;&amp;gt;test1&amp;lt;/option&amp;gt;&amp;lt;option value=&amp;#34;2&amp;#34; selected=&amp;#34;selected&amp;#34;&amp;gt;test2&amp;lt;/option&amp;gt;&amp;lt;option value=&amp;#34;3&amp;#34;&amp;gt;test3&amp;lt;/option&amp;gt;&amp;lt;/select&amp;gt;var e = document.getElementById(&amp;#39;select_data&amp;#39;);var strUser = e.options[e.selectedIndex].value;If want to set selected
+var e = document.getElementById(&amp;#39;select_data&amp;#39;);e.querySelectorAll(&amp;#39;option&amp;#39;)[2].selected = true;Get change option
+document.querySelector(&amp;#39;#select_data&amp;#39;).addEventListener(&amp;#39;change&amp;#39;, function (e) {var _this = this.options[this.selectedIndex];});radio &amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt;&amp;lt;p class=&amp;#34;col&amp;#34;&amp;gt;device&amp;lt;/p&amp;gt;&amp;lt;div class=&amp;#34;row col s12 m2&amp;#34;&amp;gt;&amp;lt;input name=&amp;#34;group1&amp;#34; type=&amp;#34;radio&amp;#34; id=&amp;#34;device_water_1&amp;#34; value=&amp;#34;1&amp;#34; checked /&amp;gt;&amp;lt;label for=&amp;#34;device_water_1&amp;#34;&amp;gt;True&amp;lt;/label&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;#34;row col s12 m2&amp;#34;&amp;gt;&amp;lt;input name=&amp;#34;group1&amp;#34; type=&amp;#34;radio&amp;#34; id=&amp;#34;device_water_2&amp;#34; value=&amp;#34;2&amp;#34; /&amp;gt;&amp;lt;label for=&amp;#34;device_water_2&amp;#34;&amp;gt;False&amp;lt;/label&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;// for IE9 upvar val = document.</description>
     </item>
     
     <item>
@@ -192,7 +192,7 @@ Google Closure Compiler is a tool for minify and uglify js.
       <pubDate>Sun, 09 Aug 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/</guid>
-      <description>gulp.js - Concatenate File When Gulp Watch package.json { &amp;#34;name&amp;#34;: &amp;#34;gulp&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;3.8.7&amp;#34;, &amp;#34;devDependencies&amp;#34;: { &amp;#34;gulp&amp;#34;: &amp;#34;^3.9.0&amp;#34;, &amp;#34;gulp-concat&amp;#34;: &amp;#34;^2.6.0&amp;#34;, &amp;#34;gulp-watch&amp;#34;: &amp;#34;^4.3.4&amp;#34; } } gulpfile.js var gulp = require(&amp;#39;gulp&amp;#39;), watch = require(&amp;#39;gulp-watch&amp;#39;), concat = require(&amp;#39;gulp-concat&amp;#39;); var js; gulp.task(&amp;#39;concat&amp;#39;, function (cb) { var options = {}; watch(&amp;#39;dev/*.js&amp;#39;, options, function (e) { // console.log(&amp;#39;e:&amp;#39;+JSON.stringify(e));  // console.log(&amp;#39;\n&amp;#39;);  console.log(new Date() + &amp;#39; -- &amp;#39; + e.history[0].replace(e.base, &amp;#39;&amp;#39;)); js = e.history[0].replace(e.base, &amp;#39;&amp;#39;); gulp.src([&amp;#39;util/util.js&amp;#39;, &amp;#39;util/mod.js&amp;#39;, &amp;#39;dev/&amp;#39; + js]) .</description>
+      <description>gulp.js - Concatenate File When Gulp Watch package.json {&amp;#34;name&amp;#34;: &amp;#34;gulp&amp;#34;,&amp;#34;version&amp;#34;: &amp;#34;3.8.7&amp;#34;,&amp;#34;devDependencies&amp;#34;: {&amp;#34;gulp&amp;#34;: &amp;#34;^3.9.0&amp;#34;,&amp;#34;gulp-concat&amp;#34;: &amp;#34;^2.6.0&amp;#34;,&amp;#34;gulp-watch&amp;#34;: &amp;#34;^4.3.4&amp;#34;}}gulpfile.js var gulp = require(&amp;#39;gulp&amp;#39;),watch = require(&amp;#39;gulp-watch&amp;#39;),concat = require(&amp;#39;gulp-concat&amp;#39;);var js;gulp.task(&amp;#39;concat&amp;#39;, function (cb) {var options = {};watch(&amp;#39;dev/*.js&amp;#39;, options, function (e) {// console.log(&amp;#39;e:&amp;#39;+JSON.stringify(e)); // console.log(&amp;#39;\n&amp;#39;); console.log(new Date() + &amp;#39; -- &amp;#39; + e.history[0].replace(e.base, &amp;#39;&amp;#39;));js = e.history[0].replace(e.base, &amp;#39;&amp;#39;);gulp.src([&amp;#39;util/util.js&amp;#39;, &amp;#39;util/mod.js&amp;#39;, &amp;#39;dev/&amp;#39; + js]).</description>
     </item>
     
     <item>
@@ -203,8 +203,8 @@ Google Closure Compiler is a tool for minify and uglify js.
       <guid>https://blog.tedshd.io/posts/2015-07-30-javascript-scrolltop/</guid>
       <description>JavaScript - scrollTop scrollTop Element.scrollTop - Web API Interfaces | MDN
 Issue in firefox Normal
-element.scrollTop = intValue; But when I use
-document.body.scrollTop = 0; It doesn&amp;rsquo;t work in firefox.
+element.scrollTop = intValue;But when I use
+document.body.scrollTop = 0;It doesn&amp;rsquo;t work in firefox.
 Solution
 document.documentElement.scrollTop = 0; // for firefoxRefer - document.body.scrollTop vs document.documentElement.scrollTop</description>
     </item>
@@ -217,10 +217,10 @@ document.documentElement.scrollTop = 0; // for firefoxRefer - document.body.scr
       <guid>https://blog.tedshd.io/posts/2015-06-27-javascript-insertbefore/</guid>
       <description>JavaScript - insertBefore &amp;amp; insertAfter insertBefore This is native JavaScript api
 var insertedElement = parentElement.insertBefore(newElement, referenceElement);
-var vDom = document.createElement(&amp;#39;div&amp;#39;), dom = document.querySelector(&amp;#39;#list&amp;#39;); dom.insertBefore(vDom, dom.childNodes[1]); // or  var vDom = document.createElement(&amp;#39;div&amp;#39;), dom = document.querySelector(&amp;#39;#target&amp;#39;); dom.parentNode.insertBefore(vDom, dom); Refer - Node.insertBefore()
+var vDom = document.createElement(&amp;#39;div&amp;#39;),dom = document.querySelector(&amp;#39;#list&amp;#39;);dom.insertBefore(vDom, dom.childNodes[1]);// orvar vDom = document.createElement(&amp;#39;div&amp;#39;),dom = document.querySelector(&amp;#39;#target&amp;#39;);dom.parentNode.insertBefore(vDom, dom);Refer - Node.insertBefore()
 insertAfter JavaScript doesn&amp;rsquo;t have any api handle insert DOM after reference DOM
 We can use this way
-function insertAfter(newNode, referenceNode) { referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling); } Refer - How to do insert After() in JavaScript without using a library?</description>
+function insertAfter(newNode, referenceNode) {referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);}Refer - How to do insert After() in JavaScript without using a library?</description>
     </item>
     
     <item>
@@ -242,8 +242,8 @@ function insertAfter(newNode, referenceNode) { referenceNode.parentNode.insertBe
 Refer JavaScript design pattern&amp;rsquo;s observer pattern and Android EventBus
 Principle My Implement Example Hub is a array put publish object
 publish object must include action and something want to do
-var funcA = function () { alert(&amp;#39;Red Alarm&amp;#39;); } publish(&amp;#39;alarm&amp;#39;, funcA); If more something to in same action
-var funcA = function () { alert(&amp;#39;Red Alarm&amp;#39;); } var funcB = function () { console.</description>
+var funcA = function () {alert(&amp;#39;Red Alarm&amp;#39;);}publish(&amp;#39;alarm&amp;#39;, funcA);If more something to in same action
+var funcA = function () {alert(&amp;#39;Red Alarm&amp;#39;);}var funcB = function () {console.</description>
     </item>
     
     <item>
@@ -272,7 +272,7 @@ var funcA = function () { alert(&amp;#39;Red Alarm&amp;#39;); } var funcB = func
       <guid>https://blog.tedshd.io/posts/2014-12-30-javascript-detect-css3-transitionend/</guid>
       <description>JavaScript - Detect CSS3 transitionEnd transitionend
 It is a event can fired when CSS3 transition end.
-function transitionEnd() { var el = document.createElement(&amp;#39;div&amp;#39;), //what the hack is bootstrap  transEndEventNames = { WebkitTransition : &amp;#39;webkitTransitionEnd&amp;#39;, MozTransition : &amp;#39;transitionend&amp;#39;, OTransition : &amp;#39;oTransitionEnd otransitionend&amp;#39;, transition : &amp;#39;transitionend&amp;#39; }; for (var name in transEndEventNames) { if (el.style[name] !== undefined) { return transEndEventNames[name]; } } return false; // explicit for ie8 ( ._.) } // Usage document.</description>
+function transitionEnd() {var el = document.createElement(&amp;#39;div&amp;#39;), //what the hack is bootstrap transEndEventNames = {WebkitTransition : &amp;#39;webkitTransitionEnd&amp;#39;,MozTransition : &amp;#39;transitionend&amp;#39;,OTransition : &amp;#39;oTransitionEnd otransitionend&amp;#39;,transition : &amp;#39;transitionend&amp;#39;};for (var name in transEndEventNames) {if (el.style[name] !== undefined) {return transEndEventNames[name];}}return false; // explicit for ie8 ( ._.)}// Usagedocument.</description>
     </item>
     
     <item>
@@ -281,7 +281,7 @@ function transitionEnd() { var el = document.createElement(&amp;#39;div&amp;#39;
       <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2014-12-21-javascript-converting-a-javascript-string-to-a-html-object/</guid>
-      <description>JavaScript - Converting a JavaScript string to a html object var str = &amp;#39;&amp;lt;div id=&amp;#34;myDiv&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;; var htmlObject = document.createElement(&amp;#39;div&amp;#39;); htmlObject.innerHTML = str; /* htnkObject is obj; &amp;lt;div&amp;gt; &amp;lt;div id=&amp;#34;myDiv&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; */ Refer - converting a javascript string to a html object</description>
+      <description>JavaScript - Converting a JavaScript string to a html object var str = &amp;#39;&amp;lt;div id=&amp;#34;myDiv&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;;var htmlObject = document.createElement(&amp;#39;div&amp;#39;);htmlObject.innerHTML = str;/* htnkObject is obj;&amp;lt;div&amp;gt;&amp;lt;div id=&amp;#34;myDiv&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;*/Refer - converting a javascript string to a html object</description>
     </item>
     
     <item>
@@ -291,7 +291,7 @@ function transitionEnd() { var el = document.createElement(&amp;#39;div&amp;#39;
       
       <guid>https://blog.tedshd.io/posts/2014-10-01-javascript-handle-textarea-value/</guid>
       <description>JavaScript - handle textarea value Handle textarea string.
-// jQuery var textarea = $(&amp;#39;textarea&amp;#39;).val().replace(/\n/g, &amp;#39;&amp;lt;br&amp;gt;&amp;#39;); // JavaScript var textarea = document.querySelector(&amp;#39;textarea&amp;#39;).value.replace(/\n/g, &amp;#39;&amp;lt;br&amp;gt;&amp;#39;); </description>
+// jQueryvar textarea = $(&amp;#39;textarea&amp;#39;).val().replace(/\n/g, &amp;#39;&amp;lt;br&amp;gt;&amp;#39;);// JavaScriptvar textarea = document.querySelector(&amp;#39;textarea&amp;#39;).value.replace(/\n/g, &amp;#39;&amp;lt;br&amp;gt;&amp;#39;);</description>
     </item>
     
     <item>
@@ -304,10 +304,10 @@ function transitionEnd() { var el = document.createElement(&amp;#39;div&amp;#39;
 Getting Started
 Grunt vs Gulp - Beyond the Numbers
 package.json version setting dependencies
-How to pipe to another task in Gulp? gulp.task(&amp;#39;first&amp;#39;, function() { // first task }); gulp.task(&amp;#39;second&amp;#39;, [&amp;#39;first&amp;#39;], function() { // this occurs after &amp;#39;first&amp;#39; finishes }); Refer - How to pipe to another task in Gulp?
+How to pipe to another task in Gulp? gulp.task(&amp;#39;first&amp;#39;, function() {// first task});gulp.task(&amp;#39;second&amp;#39;, [&amp;#39;first&amp;#39;], function() {// this occurs after &amp;#39;first&amp;#39; finishes});Refer - How to pipe to another task in Gulp?
 Use Package Compass First, must install compass
 gulp-compass
-var gulp = require(&amp;#39;gulp&amp;#39;); var compass = require(&amp;#39;gulp-compass&amp;#39;); gulp.</description>
+var gulp = require(&amp;#39;gulp&amp;#39;);var compass = require(&amp;#39;gulp-compass&amp;#39;);gulp.</description>
     </item>
     
     <item>
@@ -336,7 +336,7 @@ var gulp = require(&amp;#39;gulp&amp;#39;); var compass = require(&amp;#39;gulp-
       <guid>https://blog.tedshd.io/posts/2014-07-01-javascript-handle-load-img-fail/</guid>
       <description>JavaScript - handle load img fail Sometime load image from server or other place fail(404 not found), we must prepare default image.
 A simple way
-&amp;lt;img src=&amp;#34;avatar.svg&amp;#34; onerror=&amp;#34;this.src=&amp;#39;/static/ico_default_avatar.png&amp;#39;;this.onerror=null;&amp;#34;&amp;gt; </description>
+&amp;lt;img src=&amp;#34;avatar.svg&amp;#34; onerror=&amp;#34;this.src=&amp;#39;/static/ico_default_avatar.png&amp;#39;;this.onerror=null;&amp;#34;&amp;gt;</description>
     </item>
     
     <item>
@@ -392,7 +392,7 @@ A simple way
       <guid>https://blog.tedshd.io/posts/2014-05-23-javascript-custom-facebook-share-button/</guid>
       <description>JavaScript - custom facebook share button Facebook support share API to people and it is easy to use. But sometimes we need customize share button style in our web. We can use 2 way.
 1. Link share api link Simple way
-HTML &amp;lt;a href=&amp;#34;http://www.facebook.com/share.php&amp;#34; class=&amp;#34;custom&amp;#34;&amp;gt;Share&amp;lt;/a&amp;gt; and then you can use CSS custom a style.
+HTML &amp;lt;a href=&amp;#34;http://www.facebook.com/share.php&amp;#34; class=&amp;#34;custom&amp;#34;&amp;gt;Share&amp;lt;/a&amp;gt;and then you can use CSS custom a style.
 But this only can catch current url to share to facebook.
 2. Use facebook JavaScript SDK This way is powerful</description>
     </item>
@@ -403,7 +403,7 @@ But this only can catch current url to share to facebook.
       <pubDate>Tue, 13 May 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2014-05-13-javascript-random-array-sort/</guid>
-      <description>JavaScript - Random Array Sort function randOrd(){ return (Math.round(Math.random())-0.5); } anyArray = [1, &amp;#39;s&amp;#39;, 3, &amp;#39;arr&amp;#39;, 4]; anyArray.sort( randOrd ); alert(anyArray); Refer - Random Array Sort</description>
+      <description>JavaScript - Random Array Sort function randOrd(){return (Math.round(Math.random())-0.5);}anyArray = [1, &amp;#39;s&amp;#39;, 3, &amp;#39;arr&amp;#39;, 4];anyArray.sort( randOrd );alert(anyArray);Refer - Random Array Sort</description>
     </item>
     
     <item>
@@ -431,7 +431,7 @@ But this only can catch current url to share to facebook.
       
       <guid>https://blog.tedshd.io/posts/2014-03-13-javascript-delete-element/</guid>
       <description>JavaScript - delete element I use this way.
-var dom = document.querySelectorAll(&amp;#39;.dom&amp;#39;); for (var i = 0; i &amp;lt; dom.length; i++) { dom[i].outerHTML = &amp;#39;&amp;#39;; delete dom[i]; }; // or  var dom = document.querySelector(&amp;#39;#dom&amp;#39;); var dom = document.querySelector(&amp;#39;h1&amp;#39;); dom.outerHTML = &amp;#39;&amp;#39;; delete dom; If use IE document.querySelector only use IE8 up
+var dom = document.querySelectorAll(&amp;#39;.dom&amp;#39;);for (var i = 0; i &amp;lt; dom.length; i++) {dom[i].outerHTML = &amp;#39;&amp;#39;;delete dom[i];};// orvar dom = document.querySelector(&amp;#39;#dom&amp;#39;);var dom = document.querySelector(&amp;#39;h1&amp;#39;);dom.outerHTML = &amp;#39;&amp;#39;;delete dom;If use IE document.querySelector only use IE8 up
 Refer - JavaScript: remove element by id</description>
     </item>
     
@@ -450,7 +450,7 @@ Refer - JavaScript: remove element by id</description>
       <pubDate>Wed, 05 Mar 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2014-03-05-javascript-time-seconds-to-hhmmss/</guid>
-      <description>JavaScript - time seconds to hh:mm:ss function toHHMMSS(sec_num) { var hours = Math.floor(sec_num / 3600); var minutes = Math.floor((sec_num - (hours * 3600)) / 60); var seconds = Math.floor(sec_num - (hours * 3600) - (minutes * 60)); if (hours &amp;lt; 10) {hours = &amp;#34;0&amp;#34;+hours;} if (minutes &amp;lt; 10) {minutes = &amp;#34;0&amp;#34;+minutes;} if (seconds &amp;lt; 10) {seconds = &amp;#34;0&amp;#34;+seconds;} var time = hours+&amp;#39;:&amp;#39;+minutes+&amp;#39;:&amp;#39;+seconds; return time; } alert(toHHMMSS(1234)); Refer - JavaScript seconds to time with format hh:mm:ss</description>
+      <description>JavaScript - time seconds to hh:mm:ss function toHHMMSS(sec_num) {var hours = Math.floor(sec_num / 3600);var minutes = Math.floor((sec_num - (hours * 3600)) / 60);var seconds = Math.floor(sec_num - (hours * 3600) - (minutes * 60));if (hours &amp;lt; 10) {hours = &amp;#34;0&amp;#34;+hours;}if (minutes &amp;lt; 10) {minutes = &amp;#34;0&amp;#34;+minutes;}if (seconds &amp;lt; 10) {seconds = &amp;#34;0&amp;#34;+seconds;}var time = hours+&amp;#39;:&amp;#39;+minutes+&amp;#39;:&amp;#39;+seconds;return time;}alert(toHHMMSS(1234));Refer - JavaScript seconds to time with format hh:mm:ss</description>
     </item>
     
     <item>
@@ -461,7 +461,7 @@ Refer - JavaScript: remove element by id</description>
       <guid>https://blog.tedshd.io/posts/2014-03-02-javascript-scroll-progress/</guid>
       <description>JavaScript - Scroll Progress Show a progress bar about page scroll position.
 This used scroll event Progress bar must handle scroll position and scroll total height, and show it for percent View MDN document can find it can&amp;rsquo;t use scrollHeight, because when scroll bar scroll to bottom, scrollTop not equal scrollHeight
-dom = document.querySelector(&amp;#34;body&amp;#34;); percent = (dom.scrollTop / (dom.scrollHeight - document.documentElement.clientHeight)) * 100 + &amp;#34;%&amp;#34;; Then find scrollTop didn&amp;rsquo;t work in firefox</description>
+dom = document.querySelector(&amp;#34;body&amp;#34;);percent =(dom.scrollTop / (dom.scrollHeight - document.documentElement.clientHeight)) *100 +&amp;#34;%&amp;#34;;Then find scrollTop didn&amp;rsquo;t work in firefox</description>
     </item>
     
     <item>
@@ -470,7 +470,7 @@ dom = document.querySelector(&amp;#34;body&amp;#34;); percent = (dom.scrollTop /
       <pubDate>Wed, 19 Feb 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2014-02-19-javascript-jquery-index-in-javascript/</guid>
-      <description>JavaScript - jQuery index() in JavaScript JavaScript function indexInParent(node) { var children = node.parentNode.childNodes; var num = 0; for (var i=0; i&amp;lt;children.length; i++) { if (children[i]==node) return num; if (children[i].nodeType==1) num++; } return -1; } Example &amp;lt;ul&amp;gt; &amp;lt;li id=&amp;#34;foo&amp;#34;&amp;gt;foo&amp;lt;/li&amp;gt; &amp;lt;li id=&amp;#34;bar&amp;#34;&amp;gt;bar&amp;lt;/li&amp;gt; &amp;lt;li id=&amp;#34;baz&amp;#34;&amp;gt;baz&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;  jQuery  alert($(&amp;#39;#bar&amp;#39;).index());  javaScript  var el = document.getElementById(&amp;#34;bar&amp;#34;); function indexInParent(node) { var children = node.parentNode.childNodes; var num = 0; for (var i=0; i&amp;lt;children.length; i++) { if (children[i]==node) return num; if (children[i].</description>
+      <description>JavaScript - jQuery index() in JavaScript JavaScript function indexInParent(node) {var children = node.parentNode.childNodes;var num = 0;for (var i=0; i&amp;lt;children.length; i++) {if (children[i]==node) return num;if (children[i].nodeType==1) num++;}return -1;}Example &amp;lt;ul&amp;gt;&amp;lt;li id=&amp;#34;foo&amp;#34;&amp;gt;foo&amp;lt;/li&amp;gt;&amp;lt;li id=&amp;#34;bar&amp;#34;&amp;gt;bar&amp;lt;/li&amp;gt;&amp;lt;li id=&amp;#34;baz&amp;#34;&amp;gt;baz&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt; jQuery  alert($(&amp;#39;#bar&amp;#39;).index()); javaScript  var el = document.getElementById(&amp;#34;bar&amp;#34;);function indexInParent(node) {var children = node.parentNode.childNodes;var num = 0;for (var i=0; i&amp;lt;children.length; i++) {if (children[i]==node) return num;if (children[i].</description>
     </item>
     
     <item>
@@ -489,7 +489,7 @@ dom = document.querySelector(&amp;#34;body&amp;#34;); percent = (dom.scrollTop /
       
       <guid>https://blog.tedshd.io/posts/2014-01-31-javascript-get-element-height/</guid>
       <description>JavaScript - get element height If we want get element height use JavaScript We can use clientHeight 、 offsetHeight or scrollHeight
-console.log(document.getElementById(&amp;#39;div&amp;#39;).clientHeight); console.log(document.getElementById(&amp;#39;div&amp;#39;).offsetHeight); console.log(document.getElementById(&amp;#39;div&amp;#39;).scrollHeight); Refer - Element - Web API Interfaces | MDN</description>
+console.log(document.getElementById(&amp;#39;div&amp;#39;).clientHeight);console.log(document.getElementById(&amp;#39;div&amp;#39;).offsetHeight);console.log(document.getElementById(&amp;#39;div&amp;#39;).scrollHeight);Refer - Element - Web API Interfaces | MDN</description>
     </item>
     
     <item>
@@ -498,7 +498,7 @@ console.log(document.getElementById(&amp;#39;div&amp;#39;).clientHeight); consol
       <pubDate>Wed, 25 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2013-12-25-javascript-jsonp/</guid>
-      <description>JavaScript - jsonp If only get data(read) Use callback // javascript // build from javascript var scriptEl = document.createElement(&amp;#34;script&amp;#34;); scriptEl.src = &amp;#34;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;amp;callback=myFunction&amp;#34;; document.getElementsByTagName(&amp;#34;head&amp;#34;)[0].appendChild(scriptEl); or &amp;lt;!-- html --&amp;gt; &amp;lt;!-- embed from HTML --&amp;gt; &amp;lt;script src=&amp;#34;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;amp;callback=myFunction&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; myFunction is callback function handle json data // javascript function myFunction(data) { // data is json console.log(data); } example &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Examples&amp;lt;/title&amp;gt; &amp;lt;!-- &amp;lt;script src=&amp;#34;http://tedshd.lionfree.net/demo/php/api_test.php?callback=test&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; --&amp;gt; &amp;lt;script&amp;gt; var scriptEl = document.createElement(&amp;#34;script&amp;#34;); scriptEl.src</description>
+      <description>JavaScript - jsonp If only get data(read) Use callback // javascript // build from javascript var scriptEl = document.createElement(&amp;#34;script&amp;#34;); scriptEl.src = &amp;#34;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;amp;callback=myFunction&amp;#34;; document.getElementsByTagName(&amp;#34;head&amp;#34;)[0].appendChild(scriptEl); or &amp;lt;!--html --&amp;gt; &amp;lt;!--embed from HTML --&amp;gt; &amp;lt;script src=&amp;#34;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;amp;callback=myFunction&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; myFunction is callback function handle json data // javascript function myFunction(data) { // data is json console.log(data); } example &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Examples&amp;lt;/title&amp;gt; &amp;lt;!--&amp;lt;script src=&amp;#34;http://tedshd.lionfree.net/demo/php/api_test.php?callback=test&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; --&amp;gt; &amp;lt;script&amp;gt; var scriptEl = document.createElement(&amp;#34;script&amp;#34;); scriptEl.src = &amp;#34;http://tedshd.lionfree.net/demo/php/api_test.php?callback=test&amp;#34;; document.getElementsByTagName(&amp;#34;head&amp;#34;)[0].appendChild(scriptEl);</description>
     </item>
     
     <item>
@@ -544,7 +544,7 @@ console.log(document.getElementById(&amp;#39;div&amp;#39;).clientHeight); consol
       
       <guid>https://blog.tedshd.io/posts/2013-12-07-detect-mobile-device/</guid>
       <description>Detect mobile device Use PHP or JavaScript detect mobile device like iPhone, iPad, iPod or Android&amp;hellip;
-Android PHP &amp;lt;?php $ua = strtolower($_SERVER[&amp;#39;HTTP_USER_AGENT&amp;#39;]); if(stripos($ua, &amp;#39;android&amp;#39;) !== false) { echo &amp;#39;Android!!&amp;#39;; exit; } ?&amp;gt; JavaScript var ua = navigator.userAgent.toLowerCase(); if(ua.indexOf(&amp;#34;android&amp;#34;) &amp;gt; -1) { document.write(&amp;#39;Android!!&amp;#39;); } Refer - Android Detection with JavaScript or PHP
+Android PHP &amp;lt;?php$ua = strtolower($_SERVER[&amp;#39;HTTP_USER_AGENT&amp;#39;]);if(stripos($ua, &amp;#39;android&amp;#39;) !== false) {echo &amp;#39;Android!!&amp;#39;;exit;}?&amp;gt;JavaScript var ua = navigator.userAgent.toLowerCase();if(ua.indexOf(&amp;#34;android&amp;#34;) &amp;gt; -1) {document.write(&amp;#39;Android!!&amp;#39;);}Refer - Android Detection with JavaScript or PHP
 Apple mobile device Refer - How to detect iPhone, iPod and iPad with PHP Refer - How to Identify an Apple iPhone, iPod or iPad Visitor to Your Website</description>
     </item>
     
@@ -558,8 +558,8 @@ Apple mobile device Refer - How to detect iPhone, iPod and iPad with PHP Refer -
 New method is use querySelector and querySelectorAll
 If use IE, it only for IE8 up.
 Make them as a method
-var node; function node(selector) { if (selector.indexOf(&amp;#39;.&amp;#39;) === -1) { if (document.querySelectorAll(selector).length === 1) { return document.querySelector(selector); } return document.querySelectorAll(selector); } return document.querySelectorAll(selector); } And then use it
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;querySelector&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;box&amp;#34; class=&amp;#34;area&amp;#34;&amp;gt; test &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;area&amp;#34;&amp;gt; test2 &amp;lt;/div&amp;gt; &amp;lt;div id=&amp;#34;selector&amp;#34; class=&amp;#34;area&amp;#34;&amp;gt; &amp;lt;p class=&amp;#34;con&amp;#34;&amp;gt; content &amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;script&amp;gt; var node; function node(selector) { if (selector.</description>
+var node;function node(selector) {if (selector.indexOf(&amp;#39;.&amp;#39;) === -1) {if (document.querySelectorAll(selector).length === 1) {return document.querySelector(selector);}return document.querySelectorAll(selector);}return document.querySelectorAll(selector);}And then use it
+&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;title&amp;gt;querySelector&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div id=&amp;#34;box&amp;#34; class=&amp;#34;area&amp;#34;&amp;gt;test&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;#34;area&amp;#34;&amp;gt;test2&amp;lt;/div&amp;gt;&amp;lt;div id=&amp;#34;selector&amp;#34; class=&amp;#34;area&amp;#34;&amp;gt;&amp;lt;p class=&amp;#34;con&amp;#34;&amp;gt;content&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;script&amp;gt;var node;function node(selector) {if (selector.</description>
     </item>
     
     <item>
@@ -615,7 +615,7 @@ var node; function node(selector) { if (selector.indexOf(&amp;#39;.&amp;#39;) ==
       <guid>https://blog.tedshd.io/posts/2013-10-06-file-upload-show-progress-bar/</guid>
       <description>file upload show progress bar If you want show upload progress, you must use AJAX method. And you upload files use FormData object. XMLHttpRequest object has upload properties XMLHttpRequest nsIXMLHttpRequestEventTarget
 sample code
-xmlHttpRequest.upload.onprogress = function (e) { console.log(&amp;#39;onprogress&amp;#39;, e); console.log(e.loaded); // progress  console.log(Math.ceil((e.loaded/e.total) * 100) + &amp;#39;%&amp;#39;); }; Refer</description>
+xmlHttpRequest.upload.onprogress = function (e) {console.log(&amp;#39;onprogress&amp;#39;, e);console.log(e.loaded);// progress console.log(Math.ceil((e.loaded/e.total) * 100) + &amp;#39;%&amp;#39;);};Refer</description>
     </item>
     
     <item>
@@ -636,8 +636,8 @@ xmlHttpRequest.upload.onprogress = function (e) { console.log(&amp;#39;onprogres
       <description>File upload using ajax Use FormData objects Using FormData Objects
 FormData object only IE 10 up if IE use ajax upload, only use iframe method.
 sample HTML
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;upload_AJAX&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;form action=&amp;#34;upload_one.php&amp;#34; method=&amp;#34;post&amp;#34; enctype=&amp;#34;multipart/form-data&amp;#34;&amp;gt; &amp;lt;label for=&amp;#34;file&amp;#34;&amp;gt;File:&amp;lt;/label&amp;gt; &amp;lt;input type=&amp;#34;file&amp;#34; name=&amp;#34;Upfile&amp;#34; id=&amp;#34;select&amp;#34;&amp;gt;&amp;lt;br&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;a href=&amp;#34;javascript:upload()&amp;#34;&amp;gt;AJAX_upload&amp;lt;/a&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; JavaScript
-function upload () { // init FormData object  var formData = new FormData(); // use append method append upload file  formData.</description>
+&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;title&amp;gt;upload_AJAX&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;form action=&amp;#34;upload_one.php&amp;#34; method=&amp;#34;post&amp;#34; enctype=&amp;#34;multipart/form-data&amp;#34;&amp;gt;&amp;lt;label for=&amp;#34;file&amp;#34;&amp;gt;File:&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;#34;file&amp;#34; name=&amp;#34;Upfile&amp;#34; id=&amp;#34;select&amp;#34;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;input type=&amp;#34;submit&amp;#34;&amp;gt;&amp;lt;/form&amp;gt;&amp;lt;a href=&amp;#34;javascript:upload()&amp;#34;&amp;gt;AJAX_upload&amp;lt;/a&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;JavaScript
+function upload () {// init FormData object var formData = new FormData();// use append method append upload file formData.</description>
     </item>
     
     <item>
@@ -707,7 +707,7 @@ Dropbox Place on code in dropbox.</description>
       <description>performance jsPerf — JavaScript performance playground http://jsperf.com/
 HTML5 test http://html5test.com/
 JavaScript Benchmark http://www.webkit.org/perf/sunspider/sunspider.html
-var perf = function (testName, fn) { var startTime = new Date().getTime(); fn(); var endTime = new Date().getTime(); console.log(testName + &amp;#34;: &amp;#34; + (endTime - startTime) + &amp;#34;ms&amp;#34;); } jQuery console.time(&amp;#34;timerName&amp;#34;); // javascript console.timeEnd(&amp;#34;timerName&amp;#34;); </description>
+var perf = function (testName, fn) {var startTime = new Date().getTime();fn();var endTime = new Date().getTime();console.log(testName + &amp;#34;: &amp;#34; + (endTime - startTime) + &amp;#34;ms&amp;#34;);}jQueryconsole.time(&amp;#34;timerName&amp;#34;);// javascriptconsole.timeEnd(&amp;#34;timerName&amp;#34;);</description>
     </item>
     
     <item>

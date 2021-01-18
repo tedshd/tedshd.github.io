@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/categories/php/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-10-30T15:20:10+08:00" />
+<meta property="og:updated_time" content="2021-01-14T17:21:53+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +53,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -185,6 +184,52 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2019-10-29-php-float-float-ingress-scientific-marker-conversion/">php - float 浮點數科學記號轉換</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2019-10-29
+</p>
+                
+
+                
+                <p><h2 id="php---float-浮點數科學記號轉換">php - float 浮點數科學記號轉換</h2>
+<p><a href="https://www.php.net/manual/en/language.types.float.php">php - float</a></p>
+<p>php 的浮點數大小受限於系統, 且會自動轉換成科學記號呈現, 但是一般人不會去看科學記號</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">echo 0.0000234;
+// 2.34E-5
+</code></pre></div><p>在呈現上希望轉換回小數點的呈現</p>
+<p>可以用以下方法做到</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$s = 0.0000234;
+trim(rtrim(sprintf(&#34;%.10f&#34;, $s), &#39;0&#39;), &#39;.&#39;);
+// 0.0000234
+</code></pre></div><p>這邊 <code>sprintf</code> 只取 10 位數</p>
+<p>因為就之前遇到的系統超過 10 位數都會是不精確的浮點數</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2019-10-29-php-float-float-ingress-scientific-marker-conversion/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2019-06-19-mac-php-redis-install/">Mac - php redis install</a></h3>
 
                 
@@ -241,50 +286,6 @@ Cannot find autoconf. Please check your autoconf installation and the $PHP_AUTOC
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2019-06-19-mac-php-redis-install/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2017-12-13-php-loop-directory/">php - loop directory</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2017-12-13
-</p>
-                
-
-                
-                <p><h2 id="php---loop-directory">php - loop directory</h2>
-<p>Sometime need use php loop directory list all file in this directory</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
-$directory = scandir(&#39;./js&#39;);
-foreach($directory as $file) {
-    if ($file === &#39;.&#39; || $file === &#39;..&#39;) {
-        continue;
-    }
-    echo $file;
-    echo &#34;\n&#34;;
-}
-
-</code></pre></div></p>
-                
-
-                
-
                 
             </div>
         </div>

@@ -29,7 +29,7 @@
       <guid>https://blog.tedshd.io/posts/2013-10-06-file-upload-show-progress-bar/</guid>
       <description>file upload show progress bar If you want show upload progress, you must use AJAX method. And you upload files use FormData object. XMLHttpRequest object has upload properties XMLHttpRequest nsIXMLHttpRequestEventTarget
 sample code
-xmlHttpRequest.upload.onprogress = function (e) { console.log(&amp;#39;onprogress&amp;#39;, e); console.log(e.loaded); // progress  console.log(Math.ceil((e.loaded/e.total) * 100) + &amp;#39;%&amp;#39;); }; Refer</description>
+xmlHttpRequest.upload.onprogress = function (e) {console.log(&amp;#39;onprogress&amp;#39;, e);console.log(e.loaded);// progress console.log(Math.ceil((e.loaded/e.total) * 100) + &amp;#39;%&amp;#39;);};Refer</description>
     </item>
     
     <item>
@@ -41,8 +41,8 @@ xmlHttpRequest.upload.onprogress = function (e) { console.log(&amp;#39;onprogres
       <description>File upload using ajax Use FormData objects Using FormData Objects
 FormData object only IE 10 up if IE use ajax upload, only use iframe method.
 sample HTML
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;upload_AJAX&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;form action=&amp;#34;upload_one.php&amp;#34; method=&amp;#34;post&amp;#34; enctype=&amp;#34;multipart/form-data&amp;#34;&amp;gt; &amp;lt;label for=&amp;#34;file&amp;#34;&amp;gt;File:&amp;lt;/label&amp;gt; &amp;lt;input type=&amp;#34;file&amp;#34; name=&amp;#34;Upfile&amp;#34; id=&amp;#34;select&amp;#34;&amp;gt;&amp;lt;br&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;a href=&amp;#34;javascript:upload()&amp;#34;&amp;gt;AJAX_upload&amp;lt;/a&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; JavaScript
-function upload () { // init FormData object  var formData = new FormData(); // use append method append upload file  formData.</description>
+&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;title&amp;gt;upload_AJAX&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;form action=&amp;#34;upload_one.php&amp;#34; method=&amp;#34;post&amp;#34; enctype=&amp;#34;multipart/form-data&amp;#34;&amp;gt;&amp;lt;label for=&amp;#34;file&amp;#34;&amp;gt;File:&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;#34;file&amp;#34; name=&amp;#34;Upfile&amp;#34; id=&amp;#34;select&amp;#34;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;input type=&amp;#34;submit&amp;#34;&amp;gt;&amp;lt;/form&amp;gt;&amp;lt;a href=&amp;#34;javascript:upload()&amp;#34;&amp;gt;AJAX_upload&amp;lt;/a&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;JavaScript
+function upload () {// init FormData object var formData = new FormData();// use append method append upload file formData.</description>
     </item>
     
     <item>
