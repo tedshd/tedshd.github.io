@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.63.1" />
+	<meta name="generator" content="Hugo 0.74.3" />
     
 
 
@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-01-14T17:21:53+08:00" />
+<meta property="og:updated_time" content="2021-02-01T12:24:41+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -52,6 +52,7 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
+
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -460,39 +461,147 @@ php &gt; echo rawurlencode(&#39; &#39;);
 <span style="color:#75715e"># pip install imap-tools</span>
 <span style="color:#f92672">from</span> imap_tools.imap_utf7 <span style="color:#f92672">import</span> encode, decode
 
-ACCOUNT <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">@gmail.com</span><span style="color:#e6db74">&#39;</span>
-PWD <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
+ACCOUNT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;@gmail.com&#39;</span>
+PWD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
 
-mail <span style="color:#f92672">=</span> imaplib<span style="color:#f92672">.</span>IMAP4_SSL(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">imap.gmail.com</span><span style="color:#e6db74">&#39;</span>)
+mail <span style="color:#f92672">=</span> imaplib<span style="color:#f92672">.</span>IMAP4_SSL(<span style="color:#e6db74">&#39;imap.gmail.com&#39;</span>)
 mail<span style="color:#f92672">.</span>login(ACCOUNT, PWD)
 status, data <span style="color:#f92672">=</span> mail<span style="color:#f92672">.</span>list()
-mail<span style="color:#f92672">.</span>select(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">inbox</span><span style="color:#e6db74">&#39;</span>)
+mail<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#39;inbox&#39;</span>)
 <span style="color:#75715e"># 取前一天的時間</span>
-today <span style="color:#f92672">=</span> (date<span style="color:#f92672">.</span>today() <span style="color:#f92672">-</span> timedelta(<span style="color:#ae81ff">1</span>))<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">-</span><span style="color:#e6db74">%</span><span style="color:#e6db74">b-</span><span style="color:#e6db74">%</span><span style="color:#e6db74">Y</span><span style="color:#e6db74">&#34;</span>)
+today <span style="color:#f92672">=</span> (date<span style="color:#f92672">.</span>today() <span style="color:#f92672">-</span> timedelta(<span style="color:#ae81ff">1</span>))<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">-%b-%Y&#39;</span>)
 <span style="color:#75715e"># 找出前一天未讀的信件</span>
-typ, data <span style="color:#f92672">=</span> mail<span style="color:#f92672">.</span>search(None, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(UNSEEN)</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(SENTSINCE {0})</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(today))
+typ, data <span style="color:#f92672">=</span> mail<span style="color:#f92672">.</span>search(None, <span style="color:#e6db74">&#39;(UNSEEN)&#39;</span>, <span style="color:#e6db74">&#39;(SENTSINCE {0})&#39;</span><span style="color:#f92672">.</span>format(today))
 
 <span style="color:#75715e"># 取到 message id list(message id 就是每封信的 id)</span>
 ids <span style="color:#f92672">=</span> data[<span style="color:#ae81ff">0</span>]
 id_list <span style="color:#f92672">=</span> ids<span style="color:#f92672">.</span>split()
 
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> id_list:
-    typ, data <span style="color:#f92672">=</span> mail<span style="color:#f92672">.</span>fetch(i, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(RFC822)</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#66d9ef">if</span> typ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">OK</span><span style="color:#e6db74">&#39;</span>:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">get mail ok</span><span style="color:#e6db74">&#39;</span>)
+    typ, data <span style="color:#f92672">=</span> mail<span style="color:#f92672">.</span>fetch(i, <span style="color:#e6db74">&#39;(RFC822)&#39;</span>)
+    <span style="color:#66d9ef">if</span> typ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;OK&#39;</span>:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;get mail ok&#39;</span>)
 
     <span style="color:#66d9ef">for</span> response_part <span style="color:#f92672">in</span> data:
             <span style="color:#66d9ef">if</span> isinstance(response_part, tuple):
                 rawMail <span style="color:#f92672">=</span> response_part[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>decode()
                 <span style="color:#75715e"># 取得信件</span>
                 msg <span style="color:#f92672">=</span> email<span style="color:#f92672">.</span>message_from_string(rawMail)
+                <span style="color:#66d9ef">print</span>(msg)
 </code></pre></div><p>基本上到這裡拿到 msg 就是這封信件的資訊了</p>
 <p>就可以取出來做一些處理</p>
 <p>例如: 判斷來信者來回信, 判斷內容替信件添加標籤 等等</p>
 <p>關於 <code>imap.search</code> 可以如何使用可參考</p>
 <p><a href="https://coderwall.com/p/gorteg/python-s-imaplib">Refer - Python&rsquo;s imaplib (Example)</a></p>
 <h4 id="回信">回信</h4>
-</p>
+<p>幾本上回信也是寄信的一種</p>
+<p>寄信的部分就是得用到 SMTP</p>
+<p>幾本上的流程就是</p>
+<ol>
+<li>
+<p>連接 Gmail 的 SMTP server</p>
+</li>
+<li>
+<p>寫信</p>
+</li>
+<li>
+<p>寄信</p>
+</li>
+<li>
+<p>關閉連接</p>
+</li>
+</ol>
+<p>以下為寄信範例</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> email
+<span style="color:#f92672">import</span> smtplib
+<span style="color:#f92672">from</span> email.mime.multipart <span style="color:#f92672">import</span> MIMEMultipart
+<span style="color:#f92672">from</span> email.mime.text <span style="color:#f92672">import</span> MIMEText
+
+smtp_server <span style="color:#f92672">=</span> smtplib<span style="color:#f92672">.</span>SMTP_SSL(<span style="color:#e6db74">&#39;smtp.gmail.com&#39;</span>)
+
+ACCOUNT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;@gmail.com&#39;</span>
+PWD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+
+smtp_server<span style="color:#f92672">.</span>login(ACCOUNT, PWD)
+send_mail <span style="color:#f92672">=</span> MIMEMultipart(<span style="color:#e6db74">&#39;mixed&#39;</span>)
+body <span style="color:#f92672">=</span> MIMEMultipart(<span style="color:#e6db74">&#39;alternative&#39;</span>)
+body<span style="color:#f92672">.</span>attach(MIMEText(<span style="color:#e6db74">&#39;test send mail&#39;</span>, <span style="color:#e6db74">&#39;plain&#39;</span>))
+body<span style="color:#f92672">.</span>attach(MIMEText(<span style="color:#e6db74">&#39;&lt;div&gt;test send mail&lt;div&gt;&#39;</span>, <span style="color:#e6db74">&#39;html&#39;</span>))
+send_mail<span style="color:#f92672">.</span>attach(body)
+
+send_mail[<span style="color:#e6db74">&#39;message-id&#39;</span>] <span style="color:#f92672">=</span> email<span style="color:#f92672">.</span>utils<span style="color:#f92672">.</span>make_msgid()
+send_mail[<span style="color:#e6db74">&#39;subject&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+send_mail[<span style="color:#e6db74">&#39;to&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+send_mail[<span style="color:#e6db74">&#39;from&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;@gmail.com&#39;</span>
+
+smtp_server<span style="color:#f92672">.</span>sendmail(<span style="color:#e6db74">&#39;@gmail.com&#39;</span>, send_mail[<span style="color:#e6db74">&#39;to&#39;</span>], send_mail<span style="color:#f92672">.</span>as_string())
+
+smtp_server<span style="color:#f92672">.</span>quit()
+</code></pre></div><p>需要回信的話就得在發送時指定 references 和指定要回覆給哪封信(每一封信都有獨立的 message id)</p>
+<p>所以會先用 imap 取到 mail list 這樣就會有 message id 的資訊了</p>
+<p>以下為回信的範例</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timedelta, date
+
+<span style="color:#f92672">import</span> imaplib
+<span style="color:#f92672">import</span> email
+
+<span style="color:#f92672">from</span> email.header <span style="color:#f92672">import</span> decode_header
+<span style="color:#75715e"># pip install imap-tools</span>
+<span style="color:#f92672">from</span> imap_tools.imap_utf7 <span style="color:#f92672">import</span> encode, decode
+
+ACCOUNT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;@gmail.com&#39;</span>
+PWD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+
+mail <span style="color:#f92672">=</span> imaplib<span style="color:#f92672">.</span>IMAP4_SSL(<span style="color:#e6db74">&#39;imap.gmail.com&#39;</span>)
+mail<span style="color:#f92672">.</span>login(ACCOUNT, PWD)
+status, data <span style="color:#f92672">=</span> mail<span style="color:#f92672">.</span>list()
+mail<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#39;inbox&#39;</span>)
+<span style="color:#75715e"># 取前一天的時間</span>
+today <span style="color:#f92672">=</span> (date<span style="color:#f92672">.</span>today() <span style="color:#f92672">-</span> timedelta(<span style="color:#ae81ff">1</span>))<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">-%b-%Y&#39;</span>)
+<span style="color:#75715e"># 找出前一天未讀的信件</span>
+typ, data <span style="color:#f92672">=</span> mail<span style="color:#f92672">.</span>search(None, <span style="color:#e6db74">&#39;(UNSEEN)&#39;</span>, <span style="color:#e6db74">&#39;(SENTSINCE {0})&#39;</span><span style="color:#f92672">.</span>format(today))
+
+<span style="color:#75715e"># 取到 message id list(message id 就是每封信的 id)</span>
+ids <span style="color:#f92672">=</span> data[<span style="color:#ae81ff">0</span>]
+id_list <span style="color:#f92672">=</span> ids<span style="color:#f92672">.</span>split()
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> id_list:
+    typ, data <span style="color:#f92672">=</span> mail<span style="color:#f92672">.</span>fetch(i, <span style="color:#e6db74">&#39;(RFC822)&#39;</span>)
+    <span style="color:#66d9ef">if</span> typ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;OK&#39;</span>:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;get mail ok&#39;</span>)
+
+    <span style="color:#66d9ef">for</span> response_part <span style="color:#f92672">in</span> data:
+            <span style="color:#66d9ef">if</span> isinstance(response_part, tuple):
+                raw_mail <span style="color:#f92672">=</span> response_part[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>decode()
+                <span style="color:#75715e"># 取得信件</span>
+                msg <span style="color:#f92672">=</span> email<span style="color:#f92672">.</span>message_from_string(raw_mail)
+                <span style="color:#66d9ef">print</span>(msg)
+                var_subject <span style="color:#f92672">=</span> msg[<span style="color:#e6db74">&#39;subject&#39;</span>]
+                subject, encoding <span style="color:#f92672">=</span> decode_header(var_subject)[<span style="color:#ae81ff">0</span>]
+
+                <span style="color:#75715e"># add origin content</span>
+                <span style="color:#66d9ef">for</span> part <span style="color:#f92672">in</span> msg<span style="color:#f92672">.</span>walk():
+                    <span style="color:#66d9ef">if</span> (part<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;Content-Disposition&#39;</span>) <span style="color:#f92672">and</span> part<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;Content-Disposition&#39;</span>)<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;attachment&#34;</span>)):
+                        part<span style="color:#f92672">.</span>set_type(<span style="color:#e6db74">&#39;text/plain&#39;</span>)
+                        part<span style="color:#f92672">.</span>set_payload(<span style="color:#e6db74">&#39;Attachment removed: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> (</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> bytes)&#39;</span> <span style="color:#f92672">%</span> (part<span style="color:#f92672">.</span>get_filename(), part<span style="color:#f92672">.</span>get_content_type(), len(part<span style="color:#f92672">.</span>get_payload(decode<span style="color:#f92672">=</span>True))))
+                        <span style="color:#66d9ef">del</span> part[<span style="color:#e6db74">&#39;Content-Disposition&#39;</span>]
+                        <span style="color:#66d9ef">del</span> part[<span style="color:#e6db74">&#39;Content-Transfer-Encoding&#39;</span>]
+
+                reply_mail <span style="color:#f92672">=</span> MIMEMultipart(<span style="color:#e6db74">&#39;mixed&#39;</span>)
+                body <span style="color:#f92672">=</span> MIMEMultipart(<span style="color:#e6db74">&#39;alternative&#39;</span>)
+                body<span style="color:#f92672">.</span>attach(MIMEText(<span style="color:#e6db74">&#39;reply mail&#39;</span>, <span style="color:#e6db74">&#39;plain&#39;</span>))
+                body<span style="color:#f92672">.</span>attach(MIMEText(<span style="color:#e6db74">&#39;&lt;div&gt;reply mail&lt;/div&gt;&#39;</span>, <span style="color:#e6db74">&#39;html&#39;</span>))
+                reply_mail<span style="color:#f92672">.</span>attach(body)
+
+                reply_mail[<span style="color:#e6db74">&#39;message-id&#39;</span>] <span style="color:#f92672">=</span> email<span style="color:#f92672">.</span>utils<span style="color:#f92672">.</span>make_msgid()
+                reply_mail[<span style="color:#e6db74">&#39;in-reply-to&#39;</span>] <span style="color:#f92672">=</span> msg[<span style="color:#e6db74">&#39;message-id&#39;</span>]
+                reply_mail[<span style="color:#e6db74">&#39;references&#39;</span>] <span style="color:#f92672">=</span> msg[<span style="color:#e6db74">&#39;message-id&#39;</span>]
+                reply_mail[<span style="color:#e6db74">&#39;subject&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;re: &#39;</span> <span style="color:#f92672">+</span> msg[<span style="color:#e6db74">&#39;subject&#39;</span>]
+                reply_mail[<span style="color:#e6db74">&#39;to&#39;</span>] <span style="color:#f92672">=</span> msg[<span style="color:#e6db74">&#39;reply-to&#39;</span>] <span style="color:#f92672">or</span> msg[<span style="color:#e6db74">&#39;from&#39;</span>]
+                reply_mail[<span style="color:#e6db74">&#39;from&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;@gmail.com&#39;</span>
+
+                smtp_server<span style="color:#f92672">.</span>sendmail(<span style="color:#e6db74">&#39;@gmail.com&#39;</span>, new[<span style="color:#e6db74">&#39;to&#39;</span>], new<span style="color:#f92672">.</span>as_string())
+</code></pre></div></p>
                 
 
                 

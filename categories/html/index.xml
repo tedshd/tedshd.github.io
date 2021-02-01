@@ -33,7 +33,7 @@ But now we must do more thing on mobile device handle favicon.
   Add meta tag &amp;lt;link rel=&amp;quot;icon&amp;quot; type=&amp;quot;image/png&amp;quot; href=&amp;quot;favicon.png&amp;quot; /&amp;gt;
   Notice: I like use png as my favicon, because i can reuse this file.
 Icon format case
-&amp;lt;!--IE --&amp;gt;&amp;lt;link rel=&amp;#34;shortcut icon&amp;#34; type=&amp;#34;image/x-icon&amp;#34; href=&amp;#34;favicon.</description>
+&amp;lt;!-- IE --&amp;gt; &amp;lt;link rel=&amp;#34;shortcut icon&amp;#34; type=&amp;#34;image/x-icon&amp;#34; href=&amp;#34;favicon.</description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@ Icon format case
       <description>Web Develop - Flexible Footer Sometimes we think footer must fixed in website bottom or put it in last of content.
 I provide a idea may be a good way. Content less browser view height, footer fixed in bottom. When content too much over browser view height, footer be put last of content.
 Feature  flexible only use CSS  Usage min-height: calc(100% - &amp;lt;footer height&amp;gt;);
-#hd {height: 50px;background: #aaa;/*display: none;*/}#bd {text-align: center;min-height: calc(100% - 50px); /* important */background: #ccc;}#content {padding-bottom: 60px;}#footer {position: relative;bottom: 50px;text-align: center;height: 50px;background: #999;}50px is footer height</description>
+#hd { height: 50px; background: #aaa; /*display: none;*/ } #bd { text-align: center; min-height: calc(100% - 50px); /* important */ background: #ccc; } #content { padding-bottom: 60px; } #footer { position: relative; bottom: 50px; text-align: center; height: 50px; background: #999; } 50px is footer height</description>
     </item>
     
     <item>
@@ -81,7 +81,7 @@ Feature  flexible only use CSS  Usage min-height: calc(100% - &amp;lt;footer hei
       <pubDate>Wed, 21 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2013-08-21-html-design-pattern/</guid>
-      <description>HTML Design Pattern 語意化(影響 SEO) 去 CSS 還可維持可讀性 去 JavaScript 頁面還能 work -&amp;gt; 現在較不適用 避免樣式標籤 &amp;lt;!--not recommended --&amp;gt; &amp;lt;b&amp;gt;&amp;lt;/b&amp;gt; &amp;lt;i&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;!--use --&amp;gt; &amp;lt;strong&amp;gt;&amp;lt;/strong&amp;gt; &amp;lt;em&amp;gt;&amp;lt;/em&amp;gt; 避免將 style 寫在 HTML tag 上 善用標籤以維持可讀性與語意</description>
+      <description>HTML Design Pattern 語意化(影響 SEO) 去 CSS 還可維持可讀性 去 JavaScript 頁面還能 work -&amp;gt; 現在較不適用 避免樣式標籤 &amp;lt;!-- not recommended --&amp;gt; &amp;lt;b&amp;gt;&amp;lt;/b&amp;gt; &amp;lt;i&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;!-- use --&amp;gt; &amp;lt;strong&amp;gt;&amp;lt;/strong&amp;gt; &amp;lt;em&amp;gt;&amp;lt;/em&amp;gt; 避免將 style 寫在 HTML tag 上 善用標籤以維持可讀性與</description>
     </item>
     
   </channel>

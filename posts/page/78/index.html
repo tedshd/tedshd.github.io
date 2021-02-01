@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-01-14T17:21:53+08:00" />
+<meta property="og:updated_time" content="2021-02-01T12:24:41+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,6 +53,7 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
+
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -1219,7 +1220,7 @@ zsh 附加換 theme 的功能
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">source ~/.zshrc
 </code></pre></div><p>常用的 alias</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#mysql</span>
-export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/usr/local/mysql/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/mysql/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
 
 <span style="color:#75715e"># java</span>
 export PATH<span style="color:#f92672">=</span>/opt/local/bin:/opt/local/sbin:$PATH:/path/to/java/bin
@@ -1270,8 +1271,8 @@ colorscheme torte
 </span><span style="color:#e6db74">set tabstop=4
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">&#34;</span>  indent
-set softtabstop<span style="color:#f92672">=</span>4
-set shiftwidth<span style="color:#f92672">=</span>4
+set softtabstop<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+set shiftwidth<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
 
 <span style="color:#e6db74">&#34; smart alignment
 </span><span style="color:#e6db74">set smartindent
@@ -1283,7 +1284,7 @@ set autoindent
 </span><span style="color:#e6db74">set number
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">&#34;</span> history
-set history<span style="color:#f92672">=</span>50
+set history<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>
 
 <span style="color:#e6db74">&#34; 在状态行显示目前所执行的命令，未完成的指令片段亦会显示出来
 </span><span style="color:#e6db74">&#34;</span> set showcmd
@@ -1347,7 +1348,7 @@ Install MySQL(<a href="http://dev.mysql.com/downloads/mysql/5.5.html">http://dev
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim ~/.zshrc
 // add
 <span style="color:#75715e">#mysql</span>
-export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/usr/local/mysql/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/mysql/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
 // save and <span style="color:#66d9ef">then</span> restart shell
 source ~/.zshrc
 </code></pre></div><h4 id="homebrew-install">Homebrew install</h4>

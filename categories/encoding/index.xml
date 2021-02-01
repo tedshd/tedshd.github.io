@@ -19,7 +19,7 @@
       
       <guid>https://blog.tedshd.io/posts/2015-06-16-linux-set-encoding-in-linux-environment/</guid>
       <description>Linux - Set Encoding In Linux Environment Add
-export LC_ALL=en_US.UTF-8export LANG=en_US.UTF-8export LANGUAGE=en_US.UTF-8in .bashrc or .zshrc
+export LC_ALL=en_US.UTF-8 export LANG=en_US.UTF-8 export LANGUAGE=en_US.UTF-8 in .bashrc or .zshrc
 Refer - How to set up a clean UTF-8 environment in Linux</description>
     </item>
     
