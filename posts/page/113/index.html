@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-02-01T12:24:41+08:00" />
+<meta property="og:updated_time" content="2021-03-30T11:47:46+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1108,6 +1108,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1118,6 +1122,155 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-13-login-forget-pwd/">Login forget pwd</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-08-13
+</p>
+                
+
+                
+                <p><h2 id="function">function</h2>
+<ul>
+<li>account</li>
+<li>captcha</li>
+<li>validation</li>
+<li>use bootatrap model</li>
+</ul>
+<h2 id="result">result</h2>
+<ul>
+<li>captcha fail</li>
+<li>captcha ok</li>
+<li>backend check account</li>
+<li>success</li>
+<li>fail(not exist)</li>
+</ul>
+<h2 id="method">method</h2>
+<ul>
+<li>ajax</li>
+</ul>
+<h2 id="mockup">mockup</h2>
+<p><a href="https://moqups.com/tedshd/guwR4fO3/">link</a></p>
+<h2 id="flow">flow</h2>
+<p>click forget password
+show model
+enter account &amp; captcha(validation from js not null)
+submit(ajax)
+account fail(from backend) -&gt; show message
+captcha fail(from backend) -&gt; show message
+success -&gt; show message</p>
+<h2 id="flowdetail">flow(detail)</h2>
+<p>點擊忘記密碼
+秀 bootstrap model
+輸入帳號與驗證碼(利用 validation 作必填的檢查)
+用 ajax 的方式送出</p>
+<ul>
+<li>controllers</li>
+<li><del>接 captcha -&gt; 檢查是否正確</del></li>
+<li>接 account -&gt;
+<ul>
+<li><del>檢查是否存在</del></li>
+<li><del>generator token</del></li>
+<li>save token to memcache
+* memcache key: token + account</li>
+<li>send email</li>
+</ul>
+</li>
+</ul>
+<p>回傳錯誤或成功訊息</p>
+<ul>
+<li><del>account 驗證失敗 -&gt; 秀訊息(該帳號不存在)</del></li>
+<li><del>captcha 驗證失敗 -&gt; 秀訊息(驗證碼失敗), 刷新驗證碼</del></li>
+</ul>
+<p>email incloud url</p>
+<ul>
+<li>url + account + token</li>
+</ul>
+<p><strong>URL</strong>
+點擊 URL
+進入重設密碼頁面</p>
+<ul>
+<li>新密碼(利用 validation 作必填的檢查)</li>
+<li>確認密碼(利用 validation 作必填的檢查)</li>
+</ul>
+<p>用 submit 的方式送出</p>
+<ul>
+<li>controllers</li>
+<li>接新密碼 -&gt;
+* 驗證
+* 存 DB
+* delete memcache</li>
+</ul>
+<p>回傳成功或失敗</p>
+<ul>
+<li>成功 -&gt; redirect 到成功頁面</li>
+<li>失敗 -&gt; 秀訊息(儲存失敗, 請再試一次)</li>
+</ul>
+<h3 id="token-verify">token verify</h3>
+<h4 id="gen-token">gen token</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP">// load memcache
+$this-&gt;load-&gt;library(&#39;Memcache&#39;);
+// load encrypt
+$this-&gt;load-&gt;library(&#39;encrypt&#39;);
+
+$token = array(
+    &#39;rand_str&#39; =&gt; md5(uniqid(rand(), true)),
+    &#39;account&#39; =&gt; $user,
+);
+// array to string
+$to_str = serialize($token);
+// encrypt
+$encrypted_str = $this-&gt;encrypt-&gt;encode($to_str);
+// save to memcache
+$this-&gt;memcache-&gt;set(&#39;key&#39;, $encrypted_str);
+
+// token to verify
+token[&#39;rand_str&#39;]
+</code></pre></div><h4 id="get-and-verify-data">get and verify data</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP">// get $encrypted_str
+// decode
+$decode_token = $this-&gt;encrypt-&gt;decode($encrypted_str);
+// string to array
+$token = unserialize($decode_token);
+// check $token exist
+if ($token[&#39;rand_str&#39;])
+$get_token = token[&#39;rand_str&#39;];
+$account
+// load memcache
+$load_mem = $this-&gt;memcache-&gt;get(&#39;key&#39;);
+// decode memcache
+$decode_mem = $this-&gt;encrypt-&gt;decode($load_mem);
+// string to array
+$to_array = unserialize($decode_mem);
+// verify
+$get_token === $to_array[&#39;rand_str&#39;]
+$account === $to_array[&#39;account&#39;]
+</code></pre></div></p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-08-13-login-forget-pwd/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1172,55 +1325,6 @@ bind on parent selector</p>
 	<span style="color:#75715e">// dosomething
 </span><span style="color:#75715e"></span>});
 </code></pre></div><p><a href="http://jsbin.com/ijovot/1/edit">js Bin</a></p>
-</p>
-                
-
-                
-
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-03-innerheight-innerwidth/">innerHeight &amp; innerWidth</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-08-03
-</p>
-                
-
-                
-                <p><h2 id="innerheight--innerwidth">innerHeight &amp; innerWidth</h2>
-<p>抓取瀏覽器目前顯示高度與寬度
-一般都用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.<span style="color:#a6e22e">innerHeight</span>
-</code></pre></div><p>與</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.<span style="color:#a6e22e">innerWidth</span>
-</code></pre></div><p>但唯獨IE6~IE8不行
-Google了一下
-發現用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
-</code></pre></div><p>與</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span>
-</code></pre></div><p>便兼容所有瀏覽器</p>
-<h2 id="scrollheight">scrollHeight</h2>
-<p>如要抓 document 的高可用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollHeight</span>
-</code></pre></div><p><a href="http://stackoverflow.com/questions/1145850/get-height-of-entire-document-with-javascript">Refer</a></p>
 </p>
                 
 

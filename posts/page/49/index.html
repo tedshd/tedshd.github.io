@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-02-01T12:24:41+08:00" />
+<meta property="og:updated_time" content="2021-03-30T11:47:46+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1108,6 +1108,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1118,6 +1122,83 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/">gulp.js - Concatenate File When Gulp Watch</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-08-09
+</p>
+                
+
+                
+                <p><h2 id="gulpjs---concatenate-file-when-gulp-watch">gulp.js - Concatenate File When Gulp Watch</h2>
+<h3 id="packagejson">package.json</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+  <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;gulp&#34;</span>,
+  <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;3.8.7&#34;</span>,
+  <span style="color:#e6db74">&#34;devDependencies&#34;</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;gulp&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;^3.9.0&#34;</span>,
+    <span style="color:#e6db74">&#34;gulp-concat&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;^2.6.0&#34;</span>,
+    <span style="color:#e6db74">&#34;gulp-watch&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;^4.3.4&#34;</span>
+  }
+}
+</code></pre></div><h3 id="gulpfilejs">gulpfile.js</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>),
+    <span style="color:#a6e22e">watch</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-watch&#39;</span>),
+    <span style="color:#a6e22e">concat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-concat&#39;</span>);
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">js</span>;
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;concat&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">cb</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> {};
+    <span style="color:#a6e22e">watch</span>(<span style="color:#e6db74">&#39;dev/*.js&#39;</span>, <span style="color:#a6e22e">options</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+        <span style="color:#75715e">// console.log(&#39;e:&#39;+JSON.stringify(e));
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(&#39;\n&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">new</span> Date() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; -- &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">history</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">base</span>, <span style="color:#e6db74">&#39;&#39;</span>));
+        <span style="color:#a6e22e">js</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">history</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">base</span>, <span style="color:#e6db74">&#39;&#39;</span>);
+        <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>([<span style="color:#e6db74">&#39;util/util.js&#39;</span>, <span style="color:#e6db74">&#39;util/mod.js&#39;</span>, <span style="color:#e6db74">&#39;dev/&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">js</span>])
+        .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">js</span>, {<span style="color:#a6e22e">newLine</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;\n&#39;</span>}))
+        .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;dist/&#39;</span>));
+    });
+});
+</code></pre></div><h3 id="what-it-mean">What it mean?</h3>
+<p>watch something change in <code>dev/*.js</code>.</p>
+<p>If js change, concatenate <code>util/util.js</code>, <code>util/mod.js</code> and current modify js.</p>
+<p>New js name is current modify js.</p>
+<p>Finally put new js in <code>dist/</code>.</p>
+<h3 id="how-to-use">How to use</h3>
+<h4 id="install">Install</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install --save-dev gulp
+
+npm install . --save-dev
+</code></pre></div><h4 id="use">Use</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gulp concat
+</code></pre></div><p><a href="https://www.npmjs.com/package/gulp-watch">Refer - gulp-watch</a></p>
+<p><a href="https://www.npmjs.com/package/gulp-concat">Refer - gulp-concat</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1164,50 +1245,6 @@ sudo service apache2 status
 
 sudo service apache2 stop
 </code></pre></div><p><a href="http://www.cyberciti.biz/faq/ubuntu-linux-start-restart-stop-apache-web-server/">Refer - Ubuntu Linux: Start / Restart / Stop Apache Web Server</a></p>
-</p>
-                
-
-                
-
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-07-30-javascript-scrolltop/">JavaScript - scrollTop</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-07-30
-</p>
-                
-
-                
-                <p><h2 id="javascript---scrolltop">JavaScript - scrollTop</h2>
-<h3 id="scrolltop">scrollTop</h3>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop">Element.scrollTop - Web API Interfaces | MDN</a></p>
-<h3 id="issue-in-firefox">Issue in firefox</h3>
-<p>Normal</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">intValue</span>;
-</code></pre></div><p>But when I use</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</code></pre></div><p>It doesn&rsquo;t work in firefox.</p>
-<p>Solution</p>
-<pre><code class="language-javscript" data-lang="javscript">document.documentElement.scrollTop = 0; // for firefox
-</code></pre><p><a href="https://miketaylr.com/posts/2014/11/document-body-scrollTop.html">Refer - document.body.scrollTop vs document.documentElement.scrollTop</a></p>
 </p>
                 
 

@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-02-01T12:24:41+08:00" />
+<meta property="og:updated_time" content="2021-03-30T11:47:46+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -193,6 +193,76 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/">Docker - Mac research log</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-05-15
+</p>
+                
+
+                
+                <p><h2 id="docker---mac-research-log">Docker - Mac research log</h2>
+<p><del><a href="http://docs.docker.com/installation/mac/">Install by Mac</a></del></p>
+<h3 id="register-docker-hub">Register Docker Hub</h3>
+<p><a href="https://hub.docker.com/">Docker Hub</a></p>
+<h3 id="use-kitematic">Use Kitematic</h3>
+<p><a href="https://kitematic.com/">kitematic</a></p>
+<h3 id="install-ubuntu">Install Ubuntu</h3>
+<p>Search ubuntu on docker hub</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/276146/Ff44CHSxS5qn7co6RsdJ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-05-27_%E4%B8%8A%E5%8D%8812_36_02.png" alt="螢幕快照_2015-05-27_上午12_36_02.png"></p>
+<p>Run command</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/276146/qDNHEI6YQcS9QbfQsbio_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-05-27_%E4%B8%8A%E5%8D%8812_36_51.png" alt="螢幕快照_2015-05-27_上午12_36_51.png"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker pull ubuntu
+</code></pre></div><h4 id="use-docker-images">Use <code>docker images</code></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ubuntu              latest              07f8e8c5e660        <span style="color:#ae81ff">3</span> weeks ago         188.3 MB
+</code></pre></div><h4 id="build-dockerfile">build dockerfile</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build . -t ubuntu_dev:16.04 -f local.Dockerfile
+</code></pre></div><h4 id="run-container">run container</h4>
+<p><code>docker run -t -i ubuntu /bin/bash</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -t -i ubuntu /bin/bash
+root@b0cdeb409841:/#
+</code></pre></div><h4 id="docker-run">docker run</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -idt --name &lt;container name&gt; -v &lt;mount absolute path or ~ path&gt;:&lt;docker path&gt; &lt;IMAGE&gt;:&lt;TAG&gt;
+</code></pre></div><h4 id="end-container">end container</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">exit
+</code></pre></div><h4 id="show-container">show container</h4>
+<p><code>docker ps -a</code></p>
+<h4 id="show-running-container">show running container</h4>
+<p><code>docker ps</code></p>
+<h4 id="show-images">show images</h4>
+<p><code>docker images</code></p>
+<h4 id="enter-docker-container">enter docker container</h4>
+<p><code>docker exec -it &lt;container id&gt; bash</code></p>
+<h4 id="show-log">show log</h4>
+<p><code>docker logs &lt;container id&gt;</code></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2015-05-07-apache-dir-permission-cnfig/">Apache - dir permission cnfig</a></h3>
 
                 
@@ -229,162 +299,6 @@ if (!doNotTrack) {
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-05-02-maker-gh60-revchn/">Maker - GH60 RevCHN</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-05-02
-</p>
-                
-
-                
-                <p><h2 id="maker---gh60-revchn">Maker - GH60 RevCHN</h2>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/262828/D9JyzdoQberA9w8jKbMc_2015-01-23%2000.20.57.jpg" alt="2015-01-23 00.20.57.jpg"></p>
-<p>拿了這板子有段時間了</p>
-<p>一開始有試著用 Windows 刷 layout 進去, 但一直失敗(應該跟 Windows 不合吧</p>
-<p>但直到前一陣子有人分享用 Mac 刷, 這真是太好了, 終於可以開工了</p>
-<p>經過漫長的收集材料加焊接(詳情請見 <a href="http://tysh310246.blogspot.tw/2015/05/gh-60.html">GH-60 刷刷刷~開發月誌?</a>)</p>
-<p>廢話不多說</p>
-<h3 id="install-crosspack--dfu-programmer">Install crosspack &amp; dfu-programmer</h3>
-<p>利用 homebrew 安裝</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install Caskroom/cask/crosspack-avr
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install dfu-programmer
-</code></pre></div><h3 id="git-clone-firmware">git clone Firmware</h3>
-<p><a href="https://github.com/kairyu/tmk_keyboard_custom">tmk_keyboard_custom</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/kairyu/tmk_keyboard_custom.git
-</code></pre></div><h3 id="modify-config">Modify Config</h3>
-<p>進到拉下來的 <code>tmk_keyboard_custom</code> 目錄, 再進到 gh60 的目錄</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd keyboard/gh60
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim config.h
-</code></pre></div><p>找到 <code>#define CONFIG_H</code></p>
-<p>在底下加上 <code>#define GH60_REV_CHN</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim Makefile
-</code></pre></div><p>註解或刪掉下面的</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">KEYMAP_IN_EEPROM_ENABLE <span style="color:#f92672">=</span> yes <span style="color:#75715e"># Read keymap from eeprom</span>
-</code></pre></div><h3 id="check-device">Check Device</h3>
-<p>接上 gh60</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">system_profiler SPUSBDataType
-</code></pre></div><p>會顯示</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">...
-GH60:
-
-          Product ID: 0x6060
-          Vendor ID: 0xfeed
-          Version: 0.01
-          Speed: Up to <span style="color:#ae81ff">12</span> Mb/sec
-          Manufacturer: geekhack
-          Location ID: 0x14100000 / <span style="color:#ae81ff">14</span>
-          Current Available <span style="color:#f92672">(</span>mA<span style="color:#f92672">)</span>: <span style="color:#ae81ff">500</span>
-          Current Required <span style="color:#f92672">(</span>mA<span style="color:#f92672">)</span>: <span style="color:#ae81ff">100</span>
-...
-
-</code></pre></div><p>然後按一下背面的按鈕後, 在下一次 <code>system_profiler SPUSBDataType</code></p>
-<p>會抓到</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">...
-ATm32U4DFU:
-
-          Product ID: 0x2ff4
-          Vendor ID: 0x03eb  <span style="color:#f92672">(</span>Atmel Corporation<span style="color:#f92672">)</span>
-          Version: 0.00
-          Serial Number: 1.0.0
-          Speed: Up to <span style="color:#ae81ff">12</span> Mb/sec
-          Manufacturer: ATMEL
-          Location ID: 0x14100000 / <span style="color:#ae81ff">15</span>
-          Current Available <span style="color:#f92672">(</span>mA<span style="color:#f92672">)</span>: <span style="color:#ae81ff">500</span>
-          Current Required <span style="color:#f92672">(</span>mA<span style="color:#f92672">)</span>: Unknown <span style="color:#f92672">(</span>Device has not been configured<span style="color:#f92672">)</span>
-...
-</code></pre></div><p>要是這個狀態才能刷分位進去</p>
-<h3 id="update-firmware">Update Firmware</h3>
-<p>先刷 poker layout 試試</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">make dfu
-</code></pre></div><p>開始刷到下列訊息出現代表成功</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">...
-Creating load file <span style="color:#66d9ef">for</span> Flash: gh60_lufa.hex
-avr-objcopy -O ihex -R .eeprom -R .fuse -R .lock -R .signature gh60_lufa.elf gh60_lufa.hex
-dfu-programmer atmega32u4 erase --force
-Erasing flash...  Success
-Checking memory from 0x0 to 0x6FFF...  Empty.
-dfu-programmer atmega32u4 erase
-Checking memory from 0x0 to 0x6FFF...  Empty.
-Chip already blank, to force erase use --force.
-dfu-programmer atmega32u4 flash gh60_lufa.hex
-Checking memory from 0x0 to 0x6A7F...  Empty.
-0%                            100%  Programming 0x6A80 bytes...
-<span style="color:#f92672">[</span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<span style="color:#f92672">]</span>  Success
-0%                            100%  Reading 0x7000 bytes...
-<span style="color:#f92672">[</span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<span style="color:#f92672">]</span>  Success
-Validating...  Success
-0x6A80 bytes written into 0x7000 bytes memory <span style="color:#f92672">(</span>95.09%<span style="color:#f92672">)</span>.
-dfu-programmer atmega32u4 reset
-</code></pre></div><p>如果出現</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">avr-gcc: command not found
-</code></pre></div><p>代表 AVR 的環境變數沒加進去</p>
-<p>開 <code>.zshrc</code> 或 <code>.bashrc</code></p>
-<p>加入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#AVR</span>
-PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/CrossPack-AVR/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
-</code></pre></div><p>再重啟 terminal 後重刷</p>
-<p>測試鍵盤 layout 輸入 <a href="http://tedshd.github.io/keyboard_test_page/">keyboard test page</a></p>
-<h3 id="custom-layout">Custom Layout</h3>
-<p>需要兩個 tool</p>
-<p><a href="http://www.keyboard-layout-editor.com">keyboard-layout-editor (KLE)</a></p>
-<p><a href="http://www.enjoyclick.org/tkg/">TMK Keymap Generator (TKG)</a></p>
-<p>layout editor 產生 keymap raw data 再丟到 keymap generator 產生 .c</p>
-<p>以下為我設計的 layout</p>
-<ul>
-<li>
-<p><a href="http://www.keyboard-layout-editor.com/#/layouts/f5090521ca5239e85d1f2663c18fd9b5">Default</a></p>
-</li>
-<li>
-<p><a href="http://www.keyboard-layout-editor.com/#/layouts/cdb94b80ee1a27a733b98b06aeda4c94">Function layer</a></p>
-</li>
-</ul>
-<p>Function layer 是 fn 組合鍵用的</p>
-<p>keymap generator 的設定</p>
-<ul>
-<li>Keyboard - GH60 (RevCHN)</li>
-<li>Layer Mode - Normal</li>
-<li>Number of Layers - 2</li>
-<li>Layer0 - Default</li>
-<li>Layer1 - Function layer</li>
-<li>Fn - Layer action &gt; Momentary layer 1</li>
-</ul>
-<p>這裡要注意 layer 的層級 <a href="https://www.ptt.cc/bbs/Key_Mou_Pad/M.1390542876.A.073.html">PTT - GH60 上手第一回</a></p>
-<p>Fn <code>Momentary</code> layer 1 的意思就是當 fn 按下時是 layer 1 的 keymap, 但不按 fn 時就關掉 layer1</p>
-<p>這試了好久&hellip;</p>
-<p>下載 .c 檔後, 把名字改成 <strong><code>keymap_tkg.c</code></strong></p>
-<p>丟到 gh60 目錄後執行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">make KEYMAP<span style="color:#f92672">=</span>tkg dfu
-</code></pre></div><p>就 ok 了</p>
-<p>Finish</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/262828/CpjyWNMTjWocrq5fRfsV_2015-05-02%2018.45.33.jpg" alt="2015-05-02 18.45.33.jpg"></p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/262828/dyInnZqtQPW7Xyhj1hjp_2015-05-02%2018.45.54.jpg" alt="2015-05-02 18.45.54.jpg"></p>
-<p><a href="http://blog.dm4.tw/blog/2015/03/17/build-gh60-revchn-on-mac/">Refer - 在 Mac OSX 上編譯 GH60 RevCHN Firmware</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-05-02-maker-gh60-revchn/">Read more</a></p>
                 
             </div>
         </div>
