@@ -4,7 +4,32 @@
   
   <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2021-03-30T11:47:46+08:00</lastmod>
+    <lastmod>2021-04-30T18:40:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/categories/cors/</loc>
+    <lastmod>2021-04-30T18:40:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/categories/nginx/</loc>
+    <lastmod>2021-04-30T18:40:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</loc>
+    <lastmod>2021-04-30T18:40:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/posts/</loc>
+    <lastmod>2021-04-30T18:40:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tedshd.io/</loc>
+    <lastmod>2021-04-30T18:40:48+08:00</lastmod>
   </url>
   
   <url>
@@ -19,16 +44,6 @@
   
   <url>
     <loc>https://blog.tedshd.io/categories/google-analytics/</loc>
-    <lastmod>2021-03-30T11:47:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2021-03-30T11:47:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tedshd.io/</loc>
     <lastmod>2021-03-30T11:47:46+08:00</lastmod>
   </url>
   
@@ -619,11 +634,6 @@
   
   <url>
     <loc>https://blog.tedshd.io/posts/2016-07-17-lets-encrypt-has-a-certificate-problem-in-android-chrome/</loc>
-    <lastmod>2020-01-29T17:42:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tedshd.io/categories/nginx/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url>
   

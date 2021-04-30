@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-03-30T11:47:46+08:00" />
+<meta property="og:updated_time" content="2021-04-30T18:40:48+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -193,6 +193,56 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2018-11-16-mac-get-file-user-name/">Mac - Get file user(owner) name &amp; user id</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2018-11-16
+</p>
+                
+
+                
+                <p><h2 id="mac---get-file-user-name--user-id">Mac - Get file user name &amp; user id</h2>
+<h3 id="get-file-owner-name">Get file owner name</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">stat -f <span style="color:#e6db74">&#39;%Su&#39;</span> &lt;file or folder name&gt;
+</code></pre></div><h3 id="get-user-id">Get user id</h3>
+<h4 id="show-user">show user</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">id
+// or
+id &lt;user name&gt;
+</code></pre></div><h4 id="get-uid">get uid</h4>
+<pre><code>id -u
+// or
+id -u &lt;user name&gt;
+</code></pre><h3 id="get-file-owner-uid">get file owner uid</h3>
+<p><del>stat -f &lsquo;%Su&rsquo; <code>&lt;file or folder name&gt;</code> | xargs id -u</del></p>
+<pre><code>stat -f '%u' &lt;file or folder name&gt;
+</code></pre><p><a href="https://my.oschina.net/leopardsaga/blog/112335">Refer - 将Linux命令的结果作为下一个命令的参数</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2018-11-16-mac-get-file-user-name/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2018-11-06-line-2018-1111-shared-line-point-research-notes/">LINE - 2018 1111 分享得 LINE point 研究筆記與分析報告</a></h3>
 
                 
@@ -330,48 +380,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2018-11-06-line-2018-1111-shared-line-point-research-notes/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2018-10-25-mac-shell-script-check-os/">Mac - shell script check OS</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2018-10-25
-</p>
-                
-
-                
-                <p><h2 id="mac---shell-script-check-os">Mac - shell script check OS</h2>
-<p>Use shell script check Linux or Mac</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/usr/bin/env bash
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">`</span>uname<span style="color:#e6db74">`</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Linux&#39;</span> <span style="color:#f92672">]</span>;
-<span style="color:#66d9ef">then</span>
-    echo <span style="color:#e6db74">&#39;Linux&#39;</span>
-<span style="color:#66d9ef">else</span>
-    echo <span style="color:#e6db74">&#39;Mac&#39;</span>
-<span style="color:#66d9ef">fi</span>
-</code></pre></div></p>
-                
-
-                
-
                 
             </div>
         </div>

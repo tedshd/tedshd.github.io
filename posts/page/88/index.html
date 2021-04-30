@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-03-30T11:47:46+08:00" />
+<meta property="og:updated_time" content="2021-04-30T18:40:48+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -1112,6 +1112,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1122,6 +1126,155 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-11-09-javascript-event/">JavaScript - Event</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-11-09
+</p>
+                
+
+                
+                <p><h2 id="javascript---event">JavaScript - Event</h2>
+<ul>
+<li>
+<p>event type
+事件名稱</p>
+</li>
+<li>
+<p>event target
+事件發生在哪一個目標上</p>
+</li>
+<li>
+<p>event handler or listener
+處理或回應的 function, 即監聽或註冊事件</p>
+</li>
+<li>
+<p>event object
+與事件關聯的物件</p>
+</li>
+<li>
+<p>event propagation
+氣泡(bubble)現象</p>
+</li>
+<li>
+<p>default actions
+觸發事件時的預設行為, 有時必須取消該行為</p>
+</li>
+</ul>
+<h3 id="globaleventhandlershttpsdevelopermozillaorgen-usdocswebapiglobaleventhandlers"><a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers">GlobalEventHandlers</a></h3>
+<ul>
+<li>HTML</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span>&gt;Click&lt;/<span style="color:#f92672">button</span>&gt;
+</code></pre></div><ul>
+<li>JavaScript</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">nodeBtn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;btn&#39;</span>);
+<span style="color:#a6e22e">nodeBtn</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;ok&#39;</span>);
+};
+</code></pre></div><h3 id="event">event</h3>
+<ul>
+<li>HTML</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span>&gt;Click&lt;/<span style="color:#f92672">button</span>&gt;
+</code></pre></div><p>Use addEventListener(only IE9 up)
+<a href="https://developer.mozilla.org/zh-CN/docs/DOM/element.addEventListener">addEventListener</a></p>
+<ul>
+<li>JavaScript</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">nodeBtn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;btn&#39;</span>);
+<span style="color:#a6e22e">nodeBtn</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
+    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;ok&#39;</span>);
+});
+</code></pre></div><h3 id="delegate">delegate</h3>
+<p>If use dynamic page the dom maybe not init in the page load
+So use delegate</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">div</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>),
+    <span style="color:#a6e22e">prefix</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;moz&#39;</span>,<span style="color:#e6db74">&#39;webkit&#39;</span>,<span style="color:#e6db74">&#39;ms&#39;</span>,<span style="color:#e6db74">&#39;o&#39;</span>].<span style="color:#a6e22e">filter</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">prefix</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">prefix</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;MatchesSelector&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">div</span>;
+    })[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;MatchesSelector&#39;</span>;
+
+<span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">addDelegateListener</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">type</span>, <span style="color:#a6e22e">selector</span>, <span style="color:#a6e22e">fn</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">addEventListener</span>( <span style="color:#a6e22e">type</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>) {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>;
+
+        <span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">target</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">this</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">target</span>[<span style="color:#a6e22e">prefix</span>](<span style="color:#a6e22e">selector</span>)) {
+            <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">parentNode</span>;
+        }
+        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">target</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">this</span>) {
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fn</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">e</span>);
+        }
+    }, <span style="color:#66d9ef">false</span> );
+};
+</code></pre></div><ul>
+<li>example</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">title</span>&gt;javascript - delegate&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">div</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>),
+    <span style="color:#a6e22e">prefix</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;moz&#39;</span>,<span style="color:#e6db74">&#39;webkit&#39;</span>,<span style="color:#e6db74">&#39;ms&#39;</span>,<span style="color:#e6db74">&#39;o&#39;</span>].<span style="color:#a6e22e">filter</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">prefix</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">prefix</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;MatchesSelector&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">div</span>;
+    })[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;MatchesSelector&#39;</span>;
+
+<span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">addDelegateListener</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">type</span>, <span style="color:#a6e22e">selector</span>, <span style="color:#a6e22e">fn</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">addEventListener</span>( <span style="color:#a6e22e">type</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>){
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>;
+
+        <span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">target</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">this</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">target</span>[<span style="color:#a6e22e">prefix</span>](<span style="color:#a6e22e">selector</span>)) {
+            <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">parentNode</span>;
+        }
+        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">target</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">this</span>) {
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fn</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">e</span>);
+        }
+
+    }, <span style="color:#66d9ef">false</span> );
+};
+
+document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">addDelegateListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;#btn&#39;</span>, <span style="color:#66d9ef">function</span> () {
+    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;ok&#39;</span>);
+});
+
+document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;button id=&#34;btn&#34;&gt;Click&lt;/button&gt;&#39;</span>;
+&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p><a href="http://stackoverflow.com/questions/11179841/addeventlistener-for-new-elements">Refer - addEventListener for new elements</a></p>
+<p><a href="http://ithelp.ithome.com.tw/question/10120565?tag=ithome.nq">Refer - 為什麼有時你應該優先考慮 event delegate 而不是 event binding</a></p>
+<p><a href="http://coding.smashingmagazine.com/2013/11/12/an-introduction-to-dom-events/">Refer - An Introduction To DOM Events</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-11-09-javascript-event/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1165,85 +1318,6 @@ java</p>
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-10-23-codeigniter-load-data-in-view-for-javascript/">Codeigniter - load data in view for JavaScript</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-10-23
-</p>
-                
-
-                
-                <p><h2 id="load-data-in-view-for-javascript">load data in view for JavaScript</h2>
-<p>如果要從後端帶資料給 JavaScript, 很常用 AJAX 的方式, 但假如是頁面在 load 進來時就需要使用後端的資料, 一開始就把資料帶在頁面上然後再用 JavaScript 取得頁面上的資料是一個較佳的方式(至少說省下一個 request).</p>
-<h3 id="controller">controller</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-
-<span style="color:#f92672">...</span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">index</span>()
-{
-    <span style="color:#75715e">// TODO $server_data load data for JavaScript
-</span><span style="color:#75715e"></span>    $server_data <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
-        <span style="color:#e6db74">&#34;data_01&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(
-            <span style="color:#e6db74">&#34;title&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;title 01&#34;</span>,
-            <span style="color:#e6db74">&#34;num&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">01</span>,
-            <span style="color:#e6db74">&#34;con&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(
-                <span style="color:#e6db74">&#34;con_01&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;news&#34;</span>,
-                <span style="color:#e6db74">&#34;con_02&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;sport&#34;</span>,
-                <span style="color:#e6db74">&#34;con_03&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;tech&#34;</span>,
-            ),
-        ),
-        <span style="color:#e6db74">&#34;data_02&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(
-            <span style="color:#e6db74">&#34;title&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;title 02&#34;</span>,
-            <span style="color:#e6db74">&#34;num&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">02</span>,
-            <span style="color:#e6db74">&#34;con&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(
-                <span style="color:#e6db74">&#34;con_01&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;life&#34;</span>,
-                <span style="color:#e6db74">&#34;con_02&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;movie&#34;</span>,
-                <span style="color:#e6db74">&#34;con_03&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;cars&#34;</span>,
-            ),
-        ),
-    );
-
-    <span style="color:#75715e">// do something
-</span><span style="color:#75715e"></span>
-    $data[<span style="color:#e6db74">&#34;static_data&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_encode</span>($server_data);
-    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">view</span>(<span style="color:#e6db74">&#34;welcome&#34;</span>, $data);
-}
-<span style="color:#f92672">...</span>
-
-<span style="color:#75715e">?&gt;</span>
-</code></pre></div><h3 id="views">views</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;!-- show data on views and hide it --&gt;</span>
-&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;server-data&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#75715e">&lt;?php</span> <span style="color:#66d9ef">echo</span> $static_data; <span style="color:#75715e">?&gt;</span><span style="color:#e6db74">&#39;</span>&gt;
-</code></pre></div><h3 id="javascriptjquery">JavaScript(jQuery)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span>;
-<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">parseJSON</span>(<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#server-data&#39;</span>).<span style="color:#a6e22e">val</span>());
-<span style="color:#75715e">// data is object
-</span></code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-10-23-codeigniter-load-data-in-view-for-javascript/">Read more</a></p>
                 
             </div>
         </div>
