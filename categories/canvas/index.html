@@ -31,7 +31,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/categories/canvas/" />
 <meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-09-03T16:07:40+08:00" />
+<meta property="og:updated_time" content="2021-05-11T16:25:33+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -205,8 +205,14 @@ if (!doNotTrack) {
 <p>再轉成圖片下載即可</p>
 <h3 id="現成套件-html2canvas">現成套件 html2canvas</h3>
 <p><a href="https://html2canvas.hertzen.com/">https://html2canvas.hertzen.com/</a></p>
-<p>但是如果要截圖的內容有用外部 url 載入的圖片需要注意一下 CORS 問題</p>
-<h3 id="補充轉換圖片的機制">補充轉換圖片的機制</h3>
+<p>但是如果要截圖的內容有用外部 url 載入的圖片需要注意一下 CORS 問題(canvas 的限制)</p>
+<h3 id="解決外部-url-載入圖片時-cors-問題">解決外部 url 載入圖片時 CORS 問題</h3>
+<p>原理</p>
+<p>把外部載入的圖片轉換成二進制再轉成 dataurl</p>
+<p>因為在 browser 上面可以解析與渲染 dataurl</p>
+<p>所以就可以呈現在 canvas 裡面</p>
+<p>這樣之後要截圖下載這個 canvas 的內容也沒問題</p>
+<h3 id="補充轉換圖片的機制解決載入外部圖片-cors-問題">補充轉換圖片的機制(解決載入外部圖片 CORS 問題)</h3>
 <h4 id="處理方式---圖片轉-blob">處理方式 - 圖片轉 blob</h4>
 <p>圖片轉成 blob</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toDataURL</span>(<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">callback</span>) {
@@ -222,10 +228,10 @@ if (!doNotTrack) {
     <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseType</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;blob&#39;</span>;
     <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>();
 }
-</code></pre></div><h4 id="問題">問題</h4>
-<p>CORS 問題</p>
-<p>因為在瀏覽器上面 XMLHttpRequest 物件處理會有 CORS 問題要處理</p>
-<p>需要在要處理的圖片 url 處理 CORS</p>
+</code></pre></div><h4 id="問題更新-20210511">問題(更新 2021/05/11)</h4>
+<p>CORS 問題越來越嚴格了</p>
+<p>在瀏覽器上面 XMLHttpRequest 物件處理 binary 現在會有 CORS 問題要處理</p>
+<p>需要在要處理的圖片 url 處理 CORS(圖片所在的 host 必須有允許 CORS 的 header)</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image">refer - Allowing cross-origin use of images and canvas</a></p>
 <p><a href="https://www.jianshu.com/p/6fe06667b748">refer - 解决 canvas 将图片转为base64报错</a></p>
 </p>
