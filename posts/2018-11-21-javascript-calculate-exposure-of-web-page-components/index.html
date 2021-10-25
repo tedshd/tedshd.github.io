@@ -29,10 +29,10 @@
 <meta property="og:title" content="JavaScript - 計算網頁元件的曝光" />
 <meta property="og:description" content="JavaScript - 計算網頁元件的曝光 因為某些需求需要精確計算某些網頁上的 UI 元件的曝光 沒錯 就是要像廣告計算 impression 一樣 之前只要確認有該元件的 request 就好了 但是為了精確追" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2018-11-21-javascript-calculate-exposure-of-web-page-components/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/2018-11-21-javascript-calculate-exposure-of-web-page-components/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-11-21T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -54,7 +54,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -214,12 +213,12 @@ if (!doNotTrack) {
 <p>但是如果熟悉 JavaScript Window 物件和 DOM 物件的話就會發現很好解</p>
 <h3 id="實作">實作</h3>
 <h4 id="如何確認可視範圍">如何確認可視範圍?</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
 
 window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span>
 </code></pre></div><p>完美解決</p>
 <h4 id="如何確認要記錄-impression-的-dom-元件在可視範圍">如何確認要記錄 impression 的 DOM 元件在可視範圍?</h4>
-<pre><code>&lt;DOM Object&gt;.getBoundingClientRect();
+<pre tabindex="0"><code>&lt;DOM Object&gt;.getBoundingClientRect();
 </code></pre><p>完美解決</p>
 <p>但是要取到對應可是範圍的位置建議使用(<code>top</code>, <code>left</code>), <code>x</code> <code>y</code> IE 和 Edge 不支援</p>
 <p>還有一點要注意就是該 DOM 要先長在 browser 上面且不是 <code>display: none</code> 的狀態才能拿到值</p>

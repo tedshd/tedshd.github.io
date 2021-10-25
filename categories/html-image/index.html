@@ -29,9 +29,8 @@
 <meta property="og:title" content="HTML image" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/html-image/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-01-29T17:42:46+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/categories/html-image/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -203,9 +201,9 @@ if (!doNotTrack) {
                 <p><h2 id="html---image-load-error-handle">HTML - image load error handle</h2>
 <p>2 way</p>
 <h3 id="use-onerror">Use <code>onerror</code></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;image url&gt;&#34;</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;this.src=&#39;&lt;d4 image url&gt;&#39;&#34;</span> /&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;image url&gt;&#34;</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;this.src=&#39;&lt;d4 image url&gt;&#39;&#34;</span> /&gt;
 </code></pre></div><h3 id="use-magic-image-pseudo-element">Use Magic Image Pseudo Element</h3>
-<pre><code>img.imgd4 {
+<pre tabindex="0"><code>img.imgd4 {
     position: relative;
     display: block;
 }

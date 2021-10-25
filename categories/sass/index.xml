@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Thu, 10 Jul 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.tedshd.io/categories/sass/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 10 Jul 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/sass/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSS - SASS handle index</title>
       <link>https://blog.tedshd.io/posts/2014-07-10-css-sass-handle-index/</link>

@@ -29,9 +29,8 @@
 <meta property="og:title" content="css" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/css/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-02-26T11:02:54+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/categories/css/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -203,12 +201,12 @@ if (!doNotTrack) {
                 <p><h2 id="css---opacity-effect-child-element">CSS - Opacity effect child element</h2>
 <p>在利用 <code>opacity</code> 做背景時常遇到個問題就是子元素也被設置 opacity
 這時就可以利用 CSS 的 <code>:before</code> 或 <code>:after</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bg-2&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bg-2&#34;</span>&gt;
   &lt;<span style="color:#f92672">h2</span>&gt;Title&lt;/<span style="color:#f92672">h2</span>&gt;
   &lt;<span style="color:#f92672">p</span>&gt;Content&lt;/<span style="color:#f92672">p</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://blog.soonr.com/wp-content/uploads/2013/03/Google-Play-Badge.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;google play&#34;</span> /&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">bg-2</span> {
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">bg-2</span> {
   <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
   <span style="color:#960050;background-color:#1e0010">&amp;:before</span> <span style="color:#960050;background-color:#1e0010">{</span>
     <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>;
@@ -264,7 +262,7 @@ if (!doNotTrack) {
 <p><a href="http://tedshd.lionfree.net/demo/resume/resume.html">Demo</a></p>
 <p>主要利用定義在 <code>body</code> 上的 class 去做不同 layout 的切換</p>
 <p>Sample code</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">node</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">node</span>;
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">node</span>(<span style="color:#a6e22e">selector</span>) {
     <span style="color:#66d9ef">return</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#a6e22e">selector</span>);
 }

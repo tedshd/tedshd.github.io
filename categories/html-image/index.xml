@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.tedshd.io/categories/html-image/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/html-image/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTML - image load error handle</title>
       <link>https://blog.tedshd.io/posts/2018-04-18-image-load-error-handle/</link>

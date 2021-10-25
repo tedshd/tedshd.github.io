@@ -29,10 +29,10 @@
 <meta property="og:title" content="JavaScript - time seconds to hh:mm:ss" />
 <meta property="og:description" content="JavaScript - time seconds to hh:mm:ss function toHHMMSS(sec_num) { var hours = Math.floor(sec_num / 3600); var minutes = Math.floor((sec_num - (hours * 3600)) / 60); var seconds = Math.floor(sec_num - (hours * 3600) - (minutes * 60)); if (hours &lt; 10) {hours = &#34;0&#34;&#43;hours;} if (minutes &lt; 10) {minutes = &#34;0&#34;&#43;minutes;} if (seconds &lt; 10) {seconds = &#34;0&#34;&#43;seconds;} var time = hours&#43;&#39;:&#39;&#43;minutes&#43;&#39;:&#39;&#43;seconds; return time; } alert(toHHMMSS(1234)); Refer - JavaScript seconds to time with format hh:mm:ss" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2014-03-05-javascript-time-seconds-to-hhmmss/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/2014-03-05-javascript-time-seconds-to-hhmmss/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-03-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -54,7 +54,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -188,7 +187,7 @@ if (!doNotTrack) {
         </p>
         
         <h2 id="javascript---time-seconds-to-hhmmss">JavaScript - time seconds to hh:mm:ss</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toHHMMSS</span>(<span style="color:#a6e22e">sec_num</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toHHMMSS</span>(<span style="color:#a6e22e">sec_num</span>) {
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hours</span>   <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">sec_num</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">3600</span>);
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>((<span style="color:#a6e22e">sec_num</span> <span style="color:#f92672">-</span> (<span style="color:#a6e22e">hours</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span>)) <span style="color:#f92672">/</span> <span style="color:#ae81ff">60</span>);
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">seconds</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">sec_num</span> <span style="color:#f92672">-</span> (<span style="color:#a6e22e">hours</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span>) <span style="color:#f92672">-</span> (<span style="color:#a6e22e">minutes</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span>));

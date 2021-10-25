@@ -29,10 +29,10 @@
 <meta property="og:title" content="docker 使用紀錄" />
 <meta property="og:description" content="docker images 列出所有拉下來的 docker image docker images REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE ubuntu latest 07f8e8c5e660 3 weeks ago 188.3 MB build dockerfile 使用 dockerfile 建立 docker image 直接建立 docker build . 預設會找當前的目錄的 Dockerfile -t 可以設定建立的 image &amp; tag name docker build" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/docker_usage/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/docker_usage/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-12-24T10:12:17+08:00" />
 <meta property="article:modified_time" content="2021-05-11T15:47:53+08:00" />
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -54,7 +54,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -189,22 +188,22 @@ if (!doNotTrack) {
         
         <h2 id="docker-images"><code>docker images</code></h2>
 <p>列出所有拉下來的 docker image</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker images
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker images
 
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 ubuntu              latest              07f8e8c5e660        <span style="color:#ae81ff">3</span> weeks ago         188.3 MB
 </code></pre></div><h2 id="build-dockerfile">build dockerfile</h2>
 <p>使用 dockerfile 建立 docker image</p>
 <p>直接建立</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build .
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build .
 </code></pre></div><p>預設會找當前的目錄的 <code>Dockerfile</code></p>
 <p><code>-t</code> 可以設定建立的 image &amp; tag name</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build . -t image_name:tag_name
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build . -t image_name:tag_name
 </code></pre></div><p><code>-f</code> 指定用哪個 dockerfile 建立</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build . -t ubuntu_dev:16.04 -f local.Dockerfile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build . -t ubuntu_dev:16.04 -f local.Dockerfile
 </code></pre></div><h2 id="dockerfile-使用">dockerfile 使用</h2>
 <h3 id="使用-nginx-official-image-建立">使用 nginx official image 建立</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> nginx:1.19.6-alpine</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> nginx:1.19.6-alpine</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> ~/www /usr/share/nginx/html<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
@@ -220,7 +219,7 @@ ubuntu              latest              07f8e8c5e660        <span style="color:#
 <ol start="2">
 <li>用 multi stage</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.7.3 AS builder</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.7.3 AS builder</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /go/src/github.com/alexellis/href-counter/</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> go get -d -v golang.org/x/net/html<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> app.go    .<span style="color:#960050;background-color:#1e0010">
@@ -233,7 +232,7 @@ ubuntu              latest              07f8e8c5e660        <span style="color:#
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;./app&#34;</span>]<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>都是放在一起 build, build 完之後可以把結果複製到會後再使用的 image 裡面</p>
 <p>大致上就是</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> image_a AS a</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> image_a AS a</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># dosomething...</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
@@ -252,11 +251,11 @@ ubuntu              latest              07f8e8c5e660        <span style="color:#
 <p><a href="https://docs.docker.com/config/pruning/">Refer - Prune unused Docker objects</a></p>
 <h2 id="建立-container-docker-run">建立 container <code>docker run</code></h2>
 <p><code>docker run -t -i ubuntu /bin/bash</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -t -i ubuntu /bin/bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -t -i ubuntu /bin/bash
 root@b0cdeb409841:/#
 </code></pre></div><p>建立 container 並執行 bash</p>
 <h3 id="docker-run">docker run</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -idt --name &lt;container name&gt; -v &lt;mount absolute path or ~ path&gt;:&lt;docker path&gt; &lt;IMAGE&gt;:&lt;TAG&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -idt --name &lt;container name&gt; -v &lt;mount absolute path or ~ path&gt;:&lt;docker path&gt; &lt;IMAGE&gt;:&lt;TAG&gt;
 </code></pre></div><h2 id="docker-ps--a"><code>docker ps -a</code></h2>
 <p>列出所有已經建立的 container</p>
 <h2 id="docker-ps"><code>docker ps</code></h2>

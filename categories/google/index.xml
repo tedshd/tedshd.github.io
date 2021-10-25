@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Thu, 21 Nov 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.tedshd.io/categories/google/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 21 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/google/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research - 加強在 Web 服務在搜尋引擎與部分社群的呈現</title>
       <link>https://blog.tedshd.io/posts/2019-11-21-google-enhance-disonion-in-google-search-results/</link>

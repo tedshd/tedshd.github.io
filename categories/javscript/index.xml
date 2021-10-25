@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Tue, 14 Apr 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.tedshd.io/categories/javscript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 14 Apr 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/javscript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript - Use createElement or string?</title>
       <link>https://blog.tedshd.io/posts/2015-04-14-javascript-use-createelement-or-string/</link>

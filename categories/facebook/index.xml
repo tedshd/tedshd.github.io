@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.tedshd.io/categories/facebook/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/facebook/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript - facebook save to facebook button</title>
       <link>https://blog.tedshd.io/posts/2016-04-20-javascript-facebook-save-to-facebook-button/</link>

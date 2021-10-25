@@ -10,7 +10,7 @@
 <meta name="google" content="notranslate">
 <meta id="viewport" name="viewport"
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='Something about XSS(Cross-site scripting) If not set anything Use like &lt;?php echo $_GET[&#39;name&#39;];?&gt; and querystring name = &lt;script&gt;alert(document.cookie)&lt;/script&gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer'>
+<meta name="description" content='Something about XSS(Cross-site scripting) If not set anything Use like &lt;?php echo $_GET[&#39;name&#39;];?&gt;and querystring name = &lt;script&gt;alert(document.cookie)&lt;/script&gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer -'>
 <meta name="keywords" content=''>
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/">
 <link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/" />
@@ -27,18 +27,18 @@
 <meta name="copyright" content="Tedshd">
 
 <meta property="og:title" content="Something about XSS(Cross-site scripting)" />
-<meta property="og:description" content="Something about XSS(Cross-site scripting) If not set anything Use like &lt;?php echo $_GET[&#39;name&#39;];?&gt; and querystring name = &lt;script&gt;alert(document.cookie)&lt;/script&gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer" />
+<meta property="og:description" content="Something about XSS(Cross-site scripting) If not set anything Use like &lt;?php echo $_GET[&#39;name&#39;];?&gt;and querystring name = &lt;script&gt;alert(document.cookie)&lt;/script&gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer -" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-11-01T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
 <meta name="twitter:title" content="Something about XSS(Cross-site scripting)"/>
-<meta name="twitter:description" content="Something about XSS(Cross-site scripting) If not set anything Use like &lt;?php echo $_GET[&#39;name&#39;];?&gt; and querystring name = &lt;script&gt;alert(document.cookie)&lt;/script&gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer"/>
+<meta name="twitter:description" content="Something about XSS(Cross-site scripting) If not set anything Use like &lt;?php echo $_GET[&#39;name&#39;];?&gt;and querystring name = &lt;script&gt;alert(document.cookie)&lt;/script&gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer -"/>
 
 
 <script type="application/javascript">
@@ -54,7 +54,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -190,8 +189,8 @@ if (!doNotTrack) {
         <h2 id="something-about-xsscross-site-scripting">Something about XSS(Cross-site scripting)</h2>
 <p>If not set anything</p>
 <p>Use like</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span> <span style="color:#66d9ef">echo</span> $_GET[<span style="color:#e6db74">&#39;name&#39;</span>];<span style="color:#75715e">?&gt;</span>
-</code></pre></div><p>and querystring <code>name</code> = <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#66d9ef">echo</span> $_GET[<span style="color:#e6db74">&#39;name&#39;</span>];<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>and querystring <code>name</code> = <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
 <p>And not defence XSS</p>
 <p>In Firefox</p>
 <p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/307308/G2Ec0H05TgG5yNFaRS6K_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.40.08.png" alt="螢幕快照 2015-11-01 下午8.40.08.png"></p>
@@ -204,9 +203,9 @@ if (!doNotTrack) {
 <h3 id="defence">Defence</h3>
 <p>Set header <code>X-XSS-Protection: 1</code></p>
 <p>if use PHP, can use</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">htmlspecialchars()
-// or
- htmlentities()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">htmlspecialchars</span>()
+<span style="color:#75715e">// or
+</span><span style="color:#75715e"></span> <span style="color:#a6e22e">htmlentities</span>()
 </code></pre></div><h3 id="important">Important!</h3>
 <p>Finally</p>
 <p>We must know it is handle encode to avoid run JavaScript on page</p>

@@ -29,10 +29,10 @@
 <meta property="og:title" content="Docker - Mac research log" />
 <meta property="og:description" content="Docker - Mac research log Install by Mac Register Docker Hub Docker Hub Use Kitematic kitematic Install Ubuntu Search ubuntu on docker hub Run command docker pull ubuntu Use docker images docker images REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE ubuntu latest 07f8e8c5e660 3 weeks ago 188.3 MB build dockerfile docker build . -t ubuntu_dev:16.04 -f local.Dockerfile run container docker run -t -i ubuntu /bin/bash docker run -t -i ubuntu" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-05-15T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-02-04T11:21:49+08:00" />
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -54,7 +54,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -198,21 +197,21 @@ if (!doNotTrack) {
 <p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/276146/Ff44CHSxS5qn7co6RsdJ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-05-27_%E4%B8%8A%E5%8D%8812_36_02.png" alt="螢幕快照_2015-05-27_上午12_36_02.png"></p>
 <p>Run command</p>
 <p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/276146/qDNHEI6YQcS9QbfQsbio_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-05-27_%E4%B8%8A%E5%8D%8812_36_51.png" alt="螢幕快照_2015-05-27_上午12_36_51.png"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker pull ubuntu
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker pull ubuntu
 </code></pre></div><h4 id="use-docker-images">Use <code>docker images</code></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker images
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 ubuntu              latest              07f8e8c5e660        <span style="color:#ae81ff">3</span> weeks ago         188.3 MB
 </code></pre></div><h4 id="build-dockerfile">build dockerfile</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build . -t ubuntu_dev:16.04 -f local.Dockerfile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build . -t ubuntu_dev:16.04 -f local.Dockerfile
 </code></pre></div><h4 id="run-container">run container</h4>
 <p><code>docker run -t -i ubuntu /bin/bash</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -t -i ubuntu /bin/bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -t -i ubuntu /bin/bash
 root@b0cdeb409841:/#
 </code></pre></div><h4 id="docker-run">docker run</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -idt --name &lt;container name&gt; -v &lt;mount absolute path or ~ path&gt;:&lt;docker path&gt; &lt;IMAGE&gt;:&lt;TAG&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -idt --name &lt;container name&gt; -v &lt;mount absolute path or ~ path&gt;:&lt;docker path&gt; &lt;IMAGE&gt;:&lt;TAG&gt;
 </code></pre></div><h4 id="end-container">end container</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">exit
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">exit
 </code></pre></div><h4 id="show-container">show container</h4>
 <p><code>docker ps -a</code></p>
 <h4 id="show-running-container">show running container</h4>

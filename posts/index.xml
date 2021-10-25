@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Fri, 30 Apr 2021 15:51:04 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.tedshd.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 30 Apr 2021 15:51:04 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx 使用 refer 處理 CORS header</title>
       <link>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</link>
@@ -461,7 +457,7 @@ vuetify vue create &amp;lt;project folder name&amp;gt; cd &amp;lt;project folder
 It can use PHP print template function to view
 First include
 &amp;lt;script async custom-element=&amp;#34;amp-analytics&amp;#34; src=&amp;#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; ga click event Refer - Adding Analytics to your AMP pages
-function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &amp;#34;0&amp;#34;) { $template = &amp;lt;&amp;lt;&amp;lt;EOF &amp;lt;amp-analytics type=&amp;#34;googleanalytics&amp;#34;&amp;gt; &amp;lt;script type=&amp;#34;application/json&amp;#34;&amp;gt; { &amp;#34;vars&amp;#34;: { &amp;#34;account&amp;#34;: &amp;#34;%s&amp;#34; }, &amp;#34;triggers&amp;#34;: { &amp;#34;trackClickOnHeader&amp;#34; : { &amp;#34;on&amp;#34;: &amp;#34;click&amp;#34;, &amp;#34;selector&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;request&amp;#34;: &amp;#34;event&amp;#34;, &amp;#34;vars&amp;#34;: { &amp;#34;eventCategory&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;eventAction&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;eventLabel&amp;#34;: &amp;#34;%s&amp;#34; }, &amp;#34;extraUrlParams&amp;#34;: { &amp;#34;ni&amp;#34;: &amp;#34;%s&amp;#34; } } } } &amp;lt;/script&amp;gt; &amp;lt;/amp-analytics&amp;gt; EOF; return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction); } google adwords conversion Refer - Using AMP for your AdWords Landing Pages</description>
+function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &amp;#34;0&amp;#34;) { $template = &amp;lt;&amp;lt;&amp;lt;EOF&amp;lt;amp-analytics type=&amp;#34;googleanalytics&amp;#34;&amp;gt; &amp;lt;script type=&amp;#34;application/json&amp;#34;&amp;gt; { &amp;#34;vars&amp;#34;: { &amp;#34;account&amp;#34;: &amp;#34;%s&amp;#34; }, &amp;#34;triggers&amp;#34;: { &amp;#34;trackClickOnHeader&amp;#34; : { &amp;#34;on&amp;#34;: &amp;#34;click&amp;#34;, &amp;#34;selector&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;request&amp;#34;: &amp;#34;event&amp;#34;, &amp;#34;vars&amp;#34;: { &amp;#34;eventCategory&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;eventAction&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;eventLabel&amp;#34;: &amp;#34;%s&amp;#34; }, &amp;#34;extraUrlParams&amp;#34;: { &amp;#34;ni&amp;#34;: &amp;#34;%s&amp;#34; } } } } &amp;lt;/script&amp;gt; &amp;lt;/amp-analytics&amp;gt; EOF; return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction); } google adwords conversion Refer - Using AMP for your AdWords Landing Pages</description>
     </item>
     
     <item>
@@ -892,7 +888,7 @@ refer - currentStyle object (Internet Explorer)</description>
       <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/</guid>
-      <description>Something about XSS(Cross-site scripting) If not set anything Use like &amp;lt;?php echo $_GET[&amp;#39;name&amp;#39;];?&amp;gt; and querystring name = &amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp;amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer</description>
+      <description>Something about XSS(Cross-site scripting) If not set anything Use like &amp;lt;?php echo $_GET[&amp;#39;name&amp;#39;];?&amp;gt;and querystring name = &amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp;amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer -</description>
     </item>
     
     <item>
@@ -1731,7 +1727,7 @@ console.log(document.getElementById(&amp;#39;div&amp;#39;).clientHeight); consol
       
       <guid>https://blog.tedshd.io/posts/2013-12-07-detect-mobile-device/</guid>
       <description>Detect mobile device Use PHP or JavaScript detect mobile device like iPhone, iPad, iPod or Android&amp;hellip;
-Android PHP &amp;lt;?php $ua = strtolower($_SERVER[&amp;#39;HTTP_USER_AGENT&amp;#39;]); if(stripos($ua, &amp;#39;android&amp;#39;) !== false) { echo &amp;#39;Android!!&amp;#39;; exit; } ?&amp;gt; JavaScript var ua = navigator.userAgent.toLowerCase(); if(ua.indexOf(&amp;#34;android&amp;#34;) &amp;gt; -1) { document.write(&amp;#39;Android!!&amp;#39;); } Refer - Android Detection with JavaScript or PHP
+Android PHP &amp;lt;?php $ua = strtolower($_SERVER[&amp;#39;HTTP_USER_AGENT&amp;#39;]); if(stripos($ua, &amp;#39;android&amp;#39;) !== false) { echo &amp;#39;Android!!&amp;#39;; exit; } ?&amp;gt;JavaScript var ua = navigator.userAgent.toLowerCase(); if(ua.indexOf(&amp;#34;android&amp;#34;) &amp;gt; -1) { document.write(&amp;#39;Android!!&amp;#39;); } Refer - Android Detection with JavaScript or PHP
 Apple mobile device Refer - How to detect iPhone, iPod and iPad with PHP Refer - How to Identify an Apple iPhone, iPod or iPad Visitor to Your Website</description>
     </item>
     

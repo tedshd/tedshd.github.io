@@ -29,10 +29,10 @@
 <meta property="og:title" content="gulp.js - Concatenate File When Gulp Watch" />
 <meta property="og:description" content="gulp.js - Concatenate File When Gulp Watch package.json { &#34;name&#34;: &#34;gulp&#34;, &#34;version&#34;: &#34;3.8.7&#34;, &#34;devDependencies&#34;: { &#34;gulp&#34;: &#34;^3.9.0&#34;, &#34;gulp-concat&#34;: &#34;^2.6.0&#34;, &#34;gulp-watch&#34;: &#34;^4.3.4&#34; } } gulpfile.js var gulp = require(&#39;gulp&#39;), watch = require(&#39;gulp-watch&#39;), concat = require(&#39;gulp-concat&#39;); var js; gulp.task(&#39;concat&#39;, function (cb) { var options = {}; watch(&#39;dev/*.js&#39;, options, function (e) { // console.log(&#39;e:&#39;&#43;JSON.stringify(e));  // console.log(&#39;\n&#39;);  console.log(new Date() &#43; &#39; -- &#39; &#43; e.history[0].replace(e.base, &#39;&#39;)); js = e.history[0].replace(e.base, &#39;&#39;); gulp.src([&#39;util/util.js&#39;, &#39;util/mod.js&#39;, &#39;dev/&#39; &#43; js]) ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-08-09T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -54,7 +54,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -189,7 +188,7 @@ if (!doNotTrack) {
         
         <h2 id="gulpjs---concatenate-file-when-gulp-watch">gulp.js - Concatenate File When Gulp Watch</h2>
 <h3 id="packagejson">package.json</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
   <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;gulp&#34;</span>,
   <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;3.8.7&#34;</span>,
   <span style="color:#e6db74">&#34;devDependencies&#34;</span><span style="color:#f92672">:</span> {
@@ -199,7 +198,7 @@ if (!doNotTrack) {
   }
 }
 </code></pre></div><h3 id="gulpfilejs">gulpfile.js</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>),
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>),
     <span style="color:#a6e22e">watch</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-watch&#39;</span>),
     <span style="color:#a6e22e">concat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-concat&#39;</span>);
 
@@ -223,11 +222,11 @@ if (!doNotTrack) {
 <p>Finally put new js in <code>dist/</code>.</p>
 <h3 id="how-to-use">How to use</h3>
 <h4 id="install">Install</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install --save-dev gulp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install --save-dev gulp
 
 npm install . --save-dev
 </code></pre></div><h4 id="use">Use</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gulp concat
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gulp concat
 </code></pre></div><p><a href="https://www.npmjs.com/package/gulp-watch">Refer - gulp-watch</a></p>
 <p><a href="https://www.npmjs.com/package/gulp-concat">Refer - gulp-concat</a></p>
 

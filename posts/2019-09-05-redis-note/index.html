@@ -29,10 +29,10 @@
 <meta property="og:title" content="redis - note" />
 <meta property="og:description" content="redis - note doc http://redisdoc.com/index.html php redis https://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html go redis https://godoc.org/github.com/go-redis/redis 連到 redis server local server redis-cli remote server redis-cli -h host -p port -a password Get all key KEYS &#39;*&#39; Troubleshooting ERR Operation against a key holding the wrong kind of value 取 Key 的類型不對 用 type &lt;KEY&gt; 來確認存的類型" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2019-09-05-redis-note/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/2019-09-05-redis-note/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -54,7 +54,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -198,18 +197,18 @@ if (!doNotTrack) {
 <ul>
 <li>local server</li>
 </ul>
-<pre><code>redis-cli
+<pre tabindex="0"><code>redis-cli
 </code></pre><ul>
 <li>remote server</li>
 </ul>
-<pre><code>redis-cli -h host -p port -a password
+<pre tabindex="0"><code>redis-cli -h host -p port -a password
 </code></pre><h3 id="get-all-key">Get all key</h3>
-<pre><code>KEYS '*'
+<pre tabindex="0"><code>KEYS '*'
 </code></pre><h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="err-operation-against-a-key-holding-the-wrong-kind-of-value">ERR Operation against a key holding the wrong kind of value</h3>
 <p>取 Key 的類型不對</p>
 <p>用</p>
-<pre><code>type &lt;KEY&gt;
+<pre tabindex="0"><code>type &lt;KEY&gt;
 </code></pre><p>來確認存的類型</p>
 
     </main>

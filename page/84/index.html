@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.88.1" />
     
 
 
@@ -28,9 +28,8 @@
 <meta property="og:title" content="tedshd&#39;s DevNote" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-05-11T16:25:33+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -52,7 +51,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -265,7 +263,7 @@ Smart TV 是 base on Linux
 <a href="http://www.samsungdforum.com/Guide/art00121/index.html">Testing Your Application on a TV for 2014</a></p>
 <h3 id="some-tip">Some Tip</h3>
 <p>在打包 app 時 config.xml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ver</span> <span style="color:#a6e22e">itemtype=</span><span style="color:#e6db74">&#34;string&#34;</span><span style="color:#f92672">&gt;</span>0.100<span style="color:#f92672">&lt;/ver&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ver</span> <span style="color:#a6e22e">itemtype=</span><span style="color:#e6db74">&#34;string&#34;</span><span style="color:#f92672">&gt;</span>0.100<span style="color:#f92672">&lt;/ver&gt;</span>
 </code></pre></div><p>版號必須與打包時的版號相同</p>
 <p>SDK 的大版號對應該年度的 Samsung Smart TV</p>
 <ul>
@@ -342,12 +340,12 @@ Smart TV 是 base on Linux
                 <p><h2 id="css---opacity-effect-child-element">CSS - Opacity effect child element</h2>
 <p>在利用 <code>opacity</code> 做背景時常遇到個問題就是子元素也被設置 opacity
 這時就可以利用 CSS 的 <code>:before</code> 或 <code>:after</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bg-2&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bg-2&#34;</span>&gt;
   &lt;<span style="color:#f92672">h2</span>&gt;Title&lt;/<span style="color:#f92672">h2</span>&gt;
   &lt;<span style="color:#f92672">p</span>&gt;Content&lt;/<span style="color:#f92672">p</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://blog.soonr.com/wp-content/uploads/2013/03/Google-Play-Badge.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;google play&#34;</span> /&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">bg-2</span> {
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">bg-2</span> {
   <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
   <span style="color:#960050;background-color:#1e0010">&amp;:before</span> <span style="color:#960050;background-color:#1e0010">{</span>
     <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>;

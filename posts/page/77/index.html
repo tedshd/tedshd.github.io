@@ -29,9 +29,8 @@
 <meta property="og:title" content="Posts" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-05-11T16:25:33+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -1152,13 +1150,13 @@ if (!doNotTrack) {
 <p>This used scroll event
 Progress bar must handle scroll position and scroll total height, and show it for percent
 View MDN document can find it can&rsquo;t use <code>scrollHeight</code>, because when scroll bar scroll to bottom, <code>scrollTop</code> not equal <code>scrollHeight</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;body&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;body&#34;</span>);
 <span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
   (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">/</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
     <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
   <span style="color:#e6db74">&#34;%&#34;</span>;
 </code></pre></div><p>Then find <code>scrollTop</code> didn&rsquo;t work in firefox</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span>) {
   <span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
     (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">/</span>
       (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
@@ -1217,7 +1215,7 @@ View MDN document can find it can&rsquo;t use <code>scrollHeight</code>, because
 <h3 id="setting">Setting</h3>
 <p><code>Preferences</code> -&gt; <code>Key Bindings - User</code></p>
 <p>set key to use</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
     {
         <span style="color:#f92672">&#34;keys&#34;</span>: [<span style="color:#e6db74">&#34;super+ctrl+left&#34;</span>],
         <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;set_layout&#34;</span>,
@@ -1245,7 +1243,7 @@ View MDN document can find it can&rsquo;t use <code>scrollHeight</code>, because
 <ol>
 <li><code>Tools</code> -&gt; <code>New Plugin</code></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># save as run_multiple.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># save as run_multiple.py</span>
 <span style="color:#f92672">import</span> sublime<span style="color:#f92672">,</span> sublime_plugin
 
 <span style="color:#75715e"># Takes an array of commands (same as those you&#39;d provide to a key binding) with</span>
@@ -1257,7 +1255,7 @@ View MDN document can find it can&rsquo;t use <code>scrollHeight</code>, because
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> <span style="color:#e6db74">&#39;command&#39;</span> <span style="color:#f92672">in</span> command:
       <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">&#39;No command name provided.&#39;</span>)
 
-    args <span style="color:#f92672">=</span> None
+    args <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
     <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;args&#39;</span> <span style="color:#f92672">in</span> command:
       args <span style="color:#f92672">=</span> command[<span style="color:#e6db74">&#39;args&#39;</span>]
 
@@ -1276,20 +1274,20 @@ View MDN document can find it can&rsquo;t use <code>scrollHeight</code>, because
         <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">&#39;Invalid command context &#34;&#39;</span><span style="color:#f92672">+</span>context_name<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&#34;.&#39;</span>)
 
     <span style="color:#75715e"># skip args if not needed</span>
-    <span style="color:#66d9ef">if</span> args <span style="color:#f92672">is</span> None:
+    <span style="color:#66d9ef">if</span> args <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
       context<span style="color:#f92672">.</span>run_command(command[<span style="color:#e6db74">&#39;command&#39;</span>])
     <span style="color:#66d9ef">else</span>:
       context<span style="color:#f92672">.</span>run_command(command[<span style="color:#e6db74">&#39;command&#39;</span>], args)
 
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit, commands <span style="color:#f92672">=</span> None):
-    <span style="color:#66d9ef">if</span> commands <span style="color:#f92672">is</span> None:
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit, commands <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>):
+    <span style="color:#66d9ef">if</span> commands <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
       <span style="color:#66d9ef">return</span> <span style="color:#75715e"># not an error</span>
     <span style="color:#66d9ef">for</span> command <span style="color:#f92672">in</span> commands:
       self<span style="color:#f92672">.</span>exec_command(command)
 </code></pre></div><ol start="2">
 <li><code>Preferences</code> -&gt; <code>Key Bindings - User</code></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
     {
         <span style="color:#f92672">&#34;keys&#34;</span>: [<span style="color:#e6db74">&#34;super+ctrl+left&#34;</span>],
         <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;run_multiple&#34;</span>,

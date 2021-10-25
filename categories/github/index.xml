@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Sat, 16 Aug 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.tedshd.io/categories/github/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 16 Aug 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git - GitHub gh-pages</title>
       <link>https://blog.tedshd.io/posts/2014-08-16-git-github-gh-pages/</link>

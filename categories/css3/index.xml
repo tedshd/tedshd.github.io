@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Tue, 30 Dec 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.tedshd.io/categories/css3/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 30 Dec 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/css3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript - detect CSS3 transitionEnd</title>
       <link>https://blog.tedshd.io/posts/2014-12-30-javascript-detect-css3-transitionend/</link>

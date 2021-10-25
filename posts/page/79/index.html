@@ -29,9 +29,8 @@
 <meta property="og:title" content="Posts" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-05-11T16:25:33+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -1150,7 +1148,7 @@ if (!doNotTrack) {
                 <p><h2 id="javascript---get-element-height">JavaScript - get element height</h2>
 <p>If we want get element height use JavaScript
 We can use <code>clientHeight</code> 、 <code>offsetHeight</code> or <code>scrollHeight</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;div&#39;</span>).<span style="color:#a6e22e">clientHeight</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;div&#39;</span>).<span style="color:#a6e22e">clientHeight</span>);
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;div&#39;</span>).<span style="color:#a6e22e">offsetHeight</span>);
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;div&#39;</span>).<span style="color:#a6e22e">scrollHeight</span>);
 </code></pre></div><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Refer - Element - Web API Interfaces | MDN</a></p>
@@ -1199,7 +1197,7 @@ Mac 上取代預設 terminal 的好物 - <a href="http://www.iterm2.com/#/sectio
 <h3 id="homebrewhttpbrewsh"><a href="http://brew.sh/">Homebrew</a></h3>
 <p>Mac 上好用的套件管理工具, 相當於 linux 的 apt-get
 用它安裝了 wget 與 git</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install
 brew uninstall
 brew list
 brew search
@@ -1222,12 +1220,12 @@ git 其實也有具 GUI 的 app 可用, 不過就沒研究了</p>
 zsh 附加換 theme 的功能
 <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes">themes</a>
 找到自己喜歡主題</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim ~/.zshrc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim ~/.zshrc
 </code></pre></div><p>找到 <code>ZSH_THEME=&quot;candy&quot;</code> , 把 candy 換成自己想要的主題名稱
 重啟 shell</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">source ~/.zshrc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">source ~/.zshrc
 </code></pre></div><p>常用的 alias</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#mysql</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#mysql</span>
 export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/mysql/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
 
 <span style="color:#75715e"># java</span>
@@ -1254,7 +1252,7 @@ Vim 主要依靠 .vimrc 的設定檔來做個人化設定(可以參考網路上�
 <a href="http://blog.csdn.net/yzhy_ocean/article/details/7272222">Macintosh Lion下初试Vim——配置vimrc文件</a>
 <a href="http://www.study-area.org/tips/vim/Vim-9.html">大家來學VIM（一個歷久彌新的編輯器）[九] set 功能設定</a></p>
 <p>基本的 .vimrc 設定(.vimrc 存在 ~ 底下)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#e6db74">&#34; encode
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#e6db74">&#34; encode
 </span><span style="color:#e6db74">set encoding=utf-8
 </span><span style="color:#e6db74">set fileencodings=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936,utf-16,big5,euc-jp,latin1
 </span><span style="color:#e6db74">
@@ -1323,7 +1321,7 @@ set ic
 <p>雖然有許多方式可以在要測 AJAX 行為時起一台 server, 但生為一個懶人還是覺得直接架一個 server 起來用較方便</p>
 <h3 id="apache">Apache</h3>
 <p>Mac 已內建 Apache</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apachectl start
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apachectl start
 sudo apachectl stop
 sudo apachectl restart
 // check apache version
@@ -1331,16 +1329,16 @@ sudo apachectl -v
 // or
 httpd -v
 </code></pre></div><p>Default server root</p>
-<pre><code>Library/WebServer/Documents
+<pre tabindex="0"><code>Library/WebServer/Documents
 </code></pre><p>如要改變預設的 root</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim /etc/apache2/httpd.conf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim /etc/apache2/httpd.conf
 // find /Library/WebServer/Documents and change it
 </code></pre></div><h3 id="php">PHP</h3>
 <p>Mac 也內建 PHP 了</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo vim /etc/apache2/httpd.conf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo vim /etc/apache2/httpd.conf
 // find
 <span style="color:#75715e">#LoadModule php5_module libexec/apache2/libphp5.so</span>
-// del #
+// del <span style="color:#75715e">#</span>
 sudo apachectl restart
 </code></pre></div><p>升級 PHP 可參考 <a href="http://php-osx.liip.ch/">PHP 5.5/5.4/5.3 for OS X 10.6/10.7/10.8/10.9 as binary package</a></p>
 <h3 id="mysql">MySQL</h3>
@@ -1351,9 +1349,9 @@ Install MySQL(<a href="http://dev.mysql.com/downloads/mysql/5.5.html">http://dev
 假如出現 <strong>無法打開「mysql5.5.35-osx10.6-x86_64.pkg」, 因為它來自未識別的開發者</strong> 的警告
 這時要去 <code>系統偏好設定</code> -&gt; <code>安全性與隱私</code> -&gt; <code>允許以下來源下載的應用程式</code> 改成 <code>任何來源</code> 即可
 設定 MySQL 密碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/usr/local/mysql/bin/mysqladmin -u root password <span style="color:#e6db74">&#39;changepassword&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/usr/local/mysql/bin/mysqladmin -u root password <span style="color:#e6db74">&#39;changepassword&#39;</span>
 </code></pre></div><p>設定環境變數</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim ~/.zshrc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim ~/.zshrc
 // add
 <span style="color:#75715e">#mysql</span>
 export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/mysql/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>

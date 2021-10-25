@@ -29,9 +29,8 @@
 <meta property="og:title" content="HTTP" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/http/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-01-29T17:42:46+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/categories/http/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -212,14 +210,14 @@ if (!doNotTrack) {
 <p>有時會帶有 location 資訊(location 依照 <a href="https://en.wikipedia.org/wiki/ISO_3166-2">ISO 3166-2</a> 標準且都是大寫</p>
 <p>多語言時用 <code>,</code> 分隔</p>
 <p>會在後面用 <code>q</code> 表示權重</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">accept-language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">accept-language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
 </span></code></pre></div><p>這個  header 常被用來判斷 client 的主要語言來判斷處理要回給 client 用哪個語言</p>
 <h3 id="content-language">Content-Language</h3>
 <p>server 帶在 response header 中</p>
 <p>用以表示該 response 是提供哪些語言的內容</p>
 <p>一樣可以是單純的 <code>lang</code> 或是 <code>&lt;lang&gt;-&lt;location&gt;</code> 也可以用 <code>,</code> 分隔多語言</p>
 <p>也可以在 HTML 中宣告</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;de&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;de&#34;</span>&gt;
 </code></pre></div><h3 id="w3c-i18n-checker">W3C I18n Checker</h3>
 <p>W3C 提供一個可以確認的網站</p>
 <p><a href="https://validator.w3.org/i18n-checker/">W3C I18n Checker</a></p>

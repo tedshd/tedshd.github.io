@@ -29,9 +29,8 @@
 <meta property="og:title" content="YouTube" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/youtube/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-01-29T17:42:46+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/categories/youtube/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -386,9 +384,9 @@ if (!doNotTrack) {
 <p><a href="https://ytdl-org.github.io/youtube-dl/index.html">youtube-dl</a> 是一個跟影音相關方便使用的 cli 工具</p>
 <p>這裡筆記一下一些用法</p>
 <p>列出該影片可以下載的 format</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -F &lt;URL&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -F &lt;URL&gt;
 </code></pre></div><p>output</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>youtube<span style="color:#f92672">]</span> e17Um7wExuQ: Downloading webpage
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>youtube<span style="color:#f92672">]</span> e17Um7wExuQ: Downloading webpage
 <span style="color:#f92672">[</span>youtube<span style="color:#f92672">]</span> e17Um7wExuQ: Downloading video info webpage
 <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Available formats <span style="color:#66d9ef">for</span> e17Um7wExuQ:
 format code  extension  resolution note
@@ -414,11 +412,11 @@ format code  extension  resolution note
 <span style="color:#ae81ff">18</span>           mp4        202x360    240p  359k , avc1.42001E, mp4a.40.2@ 96k <span style="color:#f92672">(</span>44100Hz<span style="color:#f92672">)</span>, 1.29MiB
 <span style="color:#ae81ff">22</span>           mp4        406x720    360p  713k , avc1.64001F, mp4a.40.2@192k <span style="color:#f92672">(</span>44100Hz<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>best<span style="color:#f92672">)</span>
 </code></pre></div><p>下載指定的 format</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -f &lt;format code&gt; &lt;URL&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -f &lt;format code&gt; &lt;URL&gt;
 </code></pre></div><p>下載最好的</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -f best &lt;URL&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -f best &lt;URL&gt;
 </code></pre></div><p>下載指定的 format</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -f mp4 &lt;URL&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">youtube-dl -f mp4 &lt;URL&gt;
 </code></pre></div></p>
                 
 

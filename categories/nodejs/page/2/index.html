@@ -29,9 +29,8 @@
 <meta property="og:title" content="nodejs" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/nodejs/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-10-30T15:20:10+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/categories/nodejs/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -206,7 +204,7 @@ if (!doNotTrack) {
 <p>在 PHP 中要直接執行 command line 是使用 <code>exec</code></p>
 <p>因為之前都用 PHP 寫 Shell Scripts 所以找了一下用 nodejs 要如何寫</p>
 <p>先是找到了以下的 code</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">run_cmd</span>(<span style="color:#a6e22e">cmd</span>, <span style="color:#a6e22e">args</span>, <span style="color:#a6e22e">callBack</span> ) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">run_cmd</span>(<span style="color:#a6e22e">cmd</span>, <span style="color:#a6e22e">args</span>, <span style="color:#a6e22e">callBack</span> ) {
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">spawn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;child_process&#39;</span>).<span style="color:#a6e22e">spawn</span>;
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">child</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">spawn</span>(<span style="color:#a6e22e">cmd</span>, <span style="color:#a6e22e">args</span>);
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">resp</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
@@ -221,7 +219,7 @@ if (!doNotTrack) {
 });
 </code></pre></div><p>但是發現如果是要用像是 <code>mkdir</code> 或者要 run shell 就會出 <code>ENOENT</code> 的 error</p>
 <p>結果找到了其他的範例程式碼改良後</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">exec_cmd</span>(<span style="color:#a6e22e">cmd</span>, <span style="color:#a6e22e">callBack</span> ) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">exec_cmd</span>(<span style="color:#a6e22e">cmd</span>, <span style="color:#a6e22e">callBack</span> ) {
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">childProcess</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;child_process&#39;</span>);
 
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ls</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">childProcess</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#a6e22e">cmd</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">stdout</span>, <span style="color:#a6e22e">stderr</span>) {

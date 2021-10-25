@@ -29,9 +29,8 @@
 <meta property="og:title" content="ssl" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/ssl/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-01-29T17:42:46+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/categories/ssl/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -203,10 +201,10 @@ if (!doNotTrack) {
                 <p><h2 id="lets-encrypt---has-a-certificate-problem-in-android-chrome">Let&rsquo;s Encrypt - Has a certificate problem in Android Chrome</h2>
 <p>If you use Let&rsquo;s Encrypt as SSL certificate</p>
 <p>Then setting this in Nginx</p>
-<pre><code class="language-config" data-lang="config">ssl_certificate /etc/letsencrypt/live/&lt;domain&gt;/cert.pem;
+<pre tabindex="0"><code class="language-config" data-lang="config">ssl_certificate /etc/letsencrypt/live/&lt;domain&gt;/cert.pem;
 </code></pre><p>You can find it maybe has problem in Android Chrome</p>
 <p>Now you can modify this</p>
-<pre><code class="language-config" data-lang="config">ssl_certificate /etc/letsencrypt/live/&lt;domain&gt;/fullchain.pem;
+<pre tabindex="0"><code class="language-config" data-lang="config">ssl_certificate /etc/letsencrypt/live/&lt;domain&gt;/fullchain.pem;
 </code></pre><h3 id="test-your-ssl">Test your SSL</h3>
 <p><a href="https://www.ssllabs.com/ssltest/index.html">SSL Server Test</a></p>
 <p><a href="https://community.letsencrypt.org/t/lets-encrypt-certificate-not-working-for-andriods-google-chrome/7184">Refer - Let’s encrypt certificate not working for Andriod’s Google Chrome</a></p>

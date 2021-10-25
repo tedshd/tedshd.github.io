@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.88.1" />
     
 
 
@@ -28,9 +28,8 @@
 <meta property="og:title" content="tedshd&#39;s DevNote" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-05-11T16:25:33+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -52,7 +51,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -220,13 +218,13 @@ if (!doNotTrack) {
 <li>redis(install from brew)</li>
 </ul>
 <h3 id="install">install</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install -g yo generator-hubot
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install -g yo generator-hubot
 </code></pre></div><p>製作資料夾</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir myhubot
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir myhubot
 cd myhubot
 </code></pre></div><p>設定 hubot</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yo hubot
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">? Owner: &lt;bot owner&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yo hubot
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">? Owner: &lt;bot owner&gt;
 ? Bot name: &lt;bot name&gt;
 ? Description: &lt;description about this bot&gt;
 ? Bot adapter: &lt;campfire or shell&gt;
@@ -276,12 +274,12 @@ cd myhubot
 <p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/252556/NWYJbTKmUJtIkTXZugbf_observer_pattern_example.png" alt="observer_pattern_example.png"></p>
 <p>Hub is a array put publish object</p>
 <p>publish object must include action and something want to do</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
 	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
 }
 <span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
 </code></pre></div><p>If more something to in same action</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
 	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
 }
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcB</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
@@ -291,7 +289,7 @@ cd myhubot
 <span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcB</span>);
 </code></pre></div><p>Now fire <code>alarm</code> can run <code>funA</code> and <code>funB</code>
 Then unpublish <code>funA</code>, action can only run <code>funB</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
 	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
 }
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcB</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
@@ -301,7 +299,7 @@ Then unpublish <code>funA</code>, action can only run <code>funB</code></p>
 <span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcB</span>);
 <span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
 </code></pre></div><p>unPublish has three type</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
 <span style="color:#75715e">// or
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">funcA</span>);
 <span style="color:#75715e">// or
@@ -309,7 +307,7 @@ Then unpublish <code>funA</code>, action can only run <code>funB</code></p>
 </code></pre></div><p>If publish is a is async behavior(AJAX)
 fire can add second argument as a callback to handle simple async behavior
 But not handle something behavior like promises or watchdog</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">fire</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">fire</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>);
 <span style="color:#75715e">// or
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">funcA</span>() {
 	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Fin&#39;</span>);

@@ -29,9 +29,8 @@
 <meta property="og:title" content="Posts" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-05-11T16:25:33+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -1150,7 +1148,7 @@ if (!doNotTrack) {
                 <p><h2 id="intro">Intro</h2>
 <p>Mobile web touch fire event or a link can show blue background</p>
 <h2 id="how-to-remove">How to remove</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">-webkit-tap-highlight-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">transparent</span><span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">-webkit-tap-highlight-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">transparent</span><span style="color:#f92672">;</span>
 </code></pre></div><p><a href="https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-background-of-button-on-mobile">Refer - How to remove the blue background of button on mobile?</a></p>
 </p>
                 
@@ -1199,7 +1197,7 @@ if (!doNotTrack) {
 <li>Need notice device pixelRatio</li>
 </ul>
 <p>Use <code>Window.devicePixelRatio</code> as base on canvas width &amp; height</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">canvas</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;canvas&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">canvas</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;canvas&#34;</span>);
 <span style="color:#75715e">// Set display size (css pixels).
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>;
 <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;px&#34;</span>;
@@ -1250,8 +1248,8 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <h2 id="upload-use-file-api">Upload use file API</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">accept</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image/*&#34;</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">accept</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image/*&#34;</span>&gt;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document
   .<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;input[type=file]&#34;</span>)
   .<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;change&#34;</span>, <span style="color:#66d9ef">function</span> () {
     <span style="color:#a6e22e">handleFiles</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">files</span>);
@@ -1265,8 +1263,8 @@ if (!doNotTrack) {
   }
 }
 </code></pre></div><h2 id="download-canvas-to-png">Download canvas to PNG</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;download&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Download Canvas&lt;/<span style="color:#f92672">a</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#download&#34;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#66d9ef">function</span> () {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;download&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Download Canvas&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#download&#34;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#66d9ef">function</span> () {
   <span style="color:#a6e22e">downloadCanvas</span>({
     <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>,
     <span style="color:#a6e22e">canvasDom</span><span style="color:#f92672">:</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;canvas&#34;</span>),
@@ -1299,7 +1297,7 @@ if (!doNotTrack) {
 <h2 id="edit-canvas">Edit canvas</h2>
 <p>Use <a href="https://konvajs.org/">konvajs</a> edit canvass</p>
 <h3 id="init-canvass">Init Canvass</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">stage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Konva</span>.<span style="color:#a6e22e">Stage</span>({
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">stage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Konva</span>.<span style="color:#a6e22e">Stage</span>({
   <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;container&#34;</span>,
   <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> window.<span style="color:#a6e22e">innerWidth</span>,
   <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> window.<span style="color:#a6e22e">innerHeight</span>,
@@ -1333,7 +1331,7 @@ if (!doNotTrack) {
   <span style="color:#a6e22e">imageObj</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arg</span>.<span style="color:#a6e22e">path</span>;
 }
 </code></pre></div><h3 id="download-use-konvajs">Download use konvajs</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">downloadURI</span>(<span style="color:#a6e22e">uri</span>, <span style="color:#a6e22e">name</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">downloadURI</span>(<span style="color:#a6e22e">uri</span>, <span style="color:#a6e22e">name</span>) {
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;grid_&#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">new</span> Date() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.png&#34;</span>;
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dataURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">stage</span>.<span style="color:#a6e22e">toDataURL</span>({ <span style="color:#a6e22e">pixelRatio</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> });
 

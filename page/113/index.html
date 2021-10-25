@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.88.1" />
     
 
 
@@ -28,9 +28,8 @@
 <meta property="og:title" content="tedshd&#39;s DevNote" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-05-11T16:25:33+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -52,7 +51,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -210,7 +208,7 @@ if (!doNotTrack) {
                 
                 <p><h2 id="command">command</h2>
 <h3 id="user">User</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">su / sudo
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">su / sudo
 <span style="color:#75715e"># 最高權限使用者</span>
 
 su -u &lt;user name&gt; bash
@@ -273,7 +271,7 @@ df
 <span style="color:#75715e"># 確認硬碟空間</span>
 
 </code></pre></div><h3 id="file-management">File Management</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ls
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ls
 <span style="color:#75715e"># 列出檔案</span>
 ls -a 列出以.開頭的檔案
 ls -l 列出檔案詳細
@@ -368,7 +366,7 @@ netstat -tulpn | grep LISTEN</p>
 <h1 id="確認開啟的port">確認開啟的port</h1>
 <p>lsof -n -i | grep LISTEN <strong>(for Mac)</strong></p>
 <h3 id="apt">apt</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt --installed list
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt --installed list
 <span style="color:#75715e"># 列出已安裝套件</span>
 
 sudo aptitude update
@@ -381,7 +379,7 @@ sudo aptitude full-upgrade
 sudo aptitude dist-upgrade
 <span style="color:#75715e"># 同於 full-upgrade</span>
 </code></pre></div><h3 id="mail-server">Mail server</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">host -t mx &lt;mail domain&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">host -t mx &lt;mail domain&gt;
 <span style="color:#75715e"># 查詢是否已紀錄此 mail domain</span>
 </code></pre></div></p>
                 
@@ -495,43 +493,43 @@ success -&gt; show message</p>
 </ul>
 <h3 id="token-verify">token verify</h3>
 <h4 id="gen-token">gen token</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP">// load memcache
-$this-&gt;load-&gt;library(&#39;Memcache&#39;);
-// load encrypt
-$this-&gt;load-&gt;library(&#39;encrypt&#39;);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#75715e">// load memcache
+</span><span style="color:#75715e"></span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#39;Memcache&#39;</span>);
+<span style="color:#75715e">// load encrypt
+</span><span style="color:#75715e"></span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#39;encrypt&#39;</span>);
 
-$token = array(
-    &#39;rand_str&#39; =&gt; md5(uniqid(rand(), true)),
-    &#39;account&#39; =&gt; $user,
+$token <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+    <span style="color:#e6db74">&#39;rand_str&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">md5</span>(<span style="color:#a6e22e">uniqid</span>(<span style="color:#a6e22e">rand</span>(), <span style="color:#66d9ef">true</span>)),
+    <span style="color:#e6db74">&#39;account&#39;</span> <span style="color:#f92672">=&gt;</span> $user,
 );
-// array to string
-$to_str = serialize($token);
-// encrypt
-$encrypted_str = $this-&gt;encrypt-&gt;encode($to_str);
-// save to memcache
-$this-&gt;memcache-&gt;set(&#39;key&#39;, $encrypted_str);
+<span style="color:#75715e">// array to string
+</span><span style="color:#75715e"></span>$to_str <span style="color:#f92672">=</span> <span style="color:#a6e22e">serialize</span>($token);
+<span style="color:#75715e">// encrypt
+</span><span style="color:#75715e"></span>$encrypted_str <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">encrypt</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">encode</span>($to_str);
+<span style="color:#75715e">// save to memcache
+</span><span style="color:#75715e"></span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">memcache</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;key&#39;</span>, $encrypted_str);
 
-// token to verify
-token[&#39;rand_str&#39;]
+<span style="color:#75715e">// token to verify
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">token</span>[<span style="color:#e6db74">&#39;rand_str&#39;</span>]
 </code></pre></div><h4 id="get-and-verify-data">get and verify data</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP">// get $encrypted_str
-// decode
-$decode_token = $this-&gt;encrypt-&gt;decode($encrypted_str);
-// string to array
-$token = unserialize($decode_token);
-// check $token exist
-if ($token[&#39;rand_str&#39;])
-$get_token = token[&#39;rand_str&#39;];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#75715e">// get $encrypted_str
+</span><span style="color:#75715e">// decode
+</span><span style="color:#75715e"></span>$decode_token <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">encrypt</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">decode</span>($encrypted_str);
+<span style="color:#75715e">// string to array
+</span><span style="color:#75715e"></span>$token <span style="color:#f92672">=</span> <span style="color:#a6e22e">unserialize</span>($decode_token);
+<span style="color:#75715e">// check $token exist
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($token[<span style="color:#e6db74">&#39;rand_str&#39;</span>])
+$get_token <span style="color:#f92672">=</span> <span style="color:#a6e22e">token</span>[<span style="color:#e6db74">&#39;rand_str&#39;</span>];
 $account
-// load memcache
-$load_mem = $this-&gt;memcache-&gt;get(&#39;key&#39;);
-// decode memcache
-$decode_mem = $this-&gt;encrypt-&gt;decode($load_mem);
-// string to array
-$to_array = unserialize($decode_mem);
-// verify
-$get_token === $to_array[&#39;rand_str&#39;]
-$account === $to_array[&#39;account&#39;]
+<span style="color:#75715e">// load memcache
+</span><span style="color:#75715e"></span>$load_mem <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">memcache</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;key&#39;</span>);
+<span style="color:#75715e">// decode memcache
+</span><span style="color:#75715e"></span>$decode_mem <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">encrypt</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">decode</span>($load_mem);
+<span style="color:#75715e">// string to array
+</span><span style="color:#75715e"></span>$to_array <span style="color:#f92672">=</span> <span style="color:#a6e22e">unserialize</span>($decode_mem);
+<span style="color:#75715e">// verify
+</span><span style="color:#75715e"></span>$get_token <span style="color:#f92672">===</span> $to_array[<span style="color:#e6db74">&#39;rand_str&#39;</span>]
+$account <span style="color:#f92672">===</span> $to_array[<span style="color:#e6db74">&#39;account&#39;</span>]
 </code></pre></div></p>
                 
 

@@ -29,9 +29,8 @@
 <meta property="og:title" content="Posts" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-05-11T16:25:33+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -1148,7 +1146,7 @@ if (!doNotTrack) {
 
                 
                 <p><h2 id="git---command">Git - command</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git status
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git status
 <span style="color:#75715e"># 查看修改哪些檔案</span>
 
 git diff
@@ -1255,13 +1253,13 @@ git checkout --track -b &lt;local branch&gt; origin/&lt;remote branch&gt;
 <p>sample
 use <a href="https://github.com/tedshd/javascript-htmlspecialchars">javascript-htmlspecialchars</a>
 use SSH</p>
-<pre><code>git clone git@github.com:tedshd/javascript-htmlspecialchars.git
+<pre tabindex="0"><code>git clone git@github.com:tedshd/javascript-htmlspecialchars.git
 // use SSH
 </code></pre><p>單純的 clone 別人的 repository 只是只能使用它
 如 commit 之後是無法 push 上去, 因為不是這 repository 的擁有者
 只要進去該 repository 的 <code>.git/config</code>
 只要看見</p>
-<pre><code>[remote &quot;origin&quot;]
+<pre tabindex="0"><code>[remote &quot;origin&quot;]
         url = git@github.com:tedshd/javascript-htmlspecialchars.git
 </code></pre><p>url 中 <code>git@github.com:</code> 之後不是自己的 GitHub 帳號就代表是無法 push 的
 就算在這改成自己的 GitHub 帳號也是無用的

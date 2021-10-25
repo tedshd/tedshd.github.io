@@ -29,9 +29,8 @@
 <meta property="og:title" content="javascript" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/javascript/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-12-10T14:19:29+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/categories/javascript/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -204,15 +202,15 @@ if (!doNotTrack) {
 <p>Use PHP or JavaScript detect mobile device like iPhone, iPad, iPod or Android&hellip;</p>
 <h3 id="android">Android</h3>
 <h4 id="php">PHP</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 $ua <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtolower</span>($_SERVER[<span style="color:#e6db74">&#39;HTTP_USER_AGENT&#39;</span>]);
 <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">stripos</span>($ua, <span style="color:#e6db74">&#39;android&#39;</span>) <span style="color:#f92672">!==</span> <span style="color:#66d9ef">false</span>) {
     <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;Android!!&#39;</span>;
     <span style="color:#66d9ef">exit</span>;
 }
-<span style="color:#75715e">?&gt;</span>
-</code></pre></div><h4 id="javascript">JavaScript</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ua</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">userAgent</span>.<span style="color:#a6e22e">toLowerCase</span>();
+<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><h4 id="javascript">JavaScript</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ua</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">userAgent</span>.<span style="color:#a6e22e">toLowerCase</span>();
 <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">ua</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#34;android&#34;</span>) <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
     document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;Android!!&#39;</span>);
 }
@@ -257,7 +255,7 @@ $ua <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtolower<
 <p>New method is use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document.querySelector">querySelector</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document.querySelectorAll">querySelectorAll</a></p>
 <p>If use IE, it only for IE8 up.</p>
 <p>Make them as a method</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">node</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">node</span>;
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">node</span>(<span style="color:#a6e22e">selector</span>) {
     <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">selector</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#39;.&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
         <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">selector</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
@@ -268,7 +266,7 @@ $ua <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtolower<
     <span style="color:#66d9ef">return</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">selector</span>);
 }
 </code></pre></div><p>And then use it</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
 &lt;<span style="color:#f92672">head</span>&gt;
 &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;

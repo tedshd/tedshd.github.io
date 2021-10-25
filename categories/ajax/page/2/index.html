@@ -29,9 +29,8 @@
 <meta property="og:title" content="Ajax" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/ajax/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-01-29T17:42:46+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/categories/ajax/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -218,7 +216,7 @@ if (!doNotTrack) {
 <p>因為這算是在前端開發上會較接觸到網路 http Protocol 的東西, 也跟後端有較緊密的關係</p>
 <h3 id="history">History</h3>
 <p>其實在早期 XMLHttpRequest 尚未定案下來時也有許多名稱</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">httpRequest</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">httpRequest</span>;
 <span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">XMLHttpRequest</span>) {
     <span style="color:#75715e">// IE7,Mozila,Safari...
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">httpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
@@ -239,7 +237,7 @@ if (!doNotTrack) {
 </code></pre></div><p>相信看過這段 code 的人大概都會會心一笑</p>
 <p>在早期確實還是要去判斷該物件是否存在來兼容各 browser</p>
 <p>在處理 AJAX 上也不像現在都包好好, 都是自己處理許多行為, 但這樣也會較了解真實運作的原理</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
 
 <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#e6db74">&#39;example.html&#39;</span>, <span style="color:#66d9ef">true</span>);
 <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
@@ -264,7 +262,7 @@ if (!doNotTrack) {
 </ul>
 <p>但這東西說穿了就是像是利用 form 的方式來傳送資料</p>
 <h4 id="formdata">FormData</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// FormData
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// FormData
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
 <span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;str&#39;</span>, <span style="color:#e6db74">&#39;string&#39;</span>);
 <span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;num&#39;</span>, <span style="color:#ae81ff">123</span>);
@@ -277,10 +275,10 @@ if (!doNotTrack) {
 };
 <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">formData</span>);
 </code></pre></div><p>PHP 部分</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$str = $_POST[&#39;str&#39;];
-$num = $_POST[&#39;num&#39;];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$str <span style="color:#f92672">=</span> $_POST[<span style="color:#e6db74">&#39;str&#39;</span>];
+$num <span style="color:#f92672">=</span> $_POST[<span style="color:#e6db74">&#39;num&#39;</span>];
 </code></pre></div><h4 id="applicationx-www-form-urlencoded">application/x-www-form-urlencoded</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// application/x-www-form-urlencoded
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// application/x-www-form-urlencoded
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
         <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ted&#39;</span>,
         <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;123456&#39;</span>
@@ -297,7 +295,7 @@ $num = $_POST[&#39;num&#39;];
 };
 <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;json=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">jsonData</span>);
 </code></pre></div><p>PHP 部分</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$request_json = json_decode($_POST[&#39;json&#39;], true);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$request_json <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_decode</span>($_POST[<span style="color:#e6db74">&#39;json&#39;</span>], <span style="color:#66d9ef">true</span>);
 </code></pre></div><p>較常用的方式會是建立 FormData 的方式來處理</p>
 <p>但由於 IE 10 以上才支持 FormData</p>
 <p>所以在未支援的情況下建議使用 <code>application/x-www-form-urlencoded</code> 的方式</p>

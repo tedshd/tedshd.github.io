@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Sat, 08 Mar 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.tedshd.io/categories/develop/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 08 Mar 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/develop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Clean Code(無暇的程式碼) - Note</title>
       <link>https://blog.tedshd.io/posts/2014-03-08-clean-code-time-code-note/</link>

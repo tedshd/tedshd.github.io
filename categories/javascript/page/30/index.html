@@ -29,9 +29,8 @@
 <meta property="og:title" content="javascript" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/javascript/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-12-10T14:19:29+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/categories/javascript/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -208,7 +206,7 @@ client &lt;- server
 Front-end &lt;- response - back-end</p>
 <h3 id="build-xmlhttprequestold-method"><del>build XMLHttpRequest</del>(old method)</h3>
 <p><strong>JavaScript</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">httpRequest</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">httpRequest</span>;
 <span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">XMLHttpRequest</span>) {
     <span style="color:#75715e">//IE7,Mozila,Safari...
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">httpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
@@ -229,10 +227,10 @@ Front-end &lt;- response - back-end</p>
 </code></pre></div><p><!-- raw HTML omitted -->New browser have XMLHttpRequest object now.<!-- raw HTML omitted -->
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">MDN</a>
 <strong>JavaScript</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlHttpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlHttpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
 </code></pre></div><h3 id="2-type-to-post-data-to-backendsend-request">2 type to post data to backend(send request)</h3>
 <p>1 <strong>FormData</strong>(if IE, 10 up)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// init FormData
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// init FormData
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
 <span style="color:#75715e">// add data
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;user&#39;</span>, <span style="color:#e6db74">&#39;Ted_Shiu&#39;</span>);
@@ -244,7 +242,7 @@ Front-end &lt;- response - back-end</p>
 <span style="color:#75715e">// send request
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">formData</span>);
 </code></pre></div><p>2 <strong>JSON</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// obj is data want to post to backend
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// obj is data want to post to backend
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
         <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ted_shiu&#39;</span>,
         <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;123456&#39;</span>
@@ -272,8 +270,8 @@ Front-end &lt;- response - back-end</p>
 </span><span style="color:#75715e">// xmlHttpRequest.send(&#39;user=ted_shiu&amp;password=123456&#39;);
 </span></code></pre></div><h3 id="backendhandle-request-and-response-browser">Backend(handle request and response browser)</h3>
 <p><strong>PHP</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// ajax.php
-<span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// ajax.php
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
     <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_POST[<span style="color:#e6db74">&#39;user&#39;</span>])) {
         <span style="color:#75715e">// do something
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> ($_POST[<span style="color:#e6db74">&#39;password&#39;</span>]) {
@@ -286,21 +284,21 @@ Front-end &lt;- response - back-end</p>
 </span><span style="color:#75715e"></span>            <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">json_encode</span>($output);
         }
     }
-<span style="color:#75715e">?&gt;</span>
-// json.php
-<span style="color:#75715e">&lt;?php</span>
-<span style="color:#a6e22e">var_dump</span>($_POST);
-<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
-<span style="color:#66d9ef">echo</span> $_POST[<span style="color:#e6db74">&#39;user&#39;</span>];
-<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
-<span style="color:#66d9ef">echo</span> $_POST[<span style="color:#e6db74">&#39;password&#39;</span>];
-<span style="color:#75715e">?&gt;</span>
-</code></pre></div><p><a href="http://blog.wu-boy.com/2011/04/%E4%BD%A0%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84-json-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9/">Refer - 你不可不知的 JSON 基本介紹</a>
+<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">// json.php
+</span><span style="color:#960050;background-color:#1e0010">&lt;?php
+</span><span style="color:#960050;background-color:#1e0010">var_dump($_POST);
+</span><span style="color:#960050;background-color:#1e0010">echo &#39;&lt;br&gt;&#39;;
+</span><span style="color:#960050;background-color:#1e0010">echo $_POST[&#39;user&#39;];
+</span><span style="color:#960050;background-color:#1e0010">echo &#39;&lt;br&gt;&#39;;
+</span><span style="color:#960050;background-color:#1e0010">echo $_POST[&#39;password&#39;];
+</span><span style="color:#960050;background-color:#1e0010">?&gt;
+</span></code></pre></div><p><a href="http://blog.wu-boy.com/2011/04/%E4%BD%A0%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84-json-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9/">Refer - 你不可不知的 JSON 基本介紹</a>
 <a href="http://coursesweb.net/ajax/ajax-json">Refer - Ajax and JSON</a></p>
 <h3 id="response">Response</h3>
 <p>AJAX handle response from backend
 check response state, use XMLHttpRequest properties</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
     <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>) {
         <span style="color:#75715e">// do something
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>) {
@@ -352,7 +350,7 @@ check response state, use XMLHttpRequest properties</p>
 if IE use ajax upload, only use iframe method.</p>
 <h3 id="sample">sample</h3>
 <p><strong>HTML</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
 &lt;<span style="color:#f92672">head</span>&gt;
 &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
@@ -368,7 +366,7 @@ if IE use ajax upload, only use iframe method.</p>
 &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><p><strong>JavaScript</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">upload</span> () {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">upload</span> () {
     <span style="color:#75715e">// init FormData object
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
     <span style="color:#75715e">// use append method append upload file

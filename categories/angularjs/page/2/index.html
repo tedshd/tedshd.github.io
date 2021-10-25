@@ -29,9 +29,8 @@
 <meta property="og:title" content="AngularJS" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/angularjs/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2020-01-29T17:42:46+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/categories/angularjs/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -217,7 +215,7 @@ if (!doNotTrack) {
 <li>HTML</li>
 </ul>
 <p>index.html</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;route&#34;</span>&gt;
 &lt;<span style="color:#f92672">head</span>&gt;
 &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
@@ -232,7 +230,7 @@ if (!doNotTrack) {
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;controllers.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><p>list.html</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ListController&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ListController&#34;</span>&gt;
     &lt;<span style="color:#f92672">tr</span>&gt;
         &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Sender&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
         &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Subject&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
@@ -245,7 +243,7 @@ if (!doNotTrack) {
     &lt;/<span style="color:#f92672">tr</span>&gt;
 &lt;/<span style="color:#f92672">table</span>&gt;
 </code></pre></div><p>detail.html</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Subject:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.subject}}&lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Subject:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.subject}}&lt;/<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Sender:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.sender}}&lt;/<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Date:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.date}}&lt;/<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span>&gt;
@@ -258,7 +256,7 @@ if (!doNotTrack) {
 <li>JavaScript</li>
 </ul>
 <p>controller.js</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//Create a module for our core AMail services
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//Create a module for our core AMail services
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">aMailServices</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;route&#39;</span>, [<span style="color:#e6db74">&#39;ngRoute&#39;</span>]);
 
 <span style="color:#75715e">//Set up our mappings between URLs, tempaltes. and  controllers

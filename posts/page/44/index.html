@@ -29,9 +29,8 @@
 <meta property="og:title" content="Posts" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-05-11T16:25:33+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -1165,7 +1163,7 @@ if (!doNotTrack) {
 <h3 id="gulpfile-設定">gulpfile 設定</h3>
 <p>現在有一大堆 build tool 像是 <a href="http://gruntjs.com/">grunt</a>, <a href="http://gulpjs.com/">gulp</a>, <a href="http://browserify.org/">browserify</a>, <a href="https://webpack.github.io/">webpack</a> 等工具</p>
 <p>我還是習慣用 gulp, 除非等 gulp 不合需求才會再去看 browserify 或 webpack 怎麼用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>);
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cssnext</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-cssnext&#39;</span>);
 
 <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;default&#39;</span>, <span style="color:#66d9ef">function</span>() {
@@ -1236,8 +1234,8 @@ if (!doNotTrack) {
                 <p><h2 id="something-about-xsscross-site-scripting">Something about XSS(Cross-site scripting)</h2>
 <p>If not set anything</p>
 <p>Use like</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span> <span style="color:#66d9ef">echo</span> $_GET[<span style="color:#e6db74">&#39;name&#39;</span>];<span style="color:#75715e">?&gt;</span>
-</code></pre></div><p>and querystring <code>name</code> = <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#66d9ef">echo</span> $_GET[<span style="color:#e6db74">&#39;name&#39;</span>];<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>and querystring <code>name</code> = <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
 <p>And not defence XSS</p>
 <p>In Firefox</p>
 <p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/307308/G2Ec0H05TgG5yNFaRS6K_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.40.08.png" alt="螢幕快照 2015-11-01 下午8.40.08.png"></p>
@@ -1250,9 +1248,9 @@ if (!doNotTrack) {
 <h3 id="defence">Defence</h3>
 <p>Set header <code>X-XSS-Protection: 1</code></p>
 <p>if use PHP, can use</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">htmlspecialchars()
-// or
- htmlentities()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">htmlspecialchars</span>()
+<span style="color:#75715e">// or
+</span><span style="color:#75715e"></span> <span style="color:#a6e22e">htmlentities</span>()
 </code></pre></div><h3 id="important">Important!</h3>
 <p>Finally</p>
 <p>We must know it is handle encode to avoid run JavaScript on page</p>

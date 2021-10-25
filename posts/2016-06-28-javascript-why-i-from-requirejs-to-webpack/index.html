@@ -37,10 +37,10 @@ But if your module is become complex and more module, you can find JavaScript re
 You can find it is a serious performance problem.
 Your network has lot of request of js." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2016-06-28T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -66,7 +66,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -215,7 +214,7 @@ if (!doNotTrack) {
 <p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/745512/rVQY4FhgRO6ctsPQZwPP_webpack.png" alt="webpack.png"></p>
 <p>If want to use a lib for global like jQuery</p>
 <p>Must use npm install &amp; use ProvidePlugin in <code>webpack.config.js</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">...
 <span style="color:#a6e22e">plugins</span><span style="color:#f92672">:</span> [
     <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">webpack</span>.<span style="color:#a6e22e">ProvidePlugin</span>({
         <span style="color:#a6e22e">$</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;jquery&#34;</span>,
@@ -226,13 +225,13 @@ if (!doNotTrack) {
 ...
 </code></pre></div><h3 id="how-it-run">How it run</h3>
 <p>You can use</p>
-<pre><code>webpack
+<pre tabindex="0"><code>webpack
 # if you want watch change
 webpack --watch
 </code></pre><p>more in <a href="https://webpack.github.io/docs/cli.html">https://webpack.github.io/docs/cli.html</a></p>
 <h3 id="use-case">Use case</h3>
 <p>If you want bundle all file in directory</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>),
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>),
     <span style="color:#a6e22e">entries</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readdirSync</span>(<span style="color:#e6db74">&#39;./mobile/js/&#39;</span>).<span style="color:#a6e22e">filter</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">file</span>) {
         <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/.*\.js$/</span>);
     });

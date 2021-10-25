@@ -29,10 +29,10 @@
 <meta property="og:title" content="CSS - Opacity effect child element" />
 <meta property="og:description" content="CSS - Opacity effect child element 在利用 opacity 做背景時常遇到個問題就是子元素也被設置 opacity 這時就可以利用 CSS 的 :before 或 :after &lt;div class=&#34;bg-2&#34;&gt; &lt;h2&gt;Title&lt;/h2&gt; &lt;p&gt;Content&lt;/p&gt; &lt;img src=&#34;http://blog.soonr.com/wp-content/uploads/2013/03/Google-Play-Badge.png&#34; alt=&#34;google play&#34; /&gt; &lt;/div&gt; .bg-2 { position: relative; &amp;:before { content: &#34;&#34;; z-index: -99; position: absolute; top: 0; left: 0; width: 100%;" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2013-12-10-css-opacity-effect-child-element/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/2013-12-10-css-opacity-effect-child-element/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2013-12-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -54,7 +54,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -190,12 +189,12 @@ if (!doNotTrack) {
         <h2 id="css---opacity-effect-child-element">CSS - Opacity effect child element</h2>
 <p>在利用 <code>opacity</code> 做背景時常遇到個問題就是子元素也被設置 opacity
 這時就可以利用 CSS 的 <code>:before</code> 或 <code>:after</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bg-2&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bg-2&#34;</span>&gt;
   &lt;<span style="color:#f92672">h2</span>&gt;Title&lt;/<span style="color:#f92672">h2</span>&gt;
   &lt;<span style="color:#f92672">p</span>&gt;Content&lt;/<span style="color:#f92672">p</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://blog.soonr.com/wp-content/uploads/2013/03/Google-Play-Badge.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;google play&#34;</span> /&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">bg-2</span> {
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">bg-2</span> {
   <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
   <span style="color:#960050;background-color:#1e0010">&amp;:before</span> <span style="color:#960050;background-color:#1e0010">{</span>
     <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>;

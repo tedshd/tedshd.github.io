@@ -29,10 +29,10 @@
 <meta property="og:title" content="Maker - GH60 RevCHN" />
 <meta property="og:description" content="Maker - GH60 RevCHN 拿了這板子有段時間了 一開始有試著用 Windows 刷 layout 進去, 但一直失敗(應該跟 Windows 不合吧 但直到前一陣子有人分享用 Mac 刷, 這真是太好了, 終於可以開工了 經" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2015-05-02-maker-gh60-revchn/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/2015-05-02-maker-gh60-revchn/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-05-02T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -54,7 +54,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -196,25 +195,25 @@ if (!doNotTrack) {
 <p>廢話不多說</p>
 <h3 id="install-crosspack--dfu-programmer">Install crosspack &amp; dfu-programmer</h3>
 <p>利用 homebrew 安裝</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install Caskroom/cask/crosspack-avr
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install dfu-programmer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install Caskroom/cask/crosspack-avr
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install dfu-programmer
 </code></pre></div><h3 id="git-clone-firmware">git clone Firmware</h3>
 <p><a href="https://github.com/kairyu/tmk_keyboard_custom">tmk_keyboard_custom</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/kairyu/tmk_keyboard_custom.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/kairyu/tmk_keyboard_custom.git
 </code></pre></div><h3 id="modify-config">Modify Config</h3>
 <p>進到拉下來的 <code>tmk_keyboard_custom</code> 目錄, 再進到 gh60 的目錄</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd keyboard/gh60
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim config.h
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd keyboard/gh60
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim config.h
 </code></pre></div><p>找到 <code>#define CONFIG_H</code></p>
 <p>在底下加上 <code>#define GH60_REV_CHN</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim Makefile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim Makefile
 </code></pre></div><p>註解或刪掉下面的</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">KEYMAP_IN_EEPROM_ENABLE <span style="color:#f92672">=</span> yes <span style="color:#75715e"># Read keymap from eeprom</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">KEYMAP_IN_EEPROM_ENABLE <span style="color:#f92672">=</span> yes <span style="color:#75715e"># Read keymap from eeprom</span>
 </code></pre></div><h3 id="check-device">Check Device</h3>
 <p>接上 gh60</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">system_profiler SPUSBDataType
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">system_profiler SPUSBDataType
 </code></pre></div><p>會顯示</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">...
 GH60:
 
           Product ID: 0x6060
@@ -229,7 +228,7 @@ GH60:
 
 </code></pre></div><p>然後按一下背面的按鈕後, 在下一次 <code>system_profiler SPUSBDataType</code></p>
 <p>會抓到</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">...
 ATm32U4DFU:
 
           Product ID: 0x2ff4
@@ -245,9 +244,9 @@ ATm32U4DFU:
 </code></pre></div><p>要是這個狀態才能刷分位進去</p>
 <h3 id="update-firmware">Update Firmware</h3>
 <p>先刷 poker layout 試試</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">make dfu
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">make dfu
 </code></pre></div><p>開始刷到下列訊息出現代表成功</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">...
 Creating load file <span style="color:#66d9ef">for</span> Flash: gh60_lufa.hex
 avr-objcopy -O ihex -R .eeprom -R .fuse -R .lock -R .signature gh60_lufa.elf gh60_lufa.hex
 dfu-programmer atmega32u4 erase --force
@@ -266,11 +265,11 @@ Validating...  Success
 0x6A80 bytes written into 0x7000 bytes memory <span style="color:#f92672">(</span>95.09%<span style="color:#f92672">)</span>.
 dfu-programmer atmega32u4 reset
 </code></pre></div><p>如果出現</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">avr-gcc: command not found
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">avr-gcc: command not found
 </code></pre></div><p>代表 AVR 的環境變數沒加進去</p>
 <p>開 <code>.zshrc</code> 或 <code>.bashrc</code></p>
 <p>加入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#AVR</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#AVR</span>
 PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/CrossPack-AVR/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
 </code></pre></div><p>再重啟 terminal 後重刷</p>
 <p>測試鍵盤 layout 輸入 <a href="http://tedshd.github.io/keyboard_test_page/">keyboard test page</a></p>
@@ -303,7 +302,7 @@ PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/lo
 <p>這試了好久&hellip;</p>
 <p>下載 .c 檔後, 把名字改成 <strong><code>keymap_tkg.c</code></strong></p>
 <p>丟到 gh60 目錄後執行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">make KEYMAP<span style="color:#f92672">=</span>tkg dfu
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">make KEYMAP<span style="color:#f92672">=</span>tkg dfu
 </code></pre></div><p>就 ok 了</p>
 <p>Finish</p>
 <p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/262828/CpjyWNMTjWocrq5fRfsV_2015-05-02%2018.45.33.jpg" alt="2015-05-02 18.45.33.jpg"></p>

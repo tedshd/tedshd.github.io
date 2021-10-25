@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.tedshd.io/categories/amp/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/amp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AMP - amp analytics &amp; conversion</title>
       <link>https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/</link>
@@ -22,7 +18,7 @@
 It can use PHP print template function to view
 First include
 &amp;lt;script async custom-element=&amp;#34;amp-analytics&amp;#34; src=&amp;#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; ga click event Refer - Adding Analytics to your AMP pages
-function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &amp;#34;0&amp;#34;) { $template = &amp;lt;&amp;lt;&amp;lt;EOF &amp;lt;amp-analytics type=&amp;#34;googleanalytics&amp;#34;&amp;gt; &amp;lt;script type=&amp;#34;application/json&amp;#34;&amp;gt; { &amp;#34;vars&amp;#34;: { &amp;#34;account&amp;#34;: &amp;#34;%s&amp;#34; }, &amp;#34;triggers&amp;#34;: { &amp;#34;trackClickOnHeader&amp;#34; : { &amp;#34;on&amp;#34;: &amp;#34;click&amp;#34;, &amp;#34;selector&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;request&amp;#34;: &amp;#34;event&amp;#34;, &amp;#34;vars&amp;#34;: { &amp;#34;eventCategory&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;eventAction&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;eventLabel&amp;#34;: &amp;#34;%s&amp;#34; }, &amp;#34;extraUrlParams&amp;#34;: { &amp;#34;ni&amp;#34;: &amp;#34;%s&amp;#34; } } } } &amp;lt;/script&amp;gt; &amp;lt;/amp-analytics&amp;gt; EOF; return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction); } google adwords conversion Refer - Using AMP for your AdWords Landing Pages</description>
+function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &amp;#34;0&amp;#34;) { $template = &amp;lt;&amp;lt;&amp;lt;EOF&amp;lt;amp-analytics type=&amp;#34;googleanalytics&amp;#34;&amp;gt; &amp;lt;script type=&amp;#34;application/json&amp;#34;&amp;gt; { &amp;#34;vars&amp;#34;: { &amp;#34;account&amp;#34;: &amp;#34;%s&amp;#34; }, &amp;#34;triggers&amp;#34;: { &amp;#34;trackClickOnHeader&amp;#34; : { &amp;#34;on&amp;#34;: &amp;#34;click&amp;#34;, &amp;#34;selector&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;request&amp;#34;: &amp;#34;event&amp;#34;, &amp;#34;vars&amp;#34;: { &amp;#34;eventCategory&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;eventAction&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;eventLabel&amp;#34;: &amp;#34;%s&amp;#34; }, &amp;#34;extraUrlParams&amp;#34;: { &amp;#34;ni&amp;#34;: &amp;#34;%s&amp;#34; } } } } &amp;lt;/script&amp;gt; &amp;lt;/amp-analytics&amp;gt; EOF; return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction); } google adwords conversion Refer - Using AMP for your AdWords Landing Pages</description>
     </item>
     
     <item>

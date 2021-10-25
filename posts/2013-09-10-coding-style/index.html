@@ -29,10 +29,10 @@
 <meta property="og:title" content="Coding Style" />
 <meta property="og:description" content="Coding Style 條件判斷 在 PHP &amp; JavaScript 中有許多邏輯判斷 當有許多條件要去檢查時, 一般來說就是用 if 一直寫下去 最後就造成下面的情況(以 PHP 為例) if ($a === $b) { if ($c) { if ($c &gt;=" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2013-09-10-coding-style/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/2013-09-10-coding-style/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2013-09-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -54,7 +54,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -192,52 +191,52 @@ if (!doNotTrack) {
 <p>在 PHP &amp; JavaScript 中有許多邏輯判斷
 當有許多條件要去檢查時, 一般來說就是用 <strong>if</strong> 一直寫下去
 最後就造成下面的情況(以 PHP 為例)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">if ($a === $b)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">if</span> ($a <span style="color:#f92672">===</span> $b)
 {
-    if ($c)
+    <span style="color:#66d9ef">if</span> ($c)
     {
-        if ($c &gt;= 10)
+        <span style="color:#66d9ef">if</span> ($c <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>)
         {
-            if ($d)
+            <span style="color:#66d9ef">if</span> ($d)
             {
-                // do something
-                // ...
-            }
-        return;
+                <span style="color:#75715e">// do something
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>            }
+        <span style="color:#66d9ef">return</span>;
         }
-    return;
+    <span style="color:#66d9ef">return</span>;
     }
 }
 </code></pre></div><p>這樣下去就沒完沒了, 而且縮排會越來越多, 要看 code 也很不方便
 所以假如就已作條件檢查來說
 可以用以下的做法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// check condition 1
-if ($a !== $b)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// check condition 1
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($a <span style="color:#f92672">!==</span> $b)
 {
-    return;
+    <span style="color:#66d9ef">return</span>;
 }
 
-// check condition 2
-if (!$c || $c === &#39;&#39;)
+<span style="color:#75715e">// check condition 2
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$c <span style="color:#f92672">||</span> $c <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;&#39;</span>)
 {
-    return;
+    <span style="color:#66d9ef">return</span>;
 }
 
-// check condition 3
-if ($c &lt; <span style="color:#f92672">9</span><span style="color:#960050;background-color:#1e0010">)</span>
-<span style="color:#960050;background-color:#1e0010">{</span>
-    <span style="color:#a6e22e">return</span><span style="color:#960050;background-color:#1e0010">;</span>
-<span style="color:#960050;background-color:#1e0010">}</span>
+<span style="color:#75715e">// check condition 3
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($c <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">9</span>)
+{
+    <span style="color:#66d9ef">return</span>;
+}
 
-<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#a6e22e">check</span> <span style="color:#a6e22e">condition</span> <span style="color:#a6e22e">4</span>
-<span style="color:#a6e22e">if</span> <span style="color:#960050;background-color:#1e0010">(!</span><span style="color:#a6e22e">d</span><span style="color:#960050;background-color:#1e0010">)</span>
-<span style="color:#960050;background-color:#1e0010">{</span>
-    <span style="color:#a6e22e">return</span><span style="color:#960050;background-color:#1e0010">;</span>
-<span style="color:#960050;background-color:#1e0010">}</span>
+<span style="color:#75715e">// check condition 4
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">d</span>)
+{
+    <span style="color:#66d9ef">return</span>;
+}
 
-<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#a6e22e">do</span> <span style="color:#a6e22e">something</span>
-<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">...</span>
-</code></pre></div><p>做個 <strong>反向思考</strong> , 把不適合的條件列出再一一 return or 作處理
+<span style="color:#75715e">// do something
+</span><span style="color:#75715e">// ...
+</span></code></pre></div><p>做個 <strong>反向思考</strong> , 把不適合的條件列出再一一 return or 作處理
 剩下的便是所需要的</p>
 <blockquote>
 <p>從巢狀式結構變成區域式
@@ -253,7 +252,7 @@ debug 也較容易</p>
 <p><a href="http://www.ruanyifeng.com/blog/2013/01/abstraction_principles.html">Refer-代码的抽象三原则</a></p>
 <h3 id="以錯誤為優先處理">以錯誤為優先處理</h3>
 <p>JavaScript</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doSomething</span>(<span style="color:#a6e22e">data</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doSomething</span>(<span style="color:#a6e22e">data</span>) {
     <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;fail&#39;</span>) {
         <span style="color:#75715e">// handle error
 </span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {

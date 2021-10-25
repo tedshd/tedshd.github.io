@@ -29,9 +29,8 @@
 <meta property="og:title" content="Posts" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-05-11T16:25:33+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -53,7 +52,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -1148,7 +1146,7 @@ if (!doNotTrack) {
 
                 
                 <p><h2 id="linux---install-gogole-chrome-in-debian-linux">Linux - install gogole chrome in debian Linux</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 
 sudo sh -c <span style="color:#e6db74">&#39;echo &#34;deb http://dl.google.com/linux/chrome/deb/ stable main&#34; &gt;&gt; /etc/apt/sources.list.d/google.list&#39;</span>
 
@@ -1204,7 +1202,7 @@ sudo apt-get install google-chrome-stable
 <ul>
 <li>Java</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
 
 java -version
 
@@ -1223,7 +1221,7 @@ sudo apt-get install default-jdk
 <p><a href="https://siteobservers.zendesk.com/hc/en-us/articles/201989070-Start-selenium-server-with-additional-command-line-arguments">設定 Selenium 參數可參考</a></p>
 <p>基本上以下是我建的順序</p>
 <h4 id="1-先建-packagejson">1 先建 <code>package.json</code></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
   <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;webdriver&#34;</span>,
   <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;automation test&#34;</span>,
   <span style="color:#e6db74">&#34;devDependencies&#34;</span><span style="color:#f92672">:</span> {
@@ -1231,18 +1229,18 @@ sudo apt-get install default-jdk
 }
 </code></pre></div><h4 id="2-下載-selenium-server">2 下載 Selenium server</h4>
 <p>之後有新版請再去確認版本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -O http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -O http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar
 </code></pre></div><h4 id="3-裝-webdriver">3 裝 webdriver</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install webdriverio --save-dev
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install webdriverio --save-dev
 </code></pre></div><h4 id="4-安裝各個-os-對應的-webdriver">4 安裝各個 OS 對應的 webdriver</h4>
 <p><a href="https://www.npmjs.com/package/selenium-webdriver">selenium-webdriver</a></p>
 <p>可以不必裝 <code>selenium-webdriver</code></p>
 <p>只要去下載各個 OS 對應要用的 browser 的 webdriver 放在專案資料夾就好了</p>
 <h4 id="5-這樣就好了">5 這樣就好了</h4>
 <h4 id="6-啟動-selenium-server-並開始寫一個簡單的自動化測試的-test-case">6 啟動 Selenium server 並開始寫一個簡單的自動化測試的 test case</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">java -jar selenium-server-standalone-2.53.0.jar
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">java -jar selenium-server-standalone-2.53.0.jar
 </code></pre></div><p><code>test.js</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">webdriverio</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;webdriverio&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">webdriverio</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;webdriverio&#39;</span>);
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> {
     <span style="color:#a6e22e">desiredCapabilities</span><span style="color:#f92672">:</span> {
         <span style="color:#a6e22e">browserName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;firefox&#39;</span>
@@ -1257,7 +1255,7 @@ sudo apt-get install default-jdk
         <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Title was: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">title</span>);
     })
     .<span style="color:#a6e22e">end</span>();
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node test.js
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node test.js
 // output Title was: Google
 </code></pre></div><p>這時你就會發現你的 firefox 被打開連到 Google 後就自動關掉</p>
 <p>然後 terminal 就會 output <code>Title was: Google</code></p>
@@ -1280,7 +1278,7 @@ sudo apt-get install default-jdk
 <p>依我所做的較特別的設定就是把 test case 切很細(因為測試的 scope 需求), 這就需要設定能跑個別的測試</p>
 <p>就需要在 config 設定 <code>suites</code></p>
 <p>就可以這樣下 command</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">./node_modules/.bin/wdio wdio.conf.js --suite test_a
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">./node_modules/.bin/wdio wdio.conf.js --suite test_a
 // or
 ./node_modules/.bin/wdio wdio.conf.js --suite test_b
 </code></pre></div><p>可參考以下文件</p>
@@ -1292,7 +1290,7 @@ sudo apt-get install default-jdk
 <p>但我這需求簡單且需要讓其他人可在測試當下就輕易看到結果, 所以就在 config 設定 hook</p>
 <p>讓測試跑完時儲存測試結果並有個頁面讓別人看</p>
 <p>config 的 hook</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">afterTest</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">test</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">afterTest</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">test</span>) {
     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;HOOK - afterTest:&#39;</span>, <span style="color:#a6e22e">test</span>);
 },
 </code></pre></div><p>test 就是測試結果</p>
@@ -1302,17 +1300,17 @@ sudo apt-get install default-jdk
 <p>基本上用 webdriver 做測試是需要有 browser 和 UI</p>
 <p>所以需裝 xwindow 或 Xvfb</p>
 <h4 id="firefox">firefox</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt search firefox
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt search firefox
 
 sudo apt-get install firefox firefox-locale-en
 </code></pre></div><p>如果顯示</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Gtk-WARNING **: Locale not supported by C library.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Gtk-WARNING **: Locale not supported by C library.
     Using the fallback <span style="color:#e6db74">&#39;C&#39;</span> locale.
 </code></pre></div><p>請設定 locale</p>
 <p>我是設定 en_US</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export LC_ALL<span style="color:#f92672">=</span>en_US.UTF-8
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export LC_ALL<span style="color:#f92672">=</span>en_US.UTF-8
 </code></pre></div><h4 id="xvfb"><del>xvfb</del></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install xvfb
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install xvfb
 <span style="color:#e6db74">```</span>shell
 
 然後啟動與指派到哪個 port
@@ -1320,13 +1318,13 @@ sudo apt-get install firefox firefox-locale-en
 <span style="color:#e6db74">```</span>shell
 sudo Xvfb :10 -ac
 </code></pre></div><p>指定輸出的 DISPLAY</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export DISPLAY<span style="color:#f92672">=</span>:10
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export DISPLAY<span style="color:#f92672">=</span>:10
 firefox
 </code></pre></div><p>之後再啟動測試</p>
 <p>但</p>
 <p>這裡就遇到問題了</p>
 <p>出現錯誤訊息&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Error: no display specified
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Error: no display specified
 </code></pre></div><p>但奇怪的是明明都 export DISPLAY 了還出這 error&hellip;</p>
 <p>目前都還沒解決這問題&hellip;</p>
 <p>所以直接採用下面的兩個備案</p>
@@ -1362,7 +1360,7 @@ firefox
 <p><a href="https://wiki.saucelabs.com/display/DOCS/Node.js+Test+Setup+Example">Node.js Test Setup Example - The Sauce Labs Cookbook - Sauce Labs Documentation Wiki</a></p>
 <p>我是採用 2</p>
 <p>所以需追加的設定是</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">capabilities:</span> [{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">capabilities:</span> [{
     <span style="color:#960050;background-color:#1e0010">&#39;browserName&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;chrome&#39;,</span>
     <span style="color:#960050;background-color:#1e0010">&#39;platform&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;Windows</span> <span style="color:#960050;background-color:#1e0010">10&#39;,</span>
     <span style="color:#960050;background-color:#1e0010">&#39;username&#39;:</span> <span style="color:#960050;background-color:#1e0010">&lt;username&gt;,</span>

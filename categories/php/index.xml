@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Thu, 14 Jan 2021 17:21:53 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.tedshd.io/categories/php/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 14 Jan 2021 17:21:53 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHP - 使用 urlencode rawurlencode 的差異和使用 http_build_query</title>
       <link>https://blog.tedshd.io/posts/php_urlencode_rawurlencode_and_http_build_query/</link>
@@ -93,7 +89,7 @@ $directory = scandir(&amp;#39;./js&amp;#39;); foreach($directory as $file) { if 
       <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/</guid>
-      <description>Something about XSS(Cross-site scripting) If not set anything Use like &amp;lt;?php echo $_GET[&amp;#39;name&amp;#39;];?&amp;gt; and querystring name = &amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp;amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer</description>
+      <description>Something about XSS(Cross-site scripting) If not set anything Use like &amp;lt;?php echo $_GET[&amp;#39;name&amp;#39;];?&amp;gt;and querystring name = &amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp;amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer -</description>
     </item>
     
     <item>
@@ -144,7 +140,7 @@ Warning: include_once(PHP/CodeSniffer/CLI.php): failed to open stream: No such f
       
       <guid>https://blog.tedshd.io/posts/2013-12-07-detect-mobile-device/</guid>
       <description>Detect mobile device Use PHP or JavaScript detect mobile device like iPhone, iPad, iPod or Android&amp;hellip;
-Android PHP &amp;lt;?php $ua = strtolower($_SERVER[&amp;#39;HTTP_USER_AGENT&amp;#39;]); if(stripos($ua, &amp;#39;android&amp;#39;) !== false) { echo &amp;#39;Android!!&amp;#39;; exit; } ?&amp;gt; JavaScript var ua = navigator.userAgent.toLowerCase(); if(ua.indexOf(&amp;#34;android&amp;#34;) &amp;gt; -1) { document.write(&amp;#39;Android!!&amp;#39;); } Refer - Android Detection with JavaScript or PHP
+Android PHP &amp;lt;?php $ua = strtolower($_SERVER[&amp;#39;HTTP_USER_AGENT&amp;#39;]); if(stripos($ua, &amp;#39;android&amp;#39;) !== false) { echo &amp;#39;Android!!&amp;#39;; exit; } ?&amp;gt;JavaScript var ua = navigator.userAgent.toLowerCase(); if(ua.indexOf(&amp;#34;android&amp;#34;) &amp;gt; -1) { document.write(&amp;#39;Android!!&amp;#39;); } Refer - Android Detection with JavaScript or PHP
 Apple mobile device Refer - How to detect iPhone, iPod and iPad with PHP Refer - How to Identify an Apple iPhone, iPod or iPad Visitor to Your Website</description>
     </item>
     

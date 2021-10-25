@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Wed, 31 Aug 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.tedshd.io/categories/gulp-javascript-css/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 31 Aug 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/gulp-javascript-css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>gulp - One problem i found when i use CSS minify with some CSS library</title>
       <link>https://blog.tedshd.io/posts/2016-08-31-gulp-one-problem-i-found-when-i-use-css-minify-with-some-css-library/</link>

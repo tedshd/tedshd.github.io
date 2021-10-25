@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.88.1" />
     
 
 
@@ -28,9 +28,8 @@
 <meta property="og:title" content="tedshd&#39;s DevNote" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/" />
-<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-<meta property="og:updated_time" content="2021-05-11T16:25:33+08:00" />
+<meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -52,7 +51,6 @@ if (!doNotTrack) {
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
-
 <script data-ad-client="ca-pub-0553186380244641" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -353,17 +351,17 @@ if (!doNotTrack) {
 <h3 id="mac-env">Mac Env</h3>
 <p>Mac OSX 10.14.5</p>
 <h3 id="step">Step</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://www.github.com/phpredis/phpredis.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://www.github.com/phpredis/phpredis.git
 
 cd phpredis
 
 phpize <span style="color:#f92672">&amp;&amp;</span> ./configure <span style="color:#f92672">&amp;&amp;</span> make <span style="color:#f92672">&amp;&amp;</span> sudo make install
 </code></pre></div><p><strong>test</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">php -r <span style="color:#e6db74">&#34;if (new Redis() == true){ echo \&#34;\r\n OK \r\n\&#34;; }&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">php -r <span style="color:#e6db74">&#34;if (new Redis() == true){ echo \&#34;\r\n OK \r\n\&#34;; }&#34;</span>
 </code></pre></div><h3 id="troubleshooting">Troubleshooting</h3>
 <h4 id="phpize">phpize</h4>
 <p>1.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ phpize
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ phpize
 grep: /usr/include/php/main/php.h: No such file or directory
 grep: /usr/include/php/Zend/zend_modules.h: No such file or directory
 grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory
@@ -372,14 +370,14 @@ PHP Api Version:
 Zend Module Api No:
 Zend Extension Api No:
 </code></pre></div><p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /Library/Developer/CommandLineTools/Packages/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /Library/Developer/CommandLineTools/Packages/
 
 open macOS_SDK_headers_for_macOS_10.14.pkg
 </code></pre></div><p>2.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ phpize
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ phpize
 Cannot find autoconf. Please check your autoconf installation and the $PHP_AUTOCONF environment variable. Then, rerun this script.
 </code></pre></div><p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install autoconf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install autoconf
 </code></pre></div><p><a href="https://stackoverflow.com/questions/51908004/install-phpredis-mac-osx">Refer - install-phpredis-mac-osx</a></p>
 <p><a href="https://zhile.io/2018/09/26/macOS-10.14-install-sdk-headers.html">Refer - macOS 10.14软件编译时找不到头文件的解决方法</a></p>
 <p><a href="http://www.mayanlong.com/archives/2016/349.html">Refer - macOS 中使用 phpize 动态添加 PHP 扩展的错误解决方法</a></p>
