@@ -1156,9 +1156,11 @@ if (!doNotTrack) {
                 <p><h2 id="在-web-中的-emoji-處理">在 Web 中的 emoji 處理</h2>
 <p>在普遍的字串計算長度的部分</p>
 <p>一個字元是單位是一</p>
-<p>但是因為 emoji unicode 後面定義的</p>
+<p>但是因為 emoji 的 unicode 是比較後面定義的</p>
 <p>這超出了原有 JavaScript 原有定義的範圍</p>
-<p>所以 emoji 的字串長度一率都是從 2 起跳</p>
+<p>可以參照網站的介紹</p>
+<p><a href="https://home.unicode.org/">Unicode – The World Standard for Text and Emoji</a></p>
+<p>所以 emoji 的字串長度在 JavaScript 一率都是從 2 起跳</p>
 <p>這在 Web 中會造成有需要處理字串長度的地方就會出現問題</p>
 <p>例如:</p>
 <p>input 文字的長度限制的使用</p>

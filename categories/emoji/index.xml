@@ -14,7 +14,7 @@
       <pubDate>Tue, 04 Jan 2022 05:42:00 +0800</pubDate>
       
       <guid>https://blog.tedshd.io/posts/javascript_count_emoji/</guid>
-      <description>在 Web 中的 emoji 處理 在普遍的字串計算長度的部分 一個字元是單位是一 但是因為 emoji unicode 後面定義的 這超出了原有 JavaScript 原有定義的範圍 所以 emoji 的字串長度一率都是從 2 起跳</description>
+      <description>在 Web 中的 emoji 處理 在普遍的字串計算長度的部分 一個字元是單位是一 但是因為 emoji 的 unicode 是比較後面定義的 這超出了原有 JavaScript 原有定義的範圍 可以參照網站的介紹 Unicode – The</description>
     </item>
     
   </channel>
