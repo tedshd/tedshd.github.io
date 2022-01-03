@@ -183,6 +183,104 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-08-28-javascript-something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine/">JavaScript - something about childNodes and nextSibling why they get DOM is not as you imagine</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-08-28
+</p>
+                
+
+                
+                <p><h2 id="javascript---something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine">JavaScript - something about childNodes and nextSibling why they get DOM is not as you imagine</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes">childNodes MDN</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling">nextSibling - MDN</a></p>
+<h3 id="sometimes-we-use-childnodes">Sometimes we use childNodes</h3>
+<h4 id="html">HTML</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span>&gt;
+  &lt;<span style="color:#f92672">li</span>&gt;item1&lt;/<span style="color:#f92672">li</span>&gt;
+  &lt;<span style="color:#f92672">li</span>&gt;item2&lt;/<span style="color:#f92672">li</span>&gt;
+  &lt;<span style="color:#f92672">li</span>&gt;item3&lt;/<span style="color:#f92672">li</span>&gt;
+  &lt;<span style="color:#f92672">li</span>&gt;item4&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;/<span style="color:#f92672">ul</span>&gt;
+</code></pre></div><h4 id="javascript">JavaScript</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">childNodes</span>);
+<span style="color:#75715e">// output
+</span><span style="color:#75715e"></span>[<span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">text</span>]
+</code></pre></div><p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/293568/plBejfI1SXq1dBNPNyqr_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-08-29_%E4%B8%8A%E5%8D%8812_08_56.png" alt="螢幕快照_2015-08-29_上午12_08_56.png"></p>
+<p>Why?</p>
+<p>Then</p>
+<h4 id="html-1">HTML</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;item1&lt;/<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;item2&lt;/<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;item3&lt;/<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;item4&lt;/<span style="color:#f92672">li</span>&gt;&lt;/<span style="color:#f92672">ul</span>&gt;
+</code></pre></div><h4 id="javascript-1">JavaScript</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">childNodes</span>);
+<span style="color:#75715e">// output
+</span><span style="color:#75715e"></span>[<span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">li</span>]
+</code></pre></div><p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/293568/b7H4oj6ZTMeH5jt01zaT_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-08-29_%E4%B8%8A%E5%8D%8812_10_07.png" alt="螢幕快照_2015-08-29_上午12_10_07.png"></p>
+<p>If you log <code>text</code> object, you can find it is wrap.</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/293568/QKnxVI8fRGWaAS0fagqc_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-08-29_%E4%B8%8A%E5%8D%8812_09_30.png" alt="螢幕快照_2015-08-29_上午12_09_30.png"></p>
+<p><strong>Browser get nodes include wrap symbol.</strong></p>
+<p>But it can&rsquo;t show in your editor</p>
+<h4 id="solution">Solution</h4>
+<ul>
+<li>for IE9 up</li>
+</ul>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children">ParentNode.children</a></p>
+<ul>
+<li>do a new function</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">getChildNodes</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [],
+      <span style="color:#a6e22e">nodes</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">childNodes</span>;
+  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">nodes</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>];
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">nodeType</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">Node</span>.<span style="color:#a6e22e">ELEMENT_NODE</span>) {
+      <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">node</span>);
+    }
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">array</span>;
+};
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">getChildNodes</span>());
+</code></pre></div><p><a href="http://www.w3schools.com/jsref/prop_node_nodetype.asp">HTML DOM nodeType Property</a></p>
+<ul>
+<li>the way <a href="https://www.facebook.com/rplus.tw">rplus</a> provide</li>
+</ul>
+<pre tabindex="0"><code class="language-javscript" data-lang="javscript">function getChildNodes(parentNode) {
+  return [].filter.call(
+    parentNode.childNodes,
+    function(_target) {
+      return _target.nodeType === Node.ELEMENT_NODE;
+    });
+}
+</code></pre><h3 id="sometimes-we-use-nextsibling">Sometimes we use nextSibling</h3>
+<p>As above</p>
+<p>Sometimes you get <code>text</code>.</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2015-08-28-javascript-something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/">JavaScript - Google Closure Compiler V.S. Gulp uglify</a></h3>
 
                 
@@ -259,83 +357,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/">gulp.js - Concatenate File When Gulp Watch</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-08-09
-</p>
-                
-
-                
-                <p><h2 id="gulpjs---concatenate-file-when-gulp-watch">gulp.js - Concatenate File When Gulp Watch</h2>
-<h3 id="packagejson">package.json</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
-  <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;gulp&#34;</span>,
-  <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;3.8.7&#34;</span>,
-  <span style="color:#e6db74">&#34;devDependencies&#34;</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;gulp&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;^3.9.0&#34;</span>,
-    <span style="color:#e6db74">&#34;gulp-concat&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;^2.6.0&#34;</span>,
-    <span style="color:#e6db74">&#34;gulp-watch&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;^4.3.4&#34;</span>
-  }
-}
-</code></pre></div><h3 id="gulpfilejs">gulpfile.js</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>),
-    <span style="color:#a6e22e">watch</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-watch&#39;</span>),
-    <span style="color:#a6e22e">concat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-concat&#39;</span>);
-
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">js</span>;
-<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;concat&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">cb</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> {};
-    <span style="color:#a6e22e">watch</span>(<span style="color:#e6db74">&#39;dev/*.js&#39;</span>, <span style="color:#a6e22e">options</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
-        <span style="color:#75715e">// console.log(&#39;e:&#39;+JSON.stringify(e));
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(&#39;\n&#39;);
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">new</span> Date() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; -- &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">history</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">base</span>, <span style="color:#e6db74">&#39;&#39;</span>));
-        <span style="color:#a6e22e">js</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">history</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">base</span>, <span style="color:#e6db74">&#39;&#39;</span>);
-        <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>([<span style="color:#e6db74">&#39;util/util.js&#39;</span>, <span style="color:#e6db74">&#39;util/mod.js&#39;</span>, <span style="color:#e6db74">&#39;dev/&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">js</span>])
-        .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">js</span>, {<span style="color:#a6e22e">newLine</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;\n&#39;</span>}))
-        .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;dist/&#39;</span>));
-    });
-});
-</code></pre></div><h3 id="what-it-mean">What it mean?</h3>
-<p>watch something change in <code>dev/*.js</code>.</p>
-<p>If js change, concatenate <code>util/util.js</code>, <code>util/mod.js</code> and current modify js.</p>
-<p>New js name is current modify js.</p>
-<p>Finally put new js in <code>dist/</code>.</p>
-<h3 id="how-to-use">How to use</h3>
-<h4 id="install">Install</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install --save-dev gulp
-
-npm install . --save-dev
-</code></pre></div><h4 id="use">Use</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gulp concat
-</code></pre></div><p><a href="https://www.npmjs.com/package/gulp-watch">Refer - gulp-watch</a></p>
-<p><a href="https://www.npmjs.com/package/gulp-concat">Refer - gulp-concat</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/">Read more</a></p>
                 
             </div>
         </div>

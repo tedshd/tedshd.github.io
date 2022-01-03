@@ -183,6 +183,70 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/javascript_count_emoji/">JavaScript 計算 emoji</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2022-01-04
+</p>
+                
+
+                
+                <p><h2 id="在-web-中的-emoji-處理">在 Web 中的 emoji 處理</h2>
+<p>在普遍的字串計算長度的部分</p>
+<p>一個字元是單位是一</p>
+<p>但是因為 emoji unicode 後面定義的</p>
+<p>這超出了原有 JavaScript 原有定義的範圍</p>
+<p>所以 emoji 的字串長度一率都是從 2 起跳</p>
+<p>這在 Web 中會造成有需要處理字串長度的地方就會出現問題</p>
+<p>例如:</p>
+<p>input 文字的長度限制的使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">maxlength</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span>&gt;
+</code></pre></div><p>字串需要計算長度時</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">length</span>;
+</code></pre></div><p>尤其是在現在行動裝置的普及, 內建的鍵盤已經有 emoji 的輸入可以使用</p>
+<p>更會大大的增加在需要的邏輯處理會出現問題</p>
+<h2 id="如何解決">如何解決</h2>
+<p>有一個方便的套件 <a href="https://github.com/dotcypress/runes">runes</a> 會把 emoji 識別出來</p>
+<p>所以就可以解決掉 emoji 的問題了</p>
+<h2 id="背後原理">背後原理</h2>
+<p>其實背後的原理也不難</p>
+<p>就是去比對 emoji 的 unicode 碼</p>
+<p>比對該字串是不是 emoji 的 unicode 碼</p>
+<p>以下有 emoji 的網站可以試試看</p>
+<p><a href="https://getemoji.com/">https://getemoji.com/</a></p>
+<h2 id="後續補充">後續補充</h2>
+<p>所以在處理字串長度時就可以用 runes 套件得到的長度去限制</p>
+<p>不使用原有的方式去限制</p>
+<p>作者使用 runes 這個名稱也很有意思</p>
+<p>runes 是盧恩文的意思, 也是拉丁文的起源, 相當於中文中的甲骨文</p>
+<p>也是屬於以形會意</p>
+<p>所以用來代表 emoji 也是以形會意真的是蠻有意思的命名</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/javascript_count_emoji/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/sort_case_handle_in_javascript/">JavaScript - 處理一些排序的方式</a></h3>
 
                 
@@ -457,62 +521,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/sort_case_handle_in_javascript/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">JavaScript - 半形 全形 轉換</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2019-01-30
-</p>
-                
-
-                
-                <p><h2 id="javascript---半形-全形-轉換">JavaScript - 半形 全形 轉換</h2>
-<p>因為一個奇怪的需求?</p>
-<p>需要把使用者輸入的東西轉成可以方便驗證的格式(這應該後端做吧?)</p>
-<p>反正因為以前也做過半形轉成全形(痛苦的回憶, 為啥政府的 opendata 各縣市格式不一致就算了, 竟然還有全形半形的問題&hellip;)</p>
-<p>這邊就簡單的只針對最前面的基本拉丁字母字元符號集作轉換</p>
-<p>因為大部分的需求應該這樣就可以應付了?</p>
-<p>但是空白字元要特殊處理</p>
-<p>那接下來只要知道需要轉換的字元範圍即可</p>
-<p>全形從 <code>U+FF01</code> 到 <code>U+FF5E</code></p>
-<p>半形從 <code>U+0021</code> 到 <code>U+007E</code></p>
-<p>把 16 進制轉換回來就是</p>
-<p>65281 到 65374</p>
-<p>33 到 126</p>
-<p>上述怎麼轉的?</p>
-<p>就是這樣</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">parseInt(<span style="color:#e6db74">&#39;0xFF01&#39;</span>, <span style="color:#ae81ff">16</span>)
-</code></pre></div><p>只要判斷輸入的字元這這些編碼區間就進行轉換</p>
-<p><a href="https://tedshd.io/demo/trans.html">trans char</a></p>
-<p>所以簡單做了一個 demo 頁面</p>
-<p>程式檢視原始碼即可</p>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%85%A8%E5%BD%A2%E5%92%8C%E5%8D%8A%E5%BD%A2">Refer - Wiki</a></p>
-<p><a href="https://blog.longwin.com.tw/2013/12/unicode-utf8-char-range-table-2013/">Refer - Unicode / UTF-8 字元編碼區間表 - 2013</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">Read more</a></p>
                 
             </div>
         </div>

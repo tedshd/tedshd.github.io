@@ -1114,6 +1114,14 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1130,7 +1138,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-02-19-javascript-jquery-index-in-javascript/">JavaScript - jQuery index() in JavaScript</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2014-03-02-javascript-scroll-progress/">JavaScript - Scroll Progress</a></h3>
 
                 
                 
@@ -1140,55 +1148,47 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2014-02-19
+2014-03-02
 </p>
                 
 
                 
-                <p><h2 id="javascript---jquery-index-in-javascript">JavaScript - jQuery index() in JavaScript</h2>
-<h3 id="javascript">JavaScript</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">indexInParent</span>(<span style="color:#a6e22e">node</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">children</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">childNodes</span>;
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-         <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">==</span><span style="color:#a6e22e">node</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">num</span>;
-         <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">nodeType</span><span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>) <span style="color:#a6e22e">num</span><span style="color:#f92672">++</span>;
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+                <p><h2 id="javascript---scroll-progress">JavaScript - Scroll Progress</h2>
+<p>Show a progress bar about page scroll position.</p>
+<p>This used scroll event
+Progress bar must handle scroll position and scroll total height, and show it for percent
+View MDN document can find it can&rsquo;t use <code>scrollHeight</code>, because when scroll bar scroll to bottom, <code>scrollTop</code> not equal <code>scrollHeight</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;body&#34;</span>);
+<span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
+  (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">/</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
+    <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
+  <span style="color:#e6db74">&#34;%&#34;</span>;
+</code></pre></div><p>Then find <code>scrollTop</code> didn&rsquo;t work in firefox</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span>) {
+  <span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
+    (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">/</span>
+      (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
+      <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
+    <span style="color:#e6db74">&#34;%&#34;</span>;
+} <span style="color:#66d9ef">else</span> {
+  <span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
+    (window.<span style="color:#a6e22e">pageYOffset</span> <span style="color:#f92672">/</span>
+      (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
+      <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
+    <span style="color:#e6db74">&#34;%&#34;</span>;
 }
-</code></pre></div><h3 id="example">Example</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span>&gt;
-  &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo&#34;</span>&gt;foo&lt;/<span style="color:#f92672">li</span>&gt;
-  &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bar&#34;</span>&gt;bar&lt;/<span style="color:#f92672">li</span>&gt;
-  &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;baz&#34;</span>&gt;baz&lt;/<span style="color:#f92672">li</span>&gt;
-&lt;/<span style="color:#f92672">ul</span>&gt;
-</code></pre></div><ul>
-<li>jQuery</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#bar&#39;</span>).<span style="color:#a6e22e">index</span>());
-</code></pre></div><ul>
-<li>javaScript</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">el</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;bar&#34;</span>);
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">indexInParent</span>(<span style="color:#a6e22e">node</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">children</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">childNodes</span>;
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-         <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">==</span><span style="color:#a6e22e">node</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">num</span>;
-         <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">nodeType</span><span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>) <span style="color:#a6e22e">num</span><span style="color:#f92672">++</span>;
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
-}
-<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">indexInParent</span>(<span style="color:#a6e22e">el</span>));
-</code></pre></div><p><a href="http://jsbin.com/yabapalu/1/">Demo</a></p>
-<p><a href="http://stackoverflow.com/questions/13658021/jquery-index-in-javascript">Refer - jQuery .index() in javascript</a></p>
+</code></pre></div><p><a href="https://github.com/tedshd/scroll_progress">GitHub</a></p>
+<p><a href="http://help.dottoro.com/ljurkcpe.php">Refer - onscroll event | scroll event</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.scrollTop">Refer - Element.scrollTop - Web API Interfaces | MDN</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.scrollHeight">Refer - element.scrollHeight - Web API Interfaces | MDN</a>
+<a href="http://stackoverflow.com/questions/2481350/retrieve-scrollbar-position-with-javascript">Refer - retrieve Scrollbar position with javascript</a></p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2014-02-19-javascript-jquery-index-in-javascript/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2014-03-02-javascript-scroll-progress/">Read more</a></p>
                 
             </div>
         </div>
@@ -1201,7 +1201,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-02-06-javascript-encryption/">JavaScript - Encryption</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2014-02-27-sublime-change-layout-view-in-2-columns/">Sublime - change layout view in 2 columns</a></h3>
 
                 
                 
@@ -1211,31 +1211,153 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2014-02-06
+2014-02-27
 </p>
                 
 
                 
-                <p><h2 id="javascript---encryption">JavaScript - Encryption</h2>
-<p>弱弱的加密</p>
-<h3 id="base64">base64</h3>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Base64_encoding_and_decoding">Base64 encoding and decoding</a></p>
-<h3 id="sha1only-js-to-js">sha1(only js to js)</h3>
-<p>Need utf8 encode
-<a href="http://phpjs.org/functions/sha1/">JavaScript sha1 function</a></p>
-<h3 id="utf8only-js-to-js">utf8(only js to js)</h3>
-<p><a href="http://phpjs.org/functions/utf8_encode/">JavaScript utf8_encode function</a>
-<a href="http://phpjs.org/functions/utf8_decode/">JavaScript utf8_decode function</a>
-decode can handle php utf8_encode()</p>
-<h3 id="encryptjs-to-php">Encrypt(js to php)</h3>
-<p>Use <a href="https://code.google.com/p/crypto-js/">crypto-js</a></p>
-<p><a href="https://code.google.com/p/crypto-js/#HMAC">HMAC</a></p>
-<p><a href="http://stackoverflow.com/questions/12099092/javascript-equivalent-of-phps-hash-hmac-with-raw-binary-output">Refer - Javascript: Equivalent of PHP&rsquo;s hash_hmac() with RAW BINARY output?</a></p>
+                <p><h2 id="sublime---change-layout-view-in-2-columns">Sublime - change layout view in 2 columns</h2>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/181166/n0cayJWESiKZXwNBOvJa_output_T7Ok8b.gif" alt="output_T7Ok8b.gif"></p>
+<p>Video</p>
+<!-- raw HTML omitted -->
+<h3 id="setting">Setting</h3>
+<p><code>Preferences</code> -&gt; <code>Key Bindings - User</code></p>
+<p>set key to use</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    {
+        <span style="color:#f92672">&#34;keys&#34;</span>: [<span style="color:#e6db74">&#34;super+ctrl+left&#34;</span>],
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;set_layout&#34;</span>,
+        <span style="color:#f92672">&#34;args&#34;</span>:
+        {
+            <span style="color:#f92672">&#34;cols&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.95</span>, <span style="color:#ae81ff">1.0</span>],
+            <span style="color:#f92672">&#34;rows&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>],
+            <span style="color:#f92672">&#34;cells&#34;</span>: [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]]
+        }
+    },
+    {
+        <span style="color:#f92672">&#34;keys&#34;</span>: [<span style="color:#e6db74">&#34;super+ctrl+right&#34;</span>],
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;set_layout&#34;</span>,
+        <span style="color:#f92672">&#34;args&#34;</span>:
+        {
+            <span style="color:#f92672">&#34;cols&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.05</span>, <span style="color:#ae81ff">1.0</span>],
+            <span style="color:#f92672">&#34;rows&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>],
+            <span style="color:#f92672">&#34;cells&#34;</span>: [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]]
+        }
+    }
+]
+</code></pre></div><h2 id="update"><strong>Update</strong></h2>
+<h3 id="add-focus">Add focus</h3>
+<p>If add focus, it need 2 commands so need write a python plugin</p>
+<ol>
+<li><code>Tools</code> -&gt; <code>New Plugin</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># save as run_multiple.py</span>
+<span style="color:#f92672">import</span> sublime<span style="color:#f92672">,</span> sublime_plugin
+
+<span style="color:#75715e"># Takes an array of commands (same as those you&#39;d provide to a key binding) with</span>
+<span style="color:#75715e"># an optional context (defaults to view commands) &amp; runs each command in order.</span>
+<span style="color:#75715e"># Valid contexts are &#39;text&#39;, &#39;window&#39;, and &#39;app&#39; for running a TextCommand,</span>
+<span style="color:#75715e"># WindowCommands, or ApplicationCommand respectively.</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RunMultipleCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exec_command</span>(self, command):
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> <span style="color:#e6db74">&#39;command&#39;</span> <span style="color:#f92672">in</span> command:
+      <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">&#39;No command name provided.&#39;</span>)
+
+    args <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;args&#39;</span> <span style="color:#f92672">in</span> command:
+      args <span style="color:#f92672">=</span> command[<span style="color:#e6db74">&#39;args&#39;</span>]
+
+    <span style="color:#75715e"># default context is the view since it&#39;s easiest to get the other contexts</span>
+    <span style="color:#75715e"># from the view</span>
+    context <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>view
+    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;context&#39;</span> <span style="color:#f92672">in</span> command:
+      context_name <span style="color:#f92672">=</span> command[<span style="color:#e6db74">&#39;context&#39;</span>]
+      <span style="color:#66d9ef">if</span> context_name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;window&#39;</span>:
+        context <span style="color:#f92672">=</span> context<span style="color:#f92672">.</span>window()
+      <span style="color:#66d9ef">elif</span> context_name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;app&#39;</span>:
+        context <span style="color:#f92672">=</span> sublime
+      <span style="color:#66d9ef">elif</span> context_name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;text&#39;</span>:
+        <span style="color:#66d9ef">pass</span>
+      <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">&#39;Invalid command context &#34;&#39;</span><span style="color:#f92672">+</span>context_name<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&#34;.&#39;</span>)
+
+    <span style="color:#75715e"># skip args if not needed</span>
+    <span style="color:#66d9ef">if</span> args <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+      context<span style="color:#f92672">.</span>run_command(command[<span style="color:#e6db74">&#39;command&#39;</span>])
+    <span style="color:#66d9ef">else</span>:
+      context<span style="color:#f92672">.</span>run_command(command[<span style="color:#e6db74">&#39;command&#39;</span>], args)
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit, commands <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>):
+    <span style="color:#66d9ef">if</span> commands <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+      <span style="color:#66d9ef">return</span> <span style="color:#75715e"># not an error</span>
+    <span style="color:#66d9ef">for</span> command <span style="color:#f92672">in</span> commands:
+      self<span style="color:#f92672">.</span>exec_command(command)
+</code></pre></div><ol start="2">
+<li><code>Preferences</code> -&gt; <code>Key Bindings - User</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    {
+        <span style="color:#f92672">&#34;keys&#34;</span>: [<span style="color:#e6db74">&#34;super+ctrl+left&#34;</span>],
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;run_multiple&#34;</span>,
+        <span style="color:#f92672">&#34;args&#34;</span>:
+        {
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                {
+                    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;set_layout&#34;</span>,
+                    <span style="color:#f92672">&#34;args&#34;</span>:
+                    {
+                        <span style="color:#f92672">&#34;cols&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.95</span>, <span style="color:#ae81ff">1.0</span>],
+                        <span style="color:#f92672">&#34;rows&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>],
+                        <span style="color:#f92672">&#34;cells&#34;</span>: [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]]
+                    },
+                    <span style="color:#f92672">&#34;context&#34;</span>: <span style="color:#e6db74">&#34;window&#34;</span>
+                },
+                {
+                    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;focus_group&#34;</span>,
+                    <span style="color:#f92672">&#34;args&#34;</span>: { <span style="color:#f92672">&#34;group&#34;</span>: <span style="color:#ae81ff">0</span> },
+                    <span style="color:#f92672">&#34;context&#34;</span>: <span style="color:#e6db74">&#34;window&#34;</span>
+                }
+            ]
+        }
+    },
+    {
+        <span style="color:#f92672">&#34;keys&#34;</span>: [<span style="color:#e6db74">&#34;super+ctrl+right&#34;</span>],
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;run_multiple&#34;</span>,
+        <span style="color:#f92672">&#34;args&#34;</span>:
+        {
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                {
+                    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;set_layout&#34;</span>,
+                    <span style="color:#f92672">&#34;args&#34;</span>:
+                    {
+                        <span style="color:#f92672">&#34;cols&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.05</span>, <span style="color:#ae81ff">1.0</span>],
+                        <span style="color:#f92672">&#34;rows&#34;</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>],
+                        <span style="color:#f92672">&#34;cells&#34;</span>: [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]]
+                    },
+                    <span style="color:#f92672">&#34;context&#34;</span>: <span style="color:#e6db74">&#34;window&#34;</span>
+                },
+                {
+                    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;focus_group&#34;</span>,
+                    <span style="color:#f92672">&#34;args&#34;</span>: { <span style="color:#f92672">&#34;group&#34;</span>: <span style="color:#ae81ff">1</span> },
+                    <span style="color:#f92672">&#34;context&#34;</span>: <span style="color:#e6db74">&#34;window&#34;</span>
+                }
+            ]
+        }
+    }
+]
+</code></pre></div><p><a href="http://stackoverflow.com/questions/10913138/how-to-create-a-custom-layout-in-sublime-text-2">Refer - how to create a custom layout in sublime text 2?</a>
+<a href="http://stackoverflow.com/questions/13149800/custom-layouts-sublime-text-2">Refer - Custom layouts, Sublime text 2</a>
+<a href="http://www.sublimetext.com/forum/viewtopic.php?f=6&amp;t=7284&amp;start=0&amp;hilit=set+layout">Refer - set_layout reference</a>
+Update
+<a href="http://stackoverflow.com/questions/9646552/is-it-possible-to-chain-key-binding-commands-in-sublime-text-2">Refer - Is it possible to chain key binding commands in sublime text 2?</a>
+<a href="https://gist.github.com/nilium/3327730">Refer - nilium / key-bindings.json</a></p>
 </p>
                 
 
                 
 
+                
+                <p><a href="https://blog.tedshd.io/posts/2014-02-27-sublime-change-layout-view-in-2-columns/">Read more</a></p>
                 
             </div>
         </div>

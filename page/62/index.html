@@ -191,7 +191,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-08-21-mac-sshfs/">Mac - SSHFS</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2014-08-29-compass-use-transform-in-compass-101/">Compass - Use transform in compass 1.0.1</a></h3>
 
                 
                 
@@ -201,16 +201,24 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2014-08-21
+2014-08-29
 </p>
                 
 
                 
-                <p><h2 id="mac---sshfs">Mac - SSHFS</h2>
-<p>SSHFS can help Mac user mount remote support SSH protocol.
-<a href="http://fuse.sourceforge.net/sshfs.html">Intro</a></p>
-<p><a href="https://github.com/osxfuse/osxfuse/wiki/SSHFS">Usage</a></p>
-<h3 id="strong-stylecolorredit-has-problem-in-oh-my-zshstrong"><!-- raw HTML omitted -->It has problem in oh-my-zsh!<!-- raw HTML omitted --></h3>
+                <p><h2 id="compass---use-transform-in-compass-101">Compass - Use transform in compass 1.0.1</h2>
+<p>On august 15, 2014
+Compass release 1.0.1
+Some code in scss change wording.
+This article provide CSS3 transform wording in scss.</p>
+<p>I use this Mixin</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#66d9ef">@import</span> <span style="color:#e6db74">&#34;compass/css3&#34;</span>;
+<span style="color:#75715e">/*simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y)*/</span>
+<span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> simple-transform</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">45</span><span style="color:#66d9ef">deg</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span><span style="color:#f92672">,</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span>);
+
+<span style="color:#75715e">/* Advance Usage */</span>
+<span style="color:#75715e">/*@include create-transform($perspective, $scale-x, $scale-y, $scale-z, $rotate-x, $rotate-y, $rotate-z, $rotate3d, $trans-x, $trans-y, $trans-z, $skew-x, $skew-y, $origin-x, $origin-y, $origin-z, $only3d);*/</span>
+</code></pre></div><p><a href="http://compass-style.org/reference/compass/css3/transform/#mixin-simple-transform">Refer - Compass Transform | Compass Documentation</a></p>
 </p>
                 
 
@@ -228,7 +236,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-08-16-git-github-gh-pages/">Git - GitHub gh-pages</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2014-08-27-web-develop-flexible-footer/">Web Develop - Flexible Footer</a></h3>
 
                 
                 
@@ -238,47 +246,66 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2014-08-16
+2014-08-27
 </p>
                 
 
                 
-                <p><h2 id="git---github-gh-pages">Git - GitHub gh-pages</h2>
-<p>有時在 GitHub 上亂晃
-常常發現一個問題就是有一些很有趣的前端實作, 或別人寫的一些功能沒有所謂的 demo page(當然有些是不需要 demo page)
-我不知道是把 GitHub 當成備份的 codebase 或是覺得 demo 不重要所以沒放, 又或者是根本不知道要怎麼放
-But
-這都不重要
-其實 GitHub 提供一個 gh-pages 的 branch(或者說是功能)可以讓我們這些前端攻城獅快速的建出個 demo page(<!-- raw HTML omitted -->但不包含後端功能<!-- raw HTML omitted -->)</p>
-<h3 id="如何使用">如何使用?</h3>
-<h4 id="1-從-master-建出名為-gh-pages-的-branch">1. 從 master 建出名為 <code>gh-pages</code> 的 branch</h4>
-<p><code>git branch gh-pages</code></p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/220973/Aig3e92WQniG9jC7k6vg_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_51_52.png" alt="螢幕快照_2014-08-17_上午12_51_52.png"></p>
-<h3 id="2-切到-gh-pahes-的-branch">2. 切到 gh-pahes 的 branch</h3>
-<p><code>git checkout gh-pages</code></p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/220973/pjRYDGZQ6apuuAPzf7Yb_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_51_53.png" alt="螢幕快照_2014-08-17_上午12_51_53.png"></p>
-<h3 id="3-把-gh-pages-git-push-上-github">3. 把 gh-pages <code>git push</code> 上 GitHub</h3>
-<p><code>git push</code></p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/220973/P9bJMwV8RledVKws4KBG_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_51_54.png" alt="螢幕快照_2014-08-17_上午12_51_54.png"></p>
-<p>因為剛建出新的 branch, 該 branch 還未在 GitHub 上所以會提示你要用 <code>git push --set-upstream origin gh-pages</code></p>
-<h3 id="4-快樂的去-github-拿網址">4. 快樂的去 GitHub 拿網址</h3>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/220973/QzdO4XAQ7iYka0DruqTg_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_55_02.png" alt="螢幕快照_2014-08-17_上午12_55_02.png"></p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/220973/kdMyQ6tMQ1SSRBl6Sj9K_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_55_16.png" alt="螢幕快照_2014-08-17_上午12_55_16.png"></p>
-<p>gh-pages 的 url 結構一律都是 http:// + <code>&lt;GitHub user name&gt;</code> + .github.io/ + <code>&lt;repository name&gt;</code></p>
-<h3 id="5-等等-網頁沒東西">5. 等等.. 網頁沒東西?</h3>
-<p>需注意的是該 url root 的 html 必須是 <code>index.html</code> 才會出預設的網頁, 其他的檔案路徑都是建立在該 url 上</p>
-<h3 id="6-update">6. Update</h3>
-<p>其實後續維護不太容易, 必須要熟悉 git 才知道要怎麼做
-通常會在 <code>master</code> or 切出個 <code>dev</code> 來開發, 等開發完在 merge
-所以在持續開發時, 要更新 demo page, 就必須要在 gh-pages merge 要更新的 branch</p>
-<p>據說好像 grunt 還是 gulp 有套件可以自動 build, 但還沒試驗就是了</p>
+                <p><h2 id="web-develop---flexible-footer">Web Develop - Flexible Footer</h2>
+<p>Sometimes we think footer must fixed in website bottom or put it in last of content.</p>
+<p>I provide a idea may be a good way.
+Content less browser view height, footer fixed in bottom.
+When content too much over browser view height, footer be put last of content.</p>
+<h3 id="feature">Feature</h3>
+<ul>
+<li>flexible</li>
+<li>only use CSS</li>
+</ul>
+<h3 id="usage">Usage</h3>
+<p><code>min-height: calc(100% - &lt;footer height&gt;);</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">    #hd {
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#aaa</span>;
+        <span style="color:#75715e">/*display: none;*/</span>
+    }
+    #bd {
+        <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+        <span style="color:#66d9ef">min-height</span>: calc(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>); <span style="color:#75715e">/* important */</span>
+        <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#ccc</span>;
+    }
+    #content {
+        <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">60</span><span style="color:#66d9ef">px</span>;
+    }
+    #footer {
+        <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+        <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#999</span>;
+    }
+</code></pre></div><p><code>50px</code> is footer height</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hd&#34;</span>&gt;
+        &lt;<span style="color:#f92672">h1</span>&gt;Head&lt;/<span style="color:#f92672">h1</span>&gt;
+    &lt;/<span style="color:#f92672">header</span>&gt;
+    &lt;<span style="color:#f92672">article</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bd&#34;</span>&gt;
+        &lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;
+            &lt;<span style="color:#f92672">button</span>&gt;build content&lt;/<span style="color:#f92672">button</span>&gt;
+            &lt;<span style="color:#f92672">h1</span>&gt;Content&lt;/<span style="color:#f92672">h1</span>&gt;
+            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loop&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;/<span style="color:#f92672">section</span>&gt;
+    &lt;/<span style="color:#f92672">article</span>&gt;
+    &lt;<span style="color:#f92672">footer</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
+        &lt;<span style="color:#f92672">h2</span>&gt;Footer&lt;/<span style="color:#f92672">h2</span>&gt;
+    &lt;/<span style="color:#f92672">footer</span>&gt;
+</code></pre></div><p><a href="http://tedshd.lionfree.net/demo/view_UI/footer.html">demo</a></p>
+<p><a href="http://www.siteinspire.com/">Refer - siteInspire - Web Design Inspiration</a></p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2014-08-16-git-github-gh-pages/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2014-08-27-web-develop-flexible-footer/">Read more</a></p>
                 
             </div>
         </div>

@@ -3,7 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2021-08-03T17:38:15+08:00</lastmod>
+    <lastmod>2022-01-04T05:42:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/emoji/</loc>
+    <lastmod>2022-01-04T05:42:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/javascript/</loc>
+    <lastmod>2022-01-04T05:42:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/javascript_count_emoji/</loc>
+    <lastmod>2022-01-04T05:42:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/</loc>
+    <lastmod>2022-01-04T05:42:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/</loc>
+    <lastmod>2022-01-04T05:42:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/firebase/</loc>
+    <lastmod>2021-10-25T09:22:33+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/firebase_remote_config/</loc>
+    <lastmod>2021-10-25T09:22:33+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/remote-config/</loc>
+    <lastmod>2021-10-25T09:22:33+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/cors/</loc>
     <lastmod>2021-04-30T18:40:48+08:00</lastmod>
@@ -13,12 +37,6 @@
   </url><url>
     <loc>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</loc>
     <lastmod>2021-04-30T18:40:48+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2021-08-03T17:38:15+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/</loc>
-    <lastmod>2021-08-03T17:38:15+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/ga4/</loc>
     <lastmod>2021-03-30T11:47:46+08:00</lastmod>
@@ -64,9 +82,6 @@
   </url><url>
     <loc>https://blog.tedshd.io/categories/ubuntu/</loc>
     <lastmod>2020-11-20T14:19:05+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/javascript/</loc>
-    <lastmod>2020-12-10T14:19:29+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/sort_case_handle_in_javascript/</loc>
     <lastmod>2020-12-10T14:19:29+08:00</lastmod>
@@ -129,9 +144,6 @@
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/youtube/</loc>
-    <lastmod>2020-01-29T17:42:46+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/firebase/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/2019-12-20-firebase-firebase-functions/</loc>

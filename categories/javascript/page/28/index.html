@@ -183,6 +183,101 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-11-25-facebook-api-get-uid/">Facebook api get UID &amp; AccessToken</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-11-25
+</p>
+                
+
+                
+                <p><h2 id="facebook-api-get-uid--accesstoken">Facebook api get UID &amp; AccessToken</h2>
+<ol>
+<li>Build App in facebook</li>
+<li><code>APP_ID</code> is a facebook App id</li>
+<li>Must set facebook App&rsquo;s web url and use code in it&rsquo;s domain</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">title</span>&gt;fb_oauth&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://code.jquery.com/jquery-1.10.2.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb-root&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FBLogin&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;登入臉書&#34;</span> /&gt;
+    &lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;uid&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;
+        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accessToken&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+    &lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://connect.facebook.net/zh_TW/all.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span>&gt;
+    <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">init</span>({
+        <span style="color:#a6e22e">appId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;APP_ID&#39;</span>,
+        <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+        <span style="color:#a6e22e">cookie</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+        <span style="color:#a6e22e">xfbml</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+        <span style="color:#a6e22e">oauth</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+    });
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#FBLogin&#39;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#66d9ef">function</span> () {
+        <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">login</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">response</span>) {
+            <span style="color:#75715e">// 登入之後執行的語法
+</span><span style="color:#75715e"></span>        },
+        {
+            <span style="color:#a6e22e">scope</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;email&#39;</span>
+        });
+    });
+    <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">getLoginStatus</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">response</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;connected&#39;</span>) {
+            <span style="color:#75715e">// 程式有連結到 Facebook 帳號
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// 取得 UID
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">uid</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">authResponse</span>.<span style="color:#a6e22e">userID</span>;
+            <span style="color:#75715e">// 取得 accessToken
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">accessToken</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">authResponse</span>.<span style="color:#a6e22e">accessToken</span>;
+            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#uid&#39;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#e6db74">&#39;UID：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">uid</span>);
+            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#accessToken&#39;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#e6db74">&#39;accessToken：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">accessToken</span>);
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;not_authorized&#39;</span>) {
+            <span style="color:#75715e">// 帳號沒有連結到 Facebook 程式
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;請允許授權！&#39;</span>);
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#75715e">// 帳號沒有登入
+</span><span style="color:#75715e"></span>        }
+    });
+&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p><a href="http://tedshd.lionfree.net/demo/facebook_oauth/fb_oauth.html">Demo</a></p>
+<p><a href="http://coding.anyun.tw/2012/03/07/using-facebook-javascript-sdk-get-uid-or-accesstoken/">Refer - 使用 Facebook JavaScript SDK 來取得使用者 UID 或 AccessToken</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-11-25-facebook-api-get-uid/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-11-09-javascript-event/">JavaScript - Event</a></h3>
 
                 
@@ -320,142 +415,6 @@ document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">inn
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-11-09-javascript-event/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-10-23-javascript-handle-json/">JavaScript - handle JSON</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-10-23
-</p>
-                
-
-                
-                <p><h2 id="handle-json">handle JSON</h2>
-<p>先了解 Object &amp; JSON
-<a href="http://www.josephjiang.com/presentation/OOJS/object-oriented-paradigms.html">JavaScript 物件導向的寫法</a>
-<a href="http://blog.wu-boy.com/2011/04/%E4%BD%A0%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84-json-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9/">你不可不知的 JSON 基本介紹</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// data can get from AJAX or self
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span>;
-<span style="color:#75715e">// init from self
-</span><span style="color:#75715e">// Object Literal
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#34;data_01&#34;</span><span style="color:#f92672">:</span> {
-        <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;title 01&#34;</span>,
-        <span style="color:#e6db74">&#34;num&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">01</span>,
-        <span style="color:#e6db74">&#34;con&#34;</span><span style="color:#f92672">:</span> {
-            <span style="color:#e6db74">&#34;con_01&#34;</span><span style="color:#f92672">:</span> {
-                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;news&#34;</span>,
-                <span style="color:#e6db74">&#34;desc&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;about news&#34;</span>
-            }
-            <span style="color:#e6db74">&#34;con_02&#34;</span><span style="color:#f92672">:</span> {
-                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sport&#34;</span>,
-                <span style="color:#e6db74">&#34;desc&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sport like NBA&#34;</span>
-            }
-            <span style="color:#e6db74">&#34;con_03&#34;</span><span style="color:#f92672">:</span> {
-                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;tech&#34;</span>,
-                <span style="color:#e6db74">&#34;desc&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;3C info&#34;</span>
-            }
-        }
-    },
-    <span style="color:#e6db74">&#34;data_02&#34;</span><span style="color:#f92672">:</span> {
-        <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;title 02&#34;</span>,
-        <span style="color:#e6db74">&#34;num&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">02</span>,
-        <span style="color:#e6db74">&#34;con&#34;</span><span style="color:#f92672">:</span> {
-            <span style="color:#e6db74">&#34;con_01&#34;</span><span style="color:#f92672">:</span> {
-                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;life&#34;</span>,
-                <span style="color:#e6db74">&#34;desc&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;people&#39;s life&#34;</span>
-            }
-            <span style="color:#e6db74">&#34;con_02&#34;</span><span style="color:#f92672">:</span> {
-                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;movie&#34;</span>,
-                <span style="color:#e6db74">&#34;desc&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Iron man ...&#34;</span>
-            }
-            <span style="color:#e6db74">&#34;con_03&#34;</span><span style="color:#f92672">:</span> {
-                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cars&#34;</span>,
-                <span style="color:#e6db74">&#34;desc&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;TOYOTA, Ford...&#34;</span>
-            }
-        }
-    }
-};
-</code></pre></div><h3 id="init-a-new-object-array">init a new object array</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span>,
-    <span style="color:#a6e22e">newData</span> <span style="color:#f92672">=</span> {},
-    <span style="color:#a6e22e">newDataArr</span> <span style="color:#f92672">=</span> [];
-<span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">data</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#a6e22e">x</span>)) {
-        <span style="color:#a6e22e">newData</span> <span style="color:#f92672">=</span> {
-            <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">title</span>,
-            <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">num</span>
-        };
-        <span style="color:#a6e22e">newDataArr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">newData</span>);
-    }
-}
-</code></pre></div><h3 id="get-object-con">get object con</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span>,
-    <span style="color:#a6e22e">y</span>,
-    <span style="color:#a6e22e">desc</span>,
-    <span style="color:#a6e22e">newDescArr</span> <span style="color:#f92672">=</span> [],
-    <span style="color:#a6e22e">newConArr</span> <span style="color:#f92672">=</span> [];
-<span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">data</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#a6e22e">x</span>)) {
-        <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">y</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">con</span>) {
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">con</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#a6e22e">y</span>)) {
-                <span style="color:#a6e22e">desc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">con</span>[<span style="color:#a6e22e">y</span>].<span style="color:#a6e22e">desc</span>;
-                <span style="color:#a6e22e">newDescArr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">desc</span>);
-            }
-        }
-        <span style="color:#a6e22e">newConArr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">newDescArr</span>);
-    }
-}
-</code></pre></div><h3 id="search-value-in-object">search value in Object</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;bind&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">27</span>,
-    <span style="color:#a6e22e">user</span><span style="color:#f92672">:</span> [
-        {
-            <span style="color:#e6db74">&#39;id&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>,
-            <span style="color:#e6db74">&#39;desc&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;str&#39;</span>
-        },
-        {
-            <span style="color:#e6db74">&#39;id&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">34</span>,
-            <span style="color:#e6db74">&#39;desc&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;hahaha&#39;</span>
-        },
-        {
-            <span style="color:#e6db74">&#39;id&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">27</span>,
-            <span style="color:#e6db74">&#39;desc&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;hihihi&#39;</span>
-        }
-    ]
-};
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span>;
-<span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">user</span>) {
-  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">user</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">uid</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">bind</span>) {
-    <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>;
-  }
-}
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">user</span>[<span style="color:#a6e22e">count</span>]);
-<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">user</span>[<span style="color:#a6e22e">count</span>]));
-</code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-10-23-javascript-handle-json/">Read more</a></p>
                 
             </div>
         </div>

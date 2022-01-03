@@ -183,6 +183,61 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-06-27-javascript-insertbefore/">JavaScript - insertBefore &amp; insertAfter</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-06-27
+</p>
+                
+
+                
+                <p><h2 id="javascript---insertbefore--insertafter">JavaScript - insertBefore &amp; insertAfter</h2>
+<h3 id="insertbefore">insertBefore</h3>
+<p>This is native JavaScript api</p>
+<p><code>var insertedElement = parentElement.insertBefore(newElement, referenceElement);</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vDom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>),
+    <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#list&#39;</span>);
+<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">vDom</span>, <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">childNodes</span>[<span style="color:#ae81ff">1</span>]);
+
+<span style="color:#75715e">// or
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vDom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>),
+    <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#target&#39;</span>);
+<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">vDom</span>, <span style="color:#a6e22e">dom</span>);
+</code></pre></div><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore">Refer - Node.insertBefore()</a></p>
+<h3 id="insertafter">insertAfter</h3>
+<p>JavaScript doesn&rsquo;t have any api handle insert DOM after reference DOM</p>
+<p>We can use this way</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">insertAfter</span>(<span style="color:#a6e22e">newNode</span>, <span style="color:#a6e22e">referenceNode</span>) {
+    <span style="color:#a6e22e">referenceNode</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">newNode</span>, <span style="color:#a6e22e">referenceNode</span>.<span style="color:#a6e22e">nextSibling</span>);
+}
+</code></pre></div><p><a href="http://stackoverflow.com/questions/4793604/how-to-do-insert-after-in-javascript-without-using-a-library">Refer - How to do insert After() in JavaScript without using a library?</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2015-06-27-javascript-insertbefore/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2015-06-08-javascript-dynamic-load-script-jsonp-callback/">JavaScript - Dynamic Load script || JSONP Callback</a></h3>
 
                 
@@ -273,90 +328,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2015-06-08-javascript-dynamic-load-script-jsonp-callback/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-01-27-javascript-cross-module-communication/">JavaScript - Cross Module Communication</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-01-27
-</p>
-                
-
-                
-                <p><h2 id="javascript---cross-module-communication">JavaScript - Cross Module Communication</h2>
-<p>When website modulize, need a better way handle cross module communcation.</p>
-<p>Refer JavaScript design pattern&rsquo;s observer pattern and Android EventBus</p>
-<h3 id="principle">Principle</h3>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/252556/8wtWEky0QYqHmnFn4agd_observer_pattern_basic.png" alt="observer_pattern_basic.png"></p>
-<h3 id="my-implement">My Implement</h3>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/252556/YGA8Jj0Tv6Dco8Kj6AI3_observer_pattern_flow.png" alt="observer_pattern_flow.png"></p>
-<h3 id="example">Example</h3>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/252556/NWYJbTKmUJtIkTXZugbf_observer_pattern_example.png" alt="observer_pattern_example.png"></p>
-<p>Hub is a array put publish object</p>
-<p>publish object must include action and something want to do</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
-}
-<span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
-</code></pre></div><p>If more something to in same action</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
-}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcB</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
-}
-<span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
-<span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcB</span>);
-</code></pre></div><p>Now fire <code>alarm</code> can run <code>funA</code> and <code>funB</code>
-Then unpublish <code>funA</code>, action can only run <code>funB</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
-}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcB</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
-}
-<span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
-<span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcB</span>);
-<span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
-</code></pre></div><p>unPublish has three type</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
-<span style="color:#75715e">// or
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">funcA</span>);
-<span style="color:#75715e">// or
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>);
-</code></pre></div><p>If publish is a is async behavior(AJAX)
-fire can add second argument as a callback to handle simple async behavior
-But not handle something behavior like promises or watchdog</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">fire</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>);
-<span style="color:#75715e">// or
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">funcA</span>() {
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Fin&#39;</span>);
-}
-<span style="color:#a6e22e">fire</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>)
-</code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-01-27-javascript-cross-module-communication/">Read more</a></p>
                 
             </div>
         </div>

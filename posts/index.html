@@ -1114,6 +1114,14 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1130,7 +1138,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/">Nginx 使用 refer 處理 CORS header</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/javascript_count_emoji/">JavaScript 計算 emoji</a></h3>
 
                 
                 
@@ -1140,37 +1148,48 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2021-04-30
+2022-01-04
 </p>
                 
 
                 
-                <p><p>處理 CORS 算是許多 Web 開發者會處理的情況</p>
-<p>其中要又有一個比較重要的部分就是要設定 <code>Access-Control-Allow-Origin</code> 這個允許來源的 header</p>
-<p>通常為了安全性問題, 都是只會設定允許的 host 上去</p>
-<p>但是常常設定而且在不同環境設定也是有點麻煩</p>
-<p>所以這邊就用了直接在 server 設定的方式來處理</p>
-<p>這樣直接看 server 的 rule 設定即可</p>
-<p>也可以快速的條列不同環境的 host</p>
-<h2 id="用法">用法</h2>
-<pre tabindex="0"><code class="language-conf" data-lang="conf">if ($http_referer ~* example.com) {
-    add_header 'Access-Control-Allow-Origin' 'https://example.com';
-}
-
-if ($http_referer ~* dev.example.com) {
-    add_header 'Access-Control-Allow-Origin' 'https://dev.example.com';
-}
-</code></pre><p>這個判斷沒有固定的寫法</p>
-<p>可以參考底下 Nginx 對 <code>http_referer</code> 的介紹來針對需要判斷 host 的方式進行修改</p>
-<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS">Refer - 跨來源資源共用（CORS）</a></p>
-<p><a href="http://nginx.org/en/docs/http/ngx_http_referer_module.html">Refer - Module ngx_http_referer_module</a></p>
+                <p><h2 id="在-web-中的-emoji-處理">在 Web 中的 emoji 處理</h2>
+<p>在普遍的字串計算長度的部分</p>
+<p>一個字元是單位是一</p>
+<p>但是因為 emoji unicode 後面定義的</p>
+<p>這超出了原有 JavaScript 原有定義的範圍</p>
+<p>所以 emoji 的字串長度一率都是從 2 起跳</p>
+<p>這在 Web 中會造成有需要處理字串長度的地方就會出現問題</p>
+<p>例如:</p>
+<p>input 文字的長度限制的使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">maxlength</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span>&gt;
+</code></pre></div><p>字串需要計算長度時</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">length</span>;
+</code></pre></div><p>尤其是在現在行動裝置的普及, 內建的鍵盤已經有 emoji 的輸入可以使用</p>
+<p>更會大大的增加在需要的邏輯處理會出現問題</p>
+<h2 id="如何解決">如何解決</h2>
+<p>有一個方便的套件 <a href="https://github.com/dotcypress/runes">runes</a> 會把 emoji 識別出來</p>
+<p>所以就可以解決掉 emoji 的問題了</p>
+<h2 id="背後原理">背後原理</h2>
+<p>其實背後的原理也不難</p>
+<p>就是去比對 emoji 的 unicode 碼</p>
+<p>比對該字串是不是 emoji 的 unicode 碼</p>
+<p>以下有 emoji 的網站可以試試看</p>
+<p><a href="https://getemoji.com/">https://getemoji.com/</a></p>
+<h2 id="後續補充">後續補充</h2>
+<p>所以在處理字串長度時就可以用 runes 套件得到的長度去限制</p>
+<p>不使用原有的方式去限制</p>
+<p>作者使用 runes 這個名稱也很有意思</p>
+<p>runes 是盧恩文的意思, 也是拉丁文的起源, 相當於中文中的甲骨文</p>
+<p>也是屬於以形會意</p>
+<p>所以用來代表 emoji 也是以形會意真的是蠻有意思的命名</p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/javascript_count_emoji/">Read more</a></p>
                 
             </div>
         </div>
@@ -1183,7 +1202,7 @@ if ($http_referer ~* dev.example.com) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/ga4_research_list/">GA4 資料整理</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/firebase_remote_config/">Firebase remote config rest 更新</a></h3>
 
                 
                 
@@ -1193,31 +1212,20 @@ if ($http_referer ~* dev.example.com) {
 <span class=" u-capitalized ">
     on
 </span>
-2021-03-30
+2021-10-25
 </p>
                 
 
                 
-                <p><p>因為在 2020 年下半年 Google 更新的 GA4 的版本出來</p>
-<p>基本上就是全新版本的 GA 了</p>
-<p>和舊的 GA 使用方式與數據都不相容</p>
-<p>主要是因為因應現在 App 記錄和觀察數據的方式和以前單純在 Web 上面不一樣</p>
-<p>所以 Google 開發了新的 GA4 來對應這種情況</p>
-<p>應該也是會漸漸的都要使用新的 GA4 了</p>
-<p>舊的目前還可以繼續用, 開新的 GA 也可以使用通用型來切成開舊版的 GA</p>
-<p>但是建議是在使用中的先繼續使用(有餘力再轉換)</p>
-<p>新的話就開新的 GA4</p>
-<p>這邊主要是記錄新版的使用</p>
-<p>但大多也都是會參照其他網站的說明為主(因為很多網站介紹的很詳細)</p>
-<p><a href="https://www.turingdigital.com.tw/blog/ga4p-complete-guide">Refer - 【最全 GA 攻略】2021 最新版 GA4 教學，從新舊比較到自訂報表都 OK！</a></p>
-<p>這網站介紹的蠻詳細的</p>
+                <p><p><a href="https://firebase.google.com/docs/reference/remote-config/rest">Refer - Firebase Remote Config API</a></p>
+<p>取用和更新都需要以下 Google oauth2.0 的權限</p>
+<p><a href="https://www.googleapis.com/auth/firebase.remoteconfig">https://www.googleapis.com/auth/firebase.remoteconfig</a>
+<a href="https://www.googleapis.com/auth/cloud-platform">https://www.googleapis.com/auth/cloud-platform</a></p>
 </p>
                 
 
                 
 
-                
-                <p><a href="https://blog.tedshd.io/posts/ga4_research_list/">Read more</a></p>
                 
             </div>
         </div>

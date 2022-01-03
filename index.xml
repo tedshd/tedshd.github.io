@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Fri, 30 Apr 2021 15:51:04 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Jan 2022 05:42:00 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript 計算 emoji</title>
+      <link>https://blog.tedshd.io/posts/javascript_count_emoji/</link>
+      <pubDate>Tue, 04 Jan 2022 05:42:00 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/javascript_count_emoji/</guid>
+      <description>在 Web 中的 emoji 處理 在普遍的字串計算長度的部分 一個字元是單位是一 但是因為 emoji unicode 後面定義的 這超出了原有 JavaScript 原有定義的範圍 所以 emoji 的字串長度一率都是從 2 起跳</description>
+    </item>
+    
+    <item>
+      <title>Firebase remote config rest 更新</title>
+      <link>https://blog.tedshd.io/posts/firebase_remote_config/</link>
+      <pubDate>Mon, 25 Oct 2021 09:22:33 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/firebase_remote_config/</guid>
+      <description>Refer - Firebase Remote Config API 取用和更新都需要以下 Google oauth2.0 的權限 https://www.googleapis.com/auth/firebase.remoteconfig https://www.googleapis.com/auth/cloud-platform</description>
+    </item>
+    
     <item>
       <title>Nginx 使用 refer 處理 CORS header</title>
       <link>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</link>

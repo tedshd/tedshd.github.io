@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/firebase/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Oct 2021 09:22:33 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/firebase/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Firebase remote config rest 更新</title>
+      <link>https://blog.tedshd.io/posts/firebase_remote_config/</link>
+      <pubDate>Mon, 25 Oct 2021 09:22:33 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/firebase_remote_config/</guid>
+      <description>Refer - Firebase Remote Config API 取用和更新都需要以下 Google oauth2.0 的權限 https://www.googleapis.com/auth/firebase.remoteconfig https://www.googleapis.com/auth/cloud-platform</description>
+    </item>
+    
     <item>
       <title>Firebase - Firebase functions 使用紀錄</title>
       <link>https://blog.tedshd.io/posts/2019-12-20-firebase-firebase-functions/</link>

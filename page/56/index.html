@@ -191,7 +191,7 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-03-23-hubot-develop-log/">Hubot - Develop log</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2015-04-14-javascript-use-createelement-or-string/">JavaScript - Use createElement or string?</a></h3>
 
                 
                 
@@ -201,41 +201,26 @@ if (!doNotTrack) {
 <span class=" u-capitalized ">
     on
 </span>
-2015-03-23
+2015-04-14
 </p>
                 
 
                 
-                <p><h2 id="hubot---develop-log">Hubot - Develop log</h2>
-<p><a href="https://hubot.github.com/">HUBOT</a></p>
-<h3 id="develop-environment">Develop Environment</h3>
-<ul>
-<li>Mac OS X</li>
-</ul>
-<h3 id="require">Require</h3>
-<ul>
-<li>nodejs(install from brew)</li>
-<li>redis(install from brew)</li>
-</ul>
-<h3 id="install">install</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install -g yo generator-hubot
-</code></pre></div><p>製作資料夾</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir myhubot
-cd myhubot
-</code></pre></div><p>設定 hubot</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yo hubot
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">? Owner: &lt;bot owner&gt;
-? Bot name: &lt;bot name&gt;
-? Description: &lt;description about this bot&gt;
-? Bot adapter: &lt;campfire or shell&gt;
-</code></pre></div><p>資訊會放在 <code>package.json</code></p>
-<p><a href="https://hubot.github.com/docs/">Refer - Getting Started</a></p>
-<h3 id="use-it">Use it</h3>
+                <p><h2 id="javascript---use-createelement-or-string">JavaScript - Use createElement or string?</h2>
+<p>常常討論在頁面上塞入新的 DOM 究竟是用哪種方式好</p>
+<p>其實在現今是要看 browser 如何解析 JavaScript</p>
+<p>所以目前沒一定的答案</p>
+<p>以下為效能測試的數據</p>
+<p><a href="http://jsperf.com/dom-test-string-vs-createelement">jsperf - dom-test-string-vs-createelement</a></p>
+<p>雖然樣本數少</p>
+<p>但依據上面的結果用 <code>createElement</code> 還是較有優勢</p>
 </p>
                 
 
                 
 
+                
+                <p><a href="https://blog.tedshd.io/posts/2015-04-14-javascript-use-createelement-or-string/">Read more</a></p>
                 
             </div>
         </div>
@@ -248,7 +233,7 @@ cd myhubot
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-01-27-javascript-cross-module-communication/">JavaScript - Cross Module Communication</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2015-04-05-css-modify-pseudo-element-content/">CSS - Modify Pseudo Element Content</a></h3>
 
                 
                 
@@ -258,68 +243,31 @@ cd myhubot
 <span class=" u-capitalized ">
     on
 </span>
-2015-01-27
+2015-04-05
 </p>
                 
 
                 
-                <p><h2 id="javascript---cross-module-communication">JavaScript - Cross Module Communication</h2>
-<p>When website modulize, need a better way handle cross module communcation.</p>
-<p>Refer JavaScript design pattern&rsquo;s observer pattern and Android EventBus</p>
-<h3 id="principle">Principle</h3>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/252556/8wtWEky0QYqHmnFn4agd_observer_pattern_basic.png" alt="observer_pattern_basic.png"></p>
-<h3 id="my-implement">My Implement</h3>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/252556/YGA8Jj0Tv6Dco8Kj6AI3_observer_pattern_flow.png" alt="observer_pattern_flow.png"></p>
-<h3 id="example">Example</h3>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/252556/NWYJbTKmUJtIkTXZugbf_observer_pattern_example.png" alt="observer_pattern_example.png"></p>
-<p>Hub is a array put publish object</p>
-<p>publish object must include action and something want to do</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
+                <p><h2 id="css---modify-pseudo-element-content">CSS - Modify Pseudo Element Content</h2>
+<p>之前遇到個問題就是偽元素的內容(content)到底可不可以修改, 於是就求助於 Google</p>
+<p>最後的答案是可以的, 而且還不少方法</p>
+<p><a href="http://pankajparashar.com/posts/modify-pseudo-elements-css/">Refer - Modify pseudo element styles with JavaScript</a></p>
+<p>看下來就以下的方式個人覺得最好用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#red::<span style="color:#a6e22e">before</span> {
+    <span style="color:#66d9ef">content</span>: attr(data<span style="color:#f92672">-</span>attr);
+    <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">red</span>;
 }
-<span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
-</code></pre></div><p>If more something to in same action</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
-}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcB</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
-}
-<span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
-<span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcB</span>);
-</code></pre></div><p>Now fire <code>alarm</code> can run <code>funA</code> and <code>funB</code>
-Then unpublish <code>funA</code>, action can only run <code>funB</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
-}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcB</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
-}
-<span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
-<span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcB</span>);
-<span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
-</code></pre></div><p>unPublish has three type</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
-<span style="color:#75715e">// or
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">funcA</span>);
-<span style="color:#75715e">// or
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>);
-</code></pre></div><p>If publish is a is async behavior(AJAX)
-fire can add second argument as a callback to handle simple async behavior
-But not handle something behavior like promises or watchdog</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">fire</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>);
-<span style="color:#75715e">// or
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">funcA</span>() {
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Fin&#39;</span>);
-}
-<span style="color:#a6e22e">fire</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;red&#34;</span> <span style="color:#a6e22e">data-attr</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;red&#34;</span>&gt;Hi, this is plain-old, sad-looking paragraph tag.&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">argument</span>) {
+        document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#red&#39;</span>).<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;data-attr&#39;</span>, <span style="color:#e6db74">&#39;green&#39;</span>);
+    }, <span style="color:#ae81ff">3000</span>);
 </code></pre></div></p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2015-01-27-javascript-cross-module-communication/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2015-04-05-css-modify-pseudo-element-content/">Read more</a></p>
                 
             </div>
         </div>
