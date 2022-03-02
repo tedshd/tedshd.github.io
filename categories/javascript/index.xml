@@ -14,7 +14,7 @@
       <pubDate>Wed, 02 Mar 2022 11:21:17 +0800</pubDate>
       
       <guid>https://blog.tedshd.io/posts/send_request_before_click_outbound_or_redirect/</guid>
-      <description>有時在看 GA 的 Web 數據時會發現在 Safari 的點擊 click 事件似乎會比較少 其實這背後是有原因的 主要是各個瀏覽器再處理新 direct 時的行為不一致所導致的 在 Safari 上面發生 direct 到新</description>
+      <description>Intro 有時在看 GA 的 Web 數據時會發現在 Safari 的點擊 click 事件似乎會比較少 其實這背後是有原因的 主要是各個瀏覽器再處理新 direct 時的行為不一致所導致的 在 Safari 上面發生 direct 到</description>
     </item>
     
     <item>
