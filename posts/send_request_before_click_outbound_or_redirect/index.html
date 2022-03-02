@@ -219,7 +219,7 @@ if (!doNotTrack) {
 <h2 id="加碼">加碼</h2>
 <p>在自己設計發送 log 的情況時(例如需要額外的點擊紀錄等)</p>
 <p>建議直接採用 GET 的方式發送然後也不要等回傳</p>
-<p>可以以以下的方式處理</p>
+<p>可以使用以下的方式處理</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiLog</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">type</span>, <span style="color:#a6e22e">data</span>) {
   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">logImage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Image</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
   <span style="color:#a6e22e">logImage</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;log_image&#39;</span>)
