@@ -183,6 +183,60 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2016-03-22-667492/">JavaScript - DOM object check array &amp; isArray polyfill</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-03-22
+</p>
+                
+
+                
+                <p><h2 id="javascript---dom-object-check-array--isarray-polyfill">JavaScript - DOM object check array &amp; isArray polyfill</h2>
+<p>One day my colleague find a question.</p>
+<p>ECMA script <code>isArray</code> is not work when object is DOM element</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Array.<span style="color:#a6e22e">isArray</span>(document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;div&#39;</span>));
+<span style="color:#75715e">// false
+</span></code></pre></div><p>And polyfill for old browser</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arg</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object Array]&#39;</span>;
+</code></pre></div><p>Still fail</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(document.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#e6db74">&#39;product-img&#39;</span>));
+<span style="color:#75715e">// [object HTMLCollection]
+</span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;div&#39;</span>));
+<span style="color:#75715e">// [object NodeList]
+</span></code></pre></div><p>So i try to make a polyfill</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Array.<span style="color:#a6e22e">isArray</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">arg</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arg</span>);
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object Array]&#39;</span> <span style="color:#f92672">||</span>
+        <span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object HTMLCollection]&#39;</span> <span style="color:#f92672">||</span>
+        <span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object NodeList]&#39;</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+};
+</code></pre></div></p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2016-01-27-javascript-get-css-style/">JavaScript - get CSS style</a></h3>
 
                 
@@ -213,65 +267,6 @@ if (!doNotTrack) {
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/">Something about XSS(Cross-site scripting)</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-11-01
-</p>
-                
-
-                
-                <p><h2 id="something-about-xsscross-site-scripting">Something about XSS(Cross-site scripting)</h2>
-<p>If not set anything</p>
-<p>Use like</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#66d9ef">echo</span> $_GET[<span style="color:#e6db74">&#39;name&#39;</span>];<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>and querystring <code>name</code> = <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
-<p>And not defence XSS</p>
-<p>In Firefox</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/307308/G2Ec0H05TgG5yNFaRS6K_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.40.08.png" alt="螢幕快照 2015-11-01 下午8.40.08.png"></p>
-<p>In Chrome</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/307308/tyAndfVzTqy50xBAJmhI_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.42.45.png" alt="螢幕快照 2015-11-01 下午8.42.45.png"></p>
-<p>In Safari</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/307308/xfWYDtAnQ7SoVIKdlTIL_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.43.16.png" alt="螢幕快照 2015-11-01 下午8.43.16.png"></p>
-<h3 id="result">Result</h3>
-<p>Chrome &amp; Safari browser has handle XSS default</p>
-<h3 id="defence">Defence</h3>
-<p>Set header <code>X-XSS-Protection: 1</code></p>
-<p>if use PHP, can use</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">htmlspecialchars</span>()
-<span style="color:#75715e">// or
-</span><span style="color:#75715e"></span> <span style="color:#a6e22e">htmlentities</span>()
-</code></pre></div><h3 id="important">Important!</h3>
-<p>Finally</p>
-<p>We must know it is handle encode to avoid run JavaScript on page</p>
-<p><a href="https://github.com/tedshd/javascript-htmlspecialchars">JavaScript ver htmlspecialchars</a></p>
-<p><a href="http://www.qa-knowhow.com/?p=2992">Refer - XSS攻擊的深入探討與防護之道</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/">Read more</a></p>
                 
             </div>
         </div>

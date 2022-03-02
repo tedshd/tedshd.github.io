@@ -1126,6 +1126,10 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1136,6 +1140,83 @@ if (!doNotTrack) {
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-04-28-samsung-samrt-tv-network-error-handle/">Samsung Samrt TV - Network Error Handle</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-04-28
+</p>
+                
+
+                
+                <p><h2 id="samsung-samrt-tv---network-error-handle">Samsung Samrt TV - Network Error Handle</h2>
+<h3 id="example">Example</h3>
+<p>Watch network connect status</p>
+<ol>
+<li>Add web api in HTML</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">language</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;$MANAGER_WIDGET/Common/webapi/1.0/webapis.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><ol start="2">
+<li>Add JavaScript code</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">watchCB</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">onconnect</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">type</span>) {
+        <span style="color:#75715e">// (1) connected
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">type</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; is connected successfully&#34;</span>);
+    },
+
+    <span style="color:#a6e22e">ondisconnect</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">type</span>) {
+        <span style="color:#75715e">// (0) disconnected
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">type</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; is disconnected&#34;</span>);
+    }
+};
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">successCB</span>(<span style="color:#a6e22e">networks</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">networks</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">networks</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">isActive</span>()) {
+            <span style="color:#a6e22e">networks</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">setWatchListener</span>(<span style="color:#a6e22e">watchCB</span>, <span style="color:#a6e22e">errorCB</span>);
+        }
+    }
+};
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">errorCB</span>(<span style="color:#a6e22e">error</span>) {
+    <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>);
+};
+
+<span style="color:#66d9ef">try</span> {
+    <span style="color:#a6e22e">webapis</span>.<span style="color:#a6e22e">network</span>.<span style="color:#a6e22e">getAvailableNetworks</span>(<span style="color:#a6e22e">successCB</span>, <span style="color:#a6e22e">errorCB</span>);
+} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+    document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;h4&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">name</span>;
+    <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">name</span>);
+}
+</code></pre></div><p>This sample code can detect network connect status</p>
+<p><a href="http://www.samsungdforum.com/Guide/ref00008/index.html">Refer - Web Device API</a>
+<a href="http://www.samsungdforum.com/Guide/ref00008/network/dtv_network_module.html">Refer - Network</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2014-04-28-samsung-samrt-tv-network-error-handle/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1180,69 +1261,6 @@ CREATE EXTENSION
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-04-07-css-vertical-reset/">CSS - 垂直置中</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-04-07
-</p>
-                
-
-                
-                <p><h2 id="css---垂直置中">CSS - 垂直置中</h2>
-<h3 id="文字垂直置中">文字垂直置中</h3>
-<p>之前 ApplyBOY 在網路上分享了一個 CSS 垂直置中的一個解法
-這裡整理出個小小模組出來</p>
-<p>假如那一個區域內的東西需做垂直置中, 在該區域的 element 加上 class <code>vertical-centering</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">vertical-centering</span>:<span style="color:#a6e22e">before</span> {
-  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#39;&#39;</span>;
-  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline-block</span>;
-  <span style="color:#66d9ef">vertical-align</span>: <span style="color:#66d9ef">middle</span> ;
-  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-}
-</code></pre></div><p>該區域的文字就會垂直置中</p>
-<p><strong>Example</strong></p>
-<!-- raw HTML omitted -->
-<h3 id="區域垂直置中">區域垂直置中</h3>
-<p>如要在一區域內有一小塊區域置中則需把該區域做 <code>vertical-align: middle;</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">vertical-centering-area</span> {
-  <span style="color:#66d9ef">vertical-align</span>: <span style="color:#66d9ef">middle</span>;
-}
-
-.<span style="color:#a6e22e">vertical-centering</span>:<span style="color:#a6e22e">before</span> {
-  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#39;&#39;</span>;
-  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline-block</span>;
-  <span style="color:#66d9ef">vertical-align</span>: <span style="color:#66d9ef">middle</span> ;
-  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-}
-</code></pre></div><p><strong>Example</strong></p>
-<!-- raw HTML omitted -->
-<p><a href="http://blog.wu-boy.com/2013/07/css-vertical-align-center/">Refer - CSS 垂直置中解法</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-04-07-css-vertical-reset/">Read more</a></p>
                 
             </div>
         </div>

@@ -183,6 +183,81 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-06-23-windows-81-app-develop-introduction/">Windows 8.1 app develop - Introduction</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-06-23
+</p>
+                
+
+                
+                <p><h2 id="windows-81-app---introduction">Windows 8.1 app - Introduction</h2>
+<p>Develop Win 8.1 app with JavaScript.</p>
+<ol>
+<li>
+<p>死心吧, 請準備一台 Windows 8.1 的電腦(一直以來我都以為生為前端攻城獅只要用 Mac 就可以打天下了)</p>
+</li>
+<li>
+<p>下載 <a href="http://www.visualstudio.com/zh-tw/downloads">Visual Studio 2013</a>, 要下載 Visual Studio Express 的版本</p>
+</li>
+<li>
+<p>開始努力地讀文件 <del><a href="http://msdn.microsoft.com/en-us/library/windows/apps/br211385.aspx">Doc</a></del></p>
+</li>
+</ol>
+<h3 id="strong-stylecolorrednotice--tipstrong"><!-- raw HTML omitted -->Notice &amp; Tip<!-- raw HTML omitted --></h3>
+<p>先了解一些限制與規範以免踩雷</p>
+<ul>
+<li>
+<p>Microsoft 提供 <a href="https://github.com/winjs/winjs">WinJS</a> 來協助開發 Windows 8.1 app</p>
+</li>
+<li>
+<p>無法使用網路的 source</p>
+<ul>
+<li>無法使用 remote 的 CSS or JavaScript, 必須全部 download 下來</li>
+</ul>
+</li>
+<li>
+<p>無法直接使用 iframe</p>
+<ul>
+<li><code>package.appxmainifest</code> -&gt; <code>內容 URI</code>, 把 iframe url 設成例外, 但是該 url 必須用 https</li>
+<li>使用 <code>x-ms-webview</code> tag 來代替 <code>iframe</code>, <a href="http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx">x-ms-webview element | x-ms-webview object</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="handle-ajax">Handle AJAX</h4>
+<p>在開發 Windows 8.1 時, 並不能直接的 <code>XMLHttpRequest</code> 處理 AJAX 行為, 需用 WinJS 來處理
+<a href="http://msdn.microsoft.com/en-us/library/windows/apps/xaml/br229787.aspx">WinJS.xhr function</a></p>
+<p><a href="https://software.intel.com/sites/landingpage/tw/windows8-college-10.php">Refer - Windows8軟體開發小學堂(十)：使用WinJS自訂Javascript類</a>
+<a href="https://software.intel.com/sites/landingpage/tw/windows8-college-11.php">Refer - Windows8軟體開發小學堂(十一)：使用WinJS自訂Javascript的名字空間</a>
+<a href="https://software.intel.com/sites/landingpage/tw/windows8-college-12.php">Refer - Windows8軟體開發小學堂(十二)：使用WinJS在已有Namespace中添加新成員</a>
+<a href="https://software.intel.com/sites/landingpage/tw/windows8-college-13.php">Refer - Windows8軟體開發小學堂(十三)：給Metro應用添加Wide Logo</a>
+<a href="https://software.intel.com/sites/landingpage/tw/windows8-metro-splash-screen.php">Refer - Windows8軟體開發小學堂(十四) : 修改Metro應用的Splash Screen</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2014-06-23-windows-81-app-develop-introduction/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2014-06-01-angularjs-http/">AngularJS - $http</a></h3>
 
                 
@@ -337,68 +412,6 @@ $data <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_deco
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2014-06-01-angularjs-http/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-05-30-javascript-multiple-lines-omitted/">JavaScript - 多行文字省略</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-05-30
-</p>
-                
-
-                
-                <p><h2 id="javascript---多行文字省略">JavaScript - 多行文字省略</h2>
-<p>Sample code</p>
-<ul>
-<li>CSS</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">ellipsis-mult</span> {
-  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
-  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">em</span>;
-  <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
-}
-<span style="color:#f92672">p</span> {
-    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><ul>
-<li>HTML</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ellipsis-mult&#34;</span>&gt;
-    &lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nisi ligula, dapibus a volutpat sit amet, mattis et dui. Nunc porttitor accumsan orci id luctus. Phasellus ipsum metus, tincidunt non rhoncus id, dictum a lectus. Nam sed ipsum a lacus sodales eleifend. Vestibulum lorem felis, rhoncus elementum vestibulum eget, dictum ut velit. Nullam venenatis, elit in suscipit imperdiet, orci purus posuere mauris, quis adipiscing ipsum urna ac quam.&lt;/<span style="color:#f92672">p</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><ul>
-<li>JavaScript</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">h</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.ellipsis-mult&#39;</span>).<span style="color:#a6e22e">clientHeight</span>;
-<span style="color:#66d9ef">while</span> (document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.ellipsis-mult p&#39;</span>).<span style="color:#a6e22e">clientHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">h</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.ellipsis-mult p&#39;</span>).<span style="color:#a6e22e">textContent</span>;
-    document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.ellipsis-mult p&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\W*\s(\S)*$/</span>, <span style="color:#e6db74">&#39;...&#39;</span>);
-}
-</code></pre></div><p><a href="http://stackoverflow.com/questions/6222616/with-css-use-for-overflowed-block-of-multi-lines">Refer - With CSS, use “…” for overflowed block of multi-lines</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-05-30-javascript-multiple-lines-omitted/">Read more</a></p>
                 
             </div>
         </div>

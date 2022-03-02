@@ -191,6 +191,53 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2016-03-08-vim-javascript-auto-complete/">Vim - JavaScript auto complete</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-03-08
+</p>
+                
+
+                
+                <p><h2 id="vim---javascript-auto-complete">Vim - JavaScript auto complete</h2>
+<p>因為同事幾乎都在用 Vim 但我每次都在看他們一直打字我看了就很痛苦 所以就建議他們用 auto complete 的功能, 但我個人因為很少用 Vim 所以就讓他們自己去找套件(我個人不喜歡在 Vim 上裝套件)</p>
+<p>但他們似乎都遇到困難 所以我就找了一下找到個不用裝套件又可用在 Linux 和 Mac 上最簡單的 JavaScript auto complete 的方式, 應該是因為 Vim 已經內建了</p>
+<p>只要在 .vimrc 設定</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">autocmd FileType javascript set omnifunc<span style="color:#f92672">=</span>javascriptcomplete#CompleteJS
+</code></pre></div><p>使用就是輸入部分關鍵字後先按 <code>Ctrl + x</code> 再按 <code>Ctrl + o</code> 就可以了</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/604214/Au7OUhnSToG9vmSajeRr_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-08%20%E4%B8%8B%E5%8D%8812.09.43.png" alt="螢幕快照 2016-03-08 下午12.09.43.png"></p>
+<p>但只支援舊的 JavaScript API</p>
+<p><a href="https://docs.oseems.com/general/application/vim/auto-complete-javascript">Refer - How to auto-complete JavaScript syntax in Vim</a></p>
+<p>如果要新的得再試別的方法
+似乎可以補字庫進去
+More</p>
+<p><a href="http://efe.baidu.com/blog/vim-javascript-completion/">VIM的JavaScript补全</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2016-03-08-vim-javascript-auto-complete/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2016-01-31-466975/">HTML - redirect page from http-equiv</a></h3>
 
                 
@@ -235,48 +282,6 @@ And http status is 301</p>
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2016-01-31-466975/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2016-01-27-javascript-get-css-style/">JavaScript - get CSS style</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2016-01-27
-</p>
-                
-
-                
-                <p><h2 id="javascript---get-css-style">JavaScript - get CSS style</h2>
-<p>Sometimes i want to use JavaScript get dom CSS style.</p>
-<p>Use <code>DOM.currentStyle</code> and <code>window.getComputedStyle(DOM)</code></p>
-<p>For IE use <strong>DOM.currentStyle</strong></p>
-<p>Other use <strong>window.getComputedStyle(DOM)</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;target&#34;</span>),
-    <span style="color:#a6e22e">style</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">currentStyle</span> <span style="color:#f92672">||</span> window.<span style="color:#a6e22e">getComputedStyle</span>(<span style="color:#a6e22e">dom</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">marginTop</span>);
-</code></pre></div><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle">refer - Window.getComputedStyle() - Web APIs | MDN</a></p>
-<p><a href="https://msdn.microsoft.com/en-us/library/ms535231(v=vs.85).aspx">refer - currentStyle object (Internet Explorer)</a></p>
-</p>
-                
-
-                
-
                 
             </div>
         </div>

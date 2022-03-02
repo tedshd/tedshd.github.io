@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>browser on tedshd&#39;s DevNote</title>
+    <link>https://blog.tedshd.io/categories/browser/</link>
+    <description>Recent content in browser on tedshd&#39;s DevNote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2020 Tedshd</copyright>
+    <lastBuildDate>Wed, 02 Mar 2022 11:21:17 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/browser/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在點擊連結或是 redirect 前送出請求</title>
+      <link>https://blog.tedshd.io/posts/send_request_before_click_outbound_or_redirect/</link>
+      <pubDate>Wed, 02 Mar 2022 11:21:17 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/send_request_before_click_outbound_or_redirect/</guid>
+      <description>有時在看 GA 的 Web 數據時會發現在 Safari 的點擊 click 事件似乎會比較少 其實這背後是有原因的 主要是各個瀏覽器再處理新 direct 時的行為不一致所導致的 在 Safari 上面發生 direct 到新</description>
+    </item>
+    
+  </channel>
+</rss>

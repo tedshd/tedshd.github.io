@@ -183,6 +183,69 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-03-02-javascript-scroll-progress/">JavaScript - Scroll Progress</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-03-02
+</p>
+                
+
+                
+                <p><h2 id="javascript---scroll-progress">JavaScript - Scroll Progress</h2>
+<p>Show a progress bar about page scroll position.</p>
+<p>This used scroll event
+Progress bar must handle scroll position and scroll total height, and show it for percent
+View MDN document can find it can&rsquo;t use <code>scrollHeight</code>, because when scroll bar scroll to bottom, <code>scrollTop</code> not equal <code>scrollHeight</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;body&#34;</span>);
+<span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
+  (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">/</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
+    <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
+  <span style="color:#e6db74">&#34;%&#34;</span>;
+</code></pre></div><p>Then find <code>scrollTop</code> didn&rsquo;t work in firefox</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span>) {
+  <span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
+    (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">/</span>
+      (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
+      <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
+    <span style="color:#e6db74">&#34;%&#34;</span>;
+} <span style="color:#66d9ef">else</span> {
+  <span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
+    (window.<span style="color:#a6e22e">pageYOffset</span> <span style="color:#f92672">/</span>
+      (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
+      <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
+    <span style="color:#e6db74">&#34;%&#34;</span>;
+}
+</code></pre></div><p><a href="https://github.com/tedshd/scroll_progress">GitHub</a></p>
+<p><a href="http://help.dottoro.com/ljurkcpe.php">Refer - onscroll event | scroll event</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.scrollTop">Refer - Element.scrollTop - Web API Interfaces | MDN</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.scrollHeight">Refer - element.scrollHeight - Web API Interfaces | MDN</a>
+<a href="http://stackoverflow.com/questions/2481350/retrieve-scrollbar-position-with-javascript">Refer - retrieve Scrollbar position with javascript</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2014-03-02-javascript-scroll-progress/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2014-02-19-javascript-jquery-index-in-javascript/">JavaScript - jQuery index() in JavaScript</a></h3>
 
                 
@@ -242,53 +305,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2014-02-19-javascript-jquery-index-in-javascript/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-02-06-javascript-encryption/">JavaScript - Encryption</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-02-06
-</p>
-                
-
-                
-                <p><h2 id="javascript---encryption">JavaScript - Encryption</h2>
-<p>弱弱的加密</p>
-<h3 id="base64">base64</h3>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Base64_encoding_and_decoding">Base64 encoding and decoding</a></p>
-<h3 id="sha1only-js-to-js">sha1(only js to js)</h3>
-<p>Need utf8 encode
-<a href="http://phpjs.org/functions/sha1/">JavaScript sha1 function</a></p>
-<h3 id="utf8only-js-to-js">utf8(only js to js)</h3>
-<p><a href="http://phpjs.org/functions/utf8_encode/">JavaScript utf8_encode function</a>
-<a href="http://phpjs.org/functions/utf8_decode/">JavaScript utf8_decode function</a>
-decode can handle php utf8_encode()</p>
-<h3 id="encryptjs-to-php">Encrypt(js to php)</h3>
-<p>Use <a href="https://code.google.com/p/crypto-js/">crypto-js</a></p>
-<p><a href="https://code.google.com/p/crypto-js/#HMAC">HMAC</a></p>
-<p><a href="http://stackoverflow.com/questions/12099092/javascript-equivalent-of-phps-hash-hmac-with-raw-binary-output">Refer - Javascript: Equivalent of PHP&rsquo;s hash_hmac() with RAW BINARY output?</a></p>
-</p>
-                
-
-                
-
                 
             </div>
         </div>

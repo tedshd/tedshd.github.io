@@ -7,13 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Tue, 04 Jan 2022 16:04:04 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Mar 2022 11:21:17 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>browser</title>
+      <link>https://blog.tedshd.io/categories/browser/</link>
+      <pubDate>Wed, 02 Mar 2022 11:21:17 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/browser/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>javascript</title>
       <link>https://blog.tedshd.io/categories/javascript/</link>
-      <pubDate>Tue, 04 Jan 2022 16:04:04 +0800</pubDate>
+      <pubDate>Wed, 02 Mar 2022 11:21:17 +0800</pubDate>
       
       <guid>https://blog.tedshd.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>safari</title>
+      <link>https://blog.tedshd.io/categories/safari/</link>
+      <pubDate>Wed, 02 Mar 2022 11:21:17 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/safari/</guid>
       <description></description>
     </item>
     

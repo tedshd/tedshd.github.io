@@ -183,6 +183,62 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">JavaScript - 半形 全形 轉換</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2019-01-30
+</p>
+                
+
+                
+                <p><h2 id="javascript---半形-全形-轉換">JavaScript - 半形 全形 轉換</h2>
+<p>因為一個奇怪的需求?</p>
+<p>需要把使用者輸入的東西轉成可以方便驗證的格式(這應該後端做吧?)</p>
+<p>反正因為以前也做過半形轉成全形(痛苦的回憶, 為啥政府的 opendata 各縣市格式不一致就算了, 竟然還有全形半形的問題&hellip;)</p>
+<p>這邊就簡單的只針對最前面的基本拉丁字母字元符號集作轉換</p>
+<p>因為大部分的需求應該這樣就可以應付了?</p>
+<p>但是空白字元要特殊處理</p>
+<p>那接下來只要知道需要轉換的字元範圍即可</p>
+<p>全形從 <code>U+FF01</code> 到 <code>U+FF5E</code></p>
+<p>半形從 <code>U+0021</code> 到 <code>U+007E</code></p>
+<p>把 16 進制轉換回來就是</p>
+<p>65281 到 65374</p>
+<p>33 到 126</p>
+<p>上述怎麼轉的?</p>
+<p>就是這樣</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">parseInt(<span style="color:#e6db74">&#39;0xFF01&#39;</span>, <span style="color:#ae81ff">16</span>)
+</code></pre></div><p>只要判斷輸入的字元這這些編碼區間就進行轉換</p>
+<p><a href="https://tedshd.io/demo/trans.html">trans char</a></p>
+<p>所以簡單做了一個 demo 頁面</p>
+<p>程式檢視原始碼即可</p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%85%A8%E5%BD%A2%E5%92%8C%E5%8D%8A%E5%BD%A2">Refer - Wiki</a></p>
+<p><a href="https://blog.longwin.com.tw/2013/12/unicode-utf8-char-range-table-2013/">Refer - Unicode / UTF-8 字元編碼區間表 - 2013</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2018-11-21-javascript-calculate-exposure-of-web-page-components/">JavaScript - 計算網頁元件的曝光</a></h3>
 
                 
@@ -253,63 +309,6 @@ window.document.<span style="color:#a6e22e">documentElement</span>.<span style="
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2018-11-21-javascript-calculate-exposure-of-web-page-components/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2017-04-25-1747072/">JavaScript - browser zoom detect</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2017-04-25
-</p>
-                
-
-                
-                <p><h2 id="javascript---browser-zoom-detect">JavaScript - browser zoom detect</h2>
-<p>強者我朋友身為一個設計師問我一個很奇耙的需求</p>
-<p>就是可不可以知道瀏覽器的縮放狀態</p>
-<p>因為她的 BOSS 要求縮放不破版, 所以她希望設計在縮放狀態時的 layout 讓工程師套版</p>
-<p>於是來問我說是否有辦法知道瀏覽器的縮放狀態</p>
-<p>先說一下其實要縮放不破版只要設計彈性的 layout 例如使用 grid 的設計基本上都不會破版, 以我的經驗縮放破版通常是一些特殊的 layout 或用一些奇特的 CSS 的寫法</p>
-<p>但正妹設計師求助</p>
-<p>魯蛇工程師只好默默的來看看有啥方法</p>
-<p>在新的 JavaScript api 有個 <code>devicePixelRatio</code> 可以取得目前 device 的像素比</p>
-<p>一般是用來判斷是否是 high resolution 的螢幕</p>
-<p>但是當 browser 縮放時其實這個值也會改變(尚未在 mobile device 試驗</p>
-<p>所以可以用這特性來做處理</p>
-<p>但這有問題就是當本身螢幕就是 high resolution 得螢幕像是 2K or 4K or MBPR 的螢幕</p>
-<p>它們的 <code>window.devicePixelRatio</code> 就不會是 1</p>
-<p>所以縮放後也不好知道縮放的比例</p>
-<p>所以非完美解&hellip;</p>
-<p>且目前 browser 支援度不佳</p>
-<p>下面是範例</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">browserZoomLevel</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>(window.<span style="color:#a6e22e">devicePixelRatio</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">browserZoomLevel</span>);
-</code></pre></div><p>目前看來與其去處理縮放不如把 layout 設計好才是正解</p>
-<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Window/devicePixelRatio">MDN - Window.devicePixelRatio</a></p>
-<p><a href="http://stackoverflow.com/questions/1713771/how-to-detect-page-zoom-level-in-all-modern-browsers">Refer - How to detect page zoom level in all modern browsers?</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2017-04-25-1747072/">Read more</a></p>
                 
             </div>
         </div>
