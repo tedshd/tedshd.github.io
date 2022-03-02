@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Tue, 04 Jan 2022 05:42:00 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Jan 2022 16:04:04 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript 判斷並且取出 url</title>
+      <link>https://blog.tedshd.io/posts/javascript_parse_url/</link>
+      <pubDate>Tue, 04 Jan 2022 16:04:04 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/javascript_parse_url/</guid>
+      <description>因為工作上的需要 需要把使用者輸入的訊息中含有 url 的部分把它取出來轉成超連結 參照以下範例 https://gist.github.com/metafeather/202974/34c2d31bd82f59c2486f38790054bbbc0b10ca8b 不知為何他的正規有點問題 所以又做了修正 function urlParse(str) { var urlArray = []; var</description>
+    </item>
+    
     <item>
       <title>JavaScript 計算 emoji</title>
       <link>https://blog.tedshd.io/posts/javascript_count_emoji/</link>

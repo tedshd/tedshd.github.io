@@ -183,6 +183,79 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-25-javascript-type/">JavaScript type</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-08-25
+</p>
+                
+
+                
+                <p><h2 id="javascript-type">JavaScript Type</h2>
+<ul>
+<li>number</li>
+<li>string</li>
+<li>boolean</li>
+<li>null</li>
+<li>undefind</li>
+</ul>
+<p>減少 type 轉換以加快執行速度</p>
+<h2 id="object">Object</h2>
+<h3 id="var">var</h3>
+<ul>
+<li>宣告後即擁有物件的屬性</li>
+<li>宣告之後無法刪除</li>
+<li>區域變數</li>
+</ul>
+<p>function 內宣告</p>
+<ul>
+<li>全域變數</li>
+</ul>
+<p>小心使用</p>
+<h3 id="property">property</h3>
+<ul>
+<li>建立在物件中</li>
+<li>可刪除</li>
+</ul>
+<h2 id="array">Array</h2>
+<ul>
+<li>method 1</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
+</code></pre></div><p>bug</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">10</span>);
+<span style="color:#a6e22e">arr</span>
+<span style="color:#75715e">// [undefined × 10]
+</span></code></pre></div><ul>
+<li>method 2</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+</code></pre></div></p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-08-25-javascript-type/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-08-03-innerheight-innerwidth/">innerHeight &amp; innerWidth</a></h3>
 
                 
@@ -216,55 +289,6 @@ Google了一下
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollHeight</span>
 </code></pre></div><p><a href="http://stackoverflow.com/questions/1145850/get-height-of-entire-document-with-javascript">Refer</a></p>
 </p>
-                
-
-                
-
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-03-performance-test-javascript/">performance-test</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-08-03
-</p>
-                
-
-                
-                <p><h2 id="performance">performance</h2>
-<p>jsPerf — JavaScript performance playground
-<a href="http://jsperf.com/">http://jsperf.com/</a></p>
-<p>HTML5 test
-<a href="http://html5test.com/">http://html5test.com/</a></p>
-<p>JavaScript Benchmark
-<a href="http://www.webkit.org/perf/sunspider/sunspider.html">http://www.webkit.org/perf/sunspider/sunspider.html</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">perf</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">testName</span>, <span style="color:#a6e22e">fn</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">startTime</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getTime</span>();
-    <span style="color:#a6e22e">fn</span>();
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">endTime</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getTime</span>();
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">testName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">endTime</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">startTime</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;ms&#34;</span>);
-}
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">jQuery</span>
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">time</span>(<span style="color:#e6db74">&#34;timerName&#34;</span>);
-<span style="color:#75715e">// javascript
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">timeEnd</span>(<span style="color:#e6db74">&#34;timerName&#34;</span>);
-</code></pre></div></p>
                 
 
                 

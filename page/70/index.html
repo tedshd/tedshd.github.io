@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.88.1" />
+	<meta name="generator" content="Hugo 0.92.1" />
     
 
 
@@ -191,6 +191,68 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-05-30-javascript-multiple-lines-omitted/">JavaScript - 多行文字省略</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-05-30
+</p>
+                
+
+                
+                <p><h2 id="javascript---多行文字省略">JavaScript - 多行文字省略</h2>
+<p>Sample code</p>
+<ul>
+<li>CSS</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">ellipsis-mult</span> {
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">em</span>;
+  <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+}
+<span style="color:#f92672">p</span> {
+    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><ul>
+<li>HTML</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ellipsis-mult&#34;</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nisi ligula, dapibus a volutpat sit amet, mattis et dui. Nunc porttitor accumsan orci id luctus. Phasellus ipsum metus, tincidunt non rhoncus id, dictum a lectus. Nam sed ipsum a lacus sodales eleifend. Vestibulum lorem felis, rhoncus elementum vestibulum eget, dictum ut velit. Nullam venenatis, elit in suscipit imperdiet, orci purus posuere mauris, quis adipiscing ipsum urna ac quam.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><ul>
+<li>JavaScript</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">h</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.ellipsis-mult&#39;</span>).<span style="color:#a6e22e">clientHeight</span>;
+<span style="color:#66d9ef">while</span> (document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.ellipsis-mult p&#39;</span>).<span style="color:#a6e22e">clientHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">h</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.ellipsis-mult p&#39;</span>).<span style="color:#a6e22e">textContent</span>;
+    document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.ellipsis-mult p&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\W*\s(\S)*$/</span>, <span style="color:#e6db74">&#39;...&#39;</span>);
+}
+</code></pre></div><p><a href="http://stackoverflow.com/questions/6222616/with-css-use-for-overflowed-block-of-multi-lines">Refer - With CSS, use “…” for overflowed block of multi-lines</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2014-05-30-javascript-multiple-lines-omitted/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2014-05-25-angularjs-do-something-after-ng-repeat/">AngularJS - do something after ng-repeat</a></h3>
 
                 
@@ -263,159 +325,6 @@ ng-repeat 好厲害喔, code 變得好少喔
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2014-05-25-angularjs-do-something-after-ng-repeat/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-05-25-angularjs-routing/">AngularJS - routing</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-05-25
-</p>
-                
-
-                
-                <p><h2 id="angularjs---routing">AngularJS - routing</h2>
-<p>這裡不探究 AngularJS 是如何辦到的
-基本上就是用 hash <code>#</code>, 也可用 HTML5 的 <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Window.history">history API</a>
-這裡只有說有哪些用法</p>
-<h3 id="基本-sample">基本 sample</h3>
-<p>這寫法是 1.2.16 的寫法, 不保證以後會變(因為在舊版的 AngularJS 寫法不一樣, 差點搞死我, <!-- raw HTML omitted -->當升版本後以前的 code run 不出來時最好去官方看文件<!-- raw HTML omitted -->)</p>
-<ul>
-<li>load AngularJS &amp; angular-route</li>
-</ul>
-<p><a href="https://angularjs.org/">AngularJS</a>
-<a href="http://tedshd.lionfree.net/lib/angular_v1.2.16.js">v1.2.16</a>
-<a href="https://github.com/angular/bower-angular-route">angular-route</a>
-<a href="http://tedshd.lionfree.net/lib/angular-route.js">backup</a></p>
-<ul>
-<li>HTML</li>
-</ul>
-<p>index.html</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;route&#34;</span>&gt;
-&lt;<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-&lt;<span style="color:#f92672">title</span>&gt;routing&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://tedshd.lionfree.net/lib/angular_v1.2.16.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://tedshd.lionfree.net/lib/angular-route.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">h1</span>&gt;A-Mail&lt;/<span style="color:#f92672">h1</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-view</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;controllers.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p>list.html</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ListController&#34;</span>&gt;
-    &lt;<span style="color:#f92672">tr</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Sender&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Subject&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Date&lt;/<span style="color:#f92672">string</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;/<span style="color:#f92672">tr</span>&gt;
-    &lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;message in messages&#34;</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;{{message.sender}}&lt;/<span style="color:#f92672">td</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#/view/{{message.id}}&#39;</span>&gt;{{message.subject}}&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;{{message.date}}&lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;/<span style="color:#f92672">tr</span>&gt;
-&lt;/<span style="color:#f92672">table</span>&gt;
-</code></pre></div><p>detail.html</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Subject:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.subject}}&lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Sender:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.sender}}&lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Date:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.date}}&lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span>&gt;
-        &lt;<span style="color:#f92672">strong</span>&gt;To:&lt;/<span style="color:#f92672">strong</span>&gt;
-        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;recipient in message.recipients&#34;</span>&gt;{{recipient}}&lt;/<span style="color:#f92672">span</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span>&gt;{{message.message}}&lt;/<span style="color:#f92672">div</span>&gt;
-&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#/&#34;</span>&gt;Back to message list&lt;/<span style="color:#f92672">a</span>&gt;
-</code></pre></div><ul>
-<li>JavaScript</li>
-</ul>
-<p>controller.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//Create a module for our core AMail services
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">aMailServices</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;route&#39;</span>, [<span style="color:#e6db74">&#39;ngRoute&#39;</span>]);
-
-<span style="color:#75715e">//Set up our mappings between URLs, tempaltes. and  controllers
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">emailRouteConfig</span>(<span style="color:#a6e22e">$routeProvider</span>, <span style="color:#a6e22e">$locationProvider</span>){
-    <span style="color:#a6e22e">$routeProvider</span>.
-    <span style="color:#a6e22e">when</span>(<span style="color:#e6db74">&#39;/&#39;</span>, {
-        <span style="color:#a6e22e">controller</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ListController</span>,
-        <span style="color:#a6e22e">templateUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;list.html&#39;</span>
-    }).
-    <span style="color:#75715e">// Notice that for the detail view, we specify a parameterized URL component by placing a colon in front of the id
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">when</span>(<span style="color:#e6db74">&#39;/view/:id&#39;</span>, {
-        <span style="color:#a6e22e">controller</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">DetailController</span>,
-        <span style="color:#a6e22e">templateUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;detail.html&#39;</span>
-    }).
-    <span style="color:#a6e22e">otherwise</span>({
-        <span style="color:#a6e22e">redirectTo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/&#39;</span>
-    });
-
-    <span style="color:#75715e">// $locationProvider.html5Mode(true);
-</span><span style="color:#75715e"></span>};
-
-<span style="color:#75715e">//Set up our route so the AMailservice can find it
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">aMailServices</span>.<span style="color:#a6e22e">config</span>(<span style="color:#a6e22e">emailRouteConfig</span>);
-
-<span style="color:#75715e">//Some take emails
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">messages</span> <span style="color:#f92672">=</span> [{
-    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">sender</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jean@somecompany.com&#39;</span>,
-    <span style="color:#a6e22e">subject</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hi there, old friend&#39;</span>,
-    <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Dec 7, 2013 12:32:00&#39;</span>,
-    <span style="color:#a6e22e">recipients</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;greg@somecompany.com&#39;</span>],
-    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hey, we should get together for lunch somet ime and catch up. There are many things we should collaborate on this year.&#39;</span>
-},{
-    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">sender</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;maria@somecompany.com&#39;</span>,
-    <span style="color:#a6e22e">subject</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Where did you leave my laptop?&#39;</span> ,
-    <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Dec 7, 2013 8:15:12&#39;</span>,
-    <span style="color:#a6e22e">recipients</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;greg@somecompany.com&#39;</span>],
-    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;I thought you were going to put it in my desk drawer. But i t does not seem to be there. &#39;</span>
-},{
-    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">sender</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bill@somecompany.com&#39;</span>,
-    <span style="color:#a6e22e">subject</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Lost python&#39;</span>,
-    <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Dec 6, 2013 20:35:02&#39;</span>,
-    <span style="color:#a6e22e">recipients</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;greg@somecompany.com&#39;</span>],
-    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Nobody panic, but my pet python is missing from her cage. She doesn&#39;t move too fast, so just call me if you see her.&#34;</span>
-}];
-
-<span style="color:#75715e">// Publish our messages for the list template
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ListController</span>(<span style="color:#a6e22e">$scope</span>){
-    <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">messages</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">messages</span>;
-}
-
-<span style="color:#75715e">//Get the message id fron the route (parsed from the URL) and use it to find the right message object.
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">DetailController</span>(<span style="color:#a6e22e">$scope</span>, <span style="color:#a6e22e">$routeParams</span>){
-    <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">messages</span>[<span style="color:#a6e22e">$routeParams</span>.<span style="color:#a6e22e">id</span>];
-}
-</code></pre></div><p>這裡說明一下 AngularJS 做 <code>$routeProvider</code> 時路徑會加上 hash
-即 url 會是 <code>http://localhost/demo/angular/routing/#/</code> or <code>http://localhost/demo/angular/routing/#/view/1</code></p>
-<p>如果要移掉 hash 可參考
-<a href="http://scotch.io/quick-tips/js/angular/pretty-urls-in-angularjs-removing-the-hashtag">Pretty URLs in AngularJS: Removing the #</a></p>
-<p>需注意的是, 移 hash 後 url 需為絕對路徑, 且該頁必須有辦法為實體 url, 否則刷新後會出現該頁面不存在的訊息</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-05-25-angularjs-routing/">Read more</a></p>
                 
             </div>
         </div>

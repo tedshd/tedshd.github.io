@@ -183,6 +183,90 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-05-25-angularjs-do-something-after-ng-repeat/">AngularJS - do something after ng-repeat</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-05-25
+</p>
+                
+
+                
+                <p><h2 id="angularjs---do-something-after-ng-repeat">AngularJS - do something after ng-repeat</h2>
+<p>在學習用 AngularJS 的過程中遇到個問題就是
+ng-repeat 好厲害喔, code 變得好少喔
+但我想再 ng-repeat 完移掉 loading view 要怎麼移啊?
+用 <code>setTimeout</code> 跟白癡一樣, 又不知道時間要設多久
+只好向 fb 求救
+沒想到有人立馬給出解決方案
+<a href="http://www.nodewiz.biz/angular-js-final-callback-after-ng-repeat/">原文來源 blog</a></p>
+<p>由於對 AngularJS 不是了解的很透徹, 所以在此不詳加說明(原文內有說明)
+這裡只上 code</p>
+<h3 id="html">HTML</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;list&#39;</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;testApp&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blogger&#34;</span> &gt;
+        &lt;<span style="color:#f92672">ul</span>&gt;
+            &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;list in blog&#34;</span>  <span style="color:#a6e22e">on-last-repeat</span>&gt;
+                {{list.title.$t}}
+            &lt;/<span style="color:#f92672">li</span>&gt;
+        &lt;/<span style="color:#f92672">ul</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+</code></pre></div><h3 id="javascript">JavaScript</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">module</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;testApp&#39;</span>, [])
+     .<span style="color:#a6e22e">directive</span>(<span style="color:#e6db74">&#39;onLastRepeat&#39;</span>, <span style="color:#66d9ef">function</span>() {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">scope</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">attrs</span>) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">$last</span>) <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>(){
+                <span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">$emit</span>(<span style="color:#e6db74">&#39;onRepeatLast&#39;</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">attrs</span>);
+            }, <span style="color:#ae81ff">1</span>);
+
+        };
+    })
+
+.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;blogger&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>, <span style="color:#a6e22e">$http</span>, <span style="color:#a6e22e">$parse</span>) {
+        <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$on</span>(<span style="color:#e6db74">&#39;onRepeatLast&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">scope</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">attrs</span>){
+        <span style="color:#a6e22e">alert</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#list&#39;</span>).<span style="color:#a6e22e">offsetHeight</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;px&#39;</span>);
+      });
+
+         <span style="color:#75715e">// json callback must JSON_CALLBACK
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">$http</span>.<span style="color:#a6e22e">jsonp</span>(<span style="color:#e6db74">&#39;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;callback=JSON_CALLBACK&#39;</span>).<span style="color:#a6e22e">success</span>(
+            <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>) {
+                <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">blog</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">feed</span>.<span style="color:#a6e22e">entry</span>;
+            }
+        );
+
+
+});
+
+</code></pre></div><p>這段 code 最後 <code>alert</code> 的高度是 <code>ng-repeat</code> 完後 list 的高度</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2014-05-25-angularjs-do-something-after-ng-repeat/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2014-05-25-angularjs-routing/">AngularJS - routing</a></h3>
 
                 
@@ -324,94 +408,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2014-05-25-angularjs-routing/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-05-23-javascript-custom-facebook-share-button/">JavaScript - custom facebook share button</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-05-23
-</p>
-                
-
-                
-                <p><h2 id="javascript---custom-facebook-share-button">JavaScript - custom facebook share button</h2>
-<!-- raw HTML omitted -->
-<p>Facebook support share API to people and it is easy to use.
-But sometimes we need customize share button style in our web.
-We can use 2 way.</p>
-<h2 id="1-link-share-api-link">1. Link share api link</h2>
-<p>Simple way</p>
-<h3 id="html">HTML</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.facebook.com/share.php&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom&#34;</span>&gt;Share&lt;/<span style="color:#f92672">a</span>&gt;
-</code></pre></div><p>and then you can use CSS custom <code>a</code> style.</p>
-<p>But this only can catch current url to share to facebook.</p>
-<h2 id="2-use-facebook-javascript-sdk">2. Use facebook JavaScript SDK</h2>
-<p>This way is powerful</p>
-<h3 id="html-1">HTML</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb-root&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.google.com/&#34;</span> <span style="color:#a6e22e">data-image</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Article img url&#34;</span> <span style="color:#a6e22e">data-title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Article Title&#34;</span> <span style="color:#a6e22e">data-desc</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Some description for this article&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb_share&#34;</span>&gt;
-	&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.synermous.com/data/images/fb-icon.svg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;50&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;50&#34;</span>&gt;
-&lt;/<span style="color:#f92672">a</span>&gt;
-</code></pre></div><h3 id="javascript">JavaScript</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.<span style="color:#a6e22e">fbAsyncInit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">init</span>({
-        <span style="color:#a6e22e">appId</span><span style="color:#f92672">:</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">your</span> <span style="color:#a6e22e">facebook</span> <span style="color:#a6e22e">app</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">&gt;</span>,
-        <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-        <span style="color:#a6e22e">cookie</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-        <span style="color:#a6e22e">xfbml</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
-    });
-};
-
-(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">d</span>, <span style="color:#a6e22e">debug</span>){<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">js</span>, <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;facebook-jssdk&#39;</span>, <span style="color:#a6e22e">ref</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;script&#39;</span>)[<span style="color:#ae81ff">0</span>];<span style="color:#66d9ef">if</span>   (<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getElementById</span>(<span style="color:#a6e22e">id</span>)) {<span style="color:#66d9ef">return</span>;}<span style="color:#a6e22e">js</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;script&#39;</span>); <span style="color:#a6e22e">js</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">id</span>; <span style="color:#a6e22e">js</span>.<span style="color:#66d9ef">async</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;<span style="color:#a6e22e">js</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;//connect.facebook.net/en_US/all&#34;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">debug</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;/debug&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.js&#34;</span>;<span style="color:#a6e22e">ref</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">js</span>, <span style="color:#a6e22e">ref</span>);}(document, <span style="color:#75715e">/*debug*/</span> <span style="color:#66d9ef">false</span>));
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">postToFeed</span>(<span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">desc</span>, <span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">image</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;feed&#39;</span>,<span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">picture</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">image</span>,<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">title</span>,<span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">desc</span>};
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">response</span>) {}
-    <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">ui</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">callback</span>);
-}
-
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fbShareBtn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.fb_share&#39;</span>);
-<span style="color:#a6e22e">fbShareBtn</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>) {
-    <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fbShareBtn</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-title&#39;</span>),
-        <span style="color:#a6e22e">desc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fbShareBtn</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-desc&#39;</span>),
-        <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fbShareBtn</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;href&#39;</span>),
-        <span style="color:#a6e22e">image</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fbShareBtn</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-image&#39;</span>);
-    <span style="color:#a6e22e">postToFeed</span>(<span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">desc</span>, <span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">image</span>);
-
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
-});
-</code></pre></div><p>This way can customize share url facebook og information
-<code>href</code> = url you want share, must have link
-<code>data-image</code> = image you want show on facebook, if not value it can catch origin og
-<code>data-title</code> = title you want show on facebook, if not value it can catch origin og
-<code>data-desc</code> = description you want show on facebook, if not value it can catch origin og</p>
-<p><a href="https://developers.facebook.com/docs/opengraph">facebook opengraph</a>
-<a href="http://stackoverflow.com/questions/22037021/custom-facebook-share-button">custom facebook share button</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-05-23-javascript-custom-facebook-share-button/">Read more</a></p>
                 
             </div>
         </div>
