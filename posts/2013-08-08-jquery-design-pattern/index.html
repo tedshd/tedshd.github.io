@@ -10,12 +10,12 @@
 <meta name="google" content="notranslate">
 <meta id="viewport" name="viewport"
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='modulize  modulize selector  var module = $(&#39;body&#39;); module.on(&#39;click&#39;, &#39;a&#39;, function() { // dosomething... });  initialize  if ($(&#39;body&#39;).length) { // dosomething } selector id is better than tag and class
+<meta name="description" content='modulize  modulize selector  var module = $(&#39;body&#39;); module.on(&#39;click&#39;, &#39;a&#39;, function() { 	// dosomething... });  initialize  if ($(&#39;body&#39;).length) { 	// dosomething } selector id is better than tag and class
 HTML
-&lt;div&gt; &lt;ul&gt; &lt;li id=&#34;id&#34; class=&#34;class&#34;&gt;text&lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; JavaScript
+&lt;div&gt;  &lt;ul&gt;  &lt;li id=&#34;id&#34; class=&#34;class&#34;&gt;text&lt;/li&gt;  &lt;/ul&gt; &lt;/div&gt; JavaScript
 $(&#39;#id&#39;).html(); $(&#39;body&#39;).find(&#39;#id&#39;); jsperf
 ##bind event use on bind on parent selector
-$(&#39;ul&#39;).on(&#39;click&#39;, &#39;li&#39;, function () { // dosomething }); js Bin'>
+$(&#39;ul&#39;).on(&#39;click&#39;, &#39;li&#39;, function () { 	// dosomething }); js Bin'>
 <meta name="keywords" content=''>
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/2013-08-08-jquery-design-pattern/">
 <link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/2013-08-08-jquery-design-pattern/" />
@@ -32,12 +32,12 @@ $(&#39;ul&#39;).on(&#39;click&#39;, &#39;li&#39;, function () { // dosomething }
 <meta name="copyright" content="Tedshd">
 
 <meta property="og:title" content="jQuery-design pattern" />
-<meta property="og:description" content="modulize  modulize selector  var module = $(&#39;body&#39;); module.on(&#39;click&#39;, &#39;a&#39;, function() { // dosomething... });  initialize  if ($(&#39;body&#39;).length) { // dosomething } selector id is better than tag and class
+<meta property="og:description" content="modulize  modulize selector  var module = $(&#39;body&#39;); module.on(&#39;click&#39;, &#39;a&#39;, function() { 	// dosomething... });  initialize  if ($(&#39;body&#39;).length) { 	// dosomething } selector id is better than tag and class
 HTML
-&lt;div&gt; &lt;ul&gt; &lt;li id=&#34;id&#34; class=&#34;class&#34;&gt;text&lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; JavaScript
+&lt;div&gt;  &lt;ul&gt;  &lt;li id=&#34;id&#34; class=&#34;class&#34;&gt;text&lt;/li&gt;  &lt;/ul&gt; &lt;/div&gt; JavaScript
 $(&#39;#id&#39;).html(); $(&#39;body&#39;).find(&#39;#id&#39;); jsperf
 ##bind event use on bind on parent selector
-$(&#39;ul&#39;).on(&#39;click&#39;, &#39;li&#39;, function () { // dosomething }); js Bin" />
+$(&#39;ul&#39;).on(&#39;click&#39;, &#39;li&#39;, function () { 	// dosomething }); js Bin" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/2013-08-08-jquery-design-pattern/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2013-08-08T00:00:00+00:00" />
@@ -48,12 +48,12 @@ $(&#39;ul&#39;).on(&#39;click&#39;, &#39;li&#39;, function () { // dosomething }
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
 <meta name="twitter:title" content="jQuery-design pattern"/>
-<meta name="twitter:description" content="modulize  modulize selector  var module = $(&#39;body&#39;); module.on(&#39;click&#39;, &#39;a&#39;, function() { // dosomething... });  initialize  if ($(&#39;body&#39;).length) { // dosomething } selector id is better than tag and class
+<meta name="twitter:description" content="modulize  modulize selector  var module = $(&#39;body&#39;); module.on(&#39;click&#39;, &#39;a&#39;, function() { 	// dosomething... });  initialize  if ($(&#39;body&#39;).length) { 	// dosomething } selector id is better than tag and class
 HTML
-&lt;div&gt; &lt;ul&gt; &lt;li id=&#34;id&#34; class=&#34;class&#34;&gt;text&lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; JavaScript
+&lt;div&gt;  &lt;ul&gt;  &lt;li id=&#34;id&#34; class=&#34;class&#34;&gt;text&lt;/li&gt;  &lt;/ul&gt; &lt;/div&gt; JavaScript
 $(&#39;#id&#39;).html(); $(&#39;body&#39;).find(&#39;#id&#39;); jsperf
 ##bind event use on bind on parent selector
-$(&#39;ul&#39;).on(&#39;click&#39;, &#39;li&#39;, function () { // dosomething }); js Bin"/>
+$(&#39;ul&#39;).on(&#39;click&#39;, &#39;li&#39;, function () { 	// dosomething }); js Bin"/>
 
 
 <script type="application/javascript">
@@ -205,35 +205,35 @@ if (!doNotTrack) {
 <ul>
 <li>modulize selector</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">module</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>);
-<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#66d9ef">function</span>() {
-		<span style="color:#75715e">// dosomething...
-</span><span style="color:#75715e"></span>});
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">module</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// dosomething...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span></code></pre></div><ul>
 <li>initialize</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">length</span>) {
-		<span style="color:#75715e">// dosomething
-</span><span style="color:#75715e"></span>}
-</code></pre></div><h2 id="selector">selector</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">length</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// dosomething
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="selector">selector</h2>
 <p>id is better than tag and class</p>
 <p>HTML</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">ul</span>&gt;
-    	&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;class&#34;</span>&gt;text&lt;/<span style="color:#f92672">li</span>&gt;
-    &lt;/<span style="color:#f92672">ul</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>JavaScript</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#id&#39;</span>).<span style="color:#a6e22e">html</span>();
-<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;#id&#39;</span>);
-</code></pre></div><p><a href="http://jsperf.com/jquery-getnode-test/2">jsperf</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>    	&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;class&#34;</span>&gt;text&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>JavaScript</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#id&#39;</span>).<span style="color:#a6e22e">html</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;#id&#39;</span>);
+</span></span></code></pre></div><p><a href="http://jsperf.com/jquery-getnode-test/2">jsperf</a></p>
 <p>##bind event
 use on
 bind on parent selector</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;li&#39;</span>, <span style="color:#66d9ef">function</span> () {
-	<span style="color:#75715e">// dosomething
-</span><span style="color:#75715e"></span>});
-</code></pre></div><p><a href="http://jsbin.com/ijovot/1/edit">js Bin</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;li&#39;</span>, <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// dosomething
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span></code></pre></div><p><a href="http://jsbin.com/ijovot/1/edit">js Bin</a></p>
 
     </main>
 </section>

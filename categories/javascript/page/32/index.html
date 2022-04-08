@@ -205,43 +205,43 @@ if (!doNotTrack) {
 if IE use ajax upload, only use iframe method.</p>
 <h3 id="sample">sample</h3>
 <p><strong>HTML</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span>&gt;
-&lt;<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-&lt;<span style="color:#f92672">title</span>&gt;upload_AJAX&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;upload_one.php&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#a6e22e">enctype</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multipart/form-data&#34;</span>&gt;
-        &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span>&gt;File:&lt;/<span style="color:#f92672">label</span>&gt;
-        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Upfile&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;select&#34;</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
-        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;
-    &lt;/<span style="color:#f92672">form</span>&gt;
-    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:upload()&#34;</span>&gt;AJAX_upload&lt;/<span style="color:#f92672">a</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p><strong>JavaScript</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">upload</span> () {
-    <span style="color:#75715e">// init FormData object
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
-    <span style="color:#75715e">// use append method append upload file
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;Upfile&#39;</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;select&#39;</span>).<span style="color:#a6e22e">files</span>[<span style="color:#ae81ff">0</span>]);
-    <span style="color:#75715e">// init XMLHttpRequest object
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlHttpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
-    <span style="color:#75715e">// init to backend
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;upload_one.php&#39;</span>);
-    <span style="color:#75715e">// check ajax status
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>) {
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>) {
-                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;upload&#39;</span>);
-            }
-        }
-    };
-    <span style="color:#75715e">// post to backend
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">formData</span>);
-}
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;upload_AJAX&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;upload_one.php&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#a6e22e">enctype</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multipart/form-data&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span>&gt;File:&lt;/<span style="color:#f92672">label</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Upfile&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;select&#34;</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">form</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:upload()&#34;</span>&gt;AJAX_upload&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p><strong>JavaScript</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">upload</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// init FormData object
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// use append method append upload file
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;Upfile&#39;</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;select&#39;</span>).<span style="color:#a6e22e">files</span>[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// init XMLHttpRequest object
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlHttpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// init to backend
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;upload_one.php&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// check ajax status
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;upload&#39;</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// post to backend
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">formData</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></p>
                 
 
                 
@@ -280,52 +280,52 @@ if IE use ajax upload, only use iframe method.</p>
 <p>在 PHP &amp; JavaScript 中有許多邏輯判斷
 當有許多條件要去檢查時, 一般來說就是用 <strong>if</strong> 一直寫下去
 最後就造成下面的情況(以 PHP 為例)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">if</span> ($a <span style="color:#f92672">===</span> $b)
-{
-    <span style="color:#66d9ef">if</span> ($c)
-    {
-        <span style="color:#66d9ef">if</span> ($c <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>)
-        {
-            <span style="color:#66d9ef">if</span> ($d)
-            {
-                <span style="color:#75715e">// do something
-</span><span style="color:#75715e"></span>                <span style="color:#75715e">// ...
-</span><span style="color:#75715e"></span>            }
-        <span style="color:#66d9ef">return</span>;
-        }
-    <span style="color:#66d9ef">return</span>;
-    }
-}
-</code></pre></div><p>這樣下去就沒完沒了, 而且縮排會越來越多, 要看 code 也很不方便
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ($a <span style="color:#f92672">===</span> $b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ($c)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($c <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ($d)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>這樣下去就沒完沒了, 而且縮排會越來越多, 要看 code 也很不方便
 所以假如就已作條件檢查來說
 可以用以下的做法</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// check condition 1
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($a <span style="color:#f92672">!==</span> $b)
-{
-    <span style="color:#66d9ef">return</span>;
-}
-
-<span style="color:#75715e">// check condition 2
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$c <span style="color:#f92672">||</span> $c <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;&#39;</span>)
-{
-    <span style="color:#66d9ef">return</span>;
-}
-
-<span style="color:#75715e">// check condition 3
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($c <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">9</span>)
-{
-    <span style="color:#66d9ef">return</span>;
-}
-
-<span style="color:#75715e">// check condition 4
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">d</span>)
-{
-    <span style="color:#66d9ef">return</span>;
-}
-
-<span style="color:#75715e">// do something
-</span><span style="color:#75715e">// ...
-</span></code></pre></div><p>做個 <strong>反向思考</strong> , 把不適合的條件列出再一一 return or 作處理
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// check condition 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($a <span style="color:#f92672">!==</span> $b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// check condition 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$c <span style="color:#f92672">||</span> $c <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// check condition 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($c <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">9</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// check condition 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">d</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span></code></pre></div><p>做個 <strong>反向思考</strong> , 把不適合的條件列出再一一 return or 作處理
 剩下的便是所需要的</p>
 <blockquote>
 <p>從巢狀式結構變成區域式
@@ -341,14 +341,14 @@ debug 也較容易</p>
 <p><a href="http://www.ruanyifeng.com/blog/2013/01/abstraction_principles.html">Refer-代码的抽象三原则</a></p>
 <h3 id="以錯誤為優先處理">以錯誤為優先處理</h3>
 <p>JavaScript</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doSomething</span>(<span style="color:#a6e22e">data</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;fail&#39;</span>) {
-        <span style="color:#75715e">// handle error
-</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
-        <span style="color:#75715e">// handle ok
-</span><span style="color:#75715e"></span>    }
-}
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doSomething</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;fail&#39;</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// handle error
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// handle ok
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></p>
                 
 
                 

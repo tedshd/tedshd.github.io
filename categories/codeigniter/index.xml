@@ -25,8 +25,7 @@ redirect $this-&amp;gt;load-&amp;gt;helper(&amp;#39;url&amp;#39;); </description
       
       <guid>https://blog.tedshd.io/posts/2013-08-29-codeigniter-ajaxpost/</guid>
       <description>CI AJAX(Post) Usage JavaScript(jQuery)
-$.post( &amp;#39;/api/post&amp;#39;, { val: &amp;#39;string&amp;#39;, val2: 1 }, function(data) { console.log(data); if(data.status === &amp;#39;ok&amp;#39;) { // dosomething  } else { // alert fail  } }, &amp;#39;json&amp;#39; ); $.ajax({ url: &amp;#39;/login/signup&amp;#39;, type: &amp;#39;POST&amp;#39;, data: { account: $(&amp;#39;input[name=&amp;#34;account&amp;#34;]&amp;#39;).val() }, success: function(data) { console.log(data); } }); PHP
-&amp;lt;?php // api.php public function post() { $val = $this-&amp;gt;input-&amp;gt;post(&amp;#39;val&amp;#39;); $val2 = $this-&amp;gt;input-&amp;gt;post(&amp;#39;val2&amp;#39;); if ($val) { // dosomething  //response  $output = array( &amp;#39;status&amp;#39; =&amp;gt; &amp;#39;ok&amp;#39;, &amp;#39;msg&amp;#39; =&amp;gt; &amp;#39;success&amp;#39; ); echo json_encode($output); exit; } $output = array( &amp;#39;status&amp;#39; =&amp;gt; &amp;#39;fail&amp;#39;, &amp;#39;msg&amp;#39; =&amp;gt; &amp;#39;error&amp;#39; ); echo json_encode($output); exit; } ?</description>
+$.post(  &amp;#39;/api/post&amp;#39;,  {  val: &amp;#39;string&amp;#39;,  val2: 1  },  function(data) {  console.log(data);  if(data.status === &amp;#39;ok&amp;#39;) {  // dosomething  } else {  // alert fail  }  },  &amp;#39;json&amp;#39; ); $.ajax({  url: &amp;#39;/login/signup&amp;#39;,  type: &amp;#39;POST&amp;#39;,  data: {  account: $(&amp;#39;input[name=&amp;#34;account&amp;#34;]&amp;#39;).val()  },  success: function(data) {  console.log(data);  } }); PHP</description>
     </item>
     
   </channel>

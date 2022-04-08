@@ -17,7 +17,7 @@
       <description>Sublime Text - How to modify font size in sidebar In sublime text 3
 If you want modify font size in sidebar
 Follow step
- Preferences -&amp;gt; Browse Packages Open User directory Create a file File named your theme name  How to get it Preferences -&amp;gt; Settings - User -&amp;gt; theme Or default theme Default.sublime-theme   Add content  [ { &amp;#34;class&amp;#34;: &amp;#34;sidebar_label&amp;#34;, &amp;#34;font.size&amp;#34;: 18 }, ] other in Mac the path is</description>
+ Preferences -&amp;gt; Browse Packages Open User directory Create a file File named your theme name  How to get it Preferences -&amp;gt; Settings - User -&amp;gt; theme Or default theme Default.sublime-theme   Add content  [ 	{ 	&amp;#34;class&amp;#34;: &amp;#34;sidebar_label&amp;#34;, 	&amp;#34;font.size&amp;#34;: 18 	}, ] other in Mac the path is</description>
     </item>
     
   </channel>

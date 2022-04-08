@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.92.1" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -211,10 +211,10 @@ if (!doNotTrack) {
 <p>Use <code>DOM.currentStyle</code> and <code>window.getComputedStyle(DOM)</code></p>
 <p>For IE use <strong>DOM.currentStyle</strong></p>
 <p>Other use <strong>window.getComputedStyle(DOM)</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;target&#34;</span>),
-    <span style="color:#a6e22e">style</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">currentStyle</span> <span style="color:#f92672">||</span> window.<span style="color:#a6e22e">getComputedStyle</span>(<span style="color:#a6e22e">dom</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">marginTop</span>);
-</code></pre></div><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle">refer - Window.getComputedStyle() - Web APIs | MDN</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;target&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">style</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">currentStyle</span> <span style="color:#f92672">||</span> window.<span style="color:#a6e22e">getComputedStyle</span>(<span style="color:#a6e22e">dom</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">marginTop</span>);
+</span></span></code></pre></div><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle">refer - Window.getComputedStyle() - Web APIs | MDN</a></p>
 <p><a href="https://msdn.microsoft.com/en-us/library/ms535231(v=vs.85).aspx">refer - currentStyle object (Internet Explorer)</a></p>
 </p>
                 
@@ -260,19 +260,19 @@ if (!doNotTrack) {
 <p>因為我也是開同等級的 VM 所以我朋友也建議我也做一下這機制</p>
 <p>大大的建議怎麼可以忽視呢</p>
 <p>所以就來記錄一下步驟吧</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># count 依自己的設定設置</span>
-sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>/swapfile bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span>
-<span style="color:#75715e"># 格式化 swap</span>
-sudo mkswap /swapfile
-<span style="color:#75715e"># 啟動 swap</span>
-swapon /swapfile
-</code></pre></div><p>為了在開機時掛載 swap</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># count 依自己的設定設置</span>
+</span></span><span style="display:flex;"><span>sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>/swapfile bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 格式化 swap</span>
+</span></span><span style="display:flex;"><span>sudo mkswap /swapfile
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 啟動 swap</span>
+</span></span><span style="display:flex;"><span>swapon /swapfile
+</span></span></code></pre></div><p>為了在開機時掛載 swap</p>
 <p>要做以下處理</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim /etc/fstab
-
-<span style="color:#75715e"># 加入</span>
-/swapfile    swap    swap    defaults    <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
-</code></pre></div><p>這時就好了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vim /etc/fstab
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 加入</span>
+</span></span><span style="display:flex;"><span>/swapfile    swap    swap    defaults    <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>這時就好了</p>
 <p>有裝 htop 可用 htop 看一下就會發現有 swap 了</p>
 <p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/379436/4H5o7kFbSQCXK2KRdihI_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-12-21%20%E4%B8%8A%E5%8D%8812.13.22.png" alt="螢幕快照 2015-12-21 上午12.13.22.png"></p>
 <p>但是強者我朋友又發現一個問題</p>

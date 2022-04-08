@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.92.1" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -209,24 +209,24 @@ if (!doNotTrack) {
                 <p><h2 id="nodejs---install">Node.js - install</h2>
 <h3 id="mac">Mac</h3>
 <p>利用 homebrew 安裝</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install node
-</code></pre></div><p><a href="http://nodejs.org/">node.js</a>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>brew install node
+</span></span></code></pre></div><p><a href="http://nodejs.org/">node.js</a>
 <a href="http://thechangelog.com/install-node-js-with-homebrew-on-os-x/">Refer - Install Node.js and npm using Homebrew on OS X</a></p>
 <h3 id="ubuntu">Ubuntu</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install nodejs-legacy
-
-sudo apt-get install npm
-</code></pre></div><p><a href="http://stackoverflow.com/questions/21168141/can-not-install-packages-using-node-package-manager-in-ubuntu">Refer - Can not install packages using node package manager in Ubuntu</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt-get install nodejs-legacy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-get install npm
+</span></span></code></pre></div><p><a href="http://stackoverflow.com/questions/21168141/can-not-install-packages-using-node-package-manager-in-ubuntu">Refer - Can not install packages using node package manager in Ubuntu</a></p>
 <h3 id="update">Update</h3>
 <p>Now node merge iojs and version update to v4</p>
 <p>But now homebrew not updgrade to v4</p>
 <p>So i use nvm</p>
 <p><a href="http://icarus4.logdown.com/posts/175092-nodejs-installation-guide">Refer - Node.js 安裝與版本切換教學 (for MAC)</a></p>
 <h3 id="npm-upgrade-node-version">npm upgrade node version</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo npm cache clean -f
-sudo npm install -g n
-sudo n stable
-</code></pre></div><p><a href="http://davidwalsh.name/upgrade-nodejs">Refer - Upgrade Node.js via NPM</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo npm cache clean -f
+</span></span><span style="display:flex;"><span>sudo npm install -g n
+</span></span><span style="display:flex;"><span>sudo n stable
+</span></span></code></pre></div><p><a href="http://davidwalsh.name/upgrade-nodejs">Refer - Upgrade Node.js via NPM</a></p>
 </p>
                 
 
@@ -264,32 +264,32 @@ sudo n stable
                 <p><h2 id="sublime---command-line">Sublime - Command Line</h2>
 <p>in Mac OS X
 make a symlink</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ln -s <span style="color:#e6db74">&#34;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&#34;</span> /bin/subl
-// sublimetext <span style="color:#ae81ff">3</span>
-ln -s <span style="color:#e6db74">&#34;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&#34;</span> /bin/subl
-</code></pre></div><p>And Use it</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">subl --help
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Usage: subl <span style="color:#f92672">[</span>arguments<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>files<span style="color:#f92672">]</span>         edit the given files
-   or: subl <span style="color:#f92672">[</span>arguments<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>directories<span style="color:#f92672">]</span>   open the given directories
-   or: subl <span style="color:#f92672">[</span>arguments<span style="color:#f92672">]</span> -               edit stdin
-
-Arguments:
-  --project &lt;project&gt;: Load the given project
-  --command &lt;command&gt;: Run the given command
-  -n or --new-window:  Open a new window
-  -a or --add:         Add folders to the current window
-  -w or --wait:        Wait <span style="color:#66d9ef">for</span> the files to be closed before returning
-  -b or --background:  Don<span style="color:#960050;background-color:#1e0010">&#39;</span>t activate the application
-  -s or --stay:        Keep the application activated after closing the file
-  -h or --help:        Show help <span style="color:#f92672">(</span>this message<span style="color:#f92672">)</span> and exit
-  -v or --version:     Show version and exit
-
---wait is implied <span style="color:#66d9ef">if</span> reading from stdin. Use --stay to not switch back
-to the terminal when a file is closed <span style="color:#f92672">(</span>only relevant <span style="color:#66d9ef">if</span> waiting <span style="color:#66d9ef">for</span> a file<span style="color:#f92672">)</span>.
-
-Filenames may be given a :line or :line:column suffix to open at a specific
-location.
-</code></pre></div><h3 id="update">Update</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ln -s <span style="color:#e6db74">&#34;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&#34;</span> /bin/subl
+</span></span><span style="display:flex;"><span>// sublimetext <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>ln -s <span style="color:#e6db74">&#34;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&#34;</span> /bin/subl
+</span></span></code></pre></div><p>And Use it</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>subl --help
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Usage: subl <span style="color:#f92672">[</span>arguments<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>files<span style="color:#f92672">]</span>         edit the given files
+</span></span><span style="display:flex;"><span>   or: subl <span style="color:#f92672">[</span>arguments<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>directories<span style="color:#f92672">]</span>   open the given directories
+</span></span><span style="display:flex;"><span>   or: subl <span style="color:#f92672">[</span>arguments<span style="color:#f92672">]</span> -               edit stdin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Arguments:
+</span></span><span style="display:flex;"><span>  --project &lt;project&gt;: Load the given project
+</span></span><span style="display:flex;"><span>  --command &lt;command&gt;: Run the given command
+</span></span><span style="display:flex;"><span>  -n or --new-window:  Open a new window
+</span></span><span style="display:flex;"><span>  -a or --add:         Add folders to the current window
+</span></span><span style="display:flex;"><span>  -w or --wait:        Wait <span style="color:#66d9ef">for</span> the files to be closed before returning
+</span></span><span style="display:flex;"><span>  -b or --background:  Don<span style="color:#960050;background-color:#1e0010">&#39;</span>t activate the application
+</span></span><span style="display:flex;"><span>  -s or --stay:        Keep the application activated after closing the file
+</span></span><span style="display:flex;"><span>  -h or --help:        Show help <span style="color:#f92672">(</span>this message<span style="color:#f92672">)</span> and exit
+</span></span><span style="display:flex;"><span>  -v or --version:     Show version and exit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--wait is implied <span style="color:#66d9ef">if</span> reading from stdin. Use --stay to not switch back
+</span></span><span style="display:flex;"><span>to the terminal when a file is closed <span style="color:#f92672">(</span>only relevant <span style="color:#66d9ef">if</span> waiting <span style="color:#66d9ef">for</span> a file<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Filenames may be given a :line or :line:column suffix to open at a specific
+</span></span><span style="display:flex;"><span>location.
+</span></span></code></pre></div><h3 id="update">Update</h3>
 <p><a href="https://www.jianshu.com/p/22b89f19afd6">Mac OS X 11中的/usr/bin 的“Operation not permitted”</a></p>
 <p>trun on power</p>
 <p><code>Command + R</code></p>

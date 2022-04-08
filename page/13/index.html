@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.92.1" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -208,8 +208,8 @@ if (!doNotTrack) {
                 
                 <p><p>PHP -  check HTTP protocol</p>
 <p>Use</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP">$protocol    <span style="color:#f92672">=</span> (<span style="color:#a6e22e">isset</span>($_SERVER[<span style="color:#e6db74">&#39;HTTPS&#39;</span>]) <span style="color:#f92672">&amp;&amp;</span> ($_SERVER[<span style="color:#e6db74">&#39;HTTPS&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;on&#39;</span> <span style="color:#f92672">||</span> $_SERVER[<span style="color:#e6db74">&#39;HTTPS&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">isset</span>($_SERVER[<span style="color:#e6db74">&#39;HTTP_X_FORWARDED_PROTO&#39;</span>]) <span style="color:#f92672">&amp;&amp;</span> $_SERVER[<span style="color:#e6db74">&#39;HTTP_X_FORWARDED_PROTO&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;https&#39;</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;https&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;http&#39;</span>;
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>$protocol    <span style="color:#f92672">=</span> (<span style="color:#a6e22e">isset</span>($_SERVER[<span style="color:#e6db74">&#39;HTTPS&#39;</span>]) <span style="color:#f92672">&amp;&amp;</span> ($_SERVER[<span style="color:#e6db74">&#39;HTTPS&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;on&#39;</span> <span style="color:#f92672">||</span> $_SERVER[<span style="color:#e6db74">&#39;HTTPS&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">isset</span>($_SERVER[<span style="color:#e6db74">&#39;HTTP_X_FORWARDED_PROTO&#39;</span>]) <span style="color:#f92672">&amp;&amp;</span> $_SERVER[<span style="color:#e6db74">&#39;HTTP_X_FORWARDED_PROTO&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;https&#39;</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;https&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;http&#39;</span>;
+</span></span></code></pre></div></p>
                 
 
                 
@@ -339,21 +339,21 @@ if (!doNotTrack) {
 <ul>
 <li>HTML tag</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alternate&#34;</span> <span style="color:#a6e22e">hreflang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en-us&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://en-us.example.com/page.html&#34;</span> /&gt;
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alternate&#34;</span> <span style="color:#a6e22e">hreflang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en-us&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://en-us.example.com/page.html&#34;</span> /&gt;
+</span></span></code></pre></div><ul>
 <li>HTTP header</li>
 </ul>
-<pre tabindex="0"><code>Link: &lt;http://example.com/file.pdf&gt;; rel=&quot;alternate&quot;; hreflang=&quot;en&quot;, &lt;http://de-ch.example.com/file.pdf&gt;; rel=&quot;alternate&quot;; hreflang=&quot;de-ch&quot;, &lt;http://de.example.com/file.pdf&gt;; rel=&quot;alternate&quot;; hreflang=&quot;de&quot;
+<pre tabindex="0"><code>Link: &lt;http://example.com/file.pdf&gt;; rel=&#34;alternate&#34;; hreflang=&#34;en&#34;, &lt;http://de-ch.example.com/file.pdf&gt;; rel=&#34;alternate&#34;; hreflang=&#34;de-ch&#34;, &lt;http://de.example.com/file.pdf&gt;; rel=&#34;alternate&#34;; hreflang=&#34;de&#34;
 </code></pre><ul>
 <li>stiemap</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;url&gt;</span>
-    <span style="color:#f92672">&lt;loc&gt;</span>http://www.example.com/deutsch/page.html<span style="color:#f92672">&lt;/loc&gt;</span>
-    <span style="color:#f92672">&lt;xhtml:link</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;alternate&#34;</span> <span style="color:#a6e22e">hreflang=</span><span style="color:#e6db74">&#34;de&#34;</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;http://www.example.com/deutsch/page.html&#34;</span><span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;xhtml:link</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;alternate&#34;</span> <span style="color:#a6e22e">hreflang=</span><span style="color:#e6db74">&#34;de-ch&#34;</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;http://www.example.com/schweiz-deutsch/page.html&#34;</span><span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;xhtml:link</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;alternate&#34;</span> <span style="color:#a6e22e">hreflang=</span><span style="color:#e6db74">&#34;en&#34;</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;http://www.example.com/english/page.html&#34;</span><span style="color:#f92672">/&gt;</span>
-<span style="color:#f92672">&lt;/url&gt;</span>
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;url&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;loc&gt;</span>http://www.example.com/deutsch/page.html<span style="color:#f92672">&lt;/loc&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;xhtml:link</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;alternate&#34;</span> <span style="color:#a6e22e">hreflang=</span><span style="color:#e6db74">&#34;de&#34;</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;http://www.example.com/deutsch/page.html&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;xhtml:link</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;alternate&#34;</span> <span style="color:#a6e22e">hreflang=</span><span style="color:#e6db74">&#34;de-ch&#34;</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;http://www.example.com/schweiz-deutsch/page.html&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;xhtml:link</span> <span style="color:#a6e22e">rel=</span><span style="color:#e6db74">&#34;alternate&#34;</span> <span style="color:#a6e22e">hreflang=</span><span style="color:#e6db74">&#34;en&#34;</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;http://www.example.com/english/page.html&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/url&gt;</span>
+</span></span></code></pre></div><blockquote>
 <p>請勿使用 IP 分析來調整內容。 分析 IP 位置資訊相當困難，而且往往並不可靠。此外，Google 可能無法正確檢索您網站的變化版本。雖然有部分例外，但 Google 檢索器在大多數情況下是源自美國，我們也不會為了偵測網站變化版本而試圖變更位置。如要針對特定地區提供內容，請採用本文列出的方式 (hreflang、替代網址和明確連結)。</p>
 </blockquote>
 <p>當然如果是 App 服務那就沒差了, 因為又不用顧及 Google 爬蟲 XD</p>

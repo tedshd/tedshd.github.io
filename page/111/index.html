@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.92.1" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -236,16 +236,16 @@ if (!doNotTrack) {
 <ul>
 <li>method 1</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
-</code></pre></div><p>bug</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">10</span>);
-<span style="color:#a6e22e">arr</span>
-<span style="color:#75715e">// [undefined × 10]
-</span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
+</span></span></code></pre></div><p>bug</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">arr</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// [undefined × 10]
+</span></span></span></code></pre></div><ul>
 <li>method 2</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+</span></span></code></pre></div></p>
                 
 
                 
@@ -283,38 +283,40 @@ if (!doNotTrack) {
 <p>Mac gitconfig
 path</p>
 <pre tabindex="0"><code>~/.gitconfig
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>user<span style="color:#f92672">]</span>
-		name <span style="color:#f92672">=</span> tedshd
-		email <span style="color:#f92672">=</span> tedshd@gmail.com
-<span style="color:#f92672">[</span>alias<span style="color:#f92672">]</span>
-		st <span style="color:#f92672">=</span> status
-		co <span style="color:#f92672">=</span> checkout
-		br <span style="color:#f92672">=</span> branch
-		d <span style="color:#f92672">=</span> difftool
-<span style="color:#f92672">[</span>color<span style="color:#f92672">]</span>
-		diff <span style="color:#f92672">=</span> auto
-		status <span style="color:#f92672">=</span> auto
-		branch <span style="color:#f92672">=</span> auto
-		ui <span style="color:#f92672">=</span> auto
-<span style="color:#f92672">[</span>credential<span style="color:#f92672">]</span>
-		helper <span style="color:#f92672">=</span> osxkeychain
-<span style="color:#f92672">[</span>push<span style="color:#f92672">]</span>
-		default <span style="color:#f92672">=</span> simple
-<span style="color:#f92672">[</span>core<span style="color:#f92672">]</span>
-		editor <span style="color:#f92672">=</span> vim
-<span style="color:#f92672">[</span>diff<span style="color:#f92672">]</span>
-		tool <span style="color:#f92672">=</span> vimdiff
-<span style="color:#f92672">[</span>difftool<span style="color:#f92672">]</span>
-		prompt <span style="color:#f92672">=</span> false
-</code></pre></div><p>vim diff</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git d
-</code></pre></div><p>terminal</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git diff
-</code></pre></div></p>
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#f92672">[</span>user<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>		name <span style="color:#f92672">=</span> tedshd
+</span></span><span style="display:flex;"><span>		email <span style="color:#f92672">=</span> tedshd@gmail.com
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>alias<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>		st <span style="color:#f92672">=</span> status
+</span></span><span style="display:flex;"><span>		co <span style="color:#f92672">=</span> checkout
+</span></span><span style="display:flex;"><span>		br <span style="color:#f92672">=</span> branch
+</span></span><span style="display:flex;"><span>		d <span style="color:#f92672">=</span> difftool
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>color<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>		diff <span style="color:#f92672">=</span> auto
+</span></span><span style="display:flex;"><span>		status <span style="color:#f92672">=</span> auto
+</span></span><span style="display:flex;"><span>		branch <span style="color:#f92672">=</span> auto
+</span></span><span style="display:flex;"><span>		ui <span style="color:#f92672">=</span> auto
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>credential<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>		helper <span style="color:#f92672">=</span> osxkeychain
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>push<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>		default <span style="color:#f92672">=</span> simple
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>core<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>		editor <span style="color:#f92672">=</span> vim
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>diff<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>		tool <span style="color:#f92672">=</span> vimdiff
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>difftool<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>		prompt <span style="color:#f92672">=</span> false
+</span></span></code></pre></div><p>vim diff</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git d
+</span></span></code></pre></div><p>terminal</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git diff
+</span></span></code></pre></div></p>
                 
 
                 
 
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-08-23-gitconfig/">Read more</a></p>
                 
             </div>
         </div>

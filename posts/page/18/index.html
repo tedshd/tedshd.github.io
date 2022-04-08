@@ -1306,34 +1306,34 @@ if (!doNotTrack) {
 <h3 id="mac-env">Mac Env</h3>
 <p>Mac OSX 10.14.5</p>
 <h3 id="step">Step</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://www.github.com/phpredis/phpredis.git
-
-cd phpredis
-
-phpize <span style="color:#f92672">&amp;&amp;</span> ./configure <span style="color:#f92672">&amp;&amp;</span> make <span style="color:#f92672">&amp;&amp;</span> sudo make install
-</code></pre></div><p><strong>test</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">php -r <span style="color:#e6db74">&#34;if (new Redis() == true){ echo \&#34;\r\n OK \r\n\&#34;; }&#34;</span>
-</code></pre></div><h3 id="troubleshooting">Troubleshooting</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://www.github.com/phpredis/phpredis.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd phpredis
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>phpize <span style="color:#f92672">&amp;&amp;</span> ./configure <span style="color:#f92672">&amp;&amp;</span> make <span style="color:#f92672">&amp;&amp;</span> sudo make install
+</span></span></code></pre></div><p><strong>test</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;if (new Redis() == true){ echo \&#34;\r\n OK \r\n\&#34;; }&#34;</span>
+</span></span></code></pre></div><h3 id="troubleshooting">Troubleshooting</h3>
 <h4 id="phpize">phpize</h4>
 <p>1.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ phpize
-grep: /usr/include/php/main/php.h: No such file or directory
-grep: /usr/include/php/Zend/zend_modules.h: No such file or directory
-grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory
-Configuring <span style="color:#66d9ef">for</span>:
-PHP Api Version:
-Zend Module Api No:
-Zend Extension Api No:
-</code></pre></div><p><strong>Solution</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /Library/Developer/CommandLineTools/Packages/
-
-open macOS_SDK_headers_for_macOS_10.14.pkg
-</code></pre></div><p>2.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ phpize
-Cannot find autoconf. Please check your autoconf installation and the $PHP_AUTOCONF environment variable. Then, rerun this script.
-</code></pre></div><p><strong>Solution</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install autoconf
-</code></pre></div><p><a href="https://stackoverflow.com/questions/51908004/install-phpredis-mac-osx">Refer - install-phpredis-mac-osx</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ phpize
+</span></span><span style="display:flex;"><span>grep: /usr/include/php/main/php.h: No such file or directory
+</span></span><span style="display:flex;"><span>grep: /usr/include/php/Zend/zend_modules.h: No such file or directory
+</span></span><span style="display:flex;"><span>grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory
+</span></span><span style="display:flex;"><span>Configuring <span style="color:#66d9ef">for</span>:
+</span></span><span style="display:flex;"><span>PHP Api Version:
+</span></span><span style="display:flex;"><span>Zend Module Api No:
+</span></span><span style="display:flex;"><span>Zend Extension Api No:
+</span></span></code></pre></div><p><strong>Solution</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd /Library/Developer/CommandLineTools/Packages/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>open macOS_SDK_headers_for_macOS_10.14.pkg
+</span></span></code></pre></div><p>2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ phpize
+</span></span><span style="display:flex;"><span>Cannot find autoconf. Please check your autoconf installation and the $PHP_AUTOCONF environment variable. Then, rerun this script.
+</span></span></code></pre></div><p><strong>Solution</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>brew install autoconf
+</span></span></code></pre></div><p><a href="https://stackoverflow.com/questions/51908004/install-phpredis-mac-osx">Refer - install-phpredis-mac-osx</a></p>
 <p><a href="https://zhile.io/2018/09/26/macOS-10.14-install-sdk-headers.html">Refer - macOS 10.14软件编译时找不到头文件的解决方法</a></p>
 <p><a href="http://www.mayanlong.com/archives/2016/349.html">Refer - macOS 中使用 phpize 动态添加 PHP 扩展的错误解决方法</a></p>
 </p>

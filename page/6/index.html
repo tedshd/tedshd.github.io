@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.92.1" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -210,48 +210,48 @@ if (!doNotTrack) {
 <p>這裡會列舉一些使用情境與案例</p>
 <h2 id="取出排名前幾名的資料排名的值不重複">取出排名前幾名的資料(排名的值不重複)</h2>
 <h3 id="資料">資料</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
-  <span style="color:#ae81ff">123</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">123</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;video&#34;</span>,
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  },
-  <span style="color:#ae81ff">345</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">345</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;video&#34;</span>,
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  },
-  <span style="color:#ae81ff">99</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">99</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  },
-  <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;video&#34;</span>,
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  },
-  <span style="color:#ae81ff">9786</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">9786</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  },
-  <span style="color:#ae81ff">347</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">347</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;video&#34;</span>,
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  },
-};
-</code></pre></div><h3 id="處理方式">處理方式</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">topNine</span>(<span style="color:#a6e22e">data</span>) {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
-  (<span style="color:#a6e22e">tmp</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">data</span>).<span style="color:#a6e22e">reverse</span>()), (<span style="color:#a6e22e">l</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tmp</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">tmp</span>.<span style="color:#a6e22e">length</span>);
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">l</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-    <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">tmp</span>[<span style="color:#a6e22e">i</span>]]);
-  }
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
-}
-</code></pre></div><p>處理範例為取出前 9 筆</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">123</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">123</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;video&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">345</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">345</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;video&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">99</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">99</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;video&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">9786</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">9786</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">347</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">347</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;video&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="處理方式">處理方式</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">topNine</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">tmp</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">data</span>).<span style="color:#a6e22e">reverse</span>()), (<span style="color:#a6e22e">l</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tmp</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">tmp</span>.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">l</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">tmp</span>[<span style="color:#a6e22e">i</span>]]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>處理範例為取出前 9 筆</p>
 <p>這樣的處理是使用 Object 的 Key 的排序本身是升冪排序</p>
 <p>為了讓代碼好讀懂</p>
 <p>使用了 <code>Object.keys(data).reverse()</code> 反轉陣列使其變成降冪排序</p>
@@ -262,198 +262,198 @@ if (!doNotTrack) {
 <p>但是這樣的資料結構有個問題就是範例資料的 <strong>count</strong> 必須是唯一值, 因為 JSON Object 不能重複 key</p>
 <h2 id="取出排名前幾名的資料排名的值重複">取出排名前幾名的資料(排名的值重複)</h2>
 <h3 id="資料-1">資料</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> [
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1600860409000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">9680</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603438465000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">11746</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602389743000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">13289</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1605334079000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14095</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602652312000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14138</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603275324000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14310</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603600329000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14448</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603080713000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14625</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1604823132000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15351</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1604919156000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15373</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601123545000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15442</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601544281000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">16659</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1605088396000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17137</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602749094000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17483</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1600928882000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17928</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602562980000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18217</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603709259000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">21845</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602470351000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22292</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603887487000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22559</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602846057000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22824</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601465442000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25226</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1604736681000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25580</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601285690000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25796</span>,
-  },
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
-    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601693594000</span>,
-    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">26078</span>,
-  },
-];
-</code></pre></div><h3 id="處理方式-1">處理方式</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1600860409000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">9680</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603438465000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">11746</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602389743000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">13289</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1605334079000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14095</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602652312000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14138</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603275324000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14310</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603600329000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14448</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603080713000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14625</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1604823132000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15351</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1604919156000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15373</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601123545000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15442</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601544281000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">16659</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1605088396000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17137</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602749094000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17483</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1600928882000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17928</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602562980000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18217</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603709259000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">21845</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602470351000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22292</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603887487000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22559</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602846057000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22824</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601465442000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25226</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1604736681000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25580</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601285690000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25796</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601693594000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">26078</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>];
+</span></span></code></pre></div><h3 id="處理方式-1">處理方式</h3>
 <h4 id="第一種解法">第一種解法</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">topNine</span>(<span style="color:#a6e22e">data</span>) {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">temp</span>;
-  <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
-      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>][<span style="color:#e6db74">&#34;liked&#34;</span>] <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][<span style="color:#e6db74">&#34;liked&#34;</span>]) {
-        <span style="color:#a6e22e">temp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>];
-        <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>];
-        <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp</span>;
-      }
-    }
-  }
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span>;
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">l</span>; <span style="color:#a6e22e">n</span><span style="color:#f92672">++</span>) {
-    <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">n</span>]);
-  }
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
-}
-</code></pre></div><p>這個也不太難理解</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">topNine</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">temp</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>][<span style="color:#e6db74">&#34;liked&#34;</span>] <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][<span style="color:#e6db74">&#34;liked&#34;</span>]) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">temp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">l</span>; <span style="color:#a6e22e">n</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">n</span>]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>這個也不太難理解</p>
 <p>第一個迴圈依照 <strong>liked</strong> 跑了一個降冪的氣泡排序(一般情況都是跑升冪)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">temp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>];
-<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>];
-<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp</span>;
-</code></pre></div><p>這邊使用 variable swap 的技巧來做前後兩個值的交換</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>;
-<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>;
-<span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>;
-</code></pre></div><p>第二個迴圈就是取出前 9 筆的 <strong>liked</strong> 數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">temp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp</span>;
+</span></span></code></pre></div><p>這邊使用 variable swap 的技巧來做前後兩個值的交換</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>;
+</span></span></code></pre></div><p>第二個迴圈就是取出前 9 筆的 <strong>liked</strong> 數</p>
 <p>一樣是在 <code>data.length &gt;= 9 ? 9 : data.length</code> 確認未滿 9 筆的話就有多少取多少</p>
 <h4 id="第二種解法">第二種解法</h4>
 <p>因為資料是 Array</p>
 <p>所以可以使用 <code>sort</code> 來處理</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">topNine</span>(<span style="color:#a6e22e">data</span>) {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
-  <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">liked</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">liked</span>;
-  });
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span>;
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">l</span>; <span style="color:#a6e22e">n</span><span style="color:#f92672">++</span>) {
-    <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">n</span>]);
-  }
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
-}
-</code></pre></div><p><code>sort</code> 可以帶入 function 處理回傳的比較的參數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">topNine</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">liked</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">liked</span>;
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">l</span>; <span style="color:#a6e22e">n</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">n</span>]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>sort</code> 可以帶入 function 處理回傳的比較的參數</p>
 <p>所以可以回傳物件的值得比較結果</p>
 <p>如果預設升冪排序就用 <strong>a - b</strong></p>
 <p>降冪排序就用 <strong>b - a</strong></p>
@@ -521,12 +521,12 @@ if (!doNotTrack) {
 <p>沒有加的話是會取<strong>最後一個</strong></p>
 <p>POST &amp; GET 都是如此處理</p>
 <p>example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game[]&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FGO&#34;</span> /&gt;
-&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game[]&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GirlsFrontline&#34;</span> /&gt;
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-$_GET[<span style="color:#e6db74">&#39;game&#39;</span>];
-$_POST[<span style="color:#e6db74">&#39;game&#39;</span>];
-</code></pre></div><h2 id="nodejs">nodejs</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game[]&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FGO&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game[]&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GirlsFrontline&#34;</span> /&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>$_GET[<span style="color:#e6db74">&#39;game&#39;</span>];
+</span></span><span style="display:flex;"><span>$_POST[<span style="color:#e6db74">&#39;game&#39;</span>];
+</span></span></code></pre></div><h2 id="nodejs">nodejs</h2>
 <p>GET 和 POST 用的方式不一樣</p>
 <p>基本上都會用到 <code>querystring</code> module</p>
 <p><code>querystring</code> module 主要都在處理 querystring 相關的功能</p>
@@ -536,26 +536,26 @@ $_POST[<span style="color:#e6db74">&#39;game&#39;</span>];
 <p>會需要用 <code>url</code> module</p>
 <p><code>url</code> module 主要是要拿掉 GET 的 url 的 querystring 再丟給 <code>querystring</code> 處理</p>
 <p>example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FGO&#34;</span> /&gt;
-&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GirlsFrontline&#34;</span> /&gt;
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;url&#34;</span>);
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">querystring</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;querystring&#34;</span>);
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">thisUrl</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span>, <span style="color:#e6db74">&#34;http://&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">host</span>);
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">query</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(<span style="color:#a6e22e">thisUrl</span>.<span style="color:#a6e22e">search</span>).<span style="color:#a6e22e">toString</span>(); <span style="color:#75715e">// 這一段是要把 `?key=calue&amp;key2=value2` =&gt; `key=calue&amp;key2=value2`
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">querystring</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">query</span>)[<span style="color:#e6db74">&#34;game&#34;</span>];
-</code></pre></div><h3 id="post">POST</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FGO&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GirlsFrontline&#34;</span> /&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;url&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">querystring</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;querystring&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">thisUrl</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span>, <span style="color:#e6db74">&#34;http://&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">host</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">query</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(<span style="color:#a6e22e">thisUrl</span>.<span style="color:#a6e22e">search</span>).<span style="color:#a6e22e">toString</span>(); <span style="color:#75715e">// 這一段是要把 `?key=calue&amp;key2=value2` =&gt; `key=calue&amp;key2=value2`
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">querystring</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">query</span>)[<span style="color:#e6db74">&#34;game&#34;</span>];
+</span></span></code></pre></div><h3 id="post">POST</h3>
 <p>把接進來的 body 組起來再使用 <code>querystring</code> parse</p>
 <p>example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
-<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;data&#34;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">data</span>) {
-  <span style="color:#a6e22e">formData</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">data</span>;
-});
-<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;end&#34;</span>, <span style="color:#66d9ef">function</span> () {
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">querystring</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">formData</span>)[<span style="color:#e6db74">&#34;game&#34;</span>]);
-});
-</code></pre></div><p><a href="https://nodejs.org/api/url.html">URL | Node.js v15.0.1 Documentation</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;data&#34;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">formData</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">data</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;end&#34;</span>, <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">querystring</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">formData</span>)[<span style="color:#e6db74">&#34;game&#34;</span>]);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p><a href="https://nodejs.org/api/url.html">URL | Node.js v15.0.1 Documentation</a></p>
 <p><a href="https://nodejs.org/api/querystring.html">Query string | Node.js v15.0.1 Documentation</a></p>
 <h2 id="golang">golang</h2>
 <p>import <code>http</code> 就可以處理 GET 和 POST 的情況</p>
@@ -565,41 +565,41 @@ $_POST[<span style="color:#e6db74">&#39;game&#39;</span>];
 <h3 id="get-1">GET</h3>
 <p>request struct 裡面有 URL 有 function <code>Query</code> 可以拿到所有的 querystring</p>
 <p>example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FGO&#34;</span> /&gt;
-&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GirlsFrontline&#34;</span> /&gt;
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> (
-    <span style="color:#e6db74">&#34;fmt&#34;</span>
-	<span style="color:#e6db74">&#34;net/http&#34;</span>
-)
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getHandler</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
-    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">Query</span>()[<span style="color:#e6db74">&#34;game&#34;</span>])
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-    <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/get&#34;</span>, <span style="color:#a6e22e">getHandler</span>)
-}
-</code></pre></div><h3 id="post-1">POST</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FGO&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GirlsFrontline&#34;</span> /&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;net/http&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getHandler</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">Query</span>()[<span style="color:#e6db74">&#34;game&#34;</span>])
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/get&#34;</span>, <span style="color:#a6e22e">getHandler</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="post-1">POST</h3>
 <p>request 有一個 <code>parseForm</code> 的 function 可以抓取 HTTP <code>POST</code>, <code>PUT</code>, and <code>PATCH</code> 的 body</p>
 <p>example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> (
-    <span style="color:#e6db74">&#34;fmt&#34;</span>
-	<span style="color:#e6db74">&#34;net/http&#34;</span>
-)
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">postHandler</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
-    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ParseForm</span>()
-    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">Form</span>[<span style="color:#e6db74">&#34;game&#34;</span>])
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-    <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/post&#34;</span>, <span style="color:#a6e22e">postHandler</span>)
-}
-</code></pre></div><p><a href="https://golang.org/pkg/net/http/#Request.ParseForm">http - parseForm</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;net/http&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">postHandler</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ParseForm</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">Form</span>[<span style="color:#e6db74">&#34;game&#34;</span>])
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/post&#34;</span>, <span style="color:#a6e22e">postHandler</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="https://golang.org/pkg/net/http/#Request.ParseForm">http - parseForm</a></p>
 <h2 id="最後總結">最後總結</h2>
 <p><strong>只有 PHP 要在相同的 name 後面添加 <code>[]</code> 才可以在 PHP 端收到的 name 併在一起</strong></p>
 <p><strong>nodejs 和 golang 都只要是 name 一樣就可以了</strong></p>

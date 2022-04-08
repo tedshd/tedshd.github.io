@@ -201,8 +201,8 @@ if (!doNotTrack) {
                 <p><h2 id="something-about-xsscross-site-scripting">Something about XSS(Cross-site scripting)</h2>
 <p>If not set anything</p>
 <p>Use like</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#66d9ef">echo</span> $_GET[<span style="color:#e6db74">&#39;name&#39;</span>];<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>and querystring <code>name</code> = <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#66d9ef">echo</span> $_GET[<span style="color:#e6db74">&#39;name&#39;</span>];<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>and querystring <code>name</code> = <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
 <p>And not defence XSS</p>
 <p>In Firefox</p>
 <p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/307308/G2Ec0H05TgG5yNFaRS6K_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.40.08.png" alt="螢幕快照 2015-11-01 下午8.40.08.png"></p>
@@ -215,10 +215,10 @@ if (!doNotTrack) {
 <h3 id="defence">Defence</h3>
 <p>Set header <code>X-XSS-Protection: 1</code></p>
 <p>if use PHP, can use</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">htmlspecialchars</span>()
-<span style="color:#75715e">// or
-</span><span style="color:#75715e"></span> <span style="color:#a6e22e">htmlentities</span>()
-</code></pre></div><h3 id="important">Important!</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">htmlspecialchars</span>()
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// or
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">htmlentities</span>()
+</span></span></code></pre></div><h3 id="important">Important!</h3>
 <p>Finally</p>
 <p>We must know it is handle encode to avoid run JavaScript on page</p>
 <p><a href="https://github.com/tedshd/javascript-htmlspecialchars">JavaScript ver htmlspecialchars</a></p>

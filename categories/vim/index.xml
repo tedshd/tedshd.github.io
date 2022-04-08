@@ -34,7 +34,7 @@
       <guid>https://blog.tedshd.io/posts/2013-08-27-vim-config-in-mac/</guid>
       <description>Some different in Mac PageDown, PageUp, Home, End It is not useful in setting vimrc.
 Solution Terminal-&amp;gt;Preference-&amp;gt;KeyBoard
-Home: \033[1~End: \033[4~PageUp: \033[5~PageDown: \033[6~</description>
+Home: \033[1~End: \033[4~PageUp: \033[5~PageDown: \033[6~ </description>
     </item>
     
     <item>

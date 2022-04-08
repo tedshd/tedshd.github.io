@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.92.1" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -207,13 +207,13 @@ if (!doNotTrack) {
 
                 
                 <p><h2 id="text-ellipsis">text ellipsis</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> {
-    <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
-    <span style="color:#66d9ef">text-overflow</span>: <span style="color:#66d9ef">ellipsis</span>;
-    <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">nowrap</span>;
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">240</span><span style="color:#66d9ef">px</span>;
-}
-</code></pre></div><h3 id="tip">Tip</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">div</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-overflow</span>: <span style="color:#66d9ef">ellipsis</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">nowrap</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">240</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="tip">Tip</h3>
 <p>上述為必要
 element 必須為 block
 如用在 span 等行內元素，需用 display: inline-block;
@@ -254,80 +254,80 @@ element 必須為 block
 <h2 id="server-side-setting">Server side setting</h2>
 <h3 id="phpini">php.ini</h3>
 <p>in Mac</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/etc/php.ini
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">file_uploads</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">On</span>
-<span style="color:#a6e22e">upload_max_filesize</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10M</span>
-<span style="color:#a6e22e">post_max_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10M</span>
-
-<span style="color:#a6e22e">file_uploads</span>
-<span style="color:#75715e"># 預設為on,允許用HTTP協定上傳</span>
-<span style="color:#a6e22e">upload_tmp_dir</span>
-<span style="color:#75715e"># 上傳檔案暫存目錄,wamp5中,c:/wamp/tmp</span>
-<span style="color:#a6e22e">upload_max_filesize</span>
-<span style="color:#75715e"># 上傳檔案最大值</span>
-<span style="color:#a6e22e">post_max_size</span>
-<span style="color:#75715e"># 利用 post 傳送數據所用最大值(利用 AJAX 或 post 上傳會有影響)</span>
-<span style="color:#a6e22e">max_execution_time</span>
-<span style="color:#75715e"># PHP執行時間最大值,預設為30秒</span>
-</code></pre></div><h2 id="style">style</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/etc/php.ini
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">file_uploads</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">On</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">upload_max_filesize</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10M</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">post_max_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10M</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">file_uploads</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 預設為on,允許用HTTP協定上傳</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">upload_tmp_dir</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 上傳檔案暫存目錄,wamp5中,c:/wamp/tmp</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">upload_max_filesize</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 上傳檔案最大值</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">post_max_size</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 利用 post 傳送數據所用最大值(利用 AJAX 或 post 上傳會有影響)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">max_execution_time</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># PHP執行時間最大值,預設為30秒</span>
+</span></span></code></pre></div><h2 id="style">style</h2>
 <p>由於預設的 <code>&lt;input type=&quot;file&quot;&gt;</code> 樣式不好改，且每一個 broswer 預設的樣式都不一樣，所以都會希望用統一化的客制化樣式，但基本上不太可能把它的樣式改成所想要的客制化的樣式，除非直接用像 Bootstrap 之類的框架</p>
 <h3 id="solution-1hack">solution 1(hack)</h3>
 <p>把 <code>&lt;input type=&quot;file&quot;&gt;</code> 的 style 設成 opacity: 0; 蓋在客制化的 button 上，也必須要設成跟客制化寬高一樣，以免覆蓋面積不一樣</p>
 <ul>
 <li>CSS</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">btn</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">file-select</span> {
-		<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">80</span><span style="color:#66d9ef">px</span>;
-		<span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
-}
-.<span style="color:#a6e22e">btn</span> {
-		<span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">#0044ff</span>;
-		<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#0088ff</span>;
-		<span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#ff8800</span>;
-		<span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
-		<span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
-}
-.<span style="color:#a6e22e">file-select</span> {
-		<span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
-		<span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">-84</span><span style="color:#66d9ef">px</span>;
-		<span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">btn</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">file-select</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">80</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">btn</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">#0044ff</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#0088ff</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#ff8800</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">file-select</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">-84</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>HTML</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
-		&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span>&gt;Button&lt;/<span style="color:#f92672">button</span>&gt;
-		&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-select&#34;</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><h3 id="solution-2better">solution 2(better)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span>&gt;Button&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-select&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><h3 id="solution-2better">solution 2(better)</h3>
 <p>利用 <code>&lt;label&gt;&lt;/label&gt;</code> 的 for 特性來處理
 Bootstrap 就是利用這個方法
 <a href="http://tedshd.lionfree.net/demo/php/file_style.html">demo</a></p>
 <ul>
 <li>HTML</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;upload_img.php&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;post&#39;</span> <span style="color:#a6e22e">enctype</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;multipart/form-data&#39;</span>&gt;
-    &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-style&#34;</span>&gt;
-        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Select file&#34;</span>&gt;
-        <span style="color:#75715e">&lt;!--if IE, only IE9 up--&gt;</span>
-    &lt;/<span style="color:#f92672">label</span>&gt;
-    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-style&#34;</span>&gt;
-    &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-style_2&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;
-        &lt;<span style="color:#f92672">span</span>&gt;Select file&lt;/<span style="color:#f92672">span</span>&gt;
-    &lt;/<span style="color:#f92672">label</span>&gt;
-    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file_2&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-style_2&#34;</span>&gt;
-    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;
-&lt;/<span style="color:#f92672">form</span>&gt;
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;upload_img.php&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;post&#39;</span> <span style="color:#a6e22e">enctype</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;multipart/form-data&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-style&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Select file&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--if IE, only IE9 up--&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">label</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-style&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-style_2&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">span</span>&gt;Select file&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">label</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file_2&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-style_2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span></code></pre></div><ul>
 <li>CSS</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/*--把 input 藏起來--*/</span>
-#file-style {
-		<span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
-		<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">0</span>;
-		<span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><p>點擊 <code>&lt;label&gt;&lt;/label&gt;</code> for 會觸發 mapping 到 id 的 <code>&lt;input&gt;</code> 元素
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#75715e">/*--把 input 藏起來--*/</span>
+</span></span><span style="display:flex;"><span>#file-style {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>點擊 <code>&lt;label&gt;&lt;/label&gt;</code> for 會觸發 mapping 到 id 的 <code>&lt;input&gt;</code> 元素
 利用這原理就可以在點擊 <code>&lt;label&gt;&lt;/label&gt;</code> 時, 點擊到 <code>&lt;input type=&quot;file&quot;&gt;</code> 進而開啓檔案選擇
 直接改  <code>&lt;label&gt;&lt;/label&gt;</code> 樣式是較好的做法</p>
 <h2 id="issue">Issue</h2>

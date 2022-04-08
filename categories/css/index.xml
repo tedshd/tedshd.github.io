@@ -18,7 +18,7 @@
 You must use ASCII and show on HEX
 And it is &amp;amp;#169
 So CSS need
-div;before { content: &amp;#34;\00A9&amp;#34;; } Entity Conversion Calculator
+div;before {  content: &amp;#34;\00A9&amp;#34;; } Entity Conversion Calculator
 This page can help us trans to hex
 Refer - CSS Content | CSS-Tricks</description>
     </item>
@@ -33,7 +33,7 @@ Refer - CSS Content | CSS-Tricks</description>
 Use DOM.currentStyle and window.getComputedStyle(DOM)
 For IE use DOM.currentStyle
 Other use window.getComputedStyle(DOM)
-var dom = document.getElementById(&amp;#34;target&amp;#34;), style = dom.currentStyle || window.getComputedStyle(dom); console.log(style.marginTop); refer - Window.getComputedStyle() - Web APIs | MDN
+var dom = document.getElementById(&amp;#34;target&amp;#34;),  style = dom.currentStyle || window.getComputedStyle(dom); console.log(style.marginTop); refer - Window.getComputedStyle() - Web APIs | MDN
 refer - currentStyle object (Internet Explorer)</description>
     </item>
     
@@ -58,7 +58,7 @@ We want to update cache then we can modify file or add query string update versi
 We have some choice like modify url ?v=1 to ?v=2
 But I want to auto modify version.
 This is a way i use
-&amp;lt;?php function autoversion($url) { $ver = stat($_SERVER[&amp;#39;DOCUMENT_ROOT&amp;#39;] . $url)[mtime]; return $url .</description>
+ &amp;lt;?php function autoversion($url) {  $ver = stat($_SERVER[&amp;#39;DOCUMENT_ROOT&amp;#39;] . $url)[mtime];  return $url .</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@ This is a way i use
 Put your font file on your server.
 Default font can&amp;rsquo;t cross domain used.
 Suggest use OTF or TTF format.
-@font-face { font-family: playstation; src: url(TRIIYP.otf); } @font-face { font-family: sony; src: url(sony.TTF); } Fonts SONY&amp;rsquo;s Logo Font Download
+@font-face {  font-family: playstation;  src: url(TRIIYP.otf); } @font-face {  font-family: sony;  src: url(sony.TTF); } Fonts SONY&amp;rsquo;s Logo Font Download
 Free ps4 fonts - FontSpace
 Demo ps4
 Refer - CSS3 Web Fonts</description>
@@ -106,7 +106,7 @@ Refer - object-fit Refer - object-fit</description>
       <guid>https://blog.tedshd.io/posts/2014-12-30-javascript-detect-css3-transitionend/</guid>
       <description>JavaScript - Detect CSS3 transitionEnd transitionend
 It is a event can fired when CSS3 transition end.
-function transitionEnd() { var el = document.createElement(&amp;#39;div&amp;#39;), //what the hack is bootstrap  transEndEventNames = { WebkitTransition : &amp;#39;webkitTransitionEnd&amp;#39;, MozTransition : &amp;#39;transitionend&amp;#39;, OTransition : &amp;#39;oTransitionEnd otransitionend&amp;#39;, transition : &amp;#39;transitionend&amp;#39; }; for (var name in transEndEventNames) { if (el.style[name] !== undefined) { return transEndEventNames[name]; } } return false; // explicit for ie8 ( ._.) } // Usage document.</description>
+function transitionEnd() {  var el = document.createElement(&amp;#39;div&amp;#39;), //what the hack is bootstrap  transEndEventNames = {  WebkitTransition : &amp;#39;webkitTransitionEnd&amp;#39;,  MozTransition : &amp;#39;transitionend&amp;#39;,  OTransition : &amp;#39;oTransitionEnd otransitionend&amp;#39;,  transition : &amp;#39;transitionend&amp;#39;  };   for (var name in transEndEventNames) {  if (el.style[name] !== undefined) {  return transEndEventNames[name];  }  }   return false; // explicit for ie8 ( .</description>
     </item>
     
     <item>
@@ -117,7 +117,7 @@ function transitionEnd() { var el = document.createElement(&amp;#39;div&amp;#39;
       <guid>https://blog.tedshd.io/posts/2014-08-29-compass-use-transform-in-compass-101/</guid>
       <description>Compass - Use transform in compass 1.0.1 On august 15, 2014 Compass release 1.0.1 Some code in scss change wording. This article provide CSS3 transform wording in scss.
 I use this Mixin
-@import &amp;#34;compass/css3&amp;#34;; /*simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y)*/ @includesimple-transform(1, 45deg, 5px, -15px, 0, 0, 0, 0); /* Advance Usage */ /*@include create-transform($perspective, $scale-x, $scale-y, $scale-z, $rotate-x, $rotate-y, $rotate-z, $rotate3d, $trans-x, $trans-y, $trans-z, $skew-x, $skew-y, $origin-x, $origin-y, $origin-z, $only3d);*/ Refer - Compass Transform | Compass Documentation</description>
+@import &amp;#34;compass/css3&amp;#34;; /*simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y)*/ @includesimple-transform(1, 45deg, 5px, -15px, 0, 0, 0, 0);  /* Advance Usage */ /*@include create-transform($perspective, $scale-x, $scale-y, $scale-z, $rotate-x, $rotate-y, $rotate-z, $rotate3d, $trans-x, $trans-y, $trans-z, $skew-x, $skew-y, $origin-x, $origin-y, $origin-z, $only3d);*/ Refer - Compass Transform | Compass Documentation</description>
     </item>
     
     <item>
@@ -129,7 +129,7 @@ I use this Mixin
       <description>Web Develop - Flexible Footer Sometimes we think footer must fixed in website bottom or put it in last of content.
 I provide a idea may be a good way. Content less browser view height, footer fixed in bottom. When content too much over browser view height, footer be put last of content.
 Feature  flexible only use CSS  Usage min-height: calc(100% - &amp;lt;footer height&amp;gt;);
-#hd { height: 50px; background: #aaa; /*display: none;*/ } #bd { text-align: center; min-height: calc(100% - 50px); /* important */ background: #ccc; } #content { padding-bottom: 60px; } #footer { position: relative; bottom: 50px; text-align: center; height: 50px; background: #999; } 50px is footer height</description>
+ #hd {  height: 50px;  background: #aaa;  /*display: none;*/  }  #bd {  text-align: center;  min-height: calc(100% - 50px); /* important */  background: #ccc;  }  #content {  padding-bottom: 60px;  }  #footer {  position: relative;  bottom: 50px;  text-align: center;  height: 50px;  background: #999;  } 50px is footer height</description>
     </item>
     
     <item>
@@ -193,8 +193,8 @@ Feature  flexible only use CSS  Usage min-height: calc(100% - &amp;lt;footer hei
       
       <guid>https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/</guid>
       <description>Use CSS3 Animation In Compass Compass default dosen&amp;rsquo;t have mixin in CSS3 animation We can use this method in scss
-/* define */ $animation-support: webkit, moz, o, ms, not khtml; /* use */ .animation { @includeexperimental(&amp;#39;animation-name&amp;#39;, move, $animation-support); @includeexperimental(&amp;#39;animation-duration&amp;#39;, 5s, $animation-support); @includeexperimental(&amp;#39;animation-iteration-count&amp;#39;, 1, $animation-support); } and add keyframes
-/* define */ $animation-support: webkit, moz, o, ms, not khtml; @mixinkeyframes($name) { @-webkit-keyframes #{$name} { @content; } @-moz-keyframes #{$name} { @content; } @-ms-keyframes #{$name} { @content; } @keyframes #{$name} { @content; } } /* use */ .</description>
+/* define */ $animation-support: webkit, moz, o, ms, not khtml;  /* use */ .animation {  @includeexperimental(&amp;#39;animation-name&amp;#39;, move, $animation-support);  @includeexperimental(&amp;#39;animation-duration&amp;#39;, 5s, $animation-support);  @includeexperimental(&amp;#39;animation-iteration-count&amp;#39;, 1, $animation-support); } and add keyframes
+/* define */ $animation-support: webkit, moz, o, ms, not khtml; @mixinkeyframes($name) {  @-webkit-keyframes #{$name} {  @content;  }  @-moz-keyframes #{$name} {  @content;  }  @-ms-keyframes #{$name} {  @content;  }  @keyframes #{$name} {  @content;  } }  /* use */ .</description>
     </item>
     
     <item>
@@ -205,8 +205,8 @@ Feature  flexible only use CSS  Usage min-height: calc(100% - &amp;lt;footer hei
       <guid>https://blog.tedshd.io/posts/2013-09-10-place-on-and-embed-code-from-internet/</guid>
       <description>Place on and embed code from internet We can use cdnjs or some library sites embed js or css. But How can we embed our code from internet? I have 2 ways.
 GitHub If you can use GitHub Push your code to GitHub Wtach code on GitHub Find Raw and click it. open code like
-https://raw.github.com/tedshd/jQuery_scroll_to_top/master/javascripts/scroll_to_top.jsand then delete . after raw like
-https://rawgithub.com/tedshd/jQuery_scroll_to_top/master/javascripts/scroll_to_top.jsEmbed it finally.
+https://raw.github.com/tedshd/jQuery_scroll_to_top/master/javascripts/scroll_to_top.js and then delete . after raw like
+https://rawgithub.com/tedshd/jQuery_scroll_to_top/master/javascripts/scroll_to_top.js Embed it finally.
 Dropbox Place on code in dropbox.</description>
     </item>
     

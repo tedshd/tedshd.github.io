@@ -12,7 +12,7 @@
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="description" content='JavaScript - Scroll Progress Show a progress bar about page scroll position.
 This used scroll event Progress bar must handle scroll position and scroll total height, and show it for percent View MDN document can find it can&rsquo;t use scrollHeight, because when scroll bar scroll to bottom, scrollTop not equal scrollHeight
-dom = document.querySelector(&#34;body&#34;); percent = (dom.scrollTop / (dom.scrollHeight - document.documentElement.clientHeight)) * 100 &#43; &#34;%&#34;; Then find scrollTop didn&rsquo;t work in firefox'>
+dom = document.querySelector(&#34;body&#34;); percent =  (dom.scrollTop / (dom.scrollHeight - document.documentElement.clientHeight)) *  100 &#43;  &#34;%&#34;; Then find scrollTop didn&rsquo;t work in firefox'>
 <meta name="keywords" content=''>
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/2014-03-02-javascript-scroll-progress/">
 <link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/2014-03-02-javascript-scroll-progress/" />
@@ -31,7 +31,7 @@ dom = document.querySelector(&#34;body&#34;); percent = (dom.scrollTop / (dom.sc
 <meta property="og:title" content="JavaScript - Scroll Progress" />
 <meta property="og:description" content="JavaScript - Scroll Progress Show a progress bar about page scroll position.
 This used scroll event Progress bar must handle scroll position and scroll total height, and show it for percent View MDN document can find it can&rsquo;t use scrollHeight, because when scroll bar scroll to bottom, scrollTop not equal scrollHeight
-dom = document.querySelector(&#34;body&#34;); percent = (dom.scrollTop / (dom.scrollHeight - document.documentElement.clientHeight)) * 100 &#43; &#34;%&#34;; Then find scrollTop didn&rsquo;t work in firefox" />
+dom = document.querySelector(&#34;body&#34;); percent =  (dom.scrollTop / (dom.scrollHeight - document.documentElement.clientHeight)) *  100 &#43;  &#34;%&#34;; Then find scrollTop didn&rsquo;t work in firefox" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/2014-03-02-javascript-scroll-progress/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-03-02T00:00:00+00:00" />
@@ -44,7 +44,7 @@ dom = document.querySelector(&#34;body&#34;); percent = (dom.scrollTop / (dom.sc
 <meta name="twitter:title" content="JavaScript - Scroll Progress"/>
 <meta name="twitter:description" content="JavaScript - Scroll Progress Show a progress bar about page scroll position.
 This used scroll event Progress bar must handle scroll position and scroll total height, and show it for percent View MDN document can find it can&rsquo;t use scrollHeight, because when scroll bar scroll to bottom, scrollTop not equal scrollHeight
-dom = document.querySelector(&#34;body&#34;); percent = (dom.scrollTop / (dom.scrollHeight - document.documentElement.clientHeight)) * 100 &#43; &#34;%&#34;; Then find scrollTop didn&rsquo;t work in firefox"/>
+dom = document.querySelector(&#34;body&#34;); percent =  (dom.scrollTop / (dom.scrollHeight - document.documentElement.clientHeight)) *  100 &#43;  &#34;%&#34;; Then find scrollTop didn&rsquo;t work in firefox"/>
 
 
 <script type="application/javascript">
@@ -197,26 +197,26 @@ if (!doNotTrack) {
 <p>This used scroll event
 Progress bar must handle scroll position and scroll total height, and show it for percent
 View MDN document can find it can&rsquo;t use <code>scrollHeight</code>, because when scroll bar scroll to bottom, <code>scrollTop</code> not equal <code>scrollHeight</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;body&#34;</span>);
-<span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
-  (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">/</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
-    <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
-  <span style="color:#e6db74">&#34;%&#34;</span>;
-</code></pre></div><p>Then find <code>scrollTop</code> didn&rsquo;t work in firefox</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span>) {
-  <span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
-    (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">/</span>
-      (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
-      <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
-    <span style="color:#e6db74">&#34;%&#34;</span>;
-} <span style="color:#66d9ef">else</span> {
-  <span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
-    (window.<span style="color:#a6e22e">pageYOffset</span> <span style="color:#f92672">/</span>
-      (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
-      <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
-    <span style="color:#e6db74">&#34;%&#34;</span>;
-}
-</code></pre></div><p><a href="https://github.com/tedshd/scroll_progress">GitHub</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;body&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">/</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;%&#34;</span>;
+</span></span></code></pre></div><p>Then find <code>scrollTop</code> didn&rsquo;t work in firefox</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">/</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;%&#34;</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    (window.<span style="color:#a6e22e">pageYOffset</span> <span style="color:#f92672">/</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>)) <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;%&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="https://github.com/tedshd/scroll_progress">GitHub</a></p>
 <p><a href="http://help.dottoro.com/ljurkcpe.php">Refer - onscroll event | scroll event</a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.scrollTop">Refer - Element.scrollTop - Web API Interfaces | MDN</a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.scrollHeight">Refer - element.scrollHeight - Web API Interfaces | MDN</a>

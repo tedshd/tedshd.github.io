@@ -71,7 +71,7 @@ $protocol = (isset($_SERVER[&amp;#39;HTTPS&amp;#39;]) &amp;amp;&amp;amp; ($_SERV
       
       <guid>https://blog.tedshd.io/posts/2017-12-13-php-loop-directory/</guid>
       <description>php - loop directory Sometime need use php loop directory list all file in this directory
-$directory = scandir(&amp;#39;./js&amp;#39;); foreach($directory as $file) { if ($file === &amp;#39;.&amp;#39; || $file === &amp;#39;..&amp;#39;) { continue; } echo $file; echo &amp;#34;\n&amp;#34;; } </description>
+ $directory = scandir(&amp;#39;./js&amp;#39;); foreach($directory as $file) {  if ($file === &amp;#39;.&amp;#39; || $file === &amp;#39;..&amp;#39;) {  continue;  }  echo $file;  echo &amp;#34;\n&amp;#34;; } </description>
     </item>
     
     <item>
@@ -98,7 +98,7 @@ $directory = scandir(&amp;#39;./js&amp;#39;); foreach($directory as $file) { if 
       <pubDate>Sat, 31 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/</guid>
-      <description>php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5 sudo apt-get -y update sudo add-apt-repository ppa:ondrej/php5-5.6 sudo apt-get -y update sudo apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl php5-bcmath if use php -v check version is 5.5.x
+      <description>php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5 sudo apt-get -y update  sudo add-apt-repository ppa:ondrej/php5-5.6  sudo apt-get -y update  sudo apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl php5-bcmath if use php -v check version is 5.5.x
 I use
 sudo apt-get -u install php5-cli Refer - PHP 5.5 or 5.6—Ubuntu</description>
     </item>
@@ -115,7 +115,7 @@ We want to update cache then we can modify file or add query string update versi
 We have some choice like modify url ?v=1 to ?v=2
 But I want to auto modify version.
 This is a way i use
-&amp;lt;?php function autoversion($url) { $ver = stat($_SERVER[&amp;#39;DOCUMENT_ROOT&amp;#39;] . $url)[mtime]; return $url .</description>
+ &amp;lt;?php function autoversion($url) {  $ver = stat($_SERVER[&amp;#39;DOCUMENT_ROOT&amp;#39;] . $url)[mtime];  return $url .</description>
     </item>
     
     <item>
@@ -130,7 +130,7 @@ sudo php -d detect_unicode=0 go-pear.phar Update
 pear upgrade pear pear upgrade install codesniffer sudo pear install --alldeps php_codesniffer check
 phpcs -i return
 The installed coding standards are MySource, PEAR, PHPCS, PSR1, PSR2, Squiz and Zend if return
-Warning: include_once(PHP/CodeSniffer/CLI.php): failed to open stream: No such file or directory in /usr/bin/phpcs on line 22 Warning: include_once(): Failed opening &amp;#39;PHP/CodeSniffer/CLI.</description>
+Warning: include_once(PHP/CodeSniffer/CLI.php): failed to open stream: No such file or directory in /usr/bin/phpcs on line 22  Warning: include_once(): Failed opening &amp;#39;PHP/CodeSniffer/CLI.</description>
     </item>
     
     <item>
@@ -140,7 +140,7 @@ Warning: include_once(PHP/CodeSniffer/CLI.php): failed to open stream: No such f
       
       <guid>https://blog.tedshd.io/posts/2013-12-07-detect-mobile-device/</guid>
       <description>Detect mobile device Use PHP or JavaScript detect mobile device like iPhone, iPad, iPod or Android&amp;hellip;
-Android PHP &amp;lt;?php $ua = strtolower($_SERVER[&amp;#39;HTTP_USER_AGENT&amp;#39;]); if(stripos($ua, &amp;#39;android&amp;#39;) !== false) { echo &amp;#39;Android!!&amp;#39;; exit; } ?&amp;gt;JavaScript var ua = navigator.userAgent.toLowerCase(); if(ua.indexOf(&amp;#34;android&amp;#34;) &amp;gt; -1) { document.write(&amp;#39;Android!!&amp;#39;); } Refer - Android Detection with JavaScript or PHP
+Android PHP &amp;lt;?php $ua = strtolower($_SERVER[&amp;#39;HTTP_USER_AGENT&amp;#39;]); if(stripos($ua, &amp;#39;android&amp;#39;) !== false) {  echo &amp;#39;Android!!&amp;#39;;  exit; } ?&amp;gt;JavaScript var ua = navigator.userAgent.toLowerCase(); if(ua.indexOf(&amp;#34;android&amp;#34;) &amp;gt; -1) {  document.write(&amp;#39;Android!!&amp;#39;); } Refer - Android Detection with JavaScript or PHP
 Apple mobile device Refer - How to detect iPhone, iPod and iPad with PHP Refer - How to Identify an Apple iPhone, iPod or iPad Visitor to Your Website</description>
     </item>
     

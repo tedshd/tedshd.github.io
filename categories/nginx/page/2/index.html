@@ -201,29 +201,28 @@ if (!doNotTrack) {
                 <p><h2 id="nginx---study-log">nginx - Study Log</h2>
 <p>半調子的紀錄&hellip;</p>
 <h3 id="command-line">Command Line</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
-sudo service nginx start
-
-sudo service nginx restart
-
-sudo service nginx stop
-
-<span style="color:#75715e"># 測試 nginx 設定</span>
-sudo nginx -t
-</code></pre></div><h3 id="config">config</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
-<span style="color:#75715e"># document root</span>
-root /usr/share/nginx/html;
-
-<span style="color:#75715e"># set page show</span>
-index index.html index.htm index.php;
-
-<span style="color:#75715e"># 把 lib 目錄打開</span>
-location /lib <span style="color:#f92672">{</span>
-    autoindex on;
-<span style="color:#f92672">}</span>
-
-</code></pre></div><p><a href="http://serverfault.com/questions/214242/can-i-hide-all-server-os-info">refer - Can I hide all server / os info?</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo service nginx start
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo service nginx restart
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo service nginx stop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 測試 nginx 設定</span>
+</span></span><span style="display:flex;"><span>sudo nginx -t
+</span></span></code></pre></div><h3 id="config">config</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># document root</span>
+</span></span><span style="display:flex;"><span>root /usr/share/nginx/html;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># set page show</span>
+</span></span><span style="display:flex;"><span>index index.html index.htm index.php;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 把 lib 目錄打開</span>
+</span></span><span style="display:flex;"><span>location /lib <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    autoindex on;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><a href="http://serverfault.com/questions/214242/can-i-hide-all-server-os-info">refer - Can I hide all server / os info?</a></p>
 </p>
                 
 

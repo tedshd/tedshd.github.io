@@ -189,20 +189,20 @@ if (!doNotTrack) {
         <h2 id="innerheight--innerwidth">innerHeight &amp; innerWidth</h2>
 <p>抓取瀏覽器目前顯示高度與寬度
 一般都用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.<span style="color:#a6e22e">innerHeight</span>
-</code></pre></div><p>與</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.<span style="color:#a6e22e">innerWidth</span>
-</code></pre></div><p>但唯獨IE6~IE8不行
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">innerHeight</span>
+</span></span></code></pre></div><p>與</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">innerWidth</span>
+</span></span></code></pre></div><p>但唯獨IE6~IE8不行
 Google了一下
 發現用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
-</code></pre></div><p>與</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span>
-</code></pre></div><p>便兼容所有瀏覽器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
+</span></span></code></pre></div><p>與</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span>
+</span></span></code></pre></div><p>便兼容所有瀏覽器</p>
 <h2 id="scrollheight">scrollHeight</h2>
 <p>如要抓 document 的高可用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollHeight</span>
-</code></pre></div><p><a href="http://stackoverflow.com/questions/1145850/get-height-of-entire-document-with-javascript">Refer</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollHeight</span>
+</span></span></code></pre></div><p><a href="http://stackoverflow.com/questions/1145850/get-height-of-entire-document-with-javascript">Refer</a></p>
 
     </main>
 </section>

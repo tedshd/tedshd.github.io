@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.92.1" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -309,11 +309,11 @@ if (!doNotTrack) {
 Content-Type:application/json
 Authorization:key=AIzaSyZ-1u...0GBYzPu7Udno5aA
 
-{ &quot;data&quot;: {
-    &quot;score&quot;: &quot;5x1&quot;,
-    &quot;time&quot;: &quot;15:10&quot;
+{ &#34;data&#34;: {
+    &#34;score&#34;: &#34;5x1&#34;,
+    &#34;time&#34;: &#34;15:10&#34;
   },
-  &quot;to&quot; : &quot;bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1...&quot;
+  &#34;to&#34; : &#34;bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1...&#34;
 }
 </code></pre><p><code>Authorization</code> key is Firebase console server key</p>
 <p><a href="https://firebase.google.com/docs/cloud-messaging/send-message">Reference - Build App Server Send Requests</a></p>
@@ -405,43 +405,43 @@ Suggest use this, it&rsquo;s fast and easy to use</p>
                 <p><h2 id="javascript---get-text-from-dom-object-not-include-wrap-html-tag-in-child">JavaScript - get text from dom object not include wrap html tag in child</h2>
 <h3 id="intro">Intro</h3>
 <h4 id="case-1">Case 1</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;case_1&#34;</span>&gt;
-	Hi, This is a &lt;<span style="color:#f92672">em</span>&gt;Apple&lt;/<span style="color:#f92672">em</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>I want to get <code>Hi, This is a </code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;case_1&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	Hi, This is a &lt;<span style="color:#f92672">em</span>&gt;Apple&lt;/<span style="color:#f92672">em</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>I want to get <code>Hi, This is a </code></p>
 <h4 id="case-2">Case 2</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;case_2&#34;</span>&gt;
-	&lt;<span style="color:#f92672">p</span>&gt;I have a pen.&lt;/<span style="color:#f92672">p</span>&gt;PPAP
-&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>I want to get <code>PPAP</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;case_2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">p</span>&gt;I have a pen.&lt;/<span style="color:#f92672">p</span>&gt;PPAP
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>I want to get <code>PPAP</code></p>
 <h4 id="case-3">Case 3</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;case_3&#34;</span>&gt;
-	Apple&lt;<span style="color:#f92672">span</span>&gt; and pen&lt;/<span style="color:#f92672">span</span>&gt; and pineapple pen
-&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>I want to get <code>Apple</code> and <code> and pineapple pen</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;case_3&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	Apple&lt;<span style="color:#f92672">span</span>&gt; and pen&lt;/<span style="color:#f92672">span</span>&gt; and pineapple pen
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>I want to get <code>Apple</code> and <code> and pineapple pen</code></p>
 <p>Than you can use this</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">parseText</span>(<span style="color:#a6e22e">dom</span>) {
-	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">length</span>) {
-		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#e6db74">&#39;This is a domlist&#39;</span>);
-		<span style="color:#66d9ef">return</span>;
-	}
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">childNodes</span>,
-		<span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> [];
-	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;  <span style="color:#a6e22e">x</span><span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">length</span>;<span style="color:#a6e22e">x</span><span style="color:#f92672">++</span>) {
-		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">nodeType</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">3</span>) {
-			<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dom</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">nodeValue</span>,
-				<span style="color:#a6e22e">matchWrap</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">textContent</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\n +/</span>);
-			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">matchWrap</span>) {
-				<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">textContent</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">matchWrap</span>, <span style="color:#e6db74">&#39;&#39;</span>);
-			}
-			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">textContent</span>) {
-				<span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">textContent</span>);
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">list</span>;
-}
-</code></pre></div><p>You also can use <code>filter</code> handle for loop</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">parseText</span>(<span style="color:#a6e22e">dom</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">length</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#e6db74">&#39;This is a domlist&#39;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">childNodes</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;  <span style="color:#a6e22e">x</span><span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">length</span>;<span style="color:#a6e22e">x</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">nodeType</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">3</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dom</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">nodeValue</span>,
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">matchWrap</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">textContent</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\n +/</span>);
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">matchWrap</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">textContent</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">matchWrap</span>, <span style="color:#e6db74">&#39;&#39;</span>);
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">textContent</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">textContent</span>);
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">list</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You also can use <code>filter</code> handle for loop</p>
 <p><a href="https://tedshd.io/demo/parse_text.html">demo</a></p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">Refer - Array.prototype.filter()</a></p>
 </p>

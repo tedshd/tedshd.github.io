@@ -215,104 +215,104 @@ if (!doNotTrack) {
 <li>HTML</li>
 </ul>
 <p>index.html</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;route&#34;</span>&gt;
-&lt;<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-&lt;<span style="color:#f92672">title</span>&gt;routing&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://tedshd.lionfree.net/lib/angular_v1.2.16.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://tedshd.lionfree.net/lib/angular-route.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">h1</span>&gt;A-Mail&lt;/<span style="color:#f92672">h1</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-view</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;controllers.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p>list.html</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ListController&#34;</span>&gt;
-    &lt;<span style="color:#f92672">tr</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Sender&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Subject&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Date&lt;/<span style="color:#f92672">string</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;/<span style="color:#f92672">tr</span>&gt;
-    &lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;message in messages&#34;</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;{{message.sender}}&lt;/<span style="color:#f92672">td</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#/view/{{message.id}}&#39;</span>&gt;{{message.subject}}&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;{{message.date}}&lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;/<span style="color:#f92672">tr</span>&gt;
-&lt;/<span style="color:#f92672">table</span>&gt;
-</code></pre></div><p>detail.html</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Subject:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.subject}}&lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Sender:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.sender}}&lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Date:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.date}}&lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span>&gt;
-        &lt;<span style="color:#f92672">strong</span>&gt;To:&lt;/<span style="color:#f92672">strong</span>&gt;
-        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;recipient in message.recipients&#34;</span>&gt;{{recipient}}&lt;/<span style="color:#f92672">span</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">div</span>&gt;{{message.message}}&lt;/<span style="color:#f92672">div</span>&gt;
-&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#/&#34;</span>&gt;Back to message list&lt;/<span style="color:#f92672">a</span>&gt;
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;route&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;routing&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://tedshd.lionfree.net/lib/angular_v1.2.16.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://tedshd.lionfree.net/lib/angular-route.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;A-Mail&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-view</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;controllers.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>list.html</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ListController&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Sender&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Subject&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Date&lt;/<span style="color:#f92672">string</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;message in messages&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;{{message.sender}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#/view/{{message.id}}&#39;</span>&gt;{{message.subject}}&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;{{message.date}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span></code></pre></div><p>detail.html</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Subject:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.subject}}&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Sender:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.sender}}&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Date:&lt;/<span style="color:#f92672">strong</span>&gt; {{message.date}}&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">strong</span>&gt;To:&lt;/<span style="color:#f92672">strong</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;recipient in message.recipients&#34;</span>&gt;{{recipient}}&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;{{message.message}}&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#/&#34;</span>&gt;Back to message list&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><ul>
 <li>JavaScript</li>
 </ul>
 <p>controller.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//Create a module for our core AMail services
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">aMailServices</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;route&#39;</span>, [<span style="color:#e6db74">&#39;ngRoute&#39;</span>]);
-
-<span style="color:#75715e">//Set up our mappings between URLs, tempaltes. and  controllers
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">emailRouteConfig</span>(<span style="color:#a6e22e">$routeProvider</span>, <span style="color:#a6e22e">$locationProvider</span>){
-    <span style="color:#a6e22e">$routeProvider</span>.
-    <span style="color:#a6e22e">when</span>(<span style="color:#e6db74">&#39;/&#39;</span>, {
-        <span style="color:#a6e22e">controller</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ListController</span>,
-        <span style="color:#a6e22e">templateUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;list.html&#39;</span>
-    }).
-    <span style="color:#75715e">// Notice that for the detail view, we specify a parameterized URL component by placing a colon in front of the id
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">when</span>(<span style="color:#e6db74">&#39;/view/:id&#39;</span>, {
-        <span style="color:#a6e22e">controller</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">DetailController</span>,
-        <span style="color:#a6e22e">templateUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;detail.html&#39;</span>
-    }).
-    <span style="color:#a6e22e">otherwise</span>({
-        <span style="color:#a6e22e">redirectTo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/&#39;</span>
-    });
-
-    <span style="color:#75715e">// $locationProvider.html5Mode(true);
-</span><span style="color:#75715e"></span>};
-
-<span style="color:#75715e">//Set up our route so the AMailservice can find it
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">aMailServices</span>.<span style="color:#a6e22e">config</span>(<span style="color:#a6e22e">emailRouteConfig</span>);
-
-<span style="color:#75715e">//Some take emails
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">messages</span> <span style="color:#f92672">=</span> [{
-    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">sender</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jean@somecompany.com&#39;</span>,
-    <span style="color:#a6e22e">subject</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hi there, old friend&#39;</span>,
-    <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Dec 7, 2013 12:32:00&#39;</span>,
-    <span style="color:#a6e22e">recipients</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;greg@somecompany.com&#39;</span>],
-    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hey, we should get together for lunch somet ime and catch up. There are many things we should collaborate on this year.&#39;</span>
-},{
-    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">sender</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;maria@somecompany.com&#39;</span>,
-    <span style="color:#a6e22e">subject</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Where did you leave my laptop?&#39;</span> ,
-    <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Dec 7, 2013 8:15:12&#39;</span>,
-    <span style="color:#a6e22e">recipients</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;greg@somecompany.com&#39;</span>],
-    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;I thought you were going to put it in my desk drawer. But i t does not seem to be there. &#39;</span>
-},{
-    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">sender</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bill@somecompany.com&#39;</span>,
-    <span style="color:#a6e22e">subject</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Lost python&#39;</span>,
-    <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Dec 6, 2013 20:35:02&#39;</span>,
-    <span style="color:#a6e22e">recipients</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;greg@somecompany.com&#39;</span>],
-    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Nobody panic, but my pet python is missing from her cage. She doesn&#39;t move too fast, so just call me if you see her.&#34;</span>
-}];
-
-<span style="color:#75715e">// Publish our messages for the list template
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ListController</span>(<span style="color:#a6e22e">$scope</span>){
-    <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">messages</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">messages</span>;
-}
-
-<span style="color:#75715e">//Get the message id fron the route (parsed from the URL) and use it to find the right message object.
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">DetailController</span>(<span style="color:#a6e22e">$scope</span>, <span style="color:#a6e22e">$routeParams</span>){
-    <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">messages</span>[<span style="color:#a6e22e">$routeParams</span>.<span style="color:#a6e22e">id</span>];
-}
-</code></pre></div><p>這裡說明一下 AngularJS 做 <code>$routeProvider</code> 時路徑會加上 hash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">//Create a module for our core AMail services
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">aMailServices</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;route&#39;</span>, [<span style="color:#e6db74">&#39;ngRoute&#39;</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Set up our mappings between URLs, tempaltes. and  controllers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">emailRouteConfig</span>(<span style="color:#a6e22e">$routeProvider</span>, <span style="color:#a6e22e">$locationProvider</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$routeProvider</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">when</span>(<span style="color:#e6db74">&#39;/&#39;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">controller</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ListController</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">templateUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;list.html&#39;</span>
+</span></span><span style="display:flex;"><span>    }).
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Notice that for the detail view, we specify a parameterized URL component by placing a colon in front of the id
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">when</span>(<span style="color:#e6db74">&#39;/view/:id&#39;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">controller</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">DetailController</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">templateUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;detail.html&#39;</span>
+</span></span><span style="display:flex;"><span>    }).
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">otherwise</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">redirectTo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/&#39;</span>
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// $locationProvider.html5Mode(true);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Set up our route so the AMailservice can find it
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">aMailServices</span>.<span style="color:#a6e22e">config</span>(<span style="color:#a6e22e">emailRouteConfig</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Some take emails
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">messages</span> <span style="color:#f92672">=</span> [{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">sender</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jean@somecompany.com&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">subject</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hi there, old friend&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Dec 7, 2013 12:32:00&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">recipients</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;greg@somecompany.com&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hey, we should get together for lunch somet ime and catch up. There are many things we should collaborate on this year.&#39;</span>
+</span></span><span style="display:flex;"><span>},{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">sender</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;maria@somecompany.com&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">subject</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Where did you leave my laptop?&#39;</span> ,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Dec 7, 2013 8:15:12&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">recipients</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;greg@somecompany.com&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;I thought you were going to put it in my desk drawer. But i t does not seem to be there. &#39;</span>
+</span></span><span style="display:flex;"><span>},{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">sender</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bill@somecompany.com&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">subject</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Lost python&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Dec 6, 2013 20:35:02&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">recipients</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;greg@somecompany.com&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Nobody panic, but my pet python is missing from her cage. She doesn&#39;t move too fast, so just call me if you see her.&#34;</span>
+</span></span><span style="display:flex;"><span>}];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Publish our messages for the list template
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ListController</span>(<span style="color:#a6e22e">$scope</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">messages</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">messages</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Get the message id fron the route (parsed from the URL) and use it to find the right message object.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">DetailController</span>(<span style="color:#a6e22e">$scope</span>, <span style="color:#a6e22e">$routeParams</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">messages</span>[<span style="color:#a6e22e">$routeParams</span>.<span style="color:#a6e22e">id</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>這裡說明一下 AngularJS 做 <code>$routeProvider</code> 時路徑會加上 hash
 即 url 會是 <code>http://localhost/demo/angular/routing/#/</code> or <code>http://localhost/demo/angular/routing/#/view/1</code></p>
 <p>如果要移掉 hash 可參考
 <a href="http://scotch.io/quick-tips/js/angular/pretty-urls-in-angularjs-removing-the-hashtag">Pretty URLs in AngularJS: Removing the #</a></p>

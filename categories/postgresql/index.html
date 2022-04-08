@@ -207,15 +207,15 @@ if (!doNotTrack) {
 <ol>
 <li>set PATH in shell(.bashrc, .zshrc, &hellip;)</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Applications/Postgres.app/Contents/Versions/9.3/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Applications/Postgres.app/Contents/Versions/9.3/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><ol start="2">
 <li>create the plv8 extension</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">-&gt; psql -U Ted_Shiu -c <span style="color:#e6db74">&#34;create extension plv8&#34;</span>
-CREATE EXTENSION
-</code></pre></div><h3 id="install-pgrestmust-install-nodejs-before">install PgREST(Must install node.js before)</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm i -g pgrest
-</code></pre></div><p><a href="http://pgre.st/">Refer - PgREST: Node.js in the Database</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>-&gt; psql -U Ted_Shiu -c <span style="color:#e6db74">&#34;create extension plv8&#34;</span>
+</span></span><span style="display:flex;"><span>CREATE EXTENSION
+</span></span></code></pre></div><h3 id="install-pgrestmust-install-nodejs-before">install PgREST(Must install node.js before)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm i -g pgrest
+</span></span></code></pre></div><p><a href="http://pgre.st/">Refer - PgREST: Node.js in the Database</a></p>
 </p>
                 
 

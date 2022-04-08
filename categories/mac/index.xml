@@ -23,7 +23,7 @@
       <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2018-11-16-mac-get-file-user-name/</guid>
-      <description>Mac - Get file user name &amp;amp; user id Get file owner name stat -f &amp;#39;%Su&amp;#39; &amp;lt;file or folder name&amp;gt; Get user id show user id // or id &amp;lt;user name&amp;gt; get uid id -u // or id -u &amp;lt;user name&amp;gt; get file owner uid stat -f &amp;lsquo;%Su&amp;rsquo; &amp;lt;file or folder name&amp;gt; | xargs id -u stat -f &#39;%u&#39; &amp;lt;file or folder name&amp;gt; Refer - 将Linu</description>
+      <description>Mac - Get file user name &amp;amp; user id Get file owner name stat -f &amp;#39;%Su&amp;#39; &amp;lt;file or folder name&amp;gt; Get user id show user id // or id &amp;lt;user name&amp;gt; get uid id -u // or id -u &amp;lt;user name&amp;gt; get file owner uid stat -f &amp;lsquo;%Su&amp;rsquo; &amp;lt;file or folder name&amp;gt; | xargs id -u stat -f &amp;#39;%u&amp;#39; &amp;lt;file or folder name&amp;gt; Refer - 将Linu</description>
     </item>
     
     <item>
@@ -101,7 +101,7 @@ It has problem in oh-my-zsh! </description>
       <guid>https://blog.tedshd.io/posts/2013-08-27-vim-config-in-mac/</guid>
       <description>Some different in Mac PageDown, PageUp, Home, End It is not useful in setting vimrc.
 Solution Terminal-&amp;gt;Preference-&amp;gt;KeyBoard
-Home: \033[1~End: \033[4~PageUp: \033[5~PageDown: \033[6~</description>
+Home: \033[1~End: \033[4~PageUp: \033[5~PageDown: \033[6~ </description>
     </item>
     
   </channel>

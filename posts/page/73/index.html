@@ -1165,98 +1165,98 @@ if (!doNotTrack) {
 <p>It can control full screen the browser
 IE if it is to be more than IE11</p>
 <h3 id="code">Code</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toggleFullScreen</span>() {
-  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>document.<span style="color:#a6e22e">fullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span>    <span style="color:#75715e">// alternative standard method
-</span><span style="color:#75715e"></span>      <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">mozFullScreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">webkitFullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">msFullscreenElement</span> ) {  <span style="color:#75715e">// current working methods
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>) {
-      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>) {
-      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>) {
-      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>) {
-      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>(<span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">ALLOW_KEYBOARD_INPUT</span>);
-    }
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">exitFullscreen</span>) {
-      document.<span style="color:#a6e22e">exitFullscreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">msExitFullscreen</span>) {
-      document.<span style="color:#a6e22e">msExitFullscreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">mozCancelFullScreen</span>) {
-      document.<span style="color:#a6e22e">mozCancelFullScreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">webkitExitFullscreen</span>) {
-      document.<span style="color:#a6e22e">webkitExitFullscreen</span>();
-    }
-  }
-}
-</code></pre></div><h3 id="example">Example</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toggleFullScreen</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>document.<span style="color:#a6e22e">fullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span>    <span style="color:#75715e">// alternative standard method
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">mozFullScreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">webkitFullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">msFullscreenElement</span> ) {  <span style="color:#75715e">// current working methods
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>(<span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">ALLOW_KEYBOARD_INPUT</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">exitFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">exitFullscreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">msExitFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">msExitFullscreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">mozCancelFullScreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">mozCancelFullScreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">webkitExitFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">webkitExitFullscreen</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="example">Example</h3>
 <p>HTML</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;full&#34;</span>&gt;Full Screen&lt;/<span style="color:#f92672">button</span>&gt;
-</code></pre></div><p>JavaScript</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
-document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#full&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>() {
-    <span style="color:#a6e22e">toggleFullScreen</span>();
-});
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toggleFullScreen</span>() {
-  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>document.<span style="color:#a6e22e">fullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span>    <span style="color:#75715e">// alternative standard method
-</span><span style="color:#75715e"></span>      <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">mozFullScreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">webkitFullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">msFullscreenElement</span> ) {  <span style="color:#75715e">// current working methods
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>) {
-      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>) {
-      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>) {
-      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>) {
-      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>(<span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">ALLOW_KEYBOARD_INPUT</span>);
-    }
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">exitFullscreen</span>) {
-      document.<span style="color:#a6e22e">exitFullscreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">msExitFullscreen</span>) {
-      document.<span style="color:#a6e22e">msExitFullscreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">mozCancelFullScreen</span>) {
-      document.<span style="color:#a6e22e">mozCancelFullScreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">webkitExitFullscreen</span>) {
-      document.<span style="color:#a6e22e">webkitExitFullscreen</span>();
-    }
-  }
-}
-</code></pre></div><h3 id="codepen">CodePen</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;full&#34;</span>&gt;Full Screen&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span></code></pre></div><p>JavaScript</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#full&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">toggleFullScreen</span>();
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toggleFullScreen</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>document.<span style="color:#a6e22e">fullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span>    <span style="color:#75715e">// alternative standard method
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">mozFullScreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">webkitFullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">msFullscreenElement</span> ) {  <span style="color:#75715e">// current working methods
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>(<span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">ALLOW_KEYBOARD_INPUT</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">exitFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">exitFullscreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">msExitFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">msExitFullscreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">mozCancelFullScreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">mozCancelFullScreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">webkitExitFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">webkitExitFullscreen</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="codepen">CodePen</h3>
 <!-- raw HTML omitted -->
 <h3 id="other-use">Other use</h3>
 <p>Use it make youtube api player full screen
 If render player on <code>&lt;div id=&quot;player&quot;&gt;&lt;/div&gt;</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
-document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#full&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
-  <span style="color:#a6e22e">toggleFullScreen</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#player&#39;</span>));
-});
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toggleFullScreen</span>(<span style="color:#a6e22e">el</span>) {
-  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>document.<span style="color:#a6e22e">fullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span>    <span style="color:#75715e">// alternative standard method
-</span><span style="color:#75715e"></span>      <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">mozFullScreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">webkitFullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">msFullscreenElement</span> ) {  <span style="color:#75715e">// current working methods
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>) {
-      <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">requestFullscreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>) {
-      <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">msRequestFullscreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>) {
-      <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>) {
-      <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>(<span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">ALLOW_KEYBOARD_INPUT</span>);
-    }
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">exitFullscreen</span>) {
-      document.<span style="color:#a6e22e">exitFullscreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">msExitFullscreen</span>) {
-      document.<span style="color:#a6e22e">msExitFullscreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">mozCancelFullScreen</span>) {
-      document.<span style="color:#a6e22e">mozCancelFullScreen</span>();
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">webkitExitFullscreen</span>) {
-      document.<span style="color:#a6e22e">webkitExitFullscreen</span>();
-    }
-  }
-}
-</code></pre></div><p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode">Refer - Using fullscreen mode - Web developer guide | MDN</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#full&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">toggleFullScreen</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#player&#39;</span>));
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toggleFullScreen</span>(<span style="color:#a6e22e">el</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>document.<span style="color:#a6e22e">fullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span>    <span style="color:#75715e">// alternative standard method
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">mozFullScreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">webkitFullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">msFullscreenElement</span> ) {  <span style="color:#75715e">// current working methods
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">requestFullscreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">msRequestFullscreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>(<span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">ALLOW_KEYBOARD_INPUT</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">exitFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">exitFullscreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">msExitFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">msExitFullscreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">mozCancelFullScreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">mozCancelFullScreen</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">webkitExitFullscreen</span>) {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">webkitExitFullscreen</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode">Refer - Using fullscreen mode - Web developer guide | MDN</a></p>
 <p><a href="http://msdn.microsoft.com/zh-tw/library/ie/dn265028(v=vs.85).aspx">Refer - 全螢幕 API (Windows)</a></p>
 <p><a href="http://www.sitepoint.com/use-html5-full-screen-api/">Refer - How to Use the HTML5 Full-Screen API (Again) - SitePoint</a></p>
 </p>
@@ -1302,10 +1302,10 @@ document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6
 <h3 id="2nd-getting-started">2nd. Getting Started</h3>
 <p><a href="http://docs.mongodb.org/manual/tutorial/getting-started/">Getting Started with MongoDB</a></p>
 <p>In Mac, if show message</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">** WARNING: soft rlimits too low. Number of files is 256, should be at least <span style="color:#ae81ff">1000</span>
-</code></pre></div><p>input command</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">launchctl limit maxfiles <span style="color:#ae81ff">1024</span> <span style="color:#ae81ff">1024</span>
-</code></pre></div><p><a href="http://tech.enekochan.com/2013/12/08/warning-soft-rlimits-too-low-in-mongodb-with-mac-os-x/">Refer</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>** WARNING: soft rlimits too low. Number of files is 256, should be at least <span style="color:#ae81ff">1000</span>
+</span></span></code></pre></div><p>input command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>launchctl limit maxfiles <span style="color:#ae81ff">1024</span> <span style="color:#ae81ff">1024</span>
+</span></span></code></pre></div><p><a href="http://tech.enekochan.com/2013/12/08/warning-soft-rlimits-too-low-in-mongodb-with-mac-os-x/">Refer</a></p>
 </p>
                 
 

@@ -203,45 +203,45 @@ if (!doNotTrack) {
 <p>freetype 通常會需要另外安裝</p>
 <p>如何先檢查有沒有 GD 和 freetype</p>
 <p>先用 phpinfo 檢查即可</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">-&gt; % php -a
-Interactive shell
-
-php &gt;
-</code></pre></div><p>之後再打</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">phpinfo</span>();
-</code></pre></div><p>就會 output 資訊了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>-&gt; % php -a
+</span></span><span style="display:flex;"><span>Interactive shell
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>php &gt;
+</span></span></code></pre></div><p>之後再打</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">phpinfo</span>();
+</span></span></code></pre></div><p>就會 output 資訊了</p>
 <p>在搜尋 <code>gd</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gd
-
-GD Support <span style="color:#f92672">=</span>&gt; enabled
-GD Version <span style="color:#f92672">=</span>&gt; bundled <span style="color:#f92672">(</span>2.1.0 compatible<span style="color:#f92672">)</span>
-GIF Read Support <span style="color:#f92672">=</span>&gt; enabled
-GIF Create Support <span style="color:#f92672">=</span>&gt; enabled
-JPEG Support <span style="color:#f92672">=</span>&gt; enabled
-libJPEG Version <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">9</span> compatible
-PNG Support <span style="color:#f92672">=</span>&gt; enabled
-libPNG Version <span style="color:#f92672">=</span>&gt; 1.6.32
-WBMP Support <span style="color:#f92672">=</span>&gt; enabled
-XBM Support <span style="color:#f92672">=</span>&gt; enabled
-</code></pre></div><p>有安裝過 freetype 的話</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>GD Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>GD Version <span style="color:#f92672">=</span>&gt; bundled <span style="color:#f92672">(</span>2.1.0 compatible<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>GIF Read Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>GIF Create Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>JPEG Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>libJPEG Version <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">9</span> compatible
+</span></span><span style="display:flex;"><span>PNG Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>libPNG Version <span style="color:#f92672">=</span>&gt; 1.6.32
+</span></span><span style="display:flex;"><span>WBMP Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>XBM Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span></code></pre></div><p>有安裝過 freetype 的話</p>
 <p>就會一起顯示 <strong>FreeType Support</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gd
-
-GD Support <span style="color:#f92672">=</span>&gt; enabled
-GD Version <span style="color:#f92672">=</span>&gt; bundled <span style="color:#f92672">(</span>2.1.0 compatible<span style="color:#f92672">)</span>
-FreeType Support <span style="color:#f92672">=</span>&gt; enabled
-FreeType Linkage <span style="color:#f92672">=</span>&gt; with freetype
-FreeType Version <span style="color:#f92672">=</span>&gt; 2.10.1
-GIF Read Support <span style="color:#f92672">=</span>&gt; enabled
-GIF Create Support <span style="color:#f92672">=</span>&gt; enabled
-JPEG Support <span style="color:#f92672">=</span>&gt; enabled
-libJPEG Version <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">9</span> compatible
-PNG Support <span style="color:#f92672">=</span>&gt; enabled
-libPNG Version <span style="color:#f92672">=</span>&gt; 1.6.37
-WBMP Support <span style="color:#f92672">=</span>&gt; enabled
-XBM Support <span style="color:#f92672">=</span>&gt; enabled
-WebP Support <span style="color:#f92672">=</span>&gt; enabled
-</code></pre></div><p>目前環境是 Mac OSX 10.14.6</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>GD Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>GD Version <span style="color:#f92672">=</span>&gt; bundled <span style="color:#f92672">(</span>2.1.0 compatible<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>FreeType Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>FreeType Linkage <span style="color:#f92672">=</span>&gt; with freetype
+</span></span><span style="display:flex;"><span>FreeType Version <span style="color:#f92672">=</span>&gt; 2.10.1
+</span></span><span style="display:flex;"><span>GIF Read Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>GIF Create Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>JPEG Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>libJPEG Version <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">9</span> compatible
+</span></span><span style="display:flex;"><span>PNG Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>libPNG Version <span style="color:#f92672">=</span>&gt; 1.6.37
+</span></span><span style="display:flex;"><span>WBMP Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>XBM Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span><span style="display:flex;"><span>WebP Support <span style="color:#f92672">=</span>&gt; enabled
+</span></span></code></pre></div><p>目前環境是 Mac OSX 10.14.6</p>
 <p>安裝 freetype 的方式大致上有三種</p>
 <ol>
 <li>
@@ -267,28 +267,28 @@ WebP Support <span style="color:#f92672">=</span>&gt; enabled
 <p>需要再使用 <code>imagepng</code> 來輸出成圖片</p>
 <p><a href="https://www.php.net/manual/en/function.imagepng.php">Refer</a></p>
 <p>以下為簡單的範例</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP">
-<span style="color:#75715e">// 先建立一個畫布
-</span><span style="color:#75715e"></span>$im <span style="color:#f92672">=</span> <span style="color:#a6e22e">imagecreatetruecolor</span>(<span style="color:#ae81ff">1400</span>, <span style="color:#ae81ff">320</span>);
-
-<span style="color:#75715e">// 建立顏色
-</span><span style="color:#75715e"></span>$white <span style="color:#f92672">=</span> <span style="color:#a6e22e">imagecolorallocate</span>($im, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>);
-$black <span style="color:#f92672">=</span> <span style="color:#a6e22e">imagecolorallocate</span>($im, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
-<span style="color:#75715e">// 建立一個塗滿背景的區域
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">imagefilledrectangle</span>($im, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1400</span>, <span style="color:#ae81ff">320</span>, $white);
-
-<span style="color:#75715e">// 文字
-</span><span style="color:#75715e"></span>$text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;中文繁體 text&#39;</span>;
-<span style="color:#75715e">// 字型
-</span><span style="color:#75715e"></span>$font <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;NotoSansTC-Regular.otf&#39;</span>;
-<span style="color:#75715e">// 輸出的檔案
-</span><span style="color:#75715e"></span>$file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;font.png&#39;</span>;
-
-<span style="color:#75715e">// 添加文字到圖片中
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">imagettftext</span>($im, <span style="color:#ae81ff">112</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">160</span>, $black, $font, $text);
-<span style="color:#75715e">// 輸出成 PNG
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">imagepng</span>($im, $file, <span style="color:#ae81ff">9</span>);
-</code></pre></div><p>當然要輸出成其他圖片格式 PHP 也有 <code>imagejpeg</code> 等 function 可以使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 先建立一個畫布
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$im <span style="color:#f92672">=</span> <span style="color:#a6e22e">imagecreatetruecolor</span>(<span style="color:#ae81ff">1400</span>, <span style="color:#ae81ff">320</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 建立顏色
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$white <span style="color:#f92672">=</span> <span style="color:#a6e22e">imagecolorallocate</span>($im, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>);
+</span></span><span style="display:flex;"><span>$black <span style="color:#f92672">=</span> <span style="color:#a6e22e">imagecolorallocate</span>($im, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 建立一個塗滿背景的區域
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">imagefilledrectangle</span>($im, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1400</span>, <span style="color:#ae81ff">320</span>, $white);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 文字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;中文繁體 text&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 字型
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$font <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;NotoSansTC-Regular.otf&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 輸出的檔案
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;font.png&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 添加文字到圖片中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">imagettftext</span>($im, <span style="color:#ae81ff">112</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">160</span>, $black, $font, $text);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 輸出成 PNG
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">imagepng</span>($im, $file, <span style="color:#ae81ff">9</span>);
+</span></span></code></pre></div><p>當然要輸出成其他圖片格式 PHP 也有 <code>imagejpeg</code> 等 function 可以使用</p>
 
     </main>
 </section>

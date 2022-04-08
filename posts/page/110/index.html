@@ -1171,25 +1171,25 @@ alert(&lsquo;hihi&rsquo;) 這一行在按 Tab 縮排就有問題，再接續上�
 <p>在按 Tab 縮排過，打完那一行直接按 enter 到下一行，縮排就從 4 個空白變成 2個空白</p>
 <h3 id="期望">期望</h3>
 <p>希望用 Tab 時在 Edit 和 Preview(最終結果)的結果是一樣的</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Mac</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
-  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">console</span>) {
-  	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
-  }
-}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#66d9ef">function</span>() {
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span>);
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">2</span>);
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;reset 重新從最左邊按一次 Tab&#39;</span>);
-}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
-    <span style="color:#a6e22e">condsole</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;ok&#39;</span>);
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fun</span>) {
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;good&#39;</span>);
-    }
-}
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Mac</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">console</span>) {
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;reset 重新從最左邊按一次 Tab&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hihi&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">condsole</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;ok&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fun</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;good&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></p>
                 
 
                 

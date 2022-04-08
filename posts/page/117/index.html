@@ -1173,13 +1173,13 @@ E:disabled 被停用的 UI 元素 E
 E:checked 被勾選的 UI 元素 E(適用於 Radio, Checkbox)
 E:selected 被選取的 UI 元素 E(適用於 Select 下的 Option 元素)
 E.myClassName CSS 類別設為 myClassName 的元素 E
-E#myId id=&quot;myId&quot; 的元素 E
-E:not(s) 不符合 s 條件的元素 E，例如: $(&quot;span:not(:empty)&quot;) 即為找出有包含子元素的 span
+E#myId id=&#34;myId&#34; 的元素 E
+E:not(s) 不符合 s 條件的元素 E，例如: $(&#34;span:not(:empty)&#34;) 即為找出有包含子元素的 span
 E F 由包含在 E 底下的 F 元素，不必直接為父子關係，例如: F 可以是 E 的子元素的子元素。
 E &gt; F 找出父元素為 E 的 F 元素
 E + F 找出緊接在 E 元素後方的 F 元素
 E ~ F 找出緊接在 E 元素前方的 F 元素
-E,F,G 利用逗號可以呈現 &quot; 或 &quot; 的聯集效果，指 E 元素或 F 元素或 G 元素
+E,F,G 利用逗號可以呈現 &#34; 或 &#34; 的聯集效果，指 E 元素或 F 元素或 G 元素
 E[foo] 具有 foo 屬性 (Attribute) 的E元素(1.2.6 以前的版本亦可用 E[@foo] 表示，1.3 版本起取消 @ 符號的使用)
 E[foo=bar] 有 foo 屬性，且 foo 屬性值為 bar 的 E 元素
 E[foo!=bar] 有 foo 屬性，且 foo 屬性值不等於 bar 的 E 元素
@@ -1195,25 +1195,25 @@ E[foo=bar][baz=bop] 同時具備 foo 及 baz 屬性，且其值分別為 bar 及
 :first 選取結果中的第一個，等同於 :eq(0)
 :last 選取結果中的最後一個
 :parent 選取包含子元素者(文字內容也算，例如:&lt;span&gt;Text&lt;/span&gt;)
-:contains('test') 選取元素內的文字包含特定字串者
-:visible 選取所有可見的元素(包含 CSS display=block 或 inline, visibility=visible 但不含 &lt;input type=&quot;hidden&quot;&gt;)
-:hidden 選取所有不可見的元素(包含 CSS display=none, visibility=hidden以及&lt;input type=&quot;hidden&quot;&gt;)
+:contains(&#39;test&#39;) 選取元素內的文字包含特定字串者
+:visible 選取所有可見的元素(包含 CSS display=block 或 inline, visibility=visible 但不含 &lt;input type=&#34;hidden&#34;&gt;)
+:hidden 選取所有不可見的元素(包含 CSS display=none, visibility=hidden以及&lt;input type=&#34;hidden&#34;&gt;)
 :input 選取所有表單輸入元素(包含 input, select, textarea, button).
-:text 選取所有 &lt;input type=&quot;text&quot;&gt;
-:password 選取所有 &lt;input type=&quot;password &quot;&gt;
-:radio 選取所有 &lt;input type=&quot;radio &quot;&gt;
-:checkbox 選取所有 &lt;input type=&quot;checkbox&quot;&gt;
-:submit 選取所有 &lt;input type=&quot;submit&quot;&gt;
-:image 選取所有 &lt;input type=&quot;image&quot;&gt;
-:reset 選取所有 &lt;input type=&quot;reset&quot;&gt;
-:button 選取所有 &lt;input type=&quot;button&quot;&gt;
-:file 選取所有 &lt;input type=&quot;file&quot;&gt;
+:text 選取所有 &lt;input type=&#34;text&#34;&gt;
+:password 選取所有 &lt;input type=&#34;password &#34;&gt;
+:radio 選取所有 &lt;input type=&#34;radio &#34;&gt;
+:checkbox 選取所有 &lt;input type=&#34;checkbox&#34;&gt;
+:submit 選取所有 &lt;input type=&#34;submit&#34;&gt;
+:image 選取所有 &lt;input type=&#34;image&#34;&gt;
+:reset 選取所有 &lt;input type=&#34;reset&#34;&gt;
+:button 選取所有 &lt;input type=&#34;button&#34;&gt;
+:file 選取所有 &lt;input type=&#34;file&#34;&gt;
 
 size() 或 length 傳回群組的物件個數
 eq(N) 取出群組中第 N 個 jQuery 物件
 get() 傳回元素的陣列
 get(N) 取出第 N 個元素
-index(element 或 jQuery 物件) 用來找某元素在選取結果中的排名順序，例如網頁上有五個 &lt;div&gt;，&lt;div id=&quot;dvX&quot;&gt; 為第三個，則$(&quot;div&quot;).index(document.getElementById(&quot;dvX&quot;)) 可以得到 2 (由 0 起算，故第三個為 2)，$(&quot;div&quot;).index($(&quot;#dvX&quot;)) 也可得到同樣結果。元素不在群組時傳回 -1。
+index(element 或 jQuery 物件) 用來找某元素在選取結果中的排名順序，例如網頁上有五個 &lt;div&gt;，&lt;div id=&#34;dvX&#34;&gt; 為第三個，則$(&#34;div&#34;).index(document.getElementById(&#34;dvX&#34;)) 可以得到 2 (由 0 起算，故第三個為 2)，$(&#34;div&#34;).index($(&#34;#dvX&#34;)) 也可得到同樣結果。元素不在群組時傳回 -1。
 </code></pre></p>
                 
 
@@ -1255,17 +1255,17 @@ index(element 或 jQuery 物件) 用來找某元素在選取結果中的排名�
 <a href="http://html5test.com/">http://html5test.com/</a></p>
 <p>JavaScript Benchmark
 <a href="http://www.webkit.org/perf/sunspider/sunspider.html">http://www.webkit.org/perf/sunspider/sunspider.html</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">perf</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">testName</span>, <span style="color:#a6e22e">fn</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">startTime</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getTime</span>();
-    <span style="color:#a6e22e">fn</span>();
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">endTime</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getTime</span>();
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">testName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">endTime</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">startTime</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;ms&#34;</span>);
-}
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">jQuery</span>
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">time</span>(<span style="color:#e6db74">&#34;timerName&#34;</span>);
-<span style="color:#75715e">// javascript
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">timeEnd</span>(<span style="color:#e6db74">&#34;timerName&#34;</span>);
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">perf</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">testName</span>, <span style="color:#a6e22e">fn</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">startTime</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getTime</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fn</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">endTime</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getTime</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">testName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">endTime</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">startTime</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;ms&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">jQuery</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">time</span>(<span style="color:#e6db74">&#34;timerName&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// javascript
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">timeEnd</span>(<span style="color:#e6db74">&#34;timerName&#34;</span>);
+</span></span></code></pre></div></p>
                 
 
                 

@@ -197,10 +197,10 @@ if (!doNotTrack) {
 <p>這在 Web 中會造成有需要處理字串長度的地方就會出現問題</p>
 <p>例如:</p>
 <p>input 文字的長度限制的使用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">maxlength</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span>&gt;
-</code></pre></div><p>字串需要計算長度時</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">length</span>;
-</code></pre></div><p>尤其是在現在行動裝置的普及, 內建的鍵盤已經有 emoji 的輸入可以使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">maxlength</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span>&gt;
+</span></span></code></pre></div><p>字串需要計算長度時</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">length</span>;
+</span></span></code></pre></div><p>尤其是在現在行動裝置的普及, 內建的鍵盤已經有 emoji 的輸入可以使用</p>
 <p>更會大大的增加在需要的邏輯處理會出現問題</p>
 <h2 id="如何解決">如何解決</h2>
 <p>有一個方便的套件 <a href="https://github.com/dotcypress/runes">runes</a> 會把 emoji 識別出來</p>

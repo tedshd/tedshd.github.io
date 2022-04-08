@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.92.1" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -210,35 +210,35 @@ if (!doNotTrack) {
 <ul>
 <li>modulize selector</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">module</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>);
-<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#66d9ef">function</span>() {
-		<span style="color:#75715e">// dosomething...
-</span><span style="color:#75715e"></span>});
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">module</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// dosomething...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span></code></pre></div><ul>
 <li>initialize</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">length</span>) {
-		<span style="color:#75715e">// dosomething
-</span><span style="color:#75715e"></span>}
-</code></pre></div><h2 id="selector">selector</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">length</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// dosomething
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="selector">selector</h2>
 <p>id is better than tag and class</p>
 <p>HTML</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
-    &lt;<span style="color:#f92672">ul</span>&gt;
-    	&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;class&#34;</span>&gt;text&lt;/<span style="color:#f92672">li</span>&gt;
-    &lt;/<span style="color:#f92672">ul</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>JavaScript</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#id&#39;</span>).<span style="color:#a6e22e">html</span>();
-<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;#id&#39;</span>);
-</code></pre></div><p><a href="http://jsperf.com/jquery-getnode-test/2">jsperf</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>    	&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;class&#34;</span>&gt;text&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>JavaScript</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#id&#39;</span>).<span style="color:#a6e22e">html</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;#id&#39;</span>);
+</span></span></code></pre></div><p><a href="http://jsperf.com/jquery-getnode-test/2">jsperf</a></p>
 <p>##bind event
 use on
 bind on parent selector</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;li&#39;</span>, <span style="color:#66d9ef">function</span> () {
-	<span style="color:#75715e">// dosomething
-</span><span style="color:#75715e"></span>});
-</code></pre></div><p><a href="http://jsbin.com/ijovot/1/edit">js Bin</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;li&#39;</span>, <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// dosomething
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span></code></pre></div><p><a href="http://jsbin.com/ijovot/1/edit">js Bin</a></p>
 </p>
                 
 
@@ -274,20 +274,20 @@ bind on parent selector</p>
                 <p><h2 id="innerheight--innerwidth">innerHeight &amp; innerWidth</h2>
 <p>抓取瀏覽器目前顯示高度與寬度
 一般都用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.<span style="color:#a6e22e">innerHeight</span>
-</code></pre></div><p>與</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.<span style="color:#a6e22e">innerWidth</span>
-</code></pre></div><p>但唯獨IE6~IE8不行
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">innerHeight</span>
+</span></span></code></pre></div><p>與</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">innerWidth</span>
+</span></span></code></pre></div><p>但唯獨IE6~IE8不行
 Google了一下
 發現用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
-</code></pre></div><p>與</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span>
-</code></pre></div><p>便兼容所有瀏覽器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
+</span></span></code></pre></div><p>與</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span>
+</span></span></code></pre></div><p>便兼容所有瀏覽器</p>
 <h2 id="scrollheight">scrollHeight</h2>
 <p>如要抓 document 的高可用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollHeight</span>
-</code></pre></div><p><a href="http://stackoverflow.com/questions/1145850/get-height-of-entire-document-with-javascript">Refer</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollHeight</span>
+</span></span></code></pre></div><p><a href="http://stackoverflow.com/questions/1145850/get-height-of-entire-document-with-javascript">Refer</a></p>
 </p>
                 
 

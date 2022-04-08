@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.92.1" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -209,8 +209,8 @@ if (!doNotTrack) {
                 <p><h2 id="something-about-ci-note">Something about CI note</h2>
 <p><a href="http://www.codeigniter.org.tw/user_guide/">user guide</a></p>
 <h3 id="redirect">redirect</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP">$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">helper</span>(<span style="color:#e6db74">&#39;url&#39;</span>);
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">helper</span>(<span style="color:#e6db74">&#39;url&#39;</span>);
+</span></span></code></pre></div></p>
                 
 
                 
@@ -248,8 +248,8 @@ if (!doNotTrack) {
 Ctrl + ~
 show command line
 enter</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">import urllib2,os; pf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Package Control.sublime-package&#39;</span>; ipp<span style="color:#f92672">=</span>sublime.installed_packages_path<span style="color:#f92672">()</span>; os.makedirs<span style="color:#f92672">(</span>ipp<span style="color:#f92672">)</span> <span style="color:#66d9ef">if</span> not os.path.exists<span style="color:#f92672">(</span>ipp<span style="color:#f92672">)</span> <span style="color:#66d9ef">else</span> None; urllib2.install_opener<span style="color:#f92672">(</span>urllib2.build_opener<span style="color:#f92672">(</span>urllib2.ProxyHandler<span style="color:#f92672">()))</span>; open<span style="color:#f92672">(</span>os.path.join<span style="color:#f92672">(</span>ipp,pf<span style="color:#f92672">)</span>,<span style="color:#e6db74">&#39;wb&#39;</span><span style="color:#f92672">)</span>.write<span style="color:#f92672">(</span>urllib2.urlopen<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;http://sublime.wbond.net/&#39;</span>+pf.replace<span style="color:#f92672">(</span><span style="color:#e6db74">&#39; &#39;</span>,<span style="color:#e6db74">&#39;%20&#39;</span><span style="color:#f92672">))</span>.read<span style="color:#f92672">())</span>; print <span style="color:#e6db74">&#39;Please restart Sublime Text to finish installation&#39;</span>
-</code></pre></div><p>restart sublime
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>import urllib2,os; pf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Package Control.sublime-package&#39;</span>; ipp<span style="color:#f92672">=</span>sublime.installed_packages_path<span style="color:#f92672">()</span>; os.makedirs<span style="color:#f92672">(</span>ipp<span style="color:#f92672">)</span> <span style="color:#66d9ef">if</span> not os.path.exists<span style="color:#f92672">(</span>ipp<span style="color:#f92672">)</span> <span style="color:#66d9ef">else</span> None; urllib2.install_opener<span style="color:#f92672">(</span>urllib2.build_opener<span style="color:#f92672">(</span>urllib2.ProxyHandler<span style="color:#f92672">()))</span>; open<span style="color:#f92672">(</span>os.path.join<span style="color:#f92672">(</span>ipp,pf<span style="color:#f92672">)</span>,<span style="color:#e6db74">&#39;wb&#39;</span><span style="color:#f92672">)</span>.write<span style="color:#f92672">(</span>urllib2.urlopen<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;http://sublime.wbond.net/&#39;</span>+pf.replace<span style="color:#f92672">(</span><span style="color:#e6db74">&#39; &#39;</span>,<span style="color:#e6db74">&#39;%20&#39;</span><span style="color:#f92672">))</span>.read<span style="color:#f92672">())</span>; print <span style="color:#e6db74">&#39;Please restart Sublime Text to finish installation&#39;</span>
+</span></span></code></pre></div><p>restart sublime
 finish</p>
 <h3 id="zencoding">ZenCoding</h3>
 <h3 id="jsformat">jsFormat</h3>
@@ -270,36 +270,36 @@ ctrl + alt + f
 </ul>
 <h3 id="sublime-jslint">sublime-jslint</h3>
 <p><a href="https://github.com/fbzhong/sublime-jslint">GitHub</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#75715e">// Path to the jslint jar.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Leave blank to use bundled jar.
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;jslint_jar&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
-
-    <span style="color:#75715e">// Options pass to jslint.
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;jslint_options&#34;</span>: <span style="color:#e6db74">&#34;--continue --nomen --regexp --sloppy&#34;</span>,
-
-    <span style="color:#75715e">// Ignore errors, regex.
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;ignore_errors&#34;</span>:
-    [
-        <span style="color:#75715e">// &#34;Expected an identifier and instead saw &#39;undefined&#39; \(a reserved word\)&#34;
-</span><span style="color:#75715e"></span>    ],
-
-    <span style="color:#75715e">// run jslint on save.
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;run_on_save&#34;</span>: <span style="color:#66d9ef">true</span>,
-
-    <span style="color:#75715e">// debug flag.
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;debug&#34;</span>: <span style="color:#66d9ef">false</span>
-}
-</code></pre></div><h3 id="javascript-and-jquery-api-completions">javascript and jQuery API Completions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Path to the jslint jar.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Leave blank to use bundled jar.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;jslint_jar&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Options pass to jslint.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;jslint_options&#34;</span>: <span style="color:#e6db74">&#34;--continue --nomen --regexp --sloppy&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Ignore errors, regex.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;ignore_errors&#34;</span>:
+</span></span><span style="display:flex;"><span>    [
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// &#34;Expected an identifier and instead saw &#39;undefined&#39; \(a reserved word\)&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    ],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// run jslint on save.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;run_on_save&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// debug flag.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;debug&#34;</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="javascript-and-jquery-api-completions">javascript and jQuery API Completions</h3>
 <p><a href="https://github.com/slene/Sublime-JavaScript-API-Completions">GitHub</a></p>
 <h3 id="better-completion">Better Completion</h3>
 <h3 id="phplntel">PHPLntel</h3>
 <h3 id="sublimelinter">SublimeLinter</h3>
 <p><a href="https://github.com/SublimeLinter/SublimeLinter-for-ST2">SublimeLinter-for-ST2</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#34;sublimelinter_popup_errors_on_save&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
-<span style="color:#e6db74">&#34;sublimelinter_mark_style&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;fill&#34;</span>
-<span style="color:#e6db74">&#34;sublimelinter_gutter_marks&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
-</code></pre></div><h3 id="colorpicker">ColorPicker</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#e6db74">&#34;sublimelinter_popup_errors_on_save&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;sublimelinter_mark_style&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;fill&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;sublimelinter_gutter_marks&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><h3 id="colorpicker">ColorPicker</h3>
 <p>調色盤
 <a href="http://weslly.github.io/ColorPicker/">GitHub</a></p>
 <h3 id="scss">SCSS</h3>

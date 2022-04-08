@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.92.1" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -274,26 +274,26 @@ if (!doNotTrack) {
                 <p><h2 id="javascript---dom-object-check-array--isarray-polyfill">JavaScript - DOM object check array &amp; isArray polyfill</h2>
 <p>One day my colleague find a question.</p>
 <p>ECMA script <code>isArray</code> is not work when object is DOM element</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Array.<span style="color:#a6e22e">isArray</span>(document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;div&#39;</span>));
-<span style="color:#75715e">// false
-</span></code></pre></div><p>And polyfill for old browser</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arg</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object Array]&#39;</span>;
-</code></pre></div><p>Still fail</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(document.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#e6db74">&#39;product-img&#39;</span>));
-<span style="color:#75715e">// [object HTMLCollection]
-</span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;div&#39;</span>));
-<span style="color:#75715e">// [object NodeList]
-</span></code></pre></div><p>So i try to make a polyfill</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Array.<span style="color:#a6e22e">isArray</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">arg</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arg</span>);
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object Array]&#39;</span> <span style="color:#f92672">||</span>
-        <span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object HTMLCollection]&#39;</span> <span style="color:#f92672">||</span>
-        <span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object NodeList]&#39;</span>) {
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
-};
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>Array.<span style="color:#a6e22e">isArray</span>(document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;div&#39;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// false
+</span></span></span></code></pre></div><p>And polyfill for old browser</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arg</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object Array]&#39;</span>;
+</span></span></code></pre></div><p>Still fail</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(document.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#e6db74">&#39;product-img&#39;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// [object HTMLCollection]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;div&#39;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// [object NodeList]
+</span></span></span></code></pre></div><p>So i try to make a polyfill</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>Array.<span style="color:#a6e22e">isArray</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">arg</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arg</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object Array]&#39;</span> <span style="color:#f92672">||</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object HTMLCollection]&#39;</span> <span style="color:#f92672">||</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object NodeList]&#39;</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div></p>
                 
 
                 

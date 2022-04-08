@@ -204,41 +204,41 @@ if (!doNotTrack) {
 <ol>
 <li>Add web api in HTML</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">language</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;$MANAGER_WIDGET/Common/webapi/1.0/webapis.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">language</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;$MANAGER_WIDGET/Common/webapi/1.0/webapis.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><ol start="2">
 <li>Add JavaScript code</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">watchCB</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">onconnect</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">type</span>) {
-        <span style="color:#75715e">// (1) connected
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">type</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; is connected successfully&#34;</span>);
-    },
-
-    <span style="color:#a6e22e">ondisconnect</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">type</span>) {
-        <span style="color:#75715e">// (0) disconnected
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">type</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; is disconnected&#34;</span>);
-    }
-};
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">successCB</span>(<span style="color:#a6e22e">networks</span>) {
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">networks</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">networks</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">isActive</span>()) {
-            <span style="color:#a6e22e">networks</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">setWatchListener</span>(<span style="color:#a6e22e">watchCB</span>, <span style="color:#a6e22e">errorCB</span>);
-        }
-    }
-};
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">errorCB</span>(<span style="color:#a6e22e">error</span>) {
-    <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>);
-};
-
-<span style="color:#66d9ef">try</span> {
-    <span style="color:#a6e22e">webapis</span>.<span style="color:#a6e22e">network</span>.<span style="color:#a6e22e">getAvailableNetworks</span>(<span style="color:#a6e22e">successCB</span>, <span style="color:#a6e22e">errorCB</span>);
-} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-    document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;h4&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">name</span>;
-    <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">name</span>);
-}
-</code></pre></div><p>This sample code can detect network connect status</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">watchCB</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">onconnect</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// (1) connected
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">type</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; is connected successfully&#34;</span>);
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ondisconnect</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// (0) disconnected
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">type</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; is disconnected&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">successCB</span>(<span style="color:#a6e22e">networks</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">networks</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">networks</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">isActive</span>()) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">networks</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">setWatchListener</span>(<span style="color:#a6e22e">watchCB</span>, <span style="color:#a6e22e">errorCB</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">errorCB</span>(<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">webapis</span>.<span style="color:#a6e22e">network</span>.<span style="color:#a6e22e">getAvailableNetworks</span>(<span style="color:#a6e22e">successCB</span>, <span style="color:#a6e22e">errorCB</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;h4&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This sample code can detect network connect status</p>
 <p><a href="http://www.samsungdforum.com/Guide/ref00008/index.html">Refer - Web Device API</a>
 <a href="http://www.samsungdforum.com/Guide/ref00008/network/dtv_network_module.html">Refer - Network</a></p>
 </p>

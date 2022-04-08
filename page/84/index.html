@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.92.1" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -209,55 +209,55 @@ if (!doNotTrack) {
                 <p><h2 id="javascript---jsonp">JavaScript - jsonp</h2>
 <h3 id="if-only-get-dataread">If only get data(read)</h3>
 <p>Use callback</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// javascript
-</span><span style="color:#75715e">// build from javascript
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scriptEl</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
-<span style="color:#a6e22e">scriptEl</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;callback=myFunction&#34;</span>;
-document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;head&#34;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">scriptEl</span>);
-</code></pre></div><p>or</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- html --&gt;</span>
-<span style="color:#75715e">&lt;!-- embed from HTML --&gt;</span>
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;callback=myFunction&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>myFunction is callback function handle json data</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// javascript
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myFunction</span>(<span style="color:#a6e22e">data</span>) {
-    <span style="color:#75715e">// data is json
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
-}
-</code></pre></div><h4 id="example">example</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span>&gt;
-&lt;<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-&lt;<span style="color:#f92672">title</span>&gt;Examples&lt;/<span style="color:#f92672">title</span>&gt;
-<span style="color:#75715e">&lt;!-- &lt;script src=&#34;http://tedshd.lionfree.net/demo/php/api_test.php?callback=test&#34;&gt;&lt;/script&gt; --&gt;</span>
-&lt;<span style="color:#f92672">script</span>&gt;
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scriptEl</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
-    <span style="color:#a6e22e">scriptEl</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://tedshd.lionfree.net/demo/php/api_test.php?callback=test&#34;</span>;
-    document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;head&#34;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">scriptEl</span>);
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>) {
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
-    }
-&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">body</span>&gt;
-
-&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p>PHP must support to handle jsonp</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// PHP
-</span><span style="color:#75715e"></span>$request_json <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_encode</span>($data, <span style="color:#66d9ef">true</span>);
-<span style="color:#66d9ef">echo</span> $_GET[<span style="color:#e6db74">&#39;callback&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;(&#34;</span> <span style="color:#f92672">.</span> $request_json <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;);&#34;</span>;
-</code></pre></div><p>這樣就會回傳用 callback 包起來的 json data
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// javascript
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// build from javascript
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scriptEl</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scriptEl</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;callback=myFunction&#34;</span>;
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;head&#34;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">scriptEl</span>);
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- html --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- embed from HTML --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;callback=myFunction&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>myFunction is callback function handle json data</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// javascript
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myFunction</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// data is json
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="example">example</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;Examples&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- &lt;script src=&#34;http://tedshd.lionfree.net/demo/php/api_test.php?callback=test&#34;&gt;&lt;/script&gt; --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scriptEl</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scriptEl</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://tedshd.lionfree.net/demo/php/api_test.php?callback=test&#34;</span>;
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;head&#34;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">scriptEl</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>PHP must support to handle jsonp</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// PHP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$request_json <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_encode</span>($data, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> $_GET[<span style="color:#e6db74">&#39;callback&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;(&#34;</span> <span style="color:#f92672">.</span> $request_json <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;);&#34;</span>;
+</span></span></code></pre></div><p>這樣就會回傳用 callback 包起來的 json data
 由於 callback 是 url query string ,所以不是用 callback 用其他名稱也是 ok 的</p>
 <h3 id="if-want-to-write-datasave">If want to write data(Save)</h3>
 <p>Use XMLHttpRequest send data
 <a href="http://tedshd.logdown.com/posts/143110-ajax-xmlhttprequest">AJAX - XMLHttpRequest</a></p>
 <p>PHP 加入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// PHP
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Access-Control-Allow-Origin: *&#34;</span>);
-<span style="color:#75715e">// header(&#34;Access-Control-Allow-Origin: http://example.com&#34;);
-</span></code></pre></div><p>其中 * 也可改成所允許的 url</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// PHP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Access-Control-Allow-Origin: *&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// header(&#34;Access-Control-Allow-Origin: http://example.com&#34;);
+</span></span></span></code></pre></div><p>其中 * 也可改成所允許的 url</p>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/HTTP/Access_control_CORS">Refer - HTTP access control (CORS)</a>
 <a href="https://developer.mozilla.org/en-US/docs/Server-Side_Access_Control">Refer - Server-Side Access Control</a>
 <a href="http://blog.caesarchi.com/2011/08/xmlhttprequestajax.html">Refer - XMLHttpRequest執行AJAX 跨網域存取</a></p>
@@ -313,170 +313,170 @@ Use iframe player can solve this problem
 We can use javascript control player</p>
 <h3 id="this-is-a-note-to-iframe-api">This is a note to iframe API</h3>
 <p>embed script</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.youtube.com/iframe_api&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>JavaScript generate</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">tag</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;script&#39;</span>),
-    <span style="color:#a6e22e">firstScriptTag</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;script&#39;</span>)[<span style="color:#ae81ff">0</span>];
-<span style="color:#a6e22e">tag</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://www.youtube.com/iframe_api&#39;</span>;
-<span style="color:#a6e22e">firstScriptTag</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">tag</span>, <span style="color:#a6e22e">firstScriptTag</span>);
-</code></pre></div><p>1.First check load iframe API</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onYouTubeIframeAPIReady</span>() {
-    <span style="color:#75715e">// do something
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>2.Init YouTube player</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">player</span>;
-<span style="color:#a6e22e">player</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">YT</span>.<span style="color:#a6e22e">Player</span>(
-    <span style="color:#e6db74">&#39;player&#39;</span>,
-    {
-        <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1280&#39;</span>, <span style="color:#75715e">// player width
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;720&#39;</span>, <span style="color:#75715e">// player height
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">videoId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">videoList</span>[<span style="color:#ae81ff">0</span>], <span style="color:#75715e">// youtube id ex: &#39;0lfDNu-k6oo&#39;
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">playerVars</span><span style="color:#f92672">:</span> {
-            <span style="color:#a6e22e">rel</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
-            <span style="color:#a6e22e">autoplay</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
-            <span style="color:#a6e22e">disablekb</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
-            <span style="color:#a6e22e">showsearch</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
-            <span style="color:#a6e22e">showinfo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
-            <span style="color:#a6e22e">controls</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
-            <span style="color:#a6e22e">wmode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;opaque&#39;</span>,
-            <span style="color:#a6e22e">hd</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
-            <span style="color:#a6e22e">html5</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
-            <span style="color:#a6e22e">iv_load_policy</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>
-        },
-        <span style="color:#a6e22e">events</span><span style="color:#f92672">:</span> {
-            <span style="color:#e6db74">&#39;onReady&#39;</span>        <span style="color:#f92672">:</span> <span style="color:#a6e22e">onPlayerReady</span>,
-            <span style="color:#e6db74">&#39;onStateChange&#39;</span>  <span style="color:#f92672">:</span> <span style="color:#a6e22e">onPlayerStateChange</span>,
-            <span style="color:#e6db74">&#39;onError&#39;</span>        <span style="color:#f92672">:</span> <span style="color:#a6e22e">error</span>
-        }
-    }
-);
-</code></pre></div><p>playerVars can refer <a href="https://developers.google.com/youtube/player_parameters?playerVersion=HTML5&amp;hl=zh-cn">YouTube 嵌入式播放器参数</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.youtube.com/iframe_api&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>JavaScript generate</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">tag</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;script&#39;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">firstScriptTag</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;script&#39;</span>)[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tag</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://www.youtube.com/iframe_api&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">firstScriptTag</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">tag</span>, <span style="color:#a6e22e">firstScriptTag</span>);
+</span></span></code></pre></div><p>1.First check load iframe API</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onYouTubeIframeAPIReady</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>2.Init YouTube player</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">player</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">player</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">YT</span>.<span style="color:#a6e22e">Player</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;player&#39;</span>,
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1280&#39;</span>, <span style="color:#75715e">// player width
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;720&#39;</span>, <span style="color:#75715e">// player height
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">videoId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">videoList</span>[<span style="color:#ae81ff">0</span>], <span style="color:#75715e">// youtube id ex: &#39;0lfDNu-k6oo&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">playerVars</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">rel</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">autoplay</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">disablekb</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">showsearch</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">showinfo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">controls</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">wmode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;opaque&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">hd</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">html5</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">iv_load_policy</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">events</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;onReady&#39;</span>        <span style="color:#f92672">:</span> <span style="color:#a6e22e">onPlayerReady</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;onStateChange&#39;</span>  <span style="color:#f92672">:</span> <span style="color:#a6e22e">onPlayerStateChange</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;onError&#39;</span>        <span style="color:#f92672">:</span> <span style="color:#a6e22e">error</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>playerVars can refer <a href="https://developers.google.com/youtube/player_parameters?playerVersion=HTML5&amp;hl=zh-cn">YouTube 嵌入式播放器参数</a></p>
 <p>3.Handle onPlayerReady, onPlayerStateChange, error</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onPlayerReady</span>(<span style="color:#a6e22e">e</span>) {
-    <span style="color:#75715e">// do something
-</span><span style="color:#75715e"></span>}
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onPlayerStateChange</span>(<span style="color:#a6e22e">e</span>) {
-    <span style="color:#75715e">// do something
-</span><span style="color:#75715e"></span>}
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">e</span>) {
-    <span style="color:#75715e">// do something
-</span><span style="color:#75715e"></span>}
-</code></pre></div><h3 id="sample-code">Sample code</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span>&gt;
-&lt;<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-&lt;<span style="color:#f92672">title</span>&gt;youtube_iframe_api&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;player&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;<span style="color:#f92672">script</span>&gt;
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">player</span>;
-
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadPlayer</span>() {
-        <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#player&#39;</span>)) {
-            <span style="color:#75715e">// get API
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">tag</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;script&#39;</span>),
-            <span style="color:#a6e22e">firstScriptTag</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;script&#39;</span>)[<span style="color:#ae81ff">0</span>];
-            <span style="color:#a6e22e">tag</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://www.youtube.com/iframe_api&#39;</span>;
-            <span style="color:#a6e22e">firstScriptTag</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">tag</span>, <span style="color:#a6e22e">firstScriptTag</span>);
-
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">videoList</span> <span style="color:#f92672">=</span> [],
-                <span style="color:#a6e22e">playCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">video_ID</span> <span style="color:#f92672">=</span> {
-                <span style="color:#e6db74">&#39;v_2&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;V8BTsiMxyaQ&#39;</span>,
-                <span style="color:#e6db74">&#39;v_0&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;7wvNwOPprBE&#39;</span>,
-                <span style="color:#e6db74">&#39;v_1&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;mTSuiGubCHE&#39;</span>,
-                <span style="color:#e6db74">&#39;v_8&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;DDs5bXh4erM&#39;</span>,
-                <span style="color:#e6db74">&#39;v_3&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;n-BXNXvTvV4&#39;</span>,
-                <span style="color:#e6db74">&#39;v_4&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;CRJDQQXS4uE&#39;</span>,
-                <span style="color:#e6db74">&#39;v_5&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ASO_zypdnsQ&#39;</span>,
-                <span style="color:#e6db74">&#39;v_6&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;IZkYdqRWKaY&#39;</span>,
-                <span style="color:#e6db74">&#39;v_7&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;9Y15es8OY0U&#39;</span>,
-                <span style="color:#e6db74">&#39;v_9&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;LWV-f6dMN3Q&#39;</span>
-            };
-
-            <span style="color:#75715e">// videoList array
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">video_ID</span>) {
-                <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">video_ID</span>[<span style="color:#a6e22e">key</span>];
-                <span style="color:#a6e22e">videoList</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">value</span>);
-            }
-
-            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">playChannel</span>() {
-                <span style="color:#75715e">// init player
-</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">player</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">YT</span>.<span style="color:#a6e22e">Player</span>(
-                    <span style="color:#e6db74">&#39;player&#39;</span>,
-                    {
-                        <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1280&#39;</span>,
-                        <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;720&#39;</span>,
-                        <span style="color:#a6e22e">videoId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">videoList</span>[<span style="color:#ae81ff">0</span>],
-                        <span style="color:#a6e22e">playerVars</span><span style="color:#f92672">:</span> {
-                            <span style="color:#a6e22e">rel</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
-                            <span style="color:#a6e22e">autoplay</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
-                            <span style="color:#a6e22e">disablekb</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
-                            <span style="color:#a6e22e">showsearch</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
-                            <span style="color:#a6e22e">showinfo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
-                            <span style="color:#a6e22e">controls</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
-                            <span style="color:#a6e22e">autohide</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
-                            <span style="color:#a6e22e">modestbranding</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
-                            <span style="color:#a6e22e">wmode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;opaque&#39;</span>,
-                            <span style="color:#a6e22e">hd</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
-                            <span style="color:#a6e22e">html5</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
-                            <span style="color:#a6e22e">iv_load_policy</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>
-                        },
-                        <span style="color:#a6e22e">events</span><span style="color:#f92672">:</span> {
-                            <span style="color:#e6db74">&#39;onReady&#39;</span>        <span style="color:#f92672">:</span> <span style="color:#a6e22e">onPlayerReady</span>,
-                            <span style="color:#e6db74">&#39;onStateChange&#39;</span>  <span style="color:#f92672">:</span> <span style="color:#a6e22e">onPlayerStateChange</span>,
-                            <span style="color:#e6db74">&#39;onError&#39;</span>        <span style="color:#f92672">:</span> <span style="color:#a6e22e">error</span>
-                        }
-                    }
-                );
-
-                <span style="color:#75715e">// play video
-</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onPlayerReady</span>(<span style="color:#a6e22e">e</span>) {
-                    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;onPlayerReady&#39;</span>);
-                }
-
-                <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">e</span>) {
-                    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Error&#39;</span>);
-                    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>);
-                }
-            }
-
-            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onPlayerStateChange</span>(<span style="color:#a6e22e">e</span>) {
-                <span style="color:#75715e">// get state
-</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>);
-
-                <span style="color:#75715e">// play list loop when video end play next video
-</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-                    <span style="color:#a6e22e">playCount</span><span style="color:#f92672">++</span>;
-                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">playCount</span> <span style="color:#f92672">&gt;</span> (<span style="color:#a6e22e">videoList</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)) {
-                        <span style="color:#a6e22e">playCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-                    }
-                    <span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">loadVideoById</span>(<span style="color:#a6e22e">videoList</span>[<span style="color:#a6e22e">playCount</span>]);
-                    <span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">playVideo</span>();
-
-                }
-            }
-
-            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onYouTubeIframeAPIReady</span>() {
-                <span style="color:#a6e22e">playChannel</span>();
-            }
-
-            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>() {
-                <span style="color:#a6e22e">onYouTubeIframeAPIReady</span>();
-            }, <span style="color:#ae81ff">1200</span>);
-        }
-    }
-
-    <span style="color:#a6e22e">loadPlayer</span>();
-&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p><a href="http://stackoverflow.com/questions/5845484/force-html5-youtube-video">Refer - Force HTML5 youtube video</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onPlayerReady</span>(<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onPlayerStateChange</span>(<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h3 id="sample-code">Sample code</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;youtube_iframe_api&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;player&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">player</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadPlayer</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#player&#39;</span>)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// get API
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">tag</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;script&#39;</span>),
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">firstScriptTag</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;script&#39;</span>)[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">tag</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://www.youtube.com/iframe_api&#39;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">firstScriptTag</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">tag</span>, <span style="color:#a6e22e">firstScriptTag</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">videoList</span> <span style="color:#f92672">=</span> [],
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">playCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">video_ID</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;v_2&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;V8BTsiMxyaQ&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;v_0&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;7wvNwOPprBE&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;v_1&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;mTSuiGubCHE&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;v_8&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;DDs5bXh4erM&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;v_3&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;n-BXNXvTvV4&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;v_4&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;CRJDQQXS4uE&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;v_5&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ASO_zypdnsQ&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;v_6&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;IZkYdqRWKaY&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;v_7&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;9Y15es8OY0U&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;v_9&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;LWV-f6dMN3Q&#39;</span>
+</span></span><span style="display:flex;"><span>            };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// videoList array
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">video_ID</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">video_ID</span>[<span style="color:#a6e22e">key</span>];
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">videoList</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">value</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">playChannel</span>() {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// init player
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#a6e22e">player</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">YT</span>.<span style="color:#a6e22e">Player</span>(
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#39;player&#39;</span>,
+</span></span><span style="display:flex;"><span>                    {
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1280&#39;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;720&#39;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">videoId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">videoList</span>[<span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">playerVars</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">rel</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">autoplay</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">disablekb</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">showsearch</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">showinfo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">controls</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">autohide</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">modestbranding</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">wmode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;opaque&#39;</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">hd</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">html5</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">iv_load_policy</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>                        },
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">events</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                            <span style="color:#e6db74">&#39;onReady&#39;</span>        <span style="color:#f92672">:</span> <span style="color:#a6e22e">onPlayerReady</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#e6db74">&#39;onStateChange&#39;</span>  <span style="color:#f92672">:</span> <span style="color:#a6e22e">onPlayerStateChange</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#e6db74">&#39;onError&#39;</span>        <span style="color:#f92672">:</span> <span style="color:#a6e22e">error</span>
+</span></span><span style="display:flex;"><span>                        }
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// play video
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onPlayerReady</span>(<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;onPlayerReady&#39;</span>);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Error&#39;</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onPlayerStateChange</span>(<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// get state
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// play list loop when video end play next video
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">playCount</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">playCount</span> <span style="color:#f92672">&gt;</span> (<span style="color:#a6e22e">videoList</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)) {
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">playCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">loadVideoById</span>(<span style="color:#a6e22e">videoList</span>[<span style="color:#a6e22e">playCount</span>]);
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">playVideo</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onYouTubeIframeAPIReady</span>() {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">playChannel</span>();
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">onYouTubeIframeAPIReady</span>();
+</span></span><span style="display:flex;"><span>            }, <span style="color:#ae81ff">1200</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">loadPlayer</span>();
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p><a href="http://stackoverflow.com/questions/5845484/force-html5-youtube-video">Refer - Force HTML5 youtube video</a></p>
 <h3 id="onerror-error-code">onError error code</h3>
 <ul>
 <li>2 – The request contains an invalid parameter value. For example, this error occurs if you specify a video ID that does not have 11 characters, or if the video ID contains invalid characters, such as exclamation points or asterisks.</li>

@@ -215,32 +215,32 @@ if (!doNotTrack) {
 <p>主要是用 composer 安裝</p>
 <p>然後用 autoload 載入</p>
 <p>這流程應該 php 開發者會比較清楚, 反正也有 step by step 的教學與 sample code 可以看</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-<span style="color:#66d9ef">require_once</span> <span style="color:#e6db74">&#39;vendor/autoload.php&#39;</span>;
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">GeoIp2\Database\Reader</span>;
-
-<span style="color:#75715e">// This creates the Reader object, which should be reused across
-</span><span style="color:#75715e">// lookups.
-</span><span style="color:#75715e"></span>$reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Reader</span>(<span style="color:#e6db74">&#39;/usr/local/share/GeoIP/GeoIP2-City.mmdb&#39;</span>);
-
-<span style="color:#75715e">// Replace &#34;city&#34; with the appropriate method for your database, e.g.,
-</span><span style="color:#75715e">// &#34;country&#34;.
-</span><span style="color:#75715e"></span>$record <span style="color:#f92672">=</span> $reader<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">city</span>(<span style="color:#e6db74">&#39;128.101.101.101&#39;</span>);
-
-<span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">country</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">isoCode</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;US&#39;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">country</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;United States&#39;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">country</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">names</span>[<span style="color:#e6db74">&#39;zh-CN&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;美国&#39;
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">mostSpecificSubdivision</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;Minnesota&#39;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">mostSpecificSubdivision</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">isoCode</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;MN&#39;
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">city</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;Minneapolis&#39;
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">postal</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;55455&#39;
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">location</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">latitude</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// 44.9733
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">location</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">longitude</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// -93.2323
-</span></code></pre></div><p>這有個關鍵點</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">require_once</span> <span style="color:#e6db74">&#39;vendor/autoload.php&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">GeoIp2\Database\Reader</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// This creates the Reader object, which should be reused across
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// lookups.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Reader</span>(<span style="color:#e6db74">&#39;/usr/local/share/GeoIP/GeoIP2-City.mmdb&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Replace &#34;city&#34; with the appropriate method for your database, e.g.,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// &#34;country&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$record <span style="color:#f92672">=</span> $reader<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">city</span>(<span style="color:#e6db74">&#39;128.101.101.101&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">country</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">isoCode</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;US&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">country</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;United States&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">country</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">names</span>[<span style="color:#e6db74">&#39;zh-CN&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;美国&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">mostSpecificSubdivision</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;Minnesota&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">mostSpecificSubdivision</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">isoCode</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;MN&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">city</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;Minneapolis&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">postal</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// &#39;55455&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">location</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">latitude</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// 44.9733
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">print</span>($record<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">location</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">longitude</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// -93.2323
+</span></span></span></code></pre></div><p>這有個關鍵點</p>
 <p>相信有玩過 GeoIP 的都清楚其實他就是個查表的行為, 會需要查 ip 對應的國家或城市</p>
 <p>那這套當然也需要個 database</p>
 <p>他有兩種 database 的格式 <code>mmdb</code> 和 <code>csv</code></p>
@@ -258,8 +258,8 @@ if (!doNotTrack) {
 </ol>
 <p>當然不用我說明應該也知道付費的會有更齊全的資料</p>
 <p>所以這段</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Reader</span>(<span style="color:#e6db74">&#39;/usr/local/share/GeoIP/GeoIP2-City.mmdb&#39;</span>);
-</code></pre></div><p>就改成下載下來的 datebase file 的位置即可</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Reader</span>(<span style="color:#e6db74">&#39;/usr/local/share/GeoIP/GeoIP2-City.mmdb&#39;</span>);
+</span></span></code></pre></div><p>就改成下載下來的 datebase file 的位置即可</p>
 <p>當前(2.7.0) names 的語言還沒支援繁中, 只有簡中, 所以忽視它吧</p>
 <p>他也有文件說明要如何呈現哪些資料</p>
 <p><a href="http://maxmind.github.io/GeoIP2-php/">http://maxmind.github.io/GeoIP2-php/</a></p>

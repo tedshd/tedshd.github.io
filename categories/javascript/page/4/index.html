@@ -216,9 +216,9 @@ if (!doNotTrack) {
 <p>所以非完美解&hellip;</p>
 <p>且目前 browser 支援度不佳</p>
 <p>下面是範例</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">browserZoomLevel</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>(window.<span style="color:#a6e22e">devicePixelRatio</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">browserZoomLevel</span>);
-</code></pre></div><p>目前看來與其去處理縮放不如把 layout 設計好才是正解</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">browserZoomLevel</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>(window.<span style="color:#a6e22e">devicePixelRatio</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">browserZoomLevel</span>);
+</span></span></code></pre></div><p>目前看來與其去處理縮放不如把 layout 設計好才是正解</p>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Window/devicePixelRatio">MDN - Window.devicePixelRatio</a></p>
 <p><a href="http://stackoverflow.com/questions/1713771/how-to-detect-page-zoom-level-in-all-modern-browsers">Refer - How to detect page zoom level in all modern browsers?</a></p>
 </p>
@@ -358,11 +358,11 @@ if (!doNotTrack) {
 Content-Type:application/json
 Authorization:key=AIzaSyZ-1u...0GBYzPu7Udno5aA
 
-{ &quot;data&quot;: {
-    &quot;score&quot;: &quot;5x1&quot;,
-    &quot;time&quot;: &quot;15:10&quot;
+{ &#34;data&#34;: {
+    &#34;score&#34;: &#34;5x1&#34;,
+    &#34;time&#34;: &#34;15:10&#34;
   },
-  &quot;to&quot; : &quot;bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1...&quot;
+  &#34;to&#34; : &#34;bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1...&#34;
 }
 </code></pre><p><code>Authorization</code> key is Firebase console server key</p>
 <p><a href="https://firebase.google.com/docs/cloud-messaging/send-message">Reference - Build App Server Send Requests</a></p>

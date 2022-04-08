@@ -200,28 +200,27 @@ if (!doNotTrack) {
                 
                 <p><h2 id="mysql-monitor">MySQL Monitor</h2>
 <h3 id="setting">Setting</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql <span style="color:#f92672">-</span>u root <span style="color:#f92672">-</span>h <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">HOST</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span>P <span style="color:#f92672">&lt;</span>PORT<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>DATABASE_NAME<span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span>p <span style="color:#f92672">-</span>A
-</code></pre></div><h3 id="database">database</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql <span style="color:#f92672">-</span>u root <span style="color:#f92672">-</span>h <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">HOST</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span>P <span style="color:#f92672">&lt;</span>PORT<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>DATABASE_NAME<span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span>p <span style="color:#f92672">-</span>A
+</span></span></code></pre></div><h3 id="database">database</h3>
 <p>每一個 command 最後都要加 <code>;</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">status;
-<span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> database_name;
-<span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">database</span> database_name;
-<span style="color:#66d9ef">show</span> databases;
-<span style="color:#66d9ef">show</span> tables;
-use database_name;
-</code></pre></div><h3 id="table">table</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span>(
-    column1 type1,
-    column2 type2);
-<span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span>(
-    column1 type1,
-    column2 type2) charset<span style="color:#f92672">=</span>utf8;
-
-
-<span style="color:#66d9ef">desc</span> <span style="color:#66d9ef">table_name</span>;
-<span style="color:#66d9ef">show</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>
-
-</code></pre></div><p><a href="https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html">MySQL 8.0 Reference Manual :: 3.3.2 Creating a Table - MySQL</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>status;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> database_name;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">database</span> database_name;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">show</span> databases;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">show</span> tables;
+</span></span><span style="display:flex;"><span>use database_name;
+</span></span></code></pre></div><h3 id="table">table</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span>(
+</span></span><span style="display:flex;"><span>    column1 type1,
+</span></span><span style="display:flex;"><span>    column2 type2);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span>(
+</span></span><span style="display:flex;"><span>    column1 type1,
+</span></span><span style="display:flex;"><span>    column2 type2) charset<span style="color:#f92672">=</span>utf8;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">desc</span> <span style="color:#66d9ef">table_name</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">show</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><p><a href="https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html">MySQL 8.0 Reference Manual :: 3.3.2 Creating a Table - MySQL</a></p>
 <p><a href="https://dev.mysql.com/doc/refman/8.0/en/create-table.html">13.1.20 CREATE TABLE Statement - MySQL :: Developer Zone</a></p>
 <table>
 <thead>
@@ -240,33 +239,33 @@ use database_name;
 </tbody>
 </table>
 <p>寫入資料</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> <span style="color:#960050;background-color:#1e0010">資料表名稱</span> (<span style="color:#960050;background-color:#1e0010">欄位名稱</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">欄位名稱</span><span style="color:#ae81ff">2</span>) value(<span style="color:#960050;background-color:#1e0010">資料</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">資料</span><span style="color:#ae81ff">2</span>);
-</code></pre></div><p>顯示資料</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#960050;background-color:#1e0010">欄位名稱</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">欄位名稱</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">from</span> <span style="color:#960050;background-color:#1e0010">資料表名稱</span>;
-<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>;
-<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">5</span>;
-<span style="color:#66d9ef">select</span> id,create_time <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">5</span>;
-<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">where</span> id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;123&#39;</span>;
-</code></pre></div><h4 id="刪除該-table-所有的資料">刪除該 table 所有的資料</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> <span style="color:#960050;background-color:#1e0010">資料表名稱</span> (<span style="color:#960050;background-color:#1e0010">欄位名稱</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">欄位名稱</span><span style="color:#ae81ff">2</span>) value(<span style="color:#960050;background-color:#1e0010">資料</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">資料</span><span style="color:#ae81ff">2</span>);
+</span></span></code></pre></div><p>顯示資料</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#960050;background-color:#1e0010">欄位名稱</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">欄位名稱</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">from</span> <span style="color:#960050;background-color:#1e0010">資料表名稱</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> id,create_time <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">where</span> id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;123&#39;</span>;
+</span></span></code></pre></div><h4 id="刪除該-table-所有的資料">刪除該 table 所有的資料</h4>
 <ol>
 <li>TRUNCATE</li>
 </ol>
 <p>auto_increment 的欄位會 reset</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">truncate</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>;
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">truncate</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>;
+</span></span></code></pre></div><ol start="2">
 <li>DELETE</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>;
-<span style="color:#f92672">//</span> <span style="color:#66d9ef">or</span>
-<span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">where</span> id<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">100</span>;
-</code></pre></div><p>刪除全部資料的效能: TRUNCATE &gt; DELETE</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">//</span> <span style="color:#66d9ef">or</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">where</span> id<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">100</span>;
+</span></span></code></pre></div><p>刪除全部資料的效能: TRUNCATE &gt; DELETE</p>
 <h4 id="刪除該-table">刪除該 table</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>;
-</code></pre></div><p><a href="https://www.opencli.com/mysql/mysql-truncate-delete-drop-difference">MySQL – DELETE, TRUNCATE 及 DROP 的分別</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>;
+</span></span></code></pre></div><p><a href="https://www.opencli.com/mysql/mysql-truncate-delete-drop-difference">MySQL – DELETE, TRUNCATE 及 DROP 的分別</a></p>
 <h3 id="資料型別">資料型別</h3>
 <p>顯示欄位型別</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> columns <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span>
-</code></pre></div><h3 id="字串型別">字串型別</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">show</span> columns <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><h3 id="字串型別">字串型別</h3>
 <p>varchar &ndash; 最多到 255 字
 text
 輸入時要加引號
@@ -277,40 +276,40 @@ date&ndash;2011-8-8
 year&ndash;2011
 time&ndash;00:00:00</p>
 <p>sql TYPE timestamp</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// PHP
-</span><span style="color:#75715e"></span>$timestamp <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>(<span style="color:#e6db74">&#34;Y-m-d H:i:s&#34;</span>);
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> t1 (
-  created <span style="color:#66d9ef">TIMESTAMP</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">CURRENT_TIMESTAMP</span>,
-  updated <span style="color:#66d9ef">TIMESTAMP</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">CURRENT_TIMESTAMP</span> <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">UPDATE</span> <span style="color:#66d9ef">CURRENT_TIMESTAMP</span>
-);
-</code></pre></div><p><a href="https://dev.mysql.com/doc/refman/8.0/en/timestamp-initialization.html">11.2.5 Automatic Initialization and Updating for TIMESTAMP and DATETIME</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// PHP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$timestamp <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>(<span style="color:#e6db74">&#34;Y-m-d H:i:s&#34;</span>);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> t1 (
+</span></span><span style="display:flex;"><span>  created <span style="color:#66d9ef">TIMESTAMP</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">CURRENT_TIMESTAMP</span>,
+</span></span><span style="display:flex;"><span>  updated <span style="color:#66d9ef">TIMESTAMP</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">CURRENT_TIMESTAMP</span> <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">UPDATE</span> <span style="color:#66d9ef">CURRENT_TIMESTAMP</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p><a href="https://dev.mysql.com/doc/refman/8.0/en/timestamp-initialization.html">11.2.5 Automatic Initialization and Updating for TIMESTAMP and DATETIME</a></p>
 <h2 id="修改欄位名稱">修改欄位名稱</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> CHANGE <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">old</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">new</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>varchar(<span style="color:#ae81ff">255</span>)<span style="color:#f92672">&gt;</span>;
-</code></pre></div><h3 id="修改-table-裡-column-的編碼改成-utf8mb4">修改 table 裡 column 的編碼改成 utf8mb4</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">modify</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">column</span><span style="color:#f92672">&gt;</span> varchar(<span style="color:#ae81ff">255</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4
-</code></pre></div><h3 id="where-多筆資料">where 多筆資料</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">where</span> id <span style="color:#66d9ef">in</span> (<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>);
-</code></pre></div><h3 id="dump-table">dump table</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mysqldump -A --ssl-mode<span style="color:#f92672">=</span>DISABLED -u &lt;user&gt; -p&lt;password&gt; -h &lt;host&gt; &lt;database&gt; &lt;table&gt; | mysql -u root -h &lt;host&gt; -P &lt;post&gt; &lt;database&gt;
-</code></pre></div><p>必要時需要另外添加參數</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">--column-statistics<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> --lock-tables<span style="color:#f92672">=</span>false
-</code></pre></div><p><a href="https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_column-statistics">Refer - mysqldump — A Database Backup Program</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> CHANGE <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">old</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">new</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>varchar(<span style="color:#ae81ff">255</span>)<span style="color:#f92672">&gt;</span>;
+</span></span></code></pre></div><h3 id="修改-table-裡-column-的編碼改成-utf8mb4">修改 table 裡 column 的編碼改成 utf8mb4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">modify</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">column</span><span style="color:#f92672">&gt;</span> varchar(<span style="color:#ae81ff">255</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4
+</span></span></code></pre></div><h3 id="where-多筆資料">where 多筆資料</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">where</span> id <span style="color:#66d9ef">in</span> (<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>);
+</span></span></code></pre></div><h3 id="dump-table">dump table</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysqldump -A --ssl-mode<span style="color:#f92672">=</span>DISABLED -u &lt;user&gt; -p&lt;password&gt; -h &lt;host&gt; &lt;database&gt; &lt;table&gt; | mysql -u root -h &lt;host&gt; -P &lt;post&gt; &lt;database&gt;
+</span></span></code></pre></div><p>必要時需要另外添加參數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>--column-statistics<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> --lock-tables<span style="color:#f92672">=</span>false
+</span></span></code></pre></div><p><a href="https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_column-statistics">Refer - mysqldump — A Database Backup Program</a></p>
 <h3 id="直接把-query-出來的一筆資料新增複製">直接把 query 出來的一筆資料新增(複製)</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span> (<span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">1</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">2</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">select</span> <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">1</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">2</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">3</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>;
-</code></pre></div><h3 id="troubleshooting">troubleshooting</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span> (<span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">1</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">2</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">select</span> <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">1</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">2</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">3</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>;
+</span></span></code></pre></div><h3 id="troubleshooting">troubleshooting</h3>
 <p>On Mac
 Q:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ERROR <span style="color:#ae81ff">2002</span> <span style="color:#f92672">(</span>HY000<span style="color:#f92672">)</span>: Can<span style="color:#e6db74">&#39;t connect to local MySQL server through socket &#39;</span>/tmp/mysql.sock<span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span>
-</code></pre></div><p>A:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ERROR <span style="color:#ae81ff">2002</span> <span style="color:#f92672">(</span>HY000<span style="color:#f92672">)</span>: Can<span style="color:#e6db74">&#39;t connect to local MySQL server through socket &#39;</span>/tmp/mysql.sock<span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>A:
 mysql 沒啟動</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mysql.server start
-</code></pre></div><p>or 設定沒有設定 socket 的路徑</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql.server start
+</span></span></code></pre></div><p>or 設定沒有設定 socket 的路徑</p>
 <p>for mac brew 安裝的 mysql 在 <code>/usr/local/var/mysql</code> 所以設定就設定該路徑(底下不必有 mysql.sock)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>client<span style="color:#f92672">]</span>
-socket<span style="color:#f92672">=</span>/usr/local/var/mysql/mysql.sock
-<span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
-socket<span style="color:#f92672">=</span>/usr/local/var/mysql/mysql.sock
-</code></pre></div><h3 id="reference">Reference</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>client<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>socket<span style="color:#f92672">=</span>/usr/local/var/mysql/mysql.sock
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>socket<span style="color:#f92672">=</span>/usr/local/var/mysql/mysql.sock
+</span></span></code></pre></div><h3 id="reference">Reference</h3>
 <p><a href="https://www.mysqltutorial.org/basic-mysql-tutorial.aspx">Basic MySQL Tutorial</a></p>
 </p>
                 

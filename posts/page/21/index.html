@@ -1257,7 +1257,7 @@ kubectl logs &lt;pod-name&gt;
 </code></pre><h3 id="allow-external-traffic">Allow external traffic</h3>
 <p>By default, the pod is only accessible by its internal IP within the cluster. In order to make the hello-node container accessible from outside the Kubernetes virtual network, you have to expose the pod as a Kubernetes service.(預設只有內部 IP 可以讀取)</p>
 <p>From Cloud Shell you can expose the pod to the public internet with the kubectl expose command combined with the &ndash;type=&ldquo;LoadBalancer&rdquo; flag. This flag is required for the creation of an externally accessible IP:</p>
-<pre tabindex="0"><code>kubectl expose deployment &lt;container image name&gt; --type=&quot;LoadBalancer&quot;
+<pre tabindex="0"><code>kubectl expose deployment &lt;container image name&gt; --type=&#34;LoadBalancer&#34;
 </code></pre><p>To find the publicly-accessible IP address of the service, request kubectl to list all the cluster services:</p>
 <pre tabindex="0"><code>kubectl get services
 </code></pre><p>This is the output you should see:</p>
@@ -1315,7 +1315,7 @@ gcloud docker -- push gcr.io/&lt;PROJECT_ID&gt;/&lt;hello-node&gt;:v2
 apt-get update
 apt-get install -y nginx
 service nginx start
-sed -i -- 's/nginx/Google Cloud Platform - '&quot;\$HOSTNAME&quot;'/' /var/www/html/index.nginx-debian.html
+sed -i -- &#39;s/nginx/Google Cloud Platform - &#39;&#34;\$HOSTNAME&#34;&#39;/&#39; /var/www/html/index.nginx-debian.html
 EOF
 </code></pre><p>Create an instance template, which uses the startup script:</p>
 <pre tabindex="0"><code>gcloud compute instance-templates create nginx-template \
@@ -1436,10 +1436,10 @@ EOF
 <p>但是如果熟悉 JavaScript Window 物件和 DOM 物件的話就會發現很好解</p>
 <h3 id="實作">實作</h3>
 <h4 id="如何確認可視範圍">如何確認可視範圍?</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
-
-window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span>
-</code></pre></div><p>完美解決</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span>
+</span></span></code></pre></div><p>完美解決</p>
 <h4 id="如何確認要記錄-impression-的-dom-元件在可視範圍">如何確認要記錄 impression 的 DOM 元件在可視範圍?</h4>
 <pre tabindex="0"><code>&lt;DOM Object&gt;.getBoundingClientRect();
 </code></pre><p>完美解決</p>
