@@ -191,6 +191,145 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/load_large_table_improve_performance/">如何在網頁載入比較大量的資料時增加效能?</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2020-05-21
+</p>
+                
+
+                
+                <p><h2 id="前言">前言</h2>
+<p>在後台系統會常遇到的問題就是要呈現大量的資料(表單)</p>
+<p>通常在這情況下會有兩種方式呈現資料</p>
+<ol>
+<li>
+<p>分頁</p>
+</li>
+<li>
+<p>無限滾動</p>
+</li>
+</ol>
+<p>但是這都要在 model 額外做不少工</p>
+<p>例如: 處理分頁, 處理排序, 處理搜尋</p>
+<p>這些都是要再花時間處理的</p>
+<p>這邊將會介紹一下如何在不太改動 model 的情況下提升前端效能</p>
+<p>當然在真的是非常的大量的資料時還是真的要在 model 提供參數去 query DB</p>
+<h2 id="現況">現況</h2>
+<p>因為新的需求需要添加到不少的資料</p>
+<p>但是因為時程短加上再添加的資料量也不會大的誇張(約共 2000 左右的量</p>
+<p>所以還是一次全部載入</p>
+<h2 id="問題點">問題點</h2>
+<p>首先會先遇到的問題就是</p>
+<p>一次載入 2000 多筆資料頁面就開始變很慢(因為還有圖片)</p>
+<p>打開 chrome developtool 就會發現 DOMContentLoaded 要到 13s 左右</p>
+<p>慢到爆炸</p>
+<p>這 13s 還不包含之後要執行的 JavaScript 與畫面渲染</p>
+<p>因為還有圖片</p>
+<p>所以 2000 多個圖片載完後</p>
+<p>整個頁面花了 1 分鐘多&hellip;</p>
+<p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-21_%E4%B8%8B%E5%8D%881.49.36.png" alt="screenshot image"></p>
+<h2 id="解決方案">解決方案</h2>
+<h3 id="先把圖片改成-lazyload">先把圖片改成 lazyload</h3>
+<p>從瀏覽器一次載入 2000 多筆資料瞬間變成只載入頁面會呈現的圖片</p>
+<p>但是 DOMContentLoaded 還是要 12s 左右啊~~</p>
+<p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-21_%E4%B8%8B%E5%8D%883.01.21.png" alt="screenshot image"></p>
+<h3 id="解決-domcontentloaded-問題">解決 DOMContentLoaded 問題</h3>
+<p>因為後台的資料表單是 SSR(server side render) 從 PHP 噴的</p>
+<p>所以一定會有個問題就是 2000 多筆的 table HTML DOM 很多</p>
+<p>然後因為是從 server side 噴到瀏覽器上</p>
+<p>所以會有一個卡的點就是 DB query 的效能(這部分已經優化過了, 在這次的案例是一次全撈出來是要優化什麼啊)</p>
+<p>那只要 DB query 卡到的話</p>
+<p>就會延遲頁面的呈現</p>
+<p>因為 server side 是把所有的 response content 都好了才會噴回去瀏覽器</p>
+<p>當然在 PHP 可以用 <code>ob_flush</code> 和 <code>flush</code> 來處理</p>
+<p><a href="https://blog.longwin.com.tw/2010/12/php-buffer-flush-2010/">Refer - 強迫 PHP 將 Buffer 的資料提前輸出</a></p>
+<p><a href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/240051/">Refer - PHP flush()與ob_flush()的區別詳解</a></p>
+<p>但是目前沒有想要這樣做</p>
+<p>因為目前的程式結構有點複雜, 所以就沒有用這方法實作</p>
+<p>所以最後是決定把這一頁改成 CSR(client side render)</p>
+<p>用 AJAX 拉資料下來</p>
+<h3 id="javascript-優化">JavaScript 優化</h3>
+<p>因為是後台的操作會有 CRUD 的行為, 原本這些行為就都是 AJAX 處理</p>
+<p>所以在 JavaScript 有很多操作行為的事件綁定(event binding)</p>
+<p>所以就把這些行為改成事件委派(event delegation)</p>
+<h3 id="關於分頁-排序和搜尋的處理">關於分頁, 排序和搜尋的處理</h3>
+<p>資料量變多後 PM 最喜歡說我希望有搜尋和排序這樣比較方便看資料誒</p>
+<p>但是我們已經把所以資料經由 AJAX 取回到瀏覽器上了</p>
+<p>這時就可以用一個 jQuery 超好用的 plugin <a href="https://datatables.net/">DataTables</a></p>
+<p>這 plugin 可以把 client 的 data 重新處理成具有分頁排序和搜尋的 table</p>
+<p>也支援把已經在頁面上的 table 或 AJAX response 或是在 JavaScript 中的 data 重新處理</p>
+<h2 id="結論">結論</h2>
+<p>當上述的東西處理完後</p>
+<p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-21_%E4%B8%8B%E5%8D%882.55.41.png" alt="screenshot image"></p>
+<p>DOMContentLoaded 因為改成 AJAX 所以會少很多(12s -&gt; 2s)</p>
+<p>因為資料改成 AJAX 產生, 這速度比 SSR 快多了</p>
+<p>再不看畫面 render 的情況下整個 loading 速度已經也提高很多</p>
+<p>至於 render 時間不太好測試比較所以這邊就不比較了</p>
+<p>基本上上述這些只會動用到前端的程式即可達到成效不錯的優化</p>
+<p>也可以在 chrome 裝上 <a href="https://developers.google.com/web/tools/lighthouse">lighthouse</a> 來檢測</p>
+<p>因為光是這樣改在體感上就提升許多了, 也就沒有再用 lighthouse 測試</p>
+<h2 id="額外補充">額外補充</h2>
+<h3 id="測試-javascript-效能">測試 JavaScript 效能</h3>
+<p>可以用 runtime 來測試</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">startTime</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getTime</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">endTime</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getTime</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;testName: &#39;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">endTime</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">startTime</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;ms&#39;</span>);
+</span></span></code></pre></div><h3 id="datatables-ajax-處理">DataTables AJAX 處理</h3>
+<p><a href="https://datatables.net/reference/option/ajax">Refer - ajax</a></p>
+<p><a href="https://datatables.net/reference/option/columns.data">Refer - columns.data</a></p>
+<p><a href="https://datatables.net/reference/option/columns.render">Refer - columns.render</a></p>
+<p><a href="https://dotblogs.com.tw/shadow/2018/04/03/065712">Refer - [jQuery] jQuery DataTables 資料行加入checkbox、按鈕，關閉資料行排序、改變下拉選單的每頁顯示幾筆、變更DataTables樣式…等功能 Part5 final</a></p>
+<h3 id="套用-datatables-後的-image-lazyload-處理">套用 DataTables 後的 image lazyload 處理</h3>
+<p>因為現在使用的 image lazyload 會是觀察當前畫面的圖片後在確認這些圖片是否在可視範圍才會加載</p>
+<p>所以當有分頁時</p>
+<p>因為換分頁時會是新的 table DOM(table DOM 會重建) 所以換分頁後的圖片是之前沒有被觀察的</p>
+<p>所以換分頁後得再重新觀察當前頁面的圖片</p>
+<p>DataTables 有 page 的 event 可以監聽分頁切換</p>
+<p><a href="https://datatables.net/reference/event/page">Refer - page</a></p>
+<p>但是當使用 搜尋 , 排序等會造成畫面重新出現的情況的話</p>
+<p>要有效地處理就是使用 datatable 的 draw event</p>
+<p><a href="https://datatables.net/reference/event/draw">Refer - page</a></p>
+<p>只要表單重繪就會觸發</p>
+<p>這邊圖片延遲載入是使用自己參照 Google 的開發文件寫的 code <a href="https://github.com/tedshd/simpleImgLazyLoad">simpleImgLazyLoad</a></p>
+<p>這邊 image lazy 只要圖片載完後 observer 物件就會回收</p>
+<p>不過沒有載到的圖片還是會持續觀察</p>
+<p>只是應該是不會有太大的影響</p>
+<h3 id="datatables-版面寬度問題">DataTables 版面寬度問題</h3>
+<p>因為 DataTables 處理完後有時會自動加上寬度</p>
+<p>所以可以直接先使用 <code>width: 100%</code> 處理</p>
+<p><a href="https://datatables.net/examples/basic_init/flexible_width.html">Refer - DataTables example - Flexible table width</a></p>
+<p>因為 datatable 預設的 table 是固定的</p>
+<p>如果有 responsive 的需求</p>
+<p>要額外用 responsive 的套件來協助</p>
+<p><a href="https://datatables.net/extensions/responsive/">Refer - responsive</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/load_large_table_improve_performance/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/php_load_font_to_image/">php - 載入文字轉成圖片</a></h3>
 
                 
@@ -316,69 +455,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/php_load_font_to_image/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/google_search_result_structure_data_research_log/">Google search result with structured data</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2020-05-04
-</p>
-                
-
-                
-                <p><h2 id="前言">前言</h2>
-<p>現在可以確認的是 Google 並不會以單純的 Google structured data 來呈現在 search result</p>
-<p>以往驗證過的是 search result 裡的 title 和描述並不完全會採用 meta 中的 title 和 description</p>
-<p>現在在線上的頁面也再次驗證了 Google 已經在使用 NLP 分析網站的內容了</p>
-<p>以往是用 landing page 來測試, 因為內容不豐富所以不好測試</p>
-<p>稍微變動 Google search result 也很難得到期望的結果</p>
-<p>這已經和 2018 年以前的情況不一樣了</p>
-<h2 id="測試結果">測試結果</h2>
-<p><a href="https://blog.photogrid.app/posts/how_to_add_customized_watermark/">https://blog.photogrid.app/posts/how_to_add_customized_watermark/</a></p>
-<p><a href="https://search.google.com/structured-data/testing-tool/u/0/?hl=zh-TW#url=https%3A%2F%2Fblog.photogrid.app%2Fposts%2Fhow_to_add_customized_watermark%2F">結構化測試工具</a></p>
-<p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-04_%E4%B8%8B%E5%8D%881.49.49.png" alt="screenshot image"></p>
-<p>從上面的結果可以知道</p>
-<p>mobile search result 的 image 是抓到頁面中的 image 而非 structure data(json-ld) 中的 image</p>
-<p>而且 image 的 alt 也是 Google 自己判斷添加的</p>
-<h2 id="結語">結語</h2>
-<p>有趣的一件事情是該頁面也是沒什麼內容的(因為就是個嵌入 Youtube 影片的頁面</p>
-<p>因為這頁面最近在自然搜尋流量增加(在 Google search console 看到的)</p>
-<p>所以就關注了一下</p>
-<p>個人覺得這也間接驗證了兩件事</p>
-<ol>
-<li>
-<p>Google 越來越重視內容且會分析頁面的內容</p>
-</li>
-<li>
-<p>自然搜尋進去的點擊增加是會增加排名的, 就算沒有啥內容 XD(但是這個還要多一點驗證</p>
-</li>
-</ol>
-<p>所以在做頁面時也請產品或 PM 想好是要有什麼內容</p>
-<p>給人看的懂也要給 Google 爬蟲看的懂 XD</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/google_search_result_structure_data_research_log/">Read more</a></p>
                 
             </div>
         </div>

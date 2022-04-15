@@ -191,6 +191,151 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-09-30-ajax-xmlhttprequest/">AJAX - XMLHttpRequest</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-09-30
+</p>
+                
+
+                
+                <p><h2 id="ajax---xmlhttprequest">AJAX - XMLHttpRequest</h2>
+<p>Use XMLHttpRequest object handle AJAX</p>
+<p>client -&gt; server
+Front-end - request -&gt; back-end
+client &lt;- server
+Front-end &lt;- response - back-end</p>
+<h3 id="build-xmlhttprequestold-method"><del>build XMLHttpRequest</del>(old method)</h3>
+<p><strong>JavaScript</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">httpRequest</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">XMLHttpRequest</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//IE7,Mozila,Safari...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">httpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">ActiveXObject</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//IE5,IE6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//找出最新版MSXML剖析器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">msxmls</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;MSXML2.XMLHttp.4.0&#34;</span>,<span style="color:#e6db74">&#34;MSXML2.XMLHttp.3.0&#34;</span>,<span style="color:#e6db74">&#34;MSXML2.XMLHttp&#34;</span>,<span style="color:#e6db74">&#34;Mircosoft.XMLHttp&#34;</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">msxmls</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//建立XMLHttpRequest物件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">httpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#a6e22e">msxmls</span>[<span style="color:#a6e22e">i</span>]);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><!-- raw HTML omitted -->New browser have XMLHttpRequest object now.<!-- raw HTML omitted -->
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">MDN</a>
+<strong>JavaScript</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlHttpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span></code></pre></div><h3 id="2-type-to-post-data-to-backendsend-request">2 type to post data to backend(send request)</h3>
+<p>1 <strong>FormData</strong>(if IE, 10 up)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// init FormData
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// add data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;user&#39;</span>, <span style="color:#e6db74">&#39;Ted_Shiu&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;password&#39;</span>, <span style="color:#e6db74">&#39;123456&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// init XMLHttpRequest
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlHttpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// build poet method and backend target
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;ajax.php&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// send request
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">formData</span>);
+</span></span></code></pre></div><p>2 <strong>JSON</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// obj is data want to post to backend
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ted_shiu&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;123456&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">jsonData</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// init XMLHttpRequest
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlHttpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// build poet method and backend target
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;json.php&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// build content type
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">setRequestHeader</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;application/x-www-form-urlencoded&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// obj to url string
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">formUrlEncode</span>(<span style="color:#a6e22e">obj</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">urlData</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">urlData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">urlData</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">x</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&amp;&#39;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">urlData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">urlData</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#ae81ff">0</span>, (<span style="color:#a6e22e">urlData</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">urlData</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// send request
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">formUrlEncode</span>(<span style="color:#a6e22e">obj</span>));
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// if want ajax get data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// use xmlHttpRequest.send();
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// xmlHttpRequest.send(&#39;user=ted_shiu&amp;password=123456&#39;);
+</span></span></span></code></pre></div><h3 id="backendhandle-request-and-response-browser">Backend(handle request and response browser)</h3>
+<p><strong>PHP</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// ajax.php
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_POST[<span style="color:#e6db74">&#39;user&#39;</span>])) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> ($_POST[<span style="color:#e6db74">&#39;password&#39;</span>]) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            $output <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;status&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;ok&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;message&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;msg&#39;</span>
+</span></span><span style="display:flex;"><span>            );
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// echo is reponse browser, must use json_encode()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">json_encode</span>($output);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">// json.php
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;?php
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">var_dump($_POST);
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">echo &#39;&lt;br&gt;&#39;;
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">echo $_POST[&#39;user&#39;];
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">echo &#39;&lt;br&gt;&#39;;
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">echo $_POST[&#39;password&#39;];
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">?&gt;
+</span></span></span></code></pre></div><p><a href="http://blog.wu-boy.com/2011/04/%E4%BD%A0%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84-json-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9/">Refer - 你不可不知的 JSON 基本介紹</a>
+<a href="http://coursesweb.net/ajax/ajax-json">Refer - Ajax and JSON</a></p>
+<h3 id="response">Response</h3>
+<p>AJAX handle response from backend
+check response state, use XMLHttpRequest properties</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">responseText</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// parse response to object
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">xmlHttpRequest</span>.<span style="color:#a6e22e">responseText</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">status</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-09-30-ajax-xmlhttprequest/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-09-29-file-upload-using-ajax/">file upload using ajax</a></h3>
 
                 
@@ -256,87 +401,6 @@ if IE use ajax upload, only use iframe method.</p>
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-09-29-file-upload-using-ajax/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-09-23-kbtalking-pure-pro-programming/">KBtalking pure pro programming</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-09-23
-</p>
-                
-
-                
-                <p><h2 id="kbtalking-pure-pro-programming">KBtalking pure pro programming</h2>
-<h3 id="reset">Reset</h3>
-<p>Fn + R
-這時右邊 Fn LED 會亮一下
-再按 Fn + R 不放
-這時右邊 Fn LED 會一直閃直到它停止
-放開 Fn + R
-重設完畢</p>
-<h3 id="programming">programming</h3>
-<ul>
-<li>
-<p><strong>錄製巨集</strong>
-按 Fn + right Ctrl
-表示進入錄製巨集的模式(Pn 開始閃)
-按一個要用的巨集鍵(按完 Pn 不閃)
-開始錄巨集
-按 Pn(按完 Pn 開始閃, 表示可以開始設定其他巨集)
-按 Fn + right Ctrl
-結束錄製巨集的模式</p>
-</li>
-<li>
-<p><strong>使用巨集模式</strong>
-Fn + right Shift
-此時 right Fn LED 亮起來, 表示可以使用錄製的巨集鍵</p>
-</li>
-<li>
-<p><strong>Win &amp; Alt 互換(for Mac)</strong>
-按 Fn + right Ctrl
-表示進入錄製巨集的模式
-Pn 開始閃
-表示要設定跑巨集的按鍵
-按 Alt Pn 不閃
-表示要開始錄巨集
-按 Win
-按 Pn
-表示結束此次的錄製
-按 Win Pn 不閃
-按 Alt
-按 Pn
-表示結束此次的錄製
-按 Fn + right Ctrl
-結束錄製巨集的模式
-這樣就達到 Win &amp; Alt 互換</p>
-</li>
-</ul>
-<h3 id="refer">Refer</h3>
-<p><a href="http://tedshd.github.io/keyboard_test_page/">鍵盤測試網頁</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-09-23-kbtalking-pure-pro-programming/">Read more</a></p>
                 
             </div>
         </div>

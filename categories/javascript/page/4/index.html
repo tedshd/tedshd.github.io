@@ -183,6 +183,88 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2018-11-21-javascript-calculate-exposure-of-web-page-components/">JavaScript - 計算網頁元件的曝光</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2018-11-21
+</p>
+                
+
+                
+                <p><h2 id="javascript---計算網頁元件的曝光">JavaScript - 計算網頁元件的曝光</h2>
+<p>因為某些需求需要精確計算某些網頁上的 UI 元件的曝光</p>
+<p>沒錯</p>
+<p>就是要像廣告計算 impression 一樣</p>
+<p>之前只要確認有該元件的 request 就好了</p>
+<p>但是為了精確追求計算曝光, 所以必須做到像 Google Ad 一樣</p>
+<p>要到該網頁元件讓使用者看到後才能計算曝光</p>
+<p>聽起來這要求不太容易</p>
+<p>但是實作下去其實發現還好誒!!</p>
+<h3 id="概念">概念</h3>
+<p>DOM 元件進入可視範圍觸發 impression</p>
+<p>所以需要能夠釐清一些問題</p>
+<ol>
+<li>
+<p>如何確認可視範圍?</p>
+</li>
+<li>
+<p>如何確認要記錄 impression 的 DOM 元件在可視範圍?</p>
+</li>
+<li>
+<p>如何在進入可視範圍時觸發?</p>
+</li>
+</ol>
+<p>看似困難</p>
+<p>但是如果熟悉 JavaScript Window 物件和 DOM 物件的話就會發現很好解</p>
+<h3 id="實作">實作</h3>
+<h4 id="如何確認可視範圍">如何確認可視範圍?</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span>
+</span></span></code></pre></div><p>完美解決</p>
+<h4 id="如何確認要記錄-impression-的-dom-元件在可視範圍">如何確認要記錄 impression 的 DOM 元件在可視範圍?</h4>
+<pre tabindex="0"><code>&lt;DOM Object&gt;.getBoundingClientRect();
+</code></pre><p>完美解決</p>
+<p>但是要取到對應可是範圍的位置建議使用(<code>top</code>, <code>left</code>), <code>x</code> <code>y</code> IE 和 Edge 不支援</p>
+<p>還有一點要注意就是該 DOM 要先長在 browser 上面且不是 <code>display: none</code> 的狀態才能拿到值</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect">Refer - Element.getBoundingClientRect() - Web API 接口 | MDN</a></p>
+<p><a href="https://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx">Refer - ClientRect object (Internet Explorer)</a></p>
+<h4 id="如何在進入可視範圍時觸發">如何在進入可視範圍時觸發?</h4>
+<p>這就得取決於使用情境了</p>
+<p>在適當的 Event 去觸發</p>
+<p>Ex:</p>
+<p>在 list view 時就單純的用 scroll 事件觸發確認是否是進入可視範圍(當然得做 debounce 處理)</p>
+<p>在 carousel view 就滑動或點擊觸發轉動時確認是否是進入可視範圍(如果有做動畫效果, 得等到動畫效果結束再去確認)</p>
+<h3 id="結論">結論</h3>
+<p>熟悉基本 API 後就可以很輕鬆地解決很多問題 XD</p>
+<p>最後附上包好的套件</p>
+<p><a href="https://github.com/tedshd/impression">GitHub - impression</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2018-11-21-javascript-calculate-exposure-of-web-page-components/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2017-04-25-1747072/">JavaScript - browser zoom detect</a></h3>
 
                 
@@ -228,202 +310,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2017-04-25-1747072/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2016-12-08-1183912/">Firebase - Firebase Cloud Message(FCM) Research Log</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2016-12-08
-</p>
-                
-
-                
-                <p><h2 id="firebase---firebase-cloud-messagefcm-research-log">Firebase - Firebase Cloud Message(FCM) Research Log</h2>
-<p>This article is focus on web version</p>
-<h3 id="intro">Intro</h3>
-<p>You can easy to use web notification push notification to your web site.</p>
-<p><a href="https://firebase.google.com/docs/cloud-messaging/js/client">Set Up a JavaScript Firebase Cloud Messaging Client App</a></p>
-<h3 id="different-with-use-pure-web-notification">Different with use pure web notification</h3>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API">Using the Notifications API</a></p>
-<ul>
-<li>Browser support
-<ul>
-<li>FCM - Chrome(desktop &amp; Android) &amp; Firefox(desktop &amp; Android)</li>
-<li>pure notification api - Chrome(desktop &amp; Android) &amp; Firefox(desktop &amp; Android) &amp; Opera(desktop) &amp; Safari(desktop)
-<ul>
-<li>Android need service worker</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Service Worker
-<ul>
-<li>FCM - require</li>
-<li>pure notification api - option</li>
-</ul>
-</li>
-</ul>
-<p>pure web notification only a notification object, you need handle connection push message from server.</p>
-<p>But FCM had handle this connect.</p>
-<p><a href="http://node.tedshd.io/socket.io">web notification demo</a></p>
-<p><a href="https://tedshd.io/demo/fcm/quickstart-js/messaging/">FCM demo</a></p>
-<p><a href="https://tedshd.io/demo/fcm/send_message.php">FCM push service</a></p>
-<h3 id="different-whith-use-service-worker-or-not-use-service-worker">Different whith use Service Worker or not use Service Worker</h3>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>use Service Worker</th>
-<th>no use Service Worker</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>service open on browser tab and focus</td>
-<td>receive</td>
-<td>receive</td>
-</tr>
-<tr>
-<td>service open on browser tab and not focus</td>
-<td>receive</td>
-<td>receive</td>
-</tr>
-<tr>
-<td>service open not on browser tab</td>
-<td>receive</td>
-<td>can&rsquo;t receive</td>
-</tr>
-</tbody>
-</table>
-<h3 id="prepare">Prepare</h3>
-<ul>
-<li>app server
-<ul>
-<li>a server can send message</li>
-</ul>
-</li>
-<li>HTTPS
-<ul>
-<li>web service need https for handle <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">Service Worker</a></li>
-</ul>
-</li>
-<li>manifest.json
-<ul>
-<li>set gcm send id</li>
-</ul>
-</li>
-</ul>
-<h3 id="step">Step</h3>
-<ol>
-<li>
-<p>Use <a href="https://firebase.google.com">firebase</a> console create a project(If you had project for your web service, you can skip this setp</p>
-</li>
-<li>
-<p><code>Overview -&gt; setting -&gt; cloud message</code> and you can get <code>YOUR-SERVER-KEY</code> &amp; <code>SENDER-ID</code></p>
-</li>
-<li>
-<p>And then you can use the simple code from <a href="https://github.com/firebase/quickstart-js/tree/master/messaging">https://github.com/firebase/quickstart-js/tree/master/messaging</a></p>
-</li>
-</ol>
-<h3 id="fcm-flow">FCM Flow</h3>
-<p><a href="https://developers.google.com/instance-id/">What is Instance ID?</a></p>
-<p>Web notification dosen&rsquo;t have <code>Instance ID</code> so we only can use token</p>
-<p>Base flow</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2Ffcm%20base%20flow.png?alt=media&amp;token=3c5ab074-94c4-403b-9e16-eeaebce252d1" alt="base flow"></p>
-<h3 id="app-server">App server</h3>
-<p>Build it to send message or do something like send topic message or personal message</p>
-<p>Use <code>HTTP</code> or <code>XMPP</code></p>
-<p><a href="https://firebase.google.com/docs/cloud-messaging/http-server-ref">Firebase Cloud Messaging HTTP Protocol</a></p>
-<h3 id="personal-push">Personal push</h3>
-<p>You can bind user info &amp; their token created from client web browser, then you can push personal message for user.</p>
-<p>And it use api push notification like this</p>
-<pre tabindex="0"><code>https://fcm.googleapis.com/fcm/send
-Content-Type:application/json
-Authorization:key=AIzaSyZ-1u...0GBYzPu7Udno5aA
-
-{ &#34;data&#34;: {
-    &#34;score&#34;: &#34;5x1&#34;,
-    &#34;time&#34;: &#34;15:10&#34;
-  },
-  &#34;to&#34; : &#34;bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1...&#34;
-}
-</code></pre><p><code>Authorization</code> key is Firebase console server key</p>
-<p><a href="https://firebase.google.com/docs/cloud-messaging/send-message">Reference - Build App Server Send Requests</a></p>
-<h3 id="multiple-device-push">Multiple device push</h3>
-<p><a href="https://firebase.google.com/docs/cloud-messaging/js/send-multiple">Send Messages to Multiple Devices</a></p>
-<p>It&rsquo;s base on sub / pub pattern, you can reference <a href="https://msdn.microsoft.com/en-us/library/ff649664.aspx">Publish/Subscribe pattern - MSDN - Microsoft</a></p>
-<h4 id="two-way">Two way</h4>
-<ol>
-<li>
-<p><a href="https://firebase.google.com/docs/cloud-messaging/js/send-multiple#about_topic_messaging">topic(suggest)</a>
-Suggest use this, it&rsquo;s fast and easy to use</p>
-</li>
-<li>
-<p><a href="https://firebase.google.com/docs/cloud-messaging/js/send-multiple#about_device_group_messaging">group</a></p>
-</li>
-</ol>
-<p>If you want to know any token push status and tracking which in this group, you can use group way</p>
-<p>But you must handle group yourself</p>
-<p><a href="https://firebase.google.com/docs/cloud-messaging/server#http-request">Group send request format</a></p>
-<h3 id="about-tracking">About Tracking</h3>
-<p>FCM web notification not support analytics</p>
-<p>So you can add querystring on action url or add log on receive message on foreground</p>
-<h3 id="error-handle">Error handle</h3>
-<p>If user clear token on offline, need handle cleared token let app server and IID server know</p>
-<p>Two way can handle this thing</p>
-<ol>
-<li>client initiative handle</li>
-</ol>
-<p>If your web service provide unsubscribe function, you must handle this behavior.</p>
-<p>And you need handle if user clear data from client, you need update token.</p>
-<p>Firebase&rsquo;s api <code>messaging.deleteToken()</code> handle delete from IID server but delete token from app server need handle yourself.</p>
-<ol start="2">
-<li>server side detect</li>
-</ol>
-<p>When server push notification and response error make some error handle like delete <code>InvalidRegistration</code> token</p>
-<p>And you can log token active time, if long time not active, you can delete it from app server and also suggest delete it from IID server</p>
-<h3 id="notice">Notice</h3>
-<p>On desktop device Chrome or Firefox not on process it can not receive message</p>
-<p>But message will queued until Browser open</p>
-<p>So don&rsquo;t worried about this thing</p>
-<ul>
-<li>
-<p>Notice don&rsquo;t send error target user</p>
-</li>
-<li>
-<p>Notice don&rsquo;t send the push token that doesn&rsquo;t had any user or device</p>
-</li>
-</ul>
-<p>And then i find Firebase hosting seem doesn&rsquo;t support service worker, so it can&rsquo;t use FCM on Firebase hosting.</p>
-<p><a href="https://firebase.google.com/docs/cloud-messaging/js/receive">Receive Messages in a JavaScript Client</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API">Reference - Using the Notifications API - Web APIs | MDN</a></p>
-<p><a href="https://developers.google.com/instance-id/reference/server">instance-id</a></p>
-<p><a href="https://msdn.microsoft.com/en-us/library/ff649664.aspx">Reference - Publish/Subscribe pattern - MSDN - Microsoft</a></p>
-<p><a href="https://developers.google.com/web/fundamentals/engage-and-retain/push-notifications/good-notification">Reference - What Makes a Good Notification?</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2016-12-08-1183912/">Read more</a></p>
                 
             </div>
         </div>

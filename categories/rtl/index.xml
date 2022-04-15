@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RTL on tedshd&#39;s DevNote</title>
+    <link>https://blog.tedshd.io/categories/rtl/</link>
+    <description>Recent content in RTL on tedshd&#39;s DevNote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2020 Tedshd</copyright>
+    <lastBuildDate>Fri, 15 Apr 2022 10:09:15 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/rtl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>網頁處理 RTL(右到左) 文字</title>
+      <link>https://blog.tedshd.io/posts/web_text_rtl_handle/</link>
+      <pubDate>Fri, 15 Apr 2022 10:09:15 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/web_text_rtl_handle/</guid>
+      <description>前言 在 web 的世界中有一個需要處理的是文字排版的呈現 因為從電腦到整個計算機科學的領域都是在拉丁語系為主宗的國家發展的 所以在介面的文字排版上自然以</description>
+    </item>
+    
+  </channel>
+</rss>

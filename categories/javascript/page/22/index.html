@@ -183,6 +183,58 @@ if (!doNotTrack) {
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-03-13-javascript-delete-element/">JavaScript - delete element</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-03-13
+</p>
+                
+
+                
+                <p><h2 id="javascript---delete-element">JavaScript - delete element</h2>
+<p>I use this way.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.dom&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">dom</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">outerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">dom</span>[<span style="color:#a6e22e">i</span>];
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// or
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#dom&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;h1&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">outerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">dom</span>;
+</span></span></code></pre></div><p>If use IE
+<code>document.querySelector</code> only use IE8 up</p>
+<p><a href="http://stackoverflow.com/questions/3387427/javascript-remove-element-by-id">Refer - JavaScript: remove element by id</a></p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2014-03-08-clean-code-time-code-note/">Clean Code(無暇的程式碼) - Note</a></h3>
 
                 
@@ -295,53 +347,6 @@ if (!doNotTrack) {
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2014-03-08-clean-code-time-code-note/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-03-05-javascript-time-seconds-to-hhmmss/">JavaScript - time seconds to hh:mm:ss</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-03-05
-</p>
-                
-
-                
-                <p><h2 id="javascript---time-seconds-to-hhmmss">JavaScript - time seconds to hh:mm:ss</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toHHMMSS</span>(<span style="color:#a6e22e">sec_num</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hours</span>   <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">sec_num</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">3600</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>((<span style="color:#a6e22e">sec_num</span> <span style="color:#f92672">-</span> (<span style="color:#a6e22e">hours</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span>)) <span style="color:#f92672">/</span> <span style="color:#ae81ff">60</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">seconds</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">sec_num</span> <span style="color:#f92672">-</span> (<span style="color:#a6e22e">hours</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span>) <span style="color:#f92672">-</span> (<span style="color:#a6e22e">minutes</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span>));
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">hours</span>   <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) {<span style="color:#a6e22e">hours</span>   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">hours</span>;}
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">minutes</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) {<span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">minutes</span>;}
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">seconds</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) {<span style="color:#a6e22e">seconds</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">seconds</span>;}
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">time</span>    <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;:&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">minutes</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;:&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">seconds</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">time</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">toHHMMSS</span>(<span style="color:#ae81ff">1234</span>));
-</span></span></code></pre></div><p><a href="http://stackoverflow.com/questions/6312993/javascript-seconds-to-time-with-format-hhmmss">Refer - JavaScript seconds to time with format hh:mm:ss</a></p>
-</p>
-                
-
-                
-
                 
             </div>
         </div>

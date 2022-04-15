@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Tedshd</copyright>
-    <lastBuildDate>Wed, 02 Mar 2022 11:21:17 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Apr 2022 10:09:15 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>網頁處理 RTL(右到左) 文字</title>
+      <link>https://blog.tedshd.io/posts/web_text_rtl_handle/</link>
+      <pubDate>Fri, 15 Apr 2022 10:09:15 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/web_text_rtl_handle/</guid>
+      <description>前言 在 web 的世界中有一個需要處理的是文字排版的呈現 因為從電腦到整個計算機科學的領域都是在拉丁語系為主宗的國家發展的 所以在介面的文字排版上自然以</description>
+    </item>
+    
     <item>
       <title>在點擊連結或是 redirect 前送出請求</title>
       <link>https://blog.tedshd.io/posts/send_request_before_click_outbound_or_redirect/</link>

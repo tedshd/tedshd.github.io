@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.tedshd.io/categories/</loc>
+    <lastmod>2022-04-15T10:09:15+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/html/</loc>
+    <lastmod>2022-04-15T10:09:15+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/javascript/</loc>
+    <lastmod>2022-04-15T10:09:15+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/</loc>
+    <lastmod>2022-04-15T10:09:15+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/rtl/</loc>
+    <lastmod>2022-04-15T10:09:15+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/</loc>
+    <lastmod>2022-04-15T10:09:15+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/web_text_rtl_handle/</loc>
+    <lastmod>2022-04-15T10:09:15+08:00</lastmod>
+  </url><url>
     <loc>https://blog.tedshd.io/categories/browser/</loc>
     <lastmod>2022-03-02T12:59:30+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2022-03-02T12:59:30+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/javascript/</loc>
-    <lastmod>2022-03-02T12:59:30+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2022-03-02T12:59:30+08:00</lastmod>
-  </url><url>
     <loc>https://blog.tedshd.io/categories/safari/</loc>
-    <lastmod>2022-03-02T12:59:30+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/</loc>
     <lastmod>2022-03-02T12:59:30+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/send_request_before_click_outbound_or_redirect/</loc>
@@ -108,9 +117,6 @@
     <lastmod>2020-10-30T15:20:10+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/golang/</loc>
-    <lastmod>2020-10-30T15:20:10+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/html/</loc>
     <lastmod>2020-10-30T15:20:10+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/form_multi_checked_in_php_nodejs_golang/</loc>
@@ -990,10 +996,10 @@
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/2013-08-14-linux-unix-command/</loc>
-    <lastmod>2020-09-08T11:34:51+08:00</lastmod>
+    <lastmod>2022-04-08T10:26:18+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/mac-linux/</loc>
-    <lastmod>2020-09-08T11:34:51+08:00</lastmod>
+    <lastmod>2022-04-08T10:26:18+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/2013-08-13-login-forget-pwd/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
