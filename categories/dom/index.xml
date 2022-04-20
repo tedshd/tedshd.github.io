@@ -6,7 +6,7 @@
     <description>Recent content in DOM on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2020 Tedshd</copyright>
+    <copyright>© 2022 Tedshd</copyright>
     <lastBuildDate>Fri, 28 Aug 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/dom/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript - something about childNodes and nextSibling why they get DOM is not as you imagine</title>

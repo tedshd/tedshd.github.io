@@ -6,7 +6,7 @@
     <description>Recent content in php on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2020 Tedshd</copyright>
+    <copyright>© 2022 Tedshd</copyright>
     <lastBuildDate>Thu, 14 Jan 2021 17:21:53 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHP - 使用 urlencode rawurlencode 的差異和使用 http_build_query</title>
