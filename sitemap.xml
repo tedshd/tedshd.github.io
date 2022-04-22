@@ -3,7 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2022-04-15T15:56:09+08:00</lastmod>
+    <lastmod>2022-04-22T15:43:33+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/crawler/</loc>
+    <lastmod>2022-04-22T15:43:33+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/php/</loc>
+    <lastmod>2022-04-22T15:43:33+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/php_crawler_html/</loc>
+    <lastmod>2022-04-22T15:43:33+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/</loc>
+    <lastmod>2022-04-22T15:43:33+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/</loc>
+    <lastmod>2022-04-22T15:43:33+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/html/</loc>
     <lastmod>2022-04-15T15:56:09+08:00</lastmod>
@@ -11,13 +26,7 @@
     <loc>https://blog.tedshd.io/categories/javascript/</loc>
     <lastmod>2022-04-15T15:56:09+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2022-04-15T15:56:09+08:00</lastmod>
-  </url><url>
     <loc>https://blog.tedshd.io/categories/rtl/</loc>
-    <lastmod>2022-04-15T15:56:09+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/</loc>
     <lastmod>2022-04-15T15:56:09+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/web_text_rtl_handle/</loc>
@@ -70,9 +79,6 @@
   </url><url>
     <loc>https://blog.tedshd.io/categories/google-analytics/</loc>
     <lastmod>2021-03-30T11:47:46+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/php/</loc>
-    <lastmod>2021-01-18T13:32:06+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/php_urlencode_rawurlencode_and_http_build_query/</loc>
     <lastmod>2021-01-18T13:32:06+08:00</lastmod>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crawler on tedshd&#39;s DevNote</title>
+    <link>https://blog.tedshd.io/categories/crawler/</link>
+    <description>Recent content in crawler on tedshd&#39;s DevNote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2022 Tedshd</copyright>
+    <lastBuildDate>Fri, 22 Apr 2022 15:43:33 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/crawler/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP 爬蟲 抓取 HTML 內容</title>
+      <link>https://blog.tedshd.io/posts/php_crawler_html/</link>
+      <pubDate>Fri, 22 Apr 2022 15:43:33 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/php_crawler_html/</guid>
+      <description>Intro 又是久違的寫爬蟲&amp;hellip; 這次是接手大大們的 code 寫的是 PHP 版本 研究了一下寫法 才發現現在可以不使用第三方套件就可以處理了 所以這裡紀錄一下 取</description>
+    </item>
+    
+  </channel>
+</rss>

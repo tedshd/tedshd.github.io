@@ -189,6 +189,70 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2019-06-14-golang-gvm-golang-version-manger/">Golang - gvm Golang version manger</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2019-06-14
+</p>
+                
+
+                
+                <p><h2 id="gvm">gvm</h2>
+<h3 id="intro">Intro</h3>
+<p><a href="https://github.com/moovweb/gvm">gvm</a></p>
+<p>Golang version manger</p>
+<h3 id="usage">Usage</h3>
+<ol>
+<li>Install</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>bash &lt; &lt;<span style="color:#f92672">(</span>curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer<span style="color:#f92672">)</span>
+</span></span></code></pre></div><ol start="2">
+<li>Add to .bashrc or .zshrc</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># added gvm command to shell</span>
+</span></span><span style="display:flex;"><span>source <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.gvm/scripts/gvm&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># directory path for GO</span>
+</span></span><span style="display:flex;"><span>export GOPATH<span style="color:#f92672">=</span>$HOME/gopath
+</span></span><span style="display:flex;"><span>export GOROOT<span style="color:#f92672">=</span>$HOME/go
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:$GOROOT/bin
+</span></span></code></pre></div><ol start="3">
+<li>Install go</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gvm install go1.4 -B
+</span></span><span style="display:flex;"><span>gvm use go1.4
+</span></span><span style="display:flex;"><span>export GOROOT_BOOTSTRAP<span style="color:#f92672">=</span>$GOROOT
+</span></span><span style="display:flex;"><span>gvm install go1.9
+</span></span></code></pre></div><ol start="4">
+<li>Finall add command to .bashrc or .zshrc</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gvm use go1.9
+</span></span></code></pre></div><p><a href="https://codingluka.com/gvm-in-osx/">Refer - Go - 在 OSX 安裝 GVM</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2019-06-14-golang-gvm-golang-version-manger/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2019-03-25-vue-vue-cli-note/">Vue - Vue cli note</a></h3>
 
                 
@@ -237,62 +301,6 @@
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">JavaScript - 半形 全形 轉換</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2019-01-30
-</p>
-                
-
-                
-                <p><h2 id="javascript---半形-全形-轉換">JavaScript - 半形 全形 轉換</h2>
-<p>因為一個奇怪的需求?</p>
-<p>需要把使用者輸入的東西轉成可以方便驗證的格式(這應該後端做吧?)</p>
-<p>反正因為以前也做過半形轉成全形(痛苦的回憶, 為啥政府的 opendata 各縣市格式不一致就算了, 竟然還有全形半形的問題&hellip;)</p>
-<p>這邊就簡單的只針對最前面的基本拉丁字母字元符號集作轉換</p>
-<p>因為大部分的需求應該這樣就可以應付了?</p>
-<p>但是空白字元要特殊處理</p>
-<p>那接下來只要知道需要轉換的字元範圍即可</p>
-<p>全形從 <code>U+FF01</code> 到 <code>U+FF5E</code></p>
-<p>半形從 <code>U+0021</code> 到 <code>U+007E</code></p>
-<p>把 16 進制轉換回來就是</p>
-<p>65281 到 65374</p>
-<p>33 到 126</p>
-<p>上述怎麼轉的?</p>
-<p>就是這樣</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>parseInt(<span style="color:#e6db74">&#39;0xFF01&#39;</span>, <span style="color:#ae81ff">16</span>)
-</span></span></code></pre></div><p>只要判斷輸入的字元這這些編碼區間就進行轉換</p>
-<p><a href="https://tedshd.io/demo/trans.html">trans char</a></p>
-<p>所以簡單做了一個 demo 頁面</p>
-<p>程式檢視原始碼即可</p>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%85%A8%E5%BD%A2%E5%92%8C%E5%8D%8A%E5%BD%A2">Refer - Wiki</a></p>
-<p><a href="https://blog.longwin.com.tw/2013/12/unicode-utf8-char-range-table-2013/">Refer - Unicode / UTF-8 字元編碼區間表 - 2013</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">Read more</a></p>
                 
             </div>
         </div>

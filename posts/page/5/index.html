@@ -1132,6 +1132,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1142,6 +1146,192 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/php_urlencode_rawurlencode_and_http_build_query/">PHP - 使用 urlencode rawurlencode 的差異和使用 http_build_query</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2021-01-14
+</p>
+                
+
+                
+                <p><h2 id="最近剛好遇到個問題就順便筆記一下但是遇到的問題和要寫的內文無關就是了-xd">最近剛好遇到個問題就順便筆記一下(但是遇到的問題和要寫的內文無關就是了 XD)</h2>
+<h2 id="前言">前言</h2>
+<p>基本上在 url query string 的 value 都要做 <strong>url encode</strong></p>
+<p>URL encode 會用到以下標準</p>
+<p><a href="https://tools.ietf.org/html/rfc1738">RFC 1738</a></p>
+<p><a href="https://tools.ietf.org/html/rfc2396">RFC 2396</a></p>
+<p><a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a></p>
+<p>主要會使用 <code>%</code> 字符來針對需要 escape 的字元做編碼</p>
+<p>ex: <code>/</code> -&gt; <code>%2F</code>, <code>+</code> -&gt; <code>%2B</code> 等</p>
+<p>但是主要又有幾個問題是基於 HTTP <code>GET</code> 和 <code>POST</code> 與 <code>application/x-www-form-urlencoded</code> 的問題</p>
+<p>基本上在使用 HTML form 表單使用時</p>
+<p>採用的會是把 <code> </code> 空格轉成 <code>+</code></p>
+<p>但這些都不算是大問題</p>
+<p>因為基於 CGI 和程式語言的實作</p>
+<p>會把 urldeode 回來</p>
+<p>所以在程式語言接到 query string 時都是 urldecode 回來的值</p>
+<p><strong>問題是在於 browser 上發出到 server 的 URL(就是打開 server 的 access log 看到進來的 Path 拉)</strong></p>
+<p>就是該 URL 是不是有在 query string 上是經過 urlencode 的</p>
+<p>一但是沒有 urlencode 的</p>
+<p>server 接進來後可能就會有問題</p>
+<p>給個最簡單的例子</p>
+<p>我要搜尋 iphone7+</p>
+<p>URL 就會是 <code>https://www.example.com/?q=iphone7%2B</code></p>
+<p>如果你的 URL 是 <code>https://www.example.com/?q=iphone7+</code></p>
+<p>程式語言接到的 query string 就會變成 <code>iphone7 </code></p>
+<p>當然就不是所預期的結果</p>
+<p>正常的情況下如果是走 HTML submit</p>
+<p>這樣當然在 input 填入 <code>iphone7+</code></p>
+<p>在 submit 時 browser 會幫你把 url encode</p>
+<p>但是如果你是個 <strong>a link</strong></p>
+<p>是絕對不能用 <code>&lt;a href=&quot;https://www.example.com/?q=iphone7+&quot;&gt;iphone7+&lt;/a&gt;</code></p>
+<p>得用 <code>&lt;a href=&quot;https://www.example.com/?q=iphone7%2B&quot;&gt;iphone7+&lt;/a&gt;</code></p>
+<p>所以要記住一個原則</p>
+<p><strong>要讓 server 收到的 URL 它的 query string 得是經過 url encode 的</strong></p>
+<p>所以有些地方就得注意了</p>
+<ol>
+<li>
+<p>a link 的 url query string 得是 url encode 的</p>
+</li>
+<li>
+<p>AJAX 在處理 API 時, 如果是 GET, query string 是要經過 url encode 的</p>
+</li>
+</ol>
+<p>也許有人會疑惑為啥在寫 web 時 2 的情況在使用時都沒有處理 url encode 阿</p>
+<p>因為 library 已經幫你處理掉了</p>
+<p>如果自己手刻一個 XMLHttpRequest 或是用 Postman 之類的工具去試試一個 GET 的 API 然後不處理 url encode 的話</p>
+<p>就會出現問題了</p>
+<p>那有人會疑惑說 POST 不用處理嗎?</p>
+<p>POST 還真的不用處理</p>
+<p>因為 POST 資料是在 content 裡面的</p>
+<p>不是帶在 URL 上面</p>
+<p>講了一堆廢話</p>
+<p>還有一個要注意的重點</p>
+<h3 id="就是關於---和--和-20-的糾葛">就是關於 <code> </code> 和 <code>+</code> 和 <code>%20</code> 的糾葛</h3>
+<p>PHP 有兩個 function</p>
+<p><code>urlencode</code></p>
+<p><code>rawurlencode</code></p>
+<p>兩個 function 的實作的 RFC 是不同</p>
+<p>簡單的說就是如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#a6e22e">php</span> <span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">urlencode</span>(<span style="color:#e6db74">&#39; &#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">php</span> <span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">rawurlencode</span>(<span style="color:#e6db74">&#39; &#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%</span><span style="color:#ae81ff">20</span>
+</span></span></code></pre></div><p>兩種 encode 的結果會是不一樣的</p>
+<p><strong>所以要注意的是用哪種 encode 就要用哪種 decode</strong></p>
+<h3 id="個人偏好">個人偏好</h3>
+<p>因為把 <code> </code> 轉成 <code>+</code> 是很古老的用法</p>
+<p>且在一些情況底下容易出錯(但這種錯誤大多是使用上造成的錯誤), 基本上堅守著 <strong>用哪種方式 encode 就用哪種方式 decode</strong> 的原則就不太會有問題</p>
+<p>所以當有問題發生時請先確認兩端的 encode decode 方式是否一致</p>
+<p>因為大多數都是這個問題</p>
+<p>所以我比較偏好 <code> </code> 轉成 <code>%20</code></p>
+<h2 id="遇到的問題">遇到的問題</h2>
+<p>扯了那麼多廢話</p>
+<p>現在才要開始講踩到的一個雷就是</p>
+<p>在使用 <code>http_build_query</code> 時沒注意到的部分&hellip;</p>
+<p>如前面提到的其實在 url query string 接進來時會自動處理 urldecode 回來原來的樣子</p>
+<p>然後有個需求就是要做一個 redirect</p>
+<p>redirect 有個重要的要點就是要處理 query string 決定要留哪些 query string 或過濾掉不要的 query string 後在 redirect 到新的 URL</p>
+<p>所以身為一個懶人工程師當然是會用到 <a href="https://www.php.net/manual/zh/function.http-build-query.php">http_build_query</a> 這個好用的 function</p>
+<p>首先當然是要把當前的 URL 取出來處理</p>
+<p>所以很理所當然的就是用到 <a href="https://www.php.net/manual/en/function.parse-url.php">parse_url</a> 這個好用的 function</p>
+<p>然後再把取出來的 query 用 <a href="https://www.php.net/manual/en/function.parse-str.php">parse_str</a> 轉成 array</p>
+<p>在做一些處理後就丟到 <code>http_build_query</code></p>
+<p>這樣完美的新 query string 就出來了誒</p>
+<p>太棒了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">url_update_query</span>($url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>, $query_string <span style="color:#f92672">=</span> [])
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    $url_data <span style="color:#f92672">=</span> <span style="color:#a6e22e">parse_url</span>($url);
+</span></span><span style="display:flex;"><span>    $query_array <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($url_data[<span style="color:#e6db74">&#39;query&#39;</span>])) {
+</span></span><span style="display:flex;"><span>      $query_data <span style="color:#f92672">=</span> $url_data[<span style="color:#e6db74">&#39;query&#39;</span>];
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">parse_str</span>($query_data, $query_array);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">empty</span>($query_string)) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">foreach</span> ($query_string <span style="color:#66d9ef">as</span> $key <span style="color:#f92672">=&gt;</span> $value) {
+</span></span><span style="display:flex;"><span>        $query_array[$key] <span style="color:#f92672">=</span> $value;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      $url_data[<span style="color:#e6db74">&#39;query&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">http_build_query</span>($query_array, <span style="color:#66d9ef">null</span>, <span style="color:#e6db74">&#39;&amp;&#39;</span>, <span style="color:#a6e22e">PHP_QUERY_RFC3986</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $scheme   <span style="color:#f92672">=</span> <span style="color:#a6e22e">isset</span>($url_data[<span style="color:#e6db74">&#39;scheme&#39;</span>]) <span style="color:#f92672">?</span> $url_data[<span style="color:#e6db74">&#39;scheme&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;://&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    $host     <span style="color:#f92672">=</span> <span style="color:#a6e22e">isset</span>($url_data[<span style="color:#e6db74">&#39;host&#39;</span>]) <span style="color:#f92672">?</span> $url_data[<span style="color:#e6db74">&#39;host&#39;</span>] <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    $port     <span style="color:#f92672">=</span> <span style="color:#a6e22e">isset</span>($url_data[<span style="color:#e6db74">&#39;port&#39;</span>]) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">.</span> $url_data[<span style="color:#e6db74">&#39;port&#39;</span>] <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    $user     <span style="color:#f92672">=</span> <span style="color:#a6e22e">isset</span>($url_data[<span style="color:#e6db74">&#39;user&#39;</span>]) <span style="color:#f92672">?</span> $url_data[<span style="color:#e6db74">&#39;user&#39;</span>] <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    $pass     <span style="color:#f92672">=</span> <span style="color:#a6e22e">isset</span>($url_data[<span style="color:#e6db74">&#39;pass&#39;</span>]) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">.</span> $url_data[<span style="color:#e6db74">&#39;pass&#39;</span>]  <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    $pass     <span style="color:#f92672">=</span> ($user <span style="color:#f92672">||</span> $pass) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">$pass</span><span style="color:#e6db74">@&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    $path     <span style="color:#f92672">=</span> <span style="color:#a6e22e">isset</span>($url_data[<span style="color:#e6db74">&#39;path&#39;</span>]) <span style="color:#f92672">?</span> $url_data[<span style="color:#e6db74">&#39;path&#39;</span>] <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    $query    <span style="color:#f92672">=</span> <span style="color:#a6e22e">isset</span>($url_data[<span style="color:#e6db74">&#39;query&#39;</span>]) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;?&#39;</span> <span style="color:#f92672">.</span> $url_data[<span style="color:#e6db74">&#39;query&#39;</span>] <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    $fragment <span style="color:#f92672">=</span> <span style="color:#a6e22e">isset</span>($url_data[<span style="color:#e6db74">&#39;fragment&#39;</span>]) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;#&#39;</span> <span style="color:#f92672">.</span> $url_data[<span style="color:#e6db74">&#39;fragment&#39;</span>] <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> $scheme <span style="color:#f92672">.</span> $user <span style="color:#f92672">.</span> $pass <span style="color:#f92672">.</span> $host <span style="color:#f92672">.</span> $port <span style="color:#f92672">.</span> $path <span style="color:#f92672">.</span> $query <span style="color:#f92672">.</span> $fragment;
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>然後上線後</p>
+<p>就開始收到 error 了&hellip;</p>
+<p>一開始以為是處理的 function 有問題</p>
+<p>這邊我的作法是把 <code>$_SERVER['QUERY_STRING']</code> 接近來這個 function 處理</p>
+<p><code>$_SERVER['QUERY_STRING']</code> 進來的 query string 是以 STRING 呈現的全部 query string</p>
+<p>沒有處理 urldecode</p>
+<p>但是 <code>parse_str</code> 會處理 url encode(這邊 PHP 會自動把 <code>+</code> 和 <code>%20</code> 轉成空白)</p>
+<p>然後 <code>http_build_query</code> 會再組成 query string 時做 url encode</p>
+<p>所以這過程是沒有 url decode 和 encode 的問題</p>
+<p>雖然使用情境不是上述的例子就是了(但也是一樣是 query string 相關的)</p>
+<p>那為啥會寫一大串是因為我都照了上面的情況排查了一遍發現都不是上述的問題&hellip;</p>
+<p>最後去檢查 access log 發現是有的過來的 log 根本就是沒有 url encode&hellip;</p>
+<p>只是目前還沒找出來為何會有沒有 url encode 的來源</p>
+<p>因為來源的連結全部都是有處理過的&hellip;</p>
+<p>而且也不是 100% 的 log 都是沒處理的&hellip;</p>
+<p>又因為不是重要的頁面所以當初 log 沒有加 User Agent(因為我們有做 log filter, 為了可以倒進去 elasticsearch 去用 kibana 看, 所以只有 filter 重要的值出來)</p>
+<p>但是為了良好的解決問題</p>
+<p>這邊就採用了另一個處理方式</p>
+<h2 id="解決方案">解決方案</h2>
+<p>我們遇到的問題在於因為有部分的 query string 的值是使用 base64</p>
+<p>在使用 base64 可能會產生 <code>+</code> 等需要進行百分號編碼處理的字元</p>
+<p>但正常來說我們在使用時會有 url encode 處理 query string 然後是給使用者這樣的連結</p>
+<p>但是就是遇到部分的情況造成在 request 過來時是沒有 url encode 的情況</p>
+<p>就產生問題了&hellip;</p>
+<p>所以就採用 base64url</p>
+<p>base64url 是基於 <a href="https://tools.ietf.org/html/rfc4648#section-4">RFC 4648</a> 裡面有提到針對部分情況例如 URL 或是某些系統的檔案名稱無法有效處理需要做百分號編碼的情況額外會再做一次編碼解碼</p>
+<p>主要的處理有</p>
+<p><code>+</code> =&gt; <code>-</code></p>
+<p><code>/</code> =&gt; <code>_</code></p>
+<p>還有基於長度編碼</p>
+<p>用 <code>=</code> 填滿長度</p>
+<p>這樣就解決掉一些 request 進來時沒有被有效的 url encode 的問題</p>
+<p>算是一個有趣的經歷</p>
+<p>因為這在 QA 和 RD 測試時都沒有遇到</p>
+<p>真的上線後才遇到&hellip;</p>
+<p>還好不是百分之百發生的情況&hellip;</p>
+<p><a href="https://stackoverflow.com/questions/55389211/string-based-data-encoding-base64-vs-base64url">Refer - String based data encoding: Base64 vs Base64url</a></p>
+<p><a href="https://blog.csdn.net/qq_35725321/article/details/52126402">Refer - Base64的介绍以及Base64URL介绍</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E7%99%BE%E5%88%86%E5%8F%B7%E7%BC%96%E7%A0%81">Refer - 百分號編碼</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/php_urlencode_rawurlencode_and_http_build_query/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1377,124 +1567,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/use_imap_and_smtp_handle_email/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/docker_usage/">docker 使用紀錄</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2020-12-24
-</p>
-                
-
-                
-                <p><h2 id="docker-images"><code>docker images</code></h2>
-<p>列出所有拉下來的 docker image</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker images
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-</span></span><span style="display:flex;"><span>ubuntu              latest              07f8e8c5e660        <span style="color:#ae81ff">3</span> weeks ago         188.3 MB
-</span></span></code></pre></div><h2 id="build-dockerfile">build dockerfile</h2>
-<p>使用 dockerfile 建立 docker image</p>
-<p>直接建立</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker build .
-</span></span></code></pre></div><p>預設會找當前的目錄的 <code>Dockerfile</code></p>
-<p><code>-t</code> 可以設定建立的 image &amp; tag name</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker build . -t image_name:tag_name
-</span></span></code></pre></div><p><code>-f</code> 指定用哪個 dockerfile 建立</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker build . -t ubuntu_dev:16.04 -f local.Dockerfile
-</span></span></code></pre></div><h2 id="dockerfile-使用">dockerfile 使用</h2>
-<h3 id="使用-nginx-official-image-建立">使用 nginx official image 建立</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> nginx:1.19.6-alpine</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> ~/www /usr/share/nginx/html<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 80</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><h3 id="multi-stage-多次-build-image">multi stage 多次 build image</h3>
-<p>有時最終要包起來的 image 會做多次處理</p>
-<p>兩種做法</p>
-<ol>
-<li>要多次處理的部份</li>
-</ol>
-<p>依照要處理的部份個別建立 docker 處理</p>
-<p>最後在把要包起來的東西包成 docker</p>
-<ol start="2">
-<li>用 multi stage</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.7.3 AS builder</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /go/src/github.com/alexellis/href-counter/</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> go get -d -v golang.org/x/net/html<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> app.go    .<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> GOOS<span style="color:#f92672">=</span>linux go build -a -installsuffix cgo -o app .<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> alpine:latest</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apk --no-cache add ca-certificates<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /root/</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>builder /go/src/github.com/alexellis/href-counter/app .<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;./app&#34;</span>]<span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>都是放在一起 build, build 完之後可以把結果複製到會後再使用的 image 裡面</p>
-<p>大致上就是</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> image_a AS a</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># dosomething...</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> image_b</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>a path ./<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># dosomething...</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>多用於要先編譯的情況</p>
-<p>先在其他 image 編譯完</p>
-<p>最後在之前在其他 image 編譯完的結果和要執行的環境包成 image</p>
-<p><a href="https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds">Refer</a></p>
-<p>但是 build 完之後會有個問題, 就是之前 stage build 出來的 image 基本上沒有必要保留</p>
-<p>所以可以用 <code>docker image prune f</code> 移除掉之前 stage 建立的 image</p>
-<p><a href="https://stackoverflow.com/questions/50126741/how-to-remove-intermediate-images-from-a-build-after-the-build">Refer - How to remove intermediate images from a build after the build?</a></p>
-<p><a href="https://docs.docker.com/config/pruning/">Refer - Prune unused Docker objects</a></p>
-<h2 id="建立-container-docker-run">建立 container <code>docker run</code></h2>
-<p><code>docker run -t -i ubuntu /bin/bash</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run -t -i ubuntu /bin/bash
-</span></span><span style="display:flex;"><span>root@b0cdeb409841:/#
-</span></span></code></pre></div><p>建立 container 並執行 bash</p>
-<h3 id="docker-run">docker run</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run -idt --name &lt;container name&gt; -v &lt;mount absolute path or ~ path&gt;:&lt;docker path&gt; &lt;IMAGE&gt;:&lt;TAG&gt;
-</span></span></code></pre></div><h2 id="docker-ps--a"><code>docker ps -a</code></h2>
-<p>列出所有已經建立的 container</p>
-<h2 id="docker-ps"><code>docker ps</code></h2>
-<p>列出所有正在執行的 container</p>
-<h2 id="docker-start-container_id"><code>docker start &lt;container_id&gt;</code></h2>
-<p>執行 container</p>
-<h2 id="docker-stop-container_id"><code>docker stop &lt;container_id&gt;</code></h2>
-<p>停止 container</p>
-<h2 id="docker-logs-container_id"><code>docker logs &lt;container_id&gt;</code></h2>
-<p>查看 docker 處理的紀錄</p>
-<h2 id="docker-cp-file-container_idfile"><code>docker cp &lt;file&gt; &lt;container_id&gt;:/&lt;file&gt;</code></h2>
-<p>把檔案複製到 docker container 裡面</p>
-<h2 id="docker-cp-container_idfile-file"><code>docker cp &lt;container_id&gt;:/&lt;file&gt; &lt;file&gt;</code></h2>
-<p>把檔案從 container 裡面複製出來</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/docker_usage/">Read more</a></p>
                 
             </div>
         </div>

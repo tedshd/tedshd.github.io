@@ -1132,6 +1132,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1142,6 +1146,50 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-21-text-overflow-ellipsis/">文字過多時省略(ellipsis)</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-08-21
+</p>
+                
+
+                
+                <p><h2 id="text-ellipsis">text ellipsis</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">div</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-overflow</span>: <span style="color:#66d9ef">ellipsis</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">nowrap</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">240</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="tip">Tip</h3>
+<p>上述為必要
+element 必須為 block
+如用在 span 等行內元素，需用 display: inline-block;
+<strong>多行會變一行顯示</strong></p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1260,215 +1308,6 @@ Bootstrap 就是利用這個方法
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-08-20-file-upload-notice-issue/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-14-linux-unix-command/">Linux/unix command</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-08-14
-</p>
-                
-
-                
-                <p><h2 id="command">command</h2>
-<h3 id="user">User</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>su / sudo
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 最高權限使用者</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>su -u &lt;user name&gt; bash
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 切換使用者</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>exit
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 跳出最高權限使用者</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>shutdown
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 關機</span>
-</span></span><span style="display:flex;"><span>shutdown -h now 立即關機
-</span></span><span style="display:flex;"><span>shutdown -h +m m分鐘後關機
-</span></span><span style="display:flex;"><span>shutdown -h hh:mm 幾點幾分關機
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>reboot
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重開機</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>login
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 登入使用者</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>logout / exit
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 登出</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>passwd
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修改密碼</span>
-</span></span><span style="display:flex;"><span>useradd / adduser
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 新增帳號</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>passwd
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修改密碼</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo -u &lt;user name&gt; &lt;shell&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 切換使用者</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>date
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 顯示時間</span>
-</span></span><span style="display:flex;"><span>date 月日時分<span style="color:#f92672">(</span>root修改<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>history
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 顯示輸入過的指令</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ps
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 顯示目前執行的工作</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>chmod &lt;777&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修改權限</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># rwx</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2*2 2 1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>chown &lt;user&gt;:&lt;user&gt; &lt;file&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修改該 file owner</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>uname -a
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 確認 system OS</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>uanme -r
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># linux kernel</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>df
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 確認硬碟空間</span>
-</span></span></code></pre></div><h3 id="file-management">File Management</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ls
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出檔案</span>
-</span></span><span style="display:flex;"><span>ls -a 列出以.開頭的檔案
-</span></span><span style="display:flex;"><span>ls -l 列出檔案詳細
-</span></span><span style="display:flex;"><span>ls -- directory 查看該目錄內容
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>cd
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 切換目錄</span>
-</span></span><span style="display:flex;"><span>cd .. 回上一層
-</span></span><span style="display:flex;"><span>cd / 切換到系統根目錄
-</span></span><span style="display:flex;"><span>cd 目錄
-</span></span><span style="display:flex;"><span>cd 路徑
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>pwd
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 顯示目前所在目錄</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>clear
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 清空畫面</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>info / man
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查詢指令</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tab
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 同DOS的tab功用,切換下一個選擇的項目</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>mkdir
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 建立目錄</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>rmdir
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 刪除目錄</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>touch
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 建立檔案</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>cp
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 複製檔案</span>
-</span></span><span style="display:flex;"><span>cp -v 顯示複製過程
-</span></span><span style="display:flex;"><span>cp -r &lt;folder&gt; &lt;directory&gt; 把資料夾複製到某目錄
-</span></span><span style="display:flex;"><span>cp &lt;file&gt; &lt;path&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>rm
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 刪除檔案或目錄</span>
-</span></span><span style="display:flex;"><span>rm -f 強制刪除檔案
-</span></span><span style="display:flex;"><span>rm -rf 強制刪除目錄
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>mv
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 搬移或更名檔案或目錄</span>
-</span></span><span style="display:flex;"><span>mv &lt;file&gt; &lt;path&gt;
-</span></span><span style="display:flex;"><span>mv &lt;舊檔名&gt; &lt;新檔名&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>cat
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 瀏覽檔案內容</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>less
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 分頁瀏覽檔案內容</span>
-</span></span><span style="display:flex;"><span>q 離開
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>find / locate
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 尋找檔案</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># find -name &#34;php.ini&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>more
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 顯示畫面暫停</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>|
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 管線</span>
-</span></span><span style="display:flex;"><span>將指令結果輸出給另一個指令
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重導</span>
-</span></span><span style="display:flex;"><span>將指令結果輸出到檔案中檔案原有內容被刪除
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&gt;&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重導</span>
-</span></span><span style="display:flex;"><span>將指令結果輸出到檔案中檔案原有內容不被刪除
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>grep -r <span style="color:#e6db74">&#39;XXX&#39;</span> *
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 找內含XXX的檔案</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>scp
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ssh copy</span>
-</span></span><span style="display:flex;"><span>scp &lt;username@tohostname&gt;:&lt;remote file&gt; &lt;local path&gt;
-</span></span><span style="display:flex;"><span>scp &lt;local file&gt; &lt;username@tohostname&gt;:&lt;remote path&gt;
-</span></span><span style="display:flex;"><span>scp -r &lt;username@tohostname&gt;:&lt;remote directory&gt; &lt;local path&gt;
-</span></span><span style="display:flex;"><span>scp -r &lt;local directory&gt; &lt;username@tohostname&gt;:&lt;remote path&gt;
-</span></span><span style="display:flex;"><span>scp -i &lt;key&gt; &lt;local directory&gt; &lt;username@tohostname&gt;:&lt;remote path&gt;
-</span></span></code></pre></div><p>tar -zcvf <!-- raw HTML omitted -->.tar.gz <!-- raw HTML omitted --></p>
-<h1 id="壓縮資料夾">壓縮資料夾</h1>
-<p>tar -zxvf <!-- raw HTML omitted -->.tar.gz <!-- raw HTML omitted --></p>
-<h1 id="解壓縮資料夾">解壓縮資料夾</h1>
-<p>sudo lsof -i -P -n | grep LISTEN
-netstat -tulpn | grep LISTEN</p>
-<h1 id="確認開啟的port">確認開啟的port</h1>
-<p>lsof -n -i | grep LISTEN <strong>(for Mac)</strong>
-sudo lsof -i -P | grep LISTEN | grep :$PORT</p>
-<h3 id="apt">apt</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>apt --installed list
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出已安裝套件</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo aptitude update
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修復損毀的相依性</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo aptitude safe-upgrade
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 較為安全的升級方式</span>
-</span></span><span style="display:flex;"><span>sudo aptitude full-upgrade
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 針對整個系統做升級, 可能會更動系統核心的版號</span>
-</span></span><span style="display:flex;"><span>sudo aptitude dist-upgrade
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 同於 full-upgrade</span>
-</span></span></code></pre></div><h3 id="mail-server">Mail server</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>host -t mx &lt;mail domain&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查詢是否已紀錄此 mail domain</span>
-</span></span></code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-08-14-linux-unix-command/">Read more</a></p>
                 
             </div>
         </div>

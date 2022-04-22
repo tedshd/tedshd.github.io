@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+<title>PHP 爬蟲 抓取 HTML 內容 | tedshd&#39;s DevNote</title>
+<meta charset="utf-8">
+<meta name="google" content="notranslate">
+<meta id="viewport" name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content='Intro 又是久違的寫爬蟲&hellip; 這次是接手大大們的 code 寫的是 PHP 版本 研究了一下寫法 才發現現在可以不使用第三方套件就可以處理了 所以這裡紀錄一下 取'>
+<meta name="keywords" content=''>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/php_crawler_html/">
+<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/php_crawler_html/" />
+
+<link rel="canonical" href="https://blog.tedshd.io/posts/php_crawler_html/" />
+<link rel="shortcut icon" href="/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
+<meta name="theme-color" content="">
+<meta name="robots" content="index, follow">
+<meta name="copyright" content="Tedshd">
+
+<meta property="og:title" content="PHP 爬蟲 抓取 HTML 內容" />
+<meta property="og:description" content="Intro 又是久違的寫爬蟲&hellip; 這次是接手大大們的 code 寫的是 PHP 版本 研究了一下寫法 才發現現在可以不使用第三方套件就可以處理了 所以這裡紀錄一下 取" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/php_crawler_html/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-22T15:43:33+08:00" />
+<meta property="article:modified_time" content="2022-04-22T15:43:33+08:00" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="PHP 爬蟲 抓取 HTML 內容"/>
+<meta name="twitter:description" content="Intro 又是久違的寫爬蟲&hellip; 這次是接手大大們的 code 寫的是 PHP 版本 研究了一下寫法 才發現現在可以不使用第三方套件就可以處理了 所以這裡紀錄一下 取"/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+<script data-ad-client="ca-pub-0553186380244641" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    
+
+    
+
+    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
+
+    
+<link>
+
+<link
+    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
+    rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1NKP3D2ZGG');
+    </script>
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__links" role="menu">
+                
+                <li class="p-navigation__link" role="menuitem">
+                    <a href="/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__link" role="menuitem">
+                    <a href="/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<div class="page-banner">
+    <div class="row u-vertically-center">
+        <div class="col-8 pure-g">
+            <div class="pure-u">
+                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
+                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
+            </div>
+            <div class="pure-u">
+                <h2>tedshd&#39;s DevNote</h2>
+                <p>Develop &amp; Design Note by Ted</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul class="p-navigation__links sub_menu" role="menu">
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="http://tedshd.github.io/resume/">About</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="http://tysh310246.blogspot.tw/">Blog</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="https://github.com/tedshd">Github</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
+    </li>
+    
+</ul>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+<header class="">
+    <div class="row">
+        <h1>PHP 爬蟲 抓取 HTML 內容</h1>
+    </div>
+</header>
+
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2022-04-22
+        </p>
+        
+        <h2 id="intro">Intro</h2>
+<p>又是久違的寫爬蟲&hellip;</p>
+<p>這次是接手大大們的 code</p>
+<p>寫的是 PHP 版本</p>
+<p>研究了一下寫法</p>
+<p>才發現現在可以不使用第三方套件就可以處理了</p>
+<p>所以這裡紀錄一下</p>
+<h2 id="取得-html-內容">取得 HTML 內容</h2>
+<ol>
+<li>使用 curl</li>
+<li>使用 file_get_contents</li>
+</ol>
+<p>curl 是我常用的方式
+看了大大們的 code 才知道原來 file_get_contents 也可以取 http/https 內容&hellip;</p>
+<p>這邊簡單貼一下兩種作法的範例</p>
+<h3 id="curl">curl</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">httpGet</span>($url)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  $ch <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_init</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">curl_setopt</span>($ch,<span style="color:#a6e22e">CURLOPT_URL</span>,$url);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">curl_setopt</span>($ch,<span style="color:#a6e22e">CURLOPT_RETURNTRANSFER</span>,<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">curl_setopt</span>($ch,<span style="color:#a6e22e">CURLOPT_HEADER</span>, [
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36&#39;</span>
+</span></span><span style="display:flex;"><span>  ]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  $output<span style="color:#f92672">=</span><span style="color:#a6e22e">curl_exec</span>($ch);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">curl_close</span>($ch);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> $output;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="file_get_contents">file_get_contents</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">htmlContentGet</span>($url) {
+</span></span><span style="display:flex;"><span>  $opts <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;http&#34;</span> <span style="color:#f92672">=&gt;</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;method&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;GET&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;header&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36</span><span style="color:#ae81ff">\r\n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>  ];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">file_get_contents</span>($url, <span style="color:#66d9ef">false</span>, <span style="color:#a6e22e">stream_context_create</span>($opts));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>如果需要一些特別的 header 或是 querystring 就在各自處理</p>
+<p>另外提一下, 用 file_get_contents 也可以抓取本地檔案, 所以也可以打開本地的 html file(至少我以前用 file_get_contents 都是用來打開本地檔案的)</p>
+<p><a href="https://www.php.net/manual/en/function.file-get-contents.php">refer - PHP: file_get_contents - Manual</a></p>
+<h2 id="抓取-dom">抓取 DOM</h2>
+<p>研究了一下也有不少方式可以做</p>
+<p>因為上面方法回來的是 string</p>
+<p>所以接下來最重要的事情是如何擷取出想要的內容</p>
+<p>大致有兩種方式</p>
+<ol>
+<li>用 preg_replace, str_replace, strpos, substr 等方法處理</li>
+<li>針對 DOM 轉成物件來處理</li>
+</ol>
+<p>各有優缺點</p>
+<p>就看最後決定要怎麼做</p>
+<p>這裡針對 2 的處理方式來處理</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>$dom <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMDocument</span>();
+</span></span><span style="display:flex;"><span>$dom<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">loadHTML</span>($html_string, <span style="color:#a6e22e">LIBXML_NOERROR</span>);
+</span></span></code></pre></div><p>這裡又細分兩種處理方式</p>
+<ol>
+<li>DOM HTML</li>
+<li>XPath</li>
+</ol>
+<h3 id="dom-html">DOM HTML</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>$dom <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMDocument</span>();
+</span></span><span style="display:flex;"><span>$dom<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">loadHTML</span>($html_string, <span style="color:#a6e22e">LIBXML_NOERROR</span>);
+</span></span><span style="display:flex;"><span>$documentElement <span style="color:#f92672">=</span> $dom<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">documentElement</span>;
+</span></span></code></pre></div><h3 id="xpath">XPath</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>$dom <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMDocument</span>();
+</span></span><span style="display:flex;"><span>$dom<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">loadHTML</span>($html_string, <span style="color:#a6e22e">LIBXML_NOERROR</span>);
+</span></span><span style="display:flex;"><span>$xpath <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMXpath</span>($dom);
+</span></span></code></pre></div><p>這兩種的差別就在於支援的取 DOM 的方式不同</p>
+<p>documentElement 這個 Class 底下取得 DOM 物件的方法名稱大多和 JavaScript 的名稱一樣</p>
+<p>可以參考以下文件</p>
+<p><a href="https://www.php.net/manual/en/class.domelement.php">refer - PHP: DOMElement - Manual</a></p>
+<p>以下列舉一些範例</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>$span <span style="color:#f92672">=</span> $documentElement<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;span&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span>( $span <span style="color:#66d9ef">as</span> $item ) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> $item<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">textContent</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$img <span style="color:#f92672">=</span> $documentElement<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;img&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span>( $img <span style="color:#66d9ef">as</span> $item ) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> $item<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;src&#39;</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>比較可惜的是它沒有抓取 class 的方式</p>
+<p>這種情況就可以用取 XPath 的方式來做</p>
+<p>基本上我個人是比較喜歡 XPath 的方式</p>
+<p>因為相對比較好用</p>
+<p>後續要調整也相對容易, 只要改動 XPath 就可以了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>$xpath <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMXpath</span>($dom);
+</span></span><span style="display:flex;"><span>$desc <span style="color:#f92672">=</span> $xpath<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">query</span>(<span style="color:#e6db74">&#34;/html/body/div[2]/div[2]/div/div[1]/a/img&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span>( $desc <span style="color:#66d9ef">as</span> $item ) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> $item<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;src&#39;</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="https://codingreflections.com/how-to-parse-html-using-php-native-classes/">refer - How to Parse HTML using PHP Native Classes</a></p>
+<p><a href="https://www.php.net/manual/zh/class.domdocument.php">refer - PHP: DOMDocument - Manual</a></p>
+<h2 id="結語">結語</h2>
+<p>以上的方式都只適用於 SSR 的頁面</p>
+<p>如果內容是動態產生的一律建議直接用打 API 的方式去拿內容</p>
+
+    </main>
+</section>
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/web_text_rtl_handle/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            網頁處理 RTL(Right To Left) 右到左的文字排版
+        </span>
+    </a>
+    
+
+    
+</div>
+    </div>
+</footer>
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2022 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>
