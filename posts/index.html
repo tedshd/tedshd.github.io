@@ -1254,6 +1254,15 @@
 <p>自己搞 ip table 的方式和使用 cloudfront 與 cloudflare 的方式都比較適合是在 server 端判斷 location 會用到</p>
 <p>worker 和 ip-api 適合是需要在 client 時判斷用</p>
 <p>不過 ip-api 的 api 支援帶入 ip 取 local, 所以就可以在 server 使用</p>
+<h2 id="最後補充">最後補充</h2>
+<p>因為很少在用 GCP</p>
+<p>問了相關專業人士後</p>
+<p>其實 GCP 的服務也有類似的方式可以處理</p>
+<p>是掛在 GCP 的 Cloud Load Balancing 裏面</p>
+<p><a href="https://cloud.google.com/load-balancing/docs/https/custom-headers">Create custom headers in backend services</a></p>
+<p>如果要用 cloud function 或是 App Engine 也是有特別的 header 可以用</p>
+<p><a href="https://cloud.google.com/appengine/docs/standard/go/reference/request-response-headers">Request Headers and Responses</a></p>
+<p><a href="https://medium.com/mop-developers/free-ip-based-geolocation-with-google-cloud-functions-f92e20d47651">Refer - Free IP-based GeoLocation with Google Cloud Functions</a></p>
 </p>
                 
 
