@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on tedshd&#39;s DevNote</title>
+    <link>https://blog.tedshd.io/categories/web/</link>
+    <description>Recent content in web on tedshd&#39;s DevNote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2022 Tedshd</copyright>
+    <lastBuildDate>Mon, 25 Apr 2022 10:15:23 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web 服務確認 IP Location 的幾種做法</title>
+      <link>https://blog.tedshd.io/posts/web_how_to_check_ip/</link>
+      <pubDate>Mon, 25 Apr 2022 10:15:23 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/web_how_to_check_ip/</guid>
+      <description>Intro 在很多實務上的需求, 需要了解 client 過來的請求是來自哪裡或來自哪個國家 最常見的方式就是依靠來源的 IP 判斷(這裡排除 proxy, VPN 或造假來源的因素) 而在 HTTP protocol 中</description>
+    </item>
+    
+  </channel>
+</rss>

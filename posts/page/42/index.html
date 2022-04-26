@@ -1136,6 +1136,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1146,6 +1150,80 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/">JavaScript - Why i from RequireJS to webpack</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-06-28
+</p>
+                
+
+                
+                <p><h2 id="why-i-from-requirejs-to-webpack">Why i from RequireJS to webpack</h2>
+<p><a href="http://requirejs.org/">RequireJS</a> is a Asynchronous Module Definition(AMD) lib</p>
+<p>Its powerful to handle modulize on your page and you can handle all loader on JavaScript, you can focus on JavaScript function and web page.</p>
+<p>But if your module is become complex and more module, you can find JavaScript request become more and more.</p>
+<p>You can find it is a serious performance problem.</p>
+<p>Your network has lot of request of js.</p>
+<p>I want to less or one js request on a page</p>
+<p>So i choice <a href="http://webpack.github.io/docs/">webpack</a> this tool.</p>
+<p>It&rsquo;s powerfull tool handle module bundle.</p>
+<p>This is what i want change.</p>
+<p>Before</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/745512/GJSJQZt7Si2hu2CVLE3g_requirejs.png" alt="requirejs.png"></p>
+<p>After</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/745512/rVQY4FhgRO6ctsPQZwPP_webpack.png" alt="webpack.png"></p>
+<p>If want to use a lib for global like jQuery</p>
+<p>Must use npm install &amp; use ProvidePlugin in <code>webpack.config.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">webpack</span>.<span style="color:#a6e22e">ProvidePlugin</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">$</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;jquery&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">jQuery</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;jquery&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;window.jQuery&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;jquery&#34;</span>
+</span></span><span style="display:flex;"><span>    }),
+</span></span><span style="display:flex;"><span>],
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><h3 id="how-it-run">How it run</h3>
+<p>You can use</p>
+<pre tabindex="0"><code>webpack
+# if you want watch change
+webpack --watch
+</code></pre><p>more in <a href="https://webpack.github.io/docs/cli.html">https://webpack.github.io/docs/cli.html</a></p>
+<h3 id="use-case">Use case</h3>
+<p>If you want bundle all file in directory</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">entries</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readdirSync</span>(<span style="color:#e6db74">&#39;./mobile/js/&#39;</span>).<span style="color:#a6e22e">filter</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">file</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/.*\.js$/</span>);
+</span></span><span style="display:flex;"><span>    });
+</span></span></code></pre></div><p><code>entries</code> is a Array show all file.</p>
+<h3 id="my-webpack">My webpack</h3>
+<!-- raw HTML omitted -->
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1231,80 +1309,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2016-06-10-javascript-the-abstract-an-action-instance/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2016-05-28-slack-bot-research-notes/">Slack - bot 研究雜記</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2016-05-28
-</p>
-                
-
-                
-                <p><h2 id="slack---bot-研究雜記">Slack - bot 研究雜記</h2>
-<p>最近 bot 很夯</p>
-<p>再加上公司需要一些自動部署與指令化的一些流程要改善, 所以就來研究一下</p>
-<p>剛好我們是用 Slack 所以就先來試試 Slack bot 了</p>
-<h3 id="intro">Intro</h3>
-<p>先說明下最簡單的指令化處理事件的流程</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/734936/S29JhWJdQ6qMF0w2i440_bot.png" alt="bot.png"></p>
-<p>大致上就是如此</p>
-<p>再來說明一下 Slack bot 流程</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/734936/eDj3Ctc1Rh6U8wVcOI3T_slack_bot.png" alt="slack_bot.png"></p>
-<p>所以我們需要做兩件事</p>
-<ul>
-<li>
-<p>在 Slack 建立一支 bot</p>
-</li>
-<li>
-<p>建立 bot client 的程式</p>
-</li>
-</ul>
-<p>在此先說明一下 bot client</p>
-<p>Slack bot client 是用 nodejs 寫的, 但基本上會寫 JavaScript 就可以了, 而 bot client 是放在任何可以連上網路的機器, 只要能跑 nodejs 的環境即可, 所以基本上可以先在 local 測完再上到線上的機器</p>
-<h3 id="建立-slack-bot">建立 Slack bot</h3>
-<p><a href="https://api.slack.com/bot-users">Bot Users</a></p>
-<h4 id="建立-bot">建立 bot</h4>
-<p>Go to url <code>https://&lt;your team name&gt;.slack.com/apps/manage/A0F7YS25R-bots</code></p>
-<p>Add a new configuration</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/734936/rG79uE4iSA2AWLX6EUdm_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-05-28%20%E4%B8%8B%E5%8D%8810.22.39.png" alt="螢幕快照 2016-05-28 下午10.22.39.png"></p>
-<h4 id="安裝-botkit">安裝 botkit</h4>
-<p><a href="https://howdy.ai/botkit/">Botkit</a></p>
-<p>依照頁面指示即可見出自己的 Slack bot</p>
-<h3 id="遇到的問題">遇到的問題</h3>
-<p>在 local 端測試時都很順</p>
-<p>在上線時一開始測試也都 ok, 但當我斷開線上環境時卻 GG 了, 我的機器人立刻顯示下線, 這先說一下就是當 bot 啟動時 bot 會顯示上線, 但當 bot 的程式停止時就會在 Slack 顯示離線</p>
-<p>在 local 端都沒發現是因為在測試時直接下 <code>node bot.js</code> 是直接在前景 run, 但是在用 ssh 時, 在斷開時就會停止執行 node</p>
-<p>所以必須把 node 在線上環境執行時是在背景執行</p>
-<p>但這又遇到了問題</p>
-<p>用 <code>node bot.js &amp;</code> 沒用</p>
-<p>用 <code>nohup node bot.js &amp;</code> 也沒用</p>
-<p>最後是靠一個叫 <a href="https://www.npmjs.com/package/forever">forever</a> 的套件處理才成功的讓 node 在背景執行</p>
-<p>接下來就要研究替 bot 加上一些功能了</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2016-05-28-slack-bot-research-notes/">Read more</a></p>
                 
             </div>
         </div>

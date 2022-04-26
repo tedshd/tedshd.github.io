@@ -1136,6 +1136,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1146,6 +1150,68 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2016-09-07-javascript-touch-and-click-behavior-in-mobile-browser/">JavaScript - touch and click behavior in mobile browser</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-09-07
+</p>
+                
+
+                
+                <p><h2 id="javascript---touch-and-click-behavior-in-mobile-browser">JavaScript - touch and click behavior in mobile browser</h2>
+<p>On mobile web</p>
+<p>If you click it</p>
+<p>And mobile browser can fire <code>touchstart</code> and <code>click</code></p>
+<p>Fire <code>touchstart</code> event and then fire <code>click</code> event has the difference in time.</p>
+<p>the step is <code>touchstart -&gt; click</code></p>
+<p>So if you has a popup and you use <code>touchstart</code> event bind close behavior.</p>
+<p>You can find it fire click event.</p>
+<p>Then some bug happened.</p>
+<p>In this case(suggest use mobile browser)</p>
+<p><a href="https://tedshd.io/demo/touch_test.html">https://tedshd.io/demo/touch_test.html</a></p>
+<p>When you click close.</p>
+<p>Then popup closed.</p>
+<p>Because the difference in time.</p>
+<p>Then <code>click</code> event fired the popup is closed.</p>
+<p>So <code>click</code> event can click a link.</p>
+<p>Because the <code>click</code> event is click that position and that position has a link.</p>
+<p>So it can click a link.</p>
+<h3 id="solution">Solution</h3>
+<ol>
+<li>
+<p>Use <code>click</code> bind.</p>
+</li>
+<li>
+<p>Use <code>e.preventDefault()</code> in <code>touchstart</code> event, but it also can stop fire <code>touchmove</code> and <code>touchend</code> event.</p>
+</li>
+</ol>
+<p><a href="http://ariatemplates.com/blog/2014/05/ghost-clicks-in-mobile-browsers/">Reference - Ghost clicks in mobile browsers</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2016-09-07-javascript-touch-and-click-behavior-in-mobile-browser/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1201,58 +1267,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2016-09-01-sublime-text-how-to-modify-font-size-in-sidebar/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2016-08-31-gulp-one-problem-i-found-when-i-use-css-minify-with-some-css-library/">gulp - One problem i found when i use CSS minify with some CSS library</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2016-08-31
-</p>
-                
-
-                
-                <p><h2 id="gulp---one-problem-i-found-when-i-use-css-minify-with-some-css-library">gulp - One problem i found when i use CSS minify with some CSS library</h2>
-<p>When i use <a href="http://purecss.io/">pure</a>.</p>
-<p>And i use gulp as my front-end build tool.</p>
-<p>I used <a href="https://www.npmjs.com/package/gulp-cssmin">cssmin</a> as my CSS minify tool.</p>
-<p>By default it can extreme compress CSS file.</p>
-<p>The one problem happen!</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/824645/XoWnChm1TTqJGipwNfkQ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-31%20%E4%B8%8B%E5%8D%884.07.02.png" alt="螢幕快照 2016-08-31 下午4.07.02.png"></p>
-<p><code>display</code> not match</p>
-<p>Because use CSS minify can remove inherited CSS property.</p>
-<p>So in webkit browser doesn&rsquo;t has <code>display: -webkit-flex;</code> and layout will be an error.</p>
-<p>But this is not a bug, it is a feature.</p>
-<p>It can avoid inherited CSS property and it can decrease CSS file size.</p>
-<p>But in this case, it is not good feature.</p>
-<p>So i need add option in my gulp file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">cssmin</span>({
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">aggressiveMerging</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>})
-</span></span></code></pre></div><p>It represent to aggressive merging of CSS properties.</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2016-08-31-gulp-one-problem-i-found-when-i-use-css-minify-with-some-css-library/">Read more</a></p>
                 
             </div>
         </div>
