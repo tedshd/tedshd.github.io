@@ -181,6 +181,47 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/mysql_in_docker/">Mysql_in_docker</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2022-05-03
+</p>
+                
+
+                
+                <p><h2 id="usage">Usage</h2>
+<p><a href="https://hub.docker.com/_/mysql">docker hub</a></p>
+<p>In Apple M1</p>
+<p><a href="https://hub.docker.com/r/amd64/mysql/">amd64/mysql</a></p>
+<h2 id="run-docker-in-local">Run docker in local</h2>
+<p>Sample for M1(different of image name)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>password -d amd64/mysql:latest
+</span></span></code></pre></div><p>Container run in <code>0.0.0.0</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql --default-character-set<span style="color:#f92672">=</span>utf8mb4 -u root -h 0.0.0.0 -P <span style="color:#ae81ff">3306</span> -p -A
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/docker_usage/">docker 使用紀錄</a></h3>
 
                 
@@ -294,76 +335,6 @@
         
         
         
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/">Docker - Mac research log</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-05-15
-</p>
-                
-
-                
-                <p><h2 id="docker---mac-research-log">Docker - Mac research log</h2>
-<p><del><a href="http://docs.docker.com/installation/mac/">Install by Mac</a></del></p>
-<h3 id="register-docker-hub">Register Docker Hub</h3>
-<p><a href="https://hub.docker.com/">Docker Hub</a></p>
-<h3 id="use-kitematic">Use Kitematic</h3>
-<p><a href="https://kitematic.com/">kitematic</a></p>
-<h3 id="install-ubuntu">Install Ubuntu</h3>
-<p>Search ubuntu on docker hub</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/276146/Ff44CHSxS5qn7co6RsdJ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-05-27_%E4%B8%8A%E5%8D%8812_36_02.png" alt="螢幕快照_2015-05-27_上午12_36_02.png"></p>
-<p>Run command</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/276146/qDNHEI6YQcS9QbfQsbio_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-05-27_%E4%B8%8A%E5%8D%8812_36_51.png" alt="螢幕快照_2015-05-27_上午12_36_51.png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker pull ubuntu
-</span></span></code></pre></div><h4 id="use-docker-images">Use <code>docker images</code></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker images
-</span></span><span style="display:flex;"><span>REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-</span></span><span style="display:flex;"><span>ubuntu              latest              07f8e8c5e660        <span style="color:#ae81ff">3</span> weeks ago         188.3 MB
-</span></span></code></pre></div><h4 id="build-dockerfile">build dockerfile</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker build . -t ubuntu_dev:16.04 -f local.Dockerfile
-</span></span></code></pre></div><h4 id="run-container">run container</h4>
-<p><code>docker run -t -i ubuntu /bin/bash</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run -t -i ubuntu /bin/bash
-</span></span><span style="display:flex;"><span>root@b0cdeb409841:/#
-</span></span></code></pre></div><h4 id="docker-run">docker run</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run -idt --name &lt;container name&gt; -v &lt;mount absolute path or ~ path&gt;:&lt;docker path&gt; &lt;IMAGE&gt;:&lt;TAG&gt;
-</span></span></code></pre></div><h4 id="end-container">end container</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>exit
-</span></span></code></pre></div><h4 id="show-container">show container</h4>
-<p><code>docker ps -a</code></p>
-<h4 id="show-running-container">show running container</h4>
-<p><code>docker ps</code></p>
-<h4 id="show-images">show images</h4>
-<p><code>docker images</code></p>
-<h4 id="enter-docker-container">enter docker container</h4>
-<p><code>docker exec -it &lt;container id&gt; bash</code></p>
-<h4 id="show-log">show log</h4>
-<p><code>docker logs &lt;container id&gt;</code></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
     </div>
 </div>
 
@@ -372,6 +343,10 @@
         <footer class="p-article-pagination">
     
 
+    
+    <a class="p-article-pagination__link--next p-article-pagination__link--no-title" href="/categories/docker/page/2/">
+        <span class="p-article-pagination__label">Next</span>
+    </a>
     
 </footer>
     </div>
