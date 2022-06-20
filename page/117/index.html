@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.98.0" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -189,7 +189,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-13-login-forget-pwd/">Login forget pwd</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-20-file-upload-notice-issue/">file upload 123</a></h3>
 
                 
                 
@@ -199,133 +199,108 @@
 <span class=" u-capitalized ">
     on
 </span>
-2013-08-13
+2013-08-20
 </p>
                 
 
                 
-                <p><h2 id="function">function</h2>
-<ul>
-<li>account</li>
-<li>captcha</li>
-<li>validation</li>
-<li>use bootatrap model</li>
-</ul>
-<h2 id="result">result</h2>
-<ul>
-<li>captcha fail</li>
-<li>captcha ok</li>
-<li>backend check account</li>
-<li>success</li>
-<li>fail(not exist)</li>
-</ul>
-<h2 id="method">method</h2>
-<ul>
-<li>ajax</li>
-</ul>
-<h2 id="mockup">mockup</h2>
-<p><a href="https://moqups.com/tedshd/guwR4fO3/">link</a></p>
-<h2 id="flow">flow</h2>
-<p>click forget password
-show model
-enter account &amp; captcha(validation from js not null)
-submit(ajax)
-account fail(from backend) -&gt; show message
-captcha fail(from backend) -&gt; show message
-success -&gt; show message</p>
-<h2 id="flowdetail">flow(detail)</h2>
-<p>點擊忘記密碼
-秀 bootstrap model
-輸入帳號與驗證碼(利用 validation 作必填的檢查)
-用 ajax 的方式送出</p>
-<ul>
-<li>controllers</li>
-<li><del>接 captcha -&gt; 檢查是否正確</del></li>
-<li>接 account -&gt;
-<ul>
-<li><del>檢查是否存在</del></li>
-<li><del>generator token</del></li>
-<li>save token to memcache
-* memcache key: token + account</li>
-<li>send email</li>
-</ul>
-</li>
-</ul>
-<p>回傳錯誤或成功訊息</p>
-<ul>
-<li><del>account 驗證失敗 -&gt; 秀訊息(該帳號不存在)</del></li>
-<li><del>captcha 驗證失敗 -&gt; 秀訊息(驗證碼失敗), 刷新驗證碼</del></li>
-</ul>
-<p>email incloud url</p>
-<ul>
-<li>url + account + token</li>
-</ul>
-<p><strong>URL</strong>
-點擊 URL
-進入重設密碼頁面</p>
-<ul>
-<li>新密碼(利用 validation 作必填的檢查)</li>
-<li>確認密碼(利用 validation 作必填的檢查)</li>
-</ul>
-<p>用 submit 的方式送出</p>
-<ul>
-<li>controllers</li>
-<li>接新密碼 -&gt;
-* 驗證
-* 存 DB
-* delete memcache</li>
-</ul>
-<p>回傳成功或失敗</p>
-<ul>
-<li>成功 -&gt; redirect 到成功頁面</li>
-<li>失敗 -&gt; 秀訊息(儲存失敗, 請再試一次)</li>
-</ul>
-<h3 id="token-verify">token verify</h3>
-<h4 id="gen-token">gen token</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#75715e">// load memcache
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#39;Memcache&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// load encrypt
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#39;encrypt&#39;</span>);
+                <p><h1 id="file-upload">File Upload</h1>
+<h2 id="server-side-setting">Server side setting</h2>
+<h3 id="phpini">php.ini</h3>
+<p>in Mac</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/etc/php.ini
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">file_uploads</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">On</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">upload_max_filesize</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10M</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">post_max_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10M</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$token <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;rand_str&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">md5</span>(<span style="color:#a6e22e">uniqid</span>(<span style="color:#a6e22e">rand</span>(), <span style="color:#66d9ef">true</span>)),
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;account&#39;</span> <span style="color:#f92672">=&gt;</span> $user,
-</span></span><span style="display:flex;"><span>);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// array to string
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$to_str <span style="color:#f92672">=</span> <span style="color:#a6e22e">serialize</span>($token);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// encrypt
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$encrypted_str <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">encrypt</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">encode</span>($to_str);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// save to memcache
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">memcache</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;key&#39;</span>, $encrypted_str);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// token to verify
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">token</span>[<span style="color:#e6db74">&#39;rand_str&#39;</span>]
-</span></span></code></pre></div><h4 id="get-and-verify-data">get and verify data</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#75715e">// get $encrypted_str
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// decode
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$decode_token <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">encrypt</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">decode</span>($encrypted_str);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// string to array
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$token <span style="color:#f92672">=</span> <span style="color:#a6e22e">unserialize</span>($decode_token);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// check $token exist
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($token[<span style="color:#e6db74">&#39;rand_str&#39;</span>])
-</span></span><span style="display:flex;"><span>$get_token <span style="color:#f92672">=</span> <span style="color:#a6e22e">token</span>[<span style="color:#e6db74">&#39;rand_str&#39;</span>];
-</span></span><span style="display:flex;"><span>$account
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// load memcache
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$load_mem <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">memcache</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;key&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// decode memcache
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$decode_mem <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">encrypt</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">decode</span>($load_mem);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// string to array
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$to_array <span style="color:#f92672">=</span> <span style="color:#a6e22e">unserialize</span>($decode_mem);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// verify
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$get_token <span style="color:#f92672">===</span> $to_array[<span style="color:#e6db74">&#39;rand_str&#39;</span>]
-</span></span><span style="display:flex;"><span>$account <span style="color:#f92672">===</span> $to_array[<span style="color:#e6db74">&#39;account&#39;</span>]
-</span></span></code></pre></div></p>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">file_uploads</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 預設為on,允許用HTTP協定上傳</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">upload_tmp_dir</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 上傳檔案暫存目錄,wamp5中,c:/wamp/tmp</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">upload_max_filesize</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 上傳檔案最大值</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">post_max_size</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 利用 post 傳送數據所用最大值(利用 AJAX 或 post 上傳會有影響)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">max_execution_time</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># PHP執行時間最大值,預設為30秒</span>
+</span></span></code></pre></div><h2 id="style">style</h2>
+<p>由於預設的 <code>&lt;input type=&quot;file&quot;&gt;</code> 樣式不好改，且每一個 broswer 預設的樣式都不一樣，所以都會希望用統一化的客制化樣式，但基本上不太可能把它的樣式改成所想要的客制化的樣式，除非直接用像 Bootstrap 之類的框架</p>
+<h3 id="solution-1hack">solution 1(hack)</h3>
+<p>把 <code>&lt;input type=&quot;file&quot;&gt;</code> 的 style 設成 opacity: 0; 蓋在客制化的 button 上，也必須要設成跟客制化寬高一樣，以免覆蓋面積不一樣</p>
+<ul>
+<li>CSS</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">btn</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">file-select</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">80</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">btn</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">#0044ff</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#0088ff</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#ff8800</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">file-select</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">-84</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>HTML</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span>&gt;Button&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-select&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><h3 id="solution-2better">solution 2(better)</h3>
+<p>利用 <code>&lt;label&gt;&lt;/label&gt;</code> 的 for 特性來處理
+Bootstrap 就是利用這個方法
+<a href="http://tedshd.lionfree.net/demo/php/file_style.html">demo</a></p>
+<ul>
+<li>HTML</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;upload_img.php&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;post&#39;</span> <span style="color:#a6e22e">enctype</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;multipart/form-data&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-style&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Select file&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--if IE, only IE9 up--&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">label</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-style&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-style_2&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">span</span>&gt;Select file&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">label</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file_2&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-style_2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span></code></pre></div><ul>
+<li>CSS</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#75715e">/*--把 input 藏起來--*/</span>
+</span></span><span style="display:flex;"><span>#file-style {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>點擊 <code>&lt;label&gt;&lt;/label&gt;</code> for 會觸發 mapping 到 id 的 <code>&lt;input&gt;</code> 元素
+利用這原理就可以在點擊 <code>&lt;label&gt;&lt;/label&gt;</code> 時, 點擊到 <code>&lt;input type=&quot;file&quot;&gt;</code> 進而開啓檔案選擇
+直接改  <code>&lt;label&gt;&lt;/label&gt;</code> 樣式是較好的做法</p>
+<h2 id="issue">Issue</h2>
+<h3 id="javascript-click-input-file-in-ie">javascript click input file in IE</h3>
+<p>由於安全性問題所以在 IE 中利用 javascript 去 click file 做選擇檔案之後，在做 submit 時會發現 IE 會把用 javascript 選的檔案去除，不讓該檔案上傳
+<a href="http://tedshd.lionfree.net/demo/php/javascript_submit.html">example</a></p>
+<h3 id="upload-long-name-file-in-ie89">upload long name file in IE8/9</h3>
+<p>在 IE 8/9 中不會讓使用者上傳過長的檔名
+直接在 <code>&lt;input type=&quot;file&quot;&gt;</code> 那就不會有檔案了
+<a href="http://social.msdn.microsoft.com/Forums/ie/en-US/b04f2f93-a7aa-4493-94dc-68167077f30b/fileupload-control-fails-to-upload-file-when-file-name-is-255-characters-long">IE issue</a></p>
+<h3 id="if-upload-image-avoid-smaill-image-or-fake-picture">if upload image, avoid smaill image or fake picture</h3>
+<h3 id="hamdle-upload-file-name-like-jpg-or-docx-">hamdle upload file name like ..jpg or &hellip;docx, &hellip;</h3>
+</p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2013-08-13-login-forget-pwd/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2013-08-20-file-upload-notice-issue/">Read more</a></p>
                 
             </div>
         </div>
@@ -338,7 +313,7 @@ success -&gt; show message</p>
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-08-jquery-design-pattern/">jQuery-design pattern</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-14-linux-unix-command/">Linux/unix command</a></h3>
 
                 
                 
@@ -348,49 +323,198 @@ success -&gt; show message</p>
 <span class=" u-capitalized ">
     on
 </span>
-2013-08-08
+2013-08-14
 </p>
                 
 
                 
-                <p><h2 id="modulize">modulize</h2>
-<ul>
-<li>modulize selector</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">module</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// dosomething...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
-</span></span></code></pre></div><ul>
-<li>initialize</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">length</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// dosomething
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><h2 id="selector">selector</h2>
-<p>id is better than tag and class</p>
-<p>HTML</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">ul</span>&gt;
-</span></span><span style="display:flex;"><span>    	&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;class&#34;</span>&gt;text&lt;/<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">ul</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span></code></pre></div><p>JavaScript</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#id&#39;</span>).<span style="color:#a6e22e">html</span>();
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;#id&#39;</span>);
-</span></span></code></pre></div><p><a href="http://jsperf.com/jquery-getnode-test/2">jsperf</a></p>
-<p>##bind event
-use on
-bind on parent selector</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#e6db74">&#39;li&#39;</span>, <span style="color:#66d9ef">function</span> () {
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// dosomething
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
-</span></span></code></pre></div><p><a href="http://jsbin.com/ijovot/1/edit">js Bin</a></p>
-</p>
+                <p><h2 id="command">command</h2>
+<h3 id="user">User</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>su / sudo
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 最高權限使用者</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>su -u &lt;user name&gt; bash
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 切換使用者</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>exit
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 跳出最高權限使用者</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>shutdown
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 關機</span>
+</span></span><span style="display:flex;"><span>shutdown -h now 立即關機
+</span></span><span style="display:flex;"><span>shutdown -h +m m分鐘後關機
+</span></span><span style="display:flex;"><span>shutdown -h hh:mm 幾點幾分關機
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>reboot
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重開機</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>login
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 登入使用者</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>logout / exit
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 登出</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>passwd
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修改密碼</span>
+</span></span><span style="display:flex;"><span>useradd / adduser
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 新增帳號</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>passwd
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修改密碼</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo -u &lt;user name&gt; &lt;shell&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 切換使用者</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>date
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 顯示時間</span>
+</span></span><span style="display:flex;"><span>date 月日時分<span style="color:#f92672">(</span>root修改<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>history
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 顯示輸入過的指令</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ps
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 顯示目前執行的工作</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chmod &lt;777&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修改權限</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># rwx</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2*2 2 1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chown &lt;user&gt;:&lt;user&gt; &lt;file&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修改該 file owner</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>uname -a
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 確認 system OS</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>uanme -r
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># linux kernel</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 確認硬碟空間</span>
+</span></span></code></pre></div><h3 id="file-management">File Management</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ls
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出檔案</span>
+</span></span><span style="display:flex;"><span>ls -a 列出以.開頭的檔案
+</span></span><span style="display:flex;"><span>ls -l 列出檔案詳細
+</span></span><span style="display:flex;"><span>ls -- directory 查看該目錄內容
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 切換目錄</span>
+</span></span><span style="display:flex;"><span>cd .. 回上一層
+</span></span><span style="display:flex;"><span>cd / 切換到系統根目錄
+</span></span><span style="display:flex;"><span>cd 目錄
+</span></span><span style="display:flex;"><span>cd 路徑
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pwd
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 顯示目前所在目錄</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>clear
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 清空畫面</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>info / man
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查詢指令</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tab
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 同DOS的tab功用,切換下一個選擇的項目</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mkdir
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 建立目錄</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rmdir
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 刪除目錄</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>touch
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 建立檔案</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cp
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 複製檔案</span>
+</span></span><span style="display:flex;"><span>cp -v 顯示複製過程
+</span></span><span style="display:flex;"><span>cp -r &lt;folder&gt; &lt;directory&gt; 把資料夾複製到某目錄
+</span></span><span style="display:flex;"><span>cp &lt;file&gt; &lt;path&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rm
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 刪除檔案或目錄</span>
+</span></span><span style="display:flex;"><span>rm -f 強制刪除檔案
+</span></span><span style="display:flex;"><span>rm -rf 強制刪除目錄
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mv
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 搬移或更名檔案或目錄</span>
+</span></span><span style="display:flex;"><span>mv &lt;file&gt; &lt;path&gt;
+</span></span><span style="display:flex;"><span>mv &lt;舊檔名&gt; &lt;新檔名&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 瀏覽檔案內容</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>less
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 分頁瀏覽檔案內容</span>
+</span></span><span style="display:flex;"><span>q 離開
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>find / locate
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 尋找檔案</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># find -name &#34;php.ini&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>more
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 顯示畫面暫停</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>|
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 管線</span>
+</span></span><span style="display:flex;"><span>將指令結果輸出給另一個指令
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重導</span>
+</span></span><span style="display:flex;"><span>將指令結果輸出到檔案中檔案原有內容被刪除
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重導</span>
+</span></span><span style="display:flex;"><span>將指令結果輸出到檔案中檔案原有內容不被刪除
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>grep -r <span style="color:#e6db74">&#39;XXX&#39;</span> *
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 找內含XXX的檔案</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scp
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ssh copy</span>
+</span></span><span style="display:flex;"><span>scp &lt;username@tohostname&gt;:&lt;remote file&gt; &lt;local path&gt;
+</span></span><span style="display:flex;"><span>scp &lt;local file&gt; &lt;username@tohostname&gt;:&lt;remote path&gt;
+</span></span><span style="display:flex;"><span>scp -r &lt;username@tohostname&gt;:&lt;remote directory&gt; &lt;local path&gt;
+</span></span><span style="display:flex;"><span>scp -r &lt;local directory&gt; &lt;username@tohostname&gt;:&lt;remote path&gt;
+</span></span><span style="display:flex;"><span>scp -i &lt;key&gt; &lt;local directory&gt; &lt;username@tohostname&gt;:&lt;remote path&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 壓縮資料夾</span>
+</span></span><span style="display:flex;"><span>tar -zcvf &lt;archive-name&gt;.tar.gz &lt;directory-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tar -zxvf &lt;archive-name&gt;.tar.gz &lt;directory-name&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 解壓縮資料夾</span>
+</span></span></code></pre></div><h2 id="確認開啟的port">確認開啟的port</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>lsof -n -i | grep LISTEN **<span style="color:#f92672">(</span><span style="color:#66d9ef">for</span> Mac<span style="color:#f92672">)</span>**
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>netstat -tulpn | grep LISTEN
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo lsof -i -P -n | grep LISTEN
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo lsof -i -P | grep LISTEN | grep :$PORT
+</span></span></code></pre></div><h2 id="check-nginx-service">check nginx service</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ps -ef | grep nginx
+</span></span></code></pre></div><h3 id="apt">apt</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>apt --installed list
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出已安裝套件</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo aptitude update
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修復損毀的相依性</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo aptitude safe-upgrade
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 較為安全的升級方式</span>
+</span></span><span style="display:flex;"><span>sudo aptitude full-upgrade
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 針對整個系統做升級, 可能會更動系統核心的版號</span>
+</span></span><span style="display:flex;"><span>sudo aptitude dist-upgrade
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 同於 full-upgrade</span>
+</span></span></code></pre></div><h3 id="mail-server">Mail server</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>host -t mx &lt;mail domain&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查詢是否已紀錄此 mail domain</span>
+</span></span></code></pre></div></p>
                 
 
                 
 
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-08-14-linux-unix-command/">Read more</a></p>
                 
             </div>
         </div>

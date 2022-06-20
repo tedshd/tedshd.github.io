@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.98.0" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -189,7 +189,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/">JavaScript - Google Closure Compiler V.S. Gulp uglify</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2015-08-28-javascript-something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine/">JavaScript - something about childNodes and nextSibling why they get DOM is not as you imagine</a></h3>
 
                 
                 
@@ -199,72 +199,82 @@
 <span class=" u-capitalized ">
     on
 </span>
-2015-08-15
+2015-08-28
 </p>
                 
 
                 
-                <p><h2 id="javascript---google-closure-compiler-vs-gulp-uglify">JavaScript - Google Closure Compiler V.S. Gulp uglify</h2>
-<h3 id="intro">Intro</h3>
-<p>I have two choice</p>
-<ol>
-<li>
-<p>Google Closure Compiler</p>
-</li>
-<li>
-<p>UglifyJs</p>
-</li>
-</ol>
-<h4 id="google-closure-compiler">Google Closure Compiler</h4>
-<p><a href="https://developers.google.com/closure/compiler/">Google Closure Compiler</a></p>
-<p><em>Google Closure Compiler</em> is a tool for minify and uglify js.</p>
+                <p><h2 id="javascript---something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine">JavaScript - something about childNodes and nextSibling why they get DOM is not as you imagine</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes">childNodes MDN</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling">nextSibling - MDN</a></p>
+<h3 id="sometimes-we-use-childnodes">Sometimes we use childNodes</h3>
+<h4 id="html">HTML</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;item1&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;item2&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;item3&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;item4&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span></code></pre></div><h4 id="javascript">JavaScript</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">childNodes</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// output
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[<span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">text</span>]
+</span></span></code></pre></div><p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/293568/plBejfI1SXq1dBNPNyqr_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-08-29_%E4%B8%8A%E5%8D%8812_08_56.png" alt="螢幕快照_2015-08-29_上午12_08_56.png"></p>
+<p>Why?</p>
+<p>Then</p>
+<h4 id="html-1">HTML</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;item1&lt;/<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;item2&lt;/<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;item3&lt;/<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;item4&lt;/<span style="color:#f92672">li</span>&gt;&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span></code></pre></div><h4 id="javascript-1">JavaScript</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">childNodes</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// output
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[<span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">li</span>]
+</span></span></code></pre></div><p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/293568/b7H4oj6ZTMeH5jt01zaT_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-08-29_%E4%B8%8A%E5%8D%8812_10_07.png" alt="螢幕快照_2015-08-29_上午12_10_07.png"></p>
+<p>If you log <code>text</code> object, you can find it is wrap.</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/293568/QKnxVI8fRGWaAS0fagqc_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-08-29_%E4%B8%8A%E5%8D%8812_09_30.png" alt="螢幕快照_2015-08-29_上午12_09_30.png"></p>
+<p><strong>Browser get nodes include wrap symbol.</strong></p>
+<p>But it can&rsquo;t show in your editor</p>
+<h4 id="solution">Solution</h4>
 <ul>
-<li>
-<p>From Google</p>
-</li>
-<li>
-<p>Java</p>
-</li>
-<li>
-<p>Command Line</p>
-</li>
-<li>
-<p>Slow</p>
-</li>
+<li>for IE9 up</li>
 </ul>
-<h4 id="uglifyjs">UglifyJs</h4>
-<p><a href="https://github.com/mishoo/UglifyJS2">mishoo/UglifyJS2</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children">ParentNode.children</a></p>
 <ul>
-<li>
-<p>More option setting</p>
-</li>
-<li>
-<p>Node.js</p>
-</li>
-<li>
-<p>Command Line</p>
-</li>
-<li>
-<p>Fast</p>
-</li>
+<li>do a new function</li>
 </ul>
-<h3 id="test">Test</h3>
-<h4 id="google-closure-compiler-1">Google Closure Compiler</h4>
-<p>When i run command line, it used lot of cpu source.</p>
-<p>Can feel it lock some seconds.</p>
-<p>If compiler error,it can show error message.</p>
-<h4 id="uglifyjs-1">UglifyJs</h4>
-<p>It&rsquo;s so fast.</p>
-<p>It can fix some small error when it compiler.</p>
-<p>So i recommendation this tool.</p>
-<p>Finally i use <a href="http://gulpjs.com/">Gulp</a> handle uglifyJs.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">getChildNodes</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [],
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">nodes</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">childNodes</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">nodes</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">nodeType</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">Node</span>.<span style="color:#a6e22e">ELEMENT_NODE</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">node</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">array</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">getChildNodes</span>());
+</span></span></code></pre></div><p><a href="http://www.w3schools.com/jsref/prop_node_nodetype.asp">HTML DOM nodeType Property</a></p>
+<ul>
+<li>the way <a href="https://www.facebook.com/rplus.tw">rplus</a> provide</li>
+</ul>
+<pre tabindex="0"><code class="language-javscript" data-lang="javscript">function getChildNodes(parentNode) {
+  return [].filter.call(
+    parentNode.childNodes,
+    function(_target) {
+      return _target.nodeType === Node.ELEMENT_NODE;
+    });
+}
+</code></pre><h3 id="sometimes-we-use-nextsibling">Sometimes we use nextSibling</h3>
+<p>As above</p>
+<p>Sometimes you get <code>text</code>.</p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2015-08-28-javascript-something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine/">Read more</a></p>
                 
             </div>
         </div>
@@ -277,7 +287,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-08-11-css-web-font/">CSS - web font</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2015-08-16-php-auto-update-static-files-cache/">PHP - Auto update static files cache</a></h3>
 
                 
                 
@@ -287,35 +297,46 @@
 <span class=" u-capitalized ">
     on
 </span>
-2015-08-11
+2015-08-16
 </p>
                 
 
                 
-                <p><h2 id="css---web-font">CSS - web font</h2>
-<p>Use our font</p>
-<p>Put your font file on your server.</p>
-<p>Default font can&rsquo;t cross domain used.</p>
-<p>Suggest use <code>OTF</code> or <code>TTF</code> format.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#f92672">playstation</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#f92672">TRIIYP</span>.<span style="color:#a6e22e">otf</span><span style="color:#f92672">);</span>
+                <p><h2 id="php---auto-update-static-files-cache">PHP - Auto update static files cache</h2>
+<p>We can cache static files(CSS, JavaScript) to client</p>
+<p>When Server update static code.</p>
+<p>We want to update cache then we can modify file or add query string update version.</p>
+<p>We have some choice like modify url <code>?v=1</code> to <code>?v=2</code></p>
+<p>But I want to auto modify version.</p>
+<p>This is a way i use</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">autoversion</span>($url) {
+</span></span><span style="display:flex;"><span>    $ver <span style="color:#f92672">=</span> <span style="color:#a6e22e">stat</span>($_SERVER[<span style="color:#e6db74">&#39;DOCUMENT_ROOT&#39;</span>] <span style="color:#f92672">.</span> $url)[<span style="color:#a6e22e">mtime</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> $url <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;?v=&#34;</span> <span style="color:#f92672">.</span> $ver;
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#f92672">sony</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#f92672">sony</span>.<span style="color:#a6e22e">TTF</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="fonts">Fonts</h3>
-<p><a href="http://www.ffonts.net/SONYs-Logo.font.download">SONY&rsquo;s Logo Font Download</a></p>
-<p><a href="http://www.fontspace.com/category/ps4">Free ps4 fonts - FontSpace</a></p>
-<h3 id="demo">Demo</h3>
-<p><a href="http://tedse.0fees.net/demo/ps4/">ps4</a></p>
-<p><a href="http://www.w3schools.com/css/css3_fonts.asp">Refer - CSS3 Web Fonts</a></p>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># example
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;link href=&#34;&lt;?php echo autoversion(&#39;/path/to/theme.css&#39;); ?&gt;&#34; rel=&#34;stylesheet&#34;&gt;
+</span></span></span></code></pre></div><p>This way use file last modify time as a version.</p>
+<p><del>First i want to use <code>filemtime</code> but it fail.</del></p>
+<p><del>So i give up this way.</del></p>
+<h3 id="update">Update</h3>
+<p>Before use <code>filemtime()</code>, must use <code>clearstatcache();</code></p>
+<p>And my friend say <code>stat</code> has IO behavior, so this way is not perfect solution.</p>
+<p>If service has lot of <code>stat()</code> or mass request, so many IO can influences performance.</p>
+<p>Then we can write a script add update version and run it when service deploy.</p>
+<p><a href="https://css-tricks.com/strategies-for-cache-busting-css/">Refer - Strategies for Cache-Busting CSS</a></p>
+<p><a href="http://php.net/manual/en/function.stat.php">Refer - stat</a></p>
+<p><a href="http://php.net/manual/en/function.filemtime.php">filemtime</a></p>
 </p>
                 
 
                 
 
+                
+                <p><a href="https://blog.tedshd.io/posts/2015-08-16-php-auto-update-static-files-cache/">Read more</a></p>
                 
             </div>
         </div>

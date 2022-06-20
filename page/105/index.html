@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.98.0" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -189,7 +189,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science/">Computer Science</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-29-codeigniter-ajaxpost/">Codeigniter - AJAX(post)</a></h3>
 
                 
                 
@@ -199,34 +199,77 @@
 <span class=" u-capitalized ">
     on
 </span>
-2013-08-27
+2013-08-29
 </p>
                 
 
                 
-                <p><h2 id="電腦的本質">電腦的本質</h2>
-<p>從計算機發展到現今的電腦,從機械到電子,從簡單到複雜,都脫離不了三個基本性質.</p>
-<ul>
-<li>
-<p>功能分離(function abstraction)
-許多不同的階層在獨立運作,而不必顧慮其他階層</p>
-</li>
-<li>
-<p>通用電腦原理(universal computer)
-電腦運作的基本原理都是一樣的,只差在組成的元件不一樣,所以只要程式設計的正確,電腦也能如人腦般的思考</p>
-</li>
-<li>
-<p>超越工程學
-此為全新的電腦設計概念,當電腦的設計變的複雜時,便試圖以全新的概念來設計</p>
-</li>
-</ul>
-</p>
+                <p><h2 id="ci-ajaxpost">CI AJAX(Post)</h2>
+<h3 id="usage">Usage</h3>
+<p>JavaScript(jQuery)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">post</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;/api/post&#39;</span>,
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;string&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">val2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;ok&#39;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// dosomething
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// alert fail
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;json&#39;</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/login/signup&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">account</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;input[name=&#34;account&#34;]&#39;</span>).<span style="color:#a6e22e">val</span>()
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>PHP</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// api.php
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">post</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    $val <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">input</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;val&#39;</span>);
+</span></span><span style="display:flex;"><span>    $val2 <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">input</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;val2&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ($val)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// dosomething
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//response
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        $output <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;status&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;ok&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;msg&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;success&#39;</span>
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">json_encode</span>($output);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">exit</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    $output <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;status&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fail&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;msg&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;error&#39;</span>
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">json_encode</span>($output);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">exit</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2013-08-27-computer-science/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2013-08-29-codeigniter-ajaxpost/">Read more</a></p>
                 
             </div>
         </div>
@@ -239,7 +282,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-27-computer-random-number-science/">Computer Science - 亂數</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-28-mysql-command/">MySQL command</a></h3>
 
                 
                 
@@ -249,22 +292,140 @@
 <span class=" u-capitalized ">
     on
 </span>
-2013-08-27
+2013-08-28
 </p>
                 
 
                 
-                <p><h2 id="亂數">亂數</h2>
-<p>數位電腦如何產生隨機訊號?項電腦這樣的決定性系統(deterministic system)可以產生一串真正的隨機數列嗎?嚴格說起來,答案是否定的.因為數位電腦所做的每個工作都是由其設計及輸入所決定的,就好像俄羅斯輪盤,球最後所落下的位置是由球的物理性質及輪盤來決定.理論上,若我們了解輪盤的設計及控制其旋轉與擲球力道等詳細[輸入]內容,就應該能預測球的落點.但輪盤停止轉動後的結果看起來卻是隨機的.</p>
-<p>電腦也可以用同樣的觀念產生隨機數列,事實上電腦也可以用一種數學模型模擬俄羅斯輪盤的物理性質,每次用稍微不同的角度擲球,已便產生隨機數列.即使丟球的角度只是固定的週期性變化,電腦所模擬的動態轉輪也會將這些些微差異轉化成不可預測的隨機數列.這種隨機數列稱為假隨機(pseudorandom)序列,因為只有不了解其計算方式的觀察者才認為它是隨機的.這種由[假隨機數產生器]所產生的數列可通過所有的標準統計隨機檢測.</p>
-<p>數位電腦和真實世界一樣是可預期的,卻也是不可預期的,它們都遵循著決定性的法則,但這些法則會導致相當難以預測的複雜結果.在電腦執行之前猜測它所要做的動作是很不切實際的,而通常不需太大的功夫就可以讓計算變得很複雜.</p>
+                <p><h2 id="mysql-monitor">MySQL Monitor</h2>
+<h3 id="setting">Setting</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql <span style="color:#f92672">-</span>u root <span style="color:#f92672">-</span>h <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">HOST</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span>P <span style="color:#f92672">&lt;</span>PORT<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>DATABASE_NAME<span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span>p <span style="color:#f92672">-</span>A
+</span></span></code></pre></div><h3 id="database">database</h3>
+<p>每一個 command 最後都要加 <code>;</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>status;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> database_name;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">database</span> database_name;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">show</span> databases;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">show</span> tables;
+</span></span><span style="display:flex;"><span>use database_name;
+</span></span></code></pre></div><h3 id="table">table</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span>(
+</span></span><span style="display:flex;"><span>    column1 type1,
+</span></span><span style="display:flex;"><span>    column2 type2);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span>(
+</span></span><span style="display:flex;"><span>    column1 type1,
+</span></span><span style="display:flex;"><span>    column2 type2) charset<span style="color:#f92672">=</span>utf8;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">desc</span> <span style="color:#66d9ef">table_name</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">show</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><p><a href="https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html">MySQL 8.0 Reference Manual :: 3.3.2 Creating a Table - MySQL</a></p>
+<p><a href="https://dev.mysql.com/doc/refman/8.0/en/create-table.html">13.1.20 CREATE TABLE Statement - MySQL :: Developer Zone</a></p>
+<table>
+<thead>
+<tr>
+<th>欄位 1</th>
+<th>欄位 2</th>
+<th>欄位 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>資料 1</td>
+<td>資料 2</td>
+<td>資料 3</td>
+</tr>
+</tbody>
+</table>
+<p>寫入資料</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> <span style="color:#960050;background-color:#1e0010">資料表名稱</span> (<span style="color:#960050;background-color:#1e0010">欄位名稱</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">欄位名稱</span><span style="color:#ae81ff">2</span>) value(<span style="color:#960050;background-color:#1e0010">資料</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">資料</span><span style="color:#ae81ff">2</span>);
+</span></span></code></pre></div><p>顯示資料</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#960050;background-color:#1e0010">欄位名稱</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">欄位名稱</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">from</span> <span style="color:#960050;background-color:#1e0010">資料表名稱</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> id,create_time <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">where</span> id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;123&#39;</span>;
+</span></span></code></pre></div><h4 id="刪除該-table-所有的資料">刪除該 table 所有的資料</h4>
+<ol>
+<li>TRUNCATE</li>
+</ol>
+<p>auto_increment 的欄位會 reset</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">truncate</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>;
+</span></span></code></pre></div><ol start="2">
+<li>DELETE</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">//</span> <span style="color:#66d9ef">or</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">where</span> id<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">100</span>;
+</span></span></code></pre></div><p>刪除全部資料的效能: TRUNCATE &gt; DELETE</p>
+<h4 id="刪除該-table">刪除該 table</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>;
+</span></span></code></pre></div><p><a href="https://www.opencli.com/mysql/mysql-truncate-delete-drop-difference">MySQL – DELETE, TRUNCATE 及 DROP 的分別</a></p>
+<h3 id="資料型別">資料型別</h3>
+<p>顯示欄位型別</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">show</span> columns <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><h3 id="字串型別">字串型別</h3>
+<p>varchar &ndash; 最多到 255 字
+text
+輸入時要加引號
+如要輸入 <code>’\’</code></p>
+<h3 id="日期時間型別">日期時間型別</h3>
+<p>datetime&ndash;2011-8-8 00:00:00
+date&ndash;2011-8-8
+year&ndash;2011
+time&ndash;00:00:00</p>
+<p>sql TYPE timestamp</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// PHP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$timestamp <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>(<span style="color:#e6db74">&#34;Y-m-d H:i:s&#34;</span>);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> t1 (
+</span></span><span style="display:flex;"><span>  created <span style="color:#66d9ef">TIMESTAMP</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">CURRENT_TIMESTAMP</span>,
+</span></span><span style="display:flex;"><span>  updated <span style="color:#66d9ef">TIMESTAMP</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">CURRENT_TIMESTAMP</span> <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">UPDATE</span> <span style="color:#66d9ef">CURRENT_TIMESTAMP</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p><a href="https://dev.mysql.com/doc/refman/8.0/en/timestamp-initialization.html">11.2.5 Automatic Initialization and Updating for TIMESTAMP and DATETIME</a></p>
+<h2 id="修改欄位名稱">修改欄位名稱</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> CHANGE <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">old</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">new</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>varchar(<span style="color:#ae81ff">255</span>)<span style="color:#f92672">&gt;</span>;
+</span></span></code></pre></div><h3 id="修改-table-裡-column-的編碼改成-utf8mb4">修改 table 裡 column 的編碼改成 utf8mb4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">modify</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">column</span><span style="color:#f92672">&gt;</span> varchar(<span style="color:#ae81ff">255</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4
+</span></span></code></pre></div><h3 id="where-多筆資料">where 多筆資料</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">where</span> id <span style="color:#66d9ef">in</span> (<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>);
+</span></span></code></pre></div><h3 id="dump-table">dump table</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysqldump -A --ssl-mode<span style="color:#f92672">=</span>DISABLED -u &lt;user&gt; -p&lt;password&gt; -h &lt;host&gt; &lt;database&gt; &lt;table&gt; | mysql -u root -h &lt;host&gt; -P &lt;post&gt; &lt;database&gt;
+</span></span></code></pre></div><p>必要時需要另外添加參數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>--column-statistics<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> --lock-tables<span style="color:#f92672">=</span>false
+</span></span></code></pre></div><p><a href="https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_column-statistics">Refer - mysqldump — A Database Backup Program</a></p>
+<h3 id="直接把-query-出來的一筆資料新增複製">直接把 query 出來的一筆資料新增(複製)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span> (<span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">1</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">2</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">select</span> <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">1</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">2</span>, <span style="color:#960050;background-color:#1e0010">欄位</span><span style="color:#ae81ff">3</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>;
+</span></span></code></pre></div><h3 id="找出欄位有重複的值">找出欄位有重複的值</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">column_name</span><span style="color:#f92672">&gt;</span>, <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">column_name</span><span style="color:#f92672">&gt;</span>) <span style="color:#66d9ef">FROM</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">column_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">column_name</span><span style="color:#f92672">&gt;</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>;
+</span></span></code></pre></div><h3 id="time-zone-相關">time zone 相關</h3>
+<h4 id="確認時區">確認時區</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">@@</span><span style="color:#66d9ef">global</span>.time_zone;
+</span></span></code></pre></div><h4 id="確認當前時間">確認當前時間</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> NOW();
+</span></span></code></pre></div><h4 id="設定時區">設定時區</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">GLOBAL</span> time_zone <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#f92672">-</span><span style="color:#ae81ff">6</span>:<span style="color:#ae81ff">00</span><span style="color:#960050;background-color:#1e0010">’</span>;
+</span></span></code></pre></div><h3 id="troubleshooting">troubleshooting</h3>
+<p>On Mac
+Q:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ERROR <span style="color:#ae81ff">2002</span> <span style="color:#f92672">(</span>HY000<span style="color:#f92672">)</span>: Can<span style="color:#e6db74">&#39;t connect to local MySQL server through socket &#39;</span>/tmp/mysql.sock<span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>A:
+mysql 沒啟動</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql.server start
+</span></span></code></pre></div><p>or 設定沒有設定 socket 的路徑</p>
+<p>for mac brew 安裝的 mysql 在 <code>/usr/local/var/mysql</code> 所以設定就設定該路徑(底下不必有 mysql.sock)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>client<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>socket<span style="color:#f92672">=</span>/usr/local/var/mysql/mysql.sock
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>socket<span style="color:#f92672">=</span>/usr/local/var/mysql/mysql.sock
+</span></span></code></pre></div><h3 id="reference">Reference</h3>
+<p><a href="https://www.mysqltutorial.org/basic-mysql-tutorial.aspx">Basic MySQL Tutorial</a></p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2013-08-27-computer-random-number-science/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2013-08-28-mysql-command/">Read more</a></p>
                 
             </div>
         </div>

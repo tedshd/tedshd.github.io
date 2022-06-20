@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 02 Oct 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/ios/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 14:44:30 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/ios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Safari 設定 100vh 還是出現卷軸(scroll bar)</title>
+      <link>https://blog.tedshd.io/posts/safari_100vh_show_scroll/</link>
+      <pubDate>Mon, 20 Jun 2022 14:44:30 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/safari_100vh_show_scroll/</guid>
+      <description>前言 最近注意到 Safari 設定 100vh 在未滿內容的情況還是出現滑動的卷軸 這導致了體驗不佳 研究了一下發現是因為在 Safari 上有 url bar 的關係(iOS 15 以下還有 function bar) 100vh 的大小</description>
+    </item>
+    
     <item>
       <title>web - mobile web on iPhone X first preview</title>
       <link>https://blog.tedshd.io/posts/2017-10-02-web-mobile-web-on-iphone-x-first-preview/</link>

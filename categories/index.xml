@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Tue, 03 May 2022 15:53:18 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 14:44:30 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS</title>
+      <link>https://blog.tedshd.io/categories/ios/</link>
+      <pubDate>Mon, 20 Jun 2022 14:44:30 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>safari</title>
+      <link>https://blog.tedshd.io/categories/safari/</link>
+      <pubDate>Mon, 20 Jun 2022 14:44:30 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/safari/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>docker</title>
       <link>https://blog.tedshd.io/categories/docker/</link>
@@ -23,6 +41,24 @@
       <pubDate>Tue, 03 May 2022 15:53:18 +0800</pubDate>
       
       <guid>https://blog.tedshd.io/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ip</title>
+      <link>https://blog.tedshd.io/categories/ip/</link>
+      <pubDate>Mon, 25 Apr 2022 10:15:23 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/ip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://blog.tedshd.io/categories/web/</link>
+      <pubDate>Mon, 25 Apr 2022 10:15:23 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/web/</guid>
       <description></description>
     </item>
     
@@ -77,15 +113,6 @@
       <pubDate>Wed, 02 Mar 2022 11:21:17 +0800</pubDate>
       
       <guid>https://blog.tedshd.io/categories/browser/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>safari</title>
-      <link>https://blog.tedshd.io/categories/safari/</link>
-      <pubDate>Wed, 02 Mar 2022 11:21:17 +0800</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/safari/</guid>
       <description></description>
     </item>
     
@@ -437,15 +464,6 @@
       <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/categories/apple/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iOS</title>
-      <link>https://blog.tedshd.io/categories/ios/</link>
-      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/ios/</guid>
       <description></description>
     </item>
     

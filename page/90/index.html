@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.98.0" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -189,7 +189,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-12-03-google-map-api-research-log/">Google map api - research log</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2013-12-07-detect-mobile-device/">Detect mobile device</a></h3>
 
                 
                 
@@ -199,144 +199,36 @@
 <span class=" u-capitalized ">
     on
 </span>
-2013-12-03
+2013-12-07
 </p>
                 
 
                 
-                <p><h2 id="google-map-api---research-log">Google map api - research log</h2>
-<h3 id="introduction">Introduction</h3>
-<p>使用 <a href="https://developers.google.com/maps/documentation/javascript/?hl=zh-tw">Google Maps JavaScript v3</a>
-<a href="https://developers.google.com/maps/documentation/staticmaps/?hl=zh-tw">static map</a> 嵌入地圖到網頁中以圖片方式呈現
-<a href="https://developers.google.com/maps/documentation/javascript/usage?hl=zh-tw">使用限制</a> 基本上不要一日載超過 25000 次都沒事
-<a href="https://developers.google.com/maps/documentation/javascript/basics?hl=zh-tw#Localization">區域化 - 語系</a></p>
-<p><a href="https://code.google.com/p/google-maps-utility-library-v3/wiki/Libraries">Library</a></p>
-<h3 id="init-map">Init map</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--使用 &lt;!DOCTYPE html&gt; 宣告，將應用程式宣告為 HTML5--&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;Google_map_api_basic&lt;/<span style="color:#f92672">title</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1.0, user-scalable=no&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--最新的瀏覽器會將使用此 DOCTYPE 宣告的內容以「標準模式」呈現，也就是說，您的應用程式應更具備跨瀏覽器相容性。此外，DOCTYPE 也設計成會逐漸適應，但無法理解它的瀏覽器將會忽略它，而採用「快速模式」顯示內容。請注意，有些 CSS 在快速模式中可以運作，但在標準模式中卻無效。具體來說，所有百分比的大小都必須繼承父區塊項目，但這些上階中如有任何一個無法指定大小，就會假設為 0 x 0 像素大小。基於這個理由，我們加入了下列 &lt;style&gt; 宣告--&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">html</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+                <p><h2 id="detect-mobile-device">Detect mobile device</h2>
+<p>Use PHP or JavaScript detect mobile device like iPhone, iPad, iPod or Android&hellip;</p>
+<h3 id="android">Android</h3>
+<h4 id="php">PHP</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>$ua <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtolower</span>($_SERVER[<span style="color:#e6db74">&#39;HTTP_USER_AGENT&#39;</span>]);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">stripos</span>($ua, <span style="color:#e6db74">&#39;android&#39;</span>) <span style="color:#f92672">!==</span> <span style="color:#66d9ef">false</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;Android!!&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">exit</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#f92672">body</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h4 id="javascript">JavaScript</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ua</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">userAgent</span>.<span style="color:#a6e22e">toLowerCase</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">ua</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#34;android&#34;</span>) <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;Android!!&#39;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>#map_canvas {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--這個 CSS 宣告表示地圖容器 &lt;div&gt; (名為 map_canvas) 應使用 HTML 主體的 100% 高度。請注意，我們也必須特別宣告 &lt;body&gt; 和 &lt;html&gt; 的這些百分比--&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://maps.google.com/maps/api/js?sensor=true&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--使用 script 標記來涵蓋 Maps API JavaScript--&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--請注意，我們也必須設定 sensor 參數，以指出這個應用程式是否有使用感應器來判斷使用者的位置。必須明確地將這個值設為 true 或 false--&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">onload</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initialize()&#34;</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--從 body 標記的 onload 事件初始化地圖物件--&gt;</span>
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map_canvas&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width:100%; height:100%&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!--建立 div 元素 (名稱為「map_canvas」) 來容納「地圖」--&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--建立 JavaScript 物件實字以存放多個地圖屬性--&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--JavaScript 函式以建立「地圖」物件--&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">initialize</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myOptions</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">LatLng</span>(<span style="color:#ae81ff">25.05060</span>, <span style="color:#ae81ff">121.51870</span>),
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">mapTypeId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">MapTypeId</span>.<span style="color:#a6e22e">ROADMAP</span>
-</span></span><span style="display:flex;"><span>    };
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Map</span>(
-</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;map_canvas&#34;</span>),
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">myOptions</span>
-</span></span><span style="display:flex;"><span>    );
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
-</span></span></code></pre></div><h3 id="javascript-map-object">JavaScript map object</h3>
-<p>先建立地圖的設定
-<a href="https://developers.google.com/maps/documentation/javascript/tutorial?hl=zh-tw#MapOptions">地圖選項</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myOptions</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">LatLng</span>(<span style="color:#ae81ff">25.05060</span>, <span style="color:#ae81ff">121.51870</span>),
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">mapTypeId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">MapTypeId</span>.<span style="color:#a6e22e">ROADMAP</span>
-</span></span><span style="display:flex;"><span>};
-</span></span></code></pre></div><ul>
-<li>center 表示一開始地圖的中心位置</li>
-<li>zoom 地圖縮放(0 ~ 18)</li>
-<li>mapTypeId 地圖類型
-<ul>
-<li>ROADMAP 顯示 Google 地圖的正常、預設 2D 地圖方塊。</li>
-<li>SATELLITE 可顯示攝影地圖方塊。</li>
-<li>HYBRID 可顯示混合攝影地圖方塊與重要地圖項 (道路、城市名稱) 的地圖方塊圖層。</li>
-<li>TERRAIN 可顯示實際起伏的地圖方塊，以呈現海拔高度和水域圖徵 (山嶽、河流等)。</li>
-</ul>
-</li>
-</ul>
-<p>初始化地圖
-<a href="https://developers.google.com/maps/documentation/javascript/tutorial?hl=zh-tw#google.maps.Map">地圖物件</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Map</span>(
-</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;map_canvas&#34;</span>),
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">myOptions</span>
-</span></span><span style="display:flex;"><span>);
-</span></span></code></pre></div><h3 id="mark-google-map">Mark Google map</h3>
-<p><a href="https://developers.google.com/maps/documentation/javascript/overlays?hl=zh-tw#Markers">標記</a>
-標記在地圖上的位置</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// list marks
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">LatLng</span>(<span style="color:#ae81ff">25.05060</span>, <span style="color:#ae81ff">121.51870</span>),
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hello World!&#39;</span>
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">LatLng</span>(<span style="color:#ae81ff">25.056304</span>, <span style="color:#ae81ff">121.522079</span>),
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;春漾咖啡&#39;</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// put marks in map
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">marker</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Marker</span>(<span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">i</span>]);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">marker</span>.<span style="color:#a6e22e">setMap</span>(<span style="color:#a6e22e">map</span>);
-</span></span><span style="display:flex;"><span>};
-</span></span></code></pre></div><h3 id="info-windows">Info windows</h3>
-<p><a href="https://developers.google.com/maps/documentation/javascript/infowindows">infowindows</a></p>
-<p>標記上的 pop tooltip</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">infowindow</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">InfoWindow</span>();
-</span></span></code></pre></div><h4 id="method">Method</h4>
-<ul>
-<li>setContent()</li>
-<li>open()</li>
-<li>close()</li>
-</ul>
-<h4 id="propertieshttpsdevelopersgooglecommapsdocumentationjavascriptreferenceinfowindowoptions"><a href="https://developers.google.com/maps/documentation/javascript/reference#InfoWindowOptions">Properties</a></h4>
-<ul>
-<li>content</li>
-<li>disableAutoPan</li>
-<li>maxWidth</li>
-<li>pixelOffset</li>
-<li>position</li>
-<li>zIndex</li>
-</ul>
-<h3 id="event">Event</h3>
-<p><a href="https://developers.google.com/maps/documentation/javascript/events?hl=zh-tw">事件</a>
-Google map api 提供許多與 map 有關的事件</p>
-<h3 id="style">Style</h3>
-<p><a href="https://developers.google.com/maps/documentation/javascript/styling?hl=zh-tw">樣式標記地圖</a></p>
+</span></span></code></pre></div><p><a href="http://davidwalsh.name/detect-android">Refer - Android Detection with JavaScript or PHP</a></p>
+<h3 id="apple-mobile-device">Apple mobile device</h3>
+<p><a href="http://php.quicoto.com/how-to-detect-iphone-ipod-and-ipad-with-php/">Refer - How to detect iPhone, iPod and iPad with PHP</a>
+<a href="http://www.sitepoint.com/identify-apple-iphone-ipod-ipad-visitors/">Refer - How to Identify an Apple iPhone, iPod or iPad Visitor to Your Website</a></p>
 </p>
                 
 
                 
 
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-12-03-google-map-api-research-log/">Read more</a></p>
                 
             </div>
         </div>
@@ -349,7 +241,7 @@ Google map api 提供許多與 map 有關的事件</p>
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-11-25-facebook-api-get-uid/">Facebook api get UID &amp; AccessToken</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2013-12-07-javascript-easy-to-get-dom/">JavaScript - Easy to get DOM</a></h3>
 
                 
                 
@@ -359,79 +251,71 @@ Google map api 提供許多與 map 有關的事件</p>
 <span class=" u-capitalized ">
     on
 </span>
-2013-11-25
+2013-12-07
 </p>
                 
 
                 
-                <p><h2 id="facebook-api-get-uid--accesstoken">Facebook api get UID &amp; AccessToken</h2>
-<ol>
-<li>Build App in facebook</li>
-<li><code>APP_ID</code> is a facebook App id</li>
-<li>Must set facebook App&rsquo;s web url and use code in it&rsquo;s domain</li>
-</ol>
+                <p><h2 id="javascript---easy-to-get-dom">JavaScript - Easy to get DOM</h2>
+<p>It is old way to use <code>getElementById</code>, <code>getElementsByTagName</code> &hellip;</p>
+<p>New method is use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document.querySelector">querySelector</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document.querySelectorAll">querySelectorAll</a></p>
+<p>If use IE, it only for IE8 up.</p>
+<p>Make them as a method</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">node</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">node</span>(<span style="color:#a6e22e">selector</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">selector</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#39;.&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">selector</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#a6e22e">selector</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">selector</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">selector</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And then use it</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;fb_oauth&lt;/<span style="color:#f92672">title</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://code.jquery.com/jquery-1.10.2.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;querySelector&lt;/<span style="color:#f92672">title</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb-root&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FBLogin&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;登入臉書&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">p</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;uid&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">br</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accessToken&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;area&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        test
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;area&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        test2
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;selector&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;area&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;con&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            content
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://connect.facebook.net/zh_TW/all.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">init</span>({
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">appId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;APP_ID&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cookie</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">xfbml</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">oauth</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>    });
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#FBLogin&#39;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#66d9ef">function</span> () {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">login</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">response</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 登入之後執行的語法
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        },
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">scope</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;email&#39;</span>
-</span></span><span style="display:flex;"><span>        });
-</span></span><span style="display:flex;"><span>    });
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">getLoginStatus</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">response</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;connected&#39;</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 程式有連結到 Facebook 帳號
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#75715e">// 取得 UID
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">uid</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">authResponse</span>.<span style="color:#a6e22e">userID</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 取得 accessToken
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">accessToken</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">authResponse</span>.<span style="color:#a6e22e">accessToken</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#uid&#39;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#e6db74">&#39;UID：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">uid</span>);
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#accessToken&#39;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#e6db74">&#39;accessToken：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">accessToken</span>);
-</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;not_authorized&#39;</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 帳號沒有連結到 Facebook 程式
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;請允許授權！&#39;</span>);
-</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 帳號沒有登入
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
-</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">node</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">node</span>(<span style="color:#a6e22e">selector</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">selector</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#39;.&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">selector</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#a6e22e">selector</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">selector</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">selector</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;ID&#39;</span>, <span style="color:#a6e22e">node</span>(<span style="color:#e6db74">&#39;#box&#39;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;CLASS&#39;</span>, <span style="color:#a6e22e">node</span>(<span style="color:#e6db74">&#39;.area&#39;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;SELECTOR_1&#39;</span>, <span style="color:#a6e22e">node</span>(<span style="color:#e6db74">&#39;#selector p&#39;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;SELECTOR_2&#39;</span>, <span style="color:#a6e22e">node</span>(<span style="color:#e6db74">&#39;.area .con&#39;</span>));
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
-</span></span></code></pre></div><p><a href="http://tedshd.lionfree.net/demo/facebook_oauth/fb_oauth.html">Demo</a></p>
-<p><a href="http://coding.anyun.tw/2012/03/07/using-facebook-javascript-sdk-get-uid-or-accesstoken/">Refer - 使用 Facebook JavaScript SDK 來取得使用者 UID 或 AccessToken</a></p>
-</p>
+</span></span></code></pre></div></p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2013-11-25-facebook-api-get-uid/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2013-12-07-javascript-easy-to-get-dom/">Read more</a></p>
                 
             </div>
         </div>
