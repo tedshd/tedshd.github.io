@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
-<title>tedshd&#39;s DevNote</title>
+
+
+<title>docker 建立不同平台的 image | tedshd&#39;s DevNote</title>
 <meta charset="utf-8">
 <meta name="google" content="notranslate">
 <meta id="viewport" name="viewport"
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='Develop &amp; Design Note by Ted'>
+<meta name="description" content='前言 現在在開發與線上環境常常會遇到不同 CPU 架構的問題 不同 CPU 架構底層的指令集也不一樣 最常見的影響就是在其中一個平台編譯出來的程式會無法在另一個平'>
 <meta name="keywords" content=''>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/">
-<link rel="alternate" media="handheld" href="https://blog.tedshd.io/" />
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/build_different_platform_docker_image/">
+<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/build_different_platform_docker_image/" />
 
-<link rel="canonical" href="https://blog.tedshd.io/" />
+<link rel="canonical" href="https://blog.tedshd.io/posts/build_different_platform_docker_image/" />
 <link rel="shortcut icon" href="/icons/favicon.ico">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
@@ -25,17 +26,19 @@
 <meta name="robots" content="index, follow">
 <meta name="copyright" content="Tedshd">
 
-<meta property="og:title" content="tedshd&#39;s DevNote" />
-<meta property="og:description" content="Develop &amp; Design Note by Ted" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:title" content="docker 建立不同平台的 image" />
+<meta property="og:description" content="前言 現在在開發與線上環境常常會遇到不同 CPU 架構的問題 不同 CPU 架構底層的指令集也不一樣 最常見的影響就是在其中一個平台編譯出來的程式會無法在另一個平" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/build_different_platform_docker_image/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-29T10:45:39+08:00" />
+<meta property="article:modified_time" content="2022-06-29T10:45:39+08:00" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
-<meta name="twitter:title" content="tedshd&#39;s DevNote"/>
-<meta name="twitter:description" content="Develop &amp; Design Note by Ted"/>
+<meta name="twitter:title" content="docker 建立不同平台的 image"/>
+<meta name="twitter:description" content="前言 現在在開發與線上環境常常會遇到不同 CPU 架構的問題 不同 CPU 架構底層的指令集也不一樣 最常見的影響就是在其中一個平台編譯出來的程式會無法在另一個平"/>
 
 
 <meta itemprop="name" content="">
@@ -44,8 +47,6 @@
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-    
-    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="tedshd&#39;s DevNote" />
     
 
     
@@ -120,9 +121,6 @@
         </nav>
     </div>
 </header><div id="main-content">
-
-
-
 <div class="page-banner">
     <div class="row u-vertically-center">
         <div class="col-8 pure-g">
@@ -131,14 +129,12 @@
                     style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
             </div>
             <div class="pure-u">
-                <h1>tedshd&#39;s DevNote</h1>
+                <h2>tedshd&#39;s DevNote</h2>
                 <p>Develop &amp; Design Note by Ted</p>
             </div>
         </div>
     </div>
 </div>
-
-
 
 <ul class="p-navigation__links sub_menu" role="menu">
     
@@ -164,15 +160,6 @@
     
 </ul>
 
-
-
-
-
-
-
-
-
-
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -181,135 +168,62 @@
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-<div class="p-strip is-wrapper posts">
+
+<header class="">
     <div class="row">
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2019-09-27-google-knowledge-panel/">Google - 知識面板(knowledge panel)</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2019-09-27
-</p>
-                
-
-                
-                <p><h2 id="google---知識面板knowledge-panel">Google - 知識面板(knowledge panel)</h2>
-<h3 id="什麼是知識面板">什麼是知識面板？</h3>
-<p>就是下圖紅框中的東西啦</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202019-09-27%20%E4%B8%8B%E5%8D%882.41.56.png?alt=media&amp;token=8e991e16-122b-472c-b385-2367f4a4bcca" alt=""></p>
-<p><a href="https://support.google.com/knowledgepanel/answer/9163198">About knowledge panels</a></p>
-<p>雖然這跟 SEO 沒啥太大的關係</p>
-<p>但是對一個企業或者是服務的品牌露出與擴散是有一定的效果的</p>
-<h3 id="要怎麼做">要怎麼做?</h3>
-<h4 id="驗證-google">驗證 Google</h4>
-<p><a href="https://support.google.com/knowledgepanel/answer/7534902?hl=en">Get verified on Google</a></p>
-<p>需要有一個有效且認證過的 Google 帳號</p>
-<h4 id="建立-wiki">建立 wiki</h4>
-<p>先替你的公司企業或服務建立維基百科</p>
-<p>Google 會參考維基百科的資訊來輔助建立知識面板</p>
-<p><a href="https://support.google.com/knowledgepanel/answer/7534842?hl=en">Update your Google knowledge panel</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2019-09-27-google-knowledge-panel/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2019-09-05-redis-note/">redis - note</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2019-09-05
-</p>
-                
-
-                
-                <p><h2 id="redis---note">redis - note</h2>
-<p>doc</p>
-<p><a href="http://redisdoc.com/index.html">http://redisdoc.com/index.html</a></p>
-<p>php redis</p>
-<p><a href="https://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html">https://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html</a></p>
-<p>go redis</p>
-<p><a href="https://godoc.org/github.com/go-redis/redis">https://godoc.org/github.com/go-redis/redis</a></p>
-<h3 id="連到-redis-server">連到 redis server</h3>
-<ul>
-<li>local server</li>
-</ul>
-<pre tabindex="0"><code>redis-cli
-</code></pre><ul>
-<li>remote server</li>
-</ul>
-<pre tabindex="0"><code>redis-cli -h host -p port -a password
-</code></pre><h3 id="get-all-key">Get all key</h3>
-<pre tabindex="0"><code>KEYS &#39;*&#39;
-</code></pre><h2 id="troubleshooting">Troubleshooting</h2>
-<h3 id="err-operation-against-a-key-holding-the-wrong-kind-of-value">ERR Operation against a key holding the wrong kind of value</h3>
-<p>取 Key 的類型不對</p>
-<p>用</p>
-<pre tabindex="0"><code>type &lt;KEY&gt;
-</code></pre><p>來確認存的類型</p>
-</p>
-                
-
-                
-
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
+        <h1>docker 建立不同平台的 image</h1>
     </div>
-</div>
+</header>
 
-<div class="p-strip is-wrapper">
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2022-06-29
+        </p>
+        
+        <h2 id="前言">前言</h2>
+<p>現在在開發與線上環境常常會遇到不同 CPU 架構的問題</p>
+<p>不同 CPU 架構底層的指令集也不一樣</p>
+<p>最常見的影響就是在其中一個平台編譯出來的程式會無法在另一個平台執行</p>
+<p>這情況尤其是會在接近底層的程式上見到</p>
+<p>現在普遍來說會發現在 ARM 架構底下有些程式執行起來效率更高</p>
+<p>所以有部分公司的服務也會在線上環境的機器選用 ARM 架構的機器</p>
+<h2 id="情境">情境</h2>
+<p>雖然以前公司的情況是開發在 x86-64 上</p>
+<p>線上是 ARM 的情況</p>
+<p>但現在自己在試驗的情況是反過來的 XD</p>
+<p>現在 Macbook 是 M1 晶片了, M 系列是 ARM 架構</p>
+<p>我在 GCP 開的機器是 x86-64 架構</p>
+<p>所以在 Mac 上面 build 的 docker image 是沒法在 GCP 開的機器運行</p>
+<p>只要執行 docker run 就會出現錯誤提示說架構不同無法執行</p>
+<h2 id="解決方案">解決方案</h2>
+<p>docker 有提供可以建構不同平台的 image 的指令</p>
+<p>只要多一個 <code>buildx</code> 和 <code>--platform</code> 的指令與參數</p>
+<pre tabindex="0"><code>docker buildx build --platform=linux/amd64,linux/arm64 .
+</code></pre><p><a href="https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/">Faster Multi-Platform Builds: Dockerfile Cross-Compilation Guide</a></p>
+
+    </main>
+</section>
+
+<footer class="p-strip is-wrapper">
     <div class="row">
-        <footer class="p-article-pagination">
+        <div class="p-article-pagination">
     
-    <a class="p-article-pagination__link--previous p-article-pagination__link--no-title" href="/page/18/">
+    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/safari_100vh_show_scroll/">
         <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Safari 設定 100vh 還是出現卷軸(scroll bar)
+        </span>
     </a>
     
 
     
-    <a class="p-article-pagination__link--next p-article-pagination__link--no-title" href="/page/20/">
-        <span class="p-article-pagination__label">Next</span>
-    </a>
-    
-</footer>
-    </div>
 </div>
-
+    </div>
+</footer>
 
         </div><footer class="p-strip is-shallow page-footer">
     <div class="row">

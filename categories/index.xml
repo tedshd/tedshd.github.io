@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 20 Jun 2022 14:44:30 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 10:45:39 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker</title>
+      <link>https://blog.tedshd.io/categories/docker/</link>
+      <pubDate>Wed, 29 Jun 2022 10:45:39 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/docker/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>iOS</title>
       <link>https://blog.tedshd.io/categories/ios/</link>
@@ -23,15 +32,6 @@
       <pubDate>Mon, 20 Jun 2022 14:44:30 +0800</pubDate>
       
       <guid>https://blog.tedshd.io/categories/safari/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://blog.tedshd.io/categories/docker/</link>
-      <pubDate>Tue, 03 May 2022 15:53:18 +0800</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/docker/</guid>
       <description></description>
     </item>
     

@@ -1148,6 +1148,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1158,6 +1162,84 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2017-09-11-html-dns-prefetch-preconnect-prefetch-and-prerender-research-notes/">HTML - dns-prefetch, preconnect, prefetch, prerender 研究筆記</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2017-09-11
+</p>
+                
+
+                
+                <p><h2 id="html---dns-prefetch-preconnect-prefetch-prerender-研究筆記">HTML - dns-prefetch, preconnect, prefetch, prerender 研究筆記</h2>
+<h3 id="intro">Intro</h3>
+<p>這幾個 meta 屬性早在幾年前就有不少外國文章和少部分的國內大神介紹過了</p>
+<p>但當時我一直抱持這它還在 <a href="https://www.w3.org/TR/resource-hints/">W3C 草案</a>, 所以不急著用的心態, 且瀏覽器支持不高, 所以一直無視它&hellip;</p>
+<p>直到最近不知怎麼地想說來繼續增加我們服務的 head 中的 HTML tag 的數量吧 XD</p>
+<p>就來研究一下這些屬性</p>
+<h3 id="dns-prefetch">dns-prefetch</h3>
+<p>預先解析 DNS, 簡單說一句就是把你的網站會用到的 domain 都塞上去</p>
+<p>但我有點質疑實用性就是了, 因為通常會用到的 domain 都幾乎在該頁面用到了, 幾乎功效不大</p>
+<p>因為在 head 預讀時有可能還沒解析完, 實際頁面已經需要對該 domain 發 request 了&hellip;</p>
+<p><strong>結論: 會改善但感覺改善幅度不大, 且你的服務內有用到多個 domain 或 subdomain 才有影響</strong></p>
+<h3 id="preconnect">preconnect</h3>
+<p>會對設定的 domain 做 DNS 解析與 handshake</p>
+<p>不過我覺得最大的好處是預先對該 domain 做 handshake</p>
+<p>但就像上述所說大部分的情況是會用到的 domain 幾乎都在頁面上了</p>
+<p><strong>結論: 會改善但感覺改善幅度不大, 且你的服務內有用到多個 domain 或 subdomain 才有影響</strong></p>
+<h3 id="prefetch">prefetch</h3>
+<p>可以設定權重讓你去決定使用者可能會點擊的下一個頁面或其他需要的 resource 的權重比例</p>
+<p>在當前頁面載入時瀏覽器會依照權重決定何時去載入該 resource</p>
+<p>提前在當前頁面去要該 resource, 所以 server log 會發現在載入該頁面時 prefetch 設定的 resource 也會被拉</p>
+<p>等到要用到該 resource 時然後會加快 response 的時間</p>
+<p>但跟我期望的有點落差</p>
+<p>我期望是先 cache 起來</p>
+<p>然後再從 cache 拿就好了, 不用在重拿(測試時 header 的 cache-control 是設定 max-age)</p>
+<p>但目前測試還是會重新跟 server 拿&hellip;(但我是設定 html 就是了, 不知 CSS JS 是否有差, 因為我們的服務 CSS JS 都會自己 cache 所以根本用不到這機制)</p>
+<p>且時間也沒縮短(可能前提也是我們的服務 response 太快?</p>
+<p><strong>結論: 實測後無感, 時間都差不多, 且又多了一個 prefetch 的 request access</strong></p>
+<p>後端跟我說為啥 access 量增加了&hellip;</p>
+<p>然後我去看 access log&hellip;</p>
+<p>變兩倍&hellip;</p>
+<h3 id="prerender">prerender</h3>
+<p>這很有趣</p>
+<p>看定義是說會預先幫你 render 你所指定的頁面</p>
+<p>它也表示會額外耗費 CPU 或 GPU 資源</p>
+<p>但其實在你換頁時現今的 browser 都有處理一件事</p>
+<p>就是當 browser 發現該頁面上的 layout 或 UI 與上一個幾乎一樣時</p>
+<p>這部分的 layout 或 UI 是不會進行重繪的動作以增進效能</p>
+<p>尤其這在 mobile browser 上更明顯</p>
+<p>所以其實我對這 feature 感覺還好</p>
+<p><strong>結論: 目前測不出來, 但實用性似乎不高誒, 又要額外耗費資源, 就看取捨</strong></p>
+<p>以上是目前測試的結果</p>
+<p>但不保證之後也是這樣的結果</p>
+<p>畢竟還在草案</p>
+<p>所以可能會有變動或翻掉都說不定</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2017-09-11-html-dns-prefetch-preconnect-prefetch-and-prerender-research-notes/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1227,141 +1309,6 @@ Hit CTRL-C to stop the server
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2017-09-05-2262937/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2017-08-25-amp-accelerated-mobile-pages-key-point/">AMP - Accelerated Mobile Pages key point</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2017-08-25
-</p>
-                
-
-                
-                <p><h2 id="intro">Intro</h2>
-<p>Provide some key point &amp; something we need notice</p>
-<h3 id="1-meta">1. meta</h3>
-<p>In normal page</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;amphtml&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/url/to/amp/document.html&#34;</span>&gt;
-</span></span></code></pre></div><p>In AMP page</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;canonical&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/url/to/full/document.html&#34;</span>&gt;
-</span></span></code></pre></div><h3 id="2-default-stylehandle-render">2. Default style(Handle render)</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">amp-boilerplate</span>&gt;<span style="color:#f92672">body</span>{<span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">animation</span>:<span style="color:#f92672">-</span>amp-start <span style="color:#ae81ff">8</span><span style="color:#66d9ef">s</span> steps(<span style="color:#ae81ff">1</span>,<span style="color:#66d9ef">end</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">s</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">normal</span> <span style="color:#66d9ef">both</span>;<span style="color:#66d9ef">-moz-</span><span style="color:#66d9ef">animation</span>:<span style="color:#f92672">-</span>amp-start <span style="color:#ae81ff">8</span><span style="color:#66d9ef">s</span> steps(<span style="color:#ae81ff">1</span>,<span style="color:#66d9ef">end</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">s</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">normal</span> <span style="color:#66d9ef">both</span>;<span style="color:#66d9ef">-ms-</span><span style="color:#66d9ef">animation</span>:<span style="color:#f92672">-</span>amp-start <span style="color:#ae81ff">8</span><span style="color:#66d9ef">s</span> steps(<span style="color:#ae81ff">1</span>,<span style="color:#66d9ef">end</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">s</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">normal</span> <span style="color:#66d9ef">both</span>;<span style="color:#66d9ef">animation</span>:<span style="color:#f92672">-</span>amp-start <span style="color:#ae81ff">8</span><span style="color:#66d9ef">s</span> steps(<span style="color:#ae81ff">1</span>,<span style="color:#66d9ef">end</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">s</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">normal</span> <span style="color:#66d9ef">both</span>}@<span style="color:#66d9ef">-webkit-keyframes</span> <span style="color:#f92672">-amp-start</span>{<span style="color:#f92672">from</span>{<span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">hidden</span>}<span style="color:#f92672">to</span>{<span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">visible</span>}}@<span style="color:#66d9ef">-moz-keyframes</span> <span style="color:#f92672">-amp-start</span>{<span style="color:#f92672">from</span>{<span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">hidden</span>}<span style="color:#f92672">to</span>{<span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">visible</span>}}@<span style="color:#66d9ef">-ms-keyframes</span> <span style="color:#f92672">-amp-start</span>{<span style="color:#f92672">from</span>{<span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">hidden</span>}<span style="color:#f92672">to</span>{<span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">visible</span>}}@<span style="color:#66d9ef">-o-keyframes</span> <span style="color:#f92672">-amp-start</span>{<span style="color:#f92672">from</span>{<span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">hidden</span>}<span style="color:#f92672">to</span>{<span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">visible</span>}}@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">-amp-start</span>{<span style="color:#f92672">from</span>{<span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">hidden</span>}<span style="color:#f92672">to</span>{<span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">visible</span>}}&lt;/<span style="color:#f92672">style</span>&gt;&lt;<span style="color:#f92672">noscript</span>&gt;&lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">amp-boilerplate</span>&gt;<span style="color:#f92672">body</span>{<span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">animation</span>:<span style="color:#66d9ef">none</span>;<span style="color:#66d9ef">-moz-</span><span style="color:#66d9ef">animation</span>:<span style="color:#66d9ef">none</span>;<span style="color:#66d9ef">-ms-</span><span style="color:#66d9ef">animation</span>:<span style="color:#66d9ef">none</span>;<span style="color:#66d9ef">animation</span>:<span style="color:#66d9ef">none</span>}&lt;/<span style="color:#f92672">style</span>&gt;&lt;/<span style="color:#f92672">noscript</span>&gt;
-</span></span></code></pre></div><p>Format</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">amp-boilerplate</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">body</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">animation</span>: <span style="color:#f92672">-</span>amp-start <span style="color:#ae81ff">8</span><span style="color:#66d9ef">s</span> steps(<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">end</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">s</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">normal</span> <span style="color:#66d9ef">both</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">-moz-</span><span style="color:#66d9ef">animation</span>: <span style="color:#f92672">-</span>amp-start <span style="color:#ae81ff">8</span><span style="color:#66d9ef">s</span> steps(<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">end</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">s</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">normal</span> <span style="color:#66d9ef">both</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">-ms-</span><span style="color:#66d9ef">animation</span>: <span style="color:#f92672">-</span>amp-start <span style="color:#ae81ff">8</span><span style="color:#66d9ef">s</span> steps(<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">end</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">s</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">normal</span> <span style="color:#66d9ef">both</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">animation</span>: <span style="color:#f92672">-</span>amp-start <span style="color:#ae81ff">8</span><span style="color:#66d9ef">s</span> steps(<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">end</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">s</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">normal</span> <span style="color:#66d9ef">both</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">-webkit-keyframes</span> <span style="color:#f92672">-amp-start</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">from</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">hidden</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">to</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">visible</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">-moz-keyframes</span> <span style="color:#f92672">-amp-start</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">from</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">hidden</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">to</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">visible</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">-ms-keyframes</span> <span style="color:#f92672">-amp-start</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">from</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">hidden</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">to</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">visible</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">-o-keyframes</span> <span style="color:#f92672">-amp-start</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">from</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">hidden</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">to</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">visible</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">-amp-start</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">from</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">hidden</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">to</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">visible</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">noscript</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">amp-boilerplate</span>&gt;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">body</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">animation</span>: <span style="color:#66d9ef">none</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">-moz-</span><span style="color:#66d9ef">animation</span>: <span style="color:#66d9ef">none</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">-ms-</span><span style="color:#66d9ef">animation</span>: <span style="color:#66d9ef">none</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">animation</span>: <span style="color:#66d9ef">none</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">style</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">noscript</span>&gt;
-</span></span></code></pre></div><h3 id="3-use-style-amp-custom-handle-style">3. Use <code>&lt;style amp-custom&gt;</code> handle style</h3>
-<ul>
-<li>
-<p>only one tag in one page</p>
-</li>
-<li>
-<p>Size limit 50k</p>
-</li>
-</ul>
-<h3 id="4-ga-use-amp-analytics-bind-by-selector">4. GA use <code>&lt;amp-analytics&gt;</code> bind by selector</h3>
-<h3 id="5-ajax-cors">5. AJAX CORS</h3>
-<ul>
-<li><a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md">CORS Requests in AMP</a></li>
-</ul>
-<h3 id="6-form-submit-use-amp-form">6. form submit use <code>amp-form</code></h3>
-<h3 id="7-absolute-linkmust-include-host-name">7. absolute link(Must include host name)</h3>
-<h3 id="8-validate-amp-page">8. Validate AMP page</h3>
-<ul>
-<li>
-<p>Add <code>#development=1</code> on url and open browser develop tool console tab.</p>
-</li>
-<li>
-<p>Web tool <a href="https://validator.ampproject.org">validator.ampproject.org</a></p>
-</li>
-<li>
-<p>Browser extension <a href="https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc">Chrome</a> or <a href="https://addons.opera.com/en-gb/extensions/details/amp-validator/">Opera</a></p>
-</li>
-</ul>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2017-08-25-amp-accelerated-mobile-pages-key-point/">Read more</a></p>
                 
             </div>
         </div>

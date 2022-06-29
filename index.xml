@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 20 Jun 2022 14:44:30 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 10:45:39 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker 建立不同平台的 image</title>
+      <link>https://blog.tedshd.io/posts/build_different_platform_docker_image/</link>
+      <pubDate>Wed, 29 Jun 2022 10:45:39 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/build_different_platform_docker_image/</guid>
+      <description>前言 現在在開發與線上環境常常會遇到不同 CPU 架構的問題 不同 CPU 架構底層的指令集也不一樣 最常見的影響就是在其中一個平台編譯出來的程式會無法在另一個平</description>
+    </item>
+    
     <item>
       <title>Safari 設定 100vh 還是出現卷軸(scroll bar)</title>
       <link>https://blog.tedshd.io/posts/safari_100vh_show_scroll/</link>

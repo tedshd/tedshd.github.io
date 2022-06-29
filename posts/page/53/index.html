@@ -1148,6 +1148,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1158,6 +1162,68 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-08-16-php-auto-update-static-files-cache/">PHP - Auto update static files cache</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-08-16
+</p>
+                
+
+                
+                <p><h2 id="php---auto-update-static-files-cache">PHP - Auto update static files cache</h2>
+<p>We can cache static files(CSS, JavaScript) to client</p>
+<p>When Server update static code.</p>
+<p>We want to update cache then we can modify file or add query string update version.</p>
+<p>We have some choice like modify url <code>?v=1</code> to <code>?v=2</code></p>
+<p>But I want to auto modify version.</p>
+<p>This is a way i use</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">autoversion</span>($url) {
+</span></span><span style="display:flex;"><span>    $ver <span style="color:#f92672">=</span> <span style="color:#a6e22e">stat</span>($_SERVER[<span style="color:#e6db74">&#39;DOCUMENT_ROOT&#39;</span>] <span style="color:#f92672">.</span> $url)[<span style="color:#a6e22e">mtime</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> $url <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;?v=&#34;</span> <span style="color:#f92672">.</span> $ver;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># example
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;link href=&#34;&lt;?php echo autoversion(&#39;/path/to/theme.css&#39;); ?&gt;&#34; rel=&#34;stylesheet&#34;&gt;
+</span></span></span></code></pre></div><p>This way use file last modify time as a version.</p>
+<p><del>First i want to use <code>filemtime</code> but it fail.</del></p>
+<p><del>So i give up this way.</del></p>
+<h3 id="update">Update</h3>
+<p>Before use <code>filemtime()</code>, must use <code>clearstatcache();</code></p>
+<p>And my friend say <code>stat</code> has IO behavior, so this way is not perfect solution.</p>
+<p>If service has lot of <code>stat()</code> or mass request, so many IO can influences performance.</p>
+<p>Then we can write a script add update version and run it when service deploy.</p>
+<p><a href="https://css-tricks.com/strategies-for-cache-busting-css/">Refer - Strategies for Cache-Busting CSS</a></p>
+<p><a href="http://php.net/manual/en/function.stat.php">Refer - stat</a></p>
+<p><a href="http://php.net/manual/en/function.filemtime.php">filemtime</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2015-08-16-php-auto-update-static-files-cache/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1240,57 +1306,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-08-11-css-web-font/">CSS - web font</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-08-11
-</p>
-                
-
-                
-                <p><h2 id="css---web-font">CSS - web font</h2>
-<p>Use our font</p>
-<p>Put your font file on your server.</p>
-<p>Default font can&rsquo;t cross domain used.</p>
-<p>Suggest use <code>OTF</code> or <code>TTF</code> format.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#f92672">playstation</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#f92672">TRIIYP</span>.<span style="color:#a6e22e">otf</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#f92672">sony</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#f92672">sony</span>.<span style="color:#a6e22e">TTF</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="fonts">Fonts</h3>
-<p><a href="http://www.ffonts.net/SONYs-Logo.font.download">SONY&rsquo;s Logo Font Download</a></p>
-<p><a href="http://www.fontspace.com/category/ps4">Free ps4 fonts - FontSpace</a></p>
-<h3 id="demo">Demo</h3>
-<p><a href="http://tedse.0fees.net/demo/ps4/">ps4</a></p>
-<p><a href="http://www.w3schools.com/css/css3_fonts.asp">Refer - CSS3 Web Fonts</a></p>
-</p>
-                
-
-                
-
                 
             </div>
         </div>
