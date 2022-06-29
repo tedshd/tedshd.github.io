@@ -1152,6 +1152,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1162,6 +1166,55 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-03-performance-test-javascript/">performance-test</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-08-03
+</p>
+                
+
+                
+                <p><h2 id="performance">performance</h2>
+<p>jsPerf — JavaScript performance playground
+<a href="http://jsperf.com/">http://jsperf.com/</a></p>
+<p>HTML5 test
+<a href="http://html5test.com/">http://html5test.com/</a></p>
+<p>JavaScript Benchmark
+<a href="http://www.webkit.org/perf/sunspider/sunspider.html">http://www.webkit.org/perf/sunspider/sunspider.html</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">perf</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">testName</span>, <span style="color:#a6e22e">fn</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">startTime</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getTime</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fn</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">endTime</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getTime</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">testName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">endTime</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">startTime</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;ms&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">jQuery</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">time</span>(<span style="color:#e6db74">&#34;timerName&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// javascript
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">timeEnd</span>(<span style="color:#e6db74">&#34;timerName&#34;</span>);
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1193,109 +1246,6 @@
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-02-fileupload-by-yui-library/">fileUpload by yui library</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-08-02
-</p>
-                
-
-                
-                <p><h2 id="fileupload-by-yui-library">fileUpload by yui library</h2>
-<h3 id="init-upload-button">init upload button</h3>
-<p>JavaScript bind click event
-in IE
-use JavaScript move CSS position</p>
-<ul>
-<li>uploader    : Upload file</li>
-<li>uploaderOut : handle not drag area</li>
-</ul>
-<h3 id="event">event</h3>
-<hr>
-<h4 id="fileselect">fileSelect</h4>
-<p>select file &amp; render upload list
-check file status
-handle fileList
-_upload</p>
-<h4 id="uploadprogress">uploadprogress</h4>
-<p>upload file progress</p>
-<h4 id="uploadcomplete">uploadcomplete</h4>
-<p>upload complete
-check ok or fail
-_upload</p>
-<h4 id="uploaderror">uploaderror</h4>
-<p>cancel &amp; upload next</p>
-<h4 id="_upload">_upload</h4>
-<p>check file status &amp; upload status
-upload
-upload fileList[uploadfile]</p>
-<h4 id="_cancelupload">_cancelUpload</h4>
-<h3 id="notice">Notice</h3>
-<hr>
-<h4 id="yuploadertype">Y.Uploader.TYPE</h4>
-<ul>
-<li>none(no flash)</li>
-<li>html5
-<ul>
-<li>drag &amp; drop</li>
-</ul>
-</li>
-<li>flash(IE)</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Y</span>.<span style="color:#a6e22e">Uploader</span>.<span style="color:#a6e22e">TYPE</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;none&#39;</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;no install flash player&#39;</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// init upload button
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Y</span>.<span style="color:#a6e22e">Uploader</span>.<span style="color:#a6e22e">TYPE</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;html5&#39;</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// do something like drag &amp; drop
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Y</span>.<span style="color:#a6e22e">Uploader</span>.<span style="color:#a6e22e">TYPE</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;flash&#39;</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// do something
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
-</span></span></code></pre></div><h4 id="free-space">Free Space</h4>
-<p>check free space &amp; show message
-update free space</p>
-<h4 id="drag--drop">Drag &amp; drop</h4>
-<p>only chrome can check isFile or isDirectory
-drop area check(use setTimeOut &amp; clearTimeout)</p>
-<h4 id="handle-ui">handle UI</h4>
-<p>when something behavior happen need check UI
-like cancel, complete and error</p>
-<h4 id="upload-list-control">upload list control</h4>
-<p>need update upload list status
-like cancel, complete and error
-control fileList</p>
-<h4 id="queue">queue</h4>
-<p>It is easy to control upload only one file upload and other queue</p>
-<h4 id="if-has-total-progress">If has total progress</h4>
-<p>need control  &amp; update total when something behavior happen
-like cancel, error and upload more</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-08-02-fileupload-by-yui-library/">Read more</a></p>
                 
             </div>
         </div>

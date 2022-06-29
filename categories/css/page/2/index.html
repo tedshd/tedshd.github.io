@@ -181,6 +181,48 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2016-01-27-javascript-get-css-style/">JavaScript - get CSS style</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-01-27
+</p>
+                
+
+                
+                <p><h2 id="javascript---get-css-style">JavaScript - get CSS style</h2>
+<p>Sometimes i want to use JavaScript get dom CSS style.</p>
+<p>Use <code>DOM.currentStyle</code> and <code>window.getComputedStyle(DOM)</code></p>
+<p>For IE use <strong>DOM.currentStyle</strong></p>
+<p>Other use <strong>window.getComputedStyle(DOM)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;target&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">style</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">currentStyle</span> <span style="color:#f92672">||</span> window.<span style="color:#a6e22e">getComputedStyle</span>(<span style="color:#a6e22e">dom</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">marginTop</span>);
+</span></span></code></pre></div><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle">refer - Window.getComputedStyle() - Web APIs | MDN</a></p>
+<p><a href="https://msdn.microsoft.com/en-us/library/ms535231(v=vs.85).aspx">refer - currentStyle object (Internet Explorer)</a></p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2015-11-20-css4-css4-thoughts-and-postcss/">CSS4 - 關於 css4 and postcss 的一些想法</a></h3>
 
                 
@@ -255,68 +297,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2015-11-20-css4-css4-thoughts-and-postcss/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-08-16-php-auto-update-static-files-cache/">PHP - Auto update static files cache</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-08-16
-</p>
-                
-
-                
-                <p><h2 id="php---auto-update-static-files-cache">PHP - Auto update static files cache</h2>
-<p>We can cache static files(CSS, JavaScript) to client</p>
-<p>When Server update static code.</p>
-<p>We want to update cache then we can modify file or add query string update version.</p>
-<p>We have some choice like modify url <code>?v=1</code> to <code>?v=2</code></p>
-<p>But I want to auto modify version.</p>
-<p>This is a way i use</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">autoversion</span>($url) {
-</span></span><span style="display:flex;"><span>    $ver <span style="color:#f92672">=</span> <span style="color:#a6e22e">stat</span>($_SERVER[<span style="color:#e6db74">&#39;DOCUMENT_ROOT&#39;</span>] <span style="color:#f92672">.</span> $url)[<span style="color:#a6e22e">mtime</span>];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> $url <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;?v=&#34;</span> <span style="color:#f92672">.</span> $ver;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># example
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;link href=&#34;&lt;?php echo autoversion(&#39;/path/to/theme.css&#39;); ?&gt;&#34; rel=&#34;stylesheet&#34;&gt;
-</span></span></span></code></pre></div><p>This way use file last modify time as a version.</p>
-<p><del>First i want to use <code>filemtime</code> but it fail.</del></p>
-<p><del>So i give up this way.</del></p>
-<h3 id="update">Update</h3>
-<p>Before use <code>filemtime()</code>, must use <code>clearstatcache();</code></p>
-<p>And my friend say <code>stat</code> has IO behavior, so this way is not perfect solution.</p>
-<p>If service has lot of <code>stat()</code> or mass request, so many IO can influences performance.</p>
-<p>Then we can write a script add update version and run it when service deploy.</p>
-<p><a href="https://css-tricks.com/strategies-for-cache-busting-css/">Refer - Strategies for Cache-Busting CSS</a></p>
-<p><a href="http://php.net/manual/en/function.stat.php">Refer - stat</a></p>
-<p><a href="http://php.net/manual/en/function.filemtime.php">filemtime</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-08-16-php-auto-update-static-files-cache/">Read more</a></p>
                 
             </div>
         </div>

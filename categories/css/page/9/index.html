@@ -181,6 +181,108 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-12-08-website-switch-layout/">Website switch layout</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-12-08
+</p>
+                
+
+                
+                <p><h2 id="website-switch-layout">Website switch layout</h2>
+<p>之前看過不少網站有切換 layout 的功能
+於是就試著做做看</p>
+<p><a href="http://tedshd.lionfree.net/demo/resume/resume.html">Demo</a></p>
+<p>主要利用定義在 <code>body</code> 上的 class 去做不同 layout 的切換</p>
+<p>Sample code</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">node</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">node</span>(<span style="color:#a6e22e">selector</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#a6e22e">selector</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// set style
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">layoutList</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;layoutList&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">layoutGrid</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;layoutGrid&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">layoutFull</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;layoutFull&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">layoutCard</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;layoutCard&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">changeLayout</span>(<span style="color:#a6e22e">style</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// maybe make loading?
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">node</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;class&#39;</span>, <span style="color:#a6e22e">style</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// bind click change style
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">node</span>(<span style="color:#e6db74">&#39;#style_1&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">changeLayout</span>(<span style="color:#a6e22e">layoutGrid</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">node</span>(<span style="color:#e6db74">&#39;#style_2&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">changeLayout</span>(<span style="color:#a6e22e">layoutList</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">node</span>(<span style="color:#e6db74">&#39;#style_3&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">changeLayout</span>(<span style="color:#a6e22e">layoutCard</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">node</span>(<span style="color:#e6db74">&#39;#style_4&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">changeLayout</span>(<span style="color:#a6e22e">layoutFull</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">scss example
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.layoutList {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .bd {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        .con {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            color: #ff0000;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.layoutGrid {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .bd {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        .con {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            color: #0088ff;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.layoutFull {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .bd {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        .con {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            color: #ff8800;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.layoutCard {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .bd {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        .con {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            color: #00ff00;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-12-08-website-switch-layout/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/">Use CSS3 animation in Compass</a></h3>
 
                 
@@ -251,63 +353,6 @@ We can use this method in <strong>scss</strong></p>
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-09-10-place-on-and-embed-code-from-internet/">Place on and embed code from internet</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-09-10
-</p>
-                
-
-                
-                <p><h2 id="place-on-and-embed-code-from-internet">Place on and embed code from internet</h2>
-<p>We can use <a href="http://cdnjs.com/">cdnjs</a> or some library sites embed js or css.
-But
-How can we embed our code from internet?
-I have 2 ways.</p>
-<h3 id="github">GitHub</h3>
-<p>If you can use GitHub
-Push your code to GitHub
-Wtach code on GitHub
-Find <strong>Raw</strong> and click it.
-open code like</p>
-<pre tabindex="0"><code>https://raw.github.com/tedshd/jQuery_scroll_to_top/master/javascripts/scroll_to_top.js
-</code></pre><p>and then delete <strong>.</strong> after raw like</p>
-<pre tabindex="0"><code>https://rawgithub.com/tedshd/jQuery_scroll_to_top/master/javascripts/scroll_to_top.js
-</code></pre><p>Embed it finally.</p>
-<h3 id="dropbox">Dropbox</h3>
-<p>Place on code in dropbox.
-Share this code
-get share link like</p>
-<pre tabindex="0"><code>https://www.dropbox.com/s/ie4b129u0thjcyw/logdown_theme.css
-</code></pre><p>and replace <strong>www</strong> as <strong>dl</strong></p>
-<pre tabindex="0"><code>https://dl.dropbox.com/s/ie4b129u0thjcyw/logdown_theme.css
-</code></pre><p><a href="http://blog.miniasp.com/post/2013/08/10/Load-JavaScript-from-GitHub-Gist-JSBin-CODEPEN-Tips.aspx">Refer</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-09-10-place-on-and-embed-code-from-internet/">Read more</a></p>
                 
             </div>
         </div>

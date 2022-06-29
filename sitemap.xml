@@ -3,19 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2022-06-29T10:45:39+08:00</lastmod>
+    <lastmod>2022-06-29T11:41:23+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/categories/docker/</loc>
-    <lastmod>2022-06-29T10:45:39+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/posts/build_different_platform_docker_image/</loc>
-    <lastmod>2022-06-29T10:45:39+08:00</lastmod>
+    <loc>https://blog.tedshd.io/categories/css/</loc>
+    <lastmod>2022-06-29T11:41:23+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2022-06-29T10:45:39+08:00</lastmod>
+    <lastmod>2022-06-29T11:41:23+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/</loc>
-    <lastmod>2022-06-29T10:45:39+08:00</lastmod>
+    <lastmod>2022-06-29T11:41:23+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/change_or_disable_mobile_tab_highlight_style/</loc>
+    <lastmod>2022-06-29T11:41:23+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/docker/</loc>
+    <lastmod>2022-06-29T11:30:13+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/build_different_platform_docker_image/</loc>
+    <lastmod>2022-06-29T11:30:13+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/ios/</loc>
     <lastmod>2022-06-20T16:09:58+08:00</lastmod>
@@ -382,9 +388,6 @@
   </url><url>
     <loc>https://blog.tedshd.io/categories/javascript-google/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/css/</loc>
-    <lastmod>2020-02-26T11:02:54+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/2017-05-04-1790526/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>

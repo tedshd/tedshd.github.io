@@ -1152,6 +1152,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1162,6 +1166,44 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-10-01-javascript-handle-textarea-value/">JavaScript - handle textarea value</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-10-01
+</p>
+                
+
+                
+                <p><h2 id="javascript---handle-textarea-value">JavaScript - handle textarea value</h2>
+<p>Handle textarea string.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// jQuery
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">textarea</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;textarea&#39;</span>).<span style="color:#a6e22e">val</span>().<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\n/g</span>, <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// JavaScript
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">textarea</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;textarea&#39;</span>).<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\n/g</span>, <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>);
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1201,88 +1243,6 @@ This article provide CSS3 transform wording in scss.</p>
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-08-27-web-develop-flexible-footer/">Web Develop - Flexible Footer</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-08-27
-</p>
-                
-
-                
-                <p><h2 id="web-develop---flexible-footer">Web Develop - Flexible Footer</h2>
-<p>Sometimes we think footer must fixed in website bottom or put it in last of content.</p>
-<p>I provide a idea may be a good way.
-Content less browser view height, footer fixed in bottom.
-When content too much over browser view height, footer be put last of content.</p>
-<h3 id="feature">Feature</h3>
-<ul>
-<li>flexible</li>
-<li>only use CSS</li>
-</ul>
-<h3 id="usage">Usage</h3>
-<p><code>min-height: calc(100% - &lt;footer height&gt;);</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>    #hd {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#aaa</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/*display: none;*/</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    #bd {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">min-height</span>: calc(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>); <span style="color:#75715e">/* important */</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#ccc</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    #content {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">60</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    #footer {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#999</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p><code>50px</code> is footer height</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>    &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hd&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span>&gt;Head&lt;/<span style="color:#f92672">h1</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">header</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">article</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bd&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">button</span>&gt;build content&lt;/<span style="color:#f92672">button</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">h1</span>&gt;Content&lt;/<span style="color:#f92672">h1</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loop&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">section</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">article</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">footer</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h2</span>&gt;Footer&lt;/<span style="color:#f92672">h2</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">footer</span>&gt;
-</span></span></code></pre></div><p><a href="http://tedshd.lionfree.net/demo/view_UI/footer.html">demo</a></p>
-<p><a href="http://www.siteinspire.com/">Refer - siteInspire - Web Design Inspiration</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-08-27-web-develop-flexible-footer/">Read more</a></p>
                 
             </div>
         </div>

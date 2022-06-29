@@ -189,6 +189,232 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2016-07-19-webdriverio-introduction-to-front-end-test-notes/">webdriver.io - 前端測試入門筆記&hellip;</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-07-19
+</p>
+                
+
+                
+                <p><h2 id="webdriverio---前端測試入門筆記">webdriver.io - 前端測試入門筆記&hellip;</h2>
+<p>前端測試工具很多種</p>
+<p>我這裡的需求是要做自動化測試</p>
+<p>不知為何就選了這套 <a href="http://webdriver.io/">webdriver.io</a></p>
+<p>可能就只是單純名字很炫(誤</p>
+<p>當然一開始要先要有 <a href="http://www.seleniumhq.org/">Selenium</a></p>
+<p>但為何 Selenium 跟我以前的印象有差別了&hellip;</p>
+<p>我發現它的 firefox add-on 不能把錄製的動作輸出成 code 了, 是我的錯覺嗎?還是改方式了</p>
+<p>但我想說就算了, 直接用寫的也罷</p>
+<p>webdriver.io 只是因為是在我看過的關於測試文章中最後有印象的東西所以就去找它了(這是事實&hellip;</p>
+<p>也還好我的記憶沒錯, 看了介紹和文件覺得 webdriver.io 有符合我的需求且又是用 Node.js 來寫, 所以對我較友善</p>
+<p>先記錄一下使用流程</p>
+<h3 id="base-tool">Base tool</h3>
+<ul>
+<li>Java</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>java -version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-get install default-jre
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-get install default-jdk
+</span></span></code></pre></div><ul>
+<li>Node.js</li>
+</ul>
+<p><a href="https://nodejs.org/en/download/package-manager/">Install</a></p>
+<h3 id="on-local">On Local</h3>
+<p><a href="http://webdriver.io/guide.html">Get Started</a></p>
+<p>突然發現文件寫得很詳細了&hellip;</p>
+<p>雖然在做設定那有些選項不同但也影響不大</p>
+<p>但想玩進階的方式可參考以下文章</p>
+<p><a href="https://siteobservers.zendesk.com/hc/en-us/articles/201989070-Start-selenium-server-with-additional-command-line-arguments">設定 Selenium 參數可參考</a></p>
+<p>基本上以下是我建的順序</p>
+<h4 id="1-先建-packagejson">1 先建 <code>package.json</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;webdriver&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;automation test&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;devDependencies&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="2-下載-selenium-server">2 下載 Selenium server</h4>
+<p>之後有新版請再去確認版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -O http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar
+</span></span></code></pre></div><h4 id="3-裝-webdriver">3 裝 webdriver</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npm install webdriverio --save-dev
+</span></span></code></pre></div><h4 id="4-安裝各個-os-對應的-webdriver">4 安裝各個 OS 對應的 webdriver</h4>
+<p><a href="https://www.npmjs.com/package/selenium-webdriver">selenium-webdriver</a></p>
+<p>可以不必裝 <code>selenium-webdriver</code></p>
+<p>只要去下載各個 OS 對應要用的 browser 的 webdriver 放在專案資料夾就好了</p>
+<h4 id="5-這樣就好了">5 這樣就好了</h4>
+<h4 id="6-啟動-selenium-server-並開始寫一個簡單的自動化測試的-test-case">6 啟動 Selenium server 並開始寫一個簡單的自動化測試的 test case</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>java -jar selenium-server-standalone-2.53.0.jar
+</span></span></code></pre></div><p><code>test.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">webdriverio</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;webdriverio&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">desiredCapabilities</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">browserName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;firefox&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">webdriverio</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">remote</span>(<span style="color:#a6e22e">options</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">init</span>()
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">url</span>(<span style="color:#e6db74">&#39;http://www.google.com&#39;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">getTitle</span>().<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">title</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Title was: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">title</span>);
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">end</span>();
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>node test.js
+</span></span><span style="display:flex;"><span>// output Title was: Google
+</span></span></code></pre></div><p>這時你就會發現你的 firefox 被打開連到 Google 後就自動關掉</p>
+<p>然後 terminal 就會 output <code>Title was: Google</code></p>
+<p>關於測試的的 script 攥寫請參考 API 文件</p>
+<p><a href="http://webdriver.io/api.html">WebdriverIO - API Docs</a></p>
+<p>我預設使用 <a href="https://mochajs.org/">mocha</a></p>
+<p>有用 <a href="http://chaijs.com/">chai</a> 加強攥寫 script</p>
+<h3 id="進階應用">進階應用</h3>
+<p>基本上 webdriver 分兩種測試方式</p>
+<ol>
+<li>
+<p>Standalone Mode</p>
+</li>
+<li>
+<p>The WDIO Testrunner</p>
+</li>
+</ol>
+<p>各有優缺點, 就看習慣用哪種方式來跑測試</p>
+<p>我較喜歡用 The WDIO 的方式, 因為他是把設定檔抽出來, 較好管理且可用 hook 做其他事情</p>
+<p>依我所做的較特別的設定就是把 test case 切很細(因為測試的 scope 需求), 這就需要設定能跑個別的測試</p>
+<p>就需要在 config 設定 <code>suites</code></p>
+<p>就可以這樣下 command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>./node_modules/.bin/wdio wdio.conf.js --suite test_a
+</span></span><span style="display:flex;"><span>// or
+</span></span><span style="display:flex;"><span>./node_modules/.bin/wdio wdio.conf.js --suite test_b
+</span></span></code></pre></div><p>可參考以下文件</p>
+<p><a href="http://webdriver.io/guide/getstarted/configuration.html">WebdriverIO - Configuration</a></p>
+<p><a href="http://webdriver.io/guide/testrunner/gettingstarted.html">WebdriverIO - Test Runner</a></p>
+<p>一般都會要把測試結果 output 出來, webdriver 提供自訂 reporter 的功能</p>
+<p>就看個人喜好選擇</p>
+<p><a href="http://webdriver.io/guide/reporters/dot.html">WebdriverIO - Dot Reporter</a></p>
+<p>但我這需求簡單且需要讓其他人可在測試當下就輕易看到結果, 所以就在 config 設定 hook</p>
+<p>讓測試跑完時儲存測試結果並有個頁面讓別人看</p>
+<p>config 的 hook</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#a6e22e">afterTest</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">test</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;HOOK - afterTest:&#39;</span>, <span style="color:#a6e22e">test</span>);
+</span></span><span style="display:flex;"><span>},
+</span></span></code></pre></div><p>test 就是測試結果</p>
+<p>hook 也有很多狀態可用</p>
+<h3 id="strong-stylecolorred廢棄方法因為一直試驗失敗strong"><!-- raw HTML omitted -->廢棄方法(因為一直試驗失敗&hellip;<!-- raw HTML omitted --></h3>
+<h3 id="on-remote-server">On remote Server</h3>
+<p>基本上用 webdriver 做測試是需要有 browser 和 UI</p>
+<p>所以需裝 xwindow 或 Xvfb</p>
+<h4 id="firefox">firefox</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt search firefox
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-get install firefox firefox-locale-en
+</span></span></code></pre></div><p>如果顯示</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Gtk-WARNING **: Locale not supported by C library.
+</span></span><span style="display:flex;"><span>    Using the fallback <span style="color:#e6db74">&#39;C&#39;</span> locale.
+</span></span></code></pre></div><p>請設定 locale</p>
+<p>我是設定 en_US</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export LC_ALL<span style="color:#f92672">=</span>en_US.UTF-8
+</span></span></code></pre></div><h4 id="xvfb"><del>xvfb</del></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt-get install xvfb
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>shell
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>然後啟動與指派到哪個 port
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>shell
+</span></span><span style="display:flex;"><span>sudo Xvfb :10 -ac
+</span></span></code></pre></div><p>指定輸出的 DISPLAY</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export DISPLAY<span style="color:#f92672">=</span>:10
+</span></span><span style="display:flex;"><span>firefox
+</span></span></code></pre></div><p>之後再啟動測試</p>
+<p>但</p>
+<p>這裡就遇到問題了</p>
+<p>出現錯誤訊息&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Error: no display specified
+</span></span></code></pre></div><p>但奇怪的是明明都 export DISPLAY 了還出這 error&hellip;</p>
+<p>目前都還沒解決這問題&hellip;</p>
+<p>所以直接採用下面的兩個備案</p>
+<ol>
+<li>
+<p>裝一台有 GUI 的 Linux 到實體機器上, 非 VM</p>
+</li>
+<li>
+<p>使用 <a href="https://saucelabs.com/">SAUCE LABS</a></p>
+</li>
+</ol>
+<p>個人是建議公司肯出錢就採用 SAUCE LABS 的服務, 隨然有點小貴, 因為涵蓋的 OS 和 browser 很多, 且有 mobile web 的測試(雖然 android  都只有到 4.X 而已</p>
+<p>下面說明一下如何設定 SAUCE LABS 與 SAUCE LABS 是如何運作的</p>
+<h3 id="sauce-labs">SAUCE LABS</h3>
+<p>SAUCE LABS 提供多個 OS 與 browser 版本的 VM 以供測試且有 native app 的測試</p>
+<p>有 14 天的免費試用, 且有 opensource 的 free 方案</p>
+<p>在 price 方面須注意的是 Manual 的方案是不含自動化測試的</p>
+<p>他有提供 API 去處理測試結果與資訊, 但因為我不會用到所以就沒細看有哪些功能</p>
+<p>基本上使用 SAUCE LABS 的流程如下</p>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/774036/8YR4x8nTOSagnQ0MoRx2_test.png" alt="test.png"></p>
+<p>基本上就是連上 SAUCE LABS 的 host 用 SAUCE LABS 的 VM 測試</p>
+<p>下面會說一下設定方式</p>
+<p>跟跑 webdriver 一樣設定可分兩種去 run</p>
+<ol>
+<li>
+<p>Standalone Mode</p>
+</li>
+<li>
+<p>The WDIO Testrunner</p>
+</li>
+</ol>
+<p>1 可參考官方文件</p>
+<p><a href="https://wiki.saucelabs.com/display/DOCS/Node.js+Test+Setup+Example">Node.js Test Setup Example - The Sauce Labs Cookbook - Sauce Labs Documentation Wiki</a></p>
+<p>我是採用 2</p>
+<p>所以需追加的設定是</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">capabilities:</span> [{
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&#39;browserName&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;chrome&#39;,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&#39;platform&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;Windows</span> <span style="color:#960050;background-color:#1e0010">10&#39;,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&#39;username&#39;:</span> <span style="color:#960050;background-color:#1e0010">&lt;username&gt;,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&#39;accessKey&#39;:</span> <span style="color:#960050;background-color:#1e0010">&lt;accessKey&gt;</span>
+</span></span><span style="display:flex;"><span>}]<span style="color:#960050;background-color:#1e0010">,</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">host:</span> <span style="color:#960050;background-color:#1e0010">&lt;username&gt;</span> <span style="color:#960050;background-color:#1e0010">+</span> <span style="color:#960050;background-color:#1e0010">&#39;:&#39;</span> <span style="color:#960050;background-color:#1e0010">+</span> <span style="color:#960050;background-color:#1e0010">&lt;accessKey&gt;</span> <span style="color:#960050;background-color:#1e0010">+</span> <span style="color:#960050;background-color:#1e0010">&#39;@ondemand.saucelabs.com&#39;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">port:</span> <span style="color:#ae81ff">80</span><span style="color:#960050;background-color:#1e0010">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">path:</span> <span style="color:#960050;background-color:#1e0010">&#39;/wd/hub&#39;,</span>
+</span></span></code></pre></div><p><code>&lt;username&gt;</code> 和 <code>&lt;accessKey&gt;</code> 都可以經由 SAUCE LABS 後台取得</p>
+<p>這樣就可以使用 SAUCE LABS 來跑測試程式了</p>
+<h3 id="note">Note</h3>
+<p>當你一段時間沒跑, 之後又再跑時有錯</p>
+<p>有可能向我遇到JAVA 更新</p>
+<p>那這時 <code>Selenium Standalone Server</code> 就要更新 <a href="http://www.seleniumhq.org/download/">Link</a></p>
+<p>browser driver 也要更新</p>
+<p><a href="http://slides.com/alincode/jsdc2016_webdriverio/fullscreen#/">2016 JSDC 淺談網站自動化測試</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2016-07-19-webdriverio-introduction-to-front-end-test-notes/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2016-07-17-lets-encrypt-has-a-certificate-problem-in-android-chrome/">Let&rsquo;s Encrypt - Has a certificate problem in Android Chrome</a></h3>
 
                 
@@ -219,80 +445,6 @@
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/">JavaScript - Why i from RequireJS to webpack</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2016-06-28
-</p>
-                
-
-                
-                <p><h2 id="why-i-from-requirejs-to-webpack">Why i from RequireJS to webpack</h2>
-<p><a href="http://requirejs.org/">RequireJS</a> is a Asynchronous Module Definition(AMD) lib</p>
-<p>Its powerful to handle modulize on your page and you can handle all loader on JavaScript, you can focus on JavaScript function and web page.</p>
-<p>But if your module is become complex and more module, you can find JavaScript request become more and more.</p>
-<p>You can find it is a serious performance problem.</p>
-<p>Your network has lot of request of js.</p>
-<p>I want to less or one js request on a page</p>
-<p>So i choice <a href="http://webpack.github.io/docs/">webpack</a> this tool.</p>
-<p>It&rsquo;s powerfull tool handle module bundle.</p>
-<p>This is what i want change.</p>
-<p>Before</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/745512/GJSJQZt7Si2hu2CVLE3g_requirejs.png" alt="requirejs.png"></p>
-<p>After</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/745512/rVQY4FhgRO6ctsPQZwPP_webpack.png" alt="webpack.png"></p>
-<p>If want to use a lib for global like jQuery</p>
-<p>Must use npm install &amp; use ProvidePlugin in <code>webpack.config.js</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">:</span> [
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">webpack</span>.<span style="color:#a6e22e">ProvidePlugin</span>({
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">$</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;jquery&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">jQuery</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;jquery&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;window.jQuery&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;jquery&#34;</span>
-</span></span><span style="display:flex;"><span>    }),
-</span></span><span style="display:flex;"><span>],
-</span></span><span style="display:flex;"><span>...
-</span></span></code></pre></div><h3 id="how-it-run">How it run</h3>
-<p>You can use</p>
-<pre tabindex="0"><code>webpack
-# if you want watch change
-webpack --watch
-</code></pre><p>more in <a href="https://webpack.github.io/docs/cli.html">https://webpack.github.io/docs/cli.html</a></p>
-<h3 id="use-case">Use case</h3>
-<p>If you want bundle all file in directory</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>),
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">entries</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readdirSync</span>(<span style="color:#e6db74">&#39;./mobile/js/&#39;</span>).<span style="color:#a6e22e">filter</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">file</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/.*\.js$/</span>);
-</span></span><span style="display:flex;"><span>    });
-</span></span></code></pre></div><p><code>entries</code> is a Array show all file.</p>
-<h3 id="my-webpack">My webpack</h3>
-<!-- raw HTML omitted -->
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/">Read more</a></p>
                 
             </div>
         </div>
