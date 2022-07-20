@@ -1156,6 +1156,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1166,6 +1170,164 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-01-12-ajax-rest/">AJAX - REST</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-01-12
+</p>
+                
+
+                
+                <p><h2 id="ajax---rest">AJAX - REST</h2>
+<p>在 <a href="http://zh.wikipedia.org/wiki/REST">REST</a> 當道的現在, 不得不了解一下如何實作 CRUD(create, read, update, delete)
+本文 server side 以 php 為例子</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#e6db74">&#39;example.html&#39;</span>, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>) {
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseText</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>();
+</span></span></code></pre></div><p>上面為一個簡單的 AJAX 行為</p>
+<p>在此之前須了解在做 AJAX 行為時, 資料是如何跟 request 一起帶到 server side
+大致上有 3 種</p>
+<ul>
+<li>FormData</li>
+<li>application/x-www-form-urlencoded</li>
+<li>payload</li>
+</ul>
+<p>前面 2 種是用傳統的 form 包起來一起帶到 server side
+再經由 php 解析 GET / POST
+由於 php 只有 <code>$_GET</code> &amp; <code>$POST</code> 這無法達到真正的 rest(不過有人硬幹出來 <a href="https://github.com/tronice/epv">tronice/epv</a>)
+所以必須由其他方式實作
+最簡單的實作就是使用 <code>$_SERVER['REQUEST_METHOD']</code> 來捕捉 4 種 request 的 method</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$method <span style="color:#f92672">=</span> $_SERVER[<span style="color:#e6db74">&#39;REQUEST_METHOD&#39;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">print_r</span>($method);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">switch</span>($method)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;PUT&#34;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// do somethong
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;GET&#34;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// do somethong
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;DELETE&#34;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// do somethong
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;POST&#34;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// do somethong
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>這是最簡單實作 rest 的方式
+目前 php framework 大部份都有實作 rest, 所以也不用擔心加重開發上的負擔</p>
+<h3 id="formdata-or-applicationx-www-form-urlencoded-or-payload">FormData or application/x-www-form-urlencoded or payload?</h3>
+<p>接下來介紹一下這 3 種方式在前後端的行為差異
+相信大家都了解 <code>form</code> 表單 submit
+那在 AJAX 崛起之後把 <code>Content-Type</code> 設定成 <code>application/x-www-form-urlencoded</code> 是一個普遍的做法
+jQuery 也是採用這方式實作的</p>
+<h4 id="setrequestheadercontent-type-applicationx-www-form-urlencoded">setRequestHeader(&lsquo;Content-Type&rsquo;, &lsquo;application/x-www-form-urlencoded&rsquo;)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ted&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;123456&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">jsonData</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">jsonData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">obj</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;test.php&#39;</span>, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">setRequestHeader</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;application/x-www-form-urlencoded&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>) {
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseText</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;json=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">jsonData</span>);
+</span></span></code></pre></div><h4 id="formdata">FormData</h4>
+<p>之後出現 <code>FormData</code> 這個物件, 它的優勢在於使用比 <code>application/x-www-form-urlencoded</code> 的方式簡單而且 <code>Content-Type</code> 是 <code>multipart/form-data</code> 用 <code>boundary</code> 的方式傳送
+這有一個好處就是可以實作 AJAX 的 file upload, 而不是傳統的 form 表單檔案上傳
+至於 AJAX 上傳的好處就是可以捕捉上傳進度、取消上傳, 做多檔上傳的排程(目前常見的 cloud storage service 幾乎都是這樣做)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;str&#39;</span>, <span style="color:#e6db74">&#39;string&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;num&#39;</span>, <span style="color:#ae81ff">123</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;test.php&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>) {
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseText</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">formData</span>);
+</span></span></code></pre></div><p>以上兩種方式在 PHP 中皆是以 <code>$_GET</code> or <code>$_POST</code> 接下來處理</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_POST[<span style="color:#e6db74">&#39;json&#39;</span>]))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> $_POST[<span style="color:#e6db74">&#39;json&#39;</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_POST[<span style="color:#e6db74">&#39;str&#39;</span>]))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> $_POST[<span style="color:#e6db74">&#39;str&#39;</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_POST[<span style="color:#e6db74">&#39;num&#39;</span>]))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> $_POST[<span style="color:#e6db74">&#39;num&#39;</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="payload">payload</h4>
+<p>這方法是個高端的方法, 第一次遇到這方法是在 AngularJS 上, 不過貌似國外開始漸漸這樣做了
+這有方式個好處, 就是接收端不須經由 <code>$_POST</code> or <code>$_GET</code> 進來, 直接用 <code>file_get_contents(&quot;php://input&quot;)</code> 接收 client 端的 data
+還有效能上的優勢, 因為不經由 <code>$_POST</code> or <code>$_GET</code> 進來可以減少成本增進效能
+在 AngularJS 中會把 <code>Content-Type</code> 指定為 <code>application/json</code> 方便 server side 識別與處理</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ted&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;123456&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">jsonData</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">jsonData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">obj</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;test.php&#39;</span>, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>) {
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseText</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;json=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">jsonData</span>);
+</span></span></code></pre></div><p>在 PHP 必須用 <code>file_get_contents(&quot;php://input&quot;)</code> 來接資料</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$request <span style="color:#f92672">=</span> <span style="color:#a6e22e">file_get_contents</span>(<span style="color:#e6db74">&#34;php://input&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>($request);
+</span></span><span style="display:flex;"><span>$data <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_decode</span>($request);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;data:&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;User:&#39;</span> <span style="color:#f92672">.</span> $data<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;Pwd:&#39;</span> <span style="color:#f92672">.</span> $data<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">password</span>;
+</span></span></code></pre></div><h3 id="finally">Finally</h3>
+<p>關於使用 FormData 與 payload 處理 file upload 之後會有文章補充</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2015-01-12-ajax-rest/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1296,66 +1458,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2015-01-10-ajax-xmlhttprequest-introduction/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-12-30-javascript-detect-css3-transitionend/">JavaScript - detect CSS3 transitionEnd</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-12-30
-</p>
-                
-
-                
-                <p><h2 id="javascript---detect-css3-transitionend">JavaScript - Detect CSS3 transitionEnd</h2>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/Events/transitionend">transitionend</a></p>
-<p>It is a event can fired when CSS3 transition end.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">transitionEnd</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">el</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>), <span style="color:#75715e">//what the hack is bootstrap
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">transEndEventNames</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">WebkitTransition</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;webkitTransitionEnd&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">MozTransition</span>    <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;transitionend&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">OTransition</span>      <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;oTransitionEnd otransitionend&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">transition</span>       <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;transitionend&#39;</span>
-</span></span><span style="display:flex;"><span>    };
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">transEndEventNames</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">style</span>[<span style="color:#a6e22e">name</span>] <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">transEndEventNames</span>[<span style="color:#a6e22e">name</span>];
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>; <span style="color:#75715e">// explicit for ie8 (  ._.)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Usage
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#a6e22e">transitionEnd</span>(), <span style="color:#66d9ef">function</span> () {
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// dosomething
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
-</span></span></code></pre></div><p><a href="http://stackoverflow.com/questions/19635986/easy-way-to-detect-support-for-transitionend-event-without-frameworks-like-jquer">Refer - Easy way to detect support for transitionend event without frameworks like jQuery or Modernizr?</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-12-30-javascript-detect-css3-transitionend/">Read more</a></p>
                 
             </div>
         </div>

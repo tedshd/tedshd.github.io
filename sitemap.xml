@@ -3,15 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2022-06-29T11:41:23+08:00</lastmod>
+    <lastmod>2022-07-20T10:02:11+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/categories/css/</loc>
-    <lastmod>2022-06-29T11:41:23+08:00</lastmod>
+    <loc>https://blog.tedshd.io/categories/ios/</loc>
+    <lastmod>2022-07-20T10:02:11+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2022-06-29T11:41:23+08:00</lastmod>
+    <lastmod>2022-07-20T10:02:11+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/</loc>
+    <lastmod>2022-07-20T10:02:11+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/ios_sms_support_video_meta/</loc>
+    <lastmod>2022-07-20T10:02:11+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/css/</loc>
     <lastmod>2022-06-29T11:41:23+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/change_or_disable_mobile_tab_highlight_style/</loc>
@@ -22,9 +28,6 @@
   </url><url>
     <loc>https://blog.tedshd.io/posts/build_different_platform_docker_image/</loc>
     <lastmod>2022-06-29T11:30:13+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/ios/</loc>
-    <lastmod>2022-06-20T16:09:58+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/safari/</loc>
     <lastmod>2022-06-20T16:09:58+08:00</lastmod>

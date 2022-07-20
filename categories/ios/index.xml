@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 20 Jun 2022 14:44:30 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/ios/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jul 2022 10:02:11 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/ios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在 iOS Messages 呈現帶影片預覽的連結</title>
+      <link>https://blog.tedshd.io/posts/ios_sms_support_video_meta/</link>
+      <pubDate>Wed, 20 Jul 2022 10:02:11 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/ios_sms_support_video_meta/</guid>
+      <description>最近添加了一個小功能要來測試成效 就是因為 PM 有看到一些服務的連結在 iOS Messages 上呈現並非常見的圖片而是影片 PM 說好像是 iOS 15 以上支援(我自己是沒找到相關的</description>
+    </item>
+    
     <item>
       <title>Safari 設定 100vh 還是出現卷軸(scroll bar)</title>
       <link>https://blog.tedshd.io/posts/safari_100vh_show_scroll/</link>

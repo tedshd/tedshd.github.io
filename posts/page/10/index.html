@@ -1156,6 +1156,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1166,6 +1170,292 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/sort_case_handle_in_javascript/">JavaScript - 處理一些排序的方式</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2020-11-18
+</p>
+                
+
+                
+                <p><p>常常會遇到用 JavaScript 處理一些資料結構的排序</p>
+<p>這裡會列舉一些使用情境與案例</p>
+<h2 id="取出排名前幾名的資料排名的值不重複">取出排名前幾名的資料(排名的值不重複)</h2>
+<h3 id="資料">資料</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">123</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">123</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;video&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">345</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">345</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;video&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">99</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">99</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;video&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">9786</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">9786</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">347</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">347</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;video&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="處理方式">處理方式</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">topNine</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">tmp</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">data</span>).<span style="color:#a6e22e">reverse</span>()), (<span style="color:#a6e22e">l</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tmp</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">tmp</span>.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">l</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">tmp</span>[<span style="color:#a6e22e">i</span>]]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>處理範例為取出前 9 筆</p>
+<p>這樣的處理是使用 Object 的 Key 的排序本身是升冪排序</p>
+<p>為了讓代碼好讀懂</p>
+<p>使用了 <code>Object.keys(data).reverse()</code> 反轉陣列使其變成降冪排序</p>
+<p>這樣跑 for 迴圈就可以自然而然的從 0 開始</p>
+<p>考慮到資料可能不到 9 筆</p>
+<p>所以用 <code>(tmp.length &gt;= 9) ? 9 : tmp.length</code> 來處理迴圈要跑的次數</p>
+<p>這樣這個函數就可以回傳前 9 名的資料了</p>
+<p>但是這樣的資料結構有個問題就是範例資料的 <strong>count</strong> 必須是唯一值, 因為 JSON Object 不能重複 key</p>
+<h2 id="取出排名前幾名的資料排名的值重複">取出排名前幾名的資料(排名的值重複)</h2>
+<h3 id="資料-1">資料</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1600860409000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">9680</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603438465000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">11746</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602389743000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">13289</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1605334079000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14095</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602652312000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14138</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603275324000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14310</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603600329000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14448</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603080713000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14625</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1604823132000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15351</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1604919156000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15373</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601123545000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15442</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601544281000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">16659</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1605088396000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17137</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602749094000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17483</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1600928882000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17928</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602562980000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18217</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603709259000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">21845</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602470351000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22292</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1603887487000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22559</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1602846057000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22824</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601465442000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25226</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1604736681000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25580</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601285690000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25796</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ts</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1601693594000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">liked</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">26078</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>];
+</span></span></code></pre></div><h3 id="處理方式-1">處理方式</h3>
+<h4 id="第一種解法">第一種解法</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">topNine</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">temp</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>][<span style="color:#e6db74">&#34;liked&#34;</span>] <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][<span style="color:#e6db74">&#34;liked&#34;</span>]) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">temp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">l</span>; <span style="color:#a6e22e">n</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">n</span>]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>這個也不太難理解</p>
+<p>第一個迴圈依照 <strong>liked</strong> 跑了一個降冪的氣泡排序(一般情況都是跑升冪)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">temp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">j</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp</span>;
+</span></span></code></pre></div><p>這邊使用 variable swap 的技巧來做前後兩個值的交換</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>;
+</span></span></code></pre></div><p>第二個迴圈就是取出前 9 筆的 <strong>liked</strong> 數</p>
+<p>一樣是在 <code>data.length &gt;= 9 ? 9 : data.length</code> 確認未滿 9 筆的話就有多少取多少</p>
+<h4 id="第二種解法">第二種解法</h4>
+<p>因為資料是 Array</p>
+<p>所以可以使用 <code>sort</code> 來處理</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">topNine</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">liked</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">liked</span>;
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">l</span>; <span style="color:#a6e22e">n</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">n</span>]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>sort</code> 可以帶入 function 處理回傳的比較的參數</p>
+<p>所以可以回傳物件的值得比較結果</p>
+<p>如果預設升冪排序就用 <strong>a - b</strong></p>
+<p>降冪排序就用 <strong>b - a</strong></p>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">refer - Array.prototype.sort()</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/sort_case_handle_in_javascript/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1309,74 +1599,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/form_multi_checked_in_php_nodejs_golang/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/html2canvas/">Html2canvas</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2020-09-03
-</p>
-                
-
-                
-                <p><h2 id="網站直接網頁截圖">網站直接網頁截圖</h2>
-<p>基本上就是把要截圖的內容轉成 canvas 物件</p>
-<p>再轉成圖片下載即可</p>
-<h3 id="現成套件-html2canvas">現成套件 html2canvas</h3>
-<p><a href="https://html2canvas.hertzen.com/">https://html2canvas.hertzen.com/</a></p>
-<p>但是如果要截圖的內容有用外部 url 載入的圖片需要注意一下 CORS 問題(canvas 的限制)</p>
-<h3 id="解決外部-url-載入圖片時-cors-問題">解決外部 url 載入圖片時 CORS 問題</h3>
-<p>原理</p>
-<p>把外部載入的圖片轉換成二進制再轉成 dataurl</p>
-<p>因為在 browser 上面可以解析與渲染 dataurl</p>
-<p>所以就可以呈現在 canvas 裡面</p>
-<p>這樣之後要截圖下載這個 canvas 的內容也沒問題</p>
-<h3 id="補充轉換圖片的機制解決載入外部圖片-cors-問題">補充轉換圖片的機制(解決載入外部圖片 CORS 問題)</h3>
-<h4 id="處理方式---圖片轉-blob">處理方式 - 圖片轉 blob</h4>
-<p>圖片轉成 blob</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toDataURL</span>(<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">callback</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">reader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileReader</span>();
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">reader</span>.<span style="color:#a6e22e">onloadend</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">reader</span>.<span style="color:#a6e22e">result</span>);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">reader</span>.<span style="color:#a6e22e">readAsDataURL</span>(<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">response</span>);
-</span></span><span style="display:flex;"><span>    };
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#a6e22e">url</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseType</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;blob&#39;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>();
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h4 id="問題更新-20210511">問題(更新 2021/05/11)</h4>
-<p>CORS 問題越來越嚴格了</p>
-<p>在瀏覽器上面 XMLHttpRequest 物件處理 binary 現在會有 CORS 問題要處理</p>
-<p>需要在要處理的圖片 url 處理 CORS(圖片所在的 host 必須有允許 CORS 的 header)</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image">refer - Allowing cross-origin use of images and canvas</a></p>
-<p><a href="https://www.jianshu.com/p/6fe06667b748">refer - 解决 canvas 将图片转为base64报错</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/html2canvas/">Read more</a></p>
                 
             </div>
         </div>
