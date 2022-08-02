@@ -2,26 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2022-07-20T10:02:11+08:00</lastmod>
+    <loc>https://blog.tedshd.io/posts/use_youtube_player_sdk_in_2022/</loc>
+    <lastmod>2022-08-02T13:04:37+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/categories/ios/</loc>
-    <lastmod>2022-07-20T10:02:11+08:00</lastmod>
+    <loc>https://blog.tedshd.io/categories/</loc>
+    <lastmod>2022-08-02T13:04:37+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/javascript/</loc>
+    <lastmod>2022-08-02T13:04:37+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2022-07-20T10:02:11+08:00</lastmod>
+    <lastmod>2022-08-02T13:04:37+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/</loc>
-    <lastmod>2022-07-20T10:02:11+08:00</lastmod>
+    <lastmod>2022-08-02T13:04:37+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/youtube/</loc>
+    <lastmod>2022-08-02T13:04:37+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/ios/</loc>
+    <lastmod>2022-07-21T10:51:14+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/ios_sms_support_video_meta/</loc>
-    <lastmod>2022-07-20T10:02:11+08:00</lastmod>
+    <lastmod>2022-07-21T10:51:14+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/css/</loc>
-    <lastmod>2022-06-29T11:41:23+08:00</lastmod>
+    <lastmod>2022-07-21T10:51:14+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/change_or_disable_mobile_tab_highlight_style/</loc>
-    <lastmod>2022-06-29T11:41:23+08:00</lastmod>
+    <lastmod>2022-07-21T10:51:14+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/docker/</loc>
     <lastmod>2022-06-29T11:30:13+08:00</lastmod>
@@ -60,9 +69,6 @@
     <lastmod>2022-04-25T09:52:22+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/html/</loc>
-    <lastmod>2022-04-15T15:56:09+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/javascript/</loc>
     <lastmod>2022-04-15T15:56:09+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/rtl/</loc>
@@ -201,9 +207,6 @@
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/2019-12-23-seo-enhanced-youtube-video-seo/</loc>
-    <lastmod>2020-01-29T17:42:46+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/youtube/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/2019-12-20-firebase-firebase-functions/</loc>

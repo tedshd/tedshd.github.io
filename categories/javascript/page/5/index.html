@@ -181,6 +181,63 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2017-04-25-1747072/">JavaScript - browser zoom detect</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2017-04-25
+</p>
+                
+
+                
+                <p><h2 id="javascript---browser-zoom-detect">JavaScript - browser zoom detect</h2>
+<p>強者我朋友身為一個設計師問我一個很奇耙的需求</p>
+<p>就是可不可以知道瀏覽器的縮放狀態</p>
+<p>因為她的 BOSS 要求縮放不破版, 所以她希望設計在縮放狀態時的 layout 讓工程師套版</p>
+<p>於是來問我說是否有辦法知道瀏覽器的縮放狀態</p>
+<p>先說一下其實要縮放不破版只要設計彈性的 layout 例如使用 grid 的設計基本上都不會破版, 以我的經驗縮放破版通常是一些特殊的 layout 或用一些奇特的 CSS 的寫法</p>
+<p>但正妹設計師求助</p>
+<p>魯蛇工程師只好默默的來看看有啥方法</p>
+<p>在新的 JavaScript api 有個 <code>devicePixelRatio</code> 可以取得目前 device 的像素比</p>
+<p>一般是用來判斷是否是 high resolution 的螢幕</p>
+<p>但是當 browser 縮放時其實這個值也會改變(尚未在 mobile device 試驗</p>
+<p>所以可以用這特性來做處理</p>
+<p>但這有問題就是當本身螢幕就是 high resolution 得螢幕像是 2K or 4K or MBPR 的螢幕</p>
+<p>它們的 <code>window.devicePixelRatio</code> 就不會是 1</p>
+<p>所以縮放後也不好知道縮放的比例</p>
+<p>所以非完美解&hellip;</p>
+<p>且目前 browser 支援度不佳</p>
+<p>下面是範例</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">browserZoomLevel</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>(window.<span style="color:#a6e22e">devicePixelRatio</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">browserZoomLevel</span>);
+</span></span></code></pre></div><p>目前看來與其去處理縮放不如把 layout 設計好才是正解</p>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Window/devicePixelRatio">MDN - Window.devicePixelRatio</a></p>
+<p><a href="http://stackoverflow.com/questions/1713771/how-to-detect-page-zoom-level-in-all-modern-browsers">Refer - How to detect page zoom level in all modern browsers?</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2017-04-25-1747072/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2016-12-08-1183912/">Firebase - Firebase Cloud Message(FCM) Research Log</a></h3>
 
                 
@@ -365,82 +422,6 @@ Suggest use this, it&rsquo;s fast and easy to use</p>
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2016-12-08-1183912/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2016-11-03-javascript-get-text-from-dom-object-not-include-wrap-html-tag-in-child/">JavaScript - get text from dom object not include wrap html tag in child</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2016-11-03
-</p>
-                
-
-                
-                <p><h2 id="javascript---get-text-from-dom-object-not-include-wrap-html-tag-in-child">JavaScript - get text from dom object not include wrap html tag in child</h2>
-<h3 id="intro">Intro</h3>
-<h4 id="case-1">Case 1</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;case_1&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>	Hi, This is a &lt;<span style="color:#f92672">em</span>&gt;Apple&lt;/<span style="color:#f92672">em</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span></code></pre></div><p>I want to get <code>Hi, This is a </code></p>
-<h4 id="case-2">Case 2</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;case_2&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">p</span>&gt;I have a pen.&lt;/<span style="color:#f92672">p</span>&gt;PPAP
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span></code></pre></div><p>I want to get <code>PPAP</code></p>
-<h4 id="case-3">Case 3</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;case_3&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>	Apple&lt;<span style="color:#f92672">span</span>&gt; and pen&lt;/<span style="color:#f92672">span</span>&gt; and pineapple pen
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span></code></pre></div><p>I want to get <code>Apple</code> and <code> and pineapple pen</code></p>
-<p>Than you can use this</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">parseText</span>(<span style="color:#a6e22e">dom</span>) {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">length</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#e6db74">&#39;This is a domlist&#39;</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">childNodes</span>,
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> [];
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;  <span style="color:#a6e22e">x</span><span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">length</span>;<span style="color:#a6e22e">x</span><span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">dom</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">nodeType</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">3</span>) {
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dom</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">nodeValue</span>,
-</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">matchWrap</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">textContent</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/\n +/</span>);
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">matchWrap</span>) {
-</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">textContent</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">matchWrap</span>, <span style="color:#e6db74">&#39;&#39;</span>);
-</span></span><span style="display:flex;"><span>			}
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">textContent</span>) {
-</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">textContent</span>);
-</span></span><span style="display:flex;"><span>			}
-</span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">list</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>You also can use <code>filter</code> handle for loop</p>
-<p><a href="https://tedshd.io/demo/parse_text.html">demo</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">Refer - Array.prototype.filter()</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2016-11-03-javascript-get-text-from-dom-object-not-include-wrap-html-tag-in-child/">Read more</a></p>
                 
             </div>
         </div>

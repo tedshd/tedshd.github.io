@@ -189,6 +189,84 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-21-css-note/">CSS Note</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-08-21
+</p>
+                
+
+                
+                <p><h2 id="tip-about-css">Tip about CSS</h2>
+<h3 id="clearfix">clearfix</h3>
+<p>為了清除浮動</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">clearfix</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#960050;background-color:#1e0010">*</span>zoom: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">clearfix</span>:<span style="color:#a6e22e">after</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">table</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">clear</span>: <span style="color:#66d9ef">both</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="padding-right-or-bottom--margin-right-or-bottom">padding-right or bottom &amp; margin-right or bottom</h3>
+<p>如遇 model box 問題盡可能在右或下做修正(因為 XY 是朝右下發展)
+避免用到 top 盡量用 bottom</p>
+<h3 id="scroll-bar">scroll bar</h3>
+<p>在 windows 中，scroll bar 的寬是 16px</p>
+<h3 id="a--img">a &amp; img</h3>
+<p>在用 a 包覆 img 時會發現一個現象就是就算把 a 用 block 設定寬高設成跟 img 一樣還是會發現滑鼠在要從圖片下面移進圖片會發現進去前會有約 2px 的空白滑鼠就先變成有連結的狀態，經過詢問後發現是因為 img 的關係，img 本身會有一點高度在bottom，所以如果要去掉這高度有一些作法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">img</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* or */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">vertical-align</span>: <span style="color:#66d9ef">bottom</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* or */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="iframe-border-in-ie7-ie8">iframe border in IE7, IE8</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">frameBorder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+</span></span></code></pre></div><h3 id="word-break">word-break</h3>
+<p>在頁面上有要塞入一堆字的地方, 最好使用 <code>break-word</code> 以免英文單字在換行時出問題</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">word-break</span><span style="color:#f92672">:</span> <span style="color:#f92672">break-word</span><span style="color:#f92672">;</span>
+</span></span></code></pre></div><p><a href="http://blog.zhusee.in/post/166392/experiments-on-manual-chinese-japanese-responsive-line-break">Refer - 手動調整 Responsive 中日文斷行的實驗</a></p>
+<h3 id="利用編碼呈現單引號等符號">利用編碼呈現單引號等符號</h3>
+<p><a href="http://webdesign.tutsplus.com/articles/start-using-quotation-marks-the-correct-way--webdesign-16905">Start Using Quotation Marks the “Correct” Way</a></p>
+<h3 id="css-文字垂直置中">CSS 文字垂直置中</h3>
+<p><a href="http://blog.wu-boy.com/2013/07/css-vertical-align-center/">CSS 垂直置中解法</a></p>
+<h3 id="retina-裝置">retina 裝置</h3>
+<p><a href="http://rettamkrad.blogspot.tw/2013/04/retina-device-and-web-develop.html">Retina裝置與網頁開發</a></p>
+<h3 id="texture">Texture</h3>
+<p><a href="http://www.1stwebdesigner.com/css/create-textured-text-css/">Texturize It: How to Create Textured Text Using CSS</a></p>
+<h3 id="視差滾動">視差滾動</h3>
+<p><a href="http://keithclark.co.uk/articles/pure-css-parallax-websites/">Pure CSS Parallax Websites</a></p>
+<h3 id="heading"></h3>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzA3MjUyMDYwNg%3D%3D&amp;mid=203472163&amp;idx=1&amp;sn=df3891191b72342dcbdd9520aa352a1b#rd">前端常识：7个你可能不认识的CSS单位</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-08-21-css-note/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-08-21-html-design-pattern/">HTML Design Pattern</a></h3>
 
                 
@@ -230,189 +308,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-08-21-html-design-pattern/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-21-vim/">Vim</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-08-21
-</p>
-                
-
-                
-                <p><h2 id="vim">Vim</h2>
-<p><a href="http://blog.roodo.com/dabinn/archives/16126923.html">More</a></p>
-<p>a
-輸入文字</p>
-<p>i
-插入字元</p>
-<p>o
-新增一行</p>
-<p>:wq
-儲存後離開</p>
-<p>:w
-儲存</p>
-<p>:q
-離開</p>
-<p>:q!
-離開不存檔</p>
-<p>:w!
-儲存 readonly</p>
-<p>Esc
-離開編輯模式</p>
-<p>h
-左</p>
-<p>j
-下</p>
-<p>k
-上</p>
-<p>l
-右</p>
-<p>v
-選擇</p>
-<p>yy
-複製整行</p>
-<p>nyy
-複製n行</p>
-<p>yw
-複製游標到單字結束</p>
-<p>nyw
-複製游標到n個單字結束</p>
-<p>p
-貼上</p>
-<p>d + &lt;-
-刪除游標前一個字元</p>
-<p>d + -&gt;
-刪除游標後一個字元</p>
-<p>d + up
-刪除游標所在和前一行</p>
-<p>d + down
-刪除游標所在和後一行</p>
-<p>dd
-刪除游標所在那一行</p>
-<p>dw
-游標停在某字第一個刪此字
-停在字中刪後面的字</p>
-<p>x
-刪除游標所在字元</p>
-<p>X
-刪除游標所在前一個字元</p>
-<p>nx
-刪除游標所在n個字元</p>
-<p>nX
-刪除游標所在前n個字元</p>
-<p>e
-跳到本單字最後一個字元</p>
-<p>w
-跳到本單字第一個字母(往後)</p>
-<p>b
-跳到本單字第一個字母(往前)</p>
-<p>? or /
-輸入要找的字</p>
-<h1 id="heading"></h1>
-<p>把當前字元高亮(highlight)</p>
-<p>N
-移到上一個找到一樣的字</p>
-<p>n
-移到下一個找到一樣的字</p>
-<p>r
-直接改游標上的字</p>
-<p>cc
-直接改游標那一行</p>
-<p>:g/字串/s//要換的字串/g
-把文件中的某一字串全替換掉</p>
-<p>:g/字串/s//要換的字串/gc
-文件中某一字串替換掉(可選)</p>
-<p>u
-取消前一次動作</p>
-<p>Ctrl + r
-回覆u的動作</p>
-<p>.
-繼續上一個指令</p>
-<p>Ctrl+g
-顯示游標所在行數</p>
-<p>nG
-跳到n行</p>
-<p>gf
-直接開啓該路徑的檔案</p>
-<p>Ｃtrl + o
-關閉開啓的檔案</p>
-<p>Ctrl + w f
-在新視窗開啓該路徑的檔案</p>
-<p><strong>分割視窗</strong></p>
-<p>:sp
-垂直分割</p>
-<p>:vsp
-水平分割</p>
-<p>:sp .
-垂直分割(新視窗為該目錄list)</p>
-<p>:vsp .
-水平分割(新視窗為該目錄list)</p>
-<p>:new
-開新垂直分割</p>
-<p>:vnew
-開新水平分割</p>
-<p>Ctrl+w hjkl(左下上右)
-切換視窗</p>
-<p>Ctrl+w =
-等比例分配</p>
-<p><strong>垂直分割</strong>
-Ctrl+w Shift++
-該視窗大小加一行</p>
-<p>Ctrl+w Shift+n++
-該視窗大小加n行</p>
-<p><strong>水平分割</strong>
-Ctrl+w &lt;
-向左加一字元的空間</p>
-<p>Ctrl+w &gt;
-向右加一字元的空間</p>
-<p>:tabe
-開tab分頁</p>
-<p>gt
-下一個分頁</p>
-<p>Ctrl + z
-vim跳至背景(fg跳回前景)</p>
-<p>:%s/old/new/g
-取代所有字串為新字串</p>
-<p>:s/old/new/g
-取代所在行數字串為新字串</p>
-<p>:set paste
-設定成可貼上 terminal 外的的 text</p>
-<p>:set nu
-顯示行數</p>
-<p>:set nonu
-不顯示行數</p>
-<p><strong>Mac</strong></p>
-<p>^f
-forward == page down</p>
-<p>^b
-back == page up</p>
-<p>$
-end of line</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-08-21-vim/">Read more</a></p>
                 
             </div>
         </div>

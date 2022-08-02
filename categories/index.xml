@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 20 Jul 2022 10:02:11 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Aug 2022 13:04:37 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>javascript</title>
+      <link>https://blog.tedshd.io/categories/javascript/</link>
+      <pubDate>Tue, 02 Aug 2022 13:04:37 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>YouTube</title>
+      <link>https://blog.tedshd.io/categories/youtube/</link>
+      <pubDate>Tue, 02 Aug 2022 13:04:37 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/youtube/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>iOS</title>
       <link>https://blog.tedshd.io/categories/ios/</link>
@@ -95,15 +113,6 @@
       <pubDate>Fri, 15 Apr 2022 10:09:15 +0800</pubDate>
       
       <guid>https://blog.tedshd.io/categories/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://blog.tedshd.io/categories/javascript/</link>
-      <pubDate>Fri, 15 Apr 2022 10:09:15 +0800</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/javascript/</guid>
       <description></description>
     </item>
     
@@ -311,15 +320,6 @@
       <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/categories/seo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>YouTube</title>
-      <link>https://blog.tedshd.io/categories/youtube/</link>
-      <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/youtube/</guid>
       <description></description>
     </item>
     
