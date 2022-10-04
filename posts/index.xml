@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Tue, 02 Aug 2022 13:04:37 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Oct 2022 11:16:31 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在 JavaScript 處理各個時區對應的日期時間</title>
+      <link>https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/</link>
+      <pubDate>Tue, 04 Oct 2022 11:16:31 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/</guid>
+      <description>Intro 在 JavaScript 中的日期時間是個當初沒有定義出良好設計的東西 這裡先舉幾個常見的問題 日期格式問題 日期呈現的語系問題 時區問題 12 小時 24 小時問題 &amp;hellip; 以原生的 API 在</description>
+    </item>
+    
     <item>
       <title>2022 年使用 YouTube player sdk</title>
       <link>https://blog.tedshd.io/posts/use_youtube_player_sdk_in_2022/</link>

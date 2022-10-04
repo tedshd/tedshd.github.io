@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+<title>在 JavaScript 處理各個時區對應的日期時間 | tedshd&#39;s DevNote</title>
+<meta charset="utf-8">
+<meta name="google" content="notranslate">
+<meta id="viewport" name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content='Intro 在 JavaScript 中的日期時間是個當初沒有定義出良好設計的東西 這裡先舉幾個常見的問題 日期格式問題 日期呈現的語系問題 時區問題 12 小時 24 小時問題 &hellip; 以原生的 API 在'>
+<meta name="keywords" content=''>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/">
+<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/" />
+
+<link rel="canonical" href="https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/" />
+<link rel="shortcut icon" href="/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
+<meta name="theme-color" content="">
+<meta name="robots" content="index, follow">
+<meta name="copyright" content="Tedshd">
+
+<meta property="og:title" content="在 JavaScript 處理各個時區對應的日期時間" />
+<meta property="og:description" content="Intro 在 JavaScript 中的日期時間是個當初沒有定義出良好設計的東西 這裡先舉幾個常見的問題 日期格式問題 日期呈現的語系問題 時區問題 12 小時 24 小時問題 &hellip; 以原生的 API 在" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-04T11:16:31+08:00" />
+<meta property="article:modified_time" content="2022-10-04T11:16:31+08:00" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="在 JavaScript 處理各個時區對應的日期時間"/>
+<meta name="twitter:description" content="Intro 在 JavaScript 中的日期時間是個當初沒有定義出良好設計的東西 這裡先舉幾個常見的問題 日期格式問題 日期呈現的語系問題 時區問題 12 小時 24 小時問題 &hellip; 以原生的 API 在"/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+<script data-ad-client="ca-pub-0553186380244641" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    
+
+    
+
+    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
+
+    
+<link>
+
+<link
+    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
+    rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1NKP3D2ZGG');
+    </script>
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__links" role="menu">
+                
+                <li class="p-navigation__link" role="menuitem">
+                    <a href="/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__link" role="menuitem">
+                    <a href="/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<div class="page-banner">
+    <div class="row u-vertically-center">
+        <div class="col-8 pure-g">
+            <div class="pure-u">
+                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
+                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
+            </div>
+            <div class="pure-u">
+                <h2>tedshd&#39;s DevNote</h2>
+                <p>Develop &amp; Design Note by Ted</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul class="p-navigation__links sub_menu" role="menu">
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="http://tedshd.github.io/resume/">About</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="http://tysh310246.blogspot.tw/">Blog</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="https://github.com/tedshd">Github</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
+    </li>
+    
+</ul>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+<header class="">
+    <div class="row">
+        <h1>在 JavaScript 處理各個時區對應的日期時間</h1>
+    </div>
+</header>
+
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2022-10-04
+        </p>
+        
+        <h2 id="intro">Intro</h2>
+<p>在 JavaScript 中的日期時間是個當初沒有定義出良好設計的東西</p>
+<p>這裡先舉幾個常見的問題</p>
+<ol>
+<li>日期格式問題</li>
+<li>日期呈現的語系問題</li>
+<li>時區問題</li>
+<li>12 小時 24 小時問題
+&hellip;</li>
+</ol>
+<p>以原生的 API 在處理日期時間大多得自己額外做許多事情或是套用一些第三方 libary 來協助達成目的</p>
+<h2 id="時區問題">時區問題</h2>
+<p>這次主要是討論關於時區的問題</p>
+<p>在早期只能用 <code>getTimezoneOffset()</code> 的方法搭配時區表去換算各地時區</p>
+<p>現在倒是可以使用 <code>Intl.DateTimeFormat</code></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset">refer - Date.prototype.getTimezoneOffset()</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat">refer - Intl.DateTimeFormat</a></p>
+<p>其實上述的問題, 在使用 <code>Intl.DateTimeFormat</code> 基本上都可以解決掉</p>
+<p>詳細方式可以參以下文件</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat">refer - Intl.DateTimeFormat() constructor</a></p>
+<p>在時區中又有一個常常被忽視的的問題就是夏令時間(daylight savings time) 這個在夏季時就得把時間提前一小時的問題</p>
+<p>如果自己處理時區就得記得處理這問題</p>
+<p>使用 <code>Intl.DateTimeFormat</code> 的話系統已經自動處理了</p>
+<h2 id="intldatetimeformat">Intl.DateTimeFormat</h2>
+<p>這邊簡單介紹一下 <code>Intl.DateTimeFormat</code> 的一些用法與注意事項</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Intl</span>.<span style="color:#a6e22e">DateTimeFormat</span>(<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">language</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">timeZone</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;America/Los_Angeles&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">dateStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;full&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">timeStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;full&#39;</span>
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">new</span> Date())
+</span></span></code></pre></div><p>這個範例就表示了當前洛杉磯的時間</p>
+<p>第一個參數是語系, 採用 BCP 47 標準, 基本上建議使用 <code>navigator.language</code> 或是自己寫死(特定情況時使用)或是另外帶入</p>
+<p>第二個參數的物件除了 <code>timeZone</code> 是為了顯示指定時區之外其他的參數基本上都在定義顯示的型式</p>
+<p>例如</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Intl</span>.<span style="color:#a6e22e">DateTimeFormat</span>(<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">language</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;numeric&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">month</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">day</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hour</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">minute</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">second</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hourCycle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;h24&#39;</span>,
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">new</span> Date())
+</span></span></code></pre></div><p>這樣就會返回 <code>YYYY/MM/dd HH:mm:ss</code> 的顯示方式</p>
+<p>額外提幾個比較特別的參數</p>
+<ul>
+<li>timeZone: 時區的值使採用 IANA 所定義出的標準名稱基本就是像是 Asia/Taipei 這樣的格式, 有一個比較特別值是可以使用 &lsquo;UTC&rsquo; 表示當前的 UTC+0 時間(簡單說明就是時區零的時間)</li>
+<li>calendar: 是設定要使用的曆法, 例如: <code>calendar: 'chinese'</code> 就是農曆</li>
+<li>hour12: 是表示是要用 12 小時制或 24 小時制顯示, 用 24 小時制就不會另外顯示上午或下午</li>
+</ul>
+<p>剩下的可以參考文件來使用</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat">refer - Intl.DateTimeFormat() constructor</a></p>
+<h2 id="處理全球性的活動時間問題">處理全球性的活動時間問題</h2>
+<p>接下來來處理實作面的問題</p>
+<p>當服務擴及全球是需要在全球各地或是各別國家的特別節日等舉辦活動</p>
+<p>時間就很重要</p>
+<p>如果時間搞錯, 使用者根本無法在正確的時間參與到活動, 那就準備等著收到一堆抱怨</p>
+<p>所以都會有以下策略來處理這樣的問題</p>
+<h3 id="說明活動開始的時間是對應哪個時區的時間">說明活動開始的時間是對應哪個時區的時間</h3>
+<p>例如活動指定開始時間是 2022/12/25 08:00 GTM-7(洛杉磯時間)</p>
+<p>這公告發在美國地區還沒什麼問題, 因為美國只有大概誇 5 個時區</p>
+<p>但這公告對在亞洲和歐洲地區的人就很痛苦, 因為還得使用者自己換算成自己當地的時間</p>
+<p>所以如果以全球性的活動來說這對跨比較多時區的人來說很不友善</p>
+<p>但這也是有解法的</p>
+<p>只要在 client 轉換成 client 當地的時間就可以了, 才比較容易讓使用者了解到正確的時間</p>
+<h3 id="針對不同區開始對應區域的公告與活動">針對不同區開始對應區域的公告與活動</h3>
+<p>這是比較常見的做法</p>
+<p>大多時候可以針對像是不同國家的節慶活動或是各個區域不同的活動來處理</p>
+<p>所以只要針對該地區的的時區設定就可以了</p>
+<h2 id="管理系統的設計">管理系統的設計</h2>
+<p>下面說明一個比較麻煩的情況</p>
+<p>當需要設計一個面對全球性的推播或公告系統時會遇到上述的問題</p>
+<p>在管理人員或運營人員在操作系統時</p>
+<p>會有一個很基本的思維是</p>
+<p>想要在美國國慶的時候設定推播通知</p>
+<p>那很理所當然地在介面會希望就是選美國當地的時區, 之後再選美國當地的日期時間</p>
+<p>不會希望要自己換算美國國慶的時間轉成自己當地的時間是什麼時間再去設定</p>
+<p>這在時間處理上就會是一個很有趣的問題</p>
+<p>JavaScript 的 Date 是帶有時區的(client 裝置設定的時區)</p>
+<p>所以是需要做額外處理的</p>
+<p>但原理也很簡單</p>
+<p>先用 <code>new Date(value)</code> 把設定的時間取出來轉成 timestamp</p>
+<p>例如: <code>new Date('2022-10-04T17:00:00')</code></p>
+<p>這會返回 <strong>1664874000000</strong></p>
+<p>但這是當前 client 設定時區的 2022-10-04 下午五點的 timestamp</p>
+<p>並非期望時區的時間</p>
+<p>這時就要做時區的校正</p>
+<p>公式大概如下</p>
+<p><code>new Date(設定推播的時間).getTime() + 當前時區 - 設定推播的時區</code></p>
+<p>所以大概就是</p>
+<p><code>new Date(dateString).getTime() - new Date().getTimezoneOffset()*60*1000 - 設定推播的時區(毫秒)</code></p>
+<p>那只要把這個丟給後端讓後端依照這時間發送就可以了</p>
+<p>到了這邊, 大概剩下一個問題就是麻煩的夏令時間(daylight savings time) 問題</p>
+<p>因為不可能自己處理這問題</p>
+<p>所以這邊採用了一個 <a href="https://timezonedb.com/">timezonedb</a> 的服務</p>
+<p>這個服務的 api 會返回當前所有時區而且是已經校正過夏令時間的時區</p>
+<p>所以就可以拿取得這個服務的資料來當成自己的時區資料</p>
+<p>最後的最後</p>
+<p>剩下一個尷尬的小問題就是如果設定的時間和要推送的時間剛好是跨夏令時間的開始和結束時, 就會有一小時的誤差, 目前還沒想到比較好的解法, 只能在設定時儘量避掉這樣的情況</p>
+
+    </main>
+</section>
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/use_youtube_player_sdk_in_2022/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            2022 年使用 YouTube player sdk
+        </span>
+    </a>
+    
+
+    
+</div>
+    </div>
+</footer>
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2022 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>

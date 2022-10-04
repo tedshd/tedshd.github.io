@@ -181,6 +181,57 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-09-08-javascript-design-pattern/">JavaScript - design pattern</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-09-08
+</p>
+                
+
+                
+                <p><h2 id="javascript---design-pattern">JavaScript - design pattern</h2>
+<h3 id="避免與減少全域變數global-variable">避免與減少全域變數(global variable)</h3>
+<p>全域變數非常方遍使用, 但使用的不好會使 JavaScript 有問題
+因為有可能重複使用且有可能別的 library 也有用到該名稱
+在 <strong><em>JavaScript: 優良部分</em></strong> 書中提到可用物件的方式包起來</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">GlobalObj</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 開始定義
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">GlobalObj</span>.<span style="color:#a6e22e">var1</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;string&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">GlobalObj</span>.<span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// or
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">GlobalObj</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">var1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;string&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">arr</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>    };
+</span></span></code></pre></div><p>使用 <strong>閉包(Closure)</strong> 也是一個避免全域變數的方法</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-09-08-javascript-design-pattern/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-09-03-javascript-onbeforeunload/">JavaScript - onbeforeunload</a></h3>
 
                 
@@ -310,79 +361,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-09-03-javascript-onbeforeunload/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-25-javascript-type/">JavaScript type</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-08-25
-</p>
-                
-
-                
-                <p><h2 id="javascript-type">JavaScript Type</h2>
-<ul>
-<li>number</li>
-<li>string</li>
-<li>boolean</li>
-<li>null</li>
-<li>undefind</li>
-</ul>
-<p>減少 type 轉換以加快執行速度</p>
-<h2 id="object">Object</h2>
-<h3 id="var">var</h3>
-<ul>
-<li>宣告後即擁有物件的屬性</li>
-<li>宣告之後無法刪除</li>
-<li>區域變數</li>
-</ul>
-<p>function 內宣告</p>
-<ul>
-<li>全域變數</li>
-</ul>
-<p>小心使用</p>
-<h3 id="property">property</h3>
-<ul>
-<li>建立在物件中</li>
-<li>可刪除</li>
-</ul>
-<h2 id="array">Array</h2>
-<ul>
-<li>method 1</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
-</span></span></code></pre></div><p>bug</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">10</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">arr</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// [undefined × 10]
-</span></span></span></code></pre></div><ul>
-<li>method 2</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
-</span></span></code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-08-25-javascript-type/">Read more</a></p>
                 
             </div>
         </div>

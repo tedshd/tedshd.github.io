@@ -181,6 +181,202 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2016-12-08-1183912/">Firebase - Firebase Cloud Message(FCM) Research Log</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-12-08
+</p>
+                
+
+                
+                <p><h2 id="firebase---firebase-cloud-messagefcm-research-log">Firebase - Firebase Cloud Message(FCM) Research Log</h2>
+<p>This article is focus on web version</p>
+<h3 id="intro">Intro</h3>
+<p>You can easy to use web notification push notification to your web site.</p>
+<p><a href="https://firebase.google.com/docs/cloud-messaging/js/client">Set Up a JavaScript Firebase Cloud Messaging Client App</a></p>
+<h3 id="different-with-use-pure-web-notification">Different with use pure web notification</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API">Using the Notifications API</a></p>
+<ul>
+<li>Browser support
+<ul>
+<li>FCM - Chrome(desktop &amp; Android) &amp; Firefox(desktop &amp; Android)</li>
+<li>pure notification api - Chrome(desktop &amp; Android) &amp; Firefox(desktop &amp; Android) &amp; Opera(desktop) &amp; Safari(desktop)
+<ul>
+<li>Android need service worker</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Service Worker
+<ul>
+<li>FCM - require</li>
+<li>pure notification api - option</li>
+</ul>
+</li>
+</ul>
+<p>pure web notification only a notification object, you need handle connection push message from server.</p>
+<p>But FCM had handle this connect.</p>
+<p><a href="http://node.tedshd.io/socket.io">web notification demo</a></p>
+<p><a href="https://tedshd.io/demo/fcm/quickstart-js/messaging/">FCM demo</a></p>
+<p><a href="https://tedshd.io/demo/fcm/send_message.php">FCM push service</a></p>
+<h3 id="different-whith-use-service-worker-or-not-use-service-worker">Different whith use Service Worker or not use Service Worker</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>use Service Worker</th>
+<th>no use Service Worker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service open on browser tab and focus</td>
+<td>receive</td>
+<td>receive</td>
+</tr>
+<tr>
+<td>service open on browser tab and not focus</td>
+<td>receive</td>
+<td>receive</td>
+</tr>
+<tr>
+<td>service open not on browser tab</td>
+<td>receive</td>
+<td>can&rsquo;t receive</td>
+</tr>
+</tbody>
+</table>
+<h3 id="prepare">Prepare</h3>
+<ul>
+<li>app server
+<ul>
+<li>a server can send message</li>
+</ul>
+</li>
+<li>HTTPS
+<ul>
+<li>web service need https for handle <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">Service Worker</a></li>
+</ul>
+</li>
+<li>manifest.json
+<ul>
+<li>set gcm send id</li>
+</ul>
+</li>
+</ul>
+<h3 id="step">Step</h3>
+<ol>
+<li>
+<p>Use <a href="https://firebase.google.com">firebase</a> console create a project(If you had project for your web service, you can skip this setp</p>
+</li>
+<li>
+<p><code>Overview -&gt; setting -&gt; cloud message</code> and you can get <code>YOUR-SERVER-KEY</code> &amp; <code>SENDER-ID</code></p>
+</li>
+<li>
+<p>And then you can use the simple code from <a href="https://github.com/firebase/quickstart-js/tree/master/messaging">https://github.com/firebase/quickstart-js/tree/master/messaging</a></p>
+</li>
+</ol>
+<h3 id="fcm-flow">FCM Flow</h3>
+<p><a href="https://developers.google.com/instance-id/">What is Instance ID?</a></p>
+<p>Web notification dosen&rsquo;t have <code>Instance ID</code> so we only can use token</p>
+<p>Base flow</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2Ffcm%20base%20flow.png?alt=media&amp;token=3c5ab074-94c4-403b-9e16-eeaebce252d1" alt="base flow"></p>
+<h3 id="app-server">App server</h3>
+<p>Build it to send message or do something like send topic message or personal message</p>
+<p>Use <code>HTTP</code> or <code>XMPP</code></p>
+<p><a href="https://firebase.google.com/docs/cloud-messaging/http-server-ref">Firebase Cloud Messaging HTTP Protocol</a></p>
+<h3 id="personal-push">Personal push</h3>
+<p>You can bind user info &amp; their token created from client web browser, then you can push personal message for user.</p>
+<p>And it use api push notification like this</p>
+<pre tabindex="0"><code>https://fcm.googleapis.com/fcm/send
+Content-Type:application/json
+Authorization:key=AIzaSyZ-1u...0GBYzPu7Udno5aA
+
+{ &#34;data&#34;: {
+    &#34;score&#34;: &#34;5x1&#34;,
+    &#34;time&#34;: &#34;15:10&#34;
+  },
+  &#34;to&#34; : &#34;bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1...&#34;
+}
+</code></pre><p><code>Authorization</code> key is Firebase console server key</p>
+<p><a href="https://firebase.google.com/docs/cloud-messaging/send-message">Reference - Build App Server Send Requests</a></p>
+<h3 id="multiple-device-push">Multiple device push</h3>
+<p><a href="https://firebase.google.com/docs/cloud-messaging/js/send-multiple">Send Messages to Multiple Devices</a></p>
+<p>It&rsquo;s base on sub / pub pattern, you can reference <a href="https://msdn.microsoft.com/en-us/library/ff649664.aspx">Publish/Subscribe pattern - MSDN - Microsoft</a></p>
+<h4 id="two-way">Two way</h4>
+<ol>
+<li>
+<p><a href="https://firebase.google.com/docs/cloud-messaging/js/send-multiple#about_topic_messaging">topic(suggest)</a>
+Suggest use this, it&rsquo;s fast and easy to use</p>
+</li>
+<li>
+<p><a href="https://firebase.google.com/docs/cloud-messaging/js/send-multiple#about_device_group_messaging">group</a></p>
+</li>
+</ol>
+<p>If you want to know any token push status and tracking which in this group, you can use group way</p>
+<p>But you must handle group yourself</p>
+<p><a href="https://firebase.google.com/docs/cloud-messaging/server#http-request">Group send request format</a></p>
+<h3 id="about-tracking">About Tracking</h3>
+<p>FCM web notification not support analytics</p>
+<p>So you can add querystring on action url or add log on receive message on foreground</p>
+<h3 id="error-handle">Error handle</h3>
+<p>If user clear token on offline, need handle cleared token let app server and IID server know</p>
+<p>Two way can handle this thing</p>
+<ol>
+<li>client initiative handle</li>
+</ol>
+<p>If your web service provide unsubscribe function, you must handle this behavior.</p>
+<p>And you need handle if user clear data from client, you need update token.</p>
+<p>Firebase&rsquo;s api <code>messaging.deleteToken()</code> handle delete from IID server but delete token from app server need handle yourself.</p>
+<ol start="2">
+<li>server side detect</li>
+</ol>
+<p>When server push notification and response error make some error handle like delete <code>InvalidRegistration</code> token</p>
+<p>And you can log token active time, if long time not active, you can delete it from app server and also suggest delete it from IID server</p>
+<h3 id="notice">Notice</h3>
+<p>On desktop device Chrome or Firefox not on process it can not receive message</p>
+<p>But message will queued until Browser open</p>
+<p>So don&rsquo;t worried about this thing</p>
+<ul>
+<li>
+<p>Notice don&rsquo;t send error target user</p>
+</li>
+<li>
+<p>Notice don&rsquo;t send the push token that doesn&rsquo;t had any user or device</p>
+</li>
+</ul>
+<p>And then i find Firebase hosting seem doesn&rsquo;t support service worker, so it can&rsquo;t use FCM on Firebase hosting.</p>
+<p><a href="https://firebase.google.com/docs/cloud-messaging/js/receive">Receive Messages in a JavaScript Client</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API">Reference - Using the Notifications API - Web APIs | MDN</a></p>
+<p><a href="https://developers.google.com/instance-id/reference/server">instance-id</a></p>
+<p><a href="https://msdn.microsoft.com/en-us/library/ff649664.aspx">Reference - Publish/Subscribe pattern - MSDN - Microsoft</a></p>
+<p><a href="https://developers.google.com/web/fundamentals/engage-and-retain/push-notifications/good-notification">Reference - What Makes a Good Notification?</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2016-12-08-1183912/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2016-11-03-javascript-get-text-from-dom-object-not-include-wrap-html-tag-in-child/">JavaScript - get text from dom object not include wrap html tag in child</a></h3>
 
                 
@@ -245,68 +441,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2016-11-03-javascript-get-text-from-dom-object-not-include-wrap-html-tag-in-child/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2016-09-07-javascript-touch-and-click-behavior-in-mobile-browser/">JavaScript - touch and click behavior in mobile browser</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2016-09-07
-</p>
-                
-
-                
-                <p><h2 id="javascript---touch-and-click-behavior-in-mobile-browser">JavaScript - touch and click behavior in mobile browser</h2>
-<p>On mobile web</p>
-<p>If you click it</p>
-<p>And mobile browser can fire <code>touchstart</code> and <code>click</code></p>
-<p>Fire <code>touchstart</code> event and then fire <code>click</code> event has the difference in time.</p>
-<p>the step is <code>touchstart -&gt; click</code></p>
-<p>So if you has a popup and you use <code>touchstart</code> event bind close behavior.</p>
-<p>You can find it fire click event.</p>
-<p>Then some bug happened.</p>
-<p>In this case(suggest use mobile browser)</p>
-<p><a href="https://tedshd.io/demo/touch_test.html">https://tedshd.io/demo/touch_test.html</a></p>
-<p>When you click close.</p>
-<p>Then popup closed.</p>
-<p>Because the difference in time.</p>
-<p>Then <code>click</code> event fired the popup is closed.</p>
-<p>So <code>click</code> event can click a link.</p>
-<p>Because the <code>click</code> event is click that position and that position has a link.</p>
-<p>So it can click a link.</p>
-<h3 id="solution">Solution</h3>
-<ol>
-<li>
-<p>Use <code>click</code> bind.</p>
-</li>
-<li>
-<p>Use <code>e.preventDefault()</code> in <code>touchstart</code> event, but it also can stop fire <code>touchmove</code> and <code>touchend</code> event.</p>
-</li>
-</ol>
-<p><a href="http://ariatemplates.com/blog/2014/05/ghost-clicks-in-mobile-browsers/">Reference - Ghost clicks in mobile browsers</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2016-09-07-javascript-touch-and-click-behavior-in-mobile-browser/">Read more</a></p>
                 
             </div>
         </div>

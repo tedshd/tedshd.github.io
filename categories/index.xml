@@ -7,13 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Tue, 02 Aug 2022 13:04:37 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Oct 2022 11:16:31 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>javascript</title>
       <link>https://blog.tedshd.io/categories/javascript/</link>
-      <pubDate>Tue, 02 Aug 2022 13:04:37 +0800</pubDate>
+      <pubDate>Tue, 04 Oct 2022 11:16:31 +0800</pubDate>
       
       <guid>https://blog.tedshd.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>timeZone</title>
+      <link>https://blog.tedshd.io/categories/timezone/</link>
+      <pubDate>Tue, 04 Oct 2022 11:16:31 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/timezone/</guid>
       <description></description>
     </item>
     

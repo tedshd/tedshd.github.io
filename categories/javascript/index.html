@@ -181,6 +181,139 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/">在 JavaScript 處理各個時區對應的日期時間</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2022-10-04
+</p>
+                
+
+                
+                <p><h2 id="intro">Intro</h2>
+<p>在 JavaScript 中的日期時間是個當初沒有定義出良好設計的東西</p>
+<p>這裡先舉幾個常見的問題</p>
+<ol>
+<li>日期格式問題</li>
+<li>日期呈現的語系問題</li>
+<li>時區問題</li>
+<li>12 小時 24 小時問題
+&hellip;</li>
+</ol>
+<p>以原生的 API 在處理日期時間大多得自己額外做許多事情或是套用一些第三方 libary 來協助達成目的</p>
+<h2 id="時區問題">時區問題</h2>
+<p>這次主要是討論關於時區的問題</p>
+<p>在早期只能用 <code>getTimezoneOffset()</code> 的方法搭配時區表去換算各地時區</p>
+<p>現在倒是可以使用 <code>Intl.DateTimeFormat</code></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset">refer - Date.prototype.getTimezoneOffset()</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat">refer - Intl.DateTimeFormat</a></p>
+<p>其實上述的問題, 在使用 <code>Intl.DateTimeFormat</code> 基本上都可以解決掉</p>
+<p>詳細方式可以參以下文件</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat">refer - Intl.DateTimeFormat() constructor</a></p>
+<p>在時區中又有一個常常被忽視的的問題就是夏令時間(daylight savings time) 這個在夏季時就得把時間提前一小時的問題</p>
+<p>如果自己處理時區就得記得處理這問題</p>
+<p>使用 <code>Intl.DateTimeFormat</code> 的話系統已經自動處理了</p>
+<h2 id="intldatetimeformat">Intl.DateTimeFormat</h2>
+<p>這邊簡單介紹一下 <code>Intl.DateTimeFormat</code> 的一些用法與注意事項</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Intl</span>.<span style="color:#a6e22e">DateTimeFormat</span>(<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">language</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">timeZone</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;America/Los_Angeles&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">dateStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;full&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">timeStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;full&#39;</span>
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">new</span> Date())
+</span></span></code></pre></div><p>這個範例就表示了當前洛杉磯的時間</p>
+<p>第一個參數是語系, 採用 BCP 47 標準, 基本上建議使用 <code>navigator.language</code> 或是自己寫死(特定情況時使用)或是另外帶入</p>
+<p>第二個參數的物件除了 <code>timeZone</code> 是為了顯示指定時區之外其他的參數基本上都在定義顯示的型式</p>
+<p>例如</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Intl</span>.<span style="color:#a6e22e">DateTimeFormat</span>(<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">language</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;numeric&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">month</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">day</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hour</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">minute</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">second</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hourCycle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;h24&#39;</span>,
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">new</span> Date())
+</span></span></code></pre></div><p>這樣就會返回 <code>YYYY/MM/dd HH:mm:ss</code> 的顯示方式</p>
+<p>額外提幾個比較特別的參數</p>
+<ul>
+<li>timeZone: 時區的值使採用 IANA 所定義出的標準名稱基本就是像是 Asia/Taipei 這樣的格式, 有一個比較特別值是可以使用 &lsquo;UTC&rsquo; 表示當前的 UTC+0 時間(簡單說明就是時區零的時間)</li>
+<li>calendar: 是設定要使用的曆法, 例如: <code>calendar: 'chinese'</code> 就是農曆</li>
+<li>hour12: 是表示是要用 12 小時制或 24 小時制顯示, 用 24 小時制就不會另外顯示上午或下午</li>
+</ul>
+<p>剩下的可以參考文件來使用</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat">refer - Intl.DateTimeFormat() constructor</a></p>
+<h2 id="處理全球性的活動時間問題">處理全球性的活動時間問題</h2>
+<p>接下來來處理實作面的問題</p>
+<p>當服務擴及全球是需要在全球各地或是各別國家的特別節日等舉辦活動</p>
+<p>時間就很重要</p>
+<p>如果時間搞錯, 使用者根本無法在正確的時間參與到活動, 那就準備等著收到一堆抱怨</p>
+<p>所以都會有以下策略來處理這樣的問題</p>
+<h3 id="說明活動開始的時間是對應哪個時區的時間">說明活動開始的時間是對應哪個時區的時間</h3>
+<p>例如活動指定開始時間是 2022/12/25 08:00 GTM-7(洛杉磯時間)</p>
+<p>這公告發在美國地區還沒什麼問題, 因為美國只有大概誇 5 個時區</p>
+<p>但這公告對在亞洲和歐洲地區的人就很痛苦, 因為還得使用者自己換算成自己當地的時間</p>
+<p>所以如果以全球性的活動來說這對跨比較多時區的人來說很不友善</p>
+<p>但這也是有解法的</p>
+<p>只要在 client 轉換成 client 當地的時間就可以了, 才比較容易讓使用者了解到正確的時間</p>
+<h3 id="針對不同區開始對應區域的公告與活動">針對不同區開始對應區域的公告與活動</h3>
+<p>這是比較常見的做法</p>
+<p>大多時候可以針對像是不同國家的節慶活動或是各個區域不同的活動來處理</p>
+<p>所以只要針對該地區的的時區設定就可以了</p>
+<h2 id="管理系統的設計">管理系統的設計</h2>
+<p>下面說明一個比較麻煩的情況</p>
+<p>當需要設計一個面對全球性的推播或公告系統時會遇到上述的問題</p>
+<p>在管理人員或運營人員在操作系統時</p>
+<p>會有一個很基本的思維是</p>
+<p>想要在美國國慶的時候設定推播通知</p>
+<p>那很理所當然地在介面會希望就是選美國當地的時區, 之後再選美國當地的日期時間</p>
+<p>不會希望要自己換算美國國慶的時間轉成自己當地的時間是什麼時間再去設定</p>
+<p>這在時間處理上就會是一個很有趣的問題</p>
+<p>JavaScript 的 Date 是帶有時區的(client 裝置設定的時區)</p>
+<p>所以是需要做額外處理的</p>
+<p>但原理也很簡單</p>
+<p>先用 <code>new Date(value)</code> 把設定的時間取出來轉成 timestamp</p>
+<p>例如: <code>new Date('2022-10-04T17:00:00')</code></p>
+<p>這會返回 <strong>1664874000000</strong></p>
+<p>但這是當前 client 設定時區的 2022-10-04 下午五點的 timestamp</p>
+<p>並非期望時區的時間</p>
+<p>這時就要做時區的校正</p>
+<p>公式大概如下</p>
+<p><code>new Date(設定推播的時間).getTime() + 當前時區 - 設定推播的時區</code></p>
+<p>所以大概就是</p>
+<p><code>new Date(dateString).getTime() - new Date().getTimezoneOffset()*60*1000 - 設定推播的時區(毫秒)</code></p>
+<p>那只要把這個丟給後端讓後端依照這時間發送就可以了</p>
+<p>到了這邊, 大概剩下一個問題就是麻煩的夏令時間(daylight savings time) 問題</p>
+<p>因為不可能自己處理這問題</p>
+<p>所以這邊採用了一個 <a href="https://timezonedb.com/">timezonedb</a> 的服務</p>
+<p>這個服務的 api 會返回當前所有時區而且是已經校正過夏令時間的時區</p>
+<p>所以就可以拿取得這個服務的資料來當成自己的時區資料</p>
+<p>最後的最後</p>
+<p>剩下一個尷尬的小問題就是如果設定的時間和要推送的時間剛好是跨夏令時間的開始和結束時, 就會有一小時的誤差, 目前還沒想到比較好的解法, 只能在設定時儘量避掉這樣的情況</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/use_youtube_player_sdk_in_2022/">2022 年使用 YouTube player sdk</a></h3>
 
                 
@@ -271,103 +404,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/use_youtube_player_sdk_in_2022/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/web_text_rtl_handle/">網頁處理 RTL(Right To Left) 右到左的文字排版</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2022-04-15
-</p>
-                
-
-                
-                <p><h2 id="前言">前言</h2>
-<p>在 web 的世界中有一個需要處理的是文字排版的呈現</p>
-<p>因為從電腦到整個計算機科學的領域都是在拉丁語系為主宗的國家發展的</p>
-<p>所以在介面的文字排版上自然以從左到右為主</p>
-<p>但是在這世界上的文字排版有從左到右, 上到下, 右到左等呈現方式</p>
-<p>所以需要依照需求或不同語系的文字上有相對應的處理, 尤其是在多語系的情況下</p>
-<p>上到下的排版大多是書面用的排版, 相對在資訊領域比較少呈現, 且因為上到下的排版方式也大多是亞洲地區的國家, 在標準化的話語權不高</p>
-<p>但也漸漸在 web 領域中有開始支援上到下的排版(<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode">writing-mode</a>)</p>
-<p>且在資訊領域也大多是用左到右的呈現, 所以影響相對小</p>
-<p>額外補充一下大部分的方塊文字像是中文、日文、韓文等其實左到右、右到左、上到下都可以書寫與呈現</p>
-<p>但在部份語系像是</p>
-<ul>
-<li>阿拉伯文</li>
-<li>烏爾都文</li>
-<li>庫德文</li>
-<li>波斯文</li>
-<li>希伯來文</li>
-</ul>
-<p>上述文字排版就固定都是從右到左</p>
-<p>除了希伯來文以外都是從阿拉伯文字延伸的, 就像是英文、德文、法文都是拉丁文延伸出來一樣</p>
-<p>至於為何在世界各地的文字排版會有差異其實主要是起源於早期該文字書寫的方式與被書寫在什麼材質上面為主</p>
-<p>右到左主要起源於早期是文字是刻在石板上面, 左手拿鑿子, 右手拿錘子, 這樣從右到左是相對順手的</p>
-<p>中文早期大多從上到下從右到左的排列主要起源於以前是在竹片上捲成冊的(竹簡)</p>
-<p>在單片竹片上面書寫自然是上到下, 那捲成冊之後在閱讀時為了方便持握, 會是左手拿著竹簡, 右手打開來看內容, 自然就變成了右到左來閱讀</p>
-<p>不過現在大多也因為資訊科學的發展後在電子載體上就沿用左到右的排版(前面提到電腦乃至資訊科學都是在拉丁語系的國家發展出來的)</p>
-<p>不過在亞洲地區的國家部分書面印刷還是有保留上到下右到左的排版</p>
-<p>不過有點扯遠了</p>
-<h2 id="實作-rtlright-to-left-的方式">實作 RTL(Right To Left) 的方式</h2>
-<p>這次主要是要處理 RTL 的問題</p>
-<p>但其實在實作上也很好解</p>
-<p>HTML tag 有個屬性是 <code>dir</code> 只要設定是 <code>rtl</code> 或是 <code>ltr</code> 就可以了</p>
-<p>那麼要在什麼情況下設定這個東西?</p>
-<p>大致上會在兩種情況設定</p>
-<h3 id="1-多語系且有右到左語系">1. 多語系且有右到左語系</h3>
-<p>網站是多語系的網站且有右到左語系提供切換呈現</p>
-<p>所以只要在使用者決定好語系時針對該語系時需要呈現 RTL 的 tag 做處理就可以了</p>
-<p>以下有個例子是 Apple 的官網就是如此設計的</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2FScreen%20Shot%202022-04-15%20at%2011.48.23%20AM.png?alt=media&amp;token=c8a644ca-20bc-4d0a-83a2-16d8929a58d1" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2FScreen%20Shot%202022-04-15%20at%2011.47.18%20AM.png?alt=media&amp;token=fd076287-6bef-49fd-90dc-5b6f00b6b472" alt=""></p>
-<p>Apple 的官網就是在切換成不同語系時就設定不同的 <code>dir</code> 值來處理</p>
-<h3 id="2-ugcuser-generated-content-有右到左語系的內容">2. UGC(user generated content) 有右到左語系的內容</h3>
-<p>像是討論區或是可以讓使用者輸入內容呈現的部分這部分也要注意處理</p>
-<p>這樣的話呈現內容就不會是我們能夠先掌控的</p>
-<p>不像一般網站如果要呈現多語系, 那網站內容都會是自己的多語系檔與自己判斷多語系</p>
-<p>這情況就可以使用 <code>dir</code> 的第三種設定 <code>auto</code></p>
-<p>瀏覽器會依照 tag 裡面的文字來判斷語系是 RTL 的語系時就自動轉成右到左, 如果是一般 LTR 的語系需維持左到右</p>
-<p>這個方法很實用但也有個小缺點</p>
-<p>就是當內容一開始是 LTR 的文字時就會讓整個內容是 LTR</p>
-<p>像是以下情況</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">dir</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;auto&#34;</span>&gt;This content هذه الفقرة باللغة العربية ، لذا يجب الانتقال من اليمين إلى اليسار.&lt;/<span style="color:#f92672">p</span>&gt;
-</span></span></code></pre></div><p>會有點尷尬, 也不太確定這樣的呈現是不是可行的</p>
-<p>但是可以用另一個方式就是用 regex 來確認內容是不是有 RTL 的字元</p>
-<p>找了一下網路上整理出來的</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">IsRTL</span> (<span style="color:#a6e22e">s</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rtlChars</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;\u0591-\u07FF\u200F\u202B\u202E\uFB1D-\uFDFD\uFE70-\uFEFC&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rtlDirCheck</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RegExp(<span style="color:#e6db74">&#39;[&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">rtlChars</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;]&#39;</span>)
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">rtlDirCheck</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">s</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>這個 function 可以判斷內容是否含有 RTL 的字元</p>
-<p>但這個也不適合有混合了 RTL 和 LTR 的內容</p>
-<p>總之還是得自己評估採用哪種方式比較好</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">dir - HTML: HyperText Markup Language | MDN</a></p>
-<p><a href="https://zh.wikipedia.org/wiki/%E7%B8%B1%E6%9B%B8%E8%88%87%E6%A9%AB%E6%9B%B8">Refer - 縱書與橫書</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/web_text_rtl_handle/">Read more</a></p>
                 
             </div>
         </div>
