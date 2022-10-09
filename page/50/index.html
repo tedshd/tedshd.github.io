@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.96.0" />
+	<meta name="generator" content="Hugo 0.98.0" />
     
 
 
@@ -189,6 +189,62 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2016-01-31-466975/">HTML - redirect page from http-equiv</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-01-31
+</p>
+                
+
+                
+                <p><h2 id="html---redirect-page-from-http-equiv">HTML - redirect page from http-equiv</h2>
+<h3 id="intro">Intro</h3>
+<p>We can use JavaScript or PHP redirect page, we also can only use HTML redirect page</p>
+<p>But not suggest use this way</p>
+<blockquote>
+<p>Note: The value &ldquo;refresh&rdquo; should be used carefully, as it takes the control of a page away from the user. Using &ldquo;refresh&rdquo; will cause a failure in W3C&rsquo;s Web Content Accessibility Guidelines.</p>
+</blockquote>
+<blockquote>
+<p>使用 <!-- raw HTML omitted --> 標籤進行重新導向可能會降低搜尋引擎排名。</p>
+</blockquote>
+<h3 id="usage">Usage</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;refresh&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0;url=http://example.com&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- add content --&gt;</span>
+</span></span><span style="display:flex;"><span>If you are not redirected automatically, follow the &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http://example.com&#39;</span>&gt;link to example&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><h3 id="best-way">Best way</h3>
+<p>Use PHP redirect or JavaScript
+And http status is 301</p>
+<p><a href="http://www.w3schools.com/tags/att_meta_http_equiv.asp">Refer - HTML meta http-equiv Attribute</a></p>
+<p><a href="https://msdn.microsoft.com/zh-tw/library/ff724055(v=expression.40).aspx">Refer - WEB1041 - 目前使用 &lt;meta http-equiv=&quot;refresh&quot;&gt; 元素進行重新導向</a></p>
+<p><a href="http://stackoverflow.com/questions/5411538/redirect-from-an-html-page">Refer - Redirect from an HTML page? - Stack Overflow</a></p>
+<p><a href="http://rental.zhupiter.com/postshow_184_1_1.html">Refer - 轉導、轉向(Redirect)網址的方法. - 諸彼特租屋網</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2016-01-31-466975/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2016-01-27-javascript-get-css-style/">JavaScript - get CSS style</a></h3>
 
                 
@@ -219,87 +275,6 @@
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-12-20-google-cloud-platform-not-enough-space-set-the-swap-kernel-upgrades/">Google Cloud Platform - 空間不足, 設定 swap, kernel 升級</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-12-20
-</p>
-                
-
-                
-                <p><h2 id="google-cloud-platform---空間不足-設定-swap-kernel-升級">Google Cloud Platform - 空間不足, 設定 swap, kernel 升級</h2>
-<h3 id="kernel-升級-設定-swap">kernel 升級, 設定 swap</h3>
-<p>最近強者我朋友在 Google Cloud Platform 上的 computer engine 上的 VM 升級 kernel 時發現升一升就 GG 了</p>
-<p>連不進去了</p>
-<p>用快照再開一台試驗還是如此</p>
-<p>最後跟另一位大大研究了一下發現說原來是升級時記憶體不足導致整個系統卡住了, 然後又可能剛好 kernel 升級失敗所以就進不去 Lunix</p>
-<p>因為是開最小的機器(f1-micro (vCPUs: shared, RAM: 0.60 GB) * does not support local SSD - 10GB storage)</p>
-<p>我朋友又有跑許多 service 在上面, 所以記憶體會不足, 所以大大建議掛 swap 上去, 但 computer engine 在開 VM 時沒設 swap 的選項啊, 沒有切 partition 給 swap 的選項啊</p>
-<p>大大就說了可以用 file 的方式建 swap 出來, 所以強者我朋友就建好後在升級就過了, 成功升級 kernel</p>
-<p>因為我也是開同等級的 VM 所以我朋友也建議我也做一下這機制</p>
-<p>大大的建議怎麼可以忽視呢</p>
-<p>所以就來記錄一下步驟吧</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># count 依自己的設定設置</span>
-</span></span><span style="display:flex;"><span>sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>/swapfile bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 格式化 swap</span>
-</span></span><span style="display:flex;"><span>sudo mkswap /swapfile
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 啟動 swap</span>
-</span></span><span style="display:flex;"><span>swapon /swapfile
-</span></span></code></pre></div><p>為了在開機時掛載 swap</p>
-<p>要做以下處理</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vim /etc/fstab
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 加入</span>
-</span></span><span style="display:flex;"><span>/swapfile    swap    swap    defaults    <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
-</span></span></code></pre></div><p>這時就好了</p>
-<p>有裝 htop 可用 htop 看一下就會發現有 swap 了</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/379436/4H5o7kFbSQCXK2KRdihI_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-12-21%20%E4%B8%8A%E5%8D%8812.13.22.png" alt="螢幕快照 2015-12-21 上午12.13.22.png"></p>
-<p>但是強者我朋友又發現一個問題</p>
-<p>就是明明開 10G 了, 空間卻不夠用?</p>
-<h3 id="空間不足的問題">空間不足的問題</h3>
-<p>經過強者我朋友經過一番地找查</p>
-<p>總算找到原因了</p>
-<p>就是 kernel 的問題!</p>
-<p>他在 <code>/boot</code> 底下發現一卡車的 kernel</p>
-<p>原來是這一卡車的 kernel 佔掉一堆空間</p>
-<p>所以其實只要做 <code>sudo apt-get autoremove</code> 就可以移掉無用的 kernel</p>
-<p>移除前</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/379436/rKWHb6ETTdyssTBjdZZM_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-12-21%20%E4%B8%8A%E5%8D%8812.27.46.png" alt="螢幕快照 2015-12-21 上午12.27.46.png"></p>
-<p>移除後</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/379436/lcw6zUl5TGukhWZXNxsZ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-12-21%20%E4%B8%8A%E5%8D%8812.26.27.png" alt="螢幕快照 2015-12-21 上午12.26.27.png"></p>
-<p><strong>省了一半空間!</strong></p>
-<p>且發現一個現象</p>
-<p>VM 在重啟時會自動升級 kernel</p>
-<p>所以機器開小沒掛 swap 或空間不足</p>
-<p>在重開 VM 就可能會 GG</p>
-<p><a href="http://iammic.pixnet.net/blog/post/6204976-centos-%E5%BB%BA%E7%AB%8B-swap-file">refer - CentOS 建立 Swap File</a></p>
-<p><a href="http://wiki.ubuntu-tw.org/index.php?title=Aptitude">refer - Aptitude - Ubuntu 正體中文 Wiki</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-12-20-google-cloud-platform-not-enough-space-set-the-swap-kernel-upgrades/">Read more</a></p>
                 
             </div>
         </div>

@@ -1168,6 +1168,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1178,6 +1182,90 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-01-27-javascript-cross-module-communication/">JavaScript - Cross Module Communication</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-01-27
+</p>
+                
+
+                
+                <p><h2 id="javascript---cross-module-communication">JavaScript - Cross Module Communication</h2>
+<p>When website modulize, need a better way handle cross module communcation.</p>
+<p>Refer JavaScript design pattern&rsquo;s observer pattern and Android EventBus</p>
+<h3 id="principle">Principle</h3>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/252556/8wtWEky0QYqHmnFn4agd_observer_pattern_basic.png" alt="observer_pattern_basic.png"></p>
+<h3 id="my-implement">My Implement</h3>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/252556/YGA8Jj0Tv6Dco8Kj6AI3_observer_pattern_flow.png" alt="observer_pattern_flow.png"></p>
+<h3 id="example">Example</h3>
+<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/252556/NWYJbTKmUJtIkTXZugbf_observer_pattern_example.png" alt="observer_pattern_example.png"></p>
+<p>Hub is a array put publish object</p>
+<p>publish object must include action and something want to do</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
+</span></span></code></pre></div><p>If more something to in same action</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcB</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcB</span>);
+</span></span></code></pre></div><p>Now fire <code>alarm</code> can run <code>funA</code> and <code>funB</code>
+Then unpublish <code>funA</code>, action can only run <code>funB</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcA</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">funcB</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Red Alarm&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcB</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
+</span></span></code></pre></div><p>unPublish has three type</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// or
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">funcA</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// or
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">unPublish</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>);
+</span></span></code></pre></div><p>If publish is a is async behavior(AJAX)
+fire can add second argument as a callback to handle simple async behavior
+But not handle something behavior like promises or watchdog</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">fire</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// or
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">funcA</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Fin&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fire</span>(<span style="color:#e6db74">&#39;alarm&#39;</span>, <span style="color:#a6e22e">funcA</span>)
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2015-01-27-javascript-cross-module-communication/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1330,142 +1418,6 @@ jQuery 也是採用這方式實作的</p>
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2015-01-12-ajax-rest/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-01-10-ajax-xmlhttprequest-introduction/">AJAX - XMLHttpRequest Introduction</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-01-10
-</p>
-                
-
-                
-                <p><h2 id="ajax---xmlhttprequest-introduction">AJAX - XMLHttpRequest Introduction</h2>
-<h3 id="intro">Intro</h3>
-<p>說到 AJAX 行為就不行不提到 XMLHttpRequest object</p>
-<p>不知道現在的前端工程師還有人認識這個東西嗎?</p>
-<p>當前 library 眾多(YIU, jQuery, AngularJS, Backbone.js&hellip;)</p>
-<p>可能用過</p>
-<ul>
-<li><code>Y.jsonp(url, callback);</code></li>
-<li><code>$.ajax();</code></li>
-<li><code>$http();</code></li>
-<li>&hellip;&hellip;</li>
-</ul>
-<p>這些處理 AJAX 行為的 method</p>
-<p>這些 library 在處理 AJAX 行為時其實都是 base on XMLHttpRequest</p>
-<p>所以就來簡單說明一下這玩意, 了解這東西其實有助於處理 AJAX 行為</p>
-<p>因為這算是在前端開發上會較接觸到網路 http Protocol 的東西, 也跟後端有較緊密的關係</p>
-<h3 id="history">History</h3>
-<p>其實在早期 XMLHttpRequest 尚未定案下來時也有許多名稱</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">httpRequest</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">XMLHttpRequest</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// IE7,Mozila,Safari...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">httpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
-</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">ActiveXObject</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// IE5,IE6
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// 找出最新版MSXML剖析器
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">msxmls</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;MSXML2.XMLHttp.4.0&#34;</span>,<span style="color:#e6db74">&#34;MSXML2.XMLHttp.3.0&#34;</span>,<span style="color:#e6db74">&#34;MSXML2.XMLHttp&#34;</span>,<span style="color:#e6db74">&#34;Mircosoft.XMLHttp&#34;</span>];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">msxmls</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 建立XMLHttpRequest物件
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">httpRequest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#a6e22e">msxmls</span>[<span style="color:#a6e22e">i</span>]);
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// do something
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>相信看過這段 code 的人大概都會會心一笑</p>
-<p>在早期確實還是要去判斷該物件是否存在來兼容各 browser</p>
-<p>在處理 AJAX 上也不像現在都包好好, 都是自己處理許多行為, 但這樣也會較了解真實運作的原理</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#e6db74">&#39;example.html&#39;</span>, <span style="color:#66d9ef">true</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>) {
-</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseText</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>();
-</span></span></code></pre></div><p>上列為早期最簡單的一個 AJAX 行為</p>
-<p>從上面的 code 就可以看出要用 GET 來作取資料的動作, 所以就必須了解 http 原來有 GET, POST, DELETE, PUT 等等的 method</p>
-<p>從 <code>xhr.status</code> 可以了解到原來 http Protocol 有定義許多 status code 來表示 request 最後 response 的狀態</p>
-<p>甚至許多人大概很少處理 timeout, abort, setRequestHeader</p>
-<p>其實都有定義, 而要有一個嚴謹的 AJAX 行為其實並不是單純的使用 library 處理 success 或 error, 其實有很多情況要處理</p>
-<p>必須要很了解 AJAX 的流程與許多可能發生的例外狀況</p>
-<p>例如 padding 時間過久是否要重發還是取消, error 發生時依據 http status code 適當的 feedback 到畫面上等等都是在處理 AJAX 行為要注意的事</p>
-<h3 id="data-transfer">Data Transfer</h3>
-<p>在使用 library 時大家都知道要帶參數到後端大部份只要把參數帶入用 json 格式包起來的 object 中就可以了, 但卻不知道其實 library 都幫忙實作好多東西了</p>
-<p>其實有兩種方式可以帶參數到後端</p>
-<ul>
-<li>FormData</li>
-<li>application/x-www-form-urlencoded</li>
-</ul>
-<p>但這東西說穿了就是像是利用 form 的方式來傳送資料</p>
-<h4 id="formdata">FormData</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// FormData
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;str&#39;</span>, <span style="color:#e6db74">&#39;string&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;num&#39;</span>, <span style="color:#ae81ff">123</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;test.php&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>) {
-</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseText</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">formData</span>);
-</span></span></code></pre></div><p>PHP 部分</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$str <span style="color:#f92672">=</span> $_POST[<span style="color:#e6db74">&#39;str&#39;</span>];
-</span></span><span style="display:flex;"><span>$num <span style="color:#f92672">=</span> $_POST[<span style="color:#e6db74">&#39;num&#39;</span>];
-</span></span></code></pre></div><h4 id="applicationx-www-form-urlencoded">application/x-www-form-urlencoded</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// application/x-www-form-urlencoded
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ted&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;123456&#39;</span>
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">jsonData</span>;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">jsonData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">obj</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;test.php&#39;</span>, <span style="color:#66d9ef">true</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">setRequestHeader</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;application/x-www-form-urlencoded&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>) {
-</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseText</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;json=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">jsonData</span>);
-</span></span></code></pre></div><p>PHP 部分</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$request_json <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_decode</span>($_POST[<span style="color:#e6db74">&#39;json&#39;</span>], <span style="color:#66d9ef">true</span>);
-</span></span></code></pre></div><p>較常用的方式會是建立 FormData 的方式來處理</p>
-<p>但由於 IE 10 以上才支持 FormData</p>
-<p>所以在未支援的情況下建議使用 <code>application/x-www-form-urlencoded</code> 的方式</p>
-<p>關於一些 AJAX 的進階應用與 request/response 行為以後會有文章說明</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-01-10-ajax-xmlhttprequest-introduction/">Read more</a></p>
                 
             </div>
         </div>

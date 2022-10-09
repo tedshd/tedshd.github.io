@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.96.0" />
+	<meta name="generator" content="Hugo 0.98.0" />
     
 
 
@@ -189,6 +189,48 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2017-09-17-2472689/">ubuntu - apt-get install php repository 403</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2017-09-17
+</p>
+                
+
+                
+                <p><h2 id="ubuntu---apt-get-install-php-repository-403">ubuntu - apt-get install php repository 403</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Error: W: Failed to fetch http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu/dists/trusty/main/binary-amd64/Packages <span style="color:#ae81ff">404</span> Not Found
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// or
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Error: W: Failed to fetch http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu/dists/trusty/main/binary-amd64/Packages <span style="color:#ae81ff">403</span> forbidden
+</span></span></code></pre></div><p>Try this</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo rm /etc/apt/sources.list.d/ondrej-php5-5_6-trusty.list
+</span></span><span style="display:flex;"><span>sudo add-apt-repository -y ppa:ondrej/php
+</span></span><span style="display:flex;"><span>sudo apt-get -y update
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2017-09-11-html-dns-prefetch-preconnect-prefetch-and-prerender-research-notes/">HTML - dns-prefetch, preconnect, prefetch, prerender 研究筆記</a></h3>
 
                 
@@ -255,81 +297,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2017-09-11-html-dns-prefetch-preconnect-prefetch-and-prerender-research-notes/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2017-09-05-2262937/">Node.js - 簡單起一個 local server 進行測試</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2017-09-05
-</p>
-                
-
-                
-                <p><h2 id="nodejs---簡單起一個-local-server-進行測試">Node.js - 簡單起一個 local server 進行測試</h2>
-<h2 id="緣由">緣由</h2>
-<p>如果要臨時起一個 local 的 server 測試前端可以考慮用 Node 的一個套件 <code>http-server</code> 來做</p>
-<p>為啥有這需求呢?</p>
-<p>可能的情境如下</p>
-<ol>
-<li>
-<p>原本的 localhost(127.0.0.1) 被其他服務佔用時, 且無法依附在該 localhost 底下時</p>
-</li>
-<li>
-<p>當要測試的前端程式需要是有第三方 API 驗證 domain 時且在上述情境時可以用(大部分的第三方 API 或 oauth 通常允許可以設置 localhost)</p>
-</li>
-</ol>
-<p>PS. 假設無法設定 localhost(得設定一個真實的 domain) 也可設定 host 解決這問題(但 host 是不吃 port 的所以在第一點的情況下這方案是無法成立的</p>
-<h2 id="其他建議">其他建議</h2>
-<p>其實還有其他我覺得不太好的方式</p>
-<p>例如</p>
-<ol>
-<li>
-<p>在本地的的 Apache or Nginx 設定 RewriteRule or Path or Proxy</p>
-</li>
-<li>
-<p>用最方便的 file 方式打開(但如果有用到第三方服務需要 domain 驗證的就 GG 了)</p>
-</li>
-</ol>
-<h2 id="使用方式">使用方式</h2>
-<p>這裡只提供簡單的用法</p>
-<p>詳細參數用法請參考 NPM 上的文件 <a href="https://www.npmjs.com/package/http-server">http-server - npm</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npm install http-server -g
-</span></span></code></pre></div><p>裝在 global 後就可用在任意專案上</p>
-<p>之後再切到專案目錄下以下指令</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>http-server
-</span></span></code></pre></div><p>會看到以下訊息這就表示已經在 local 開了一個 8080 port 的 server</p>
-<p>路徑理所當然的就是當前專案目錄的路徑</p>
-<pre tabindex="0"><code>Starting up http-server, serving ./
-Available on:
-  http://127.0.0.1:8080
-  http://192.168.2.187:8080
-Hit CTRL-C to stop the server
-</code></pre><p>當然也可指定 port 以避免跟其他服務 port 相撞</p>
-<p><a href="http://jasonwatmore.com/post/2016/06/22/nodejs-setup-simple-http-server-local-web-server">Refer - NodeJS - Setup a Simple HTTP Server / Local Web Server</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2017-09-05-2262937/">Read more</a></p>
                 
             </div>
         </div>
