@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.98.0" />
+	<meta name="generator" content="Hugo 0.96.0" />
     
 
 
@@ -183,6 +183,51 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-09-12-adobe-flash-player-118800168-upload-file-issue/">Adobe Flash Player 11.8.800.168 upload file issue</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-09-12
+</p>
+                
+
+                
+                <p><h2 id="adobe-flash-player-118800168-upload-file-issue">Adobe Flash Player 11.8.800.168 upload file issue</h2>
+<p>筆記一下
+在 IE 中
+當 Flash Player 更新到 11.8.800.168 時, 發現一個問題
+就是用 flash 上傳檔案時, 中文的檔名會用 Big5 去解, 所以就造成亂碼
+測試的 OS
+Windows 7
+繁體中文語系</p>
+<p>在網路上有人也提出這<a href="http://forums.adobe.com/message/5672196">問題</a>了</p>
+<h3 id="update">Update</h3>
+<p>Adobe Flash Player 已更新到 11.8.800.174 修正這問題了</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-09-12-adobe-flash-player-118800168-upload-file-issue/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -421,113 +466,6 @@ CSS source code(可依需求進行修改)</p>
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-09-12-waterfall-stream-pinterest-style-layout/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-09-10-coding-style/">Coding Style</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-09-10
-</p>
-                
-
-                
-                <p><h2 id="coding-style">Coding Style</h2>
-<h3 id="條件判斷">條件判斷</h3>
-<p>在 PHP &amp; JavaScript 中有許多邏輯判斷
-當有許多條件要去檢查時, 一般來說就是用 <strong>if</strong> 一直寫下去
-最後就造成下面的情況(以 PHP 為例)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ($a <span style="color:#f92672">===</span> $b)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ($c)
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($c <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>)
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ($d)
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// do something
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">// ...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>這樣下去就沒完沒了, 而且縮排會越來越多, 要看 code 也很不方便
-所以假如就已作條件檢查來說
-可以用以下的做法</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// check condition 1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($a <span style="color:#f92672">!==</span> $b)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// check condition 2
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$c <span style="color:#f92672">||</span> $c <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;&#39;</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// check condition 3
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($c <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">9</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// check condition 4
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">d</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// do something
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
-</span></span></span></code></pre></div><p>做個 <strong>反向思考</strong> , 把不適合的條件列出再一一 return or 作處理
-剩下的便是所需要的</p>
-<blockquote>
-<p>從巢狀式結構變成區域式
-結構也較為清晰
-debug 也較容易</p>
-</blockquote>
-<p>有時也會遇到應該用 <strong>switch</strong> 卻用 <strong>if</strong> 去一直加下去的情況
-所以當 <strong>if</strong> 用到 <strong><em>3 個</em></strong> 以上時, 就要思考要用什麼敘述來達到目的比較好
-也許可以用 <code>switch</code></p>
-<h3 id="function">function</h3>
-<p>有時遇到很多 code 重複時, 我們可以抽離這些重複的部分, 把它放到一個 function 中
-要用時在再去呼叫那個 function</p>
-<p><a href="http://www.ruanyifeng.com/blog/2013/01/abstraction_principles.html">Refer-代码的抽象三原则</a></p>
-<h3 id="以錯誤為優先處理">以錯誤為優先處理</h3>
-<p>JavaScript</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doSomething</span>(<span style="color:#a6e22e">data</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;fail&#39;</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// handle error
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// handle ok
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-09-10-coding-style/">Read more</a></p>
                 
             </div>
         </div>

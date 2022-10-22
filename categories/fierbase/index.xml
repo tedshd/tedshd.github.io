@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fierbase on tedshd&#39;s DevNote</title>
+    <link>https://blog.tedshd.io/categories/fierbase/</link>
+    <description>Recent content in fierbase on tedshd&#39;s DevNote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2022 Tedshd</copyright>
+    <lastBuildDate>Sat, 22 Oct 2022 21:05:11 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/fierbase/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unarchived firebase console dynamic link</title>
+      <link>https://blog.tedshd.io/posts/unarchived_firebase_console_dynamic_link/</link>
+      <pubDate>Sat, 22 Oct 2022 21:05:11 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/unarchived_firebase_console_dynamic_link/</guid>
+      <description>Sometimes a dynamic link is accidentally archived.
+But doesn&amp;rsquo;t have any option show archived dynamic link list.
+BTW
+You have a way to unarchived this dynamic link.
+Use POST API update this dynamic link  Find your filebase console auth data  You can edit dynamic link data and then catch request when save it.
+Find this request https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;amp;key=&amp;lt;YOUR KEY&amp;gt; and copy header
+Build POST data  curl --location --request POST &amp;#39;https://firebasedurablelinks-pa.</description>
+    </item>
+    
+  </channel>
+</rss>
