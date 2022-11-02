@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 25 Oct 2021 09:22:33 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/firebase/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Oct 2022 10:31:56 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/firebase/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Firebase app check 使用紀錄</title>
+      <link>https://blog.tedshd.io/posts/firebase_app_check/</link>
+      <pubDate>Mon, 31 Oct 2022 10:31:56 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/firebase_app_check/</guid>
+      <description>前言 因為公司有使用部分的 firebase 服務 那就順便用一下前一陣子推出的 app check 的服務(雖然我覺得這服務還沒到完善的地步) 這服務主要是要協助驗證來自 client 的請求是</description>
+    </item>
+    
     <item>
       <title>Firebase remote config rest 更新</title>
       <link>https://blog.tedshd.io/posts/firebase_remote_config/</link>

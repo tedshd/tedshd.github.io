@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Sat, 22 Oct 2022 21:05:11 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Oct 2022 10:31:56 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Firebase app check 使用紀錄</title>
+      <link>https://blog.tedshd.io/posts/firebase_app_check/</link>
+      <pubDate>Mon, 31 Oct 2022 10:31:56 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/firebase_app_check/</guid>
+      <description>前言 因為公司有使用部分的 firebase 服務 那就順便用一下前一陣子推出的 app check 的服務(雖然我覺得這服務還沒到完善的地步) 這服務主要是要協助驗證來自 client 的請求是</description>
+    </item>
+    
     <item>
       <title>Unarchived firebase console dynamic link</title>
       <link>https://blog.tedshd.io/posts/unarchived_firebase_console_dynamic_link/</link>
@@ -2141,21 +2150,21 @@ redirect $this-&amp;gt;load-&amp;gt;helper(&amp;#39;url&amp;#39;); </description
     </item>
     
     <item>
-      <title>‎Sublime Text - Hot Key</title>
-      <link>https://blog.tedshd.io/posts/2013-09-01-sublime-text-hot-key/</link>
-      <pubDate>Sun, 01 Sep 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tedshd.io/posts/2013-09-01-sublime-text-hot-key/</guid>
-      <description>Hot Key Document Mac OS X Windows Ctrl+Shift+p 開啟指令列 Tab 自動完成字詞 ctrl + d 選單字 alt + F3 選相同的字 ctrl + f 搜尋 ctrl + 0 focus 到 siderbar Ctrl + Shift + &amp;lt;- or -&amp;gt; Alt + &amp;lt;- or -&amp;gt; 單字 or 符號間移動 Ctrl + Alt + up</description>
-    </item>
-    
-    <item>
       <title>Sublime Text - initial setting</title>
       <link>https://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/</link>
       <pubDate>Sun, 01 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/</guid>
       <description>Initial Setting Sublime Text 手冊 Preferences-&amp;gt;Settings-Default &amp;#34;default_encoding&amp;#34;: &amp;#34;UTF-8&amp;#34; &amp;#34;default_line_ending&amp;#34;: &amp;#34;unix&amp;#34; &amp;#34;tab_size&amp;#34;: 4 &amp;#34;translate_tabs_to_spaces&amp;#34;: true &amp;#34;save_on_focus_lost&amp;#34;: true &amp;#34;highlight_line&amp;#34;: true &amp;#34;trim_trailing_white_space_on_save&amp;#34;: true &amp;#34;rulers&amp;#34;: [80, 120] &amp;#34;highlight_modified_tabs&amp;#34;: true choose &amp;#34;ensure_newline_at_eof_on_save&amp;#34;: true &amp;#34;use_simple_full_screen&amp;#34;: true if want change font size Preferences-&amp;gt;Settings-User { &amp;#34;default_encoding&amp;#34;: &amp;#34;UTF-8&amp;#34;, &amp;#34;default_line_ending&amp;#34;: &amp;#34;unix&amp;#34;, &amp;#34;tab_size&amp;#34;: 4, &amp;#34;translate_tabs_to_spaces&amp;#34;: true, &amp;#34;save_on_focus_lost&amp;#34;: true, &amp;#34;highlight_line&amp;#34;: true, &amp;#34;trim_trailing_white_space_on_save&amp;#34;: true, &amp;#34;rulers&amp;#34;: [80, 120], &amp;#34;highlight_modified_tabs&amp;#34;: true, &amp;#34;font_size&amp;#34;: 18.0, &amp;#34;ignored_packages&amp;#34;: [ &amp;#34;Vintage&amp;#34; ] }</description>
+    </item>
+    
+    <item>
+      <title>‎Sublime Text - Hot Key</title>
+      <link>https://blog.tedshd.io/posts/2013-09-01-sublime-text-hot-key/</link>
+      <pubDate>Sun, 01 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/2013-09-01-sublime-text-hot-key/</guid>
+      <description>Hot Key Document Mac OS X Windows Ctrl+Shift+p 開啟指令列 Tab 自動完成字詞 ctrl + d 選單字 alt + F3 選相同的字 ctrl + f 搜尋 ctrl + 0 focus 到 siderbar Ctrl + Shift + &amp;lt;- or -&amp;gt; Alt + &amp;lt;- or -&amp;gt; 單字 or 符號間移動 Ctrl + Alt + up</description>
     </item>
     
     <item>
