@@ -1188,6 +1188,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1198,6 +1202,47 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/mysql_in_docker/">Mac M1 run MySQL in local docker</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2022-05-03
+</p>
+                
+
+                
+                <p><h2 id="usage">Usage</h2>
+<p><a href="https://hub.docker.com/_/mysql">docker hub</a></p>
+<p>In Apple M1</p>
+<p><a href="https://hub.docker.com/r/amd64/mysql/">amd64/mysql</a></p>
+<h2 id="run-docker-in-local">Run docker in local</h2>
+<p>Sample for M1(different of image name)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>password -d amd64/mysql:latest
+</span></span></code></pre></div><p>Container run in <code>0.0.0.0</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql --default-character-set<span style="color:#f92672">=</span>utf8mb4 -u root -h 0.0.0.0 -P <span style="color:#ae81ff">3306</span> -p -A
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1318,144 +1363,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/web_how_to_check_ip/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/php_crawler_html/">PHP 爬蟲 抓取 HTML 內容</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2022-04-22
-</p>
-                
-
-                
-                <p><h2 id="intro">Intro</h2>
-<p>又是久違的寫爬蟲&hellip;</p>
-<p>這次是接手大大們的 code</p>
-<p>寫的是 PHP 版本</p>
-<p>研究了一下寫法</p>
-<p>才發現現在可以不使用第三方套件就可以處理了</p>
-<p>所以這裡紀錄一下</p>
-<h2 id="取得-html-內容">取得 HTML 內容</h2>
-<ol>
-<li>使用 curl</li>
-<li>使用 file_get_contents</li>
-</ol>
-<p>curl 是我常用的方式
-看了大大們的 code 才知道原來 file_get_contents 也可以取 http/https 內容&hellip;</p>
-<p>這邊簡單貼一下兩種作法的範例</p>
-<h3 id="curl">curl</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">httpGet</span>($url)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  $ch <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_init</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">curl_setopt</span>($ch,<span style="color:#a6e22e">CURLOPT_URL</span>,$url);
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">curl_setopt</span>($ch,<span style="color:#a6e22e">CURLOPT_RETURNTRANSFER</span>,<span style="color:#66d9ef">true</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">curl_setopt</span>($ch,<span style="color:#a6e22e">CURLOPT_HEADER</span>, [
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36&#39;</span>
-</span></span><span style="display:flex;"><span>  ]);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  $output<span style="color:#f92672">=</span><span style="color:#a6e22e">curl_exec</span>($ch);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">curl_close</span>($ch);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> $output;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="file_get_contents">file_get_contents</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">htmlContentGet</span>($url) {
-</span></span><span style="display:flex;"><span>  $opts <span style="color:#f92672">=</span> [
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;http&#34;</span> <span style="color:#f92672">=&gt;</span> [
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;method&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;GET&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;header&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36</span><span style="color:#ae81ff">\r\n</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    ]
-</span></span><span style="display:flex;"><span>  ];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">file_get_contents</span>($url, <span style="color:#66d9ef">false</span>, <span style="color:#a6e22e">stream_context_create</span>($opts));
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>如果需要一些特別的 header 或是 querystring 就在各自處理</p>
-<p>另外提一下, 用 file_get_contents 也可以抓取本地檔案, 所以也可以打開本地的 html file(至少我以前用 file_get_contents 都是用來打開本地檔案的)</p>
-<p><a href="https://www.php.net/manual/en/function.file-get-contents.php">refer - PHP: file_get_contents - Manual</a></p>
-<h2 id="抓取-dom">抓取 DOM</h2>
-<p>研究了一下也有不少方式可以做</p>
-<p>因為上面方法回來的是 string</p>
-<p>所以接下來最重要的事情是如何擷取出想要的內容</p>
-<p>大致有兩種方式</p>
-<ol>
-<li>用 preg_replace, str_replace, strpos, substr 等方法處理</li>
-<li>針對 DOM 轉成物件來處理</li>
-</ol>
-<p>各有優缺點</p>
-<p>就看最後決定要怎麼做</p>
-<p>這裡針對 2 的處理方式來處理</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>$dom <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMDocument</span>();
-</span></span><span style="display:flex;"><span>$dom<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">loadHTML</span>($html_string, <span style="color:#a6e22e">LIBXML_NOERROR</span>);
-</span></span></code></pre></div><p>這裡又細分兩種處理方式</p>
-<ol>
-<li>DOM HTML</li>
-<li>XPath</li>
-</ol>
-<h3 id="dom-html">DOM HTML</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>$dom <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMDocument</span>();
-</span></span><span style="display:flex;"><span>$dom<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">loadHTML</span>($html_string, <span style="color:#a6e22e">LIBXML_NOERROR</span>);
-</span></span><span style="display:flex;"><span>$documentElement <span style="color:#f92672">=</span> $dom<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">documentElement</span>;
-</span></span></code></pre></div><h3 id="xpath">XPath</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>$dom <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMDocument</span>();
-</span></span><span style="display:flex;"><span>$dom<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">loadHTML</span>($html_string, <span style="color:#a6e22e">LIBXML_NOERROR</span>);
-</span></span><span style="display:flex;"><span>$xpath <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMXpath</span>($dom);
-</span></span></code></pre></div><p>這兩種的差別就在於支援的取 DOM 的方式不同</p>
-<p>documentElement 這個 Class 底下取得 DOM 物件的方法名稱大多和 JavaScript 的名稱一樣</p>
-<p>可以參考以下文件</p>
-<p><a href="https://www.php.net/manual/en/class.domelement.php">refer - PHP: DOMElement - Manual</a></p>
-<p>以下列舉一些範例</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>$span <span style="color:#f92672">=</span> $documentElement<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;span&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span>( $span <span style="color:#66d9ef">as</span> $item ) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> $item<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">textContent</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$img <span style="color:#f92672">=</span> $documentElement<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;img&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span>( $img <span style="color:#66d9ef">as</span> $item ) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> $item<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;src&#39;</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>比較可惜的是它沒有抓取 class 的方式</p>
-<p>這種情況就可以用取 XPath 的方式來做</p>
-<p>基本上我個人是比較喜歡 XPath 的方式</p>
-<p>因為相對比較好用</p>
-<p>後續要調整也相對容易, 只要改動 XPath 就可以了</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span>$xpath <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMXpath</span>($dom);
-</span></span><span style="display:flex;"><span>$desc <span style="color:#f92672">=</span> $xpath<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">query</span>(<span style="color:#e6db74">&#34;/html/body/div[2]/div[2]/div/div[1]/a/img&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span>( $desc <span style="color:#66d9ef">as</span> $item ) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> $item<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;src&#39;</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><a href="https://codingreflections.com/how-to-parse-html-using-php-native-classes/">refer - How to Parse HTML using PHP Native Classes</a></p>
-<p><a href="https://www.php.net/manual/zh/class.domdocument.php">refer - PHP: DOMDocument - Manual</a></p>
-<h2 id="結語">結語</h2>
-<p>以上的方式都只適用於 SSR 的頁面</p>
-<p>如果內容是動態產生的一律建議直接用打 API 的方式去拿內容</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/php_crawler_html/">Read more</a></p>
                 
             </div>
         </div>

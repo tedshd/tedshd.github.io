@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Fri, 30 Apr 2021 15:51:04 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Dec 2022 09:54:36 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx 使用 host 判斷作 reverse proxy</title>
+      <link>https://blog.tedshd.io/posts/nginx_use_host_reverse_proxy/</link>
+      <pubDate>Fri, 02 Dec 2022 09:54:36 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/nginx_use_host_reverse_proxy/</guid>
+      <description>直接上設定 server { listen 80; listen [::]:80; server_name api.example.com, example.com; location / { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-NginX-Proxy true; set $proxy http://0.0.0.0:3000; if ($host ~ api.example.com) { set $proxy http://0.0.0.0:8000; } proxy_pass $proxy; } }</description>
+    </item>
+    
     <item>
       <title>Nginx 使用 refer 處理 CORS header</title>
       <link>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</link>

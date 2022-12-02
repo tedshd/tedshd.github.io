@@ -1188,6 +1188,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1198,6 +1202,43 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-08-21-mac-sshfs/">Mac - SSHFS</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-08-21
+</p>
+                
+
+                
+                <p><h2 id="mac---sshfs">Mac - SSHFS</h2>
+<p>SSHFS can help Mac user mount remote support SSH protocol.
+<a href="http://fuse.sourceforge.net/sshfs.html">Intro</a></p>
+<p><a href="https://github.com/osxfuse/osxfuse/wiki/SSHFS">Usage</a></p>
+<h3 id="strong-stylecolorredit-has-problem-in-oh-my-zshstrong"><!-- raw HTML omitted -->It has problem in oh-my-zsh!<!-- raw HTML omitted --></h3>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1255,135 +1296,6 @@ But
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2014-08-16-git-github-gh-pages/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-08-07-gulpjs-use-log/">gulp.js - Use Log</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-08-07
-</p>
-                
-
-                
-                <p><h2 id="gulpjs---use-log">gulp.js - Use Log</h2>
-<h3 id="intro">Intro</h3>
-<p><a href="http://gulpjs.com/">gulp.js</a></p>
-<p><a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started">Getting Started</a></p>
-<p><a href="http://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/">Grunt vs Gulp - Beyond the Numbers</a></p>
-<h3 id="packagejson-version-setting">package.json version setting</h3>
-<p><a href="https://docs.npmjs.com/files/package.json#dependencies">dependencies</a></p>
-<h3 id="how-to-pipe-to-another-task-in-gulp">How to pipe to another task in Gulp?</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;first&#39;</span>, <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// first task
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;second&#39;</span>, [<span style="color:#e6db74">&#39;first&#39;</span>], <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// this occurs after &#39;first&#39; finishes
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
-</span></span></code></pre></div><p><a href="http://stackoverflow.com/questions/23458428/how-to-pipe-to-another-task-in-gulp">Refer - How to pipe to another task in Gulp?</a></p>
-<h3 id="use-package">Use Package</h3>
-<h3 id="compass">Compass</h3>
-<p>First, must install <a href="http://compass-style.org/install/">compass</a></p>
-<p><a href="https://www.npmjs.org/package/gulp-compass">gulp-compass</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">compass</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-compass&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;default&#39;</span>, <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">run</span>(<span style="color:#e6db74">&#39;compass&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">watch</span>([
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;./sass/**&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;./img/**&#39;</span>
-</span></span><span style="display:flex;"><span>        ], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">run</span>(<span style="color:#e6db74">&#39;compass&#39;</span>);
-</span></span><span style="display:flex;"><span>    });
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;compass&#39;</span>, <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;./sass/*.scss&#39;</span>)
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">compass</span>({
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">comments</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">css</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;css&#39;</span>, <span style="color:#75715e">// css folder
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">sass</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;sass&#39;</span>, <span style="color:#75715e">// scss folder
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">image</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;img&#39;</span> <span style="color:#75715e">// image folder
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }));
-</span></span><span style="display:flex;"><span>});
-</span></span></code></pre></div><p>commond</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>gulp
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
-</span></span><span style="display:flex;"><span>gulp compass
-</span></span></code></pre></div><h3 id="jshint">Jshint</h3>
-<p><a href="https://www.npmjs.org/package/gulp-jshint">gulp-jshint</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">jshint</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-jshint&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;lint&#39;</span>, <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;./*.js&#39;</span>) <span style="color:#75715e">// js file
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">jshint</span>())
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">jshint</span>.<span style="color:#a6e22e">reporter</span>(<span style="color:#e6db74">&#39;jshint-stylish&#39;</span>));
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// .pipe(jshint.reporter(&#39;default&#39;))
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
-</span></span></code></pre></div><p>commond</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>gulp lint
-</span></span></code></pre></div><h3 id="minify-html">Minify Html</h3>
-<p><a href="https://www.npmjs.org/package/gulp-minify-html">gulp-minify-html</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minifyHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-minify-html&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;minify-html&#39;</span>, <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">opts</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">comments</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>,<span style="color:#a6e22e">spare</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;./*.html&#39;</span>) <span style="color:#75715e">// html file
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">minifyHTML</span>(<span style="color:#a6e22e">opts</span>))
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;./dist/&#39;</span>)); <span style="color:#75715e">// result minify html
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
-</span></span></code></pre></div><p>commond</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>gulp minify-html
-</span></span></code></pre></div><h3 id="minify-css">Minify CSS</h3>
-<p><a href="https://www.npmjs.org/package/gulp-minify-css">gulp-minify-css</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minifyCSS</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-minify-css&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;minify-css&#39;</span>, <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;./css/*.css&#39;</span>) <span style="color:#75715e">// css files
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">minifyCSS</span>({<span style="color:#a6e22e">keepBreaks</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>}))
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;./dist/&#39;</span>)); <span style="color:#75715e">// result minify css
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
-</span></span></code></pre></div><p>commond</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>gulp minify-css
-</span></span></code></pre></div><h3 id="minify-javascript">Minify JavaScript</h3>
-<p><a href="https://www.npmjs.org/package/gulp-uglify">gulp-uglify</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">uglify</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-uglify&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;uglify&#39;</span>, <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;./*.js&#39;</span>)
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">uglify</span>())
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;dist&#39;</span>));
-</span></span><span style="display:flex;"><span>});
-</span></span></code></pre></div><p>commond</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>gulp compress
-</span></span></code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-08-07-gulpjs-use-log/">Read more</a></p>
                 
             </div>
         </div>
