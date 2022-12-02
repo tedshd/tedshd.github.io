@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Fri, 18 Nov 2022 10:47:52 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Dec 2022 09:58:14 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>artifact registry</title>
+      <link>https://blog.tedshd.io/categories/artifact-registry/</link>
+      <pubDate>Thu, 01 Dec 2022 09:58:14 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/artifact-registry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>compute engine</title>
+      <link>https://blog.tedshd.io/categories/compute-engine/</link>
+      <pubDate>Thu, 01 Dec 2022 09:58:14 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/compute-engine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gcp</title>
+      <link>https://blog.tedshd.io/categories/gcp/</link>
+      <pubDate>Thu, 01 Dec 2022 09:58:14 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/gcp/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>nodejs</title>
       <link>https://blog.tedshd.io/categories/nodejs/</link>
@@ -302,15 +329,6 @@
       <pubDate>Thu, 24 Dec 2020 10:12:17 +0800</pubDate>
       
       <guid>https://blog.tedshd.io/categories/mac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gcp</title>
-      <link>https://blog.tedshd.io/categories/gcp/</link>
-      <pubDate>Fri, 20 Nov 2020 10:52:35 +0800</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/gcp/</guid>
       <description></description>
     </item>
     

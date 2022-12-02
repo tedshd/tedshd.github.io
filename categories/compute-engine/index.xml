@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>compute engine on tedshd&#39;s DevNote</title>
+    <link>https://blog.tedshd.io/categories/compute-engine/</link>
+    <description>Recent content in compute engine on tedshd&#39;s DevNote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2022 Tedshd</copyright>
+    <lastBuildDate>Thu, 01 Dec 2022 09:58:14 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/compute-engine/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Cloud 使用 artifact registry 和 compute engine</title>
+      <link>https://blog.tedshd.io/posts/gcp_artifact_registry_compute_engine/</link>
+      <pubDate>Thu, 01 Dec 2022 09:58:14 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/gcp_artifact_registry_compute_engine/</guid>
+      <description>前言 基於公司之前的架構設計 使用 GCP 重現一個簡化版的部署架構 基本是使用 artifact registry 和 compute engine GCP 官方也有 artifact registry + compute engine 的部署設計 但是因為是 side project, 不想搞得太複雜, 所以</description>
+    </item>
+    
+  </channel>
+</rss>
