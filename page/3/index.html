@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.96.0" />
+	<meta name="generator" content="Hugo 0.98.0" />
     
 
 
@@ -189,6 +189,127 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/firebase_app_check/">Firebase app check 使用紀錄</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2022-10-31
+</p>
+                
+
+                
+                <p><h2 id="前言">前言</h2>
+<p>因為公司有使用部分的 firebase 服務</p>
+<p>那就順便用一下前一陣子推出的 <a href="https://firebase.google.com/products/app-check">app check</a> 的服務(雖然我覺得這服務還沒到完善的地步)</p>
+<p>這服務主要是要協助驗證來自 client 的請求是否合法</p>
+<p>不只單純是 firebase 的服務可以用</p>
+<p>一般 API 也可以使用</p>
+<h2 id="使用">使用</h2>
+<p>目前 SDK 只支持 Node.js</p>
+<p><a href="https://firebase.google.com/docs/app-check/custom-resource-backend">Verify App Check tokens from a custom backend</a></p>
+<p>因為原本的後端不是 Node 的環境</p>
+<p>所以使用 Node.js 建立起一個 middleware 以便讓原有的 API server 來串接</p>
+<h2 id="流程">流程</h2>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2Ffirebase%20app%20check-Copy%20of%20Page-1.drawio.png?alt=media&amp;token=c8d0b7ee-875f-4380-b4e9-66c33796a990" alt=""></p>
+<h2 id="所需作業">所需作業</h2>
+<p>app 需要使用相關對應的 SDK</p>
+<p>在 firebase console 把 app check 選單中建立的 app 做註冊</p>
+<p>因為是改為單獨建立 Node.js 的服務</p>
+<p>所以會針對文件範例做調整</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">http</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;http&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;url&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">admin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;firebase-admin&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">serviceAccount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#a6e22e">__dirname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/serviceAccountKey.json&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">initializeApp</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">credential</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">credential</span>.<span style="color:#a6e22e">cert</span>(<span style="color:#a6e22e">serviceAccount</span>)
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusOk</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusForbidden</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Forbidden&#39;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusUnauthorized</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Unauthorized&#39;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>(<span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">response</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">queryObject</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>).<span style="color:#a6e22e">query</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">method</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appCheckToken</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">queryObject</span>[<span style="color:#e6db74">&#39;token&#39;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">appCheckToken</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">403</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">statusForbidden</span>));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appCheckClaims</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">appCheck</span>().<span style="color:#a6e22e">verifyToken</span>(<span style="color:#a6e22e">appCheckToken</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// If verifyToken() succeeds, continue with the next middleware
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// function in the stack.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;appCheckClaims&#39;</span>, <span style="color:#a6e22e">appCheckClaims</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>          ...<span style="color:#a6e22e">appCheckClaims</span>,
+</span></span><span style="display:flex;"><span>          ...<span style="color:#a6e22e">statusOk</span>
+</span></span><span style="display:flex;"><span>        }));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;err&#39;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">401</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">statusUnauthorized</span>));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">statusForbidden</span>));
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3300</span>, <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;3300 port&#39;</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>其中 <code>serviceAccountKey.json</code> 是 firebase console 中產生的</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2FScreen_Shot_2022-11-02_at_9_51_27_AM.png?alt=media&amp;token=23519780-f442-4bfd-b1f4-db69739cbb81" alt=""></p>
+<h2 id="使用方式">使用方式</h2>
+<p>可以使用 pm2 之類的服務啟動</p>
+<p>這樣就可以用 <code>http://localhost?token=&lt;app check token&gt;</code> 的方式呼叫驗證</p>
+<p>建議在內部使用, 走內部 IP 或內部網域以減少傳輸時間</p>
+<p>直接以 rest api 的方式呼叫</p>
+<h2 id="後續升級">後續升級</h2>
+<p>如果之後公司其他團隊也有其他的 firebase 的 app check 需求也可以添加參數或路由來使用各自的 firebase 專案設定來共用這個 API</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/firebase_app_check/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/unarchived_firebase_console_dynamic_link/">Unarchived firebase console dynamic link</a></h3>
 
                 
@@ -238,105 +359,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/unarchived_firebase_console_dynamic_link/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/ssh_to_windows_server/">SSH 到 Windows Server</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2022-10-09
-</p>
-                
-
-                
-                <p><p>最近因為需求要接手 Windows Server 進行維護與開發</p>
-<p>因為只有在很久以前幫別人處理 IIS Server 一點經驗</p>
-<p>時間也非常久了</p>
-<p>所以筆記一下這次的處理過程</p>
-<p>這次處理的 server 版本是 Windows Server 2019</p>
-<h2 id="ssh-on-gcp-compute-engine">SSH on GCP Compute Engine</h2>
-<p>如果是建置在 Google Cloud 的 Compute Engine 上的話</p>
-<p>就參考文件 <a href="https://cloud.google.com/blog/products/compute/using-openssh-on-windows-compute-engine-instances">Getting started with OpenSSH on Windows Compute Engine instances</a> 就可以了</p>
-<h2 id="前置作業">前置作業</h2>
-<p>之前似乎是採用 remote desktop 的方式</p>
-<p>這對習慣命令列操作的人來說會有點不習慣</p>
-<p>而且交接程式碼和檔案都放在那台機器上</p>
-<p>所以為了之後方便操作, 首先就要安裝 OpenSSH</p>
-<h3 id="安裝-openssh-server">安裝 OpenSSH server</h3>
-<p>因為 SSH 會有 server 和 client 的部分</p>
-<p>因為是需要連進去 Windows Server</p>
-<p>所以只需要處理 OpenSSH server 的部分</p>
-<p><a href="https://learn.microsoft.com/zh-tw/windows-server/administration/openssh/openssh_install_firstuse">Refer - 安裝 OpenSSH</a></p>
-<ol>
-<li>開啟 設定，選取 [應用程式] &gt; 應用程式 &amp; 功能，然後選取 [選用功能]。</li>
-</ol>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.23.05.png?alt=media&amp;token=8e54e549-f3d2-414a-b122-917650205f86" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.25.09.png?alt=media&amp;token=a4217abd-1cd2-424f-9762-0aade608b1c7" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.26.02.png?alt=media&amp;token=b5900fc2-5b5e-4f81-a878-b9bccb97da38" alt=""></p>
-<ol start="2">
-<li>掃描清單，查看是否已安裝 OpenSSH。 如果沒有，請在頁面頂端選取 [ 新增功能]，然後：</li>
-</ol>
-<ul>
-<li>尋找 OpenSSH 用戶端，然後按一下 [安裝]。</li>
-<li>尋找 OpenSSH 伺服器，然後按一下 [安裝]。</li>
-</ul>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.27.27.png?alt=media&amp;token=99f88b20-c30d-49f5-9cc5-e6e2c7a2add1" alt="尋找 OpenSSH 伺服器，然後按一下 [安裝]。"></p>
-<h3 id="設定-ssh">設定 SSH</h3>
-<p>使用 <code>PowerShell</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Start-Service sshd
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Add-WindowsCapability -Online -Name OpenSSH.Server
-</span></span></code></pre></div><p>這時應該會輸出</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Path          <span style="color:#960050;background-color:#1e0010">:</span>
-</span></span><span style="display:flex;"><span>Online        <span style="color:#960050;background-color:#1e0010">:</span> True
-</span></span><span style="display:flex;"><span>RestartNeeded <span style="color:#960050;background-color:#1e0010">:</span> False
-</span></span></code></pre></div><h3 id="設定">設定</h3>
-<p>修改 SSH 設定</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>start-process notepad C:\Programdata\ssh\sshd_config
-</span></span></code></pre></div><h3 id="設定防火牆">設定防火牆</h3>
-<p><code>Server Manager</code> -&gt; <code>Tool</code> -&gt; <code>Windows Defender Firewall with Advanced Security</code></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.46.09.png?alt=media&amp;token=986745f0-c9e1-4fb6-b23f-6184d23e529b" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.47.36.png?alt=media&amp;token=6eef15cc-9f4c-42fd-80cf-3382fb87c218" alt=""></p>
-<p><code>Inbound Rules</code> -&gt; <code>New Rule</code></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.49.png?alt=media&amp;token=ea1cd8a7-5802-4b52-8b63-f316c8cd03cd" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.57.png?alt=media&amp;token=577864f2-5d34-483a-b3c0-4adcf530649d" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.14.png?alt=media&amp;token=2690295a-8c34-4697-b716-a930d6dc1d2a" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.35.png?alt=media&amp;token=15ebdba8-78a5-4235-b7c7-84e0fae388b7" alt=""></p>
-<p><a href="https://www.vultr.com/docs/how-to-install-openssh-on-windows-server-2019-or-2022/">Refer - How to Install OpenSSH on Windows Server 2019 or 2022</a></p>
-<h2 id="ssh-連線">SSH 連線</h2>
-<p>因為目前沒有建立 ssh key 來連線的打算</p>
-<p>這邊是還用帳號密碼來連線</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh &lt;用戶名&gt;@&lt;IP&gt;
-</span></span></code></pre></div><p>之後再填入密碼來登入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>administrator@WINDOWS C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\A</span>dministrator&gt;
-</span></span></code></pre></div><p>這邊需要注意的因為是連線到 Windows</p>
-<p>所以要用的指令都得是 Dos 指令</p>
-<h2 id="利用-scp-把資料複製下來">利用 SCP 把資料複製下來</h2>
-<p>這邊的例子是在 Mac scp Windows Server 到 Mac</p>
-<p>需要注意的是在使用 SCP 時, Windows 路徑的分隔符號得調整</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>scp -r &lt;用戶名&gt;@&lt;IP&gt;:C:/&lt;路徑&gt;/&lt;目標資料夾&gt; &lt;本地端資料夾&gt;
-</span></span></code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/ssh_to_windows_server/">Read more</a></p>
                 
             </div>
         </div>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Fri, 02 Dec 2022 09:54:36 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Dec 2022 12:14:01 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端工程師工作 10 年心得</title>
+      <link>https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/</link>
+      <pubDate>Sat, 31 Dec 2022 12:14:01 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/</guid>
+      <description>前言 在 2022/12/31 的日子 剛好是跨年年假 也突然發現自己開始工作的時間已經 10 年了 沒想到已經 10 年了 XD 還記得當初只是個三流國立大學還是非本科系甚至沒讀研究所就</description>
+    </item>
+    
     <item>
       <title>Nginx 使用 host 判斷作 reverse proxy</title>
       <link>https://blog.tedshd.io/posts/nginx_use_host_reverse_proxy/</link>
@@ -2177,21 +2186,21 @@ redirect $this-&amp;gt;load-&amp;gt;helper(&amp;#39;url&amp;#39;); </description
     </item>
     
     <item>
-      <title>Sublime Text - initial setting</title>
-      <link>https://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/</link>
-      <pubDate>Sun, 01 Sep 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/</guid>
-      <description>Initial Setting Sublime Text 手冊 Preferences-&amp;gt;Settings-Default &amp;#34;default_encoding&amp;#34;: &amp;#34;UTF-8&amp;#34; &amp;#34;default_line_ending&amp;#34;: &amp;#34;unix&amp;#34; &amp;#34;tab_size&amp;#34;: 4 &amp;#34;translate_tabs_to_spaces&amp;#34;: true &amp;#34;save_on_focus_lost&amp;#34;: true &amp;#34;highlight_line&amp;#34;: true &amp;#34;trim_trailing_white_space_on_save&amp;#34;: true &amp;#34;rulers&amp;#34;: [80, 120] &amp;#34;highlight_modified_tabs&amp;#34;: true choose &amp;#34;ensure_newline_at_eof_on_save&amp;#34;: true &amp;#34;use_simple_full_screen&amp;#34;: true if want change font size Preferences-&amp;gt;Settings-User { &amp;#34;default_encoding&amp;#34;: &amp;#34;UTF-8&amp;#34;, &amp;#34;default_line_ending&amp;#34;: &amp;#34;unix&amp;#34;, &amp;#34;tab_size&amp;#34;: 4, &amp;#34;translate_tabs_to_spaces&amp;#34;: true, &amp;#34;save_on_focus_lost&amp;#34;: true, &amp;#34;highlight_line&amp;#34;: true, &amp;#34;trim_trailing_white_space_on_save&amp;#34;: true, &amp;#34;rulers&amp;#34;: [80, 120], &amp;#34;highlight_modified_tabs&amp;#34;: true, &amp;#34;font_size&amp;#34;: 18.0, &amp;#34;ignored_packages&amp;#34;: [ &amp;#34;Vintage&amp;#34; ] }</description>
-    </item>
-    
-    <item>
       <title>‎Sublime Text - Hot Key</title>
       <link>https://blog.tedshd.io/posts/2013-09-01-sublime-text-hot-key/</link>
       <pubDate>Sun, 01 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2013-09-01-sublime-text-hot-key/</guid>
       <description>Hot Key Document Mac OS X Windows Ctrl+Shift+p 開啟指令列 Tab 自動完成字詞 ctrl + d 選單字 alt + F3 選相同的字 ctrl + f 搜尋 ctrl + 0 focus 到 siderbar Ctrl + Shift + &amp;lt;- or -&amp;gt; Alt + &amp;lt;- or -&amp;gt; 單字 or 符號間移動 Ctrl + Alt + up</description>
+    </item>
+    
+    <item>
+      <title>Sublime Text - initial setting</title>
+      <link>https://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/</link>
+      <pubDate>Sun, 01 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/</guid>
+      <description>Initial Setting Sublime Text 手冊 Preferences-&amp;gt;Settings-Default &amp;#34;default_encoding&amp;#34;: &amp;#34;UTF-8&amp;#34; &amp;#34;default_line_ending&amp;#34;: &amp;#34;unix&amp;#34; &amp;#34;tab_size&amp;#34;: 4 &amp;#34;translate_tabs_to_spaces&amp;#34;: true &amp;#34;save_on_focus_lost&amp;#34;: true &amp;#34;highlight_line&amp;#34;: true &amp;#34;trim_trailing_white_space_on_save&amp;#34;: true &amp;#34;rulers&amp;#34;: [80, 120] &amp;#34;highlight_modified_tabs&amp;#34;: true choose &amp;#34;ensure_newline_at_eof_on_save&amp;#34;: true &amp;#34;use_simple_full_screen&amp;#34;: true if want change font size Preferences-&amp;gt;Settings-User { &amp;#34;default_encoding&amp;#34;: &amp;#34;UTF-8&amp;#34;, &amp;#34;default_line_ending&amp;#34;: &amp;#34;unix&amp;#34;, &amp;#34;tab_size&amp;#34;: 4, &amp;#34;translate_tabs_to_spaces&amp;#34;: true, &amp;#34;save_on_focus_lost&amp;#34;: true, &amp;#34;highlight_line&amp;#34;: true, &amp;#34;trim_trailing_white_space_on_save&amp;#34;: true, &amp;#34;rulers&amp;#34;: [80, 120], &amp;#34;highlight_modified_tabs&amp;#34;: true, &amp;#34;font_size&amp;#34;: 18.0, &amp;#34;ignored_packages&amp;#34;: [ &amp;#34;Vintage&amp;#34; ] }</description>
     </item>
     
     <item>

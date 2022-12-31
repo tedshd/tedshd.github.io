@@ -1192,6 +1192,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1202,6 +1206,142 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-10-23-javascript-handle-json/">JavaScript - handle JSON</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-10-23
+</p>
+                
+
+                
+                <p><h2 id="handle-json">handle JSON</h2>
+<p>先了解 Object &amp; JSON
+<a href="http://www.josephjiang.com/presentation/OOJS/object-oriented-paradigms.html">JavaScript 物件導向的寫法</a>
+<a href="http://blog.wu-boy.com/2011/04/%E4%BD%A0%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84-json-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9/">你不可不知的 JSON 基本介紹</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// data can get from AJAX or self
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// init from self
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Object Literal
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;data_01&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;title 01&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;num&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">01</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;con&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;con_01&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;news&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;desc&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;about news&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;con_02&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sport&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;desc&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sport like NBA&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;con_03&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;tech&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;desc&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;3C info&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;data_02&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;title 02&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;num&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">02</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;con&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;con_01&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;life&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;desc&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;people&#39;s life&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;con_02&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;movie&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;desc&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Iron man ...&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;con_03&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cars&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;desc&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;TOYOTA, Ford...&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="init-a-new-object-array">init a new object array</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">newData</span> <span style="color:#f92672">=</span> {},
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">newDataArr</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#a6e22e">x</span>)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">newData</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">title</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">num</span>
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">newDataArr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">newData</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="get-object-con">get object con</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">y</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">desc</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">newDescArr</span> <span style="color:#f92672">=</span> [],
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">newConArr</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#a6e22e">x</span>)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">y</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">con</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">con</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#a6e22e">y</span>)) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">desc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">con</span>[<span style="color:#a6e22e">y</span>].<span style="color:#a6e22e">desc</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">newDescArr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">desc</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">newConArr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">newDescArr</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="search-value-in-object">search value in Object</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;bind&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">27</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">user</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;id&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;desc&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;str&#39;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;id&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">34</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;desc&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;hahaha&#39;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;id&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">27</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;desc&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;hihihi&#39;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">user</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">user</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">uid</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">bind</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">user</span>[<span style="color:#a6e22e">count</span>]);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">user</span>[<span style="color:#a6e22e">count</span>]));
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-10-23-javascript-handle-json/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1341,88 +1481,6 @@ Use node method to reduce code</p>
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-10-20-javascript-file-upload/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/">Use CSS3 animation in Compass</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-10-12
-</p>
-                
-
-                
-                <p><h2 id="use-css3-animation-in-compass">Use CSS3 Animation In Compass</h2>
-<p>Compass default dosen&rsquo;t have mixin in CSS3 animation
-We can use this method in <strong>scss</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#75715e">/* define */</span>
-</span></span><span style="display:flex;"><span>$animation-support<span style="color:#f92672">:</span> webkit<span style="color:#f92672">,</span> moz<span style="color:#f92672">,</span> o<span style="color:#f92672">,</span> ms<span style="color:#f92672">,</span> <span style="color:#f92672">not</span> khtml;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* use */</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.animation</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-name&#39;</span><span style="color:#f92672">,</span> move<span style="color:#f92672">,</span> $animation-support);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-duration&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">s</span><span style="color:#f92672">,</span> $animation-support);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-iteration-count&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> $animation-support);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>and add <code>keyframes</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#75715e">/* define */</span>
-</span></span><span style="display:flex;"><span>$animation-support<span style="color:#f92672">:</span> webkit<span style="color:#f92672">,</span> moz<span style="color:#f92672">,</span> o<span style="color:#f92672">,</span> ms<span style="color:#f92672">,</span> <span style="color:#f92672">not</span> khtml;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@mixin</span><span style="color:#a6e22e"> keyframes</span>($name) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@-webkit-keyframes</span> <span style="color:#e6db74">#{</span>$name<span style="color:#e6db74">}</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">@content</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@-moz-keyframes</span> <span style="color:#e6db74">#{</span>$name<span style="color:#e6db74">}</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">@content</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@-ms-keyframes</span> <span style="color:#e6db74">#{</span>$name<span style="color:#e6db74">}</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">@content</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@keyframes</span> <span style="color:#e6db74">#{</span>$name<span style="color:#e6db74">}</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">@content</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* use */</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.animation</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-name&#39;</span><span style="color:#f92672">,</span> move<span style="color:#f92672">,</span> $animation-support);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-duration&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">s</span><span style="color:#f92672">,</span> $animation-support);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-iteration-count&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> $animation-support);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> keyframes</span>(move) {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">0</span><span style="color:#960050;background-color:#1e0010">%</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">780</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">100</span><span style="color:#960050;background-color:#1e0010">%</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">450</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><a href="https://gist.github.com/ericam/1607696">Refer - keyframes-sass-output.css</a>
-<a href="http://stackoverflow.com/questions/17618082/getting-compass-to-add-vendor-prefixes-to-animation-selectors">Refer - Getting Compass to add vendor prefixes to animation selectors</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/">Read more</a></p>
                 
             </div>
         </div>

@@ -1192,6 +1192,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1202,6 +1206,146 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/gcp_artifact_registry_compute_engine/">Google Cloud 使用 artifact registry 和 compute engine</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2022-12-01
+</p>
+                
+
+                
+                <p><h2 id="前言">前言</h2>
+<p>基於公司之前的架構設計</p>
+<p>使用 GCP 重現一個簡化版的部署架構</p>
+<p>基本是使用 artifact registry 和 compute engine</p>
+<p>GCP 官方也有 artifact registry + compute engine 的部署設計</p>
+<p>但是因為是 side project, 不想搞得太複雜, 所以沒有採用官方的方式(官方的方式再搭配其他的服務比較建議用在正式專案上面, 會是比較有彈性且可以進行高承載的設計, 不過主要還是看預算和承載量的考量)</p>
+<h2 id="架構">架構</h2>
+<p>side project 是一個單純的 web service</p>
+<p>目前也不考慮高流量的問題</p>
+<p>前後端分離, 主要會有前端的服務和 api 的服務</p>
+<h3 id="google-cloud">google cloud</h3>
+<ul>
+<li>Compute Engine(1 instance)</li>
+<li>Cloud SQL(1 sql, 沒有開 HA, 需要注意的是有開 HA, sql 費用會是兩倍計算)</li>
+<li>Artifact Registry</li>
+</ul>
+<h3 id="code">code</h3>
+<ul>
+<li>Vue(nuxt SSR)</li>
+<li>CodeIgniter 4(當作 API server)</li>
+</ul>
+<p>因為會有前端和後端的部分, 會有兩個 service</p>
+<ol>
+<li>node</li>
+<li>PHP</li>
+</ol>
+<p>所以最簡單的方式就是兩個分開開發</p>
+<p>因為有使用 docker</p>
+<p>所以就把分成兩個 docker image</p>
+<p>要部署的程式和環境都包在 docker image 裡面</p>
+<p>這樣在 VM 裡面不用考慮環境問題, 只要跑起來 docker container 就可以了</p>
+<h2 id="開發與部署">開發與部署</h2>
+<p>本地開發已經是使用 ARM 架構的 mac</p>
+<p>所以需要注意的是 build image 時會因為不同的 CPU 架構需要 build 對應架構的 docker image</p>
+<p>還有需要注意的是程式的套件對應開發環境的版本, 基本上除非要集小化 Image, 不然會建議 docker image 使用 Linux ubuntu 來當成 base</p>
+<p>為了方便開發, 本地直接使用 mac 自己的環境開發</p>
+<p>另一種做法就是本地就直接啟動使用 docker container 開發, 把要開發的程式 mount 進去</p>
+<p>開發完後就是 build docker image</p>
+<p>上面提到做法就是把要執行的程式和環境整個打包成 docker image</p>
+<p>這樣部署時就不會受到部署環境影響</p>
+<p>這邊採用的 docker image 管理服務就是 <a href="https://cloud.google.com/artifact-registry/docs/overview">Artifact Registry</a></p>
+<p>簡單的說就是一個私有的 docker hub</p>
+<p>AWS 對應的服務是 <a href="https://aws.amazon.com/tw/ecr/">Elastic Container Registry</a></p>
+<p>這邊會著重在 Artifact Registry 的建立與部署</p>
+<h2 id="artifact-registry">Artifact Registry</h2>
+<blockquote>
+<p>Artifact Registry provides a single location for storing and managing your packages and Docker container images.</p>
+</blockquote>
+<p>從上述文件的介紹其實可以知道 Artifact Registry 不只有 docker image 的管理功能</p>
+<p>其實還包含 Java, Node.js, Python, Debian, RPM 等等的套件管理</p>
+<p>所以有開發以上的套件又需要有個私有的 repositories 也可以用這個服務</p>
+<p>因為這服務的文件蠻多且有點複雜</p>
+<p>這邊會稍微整理專注在使用 docker 相關的文件出來</p>
+<ol>
+<li>建立 repositories</li>
+</ol>
+<p>就和使用 docker hub 一樣必須要先建立 repositories 來擺放 image</p>
+<p>可以直接參考以下文件</p>
+<p><a href="https://cloud.google.com/artifact-registry/docs/repositories/create-repos">Create repositories</a></p>
+<p>這邊建議直接在 google console 的 web 介面建立比較好操作</p>
+<p>建立 repositories 後需要注意的是能夠操作這個 repositories 的帳號</p>
+<p>專案擁有者一定是可以操作, 如果要要建立 CI/ÇD 的話建議另外建立 service account 來賦予相關權限</p>
+<p>有其他開發者要共同操作的話, 就去 IAM 添加並賦予相關權限</p>
+<ol start="2">
+<li>開始進行 push &amp; pull</li>
+</ol>
+<p>要在本地端進行 Artifact Registry 的 docker push &amp; pull 操作要先具備以下條件</p>
+<ul>
+<li>要安裝 gcloud 並且登入</li>
+<li>登入的帳號需要具備 Artifact Registry 權限</li>
+<li>啟動 <a href="https://cloud.google.com/artifact-registry/docs/enable-service">Artifact Registry API</a></li>
+<li>設定 gcloud config <a href="https://cloud.google.com/artifact-registry/docs/repositories/gcloud-defaults">Set defaults for gcloud commands</a></li>
+<li>docker 設定 repositories <a href="https://cloud.google.com/artifact-registry/docs/transition/changes-docker#artifact-registry">Changes for Docker</a></li>
+</ul>
+<p>在 google 其他服務大多已經具備權限了(在正式專案上建議對沒有必要的權限做關閉)</p>
+<p>可以參考 <a href="https://cloud.google.com/artifact-registry/docs/deploy">Deploy to Google Cloud</a></p>
+<p>來確認之後要部署時可不可以直接使用</p>
+<p><a href="https://cloud.google.com/sdk/docs/install-sdk">Install the Google Cloud CLI</a></p>
+<p>安裝後登入自己的帳號或登入需要使用的 service account</p>
+<p>其實上面講了那麼多</p>
+<p>簡單列一下要執行的指令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gcloud auth login
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gcloud services enable artifactregistry.googleapis.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gcloud config set project &lt;PROJECT ID&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gcloud config set artifacts/location &lt;LOCATION&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gcloud config set artifacts/repository &lt;REPOSITORY&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gcloud artifacts packages list --repository<span style="color:#f92672">=</span>&lt;PROJECT ID&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gcloud config list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gcloud services enable artifactregistry.googleapis.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gcloud auth configure-docker &lt;LOCATION&gt;-docker.pkg.dev
+</span></span></code></pre></div><p>這樣之後就可以開始 pull &amp; push 了</p>
+<p>可以看到要拉取的 path 結構大致上如下</p>
+<pre tabindex="0"><code>us-central1-docker.pkg.dev/my-project/team1/web-app:1.0
+</code></pre><p>基本上結構就是</p>
+<p><code>&lt;LOCATION&gt;-docker.pkg.dev/&lt;PROJECT ID&gt;/&lt;REPOSITORY&gt;/&lt;IMAGE NAME&gt;:&lt;VERSION&gt;</code></p>
+<h2 id="補充">補充</h2>
+<p>有時為了指令的便利性可以利用以下設定來避免需要 sudo</p>
+<p><a href="https://docs.docker.com/engine/install/linux-postinstall/">Manage Docker as a non-root user</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/gcp_artifact_registry_compute_engine/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1279,127 +1423,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/node_pm2_usage/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/firebase_app_check/">Firebase app check 使用紀錄</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2022-10-31
-</p>
-                
-
-                
-                <p><h2 id="前言">前言</h2>
-<p>因為公司有使用部分的 firebase 服務</p>
-<p>那就順便用一下前一陣子推出的 <a href="https://firebase.google.com/products/app-check">app check</a> 的服務(雖然我覺得這服務還沒到完善的地步)</p>
-<p>這服務主要是要協助驗證來自 client 的請求是否合法</p>
-<p>不只單純是 firebase 的服務可以用</p>
-<p>一般 API 也可以使用</p>
-<h2 id="使用">使用</h2>
-<p>目前 SDK 只支持 Node.js</p>
-<p><a href="https://firebase.google.com/docs/app-check/custom-resource-backend">Verify App Check tokens from a custom backend</a></p>
-<p>因為原本的後端不是 Node 的環境</p>
-<p>所以使用 Node.js 建立起一個 middleware 以便讓原有的 API server 來串接</p>
-<h2 id="流程">流程</h2>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2Ffirebase%20app%20check-Copy%20of%20Page-1.drawio.png?alt=media&amp;token=c8d0b7ee-875f-4380-b4e9-66c33796a990" alt=""></p>
-<h2 id="所需作業">所需作業</h2>
-<p>app 需要使用相關對應的 SDK</p>
-<p>在 firebase console 把 app check 選單中建立的 app 做註冊</p>
-<p>因為是改為單獨建立 Node.js 的服務</p>
-<p>所以會針對文件範例做調整</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">http</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;http&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;url&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">admin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;firebase-admin&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">serviceAccount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#a6e22e">__dirname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/serviceAccountKey.json&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">initializeApp</span>({
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">credential</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">credential</span>.<span style="color:#a6e22e">cert</span>(<span style="color:#a6e22e">serviceAccount</span>)
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusOk</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusForbidden</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Forbidden&#39;</span>
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusUnauthorized</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Unauthorized&#39;</span>
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>(<span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">response</span>) =&gt; {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">queryObject</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>).<span style="color:#a6e22e">query</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">method</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appCheckToken</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">queryObject</span>[<span style="color:#e6db74">&#39;token&#39;</span>];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">appCheckToken</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">403</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">statusForbidden</span>));
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appCheckClaims</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">appCheck</span>().<span style="color:#a6e22e">verifyToken</span>(<span style="color:#a6e22e">appCheckToken</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// If verifyToken() succeeds, continue with the next middleware
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// function in the stack.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;appCheckClaims&#39;</span>, <span style="color:#a6e22e">appCheckClaims</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
-</span></span><span style="display:flex;"><span>          ...<span style="color:#a6e22e">appCheckClaims</span>,
-</span></span><span style="display:flex;"><span>          ...<span style="color:#a6e22e">statusOk</span>
-</span></span><span style="display:flex;"><span>        }));
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;err&#39;</span>, <span style="color:#a6e22e">err</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">401</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">statusUnauthorized</span>));
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">statusForbidden</span>));
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3300</span>, <span style="color:#66d9ef">function</span> () {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;3300 port&#39;</span>);
-</span></span><span style="display:flex;"><span>});
-</span></span></code></pre></div><p>其中 <code>serviceAccountKey.json</code> 是 firebase console 中產生的</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2FScreen_Shot_2022-11-02_at_9_51_27_AM.png?alt=media&amp;token=23519780-f442-4bfd-b1f4-db69739cbb81" alt=""></p>
-<h2 id="使用方式">使用方式</h2>
-<p>可以使用 pm2 之類的服務啟動</p>
-<p>這樣就可以用 <code>http://localhost?token=&lt;app check token&gt;</code> 的方式呼叫驗證</p>
-<p>建議在內部使用, 走內部 IP 或內部網域以減少傳輸時間</p>
-<p>直接以 rest api 的方式呼叫</p>
-<h2 id="後續升級">後續升級</h2>
-<p>如果之後公司其他團隊也有其他的 firebase 的 app check 需求也可以添加參數或路由來使用各自的 firebase 專案設定來共用這個 API</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/firebase_app_check/">Read more</a></p>
                 
             </div>
         </div>

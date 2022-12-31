@@ -3,7 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2022-12-02T15:20:30+08:00</lastmod>
+    <lastmod>2022-12-31T12:14:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/f2e/</loc>
+    <lastmod>2022-12-31T12:14:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/life/</loc>
+    <lastmod>2022-12-31T12:14:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/</loc>
+    <lastmod>2022-12-31T12:14:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/</loc>
+    <lastmod>2022-12-31T12:14:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/working/</loc>
+    <lastmod>2022-12-31T12:14:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/</loc>
+    <lastmod>2022-12-31T12:14:01+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/nginx/</loc>
     <lastmod>2022-12-02T15:20:30+08:00</lastmod>
@@ -11,23 +29,17 @@
     <loc>https://blog.tedshd.io/posts/nginx_use_host_reverse_proxy/</loc>
     <lastmod>2022-12-02T15:20:30+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2022-12-02T15:20:30+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/</loc>
-    <lastmod>2022-12-02T15:20:30+08:00</lastmod>
-  </url><url>
     <loc>https://blog.tedshd.io/categories/artifact-registry/</loc>
-    <lastmod>2022-12-02T09:51:39+08:00</lastmod>
+    <lastmod>2022-12-05T17:41:54+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/compute-engine/</loc>
-    <lastmod>2022-12-02T09:51:39+08:00</lastmod>
+    <lastmod>2022-12-05T17:41:54+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/gcp/</loc>
-    <lastmod>2022-12-02T09:51:39+08:00</lastmod>
+    <lastmod>2022-12-05T17:41:54+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/gcp_artifact_registry_compute_engine/</loc>
-    <lastmod>2022-12-02T09:51:39+08:00</lastmod>
+    <lastmod>2022-12-05T17:41:54+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/node_pm2_usage/</loc>
     <lastmod>2022-11-18T11:42:22+08:00</lastmod>
@@ -983,10 +995,10 @@
     <loc>https://blog.tedshd.io/posts/2013-09-02-sublime-text-plug-in/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/</loc>
+    <loc>https://blog.tedshd.io/posts/2013-09-01-sublime-text-hot-key/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/posts/2013-09-01-sublime-text-hot-key/</loc>
+    <loc>https://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/2013-08-30-php-note/</loc>
