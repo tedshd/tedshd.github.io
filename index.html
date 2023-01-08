@@ -189,6 +189,67 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/">修復 mac m1 開機偵測不到 type-c 螢幕</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2023-01-08
+</p>
+                
+
+                
+                <p><p>最近突然發現 mac 在重開機或是關閉後開機時</p>
+<p>type-c 的螢幕無法被偵測到</p>
+<p>拔插 type-c 和 mac 那端的連接也沒用</p>
+<p>得拔插螢幕端的 type-c</p>
+<p>就覺得很奇怪, 因為之前都可正常的</p>
+<p>所以先推測是 mac OS 的版本問題</p>
+<p>從 12.x -&gt; 13.1 後發現還是一樣&hellip;</p>
+<p>所以就認真在網路找了一下有沒有人碰過這樣的問題</p>
+<p>先找到一個類似的</p>
+<p>但是裡面說 12.x 後修復的問題</p>
+<p>所以我推測應該是別的問題</p>
+<p>就繼續找</p>
+<p>最後找的了這篇文章</p>
+<p><a href="https://machow2.com/external-display-issues/">17 Ways To Fix External Monitors Not Working On Mac (inc. M1/ M2 Macs, Ventura &amp; Monterey)</a></p>
+<p>17 種慢慢試總算可以找到原因吧</p>
+<p>但也不是傻了從第一條開始試</p>
+<p>所以先看了一下有哪些方法</p>
+<p>結果就馬上喵到一個最有可能的問題</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E6%88%AA%E5%9C%96%202023-01-08%20%E4%B8%8B%E5%8D%882.36.33.png?alt=media&amp;token=5d8791ee-7a40-4ff2-b0d6-09ba7ea1991c" alt=""></p>
+<p>一改完就恢復正常了</p>
+<p>內文是說到</p>
+<blockquote>
+<p>macOS Ventura introduced a new feature “USB Restricted Mode” for M1 and M2 Macs which requires you to allow USB-C devices such as monitors to connect to your Mac.</p>
+</blockquote>
+<p>但奇怪的是我在 mac OS 12 就遇到這問題</p>
+<p>所以當時就先升版本到 mac OS 13(Ventura) 才改</p>
+<p>所以也不太肯定 mac OS 12 是不是會遇到這問題</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/">前端工程師工作 10 年心得</a></h3>
 
                 
@@ -328,55 +389,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/nginx_use_host_reverse_proxy/">Nginx 使用 host 判斷作 reverse proxy</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2022-12-02
-</p>
-                
-
-                
-                <p><p>直接上設定</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Nginx" data-lang="Nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:80</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">server_name</span> <span style="color:#e6db74">api.example.com,</span> <span style="color:#e6db74">example.com</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-NginX-Proxy</span> <span style="color:#e6db74">true</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">set</span> $proxy <span style="color:#e6db74">http://0.0.0.0:3000</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">if</span> <span style="color:#e6db74">(</span>$host ~ <span style="color:#e6db74">api.example.com)</span> {
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">set</span> $proxy <span style="color:#e6db74">http://0.0.0.0:8000</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_pass</span> $proxy;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></p>
-                
-
-                
-
                 
             </div>
         </div>

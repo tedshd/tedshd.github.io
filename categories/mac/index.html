@@ -181,6 +181,67 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/">修復 mac m1 開機偵測不到 type-c 螢幕</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2023-01-08
+</p>
+                
+
+                
+                <p><p>最近突然發現 mac 在重開機或是關閉後開機時</p>
+<p>type-c 的螢幕無法被偵測到</p>
+<p>拔插 type-c 和 mac 那端的連接也沒用</p>
+<p>得拔插螢幕端的 type-c</p>
+<p>就覺得很奇怪, 因為之前都可正常的</p>
+<p>所以先推測是 mac OS 的版本問題</p>
+<p>從 12.x -&gt; 13.1 後發現還是一樣&hellip;</p>
+<p>所以就認真在網路找了一下有沒有人碰過這樣的問題</p>
+<p>先找到一個類似的</p>
+<p>但是裡面說 12.x 後修復的問題</p>
+<p>所以我推測應該是別的問題</p>
+<p>就繼續找</p>
+<p>最後找的了這篇文章</p>
+<p><a href="https://machow2.com/external-display-issues/">17 Ways To Fix External Monitors Not Working On Mac (inc. M1/ M2 Macs, Ventura &amp; Monterey)</a></p>
+<p>17 種慢慢試總算可以找到原因吧</p>
+<p>但也不是傻了從第一條開始試</p>
+<p>所以先看了一下有哪些方法</p>
+<p>結果就馬上喵到一個最有可能的問題</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E6%88%AA%E5%9C%96%202023-01-08%20%E4%B8%8B%E5%8D%882.36.33.png?alt=media&amp;token=5d8791ee-7a40-4ff2-b0d6-09ba7ea1991c" alt=""></p>
+<p>一改完就恢復正常了</p>
+<p>內文是說到</p>
+<blockquote>
+<p>macOS Ventura introduced a new feature “USB Restricted Mode” for M1 and M2 Macs which requires you to allow USB-C devices such as monitors to connect to your Mac.</p>
+</blockquote>
+<p>但奇怪的是我在 mac OS 12 就遇到這問題</p>
+<p>所以當時就先升版本到 mac OS 13(Ventura) 才改</p>
+<p>所以也不太肯定 mac OS 12 是不是會遇到這問題</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/docker_usage/">docker 使用紀錄</a></h3>
 
                 
@@ -287,56 +348,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/docker_usage/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2018-11-16-mac-get-file-user-name/">Mac - Get file user(owner) name &amp; user id</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2018-11-16
-</p>
-                
-
-                
-                <p><h2 id="mac---get-file-user-name--user-id">Mac - Get file user name &amp; user id</h2>
-<h3 id="get-file-owner-name">Get file owner name</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>stat -f <span style="color:#e6db74">&#39;%Su&#39;</span> &lt;file or folder name&gt;
-</span></span></code></pre></div><h3 id="get-user-id">Get user id</h3>
-<h4 id="show-user">show user</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>id
-</span></span><span style="display:flex;"><span>// or
-</span></span><span style="display:flex;"><span>id &lt;user name&gt;
-</span></span></code></pre></div><h4 id="get-uid">get uid</h4>
-<pre tabindex="0"><code>id -u
-// or
-id -u &lt;user name&gt;
-</code></pre><h3 id="get-file-owner-uid">get file owner uid</h3>
-<p><del>stat -f &lsquo;%Su&rsquo; <code>&lt;file or folder name&gt;</code> | xargs id -u</del></p>
-<pre tabindex="0"><code>stat -f &#39;%u&#39; &lt;file or folder name&gt;
-</code></pre><p><a href="https://my.oschina.net/leopardsaga/blog/112335">Refer - 将Linux命令的结果作为下一个命令的参数</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2018-11-16-mac-get-file-user-name/">Read more</a></p>
                 
             </div>
         </div>

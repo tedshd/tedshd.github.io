@@ -189,6 +189,94 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-05-23-javascript-custom-facebook-share-button/">JavaScript - custom facebook share button</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-05-23
+</p>
+                
+
+                
+                <p><h2 id="javascript---custom-facebook-share-button">JavaScript - custom facebook share button</h2>
+<!-- raw HTML omitted -->
+<p>Facebook support share API to people and it is easy to use.
+But sometimes we need customize share button style in our web.
+We can use 2 way.</p>
+<h2 id="1-link-share-api-link">1. Link share api link</h2>
+<p>Simple way</p>
+<h3 id="html">HTML</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.facebook.com/share.php&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom&#34;</span>&gt;Share&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><p>and then you can use CSS custom <code>a</code> style.</p>
+<p>But this only can catch current url to share to facebook.</p>
+<h2 id="2-use-facebook-javascript-sdk">2. Use facebook JavaScript SDK</h2>
+<p>This way is powerful</p>
+<h3 id="html-1">HTML</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb-root&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.google.com/&#34;</span> <span style="color:#a6e22e">data-image</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Article img url&#34;</span> <span style="color:#a6e22e">data-title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Article Title&#34;</span> <span style="color:#a6e22e">data-desc</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Some description for this article&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb_share&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.synermous.com/data/images/fb-icon.svg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;50&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;50&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><h3 id="javascript">JavaScript</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">fbAsyncInit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">init</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">appId</span><span style="color:#f92672">:</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">your</span> <span style="color:#a6e22e">facebook</span> <span style="color:#a6e22e">app</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">&gt;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cookie</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">xfbml</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">d</span>, <span style="color:#a6e22e">debug</span>){<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">js</span>, <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;facebook-jssdk&#39;</span>, <span style="color:#a6e22e">ref</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;script&#39;</span>)[<span style="color:#ae81ff">0</span>];<span style="color:#66d9ef">if</span>   (<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getElementById</span>(<span style="color:#a6e22e">id</span>)) {<span style="color:#66d9ef">return</span>;}<span style="color:#a6e22e">js</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;script&#39;</span>); <span style="color:#a6e22e">js</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">id</span>; <span style="color:#a6e22e">js</span>.<span style="color:#66d9ef">async</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;<span style="color:#a6e22e">js</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;//connect.facebook.net/en_US/all&#34;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">debug</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;/debug&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.js&#34;</span>;<span style="color:#a6e22e">ref</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">js</span>, <span style="color:#a6e22e">ref</span>);}(document, <span style="color:#75715e">/*debug*/</span> <span style="color:#66d9ef">false</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">postToFeed</span>(<span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">desc</span>, <span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">image</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;feed&#39;</span>,<span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">picture</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">image</span>,<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">title</span>,<span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">desc</span>};
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">response</span>) {}
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">FB</span>.<span style="color:#a6e22e">ui</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">callback</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fbShareBtn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.fb_share&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fbShareBtn</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fbShareBtn</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-title&#39;</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">desc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fbShareBtn</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-desc&#39;</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fbShareBtn</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;href&#39;</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">image</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fbShareBtn</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-image&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">postToFeed</span>(<span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">desc</span>, <span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">image</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>This way can customize share url facebook og information
+<code>href</code> = url you want share, must have link
+<code>data-image</code> = image you want show on facebook, if not value it can catch origin og
+<code>data-title</code> = title you want show on facebook, if not value it can catch origin og
+<code>data-desc</code> = description you want show on facebook, if not value it can catch origin og</p>
+<p><a href="https://developers.facebook.com/docs/opengraph">facebook opengraph</a>
+<a href="http://stackoverflow.com/questions/22037021/custom-facebook-share-button">custom facebook share button</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2014-05-23-javascript-custom-facebook-share-button/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2014-05-13-javascript-random-array-sort/">JavaScript - Random Array Sort</a></h3>
 
                 
@@ -218,138 +306,6 @@
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-05-08-html5-full-screen-mode/">HTML5 - Full Screen Mode</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2014-05-08
-</p>
-                
-
-                
-                <p><h2 id="html5---full-screen-mode">HTML5 - Full Screen Mode</h2>
-<p>It can control full screen the browser
-IE if it is to be more than IE11</p>
-<h3 id="code">Code</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toggleFullScreen</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>document.<span style="color:#a6e22e">fullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span>    <span style="color:#75715e">// alternative standard method
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">mozFullScreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">webkitFullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">msFullscreenElement</span> ) {  <span style="color:#75715e">// current working methods
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>(<span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">ALLOW_KEYBOARD_INPUT</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">exitFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">exitFullscreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">msExitFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">msExitFullscreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">mozCancelFullScreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">mozCancelFullScreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">webkitExitFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">webkitExitFullscreen</span>();
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="example">Example</h3>
-<p>HTML</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;full&#34;</span>&gt;Full Screen&lt;/<span style="color:#f92672">button</span>&gt;
-</span></span></code></pre></div><p>JavaScript</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#full&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">toggleFullScreen</span>();
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toggleFullScreen</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>document.<span style="color:#a6e22e">fullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span>    <span style="color:#75715e">// alternative standard method
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">mozFullScreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">webkitFullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">msFullscreenElement</span> ) {  <span style="color:#75715e">// current working methods
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>(<span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">ALLOW_KEYBOARD_INPUT</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">exitFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">exitFullscreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">msExitFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">msExitFullscreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">mozCancelFullScreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">mozCancelFullScreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">webkitExitFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">webkitExitFullscreen</span>();
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="codepen">CodePen</h3>
-<!-- raw HTML omitted -->
-<h3 id="other-use">Other use</h3>
-<p>Use it make youtube api player full screen
-If render player on <code>&lt;div id=&quot;player&quot;&gt;&lt;/div&gt;</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#full&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">toggleFullScreen</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#player&#39;</span>));
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toggleFullScreen</span>(<span style="color:#a6e22e">el</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>document.<span style="color:#a6e22e">fullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span>    <span style="color:#75715e">// alternative standard method
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">mozFullScreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">webkitFullscreenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>document.<span style="color:#a6e22e">msFullscreenElement</span> ) {  <span style="color:#75715e">// current working methods
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">requestFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">requestFullscreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">msRequestFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">msRequestFullscreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>) {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">mozRequestFullScreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">webkitRequestFullscreen</span>(<span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">ALLOW_KEYBOARD_INPUT</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">exitFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">exitFullscreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">msExitFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">msExitFullscreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">mozCancelFullScreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">mozCancelFullScreen</span>();
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">webkitExitFullscreen</span>) {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">webkitExitFullscreen</span>();
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode">Refer - Using fullscreen mode - Web developer guide | MDN</a></p>
-<p><a href="http://msdn.microsoft.com/zh-tw/library/ie/dn265028(v=vs.85).aspx">Refer - 全螢幕 API (Windows)</a></p>
-<p><a href="http://www.sitepoint.com/use-html5-full-screen-api/">Refer - How to Use the HTML5 Full-Screen API (Again) - SitePoint</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-05-08-html5-full-screen-mode/">Read more</a></p>
                 
             </div>
         </div>

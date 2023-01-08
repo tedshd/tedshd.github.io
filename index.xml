@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Sat, 31 Dec 2022 12:14:01 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Jan 2023 14:40:14 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>修復 mac m1 開機偵測不到 type-c 螢幕</title>
+      <link>https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/</link>
+      <pubDate>Sun, 08 Jan 2023 14:40:14 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/</guid>
+      <description>最近突然發現 mac 在重開機或是關閉後開機時 type-c 的螢幕無法被偵測到 拔插 type-c 和 mac 那端的連接也沒用 得拔插螢幕端的 type-c 就覺得很奇怪, 因為之前都可正常的 所以先推</description>
+    </item>
+    
     <item>
       <title>前端工程師工作 10 年心得</title>
       <link>https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/</link>

@@ -3,25 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2022-12-31T14:44:30+08:00</lastmod>
+    <lastmod>2023-01-08T14:40:14+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/categories/f2e/</loc>
-    <lastmod>2022-12-31T14:44:30+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/life/</loc>
-    <lastmod>2022-12-31T14:44:30+08:00</lastmod>
+    <loc>https://blog.tedshd.io/categories/mac/</loc>
+    <lastmod>2023-01-08T14:40:14+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2022-12-31T14:44:30+08:00</lastmod>
+    <lastmod>2023-01-08T14:40:14+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/</loc>
-    <lastmod>2022-12-31T14:44:30+08:00</lastmod>
+    <lastmod>2023-01-08T14:40:14+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/</loc>
+    <lastmod>2023-01-08T14:40:14+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/f2e/</loc>
+    <lastmod>2023-01-08T14:38:33+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/life/</loc>
+    <lastmod>2023-01-08T14:38:33+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/working/</loc>
-    <lastmod>2022-12-31T14:44:30+08:00</lastmod>
+    <lastmod>2023-01-08T14:38:33+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/</loc>
-    <lastmod>2022-12-31T14:44:30+08:00</lastmod>
+    <lastmod>2023-01-08T14:38:33+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/nginx/</loc>
     <lastmod>2022-12-02T15:20:30+08:00</lastmod>
@@ -201,9 +207,6 @@
     <lastmod>2021-02-01T12:24:41+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/docker_usage/</loc>
-    <lastmod>2021-05-11T15:47:53+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/mac/</loc>
     <lastmod>2021-05-11T15:47:53+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/puppeteer/</loc>
