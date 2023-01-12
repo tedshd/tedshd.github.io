@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Sun, 08 Jan 2023 14:40:14 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Jan 2023 14:51:11 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>app store</title>
+      <link>https://blog.tedshd.io/categories/app-store/</link>
+      <pubDate>Thu, 12 Jan 2023 14:51:11 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/app-store/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>google play</title>
+      <link>https://blog.tedshd.io/categories/google-play/</link>
+      <pubDate>Thu, 12 Jan 2023 14:51:11 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/google-play/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iap</title>
+      <link>https://blog.tedshd.io/categories/iap/</link>
+      <pubDate>Thu, 12 Jan 2023 14:51:11 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/iap/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>mac</title>
       <link>https://blog.tedshd.io/categories/mac/</link>

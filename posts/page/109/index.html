@@ -1200,6 +1200,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1210,6 +1214,147 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-09-03-javascript-onbeforeunload/">JavaScript - onbeforeunload</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-09-03
+</p>
+                
+
+                
+                <p><h2 id="onbeforeunload">onbeforeunload</h2>
+<p>onbeforeunload 是在 browser 在轉換頁面時會觸發的事件
+當有 return 值時, 會出現 confirm 視窗, 並停住觸發的行為
+目前試過會觸發的行為有</p>
+<ul>
+<li>上一頁 / 下一頁</li>
+<li>重新整理</li>
+<li>關閉視窗</li>
+<li>前往其它 URL</li>
+<li>submit 事件</li>
+<li>URL 改變時</li>
+</ul>
+<p>這幾種較常見
+用法如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Exit?&#39;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">onbeforeunload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun</span>;
+</span></span></code></pre></div><p>return 的值是 confirm 的訊息
+可 return <strong>string</strong> or <strong>array</strong>
+無法 return <strong>fuinction</strong></p>
+<p>也可以用條件判斷</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;textarea&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">value</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Exit?&#39;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">onbeforeunload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun</span>;
+</span></span></code></pre></div><p>上面說明了當 textarea 有值時, 觸發 onbeforeunload 才 return 訊息出來</p>
+<h3 id="issue">Issue</h3>
+<p>當使用 <code>&lt;a href=&quot;&quot;&gt;&lt;/a&gt;</code> 時, 通常會用 <code>&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;</code> or <code>&lt;a href=&quot;javascript:void(0)&quot;&gt;&lt;/a&gt;</code> 來使 href 沒有作用, 但用 # 會在 URL 的最後產生 # , 且頁面會捲動到頂部, 這是因為 ＃ 的特性, 所以通常不會用 <code>&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;</code></p>
+<p>但是當使用 <code>&lt;a href=&quot;javascript:void(0)&quot;&gt;&lt;/a&gt;</code> 時, 再與 onbeforeunload 一起用時就會有問題</p>
+<p><a href="http://tedshd.lionfree.net/demo/onbeforeunload/onbeforeunload_void(0)_2.html">demo</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;onbeforeunload_javascript.void(0)&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;exit?&#39;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">onbeforeunload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun</span>;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:void(0)&#34;</span>&gt;javascript:void(0)&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>上面的 HTML 在執行時都沒問題, 但是在 <strong>IE</strong> 中, 會把 href=&ldquo;javascript:void(0)&rdquo; 當成一個無效的連結
+所以就觸發了 onbeforeunload 事件
+而解決辦法也很簡單, 就是 <strong>e.preventDefault()</strong></p>
+<ul>
+<li>JavaScript(IE9 up)
+<a href="http://tedshd.lionfree.net/demo/onbeforeunload/onbeforeunload_void(0).html">demo</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;onbeforeunload_e.preventDefault()&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    by javascript&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:void(0)&#34;</span>&gt;e.preventDefault()&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;exit?&#39;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">onbeforeunload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">tag</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;a&#39;</span>)[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tag</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><ul>
+<li>jQuery
+<a href="http://tedshd.lionfree.net/demo/onbeforeunload/onbeforeunload_preventDefault().html">demo</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;onbeforeunload_e.preventDefault()&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fun</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;exit?&#39;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">onbeforeunload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;a&#39;</span>).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:void(0)&#34;</span>&gt;e.preventDefault()&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p><a href="http://xieyu.blog.51cto.com/213338/55796">Refer</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/window.onbeforeunload">MDN</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-09-03-javascript-onbeforeunload/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1240,143 +1385,6 @@
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-09-02-sublime-text-plug-in/">‎Sublime Text - Plug-In</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-09-02
-</p>
-                
-
-                
-                <p><h2 id="plug-in">Plug-In</h2>
-<p><strong>Install by Package Control</strong></p>
-<p>Fisrt use sublime need install Package Control
-Ctrl + ~
-show command line
-enter</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>import urllib2,os; pf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Package Control.sublime-package&#39;</span>; ipp<span style="color:#f92672">=</span>sublime.installed_packages_path<span style="color:#f92672">()</span>; os.makedirs<span style="color:#f92672">(</span>ipp<span style="color:#f92672">)</span> <span style="color:#66d9ef">if</span> not os.path.exists<span style="color:#f92672">(</span>ipp<span style="color:#f92672">)</span> <span style="color:#66d9ef">else</span> None; urllib2.install_opener<span style="color:#f92672">(</span>urllib2.build_opener<span style="color:#f92672">(</span>urllib2.ProxyHandler<span style="color:#f92672">()))</span>; open<span style="color:#f92672">(</span>os.path.join<span style="color:#f92672">(</span>ipp,pf<span style="color:#f92672">)</span>,<span style="color:#e6db74">&#39;wb&#39;</span><span style="color:#f92672">)</span>.write<span style="color:#f92672">(</span>urllib2.urlopen<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;http://sublime.wbond.net/&#39;</span>+pf.replace<span style="color:#f92672">(</span><span style="color:#e6db74">&#39; &#39;</span>,<span style="color:#e6db74">&#39;%20&#39;</span><span style="color:#f92672">))</span>.read<span style="color:#f92672">())</span>; print <span style="color:#e6db74">&#39;Please restart Sublime Text to finish installation&#39;</span>
-</span></span></code></pre></div><p>restart sublime
-finish</p>
-<h3 id="zencoding">ZenCoding</h3>
-<h3 id="jsformat">jsFormat</h3>
-<p>讓 js 整齊
-ctrl + alt + f
-<a href="https://github.com/jdc0589/JsFormat">GitHub</a></p>
-<h3 id="sublimetmpl">SublimeTmpl</h3>
-<p>載入預設的樣板</p>
-<h3 id="emmethttpdocsemmetio"><a href="http://docs.emmet.io/">Emmet</a></h3>
-<p>快速輸入</p>
-<h3 id="gist">Gist</h3>
-<h3 id="brackethighlighter">BracketHighlighter</h3>
-<h3 id="themes">Themes</h3>
-<ul>
-<li>Dayle Rees Color Schemes</li>
-<li>Farzher</li>
-<li><a href="https://sublime.wbond.net/packages/Theme%20-%20Fox">Fox</a></li>
-</ul>
-<h3 id="sublime-jslint">sublime-jslint</h3>
-<p><a href="https://github.com/fbzhong/sublime-jslint">GitHub</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Path to the jslint jar.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Leave blank to use bundled jar.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;jslint_jar&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Options pass to jslint.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;jslint_options&#34;</span>: <span style="color:#e6db74">&#34;--continue --nomen --regexp --sloppy&#34;</span>,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Ignore errors, regex.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;ignore_errors&#34;</span>:
-</span></span><span style="display:flex;"><span>    [
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// &#34;Expected an identifier and instead saw &#39;undefined&#39; \(a reserved word\)&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    ],
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// run jslint on save.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;run_on_save&#34;</span>: <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// debug flag.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;debug&#34;</span>: <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="javascript-and-jquery-api-completions">javascript and jQuery API Completions</h3>
-<p><a href="https://github.com/slene/Sublime-JavaScript-API-Completions">GitHub</a></p>
-<h3 id="better-completion">Better Completion</h3>
-<h3 id="phplntel">PHPLntel</h3>
-<h3 id="sublimelinter">SublimeLinter</h3>
-<p><a href="https://github.com/SublimeLinter/SublimeLinter-for-ST2">SublimeLinter-for-ST2</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#e6db74">&#34;sublimelinter_popup_errors_on_save&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;sublimelinter_mark_style&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;fill&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;sublimelinter_gutter_marks&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
-</span></span></code></pre></div><h3 id="colorpicker">ColorPicker</h3>
-<p>調色盤
-<a href="http://weslly.github.io/ColorPicker/">GitHub</a></p>
-<h3 id="scss">SCSS</h3>
-<p><a href="https://github.com/MarioRicalde/SCSS.tmbundle">GiHub</a></p>
-<h3 id="sftp">SFTP</h3>
-<p>利用 SFTP 連 server
-<a href="http://wbond.net/sublime_packages/sftp">Sublime SFTP</a></p>
-<h3 id="docblockr">DocBlockr</h3>
-<p>加強添加注釋
-/** 按 <code>tab</code>
-<a href="https://github.com/spadgos/sublime-jsdocs">GitHub</a></p>
-<h3 id="ascii-decorator">ASCII-Decorator</h3>
-<p>利用 ASCII 文字當注釋
-選擇要轉的文字後, 選選單的 Edit -&gt; ASCII-Decorator, 就會轉換了
-<a href="https://github.com/viisual/ASCII-Decorator">GitHub</a></p>
-<h3 id="bootstrap-3-snippets">Bootstrap 3 Snippets</h3>
-<p><a href="https://github.com/JasonMortonNZ/bs3-sublime-plugin">GitHub</a></p>
-<h3 id="marking-changed-rows">Marking Changed Rows</h3>
-<p><a href="https://github.com/Harurow/sublime_markingchangedrows">GitHub</a></p>
-<h3 id="colorhighlighter">ColorHighlighter</h3>
-<p>顯示 HEX 顏色
-<a href="https://github.com/Monnoroch/ColorHighlighter">GitHub</a></p>
-<h3 id="aligntab">AlignTab</h3>
-<p>對齊 :, =, &hellip;
-<a href="https://github.com/randy3k/AlignTab">GitHub</a></p>
-<h3 id="find-function-definition">Find Function Definition</h3>
-<p>找到 function 定義的位置
-<a href="https://sublime.wbond.net/packages/Find%20Function%20Definition">Find Function Definition</a></p>
-<h3 id="sublimetext-markdown-preview">sublimetext-markdown-preview</h3>
-<p>Preview Markdown 文件
-<a href="https://github.com/revolunet/sublimetext-markdown-preview">sublimetext-markdown-preview</a></p>
-<h3 id="sublimebookmark">sublimeBookmark</h3>
-<p>可以 mark line, 方便臨時標記找 code
-<a href="https://github.com/bollu/sublimeBookmark">sublimeBookmark</a></p>
-<h3 id="css-format">CSS format</h3>
-<p><a href="https://packagecontrol.io/packages/CSS%20Format">CSS Format</a></p>
-<h2 id="sublime-text-3">Sublime text 3</h2>
-<h3 id="jslint">JSLint</h3>
-<p><a href="https://github.com/73rhodes/Sublime-JSLint">JSLint</a></p>
-<h3 id="jshint">JSHint</h3>
-<p><a href="https://github.com/jshint/jshint">jshint</a></p>
-<h3 id="sublimelinter-1">sublimeLinter</h3>
-<h3 id="sublimelinter-annotations">SublimeLinter-annotations</h3>
-<p>highlight TODO, README and FIXME
-<a href="https://github.com/SublimeLinter/SublimeLinter-annotations">SublimeLinter-annotations</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-09-02-sublime-text-plug-in/">Read more</a></p>
                 
             </div>
         </div>

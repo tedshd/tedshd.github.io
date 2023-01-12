@@ -1200,6 +1200,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1210,6 +1214,128 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2018-09-16-web-develop-on-mobile-web/">Web Develop on mobile web &amp; WebView</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2018-09-16
+</p>
+                
+
+                
+                <p><h2 id="web-develop-on-mobile-web--webview">Web Develop on mobile web &amp; WebView</h2>
+<p>因為某些原因必須把這些東西紀錄一下</p>
+<p>其實實在太多東西要寫但實在是太忙且有點沒動力寫文章&hellip;</p>
+<p>會分成兩個 mobile OS 與 mobile browser 加上 WebView 共 4 部分</p>
+<ul>
+<li>
+<p>Android</p>
+<ul>
+<li>mobile web</li>
+<li>WebView</li>
+</ul>
+</li>
+<li>
+<p>iOS</p>
+<ul>
+<li>mobile web</li>
+<li>WebView</li>
+</ul>
+</li>
+</ul>
+<h3 id="android">Android</h3>
+<p>需準備的東西</p>
+<ul>
+<li>電腦版的 chrome browser</li>
+<li>Android 手機(需要有 Android Chrome browser)</li>
+</ul>
+<p>在 2018 年的當下這裡不想再提非 chrome browser 的開發, 因為很難 debug</p>
+<p>以下就簡單說明一下</p>
+<h4 id="1-首先得把-android-手機的開發者模式打開">1. 首先得把 Android 手機的開發者模式打開</h4>
+<p><strong>設定</strong> -&gt; <strong>關於手機</strong> -&gt; <strong>軟體版本</strong></p>
+<p>找到<strong>軟體版本</strong>的選項就一直點, 直到點出提示您現在已成為開發人員, 這樣就可以了</p>
+<p>進去<strong>開發人員選項</strong> 把 <strong>USB 偵錯模式</strong> 打開</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2FCapture%2B_2018-10-14-22-28-13.png?alt=media&amp;token=cf2e0e3c-296d-45ee-a10c-0ac00ce13864" alt=""></p>
+<h4 id="2-連接手機到電腦">2. 連接手機到電腦</h4>
+<h4 id="3-允許金鑰授權">3. 允許金鑰授權</h4>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2FScreenshot_2018-10-11-15-36-36.png?alt=media&amp;token=57443793-b3ea-464e-82c6-7568413a26f7" alt=""></p>
+<h4 id="4-打開電腦-chrome-browser">4. 打開電腦 chrome browser</h4>
+<h4 id="5-打開-開發人員工具mac-command--option--i-pc-f12">5. 打開 <code>開發人員工具</code>(Mac: <code>Command</code> + <code>Option</code> + <code>i</code>, PC: <code>F12</code>)</h4>
+<h4 id="6-打開-remove-device">6. 打開 <code>remove device</code></h4>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-10%20%E4%B8%8B%E5%8D%887.19.23.png?alt=media&amp;token=d85970c0-613a-4f08-9a2f-020cebf8c227" alt=""></p>
+<h4 id="7-確認連接的裝置">7. 確認連接的裝置</h4>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2018-10-11_%E4%B8%8B%E5%8D%884_13_29.png?alt=media&amp;token=d0310aab-d4b7-4f03-b80e-cd29e3c5bc0d" alt=""></p>
+<h4 id="8-選擇-inspect">8. 選擇 Inspect</h4>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-11%20%E4%B8%8B%E5%8D%884.10.12.png?alt=media&amp;token=dbf559eb-a83c-4862-af71-e8b1c627cee5" alt=""></p>
+<p><a href="https://developers.google.com/web/tools/chrome-devtools/remote-debugging/">Refer - Get Started with Remote Debugging Android Devices</a></p>
+<h4 id="9-開始-debug">9. 開始 debug</h4>
+<h4 id="notice">Notice</h4>
+<p>Webiew 的部分需要注意的就是必須是 Android WebView 的 debug 是打開的</p>
+<p><a href="https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews">Refer - Remote Debugging WebViews</a></p>
+<h3 id="ios">iOS</h3>
+<p>需準備的東西</p>
+<ul>
+<li>Mac 的 Safari browser</li>
+<li>iPhone 手機</li>
+</ul>
+<p>iPhone 目前只能針對 Safari debug, 其他 Browser 都沒辦法 debug</p>
+<h4 id="1-把-iphone-safari-的開發者模式打開">1. 把 iPhone Safari 的開發者模式打開</h4>
+<p><strong>設定</strong> -&gt; <strong>Safari</strong> -&gt; <strong>進階</strong></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2FIMG_0311.PNG?alt=media&amp;token=4999363b-a40a-4940-9a33-ed9bdc38864f" alt=""></p>
+<p>JavaScript On</p>
+<p>網頁檢閱器 On</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2FIMG_0310.PNG?alt=media&amp;token=6efccdcc-f6e3-4932-806c-07daa5a828b7" alt=""></p>
+<h4 id="2-把-mac-safari-的開發模式打開">2. 把 Mac Safari 的開發模式打開</h4>
+<p><strong>偏好設定</strong> -&gt; <strong>進階</strong> -&gt; <strong>在選單列中顯示「開發」選單</strong></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-11%20%E4%B8%8B%E5%8D%884.42.51.png?alt=media&amp;token=55415544-998f-4bf2-b187-28572d933a8b" alt=""></p>
+<h4 id="3-連接手機到電腦">3. 連接手機到電腦</h4>
+<h4 id="4-選擇信任這台電腦">4. 選擇信任這台電腦</h4>
+<h4 id="5-打開電腦-safari-browser">5. 打開電腦 Safari browser</h4>
+<h4 id="6-到選單列---開發-確認-iphone-已經顯示出來">6. 到選單列 -&gt; <strong>開發</strong> 確認 iPhone 已經顯示出來</h4>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-11%20%E4%B8%8B%E5%8D%884.59.47.png?alt=media&amp;token=1fab5a46-044a-40d7-a6a6-032135393c7f" alt=""></p>
+<h4 id="7-選擇要-debug-的網址">7. 選擇要 debug 的網址</h4>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-11%20%E4%B8%8B%E5%8D%885.13.50.png?alt=media&amp;token=45048bb1-d2a4-4cb5-923e-7ea9477021d9" alt=""></p>
+<h4 id="8-開始-debug">8. 開始 debug</h4>
+<h4 id="notice-1">Notice</h4>
+<p>iOS 的 debug 只有 beta 和 Xcode building 出來的 App 會出現, 線上版不會出現</p>
+<p>在選單中不會分出該 url 是 WebView 或 browser 的 url, 且有時頁面關掉還會在選單中存在, 所以要仔細確認</p>
+<h3 id="最後">最後</h3>
+<p>還有二個在 WebView 勉強可以稍微 debug 的方法</p>
+<ol>
+<li>掛 proxy</li>
+</ol>
+<p>可以看到手機上的的 Network 情況</p>
+<ol start="2">
+<li>Xcode or Android studio log</li>
+</ol>
+<p>上述兩種方法對 WebView 所能做的 debug 有限</p>
+<p>PPT</p>
+<p><a href="https://hackmd.io/_Zte5OdFT5OhhO72BoTp-A">HackMD</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2018-09-16-web-develop-on-mobile-web/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1251,141 +1377,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2018-08-23-what-is-web-viewport-do-you-really-understand-the-screen-size-of-the-mobile-device-its-ancient/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/">AMP - amp analytics &amp; conversion</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2018-06-17
-</p>
-                
-
-                
-                <p><h2 id="amp---amp-analytics--conversion">AMP - amp analytics &amp; conversion</h2>
-<p>Use google analytics must use <code>amp-analytics</code> component</p>
-<p>It can use PHP print template function to view</p>
-<p>First include</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">custom-element</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;amp-analytics&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><h3 id="ga-click-event">ga click event</h3>
-<p><a href="https://developers.google.com/analytics/devguides/collection/amp-analytics/">Refer - Adding Analytics to your AMP pages</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">amp_ga_event_click_template</span>($ga_id, $selector, $cate, $action, $label, $non_interaction <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0&#34;</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$template <span style="color:#f92672">=</span> <span style="color:#e6db74">&lt;&lt;&lt;</span><span style="color:#e6db74">EOF</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;amp-analytics type=&#34;googleanalytics&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;script type=&#34;application/json&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;vars&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;account&#34;: &#34;%s&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        },
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;triggers&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;trackClickOnHeader&#34; : {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;on&#34;: &#34;click&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;selector&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;request&#34;: &#34;event&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;vars&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;eventCategory&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;eventAction&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;eventLabel&#34;: &#34;%s&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                },
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;extraUrlParams&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;ni&#34;: &#34;%s&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/script&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/amp-analytics&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">EOF</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">printf</span>($template, $ga_id, $selector, $cate, $action, $label, $non_interaction);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="google-adwords-conversion">google adwords conversion</h3>
-<p><a href="https://developers.google.com/adwords/amp/landing-pages">Refer - Using AMP for your AdWords Landing Pages</a></p>
-<p>For landing page pageview</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">amp_ga_conversion_pageview_template</span>($conversion_id, $lang <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;en&#34;</span>, $conversion_label)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$template <span style="color:#f92672">=</span> <span style="color:#e6db74">&lt;&lt;&lt;</span><span style="color:#e6db74">EOF</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;amp-analytics type=&#34;googleadwords&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;script type=&#34;application/json&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;triggers&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;onVisible&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;on&#34;: &#34;visible&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;request&#34;: &#34;conversion&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    },
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;vars&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;googleConversionId&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;googleConversionLanguage&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;googleConversionFormat&#34;: &#34;3&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;googleConversionLabel&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;googleRemarketingOnly&#34;: &#34;false&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/script&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/amp-analytics&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">EOF</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">printf</span>($template, $conversion_id, $lang, $conversion_label);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>For click conversion</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">amp_ga_conversion_click_template</span>($ga_id, $selector, $conversion_id, $conversion_label, $non_interaction <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0&#34;</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$template <span style="color:#f92672">=</span> <span style="color:#e6db74">&lt;&lt;&lt;</span><span style="color:#e6db74">EOF</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;amp-analytics type=&#34;googleadwords&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;script type=&#34;application/json&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;vars&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;account&#34;: &#34;%s&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    },
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;triggers&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;trackClickOnHeader&#34; : {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;on&#34;: &#34;click&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;selector&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;request&#34;: &#34;conversion&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;vars&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;googleConversionId&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;googleConversionFormat&#34;: &#34;3&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;googleConversionLabel&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;googleRemarketingOnly&#34;: &#34;false&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            },
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;extraUrlParams&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;ni&#34;: &#34;1&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/script&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/amp-analytics&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">EOF</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">printf</span>($template, $ga_id, $selector, $conversion_id, $conversion_label, $non_interaction);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/">Read more</a></p>
                 
             </div>
         </div>
