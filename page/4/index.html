@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.96.0" />
+	<meta name="generator" content="Hugo 0.98.0" />
     
 
 
@@ -189,6 +189,89 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/node_pm2_usage/">Node PM2 使用紀錄</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2022-11-18
+</p>
+                
+
+                
+                <p><h2 id="介紹">介紹</h2>
+<p><a href="https://pm2.keymetrics.io/">PM2</a> 是一個可以方便處理 node process 的工具</p>
+<p>大多用於線上環境</p>
+<p>這邊主要紀錄 PM2 的一些用法與指令</p>
+<h2 id="基本使用">基本使用</h2>
+<p>可以參考官方文件 <a href="https://pm2.keymetrics.io/docs/usage/quick-start/">PM2 Process Management Quick Start</a></p>
+<p>安裝</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npm install pm2 -g
+</span></span></code></pre></div><p>啟動</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 start &lt;要啟動的 js&gt;
+</span></span></code></pre></div><p>通常建議啟動時的指令搭配以下參數(更多參數請詳閱文件)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Specify an app name</span>
+</span></span><span style="display:flex;"><span>--name &lt;app_name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Watch and Restart app when files change</span>
+</span></span><span style="display:flex;"><span>--watch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set memory threshold for app reload</span>
+</span></span><span style="display:flex;"><span>--max-memory-restart &lt;200MB&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Specify log file</span>
+</span></span><span style="display:flex;"><span>--log &lt;log_path&gt;
+</span></span></code></pre></div><h2 id="重新載入">重新載入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 reload &lt;要重啟的 app&gt;
+</span></span></code></pre></div><p>大多用於程式部署更新後, 有較好的體驗(和 restart 相比)</p>
+<p>可以參考以下比較</p>
+<p><a href="https://stackoverflow.com/questions/44883269/what-is-the-difference-between-pm2-restart-and-pm2-reload">refer - What is the difference between pm2 restart and pm2 reload</a></p>
+<h2 id="log-紀錄">log 紀錄</h2>
+<p>推薦使用 <a href="https://github.com/keymetrics/pm2-logrotate">pm2-logrotate</a></p>
+<p>來處理 logrotate</p>
+<p>當然如果有指定 log path 的話, 用系統處理 logrotate 也是可以的</p>
+<p>如果要清空 log</p>
+<p>可以使用 <code>pm2 flush</code></p>
+<h2 id="監控">監控</h2>
+<p>預設有兩種</p>
+<ol>
+<li>Terminal</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 monit
+</span></span></code></pre></div><p>就會開啟終端機的 dashboard 可以監控狀態</p>
+<ol start="2">
+<li>web</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 plus
+</span></span></code></pre></div><p>或是用</p>
+<p><a href="https://pm2.io/docs/plus/overview/#features-available-in-pm2-plus">app.pm2.io</a></p>
+<h2 id="load-balancing">LOAD-BALANCING</h2>
+<p>pm2 已經內建負載平衡的功能</p>
+<p><a href="https://pm2.io/docs/runtime/guide/load-balancing/">LOAD-BALANCING (CLUSTER MODE)</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/node_pm2_usage/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/firebase_app_check/">Firebase app check 使用紀錄</a></h3>
 
                 
@@ -298,67 +381,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/firebase_app_check/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/unarchived_firebase_console_dynamic_link/">Unarchived firebase console dynamic link</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2022-10-22
-</p>
-                
-
-                
-                <p><p>Sometimes a dynamic link is accidentally archived.</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2FScreen_Shot_2022-10-22_at_9_17_52_PM.png?alt=media&amp;token=af826e6a-8d67-40bb-8f17-f8c5fd2ca7c8" alt=""></p>
-<p>But doesn&rsquo;t have any option show archived dynamic link list.</p>
-<p>BTW</p>
-<p>You have a way to unarchived this dynamic link.</p>
-<h2 id="use-post-api-update-this-dynamic-link">Use POST API update this dynamic link</h2>
-<ol>
-<li>Find your filebase console auth data</li>
-</ol>
-<p>You can edit dynamic link data and then catch request when save it.</p>
-<p>Find this request <code>https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;key=&lt;YOUR KEY&gt;</code> and copy header</p>
-<ol start="2">
-<li>Build POST data</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl --location --request POST <span style="color:#e6db74">&#39;https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;key=&lt;YOUR KEY&gt;&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Authorization: &lt;YOUR Authorization&gt;&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Origin: https://console.firebase.google.com&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Referer: &lt;REFER YOUR PROJECT LINK&gt;?linkUrl=&lt;YOUR ARCHIVED DYNAMIC LINK&gt;&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Host: firebasedurablelinks-pa.clients6.google.com&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Cookie: &lt;YOUR COOKIE&gt;&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;X-Goog-AuthUser: &lt;REFER YOUR ORIGIN REQUEST&gt;&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Content-Type: text/plain&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{&#34;durableLink&#34;:{&#34;shortDurableLink&#34;:{&#34;link&#34;:&#34;&lt;YOUR ARCHIVED DYNAMIC LINK&gt;&#34;}},&#34;newDurableLink&#34;:{&#34;shortDurableLink&#34;:{&#34;visibility&#34;:&#34;UNARCHIVED&#34;}},&#34;newDurableLinkMask&#34;:&#34;short_durable_link&#34;,&#34;projectInfo&#34;:{&#34;projectNumber&#34;:&#34;&lt;YOUR PROJECT NUMBER&gt;&#34;}}&#39;</span>
-</span></span></code></pre></div><p>Finally you can unarchived this dynamic link.</p>
-<p>Have a nice day.</p>
-<p><a href="https://stackoverflow.com/questions/54086964/where-are-archived-dynamic-links">Refer - Where are archived Dynamic Links?</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/unarchived_firebase_console_dynamic_link/">Read more</a></p>
                 
             </div>
         </div>

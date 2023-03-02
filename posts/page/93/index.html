@@ -1204,6 +1204,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1214,6 +1218,66 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2014-01-18-samsung-samrt-tv-save-load-data/">Samsung Samrt TV - save / load data</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2014-01-18
+</p>
+                
+
+                
+                <p><h2 id="samsung-samrt-tv---save--load-data">Samsung Samrt TV - save / load data</h2>
+<p>如果要儲存資料(ex: 使用者資訊&hellip;)建議使用 Samsung 的 file API
+使用 HTML5 的 localStorage 在電視關機後會被清掉</p>
+<p><a href="http://www.samsungdforum.com/Guide/ref00001/index.html">File API</a>
+<a href="http://www.samsungdforum.com/Guide/tec00111/index.html">Refer - Can I access a local file from JavaScript code?</a>
+<a href="http://www.samsungdforum.com/Guide/ref00001/file_api_opencommonfile.html">Refer - openCommonFile</a>
+<a href="http://www.samsungdforum.com/Guide/ref00001/file_api_readall.html">Refer - readAll</a></p>
+<h3 id="example">example</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fileSystemObj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileSystem</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">save</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fileSystemObj</span>.<span style="color:#a6e22e">isValidCommonPath</span>(<span style="color:#a6e22e">curWidget</span>.<span style="color:#a6e22e">id</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fileSystemObj</span>.<span style="color:#a6e22e">createCommonDir</span>(<span style="color:#a6e22e">curWidget</span>.<span style="color:#a6e22e">id</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fileObj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fileSystemObj</span>.<span style="color:#a6e22e">openCommonFile</span>(<span style="color:#a6e22e">curWidget</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/testFile.data&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fileObj</span>.<span style="color:#a6e22e">writeAll</span>(<span style="color:#e6db74">&#39;test save&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fileSystemObj</span>.<span style="color:#a6e22e">closeCommonFile</span>(<span style="color:#a6e22e">fileObj</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Main</span>.<span style="color:#a6e22e">save</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">save</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">read</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">file</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fileSystemObj</span>.<span style="color:#a6e22e">openCommonFile</span>(<span style="color:#a6e22e">curWidget</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/testFile.data&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">readAll</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Main</span>.<span style="color:#a6e22e">read</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">read</span>;
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2014-01-18-samsung-samrt-tv-save-load-data/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1301,95 +1365,6 @@ text-shadow 為 CSS3 需 IE10 以上才支援
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2014-01-10-css-text-around-shadows/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-12-25-javascript-jsonp/">JavaScript - jsonp</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-12-25
-</p>
-                
-
-                
-                <p><h2 id="javascript---jsonp">JavaScript - jsonp</h2>
-<h3 id="if-only-get-dataread">If only get data(read)</h3>
-<p>Use callback</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// javascript
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// build from javascript
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scriptEl</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scriptEl</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;callback=myFunction&#34;</span>;
-</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;head&#34;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">scriptEl</span>);
-</span></span></code></pre></div><p>or</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- html --&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- embed from HTML --&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;callback=myFunction&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p>myFunction is callback function handle json data</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// javascript
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myFunction</span>(<span style="color:#a6e22e">data</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// data is json
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h4 id="example">example</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;Examples&lt;/<span style="color:#f92672">title</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- &lt;script src=&#34;http://tedshd.lionfree.net/demo/php/api_test.php?callback=test&#34;&gt;&lt;/script&gt; --&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scriptEl</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scriptEl</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://tedshd.lionfree.net/demo/php/api_test.php?callback=test&#34;</span>;
-</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;head&#34;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">scriptEl</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
-</span></span></code></pre></div><p>PHP must support to handle jsonp</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// PHP
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$request_json <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_encode</span>($data, <span style="color:#66d9ef">true</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> $_GET[<span style="color:#e6db74">&#39;callback&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;(&#34;</span> <span style="color:#f92672">.</span> $request_json <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;);&#34;</span>;
-</span></span></code></pre></div><p>這樣就會回傳用 callback 包起來的 json data
-由於 callback 是 url query string ,所以不是用 callback 用其他名稱也是 ok 的</p>
-<h3 id="if-want-to-write-datasave">If want to write data(Save)</h3>
-<p>Use XMLHttpRequest send data
-<a href="http://tedshd.logdown.com/posts/143110-ajax-xmlhttprequest">AJAX - XMLHttpRequest</a></p>
-<p>PHP 加入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// PHP
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Access-Control-Allow-Origin: *&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// header(&#34;Access-Control-Allow-Origin: http://example.com&#34;);
-</span></span></span></code></pre></div><p>其中 * 也可改成所允許的 url</p>
-<p><a href="https://developer.mozilla.org/zh-TW/docs/HTTP/Access_control_CORS">Refer - HTTP access control (CORS)</a>
-<a href="https://developer.mozilla.org/en-US/docs/Server-Side_Access_Control">Refer - Server-Side Access Control</a>
-<a href="http://blog.caesarchi.com/2011/08/xmlhttprequestajax.html">Refer - XMLHttpRequest執行AJAX 跨網域存取</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-12-25-javascript-jsonp/">Read more</a></p>
                 
             </div>
         </div>

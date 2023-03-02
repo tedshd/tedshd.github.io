@@ -2,29 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.tedshd.io/categories/app-store/</loc>
-    <lastmod>2023-01-12T15:08:36+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/posts/pay_attention_to_app_iap/</loc>
-    <lastmod>2023-01-12T15:08:36+08:00</lastmod>
-  </url><url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2023-01-12T15:08:36+08:00</lastmod>
+    <lastmod>2023-03-02T08:03:30+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/categories/google-play/</loc>
-    <lastmod>2023-01-12T15:08:36+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/iap/</loc>
-    <lastmod>2023-01-12T15:08:36+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2023-01-12T15:08:36+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/</loc>
-    <lastmod>2023-01-12T15:08:36+08:00</lastmod>
+    <loc>https://blog.tedshd.io/posts/fixed_mac_android_file_transfer_not_work/</loc>
+    <lastmod>2023-03-02T08:03:30+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/mac/</loc>
-    <lastmod>2023-01-08T15:02:01+08:00</lastmod>
+    <lastmod>2023-03-02T08:03:30+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/</loc>
+    <lastmod>2023-03-02T08:03:30+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/</loc>
+    <lastmod>2023-03-02T08:03:30+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/app-store/</loc>
+    <lastmod>2023-01-17T10:24:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/pay_attention_to_app_iap/</loc>
+    <lastmod>2023-01-17T10:24:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/google-play/</loc>
+    <lastmod>2023-01-17T10:24:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/iap/</loc>
+    <lastmod>2023-01-17T10:24:18+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/</loc>
     <lastmod>2023-01-08T15:02:01+08:00</lastmod>
@@ -1010,10 +1013,10 @@
     <loc>https://blog.tedshd.io/posts/2013-09-02-sublime-text-plug-in/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/</loc>
+    <loc>https://blog.tedshd.io/posts/2013-09-01-sublime-text-hot-key/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/posts/2013-09-01-sublime-text-hot-key/</loc>
+    <loc>https://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/</loc>
     <lastmod>2020-01-29T17:42:46+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/2013-08-30-php-note/</loc>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.96.0" />
+	<meta name="generator" content="Hugo 0.98.0" />
     
 
 
@@ -189,6 +189,60 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/build_different_platform_docker_image/">docker 建立不同平台的 image</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2022-06-29
+</p>
+                
+
+                
+                <p><h2 id="前言">前言</h2>
+<p>現在在開發與線上環境常常會遇到不同 CPU 架構的問題</p>
+<p>不同 CPU 架構底層的指令集也不一樣</p>
+<p>最常見的影響就是在其中一個平台編譯出來的程式會無法在另一個平台執行</p>
+<p>這情況尤其是會在接近底層的程式上見到</p>
+<p>現在普遍來說會發現在 ARM 架構底下有些程式執行起來效率更高</p>
+<p>所以有部分公司的服務也會在線上環境的機器選用 ARM 架構的機器</p>
+<h2 id="情境">情境</h2>
+<p>雖然以前公司的情況是開發在 x86-64 上</p>
+<p>線上是 ARM 的情況</p>
+<p>但現在自己在試驗的情況是反過來的 XD</p>
+<p>現在 Macbook 是 M1 晶片了, M 系列是 ARM 架構</p>
+<p>我在 GCP 開的機器是 x86-64 架構</p>
+<p>所以在 Mac 上面 build 的 docker image 是沒法在 GCP 開的機器運行</p>
+<p>只要執行 docker run 就會出現錯誤提示說架構不同無法執行</p>
+<h2 id="解決方案">解決方案</h2>
+<p>docker 有提供可以建構不同平台的 image 的指令</p>
+<p>只要多一個 <code>buildx</code> 和 <code>--platform</code> 的指令與參數</p>
+<pre tabindex="0"><code>docker buildx build --platform=linux/amd64,linux/arm64 .
+</code></pre><p><a href="https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/">Faster Multi-Platform Builds: Dockerfile Cross-Compilation Guide</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/build_different_platform_docker_image/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/safari_100vh_show_scroll/">Safari 設定 100vh 還是出現卷軸(scroll bar)</a></h3>
 
                 
@@ -228,47 +282,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/safari_100vh_show_scroll/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/mysql_in_docker/">Mac M1 run MySQL in local docker</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2022-05-03
-</p>
-                
-
-                
-                <p><h2 id="usage">Usage</h2>
-<p><a href="https://hub.docker.com/_/mysql">docker hub</a></p>
-<p>In Apple M1</p>
-<p><a href="https://hub.docker.com/r/amd64/mysql/">amd64/mysql</a></p>
-<h2 id="run-docker-in-local">Run docker in local</h2>
-<p>Sample for M1(different of image name)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>password -d amd64/mysql:latest
-</span></span></code></pre></div><p>Container run in <code>0.0.0.0</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql --default-character-set<span style="color:#f92672">=</span>utf8mb4 -u root -h 0.0.0.0 -P <span style="color:#ae81ff">3306</span> -p -A
-</span></span></code></pre></div></p>
-                
-
-                
-
                 
             </div>
         </div>
