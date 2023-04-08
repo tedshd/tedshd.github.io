@@ -12,8 +12,10 @@
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="description" content='Usage docker hub
 In Apple M1
+no-official image
 amd64/mysql
-Run docker in local Sample for M1(different of image name)
+MySQL 5.7
+docker pull amd64/mysql:5.7 Run docker in local Sample for M1(different of image name)
 docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d amd64/mysql:latest Container run in 0.0.0.0
 mysql --default-character-set=utf8mb4 -u root -h 0.0.0.0 -P 3306 -p -A '>
 <meta name="keywords" content=''>
@@ -34,8 +36,10 @@ mysql --default-character-set=utf8mb4 -u root -h 0.0.0.0 -P 3306 -p -A '>
 <meta property="og:title" content="Mac M1 run MySQL in local docker" />
 <meta property="og:description" content="Usage docker hub
 In Apple M1
+no-official image
 amd64/mysql
-Run docker in local Sample for M1(different of image name)
+MySQL 5.7
+docker pull amd64/mysql:5.7 Run docker in local Sample for M1(different of image name)
 docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d amd64/mysql:latest Container run in 0.0.0.0
 mysql --default-character-set=utf8mb4 -u root -h 0.0.0.0 -P 3306 -p -A " />
 <meta property="og:type" content="article" />
@@ -50,8 +54,10 @@ mysql --default-character-set=utf8mb4 -u root -h 0.0.0.0 -P 3306 -p -A " />
 <meta name="twitter:title" content="Mac M1 run MySQL in local docker"/>
 <meta name="twitter:description" content="Usage docker hub
 In Apple M1
+no-official image
 amd64/mysql
-Run docker in local Sample for M1(different of image name)
+MySQL 5.7
+docker pull amd64/mysql:5.7 Run docker in local Sample for M1(different of image name)
 docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d amd64/mysql:latest Container run in 0.0.0.0
 mysql --default-character-set=utf8mb4 -u root -h 0.0.0.0 -P 3306 -p -A "/>
 
@@ -202,8 +208,11 @@ mysql --default-character-set=utf8mb4 -u root -h 0.0.0.0 -P 3306 -p -A "/>
         <h2 id="usage">Usage</h2>
 <p><a href="https://hub.docker.com/_/mysql">docker hub</a></p>
 <p>In Apple M1</p>
+<p>no-official image</p>
 <p><a href="https://hub.docker.com/r/amd64/mysql/">amd64/mysql</a></p>
-<h2 id="run-docker-in-local">Run docker in local</h2>
+<p>MySQL 5.7</p>
+<pre tabindex="0"><code>docker pull amd64/mysql:5.7
+</code></pre><h2 id="run-docker-in-local">Run docker in local</h2>
 <p>Sample for M1(different of image name)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>password -d amd64/mysql:latest
 </span></span></code></pre></div><p>Container run in <code>0.0.0.0</code></p>

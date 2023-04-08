@@ -207,8 +207,11 @@
                 <p><h2 id="usage">Usage</h2>
 <p><a href="https://hub.docker.com/_/mysql">docker hub</a></p>
 <p>In Apple M1</p>
+<p>no-official image</p>
 <p><a href="https://hub.docker.com/r/amd64/mysql/">amd64/mysql</a></p>
-<h2 id="run-docker-in-local">Run docker in local</h2>
+<p>MySQL 5.7</p>
+<pre tabindex="0"><code>docker pull amd64/mysql:5.7
+</code></pre><h2 id="run-docker-in-local">Run docker in local</h2>
 <p>Sample for M1(different of image name)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>password -d amd64/mysql:latest
 </span></span></code></pre></div><p>Container run in <code>0.0.0.0</code></p>
