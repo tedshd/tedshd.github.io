@@ -189,6 +189,57 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/safari_100vh_show_scroll/">Safari 設定 100vh 還是出現卷軸(scroll bar)</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2022-06-20
+</p>
+                
+
+                
+                <p><h2 id="前言">前言</h2>
+<p>最近注意到 Safari 設定 100vh</p>
+<p>在未滿內容的情況還是出現滑動的卷軸</p>
+<p>這導致了體驗不佳</p>
+<p>研究了一下發現是因為在 Safari 上有 url bar 的關係(iOS 15 以下還有 function bar)</p>
+<p>100vh 的大小其實是這些 bar 隱藏時的大小(iOS Safari 滑動時這些 bar 會隱藏起來)</p>
+<p>這邊試了幾種方式</p>
+<h2 id="改成-100">改成 <code>100%</code></h2>
+<p>可以改成用 100% 來取代 100vh</p>
+<p>不過這得依情況來使用</p>
+<h2 id="使用--webkit-fill-available">使用 <code>-webkit-fill-available</code></h2>
+<p><code>-webkit-fill-available</code> 目前只有 iOS 支援</p>
+<p>所以可以用 useragent 來處理樣式來對應使用這個 CSS 屬性</p>
+<p><a href="https://tedshd.io/demo/ui/ios_full_view.html">範例</a></p>
+<h2 id="結論">結論</h2>
+<p>我自己測試了一下會偏好使用 <code>100%</code></p>
+<p>個人會希望能夠簡單處理方式就用簡單的方式處理</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/safari_100vh_show_scroll/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/mysql_in_docker/">Mac M1 run MySQL in local docker</a></h3>
 
                 
@@ -221,132 +272,6 @@
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/web_how_to_check_ip/">Web 服務確認 IP Location 的幾種做法</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2022-04-25
-</p>
-                
-
-                
-                <p><h2 id="intro">Intro</h2>
-<p>在很多實務上的需求, 需要了解 client 過來的請求是來自哪裡或來自哪個國家</p>
-<p>最常見的方式就是依靠來源的 IP 判斷(這裡排除 proxy, VPN 或造假來源的因素)</p>
-<p>而在 HTTP protocol 中, 會把 IP 附在 header(至於帶在哪個 header 與支援哪些 header 主要取決於各個語言對 HTTP 的實作)</p>
-<p><a href="https://tedshd.io/demo/php/ip.php">header Sample</a></p>
-<p>上述範例只是取幾個比較常見的會帶上去的 header</p>
-<p>至於更加詳細的 header 支援與取得 IP 時需要注意哪些事情可以參考以下文章</p>
-<p><a href="https://devco.re/blog/2014/06/19/client-ip-detection/">Refer - 如何正確的取得使用者 IP？</a></p>
-<p>而為何可以用 IP 能夠確認出是在哪個地區國家甚至城市呢?</p>
-<p>主要是因為有 IANA(Internet Assigned Numbers Authority) 進行了 IP 網段的分配</p>
-<p>又有細分 ABCDE 級網段</p>
-<p>這裡先大略講一下</p>
-<p>相關資訊可以去看網路概論等相關的資料</p>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%90%84%E5%9C%8BIPv4%E4%BD%8D%E5%9D%80%E5%88%86%E9%85%8D%E5%88%97%E8%A1%A8">Refer - 各國IPv4位址分配列表</a></p>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%B7%B2%E5%88%86%E9%85%8D%E7%9A%84/8_IPv4%E5%9C%B0%E5%9D%80%E5%9D%97%E5%88%97%E8%A1%A8">Refer - 已分配的/8 IPv4位址網段列表</a></p>
-<h2 id="方法">方法</h2>
-<p>現在有幾種方法可以處理這件事情</p>
-<p>但是經有上述的介紹可以知道其實最主要的基本判斷就是得知道哪些 IP 段對應哪些國家</p>
-<p>那接下來就是有哪些方法可以來做這件事了</p>
-<p>大致上分兩個方向</p>
-<ol>
-<li>
-<p>自己處理</p>
-</li>
-<li>
-<p>使用第三方服務處理</p>
-</li>
-</ol>
-<p>第一種方式就是自己建立與維護一組 IP table 的資料庫</p>
-<p>來比對哪些 IP 對應的國家</p>
-<p>比較常用的有 <a href="https://www.maxmind.com/en/geoip2-services-and-databases?lang=en">GeoIP2</a> 和 <a href="https://dev.maxmind.com/geoip/geolite2-free-geolocation-data??lang=en">GeoLite2</a></p>
-<p>GeoIP2 需要付費, 但是更新頻繁, 也可以對應較多的區域城市細節</p>
-<p>GeoLite2 免費, 但只能查到國家</p>
-<p>記得還有一些服務也有提供 IP table 資料庫</p>
-<p>也可以多找找看</p>
-<p>第二種方式是我個人比較喜歡的方式, 主要是不用自己維護 IP table</p>
-<p>主要會有幾種方式可以處理</p>
-<ol>
-<li>
-<p>掛 CDN 服務或第三方服務使用服務提供的 header</p>
-</li>
-<li>
-<p>使用 Cloudflare worker 建立 API 來取資料</p>
-</li>
-<li>
-<p>使用 <a href="https://ip-api.com/">https://ip-api.com/</a> 服務來取得 location</p>
-</li>
-</ol>
-<p>AWS 的 CDN 服務 cloudfront</p>
-<p><a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-cloudfront-headers.html">Adding the CloudFront HTTP headers</a></p>
-<p>header 有 <code>cloudfront-viewer-country</code> 可以取得 ISO 3166 的國家代碼</p>
-<p>Cloudflare 設定</p>
-<p><a href="https://support.cloudflare.com/hc/en-us/articles/200168236-Configuring-Cloudflare-IP-Geolocation">Configuring Cloudflare IP Geolocation</a></p>
-<p>設定完之後</p>
-<p>就可以在 header 收到 <code>cf-ipcountry</code> 的 header 就會是 ISO 3166 的國家代碼</p>
-<p>我個人是覺得掛 CDN 是相對簡單解決的方法</p>
-<p>至於使用 Cloudflare worker 也是個不錯的方案</p>
-<p>只要設定好跑 worker 的 url</p>
-<p>然後要跑的 code 範例</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;fetch&#34;</span>, <span style="color:#a6e22e">event</span> =&gt; {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">respondWith</span>(<span style="color:#a6e22e">handleRequest</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">request</span>))
-</span></span><span style="display:flex;"><span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleRequest</span>(<span style="color:#a6e22e">request</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;country&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">cf</span>.<span style="color:#a6e22e">country</span>
-</span></span><span style="display:flex;"><span>  }), {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  })
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>這樣就會回傳請求時的國家了</p>
-<p><a href="https://developers.cloudflare.com/workers/runtime-apis/request/">Refer - Request</a>
-<a href="https://developers.cloudflare.com/workers/runtime-apis/response/">Refer - Response</a></p>
-<p>當然 worker 免費方案下也是有請求限制</p>
-<p>ip-api 的話已經是現成的 API 了</p>
-<p>可以直接使用</p>
-<p>免費方案也是有請求限制的</p>
-<h2 id="總結">總結</h2>
-<p>自己搞 ip table 的方式和使用 cloudfront 與 cloudflare 的方式都比較適合是在 server 端判斷 location 會用到</p>
-<p>worker 和 ip-api 適合是需要在 client 時判斷用</p>
-<p>不過 ip-api 的 api 支援帶入 ip 取 local, 所以就可以在 server 使用</p>
-<h2 id="最後補充">最後補充</h2>
-<p>因為很少在用 GCP</p>
-<p>問了相關專業人士後</p>
-<p>其實 GCP 的服務也有類似的方式可以處理</p>
-<p>是掛在 GCP 的 Cloud Load Balancing 裏面</p>
-<p><a href="https://cloud.google.com/load-balancing/docs/https/custom-headers">Create custom headers in backend services</a></p>
-<p>如果要用 cloud function 或是 App Engine 也是有特別的 header 可以用</p>
-<p><a href="https://cloud.google.com/appengine/docs/standard/go/reference/request-response-headers">Request Headers and Responses</a></p>
-<p><a href="https://medium.com/mop-developers/free-ip-based-geolocation-with-google-cloud-functions-f92e20d47651">Refer - Free IP-based GeoLocation with Google Cloud Functions</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/web_how_to_check_ip/">Read more</a></p>
                 
             </div>
         </div>

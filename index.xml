@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Thu, 02 Mar 2023 08:03:30 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Oct 2023 18:19:59 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解決 Mac 外接硬碟讀不到 / 沒有顯示</title>
+      <link>https://blog.tedshd.io/posts/fixed_mac_external_hard_drive_not_detect/</link>
+      <pubDate>Sun, 29 Oct 2023 18:19:59 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/fixed_mac_external_hard_drive_not_detect/</guid>
+      <description>Intro 有時 Mac 會讀不到外接硬碟 可以試試以下方式解決問題 重新開機 可能一些未知的因素導致當下讀取不到 可以重新開機後再重新連接外接硬碟 啟用外接硬碟的可見</description>
+    </item>
+    
     <item>
       <title>Fixed android file transfer not work in mac</title>
       <link>https://blog.tedshd.io/posts/fixed_mac_android_file_transfer_not_work/</link>

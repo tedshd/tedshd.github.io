@@ -3,18 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2023-03-02T08:15:34+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/posts/fixed_mac_android_file_transfer_not_work/</loc>
-    <lastmod>2023-03-02T08:15:34+08:00</lastmod>
+    <lastmod>2023-10-29T18:19:59+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/mac/</loc>
-    <lastmod>2023-03-02T08:15:34+08:00</lastmod>
+    <lastmod>2023-10-29T18:19:59+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2023-03-02T08:15:34+08:00</lastmod>
+    <lastmod>2023-10-29T18:19:59+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/</loc>
+    <lastmod>2023-10-29T18:19:59+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/fixed_mac_external_hard_drive_not_detect/</loc>
+    <lastmod>2023-10-29T18:19:59+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/fixed_mac_android_file_transfer_not_work/</loc>
     <lastmod>2023-03-02T08:15:34+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/app-store/</loc>
@@ -126,7 +129,7 @@
     <lastmod>2022-07-21T10:51:14+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/docker/</loc>
-    <lastmod>2022-06-29T11:30:13+08:00</lastmod>
+    <lastmod>2023-04-08T14:31:02+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/build_different_platform_docker_image/</loc>
     <lastmod>2022-06-29T11:30:13+08:00</lastmod>
@@ -138,10 +141,10 @@
     <lastmod>2022-06-20T16:09:58+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/mysql_in_docker/</loc>
-    <lastmod>2022-05-29T03:17:48+08:00</lastmod>
+    <lastmod>2023-04-08T14:31:02+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/mysql/</loc>
-    <lastmod>2022-05-29T03:17:48+08:00</lastmod>
+    <lastmod>2023-04-08T14:31:02+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/ip/</loc>
     <lastmod>2022-04-26T11:30:13+08:00</lastmod>

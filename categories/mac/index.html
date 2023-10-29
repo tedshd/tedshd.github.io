@@ -181,6 +181,128 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/fixed_mac_external_hard_drive_not_detect/">解決 Mac 外接硬碟讀不到 / 沒有顯示</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2023-10-29
+</p>
+                
+
+                
+                <p><h2 id="intro">Intro</h2>
+<p>有時 Mac 會讀不到外接硬碟</p>
+<p>可以試試以下方式解決問題</p>
+<h2 id="重新開機">重新開機</h2>
+<p>可能一些未知的因素導致當下讀取不到</p>
+<p>可以重新開機後再重新連接外接硬碟</p>
+<h2 id="啟用外接硬碟的可見性">啟用外接硬碟的可見性</h2>
+<p>如果你的電腦系統為在 macOS Big Sur 或 Catalina，那你就需要啟用外接硬碟的可見性。你可以根據以下步驟進行操作。</p>
+<ol>
+<li>
+<p>前往「Finder」&gt;「偏好設定」&gt;「一般」。</p>
+</li>
+<li>
+<p>此時，你可以看到「在桌面上顯示這些項目」的欄位，勾選「硬碟」和「外接硬碟」的選項。</p>
+</li>
+</ol>
+<h2 id="檢查系統資訊中的外部硬碟驅動程式">檢查系統資訊中的外部硬碟驅動程式</h2>
+<p><strong>系統資訊</strong> 將會顯示所有連接至Mac的外部裝置、軟體、硬體和網路等所有訊息的地方。因此，你可以先在該位置進行檢測。</p>
+<ol>
+<li>
+<p>前往「應用程式」&gt;「工具程式」&gt;「系統資訊」。</p>
+</li>
+<li>
+<p>在左側欄位點選「USB」，然後查看外接硬碟的資訊。</p>
+</li>
+<li>
+<p>如果你可以看見相關資訊，Mac 卻無法顯示外接硬碟，那它可能正在被 macOS 修復。你可以前往「活動監視器」，以檢查是否有「fsck_hfs」或「fsck_exfat」的活動。</p>
+</li>
+</ol>
+<h2 id="運行apple診斷以檢測硬體問題">運行「Apple診斷」以檢測硬體問題</h2>
+<p>Mac 電腦擁有一套內建的診斷程式「Apple診斷」，以讓你查找故障的硬體問題。修復損壞的硬體也有可能解決Mac讀不到外接硬碟的情況。</p>
+<ol>
+<li>
+<p>拔除所有外接裝置，除了鍵盤、滑鼠等有用的裝置。</p>
+</li>
+<li>
+<p>重啟Mac，並在電腦啟動時按住鍵盤的「D」鍵，直到看到選擇語言的視窗才放手。</p>
+</li>
+<li>
+<p>接著，系統就會開始診斷動作，而你也會在介面看到進度列。</p>
+</li>
+<li>
+<p>完成診斷後，你就會看到電腦所面對的硬體問題以及相對的解決方案。</p>
+</li>
+</ol>
+<h2 id="重置-mac-的-nvram-或-pram">重置 Mac 的 NVRAM 或 PRAM</h2>
+<p>NVRAM 和 PRAM 是 Mac 電腦中的部分暫存。不管開機或關機，它都會保存特定數據。</p>
+<p>如果你的Mac無法讀取外接硬碟是基於硬體受損，那你也可以嘗試使用這個方法解決。</p>
+<ol>
+<li>
+<p>重啟 Mac，然後在電腦啟動時同時按住「control + option + P + R」鍵。</p>
+</li>
+<li>
+<p>按住這些按鍵長達大約 20 秒，直到你聽到電腦重啟的音效，或是看到蘋果標誌出現並消失後才放手。</p>
+</li>
+</ol>
+<h2 id="重置-mac-smc">重置 Mac SMC</h2>
+<p>SMC（System Management Controller）負責演算 Mac 的低階功能，因此如果重置 NVRAM或 PRAM 仍無法解決 Mac 外接硬碟無法顯示的問題，那你也可以嘗試重置 SMC。</p>
+<ol>
+<li>
+<p>將電腦關機，並連接上充電器。</p>
+</li>
+<li>
+<p>同時按住「電源按鈕 + shift + control + option」長達 10 秒。</p>
+</li>
+<li>
+<p>同時放開所有按鈕後，再次將電腦開機以檢查問題是否已被解決。</p>
+</li>
+</ol>
+<h2 id="使用終端機修復外接硬碟">使用「終端機」修復外接硬碟</h2>
+<p>除了磁碟工具程式，終端機也能有效解決電腦故障問題。因此，我們也建議你嘗試進行以下操作。</p>
+<ol>
+<li>
+<p>前往「Finder」&gt;「應用程式」&gt;「工具程式」&gt;「終端機」。</p>
+</li>
+<li>
+<p>輸入「diskutil list」，然後點擊「return」鍵，並記住外接硬碟的序號（disk#）。</p>
+</li>
+<li>
+<p>輸入「diskutil mountDisk /dev/disk#」，然後點擊「return」鍵。</p>
+</li>
+<li>
+<p>輸入「diskutil repairVolume /dev/disk#」，然後點擊「return」鍵。</p>
+</li>
+<li>
+<p>修復過程完成後，將終端機關閉。</p>
+</li>
+</ol>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/fixed_mac_external_hard_drive_not_detect/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/fixed_mac_android_file_transfer_not_work/">Fixed android file transfer not work in mac</a></h3>
 
                 
@@ -207,67 +329,6 @@
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/">修復 mac m1 開機偵測不到 type-c 螢幕</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2023-01-08
-</p>
-                
-
-                
-                <p><p>最近突然發現 mac 在重開機或是關閉後開機時</p>
-<p>type-c 的螢幕無法被偵測到</p>
-<p>拔插 type-c 和 mac 那端的連接也沒用</p>
-<p>得拔插螢幕端的 type-c</p>
-<p>就覺得很奇怪, 因為之前都是正常的</p>
-<p>所以先推測是 mac OS 的版本問題</p>
-<p>從 12.x -&gt; 13.1 後發現還是一樣&hellip;</p>
-<p>所以就認真在網路找了一下有沒有人碰過這樣的問題</p>
-<p>先找到一個類似的</p>
-<p>但是裡面說 12.x 後修復的問題</p>
-<p>所以我推測應該是別的問題</p>
-<p>就繼續找</p>
-<p>最後找的了這篇文章</p>
-<p><a href="https://machow2.com/external-display-issues/">17 Ways To Fix External Monitors Not Working On Mac (inc. M1/ M2 Macs, Ventura &amp; Monterey)</a></p>
-<p>17 種慢慢試總算可以找到原因吧</p>
-<p>但也不是傻了從第一條開始試</p>
-<p>所以先看了一下有哪些方法</p>
-<p>結果就馬上喵到一個最有可能的問題</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E6%88%AA%E5%9C%96%202023-01-08%20%E4%B8%8B%E5%8D%882.36.33.png?alt=media&amp;token=5d8791ee-7a40-4ff2-b0d6-09ba7ea1991c" alt=""></p>
-<p>一改完就恢復正常了</p>
-<p>內文是說到</p>
-<blockquote>
-<p>macOS Ventura introduced a new feature “USB Restricted Mode” for M1 and M2 Macs which requires you to allow USB-C devices such as monitors to connect to your Mac.</p>
-</blockquote>
-<p>但奇怪的是我在 mac OS 12 就遇到這問題</p>
-<p>所以當時就先升版本到 mac OS 13(Ventura) 才改</p>
-<p>所以也不太肯定 mac OS 12 是不是可以用這問題解決</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/">Read more</a></p>
                 
             </div>
         </div>
