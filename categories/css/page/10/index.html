@@ -181,6 +181,88 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/">Use CSS3 animation in Compass</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-10-12
+</p>
+                
+
+                
+                <p><h2 id="use-css3-animation-in-compass">Use CSS3 Animation In Compass</h2>
+<p>Compass default dosen&rsquo;t have mixin in CSS3 animation
+We can use this method in <strong>scss</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#75715e">/* define */</span>
+</span></span><span style="display:flex;"><span>$animation-support<span style="color:#f92672">:</span> webkit<span style="color:#f92672">,</span> moz<span style="color:#f92672">,</span> o<span style="color:#f92672">,</span> ms<span style="color:#f92672">,</span> <span style="color:#f92672">not</span> khtml;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* use */</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.animation</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-name&#39;</span><span style="color:#f92672">,</span> move<span style="color:#f92672">,</span> $animation-support);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-duration&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">s</span><span style="color:#f92672">,</span> $animation-support);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-iteration-count&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> $animation-support);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>and add <code>keyframes</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#75715e">/* define */</span>
+</span></span><span style="display:flex;"><span>$animation-support<span style="color:#f92672">:</span> webkit<span style="color:#f92672">,</span> moz<span style="color:#f92672">,</span> o<span style="color:#f92672">,</span> ms<span style="color:#f92672">,</span> <span style="color:#f92672">not</span> khtml;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@mixin</span><span style="color:#a6e22e"> keyframes</span>($name) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@-webkit-keyframes</span> <span style="color:#e6db74">#{</span>$name<span style="color:#e6db74">}</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">@content</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@-moz-keyframes</span> <span style="color:#e6db74">#{</span>$name<span style="color:#e6db74">}</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">@content</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@-ms-keyframes</span> <span style="color:#e6db74">#{</span>$name<span style="color:#e6db74">}</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">@content</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@keyframes</span> <span style="color:#e6db74">#{</span>$name<span style="color:#e6db74">}</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">@content</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* use */</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.animation</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-name&#39;</span><span style="color:#f92672">,</span> move<span style="color:#f92672">,</span> $animation-support);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-duration&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">s</span><span style="color:#f92672">,</span> $animation-support);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> experimental</span>(<span style="color:#e6db74">&#39;animation-iteration-count&#39;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> $animation-support);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> keyframes</span>(move) {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">0</span><span style="color:#960050;background-color:#1e0010">%</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">780</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">100</span><span style="color:#960050;background-color:#1e0010">%</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">450</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="https://gist.github.com/ericam/1607696">Refer - keyframes-sass-output.css</a>
+<a href="http://stackoverflow.com/questions/17618082/getting-compass-to-add-vendor-prefixes-to-animation-selectors">Refer - Getting Compass to add vendor prefixes to animation selectors</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-09-10-place-on-and-embed-code-from-internet/">Place on and embed code from internet</a></h3>
 
                 
@@ -226,98 +308,6 @@ get share link like</p>
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2013-09-10-place-on-and-embed-code-from-internet/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-09-05-effecktcss-note/">Effeckt.css - Note</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-09-05
-</p>
-                
-
-                
-                <p><h2 id="effecktcss">Effeckt.css</h2>
-<p><a href="http://h5bp.github.io/Effeckt.css/dist/">demo</a></p>
-<p>上面頁面都是利用 CSS3 的 Animations 與 Transitions 效果做出來的</p>
-<p><a href="https://github.com/h5bp/Effeckt.css">GitHub</a></p>
-<p>使用該 library 須載入 <a href="http://modernizr.com/">Modernizr</a> 這個 library
-Modernizr 是用來判斷 browser 是否支援 HTML5 or CSS3 所用的 library, 並能把相同功能但在不同 browser 實作的 API 或 CSS3 property 一致化</p>
-<p>主要是透過添加 class or data attribute 的方式, Modernizer 就在其中做了整合各 browser 的事情</p>
-<h3 id="how-does-it-work">How does it work</h3>
-<p>動畫部分是利用 CSS3 的 Animations 與 Transitions
-至於事件的觸發是利用 <a href="http://www.w3.org/TR/css3-transitions/#transition-events-">CSS3 Transition Events</a>, 由於各個 browser 實作都不一樣, 所以這裡加載了一個 <code>/js/demo/demo.js</code> 的 js, 但在這 js 有個有趣的地方就是有用 ajax 去載入開發者名單, 所以就另開個 js 來載入</p>
-<p><strong>CSS3-event.js</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">EffecktDemos</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">init</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>(window).<span style="color:#a6e22e">load</span>(<span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.no-transitions&#34;</span>).<span style="color:#a6e22e">removeClass</span>(<span style="color:#e6db74">&#34;no-transitions&#34;</span>);
-</span></span><span style="display:flex;"><span>    });
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">transitionEndEventName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">transitionEndEventNames</span>[<span style="color:#a6e22e">Modernizr</span>.<span style="color:#a6e22e">prefixed</span>(<span style="color:#e6db74">&#39;transition&#39;</span>)];
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">animationEndEventName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">animationEndEventNames</span>[<span style="color:#a6e22e">Modernizr</span>.<span style="color:#a6e22e">prefixed</span>(<span style="color:#e6db74">&#39;animation&#39;</span>)];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  },
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">animationEndEventNames</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;WebkitAnimation&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;webkitAnimationEnd&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;OAnimation&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;oAnimationEnd&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;msAnimation&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;MSAnimationEnd&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;animation&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;animationend&#39;</span>
-</span></span><span style="display:flex;"><span>  },
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">transitionEndEventNames</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;WebkitTransition&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;webkitTransitionEnd&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;OTransition&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;oTransitionEnd&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;msTransition&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;MSTransitionEnd&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;transition&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;transitionend&#39;</span>
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">EffecktDemos</span>.<span style="color:#a6e22e">init</span>();
-</span></span></code></pre></div><p>這 library 也是用 jQuery
-所以載入順序</p>
-<ol>
-<li>jQuery</li>
-<li>Modernizer</li>
-<li>CSS3-event</li>
-</ol>
-<h3 id="list">list</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;effeckt-list&#34;</span> <span style="color:#a6e22e">data-effeckt-type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pop-in&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">li</span>&gt;list&lt;/<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;new-item&#34;</span>&gt;new list&lt;/<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove-item&#34;</span>&gt;remove list&lt;/<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- data-effect-type 放入要呈現的動畫效果
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     new-item 入場
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     remove-item 退場 --&gt;</span>
-</span></span></code></pre></div></p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2013-09-05-effecktcss-note/">Read more</a></p>
                 
             </div>
         </div>
