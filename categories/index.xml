@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 06 Nov 2023 00:43:26 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Feb 2024 11:24:18 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>javascript</title>
+      <link>https://blog.tedshd.io/categories/javascript/</link>
+      <pubDate>Mon, 19 Feb 2024 11:24:18 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mobile</title>
+      <link>https://blog.tedshd.io/categories/mobile/</link>
+      <pubDate>Mon, 19 Feb 2024 11:24:18 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/categories/mobile/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>css</title>
       <link>https://blog.tedshd.io/categories/css/</link>
@@ -185,15 +203,6 @@
       <pubDate>Sun, 09 Oct 2022 18:36:00 +0800</pubDate>
       
       <guid>https://blog.tedshd.io/categories/windows-server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://blog.tedshd.io/categories/javascript/</link>
-      <pubDate>Tue, 04 Oct 2022 11:16:31 +0800</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/javascript/</guid>
       <description></description>
     </item>
     
@@ -545,15 +554,6 @@
       <pubDate>Sat, 20 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/categories/paypal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mobile</title>
-      <link>https://blog.tedshd.io/categories/mobile/</link>
-      <pubDate>Sun, 16 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tedshd.io/categories/mobile/</guid>
       <description></description>
     </item>
     

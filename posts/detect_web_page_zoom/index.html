@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+<title>JavaScript 確認頁面有沒有縮放 | tedshd&#39;s DevNote</title>
+<meta charset="utf-8">
+<meta name="google" content="notranslate">
+<meta id="viewport" name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content='前言 不管在 mobile 還是 desktop 都有個困擾就是要處理用戶縮放頁面的問題 如果只是資料類型的頁面, 縮放的話大多都只是畫面 UI 跑版 但如果是複合功能型的頁面, 縮放的'>
+<meta name="keywords" content=''>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/detect_web_page_zoom/">
+<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/detect_web_page_zoom/" />
+
+<link rel="canonical" href="https://blog.tedshd.io/posts/detect_web_page_zoom/" />
+<link rel="shortcut icon" href="/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
+<meta name="theme-color" content="">
+<meta name="robots" content="index, follow">
+<meta name="copyright" content="Tedshd">
+
+<meta property="og:title" content="JavaScript 確認頁面有沒有縮放" />
+<meta property="og:description" content="前言 不管在 mobile 還是 desktop 都有個困擾就是要處理用戶縮放頁面的問題 如果只是資料類型的頁面, 縮放的話大多都只是畫面 UI 跑版 但如果是複合功能型的頁面, 縮放的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/detect_web_page_zoom/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-19T11:24:18+08:00" />
+<meta property="article:modified_time" content="2024-03-18T23:29:26+08:00" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="JavaScript 確認頁面有沒有縮放"/>
+<meta name="twitter:description" content="前言 不管在 mobile 還是 desktop 都有個困擾就是要處理用戶縮放頁面的問題 如果只是資料類型的頁面, 縮放的話大多都只是畫面 UI 跑版 但如果是複合功能型的頁面, 縮放的"/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+<script data-ad-client="ca-pub-0553186380244641" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    
+
+    
+
+    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
+
+    
+<link>
+
+<link
+    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
+    rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1NKP3D2ZGG');
+    </script>
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__links" role="menu">
+                
+                <li class="p-navigation__link" role="menuitem">
+                    <a href="/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__link" role="menuitem">
+                    <a href="/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<div class="page-banner">
+    <div class="row u-vertically-center">
+        <div class="col-8 pure-g">
+            <div class="pure-u">
+                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
+                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
+            </div>
+            <div class="pure-u">
+                <h2>tedshd&#39;s DevNote</h2>
+                <p>Develop &amp; Design Note by Ted</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul class="p-navigation__links sub_menu" role="menu">
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="http://tedshd.github.io/resume/">About</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="http://tysh310246.blogspot.tw/">Blog</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="https://github.com/tedshd">Github</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
+    </li>
+    
+</ul>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+<header class="">
+    <div class="row">
+        <h1>JavaScript 確認頁面有沒有縮放</h1>
+    </div>
+</header>
+
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2024-02-19
+        </p>
+        
+        <h2 id="前言">前言</h2>
+<p>不管在 mobile 還是 desktop 都有個困擾就是要處理用戶縮放頁面的問題</p>
+<p>如果只是資料類型的頁面, 縮放的話大多都只是畫面 UI 跑版</p>
+<p>但如果是複合功能型的頁面, 縮放的話大概率會讓功能壞掉</p>
+<p>就得找一些方法處理</p>
+<h2 id="確認可行性">確認可行性</h2>
+<p>JavaScript 有一個 api <code>window.devicePixelRatio</code> 是顯示畫面解析度比率的</p>
+<p>早期可以用這個是不是 1 來判斷</p>
+<p>但是螢幕的解析度其實會影響這個值</p>
+<p>所以這個 api 沒有辦法當作判斷的基準</p>
+<p><code>resize</code> 事件可以在頁面縮放時會觸發</p>
+<p>搭配 <code>window.outerWidth/window.innerWidth</code> 的值的變化可以知道有沒有縮放</p>
+<p>但是這在 mobile device 的兩指縮放是不會觸發</p>
+<p>所以也沒用&hellip;</p>
+<p>但是針對 mobile 兩指縮放</p>
+<p>可以使用 <code>window.visualViewport</code></p>
+<p><code>window.visualViewport.scale</code> 可以知道現在縮放比例</p>
+<p>如果只是要判斷有沒有所放的話</p>
+<p>可以使用 <code>resize</code> 事件 + mobile 判斷來拿取 <code>window.visualViewport.scale</code> 或是 <code>let zoom = window.outerWidth/window.innerWidth;</code> 的組合來處理</p>
+<p>sample code</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">zoom</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">outerWidth</span> <span style="color:#f92672">/</span> window.<span style="color:#a6e22e">innerWidth</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isMobileDevice</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">/Mobi/i</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">userAgent</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleZoom</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isMobileDevice</span>()) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#39;visualViewport&#39;</span> <span style="color:#66d9ef">in</span> window) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">zoom</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">visualViewport</span>.<span style="color:#a6e22e">scale</span>;
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">zoom</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">outerWidth</span> <span style="color:#f92672">/</span> window.<span style="color:#a6e22e">innerWidth</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">zoom</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">outerWidth</span> <span style="color:#f92672">/</span> window.<span style="color:#a6e22e">innerWidth</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Zoom level: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">zoom</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;resize&#39;</span>, <span style="color:#a6e22e">handleZoom</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">handleZoom</span>();
+</span></span></code></pre></div><p><a href="https://www.zhangxinxu.com/wordpress/2021/02/js-if-page-zoom/">refer - 如何使用JS檢測使用者是否縮放了頁面？</a></p>
+
+    </main>
+</section>
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/multi_line_ellipsis_css/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            CSS 處理多行省略
+        </span>
+    </a>
+    
+
+    
+</div>
+    </div>
+</footer>
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2022 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>

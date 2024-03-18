@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 06 Nov 2023 00:43:26 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Feb 2024 11:24:18 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript 確認頁面有沒有縮放</title>
+      <link>https://blog.tedshd.io/posts/detect_web_page_zoom/</link>
+      <pubDate>Mon, 19 Feb 2024 11:24:18 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/detect_web_page_zoom/</guid>
+      <description>前言 不管在 mobile 還是 desktop 都有個困擾就是要處理用戶縮放頁面的問題 如果只是資料類型的頁面, 縮放的話大多都只是畫面 UI 跑版 但如果是複合功能型的頁面, 縮放的</description>
+    </item>
+    
     <item>
       <title>CSS 處理多行省略</title>
       <link>https://blog.tedshd.io/posts/multi_line_ellipsis_css/</link>

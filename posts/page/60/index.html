@@ -1216,6 +1216,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1226,6 +1230,65 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2015-09-30-nginx-study-log/">nginx - study log</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2015-09-30
+</p>
+                
+
+                
+                <p><h2 id="nginx---study-log">nginx - Study Log</h2>
+<p>半調子的紀錄&hellip;</p>
+<h3 id="command-line">Command Line</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo service nginx start
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo service nginx restart
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo service nginx stop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 測試 nginx 設定</span>
+</span></span><span style="display:flex;"><span>sudo nginx -t
+</span></span></code></pre></div><h3 id="config">config</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># document root</span>
+</span></span><span style="display:flex;"><span>root /usr/share/nginx/html;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># set page show</span>
+</span></span><span style="display:flex;"><span>index index.html index.htm index.php;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 把 lib 目錄打開</span>
+</span></span><span style="display:flex;"><span>location /lib <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    autoindex on;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><a href="http://serverfault.com/questions/214242/can-i-hide-all-server-os-info">refer - Can I hide all server / os info?</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2015-09-30-nginx-study-log/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1294,104 +1357,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2015-09-28-google-cloud-platform-study-log/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-08-28-javascript-something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine/">JavaScript - something about childNodes and nextSibling why they get DOM is not as you imagine</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2015-08-28
-</p>
-                
-
-                
-                <p><h2 id="javascript---something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine">JavaScript - something about childNodes and nextSibling why they get DOM is not as you imagine</h2>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes">childNodes MDN</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling">nextSibling - MDN</a></p>
-<h3 id="sometimes-we-use-childnodes">Sometimes we use childNodes</h3>
-<h4 id="html">HTML</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;item1&lt;/<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;item2&lt;/<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;item3&lt;/<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;item4&lt;/<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
-</span></span></code></pre></div><h4 id="javascript">JavaScript</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">childNodes</span>);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// output
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[<span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">text</span>]
-</span></span></code></pre></div><p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/293568/plBejfI1SXq1dBNPNyqr_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-08-29_%E4%B8%8A%E5%8D%8812_08_56.png" alt="螢幕快照_2015-08-29_上午12_08_56.png"></p>
-<p>Why?</p>
-<p>Then</p>
-<h4 id="html-1">HTML</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;item1&lt;/<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;item2&lt;/<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;item3&lt;/<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;item4&lt;/<span style="color:#f92672">li</span>&gt;&lt;/<span style="color:#f92672">ul</span>&gt;
-</span></span></code></pre></div><h4 id="javascript-1">JavaScript</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">childNodes</span>);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// output
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[<span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">li</span>, <span style="color:#a6e22e">li</span>]
-</span></span></code></pre></div><p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/293568/b7H4oj6ZTMeH5jt01zaT_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-08-29_%E4%B8%8A%E5%8D%8812_10_07.png" alt="螢幕快照_2015-08-29_上午12_10_07.png"></p>
-<p>If you log <code>text</code> object, you can find it is wrap.</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/293568/QKnxVI8fRGWaAS0fagqc_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-08-29_%E4%B8%8A%E5%8D%8812_09_30.png" alt="螢幕快照_2015-08-29_上午12_09_30.png"></p>
-<p><strong>Browser get nodes include wrap symbol.</strong></p>
-<p>But it can&rsquo;t show in your editor</p>
-<h4 id="solution">Solution</h4>
-<ul>
-<li>for IE9 up</li>
-</ul>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children">ParentNode.children</a></p>
-<ul>
-<li>do a new function</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">Element</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">getChildNodes</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [],
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">nodes</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">childNodes</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">nodes</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">nodeType</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">Node</span>.<span style="color:#a6e22e">ELEMENT_NODE</span>) {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">node</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">array</span>;
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;ul&#39;</span>).<span style="color:#a6e22e">getChildNodes</span>());
-</span></span></code></pre></div><p><a href="http://www.w3schools.com/jsref/prop_node_nodetype.asp">HTML DOM nodeType Property</a></p>
-<ul>
-<li>the way <a href="https://www.facebook.com/rplus.tw">rplus</a> provide</li>
-</ul>
-<pre tabindex="0"><code class="language-javscript" data-lang="javscript">function getChildNodes(parentNode) {
-  return [].filter.call(
-    parentNode.childNodes,
-    function(_target) {
-      return _target.nodeType === Node.ELEMENT_NODE;
-    });
-}
-</code></pre><h3 id="sometimes-we-use-nextsibling">Sometimes we use nextSibling</h3>
-<p>As above</p>
-<p>Sometimes you get <code>text</code>.</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-08-28-javascript-something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine/">Read more</a></p>
                 
             </div>
         </div>

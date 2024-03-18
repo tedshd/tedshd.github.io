@@ -181,6 +181,55 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2013-08-03-innerheight-innerwidth/">innerHeight &amp; innerWidth</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2013-08-03
+</p>
+                
+
+                
+                <p><h2 id="innerheight--innerwidth">innerHeight &amp; innerWidth</h2>
+<p>抓取瀏覽器目前顯示高度與寬度
+一般都用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">innerHeight</span>
+</span></span></code></pre></div><p>與</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">innerWidth</span>
+</span></span></code></pre></div><p>但唯獨IE6~IE8不行
+Google了一下
+發現用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
+</span></span></code></pre></div><p>與</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span>
+</span></span></code></pre></div><p>便兼容所有瀏覽器</p>
+<h2 id="scrollheight">scrollHeight</h2>
+<p>如要抓 document 的高可用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollHeight</span>
+</span></span></code></pre></div><p><a href="http://stackoverflow.com/questions/1145850/get-height-of-entire-document-with-javascript">Refer</a></p>
+</p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2013-08-03-performance-test-javascript/">performance-test</a></h3>
 
                 
@@ -214,43 +263,6 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// javascript
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">timeEnd</span>(<span style="color:#e6db74">&#34;timerName&#34;</span>);
 </span></span></code></pre></div></p>
-                
-
-                
-
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2013-08-02-check-browser/">Browser 判斷</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2013-08-02
-</p>
-                
-
-                
-                <p><h2 id="browser">Browser</h2>
-<p><a href="http://www.quirksmode.org/js/detect.html">Browser detect</a>
-由於各大瀏覽器都有部分CSS或Javascript相容問題,所以找了判斷各家瀏覽器的語法</p>
-<p>在github 上更新</p>
-<p><a href="https://github.com/tedshd/check_browser">github</a></p>
-</p>
                 
 
                 

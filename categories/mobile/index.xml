@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Sun, 16 Sep 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/mobile/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Feb 2024 11:24:18 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/mobile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript 確認頁面有沒有縮放</title>
+      <link>https://blog.tedshd.io/posts/detect_web_page_zoom/</link>
+      <pubDate>Mon, 19 Feb 2024 11:24:18 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/detect_web_page_zoom/</guid>
+      <description>前言 不管在 mobile 還是 desktop 都有個困擾就是要處理用戶縮放頁面的問題 如果只是資料類型的頁面, 縮放的話大多都只是畫面 UI 跑版 但如果是複合功能型的頁面, 縮放的</description>
+    </item>
+    
     <item>
       <title>Web Develop on mobile web &amp; WebView</title>
       <link>https://blog.tedshd.io/posts/2018-09-16-web-develop-on-mobile-web/</link>
