@@ -64,7 +64,7 @@ And then i found out quit the Dropbox app solved the problem</description>
       <pubDate>Wed, 24 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.tedshd.io/posts/2018-10-24-mac-use-readlink-in-mac-os-x/</guid>
-      <description>Mac - Use readlink in Mac OS X  install coreutils  brew install coreutils test greadlink  greadlink -f &amp;lt;file name&amp;gt; alias command line  alias readlink=greadlink refer - How can I get the behavior of GNU&amp;rsquo;s readlink -f on a Mac?;</description>
+      <description>Mac - Use readlink in Mac OS X install coreutils brew install coreutils test greadlink greadlink -f &amp;lt;file name&amp;gt; alias command line alias readlink=greadlink refer - How can I get the behavior of GNU&amp;rsquo;s readlink -f on a Mac?;</description>
     </item>
     
     <item>

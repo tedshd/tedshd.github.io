@@ -31,7 +31,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
-
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
@@ -1220,6 +1219,14 @@
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1230,6 +1237,73 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/">Firebase dynamic links 遷移轉換</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2024-04-11
+</p>
+                
+
+                
+                <p><h2 id="intro">Intro</h2>
+<p>服務終有停止的一天</p>
+<p>firebase 動態連結將於 2025 年 8 月 25 日關閉。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202024-04-11%20%E4%B8%8A%E5%8D%8811.34.10.png?alt=media&amp;token=177c4740-af77-4b0d-8ad3-b6b85d5304f8" alt=""></p>
+<p>所以要提前做遷移轉換或是找其他替代方案</p>
+<h2 id="firebase-建議">Firebase 建議</h2>
+<p>可以參考 Firebase 文件的建議自己搞</p>
+<p><a href="https://firebase.google.com/support/guides/app-links-universal-links?hl=zh-tw">從動態鏈接遷移到應用程式連結和應用程式鏈接通用連結</a></p>
+<p>自己搞的好處是能搞成符合自己需求的東西</p>
+<p>但是最大的麻煩點是要記錄的話就得自己搞數據</p>
+<p>很多時候都會需要紀錄點擊轉換</p>
+<p>這就得自己搞了</p>
+<h2 id="第三方服務">第三方服務</h2>
+<p>其實除了自己搞以外</p>
+<p>還有很多第三方服務有在做這個東西</p>
+<p>目前有找到的有</p>
+<h3 id="branch-iohttpswwwbranchio"><a href="https://www.branch.io/">Branch io</a></h3>
+<ul>
+<li><a href="https://www.branch.io/what-is-deep-linking/">https://www.branch.io/what-is-deep-linking/</a></li>
+</ul>
+<p>branch io 還有個教學文</p>
+<p><a href="https://www.branch.io/guides/how-to-migrate-from-firebase-dynamic-links/">How to migrate from Firebase Dynamic Links</a></p>
+<h3 id="appsflyerhttpswwwappsflyercom"><a href="https://www.appsflyer.com/">Appsflyer</a></h3>
+<ul>
+<li><a href="https://www.appsflyer.com/products/customer-experience-deep-linking/">https://www.appsflyer.com/products/customer-experience-deep-linking/</a></li>
+</ul>
+<h3 id="kochavahttpswwwkochavacom"><a href="https://www.kochava.com/">kochava</a></h3>
+<ul>
+<li><a href="https://www.kochava.com/product/deep-linking/links/?int-link=menu-links">https://www.kochava.com/product/deep-linking/links/?int-link=menu-links</a></li>
+</ul>
+<p>上面列出來的是比較常見的幾個</p>
+<p>應該還有其他服務沒有列出來</p>
+<p>這個就評估下要用哪個服務</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1303,46 +1377,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/detect_web_page_zoom/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/multi_line_ellipsis_css/">CSS 處理多行省略</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2023-11-06
-</p>
-                
-
-                
-                <p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-CSS" data-lang="CSS"><span style="display:flex;"><span>.<span style="color:#a6e22e">multiline-ellipsis</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">-webkit-</span>box;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-webkit-</span>box-orient: <span style="color:#66d9ef">vertical</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-webkit-</span>line-clamp: <span style="color:#ae81ff">3</span>; <span style="color:#75715e">/* start showing ellipsis when 3rd line is reached */</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">pre-wrap</span>; <span style="color:#75715e">/* let the text wrap preserving spaces */</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><a href="https://codefrontend.com/css-ellipsis/">refer - Easiest Way to Truncate Text With Ellipsis in CSS</a></p>
-</p>
-                
-
-                
-
                 
             </div>
         </div>

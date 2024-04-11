@@ -17,7 +17,7 @@
       <description>Sublime - change layout view in 2 columns Video
 Setting Preferences -&amp;gt; Key Bindings - User
 set key to use
-[  {  &amp;#34;keys&amp;#34;: [&amp;#34;super+ctrl+left&amp;#34;],  &amp;#34;command&amp;#34;: &amp;#34;set_layout&amp;#34;,  &amp;#34;args&amp;#34;:  {  &amp;#34;cols&amp;#34;: [0.0, 0.95, 1.0],  &amp;#34;rows&amp;#34;: [0.0, 1.0],  &amp;#34;cells&amp;#34;: [[0, 0, 1, 1], [1, 0, 2, 1]]  }  },  {  &amp;#34;keys&amp;#34;: [&amp;#34;super+ctrl+right&amp;#34;],  &amp;#34;command&amp;#34;: &amp;#34;set_layout&amp;#34;,  &amp;#34;args&amp;#34;:  {  &amp;#34;cols&amp;#34;: [0.</description>
+[ { &amp;#34;keys&amp;#34;: [&amp;#34;super+ctrl+left&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;set_layout&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;cols&amp;#34;: [0.0, 0.95, 1.0], &amp;#34;rows&amp;#34;: [0.0, 1.0], &amp;#34;cells&amp;#34;: [[0, 0, 1, 1], [1, 0, 2, 1]] } }, { &amp;#34;keys&amp;#34;: [&amp;#34;super+ctrl+right&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;set_layout&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;cols&amp;#34;: [0.0, 0.05, 1.0], &amp;#34;rows&amp;#34;: [0.0, 1.0], &amp;#34;cells&amp;#34;: [[0, 0, 1, 1], [1, 0, 2, 1]] } } ] Update Add focus If add focus, it need 2 commands so need write a python plugin</description>
     </item>
     
     <item>

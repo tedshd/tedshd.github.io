@@ -16,7 +16,7 @@
       <guid>https://blog.tedshd.io/posts/2014-08-29-compass-use-transform-in-compass-101/</guid>
       <description>Compass - Use transform in compass 1.0.1 On august 15, 2014 Compass release 1.0.1 Some code in scss change wording. This article provide CSS3 transform wording in scss.
 I use this Mixin
-@import &amp;#34;compass/css3&amp;#34;; /*simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y)*/ @includesimple-transform(1, 45deg, 5px, -15px, 0, 0, 0, 0);  /* Advance Usage */ /*@include create-transform($perspective, $scale-x, $scale-y, $scale-z, $rotate-x, $rotate-y, $rotate-z, $rotate3d, $trans-x, $trans-y, $trans-z, $skew-x, $skew-y, $origin-x, $origin-y, $origin-z, $only3d);*/ Refer - Compass Transform | Compass Documentation</description>
+@import &amp;#34;compass/css3&amp;#34;; /*simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y)*/ @include simple-transform(1, 45deg, 5px, -15px, 0, 0, 0, 0); /* Advance Usage */ /*@include create-transform($perspective, $scale-x, $scale-y, $scale-z, $rotate-x, $rotate-y, $rotate-z, $rotate3d, $trans-x, $trans-y, $trans-z, $skew-x, $skew-y, $origin-x, $origin-y, $origin-z, $only3d);*/ Refer - Compass Transform | Compass Documentation</description>
     </item>
     
     <item>
@@ -26,8 +26,8 @@ I use this Mixin
       
       <guid>https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/</guid>
       <description>Use CSS3 Animation In Compass Compass default dosen&amp;rsquo;t have mixin in CSS3 animation We can use this method in scss
-/* define */ $animation-support: webkit, moz, o, ms, not khtml;  /* use */ .animation {  @includeexperimental(&amp;#39;animation-name&amp;#39;, move, $animation-support);  @includeexperimental(&amp;#39;animation-duration&amp;#39;, 5s, $animation-support);  @includeexperimental(&amp;#39;animation-iteration-count&amp;#39;, 1, $animation-support); } and add keyframes
-/* define */ $animation-support: webkit, moz, o, ms, not khtml; @mixinkeyframes($name) {  @-webkit-keyframes #{$name} {  @content;  }  @-moz-keyframes #{$name} {  @content;  }  @-ms-keyframes #{$name} {  @content;  }  @keyframes #{$name} {  @content;  } }  /* use */ .</description>
+/* define */ $animation-support: webkit, moz, o, ms, not khtml; /* use */ .animation { @include experimental(&amp;#39;animation-name&amp;#39;, move, $animation-support); @include experimental(&amp;#39;animation-duration&amp;#39;, 5s, $animation-support); @include experimental(&amp;#39;animation-iteration-count&amp;#39;, 1, $animation-support); } and add keyframes
+/* define */ $animation-support: webkit, moz, o, ms, not khtml; @mixin keyframes($name) { @-webkit-keyframes #{$name} { @content; } @-moz-keyframes #{$name} { @content; } @-ms-keyframes #{$name} { @content; } @keyframes #{$name} { @content; } } /* use */ .</description>
     </item>
     
   </channel>

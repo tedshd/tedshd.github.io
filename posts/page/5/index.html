@@ -31,7 +31,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
-
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
@@ -1220,6 +1219,14 @@
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1236,7 +1243,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/gcp_artifact_registry_compute_engine/">Google Cloud 使用 artifact registry 和 compute engine</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/">前端工程師工作 10 年心得</a></h3>
 
                 
                 
@@ -1246,124 +1253,135 @@
 <span class=" u-capitalized ">
     on
 </span>
-2022-12-01
+2022-12-31
 </p>
                 
 
                 
                 <p><h2 id="前言">前言</h2>
-<p>基於公司之前的架構設計</p>
-<p>使用 GCP 重現一個簡化版的部署架構</p>
-<p>基本是使用 artifact registry 和 compute engine</p>
-<p>GCP 官方也有 artifact registry + compute engine 的部署設計</p>
-<p>但是因為是 side project, 不想搞得太複雜, 所以沒有採用官方的方式(官方的方式再搭配其他的服務比較建議用在正式專案上面, 會是比較有彈性且可以進行高承載的設計, 不過主要還是看預算和承載量的考量)</p>
-<h2 id="架構">架構</h2>
-<p>side project 是一個單純的 web service</p>
-<p>目前也不考慮高流量的問題</p>
-<p>前後端分離, 主要會有前端的服務和 api 的服務</p>
-<h3 id="google-cloud">google cloud</h3>
-<ul>
-<li>Compute Engine(1 instance)</li>
-<li>Cloud SQL(1 sql, 沒有開 HA, 需要注意的是有開 HA, sql 費用會是兩倍計算)</li>
-<li>Artifact Registry</li>
-</ul>
-<h3 id="code">code</h3>
-<ul>
-<li>Vue(nuxt SSR)</li>
-<li>CodeIgniter 4(當作 API server)</li>
-</ul>
-<p>因為會有前端和後端的部分, 會有兩個 service</p>
+<p>在 2022/12/31 的日子</p>
+<p>剛好是跨年年假</p>
+<p>也突然發現自己開始工作的時間已經 10 年了</p>
+<p>沒想到已經 10 年了 XD</p>
+<p>還記得當初只是個三流國立大學還是非本科系甚至沒讀研究所就出來找工作的菜雞</p>
+<p>到如今也是個工程師了?</p>
+<p>在這工作第一個 10 年的時間也好好回憶一下當初的路徑</p>
+<p>以便對下一個 10 年做準備</p>
+<h2 id="這-10-年的路徑">這 10 年的路徑</h2>
+<p>講真的在 2007 年到 2011 年個人覺得算是台灣網路產業繼 Kimo, PChome, yam 等入口網站崛起後開始爆發的時代, 也是手機開始朝所謂的智慧型行動裝置邁進的時代</p>
+<p>剛好也是我還在讀大學的時候, 所以當時在學校時就常常在網路上看到這些資訊, 當時遠在美國也是矽谷開始發展起來的時候, 台灣相對較後面才開始有許多所謂的新創公司開始出現</p>
+<p>因為以前就對資訊產業有興趣, 但是因為不會讀書, 所以就只好靠填志願分發學校</p>
+<p>當時直接條列的順序是國立大學-&gt;資訊科系-&gt;機械-&gt;土木</p>
+<p>然後分數實在太爛</p>
+<p>所以最後落在國立臺灣海洋大學的河海工程系 XD</p>
+<p>不過雖然大學都在打電動看動畫和睡覺中度過</p>
+<p>但還是有選修資訊相關和自己開始嘗試寫程式</p>
+<p>最後到大三才知道原來有前端工程師的職業, 而且相對其他資訊類的工作沒有要求那麼高</p>
+<p>而且以前就喜歡搞一些 UI 互動的東西</p>
+<p>所以就決定了職業走向</p>
+<h3 id="2012--2015-miiicasa-雲永科技">2012 ~ 2015 miiiCasa 雲永科技</h3>
+<p>到了 2012 年替代役要退伍了就開始找工作, 還不錯的是當時也有些新創的公司可以投履歷</p>
+<p>直到投到了一家名為 miiiCasa(雲永科技) 的公司, 在當時也算是新創公司(從 D-link 內部新創, 之後獨立出來的), 裡面的面試官(Awoo) 非常熱情</p>
+<p>而且在面試過程中也願意反饋許多東西給我這個第一次找工作的菜鳥</p>
+<p>當時也有拿到其他新創公司的 offer, 但感受到這間公司應該能讓我學習到許多東西</p>
+<p>也真的是很有幸加入這家公司, 進到公司後才知道原來裡面有 5 成以上的人來自大公司(Y!, PChome, PX大通&hellip;)</p>
+<p>公司也不少人在如今業界和社群也是貢獻良多大佬, 一些研討會和社群的創辦發起人都有當時公司的人</p>
+<p>當時網路上開始想要一些技術社群或是實體的技術研討會, 公司有些人很熱血的開始籌劃</p>
+<p>真的在裡面學習良多, 也學到許多工作模式與方式</p>
+<h3 id="2015--2019-第一網站">2015 ~ 2019 第一網站</h3>
+<p>因為在 miiiCasa 後期, 許多人因為生涯規劃, 陸續離開後</p>
+<p>我反而變成裡面最老的 F2E, 外加當時母親有輕微中風且剛恢復, 想要找找看能不能通勤時間短或是能部分在家的時間能有比較多的時間照顧母親</p>
+<p>當時覺得也是時候要換個公司了, 也面試了一些公司(包含我當初在學校時就想去的一些公司, 具體可以看我之前寫的面試文章的<a href="https://blog.tedshd.io/posts/prepare_resume/">求職經歷分享</a>)</p>
+<p>最後也進到一間也是當時 Y! 的人出來創業的公司</p>
+<p>老闆和總經理都算是業界很有名的人(Kimo 創辦人和 Tsung)</p>
+<p>裡面也是很多 Y! 出來的員工</p>
+<p>所以裡面也學習到不少東西</p>
+<p>因為剛進去時也是剛好是公司要成長起來的時候</p>
+<p>所以算是在裡面處理了大多和前端有關的服務的整個重構以便於讓整個服務比較維護和開發</p>
+<p>也因為公司發展起來, 開始增加人力</p>
+<p>在這期間最多底下帶了三個前端工程師</p>
+<p>也是第一次有了帶人的經驗</p>
+<p>如何合理的分配工作與幫助團隊進步也是個難得的經驗</p>
+<h3 id="2019--2021-台灣雪豹科技--樂欣國際">2019 ~ 2021 台灣雪豹科技 / 樂欣國際</h3>
+<p>台灣雪豹科技!!</p>
+<p>當年高調來台灣的陸資</p>
+<p>還租下台北 101 最高的辦公室(83F)</p>
+<p>關於這間公司有很多八卦這裡就不提了</p>
+<p>沒想到當時竟然裡面有團隊要找前端工程師(但要求要對後端熟悉)</p>
+<p>雖然很多八卦與傳聞</p>
+<p>但衝著是 101 最高辦公室名聲</p>
+<p>衝就對了</p>
+<p>也運氣很好的進去了 XD</p>
+<p>雖然我進去的時間點不是爆發的時間點, 甚至開始走下坡了</p>
+<p>但是我是去解成就的(台北 101 最高的辦公室)</p>
+<p>誰管那麼多啊</p>
+<p>這也是第一次進到一個做全球服務的公司</p>
+<p>國際化, 使用者量級, 薪資真的不是只做台灣市場的公司能比</p>
+<p>真的是開了眼界</p>
+<p>跨國協作, 完整的系統架構, 充足的開發與部署流程</p>
+<p>受益良多</p>
+<p>也感受到陸資的狼性(雖然後面這匹狼已經不跑了 XD)</p>
+<h3 id="2021--2022-立應科技">2021 ~ 2022 立應科技</h3>
+<p>因為 2021 年到 2022 年受到疫情影響與 2021 市場的增長</p>
+<p>市場有很多機會加上當時整個後端 team 剩下我ㄧ個人?!</p>
+<p>真的快撐不住了</p>
+<p>也剛好前主管來問我要不要到一間新創試試看</p>
+<p>我就二話不說地答應了</p>
+<p>就到現在這間公司</p>
+<p>也是個陸資, 它的目標也是做全球市場</p>
+<p>而且不知道是不是 A 輪拿了不少錢</p>
+<p>薪資開的都是外商水準</p>
+<p>公司的成員 9 成聽說都是大家互相挖來的 XD</p>
+<p>成員組成也很可怕</p>
+<p>台灣雪豹, 中國獵豹, 字節跳動, 豌豆莢, 百度, 小米</p>
+<p>每個都是從巨量公司逃難(X)挖角(O) 來的</p>
+<p>但有一點比較特別的是拿美國爸爸的錢 XD</p>
+<p>但今年下半年也是受到全球經濟市場的的萎縮</p>
+<p>甚至 pre-B 輪第二階段的錢都說要延後發放&hellip;</p>
+<p>整個公司都還在燒錢的狀態, Q3 甚至 layoff 1/3 左右的人&hellip;</p>
+<p>真的感受到陸資的魄力與果斷&hellip;</p>
+<p>但這間公司也算是敢給&hellip;</p>
+<p>Q1 因為我們部門的 app 衝上 iOS 社交類第一名, 靠著這個拿到 pre-B 輪</p>
+<p>所以整個部門的人都有拿到獎金</p>
+<p>但陸資的狼性也是在的 XD</p>
+<p>ASAP, 996 是基本</p>
+<p>在新創就是拚市場與存活</p>
+<p>成功就起來大家爽爽賺</p>
+<p>不成功就會倒下各自回家 XD</p>
+<h2 id="總結一下">總結一下</h2>
 <ol>
-<li>node</li>
-<li>PHP</li>
+<li>不要讓自己成為公司的天花板, 要也要有很多人一起成為天花板, 不然就會受限在那邊(這對工程師是致命問題)</li>
+<li>人脈很重要, 好好做事好好幹, 讓人留下好印象, 自然有好缺就會來找你</li>
+<li>服務做得大(全球市場), 薪水才能領的高(因為公司獲利高), 先不要只抱怨公司不加薪, 請思考為什麼公司不加薪和為什麼公司不想給你加薪</li>
+<li>不爽可以不要幹, 外面還是有很多機會的, 只是你看不看的上和你進不進的去</li>
+<li>學什麼程式語言都不重要, 學英文最重要&hellip;</li>
+<li>像我這種外語不行的進不去一般外商可以選擇陸資(如果敢拚和不在意政治問題的話, 以我的經驗, 大家都會避免談論這問題, 畢竟左岸有強大的防火牆在 XD)</li>
+<li>陸資真的大多時候是 996 ~ 007 但是目前待的兩間陸資都是敢給(pay 可以談很好, 獎金也不錯)但績效不好或是公司運營狀況不佳也是敢果斷裁人的</li>
 </ol>
-<p>所以最簡單的方式就是兩個分開開發</p>
-<p>因為有使用 docker</p>
-<p>所以就把分成兩個 docker image</p>
-<p>要部署的程式和環境都包在 docker image 裡面</p>
-<p>這樣在 VM 裡面不用考慮環境問題, 只要跑起來 docker container 就可以了</p>
-<h2 id="開發與部署">開發與部署</h2>
-<p>本地開發已經是使用 ARM 架構的 mac</p>
-<p>所以需要注意的是 build image 時會因為不同的 CPU 架構需要 build 對應架構的 docker image</p>
-<p>還有需要注意的是程式的套件對應開發環境的版本, 基本上除非要集小化 Image, 不然會建議 docker image 使用 Linux ubuntu 來當成 base</p>
-<p>為了方便開發, 本地直接使用 mac 自己的環境開發</p>
-<p>另一種做法就是本地就直接啟動使用 docker container 開發, 把要開發的程式 mount 進去</p>
-<p>開發完後就是 build docker image</p>
-<p>上面提到做法就是把要執行的程式和環境整個打包成 docker image</p>
-<p>這樣部署時就不會受到部署環境影響</p>
-<p>這邊採用的 docker image 管理服務就是 <a href="https://cloud.google.com/artifact-registry/docs/overview">Artifact Registry</a></p>
-<p>簡單的說就是一個私有的 docker hub</p>
-<p>AWS 對應的服務是 <a href="https://aws.amazon.com/tw/ecr/">Elastic Container Registry</a></p>
-<p>這邊會著重在 Artifact Registry 的建立與部署</p>
-<h2 id="artifact-registry">Artifact Registry</h2>
-<blockquote>
-<p>Artifact Registry provides a single location for storing and managing your packages and Docker container images.</p>
-</blockquote>
-<p>從上述文件的介紹其實可以知道 Artifact Registry 不只有 docker image 的管理功能</p>
-<p>其實還包含 Java, Node.js, Python, Debian, RPM 等等的套件管理</p>
-<p>所以有開發以上的套件又需要有個私有的 repositories 也可以用這個服務</p>
-<p>因為這服務的文件蠻多且有點複雜</p>
-<p>這邊會稍微整理專注在使用 docker 相關的文件出來</p>
-<ol>
-<li>建立 repositories</li>
-</ol>
-<p>就和使用 docker hub 一樣必須要先建立 repositories 來擺放 image</p>
-<p>可以直接參考以下文件</p>
-<p><a href="https://cloud.google.com/artifact-registry/docs/repositories/create-repos">Create repositories</a></p>
-<p>這邊建議直接在 google console 的 web 介面建立比較好操作</p>
-<p>建立 repositories 後需要注意的是能夠操作這個 repositories 的帳號</p>
-<p>專案擁有者一定是可以操作, 如果要要建立 CI/ÇD 的話建議另外建立 service account 來賦予相關權限</p>
-<p>有其他開發者要共同操作的話, 就去 IAM 添加並賦予相關權限</p>
-<ol start="2">
-<li>開始進行 push &amp; pull</li>
-</ol>
-<p>要在本地端進行 Artifact Registry 的 docker push &amp; pull 操作要先具備以下條件</p>
-<ul>
-<li>要安裝 gcloud 並且登入</li>
-<li>登入的帳號需要具備 Artifact Registry 權限</li>
-<li>啟動 <a href="https://cloud.google.com/artifact-registry/docs/enable-service">Artifact Registry API</a></li>
-<li>設定 gcloud config <a href="https://cloud.google.com/artifact-registry/docs/repositories/gcloud-defaults">Set defaults for gcloud commands</a></li>
-<li>docker 設定 repositories <a href="https://cloud.google.com/artifact-registry/docs/transition/changes-docker#artifact-registry">Changes for Docker</a></li>
-</ul>
-<p>在 google 其他服務大多已經具備權限了(在正式專案上建議對沒有必要的權限做關閉)</p>
-<p>可以參考 <a href="https://cloud.google.com/artifact-registry/docs/deploy">Deploy to Google Cloud</a></p>
-<p>來確認之後要部署時可不可以直接使用</p>
-<p><a href="https://cloud.google.com/sdk/docs/install-sdk">Install the Google Cloud CLI</a></p>
-<p>安裝後登入自己的帳號或登入需要使用的 service account</p>
-<p>其實上面講了那麼多</p>
-<p>簡單列一下要執行的指令</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gcloud auth login
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>gcloud services enable artifactregistry.googleapis.com
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>gcloud config set project &lt;PROJECT ID&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>gcloud config set artifacts/location &lt;LOCATION&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>gcloud config set artifacts/repository &lt;REPOSITORY&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>gcloud artifacts packages list --repository<span style="color:#f92672">=</span>&lt;PROJECT ID&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>gcloud config list
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>gcloud services enable artifactregistry.googleapis.com
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>gcloud auth configure-docker &lt;LOCATION&gt;-docker.pkg.dev
-</span></span></code></pre></div><p>這樣之後就可以開始 pull &amp; push 了</p>
-<p>可以看到要拉取的 path 結構大致上如下</p>
-<pre tabindex="0"><code>us-central1-docker.pkg.dev/my-project/team1/web-app:1.0
-</code></pre><p>基本上結構就是</p>
-<p><code>&lt;LOCATION&gt;-docker.pkg.dev/&lt;PROJECT ID&gt;/&lt;REPOSITORY&gt;/&lt;IMAGE NAME&gt;:&lt;VERSION&gt;</code></p>
-<h2 id="補充">補充</h2>
-<p>有時為了指令的便利性可以利用以下設定來避免需要 sudo</p>
-<p><a href="https://docs.docker.com/engine/install/linux-postinstall/">Manage Docker as a non-root user</a></p>
+<p>自己認爲自己是個幸運的人</p>
+<p>在工作上遇到許多貴人</p>
+<p>才能讓我持續地走下去</p>
+<p>在這工作的 10 年間</p>
+<p>會發現在網路的資訊業這領域進步很快</p>
+<p>基本上每年都有新東西要學</p>
+<p>說實在話這是個累人的工作</p>
+<p>講不好聽的</p>
+<p>基本上如果是為了賺更多的錢和能夠在之後找到更好的工作</p>
+<p>幾乎都在無時無刻的學習新東西, 了解基本原理, 儘量加強基本基礎</p>
+<p>不然不考慮未來的話就是在一間穩定的公司內躺平就好, 但未來也不好找工作, 薪資也無法有什麼突破</p>
+<p>這幾年隨著工作量越來越重與一些可能的無形壓力?</p>
+<p>打電動的時間變少, 想做的事情也很多</p>
+<p>身體也快不行了</p>
+<p>大家都說要 Work Life balance</p>
+<p>但我自己對慾望的追求和低下的能力讓我很難做到這樣的事</p>
+<p>這也是未來希望能夠優化和改善的地方&hellip;</p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/gcp_artifact_registry_compute_engine/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/">Read more</a></p>
                 
             </div>
         </div>
@@ -1376,7 +1394,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/node_pm2_usage/">Node PM2 使用紀錄</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/nginx_use_host_reverse_proxy/">Nginx 使用 host 判斷作 reverse proxy</a></h3>
 
                 
                 
@@ -1386,67 +1404,33 @@
 <span class=" u-capitalized ">
     on
 </span>
-2022-11-18
+2022-12-02
 </p>
                 
 
                 
-                <p><h2 id="介紹">介紹</h2>
-<p><a href="https://pm2.keymetrics.io/">PM2</a> 是一個可以方便處理 node process 的工具</p>
-<p>大多用於線上環境</p>
-<p>這邊主要紀錄 PM2 的一些用法與指令</p>
-<h2 id="基本使用">基本使用</h2>
-<p>可以參考官方文件 <a href="https://pm2.keymetrics.io/docs/usage/quick-start/">PM2 Process Management Quick Start</a></p>
-<p>安裝</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npm install pm2 -g
-</span></span></code></pre></div><p>啟動</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 start &lt;要啟動的 js&gt;
-</span></span></code></pre></div><p>通常建議啟動時的指令搭配以下參數(更多參數請詳閱文件)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Specify an app name</span>
-</span></span><span style="display:flex;"><span>--name &lt;app_name&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Watch and Restart app when files change</span>
-</span></span><span style="display:flex;"><span>--watch
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set memory threshold for app reload</span>
-</span></span><span style="display:flex;"><span>--max-memory-restart &lt;200MB&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Specify log file</span>
-</span></span><span style="display:flex;"><span>--log &lt;log_path&gt;
-</span></span></code></pre></div><h2 id="重新載入">重新載入</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 reload &lt;要重啟的 app&gt;
-</span></span></code></pre></div><p>大多用於程式部署更新後, 有較好的體驗(和 restart 相比)</p>
-<p>可以參考以下比較</p>
-<p><a href="https://stackoverflow.com/questions/44883269/what-is-the-difference-between-pm2-restart-and-pm2-reload">refer - What is the difference between pm2 restart and pm2 reload</a></p>
-<h2 id="log-紀錄">log 紀錄</h2>
-<p>推薦使用 <a href="https://github.com/keymetrics/pm2-logrotate">pm2-logrotate</a></p>
-<p>來處理 logrotate</p>
-<p>當然如果有指定 log path 的話, 用系統處理 logrotate 也是可以的</p>
-<p>如果要清空 log</p>
-<p>可以使用 <code>pm2 flush</code></p>
-<h2 id="監控">監控</h2>
-<p>預設有兩種</p>
-<ol>
-<li>Terminal</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 monit
-</span></span></code></pre></div><p>就會開啟終端機的 dashboard 可以監控狀態</p>
-<ol start="2">
-<li>web</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 plus
-</span></span></code></pre></div><p>或是用</p>
-<p><a href="https://pm2.io/docs/plus/overview/#features-available-in-pm2-plus">app.pm2.io</a></p>
-<h2 id="load-balancing">LOAD-BALANCING</h2>
-<p>pm2 已經內建負載平衡的功能</p>
-<p><a href="https://pm2.io/docs/runtime/guide/load-balancing/">LOAD-BALANCING (CLUSTER MODE)</a></p>
-</p>
+                <p><p>直接上設定</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Nginx" data-lang="Nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:80</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">server_name</span> <span style="color:#e6db74">api.example.com,</span> <span style="color:#e6db74">example.com</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-NginX-Proxy</span> <span style="color:#e6db74">true</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">set</span> $proxy <span style="color:#e6db74">http://0.0.0.0:3000</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">if</span> <span style="color:#e6db74">(</span>$host ~ <span style="color:#e6db74">api.example.com)</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">set</span> $proxy <span style="color:#e6db74">http://0.0.0.0:8000</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_pass</span> $proxy;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></p>
                 
 
                 
 
-                
-                <p><a href="https://blog.tedshd.io/posts/node_pm2_usage/">Read more</a></p>
                 
             </div>
         </div>

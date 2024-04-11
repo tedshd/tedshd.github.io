@@ -3,7 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2024-03-18T23:29:26+08:00</lastmod>
+    <lastmod>2024-04-11T11:28:12+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/firebase/</loc>
+    <lastmod>2024-04-11T11:28:12+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/</loc>
+    <lastmod>2024-04-11T11:28:12+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/</loc>
+    <lastmod>2024-04-11T11:28:12+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/</loc>
+    <lastmod>2024-04-11T11:28:12+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/javascript/</loc>
     <lastmod>2024-03-18T23:29:26+08:00</lastmod>
@@ -14,17 +26,17 @@
     <loc>https://blog.tedshd.io/categories/mobile/</loc>
     <lastmod>2024-03-18T23:29:26+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2024-03-18T23:29:26+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/</loc>
-    <lastmod>2024-03-18T23:29:26+08:00</lastmod>
-  </url><url>
     <loc>https://blog.tedshd.io/categories/css/</loc>
     <lastmod>2023-11-06T00:52:57+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/multi_line_ellipsis_css/</loc>
     <lastmod>2023-11-06T00:52:57+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/angular/</loc>
+    <lastmod>2023-10-30T09:22:36+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/angular_build_custom_element/</loc>
+    <lastmod>2023-10-30T09:22:36+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/mac/</loc>
     <lastmod>2023-10-29T18:39:20+08:00</lastmod>
@@ -88,9 +100,6 @@
   </url><url>
     <loc>https://blog.tedshd.io/categories/pm2/</loc>
     <lastmod>2022-11-18T11:42:22+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/firebase/</loc>
-    <lastmod>2022-11-02T10:25:09+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/firebase_app_check/</loc>
     <lastmod>2022-11-02T10:25:09+08:00</lastmod>

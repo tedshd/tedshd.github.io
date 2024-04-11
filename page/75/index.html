@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.98.0" />
+	<meta name="generator" content="Hugo 0.119.0">
     
 
 
@@ -29,7 +29,6 @@
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -189,7 +188,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-08-27-web-develop-flexible-footer/">Web Develop - Flexible Footer</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2014-10-01-javascript-handle-textarea-value/">JavaScript - handle textarea value</a></h3>
 
                 
                 
@@ -199,66 +198,22 @@
 <span class=" u-capitalized ">
     on
 </span>
-2014-08-27
+2014-10-01
 </p>
                 
 
                 
-                <p><h2 id="web-develop---flexible-footer">Web Develop - Flexible Footer</h2>
-<p>Sometimes we think footer must fixed in website bottom or put it in last of content.</p>
-<p>I provide a idea may be a good way.
-Content less browser view height, footer fixed in bottom.
-When content too much over browser view height, footer be put last of content.</p>
-<h3 id="feature">Feature</h3>
-<ul>
-<li>flexible</li>
-<li>only use CSS</li>
-</ul>
-<h3 id="usage">Usage</h3>
-<p><code>min-height: calc(100% - &lt;footer height&gt;);</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>    #hd {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#aaa</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/*display: none;*/</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    #bd {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">min-height</span>: calc(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>); <span style="color:#75715e">/* important */</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#ccc</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    #content {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">60</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    #footer {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#999</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p><code>50px</code> is footer height</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>    &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hd&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span>&gt;Head&lt;/<span style="color:#f92672">h1</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">header</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">article</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bd&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">button</span>&gt;build content&lt;/<span style="color:#f92672">button</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">h1</span>&gt;Content&lt;/<span style="color:#f92672">h1</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loop&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">section</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">article</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">footer</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h2</span>&gt;Footer&lt;/<span style="color:#f92672">h2</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">footer</span>&gt;
-</span></span></code></pre></div><p><a href="http://tedshd.lionfree.net/demo/view_UI/footer.html">demo</a></p>
-<p><a href="http://www.siteinspire.com/">Refer - siteInspire - Web Design Inspiration</a></p>
-</p>
+                <p><h2 id="javascript---handle-textarea-value">JavaScript - handle textarea value</h2>
+<p>Handle textarea string.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// jQuery
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">textarea</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;textarea&#39;</span>).<span style="color:#a6e22e">val</span>().<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\n/g</span>, <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// JavaScript
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">textarea</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;textarea&#39;</span>).<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\n/g</span>, <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>);
+</span></span></code></pre></div></p>
                 
 
                 
 
-                
-                <p><a href="https://blog.tedshd.io/posts/2014-08-27-web-develop-flexible-footer/">Read more</a></p>
                 
             </div>
         </div>
@@ -271,7 +226,7 @@ When content too much over browser view height, footer be put last of content.</
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2014-08-21-mac-sshfs/">Mac - SSHFS</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2014-08-29-compass-use-transform-in-compass-101/">Compass - Use transform in compass 1.0.1</a></h3>
 
                 
                 
@@ -281,16 +236,24 @@ When content too much over browser view height, footer be put last of content.</
 <span class=" u-capitalized ">
     on
 </span>
-2014-08-21
+2014-08-29
 </p>
                 
 
                 
-                <p><h2 id="mac---sshfs">Mac - SSHFS</h2>
-<p>SSHFS can help Mac user mount remote support SSH protocol.
-<a href="http://fuse.sourceforge.net/sshfs.html">Intro</a></p>
-<p><a href="https://github.com/osxfuse/osxfuse/wiki/SSHFS">Usage</a></p>
-<h3 id="strong-stylecolorredit-has-problem-in-oh-my-zshstrong"><!-- raw HTML omitted -->It has problem in oh-my-zsh!<!-- raw HTML omitted --></h3>
+                <p><h2 id="compass---use-transform-in-compass-101">Compass - Use transform in compass 1.0.1</h2>
+<p>On august 15, 2014
+Compass release 1.0.1
+Some code in scss change wording.
+This article provide CSS3 transform wording in scss.</p>
+<p>I use this Mixin</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#66d9ef">@import</span> <span style="color:#e6db74">&#34;compass/css3&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y)*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> simple-transform</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">45</span><span style="color:#66d9ef">deg</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span><span style="color:#f92672">,</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Advance Usage */</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*@include create-transform($perspective, $scale-x, $scale-y, $scale-z, $rotate-x, $rotate-y, $rotate-z, $rotate3d, $trans-x, $trans-y, $trans-z, $skew-x, $skew-y, $origin-x, $origin-y, $origin-z, $only3d);*/</span>
+</span></span></code></pre></div><p><a href="http://compass-style.org/reference/compass/css3/transform/#mixin-simple-transform">Refer - Compass Transform | Compass Documentation</a></p>
 </p>
                 
 

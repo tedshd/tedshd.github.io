@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 31 Oct 2022 10:31:56 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/firebase/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Apr 2024 11:28:12 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/firebase/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Firebase dynamic links 遷移轉換</title>
+      <link>https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/</link>
+      <pubDate>Thu, 11 Apr 2024 11:28:12 +0800</pubDate>
+      
+      <guid>https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/</guid>
+      <description>Intro 服務終有停止的一天 firebase 動態連結將於 2025 年 8 月 25 日關閉。 所以要提前做遷移轉換或是找其他替代方案 Firebase 建議 可以參考 Firebase 文件的建議自己搞 從動態鏈接遷移到應</description>
+    </item>
+    
     <item>
       <title>Firebase app check 使用紀錄</title>
       <link>https://blog.tedshd.io/posts/firebase_app_check/</link>
@@ -45,7 +54,7 @@
 Intro You can easy to use web notification push notification to your web site.
 Set Up a JavaScript Firebase Cloud Messaging Client App
 Different with use pure web notification Using the Notifications API
- Browser support  FCM - Chrome(desktop &amp;amp; Android) &amp;amp; Firefox(desktop &amp;amp; Android) pure notification api - Chrome(desktop &amp;amp; Android) &amp;amp; Firefox(desktop &amp;amp; Android) &amp;amp; Opera(desktop) &amp;amp; Safari(desktop)  Android need service worker     Service Worker  FCM - require pure notification api - option    pure web notification only a notification object, you need handle connection push message from server.</description>
+Browser support FCM - Chrome(desktop &amp;amp; Android) &amp;amp; Firefox(desktop &amp;amp; Android) pure notification api - Chrome(desktop &amp;amp; Android) &amp;amp; Firefox(desktop &amp;amp; Android) &amp;amp; Opera(desktop) &amp;amp; Safari(desktop) Android need service worker Service Worker FCM - require pure notification api - option pure web notification only a notification object, you need handle connection push message from server.</description>
     </item>
     
   </channel>

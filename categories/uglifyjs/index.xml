@@ -15,18 +15,21 @@
       
       <guid>https://blog.tedshd.io/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/</guid>
       <description>JavaScript - Google Closure Compiler V.S. Gulp uglify Intro I have two choice
-  Google Closure Compiler
-  UglifyJs
-  Google Closure Compiler Google Closure Compiler
+Google Closure Compiler
+UglifyJs
+Google Closure Compiler Google Closure Compiler
 Google Closure Compiler is a tool for minify and uglify js.
-  From Google
-  Java
-  Command Line
-  Slow
-  UglifyJs mishoo/UglifyJS2
-  More option setting
-  Node.js
-  Command Line</description>
+From Google
+Java
+Command Line
+Slow
+UglifyJs mishoo/UglifyJS2
+More option setting
+Node.js
+Command Line
+Fast
+Test Google Closure Compiler When i run command line, it used lot of cpu source.
+Can feel it lock some seconds.</description>
     </item>
     
   </channel>

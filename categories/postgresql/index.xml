@@ -15,7 +15,7 @@
       
       <guid>https://blog.tedshd.io/posts/2014-04-24-pgrest-build-note/</guid>
       <description>PgREST - build note GitHub This is Mac OS X build install PostgreSQL postgres.app PostgreSQL Tutorial
- set PATH in shell(.bashrc, .zshrc, &amp;hellip;)  PATH=&amp;#34;/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH&amp;#34; create the plv8 extension  -&amp;gt; psql -U Ted_Shiu -c &amp;#34;create extension plv8&amp;#34; CREATE EXTENSION install PgREST(Must install node.js before) npm i -g pgrest Refer - PgREST: Node.js in the Database</description>
+set PATH in shell(.bashrc, .zshrc, &amp;hellip;) PATH=&amp;#34;/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH&amp;#34; create the plv8 extension -&amp;gt; psql -U Ted_Shiu -c &amp;#34;create extension plv8&amp;#34; CREATE EXTENSION install PgREST(Must install node.js before) npm i -g pgrest Refer - PgREST: Node.js in the Database</description>
     </item>
     
   </channel>

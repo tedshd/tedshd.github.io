@@ -31,7 +31,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
-
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
@@ -1220,6 +1219,14 @@
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1236,7 +1243,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/change_or_disable_mobile_tab_highlight_style/">調整和關閉 mobile device 點擊時 highligh 樣式</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/use_youtube_player_sdk_in_2022/">2022 年使用 YouTube player sdk</a></h3>
 
                 
                 
@@ -1246,28 +1253,86 @@
 <span class=" u-capitalized ">
     on
 </span>
-2022-06-29
+2022-08-02
 </p>
                 
 
                 
-                <p><p>mobile web 會在點擊 a link 的時候 highlight 那個部分</p>
-<p>原意是為了讓使用者更能夠直觀地知道是否有點擊了那個東西</p>
-<p>但是有時這個樣式會和整體 web 的設計不合</p>
-<p>所以會想辦法改變或關掉這個 highlight</p>
-<p>那就得使用一個 CSS 屬性 <code>-webkit-tap-highlight-color</code></p>
-<p>如果要關掉, 那就改成透明的</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-CSS" data-lang="CSS"><span style="display:flex;"><span><span style="color:#f92672">-webkit-tap-highlight-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">transparent</span><span style="color:#f92672">;</span>
-</span></span></code></pre></div><p>如果要改成別的顏色就設定顏色即可</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-CSS" data-lang="CSS"><span style="display:flex;"><span><span style="color:#f92672">-webkit-tap-highlight-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">red</span><span style="color:#f92672">;</span>
-</span></span></code></pre></div><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-tap-highlight-color">-webkit-tap-highlight-color MDN</a></p>
+                <p><h2 id="前言">前言</h2>
+<p>距離上次使用 YouTube Player API 已經是 2014 年的事了</p>
+<p>不知不覺也過了超久了</p>
+<p>剛好最近公司有相關的需求需要在 App 中能夠播放 YouTube 的影片</p>
+<p>原本想說 App 應該和我沒關係了</p>
+<p>所以這次準備躺平(誤</p>
+<p>結果還是被牽扯進來了&hellip;</p>
+<h2 id="2022-年當前如何使用-youtube-player-sdk">2022 年當前如何使用 YouTube player SDK</h2>
+<p>沒想到不看還好, 一看就準備 GG</p>
+<p>一開始把文件丟給 Android 和 iOS</p>
+<p>Android 那邊說無法用</p>
+<p>我當下????</p>
+<p>文件都寫得好好的, 為何說無法用</p>
+<p>和 Android 一起討論了一下, 才確認了一件事</p>
+<p>原來 Android 為了統一 libary, 在 2018 年開始推行 Androidx 要取代 android.support</p>
+<p>最大的改變是 namespace 的變動, 雖然官方有<a href="https://developer.android.com/studio/command-line/jetifier">工具</a>可以對第三方 lib 做轉換, 但也會是一個大換血, 而且對比較老舊的套件還會需要處理 activity 和 fragment 的處理, 因為現今大多的 Android 都以 fragment 實作 UI 了</p>
+<p>所以 Android 開發表示兩手一攤</p>
+<p>所以只能接下來用 iframe player 處理了</p>
+<p>之後我這邊又再次和 iOS 確認了一下</p>
+<p>因為依照<a href="https://developers.google.com/youtube/v3/guides/ios_youtube_helper#best-practices-and-limitations">文件</a>說明 iOS 的 player 底層還是用 webview 封裝起來的, 所以應該沒問題才對</p>
+<p>然後 iOS 很高興的表示, 既然 Android 都要用 webview 搞了, 那 iOS 也一起用吧</p>
+<p>真的是很感謝 client 端幫我創造工作機會&hellip;</p>
+<h2 id="到了-2022-api-發生了許多變動">到了 2022 API 發生了許多變動</h2>
+<p>因為當年的 prototype code 還留著, 所以秒完成</p>
+<p>但還是要看一下文件看看有什麼變動</p>
+<p>一看下去才發現真的變動一卡車東西</p>
+<p>也讚嘆 Google 真的是很認真在維護與更新文件</p>
+<p>都有變動紀錄</p>
+<p><a href="https://developers.google.com/youtube/player_parameters#Revision_History">參數部分可以看這裡</a></p>
+<p><a href="https://developers.google.com/youtube/iframe_api_reference#Revision_History">播放器的 API 變動可以看這裡</a></p>
+<p>主要是這幾年也因為在瀏覽器上因應對 video 的支援做蠻多播放邏輯的變動</p>
+<p>部分是因為 YouTube 的服務策略做變動</p>
+<p>以前 YouTube player 可以魔改到 YouTube 自己都認不出來(可以關掉超多顯示資訊, 完全客製化控制項)</p>
+<p>現在已經無法了&hellip;</p>
+<p>像是左上的影片標題, 右上的選單功能, 右下的 YouTube logo 現在都無法隱藏了&hellip;</p>
+<p>還好現在播放一段時間後會自動隱藏這些資訊</p>
+<h2 id="串接-webview-特有的問題">串接 webview 特有的問題</h2>
+<p>有些問題是在 webview 上特有的問題</p>
+<p>幾乎都是 Android 的問題</p>
+<p>就 Android 的問題最多 XD</p>
+<p>這裡記錄一下</p>
+<ol>
+<li>處理自動播放的問題</li>
+</ol>
+<p>礙於瀏覽器政策, 得是靜音才能自動播放, 或是要有使用者互動才能自動播放</p>
+<p>我們採用的方式, 是靜音自動播放, 也避免使用者一開始被影片聲音嚇到</p>
+<ol start="2">
+<li>Android 的播放器會因為滑動行為被判定長壓啟動選單</li>
+</ol>
+<p>因為會是個 feed 列表呈現影片, 滑動到畫面內就會播放畫面中的影片</p>
+<p>所以有遇到個問題是頁面在滑動時手指停留在播放器中會誤判長壓造成啟動播放器選單</p>
+<p>解決方式還是老樣子在 webview 的 player 上面蓋一層透明遮罩, 自己客製控制 UI</p>
+<ol start="3">
+<li>在 Android 當影片在播放時使用 Youtube SDK API 取消靜音會有無法播放影片問題</li>
+</ol>
+<p>這問題追了一下, 確認和 iframe player api 還有 JS 無關後, 就換個思路想會不會是 webview 有啥限制(因為在 browser 都正常)</p>
+<p>下了幾個關鍵字丟給 Google 後查到 webview 有個 <code>setMediaPlaybackRequiresUserGesture</code> 的設定</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>webView<span style="color:#f92672">.</span><span style="color:#a6e22e">getSettings</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setMediaPlaybackRequiresUserGesture</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>設定成 false 的意思是在 webview 不用有任何互動就可以自動播放</p>
+<p>想說會不會有關聯, 所以請 Android 開發那邊設定</p>
+<p>結果就解決這問題了</p>
+<p><a href="https://stackoverflow.com/questions/38975229/auto-play-video-in-webview">Refer - Auto play video in webview</a></p>
+<ol start="4">
+<li>全螢幕的功能</li>
+</ol>
+<p>iOS 的全螢幕會給系統的播放器</p>
+<p>Android 的全螢幕功能會受限於 webview 的大小</p>
+<p>所以這部分的差別也得注意</p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/change_or_disable_mobile_tab_highlight_style/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/use_youtube_player_sdk_in_2022/">Read more</a></p>
                 
             </div>
         </div>
@@ -1280,7 +1345,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/build_different_platform_docker_image/">docker 建立不同平台的 image</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/ios_sms_support_video_meta/">在 iOS Messages 呈現帶影片預覽的連結</a></h3>
 
                 
                 
@@ -1290,38 +1355,44 @@
 <span class=" u-capitalized ">
     on
 </span>
-2022-06-29
+2022-07-20
 </p>
                 
 
                 
-                <p><h2 id="前言">前言</h2>
-<p>現在在開發與線上環境常常會遇到不同 CPU 架構的問題</p>
-<p>不同 CPU 架構底層的指令集也不一樣</p>
-<p>最常見的影響就是在其中一個平台編譯出來的程式會無法在另一個平台執行</p>
-<p>這情況尤其是會在接近底層的程式上見到</p>
-<p>現在普遍來說會發現在 ARM 架構底下有些程式執行起來效率更高</p>
-<p>所以有部分公司的服務也會在線上環境的機器選用 ARM 架構的機器</p>
-<h2 id="情境">情境</h2>
-<p>雖然以前公司的情況是開發在 x86-64 上</p>
-<p>線上是 ARM 的情況</p>
-<p>但現在自己在試驗的情況是反過來的 XD</p>
-<p>現在 Macbook 是 M1 晶片了, M 系列是 ARM 架構</p>
-<p>我在 GCP 開的機器是 x86-64 架構</p>
-<p>所以在 Mac 上面 build 的 docker image 是沒法在 GCP 開的機器運行</p>
-<p>只要執行 docker run 就會出現錯誤提示說架構不同無法執行</p>
-<h2 id="解決方案">解決方案</h2>
-<p>docker 有提供可以建構不同平台的 image 的指令</p>
-<p>只要多一個 <code>buildx</code> 和 <code>--platform</code> 的指令與參數</p>
-<pre tabindex="0"><code>docker buildx build --platform=linux/amd64,linux/arm64 .
-</code></pre><p><a href="https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/">Faster Multi-Platform Builds: Dockerfile Cross-Compilation Guide</a></p>
+                <p><p>最近添加了一個小功能要來測試成效</p>
+<p>就是因為 PM 有看到一些服務的連結在 iOS Messages 上呈現並非常見的圖片而是影片</p>
+<p>PM 說好像是 iOS 15 以上支援(我自己是沒找到相關的資料證明這件事)</p>
+<p>不過應該沒支援的話就呈現圖片</p>
+<p>查了一下文件, 其實也不難</p>
+<p>基本上就是定義 open graph</p>
+<p>多定義</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:video&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.example.com/sample.mp4&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:video:type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;video/mp4&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:video:width&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1280&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:video:height&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;720&#34;</span> /&gt;
+</span></span></code></pre></div><p>這邊有個要注意的點是</p>
+<p>原來是產出 1:1 的影片, 但發現會上下截掉</p>
+<p>所以最後採用 16:9 的比例</p>
+<h2 id="demo">demo</h2>
+
+
+
+<video width="1280" height="720" controls>
+  <source src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2Fdemo.mp4?alt=media&token=6c6a2dc8-c859-4f8e-a88f-882d1e77addc" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
+<p><a href="https://developer.apple.com/library/archive/technotes/tn2444/_index.html">Refer - Best Practices for Link Previews in Messages</a></p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/build_different_platform_docker_image/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/ios_sms_support_video_meta/">Read more</a></p>
                 
             </div>
         </div>

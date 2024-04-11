@@ -11,7 +11,8 @@
 <meta id="viewport" name="viewport"
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="description" content='CI AJAX(Post) Usage JavaScript(jQuery)
-$.post(  &#39;/api/post&#39;,  {  val: &#39;string&#39;,  val2: 1  },  function(data) {  console.log(data);  if(data.status === &#39;ok&#39;) {  // dosomething  } else {  // alert fail  }  },  &#39;json&#39; ); $.ajax({  url: &#39;/login/signup&#39;,  type: &#39;POST&#39;,  data: {  account: $(&#39;input[name=&#34;account&#34;]&#39;).val()  },  success: function(data) {  console.log(data);  } }); PHP'>
+$.post( &#39;/api/post&#39;, { val: &#39;string&#39;, val2: 1 }, function(data) { console.log(data); if(data.status === &#39;ok&#39;) { // dosomething } else { // alert fail } }, &#39;json&#39; ); $.ajax({ url: &#39;/login/signup&#39;, type: &#39;POST&#39;, data: { account: $(&#39;input[name=&#34;account&#34;]&#39;).val() }, success: function(data) { console.log(data); } }); PHP
+&lt;?php // api.php public function post() { $val = $this-&gt;input-&gt;post(&#39;val&#39;); $val2 = $this-&gt;input-&gt;post(&#39;val2&#39;); if ($val) { // dosomething //response $output = array( &#39;status&#39; =&gt; &#39;ok&#39;, &#39;msg&#39; =&gt; &#39;success&#39; ); echo json_encode($output); exit; } $output = array( &#39;status&#39; =&gt; &#39;fail&#39;, &#39;msg&#39; =&gt; &#39;error&#39; ); echo json_encode($output); exit; } ?'>
 <meta name="keywords" content=''>
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/2013-08-29-codeigniter-ajaxpost/">
 <link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/2013-08-29-codeigniter-ajaxpost/" />
@@ -29,19 +30,20 @@ $.post(  &#39;/api/post&#39;,  {  val: &#39;string&#39;,  val2: 1  },  function(
 
 <meta property="og:title" content="Codeigniter - AJAX(post)" />
 <meta property="og:description" content="CI AJAX(Post) Usage JavaScript(jQuery)
-$.post(  &#39;/api/post&#39;,  {  val: &#39;string&#39;,  val2: 1  },  function(data) {  console.log(data);  if(data.status === &#39;ok&#39;) {  // dosomething  } else {  // alert fail  }  },  &#39;json&#39; ); $.ajax({  url: &#39;/login/signup&#39;,  type: &#39;POST&#39;,  data: {  account: $(&#39;input[name=&#34;account&#34;]&#39;).val()  },  success: function(data) {  console.log(data);  } }); PHP" />
+$.post( &#39;/api/post&#39;, { val: &#39;string&#39;, val2: 1 }, function(data) { console.log(data); if(data.status === &#39;ok&#39;) { // dosomething } else { // alert fail } }, &#39;json&#39; ); $.ajax({ url: &#39;/login/signup&#39;, type: &#39;POST&#39;, data: { account: $(&#39;input[name=&#34;account&#34;]&#39;).val() }, success: function(data) { console.log(data); } }); PHP
+&lt;?php // api.php public function post() { $val = $this-&gt;input-&gt;post(&#39;val&#39;); $val2 = $this-&gt;input-&gt;post(&#39;val2&#39;); if ($val) { // dosomething //response $output = array( &#39;status&#39; =&gt; &#39;ok&#39;, &#39;msg&#39; =&gt; &#39;success&#39; ); echo json_encode($output); exit; } $output = array( &#39;status&#39; =&gt; &#39;fail&#39;, &#39;msg&#39; =&gt; &#39;error&#39; ); echo json_encode($output); exit; } ?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/2013-08-29-codeigniter-ajaxpost/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2013-08-29T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
-
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
 <meta name="twitter:title" content="Codeigniter - AJAX(post)"/>
 <meta name="twitter:description" content="CI AJAX(Post) Usage JavaScript(jQuery)
-$.post(  &#39;/api/post&#39;,  {  val: &#39;string&#39;,  val2: 1  },  function(data) {  console.log(data);  if(data.status === &#39;ok&#39;) {  // dosomething  } else {  // alert fail  }  },  &#39;json&#39; ); $.ajax({  url: &#39;/login/signup&#39;,  type: &#39;POST&#39;,  data: {  account: $(&#39;input[name=&#34;account&#34;]&#39;).val()  },  success: function(data) {  console.log(data);  } }); PHP"/>
+$.post( &#39;/api/post&#39;, { val: &#39;string&#39;, val2: 1 }, function(data) { console.log(data); if(data.status === &#39;ok&#39;) { // dosomething } else { // alert fail } }, &#39;json&#39; ); $.ajax({ url: &#39;/login/signup&#39;, type: &#39;POST&#39;, data: { account: $(&#39;input[name=&#34;account&#34;]&#39;).val() }, success: function(data) { console.log(data); } }); PHP
+&lt;?php // api.php public function post() { $val = $this-&gt;input-&gt;post(&#39;val&#39;); $val2 = $this-&gt;input-&gt;post(&#39;val2&#39;); if ($val) { // dosomething //response $output = array( &#39;status&#39; =&gt; &#39;ok&#39;, &#39;msg&#39; =&gt; &#39;success&#39; ); echo json_encode($output); exit; } $output = array( &#39;status&#39; =&gt; &#39;fail&#39;, &#39;msg&#39; =&gt; &#39;error&#39; ); echo json_encode($output); exit; } ?"/>
 
 
 <meta itemprop="name" content="">

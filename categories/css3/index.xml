@@ -16,7 +16,7 @@
       <guid>https://blog.tedshd.io/posts/2014-12-30-javascript-detect-css3-transitionend/</guid>
       <description>JavaScript - Detect CSS3 transitionEnd transitionend
 It is a event can fired when CSS3 transition end.
-function transitionEnd() {  var el = document.createElement(&amp;#39;div&amp;#39;), //what the hack is bootstrap  transEndEventNames = {  WebkitTransition : &amp;#39;webkitTransitionEnd&amp;#39;,  MozTransition : &amp;#39;transitionend&amp;#39;,  OTransition : &amp;#39;oTransitionEnd otransitionend&amp;#39;,  transition : &amp;#39;transitionend&amp;#39;  };   for (var name in transEndEventNames) {  if (el.style[name] !== undefined) {  return transEndEventNames[name];  }  }   return false; // explicit for ie8 ( .</description>
+function transitionEnd() { var el = document.createElement(&amp;#39;div&amp;#39;), //what the hack is bootstrap transEndEventNames = { WebkitTransition : &amp;#39;webkitTransitionEnd&amp;#39;, MozTransition : &amp;#39;transitionend&amp;#39;, OTransition : &amp;#39;oTransitionEnd otransitionend&amp;#39;, transition : &amp;#39;transitionend&amp;#39; }; for (var name in transEndEventNames) { if (el.style[name] !== undefined) { return transEndEventNames[name]; } } return false; // explicit for ie8 ( ._.) } // Usage document.</description>
     </item>
     
   </channel>

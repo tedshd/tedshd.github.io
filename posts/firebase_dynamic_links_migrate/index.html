@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+<title>Firebase dynamic links 遷移轉換 | tedshd&#39;s DevNote</title>
+<meta charset="utf-8">
+<meta name="google" content="notranslate">
+<meta id="viewport" name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content='Intro 服務終有停止的一天 firebase 動態連結將於 2025 年 8 月 25 日關閉。 所以要提前做遷移轉換或是找其他替代方案 Firebase 建議 可以參考 Firebase 文件的建議自己搞 從動態鏈接遷移到應'>
+<meta name="keywords" content=''>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/">
+<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/" />
+
+<link rel="canonical" href="https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/" />
+<link rel="shortcut icon" href="/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
+<meta name="theme-color" content="">
+<meta name="robots" content="index, follow">
+<meta name="copyright" content="Tedshd">
+
+<meta property="og:title" content="Firebase dynamic links 遷移轉換" />
+<meta property="og:description" content="Intro 服務終有停止的一天 firebase 動態連結將於 2025 年 8 月 25 日關閉。 所以要提前做遷移轉換或是找其他替代方案 Firebase 建議 可以參考 Firebase 文件的建議自己搞 從動態鏈接遷移到應" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-04-11T11:28:12+08:00" />
+<meta property="article:modified_time" content="2024-04-11T11:28:12+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+
+<meta name="twitter:title" content="Firebase dynamic links 遷移轉換"/>
+<meta name="twitter:description" content="Intro 服務終有停止的一天 firebase 動態連結將於 2025 年 8 月 25 日關閉。 所以要提前做遷移轉換或是找其他替代方案 Firebase 建議 可以參考 Firebase 文件的建議自己搞 從動態鏈接遷移到應"/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+<script data-ad-client="ca-pub-0553186380244641" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    
+
+    
+
+    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
+
+    
+<link>
+
+<link
+    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
+    rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1NKP3D2ZGG');
+    </script>
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
+                    tedshd&#39;s DevNote
+                </a>
+            </div>
+            
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__links" role="menu">
+                
+                <li class="p-navigation__link" role="menuitem">
+                    <a href="/categories">Categories</a>
+                </li>
+                
+                <li class="p-navigation__link" role="menuitem">
+                    <a href="/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<div class="page-banner">
+    <div class="row u-vertically-center">
+        <div class="col-8 pure-g">
+            <div class="pure-u">
+                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
+                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
+            </div>
+            <div class="pure-u">
+                <h2>tedshd&#39;s DevNote</h2>
+                <p>Develop &amp; Design Note by Ted</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul class="p-navigation__links sub_menu" role="menu">
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="http://tedshd.github.io/resume/">About</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="http://tysh310246.blogspot.tw/">Blog</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="https://github.com/tedshd">Github</a>
+    </li>
+    
+    <li class="p-navigation__link" role="menuitem">
+        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
+    </li>
+    
+</ul>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
+    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+<header class="">
+    <div class="row">
+        <h1>Firebase dynamic links 遷移轉換</h1>
+    </div>
+</header>
+
+
+<section class="p-strip is-shallow">
+    <main class="row post-content">
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2024-04-11
+        </p>
+        
+        <h2 id="intro">Intro</h2>
+<p>服務終有停止的一天</p>
+<p>firebase 動態連結將於 2025 年 8 月 25 日關閉。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202024-04-11%20%E4%B8%8A%E5%8D%8811.34.10.png?alt=media&amp;token=177c4740-af77-4b0d-8ad3-b6b85d5304f8" alt=""></p>
+<p>所以要提前做遷移轉換或是找其他替代方案</p>
+<h2 id="firebase-建議">Firebase 建議</h2>
+<p>可以參考 Firebase 文件的建議自己搞</p>
+<p><a href="https://firebase.google.com/support/guides/app-links-universal-links?hl=zh-tw">從動態鏈接遷移到應用程式連結和應用程式鏈接通用連結</a></p>
+<p>自己搞的好處是能搞成符合自己需求的東西</p>
+<p>但是最大的麻煩點是要記錄的話就得自己搞數據</p>
+<p>很多時候都會需要紀錄點擊轉換</p>
+<p>這就得自己搞了</p>
+<h2 id="第三方服務">第三方服務</h2>
+<p>其實除了自己搞以外</p>
+<p>還有很多第三方服務有在做這個東西</p>
+<p>目前有找到的有</p>
+<h3 id="branch-iohttpswwwbranchio"><a href="https://www.branch.io/">Branch io</a></h3>
+<ul>
+<li><a href="https://www.branch.io/what-is-deep-linking/">https://www.branch.io/what-is-deep-linking/</a></li>
+</ul>
+<p>branch io 還有個教學文</p>
+<p><a href="https://www.branch.io/guides/how-to-migrate-from-firebase-dynamic-links/">How to migrate from Firebase Dynamic Links</a></p>
+<h3 id="appsflyerhttpswwwappsflyercom"><a href="https://www.appsflyer.com/">Appsflyer</a></h3>
+<ul>
+<li><a href="https://www.appsflyer.com/products/customer-experience-deep-linking/">https://www.appsflyer.com/products/customer-experience-deep-linking/</a></li>
+</ul>
+<h3 id="kochavahttpswwwkochavacom"><a href="https://www.kochava.com/">kochava</a></h3>
+<ul>
+<li><a href="https://www.kochava.com/product/deep-linking/links/?int-link=menu-links">https://www.kochava.com/product/deep-linking/links/?int-link=menu-links</a></li>
+</ul>
+<p>上面列出來的是比較常見的幾個</p>
+<p>應該還有其他服務沒有列出來</p>
+<p>這個就評估下要用哪個服務</p>
+
+    </main>
+</section>
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/detect_web_page_zoom/">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            JavaScript 確認頁面有沒有縮放
+        </span>
+    </a>
+    
+
+    
+</div>
+    </div>
+</footer>
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2022 Tedshd
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>

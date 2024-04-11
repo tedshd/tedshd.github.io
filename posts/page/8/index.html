@@ -31,7 +31,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
-
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
@@ -1220,6 +1219,14 @@
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1236,7 +1243,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/use_youtube_player_sdk_in_2022/">2022 年使用 YouTube player sdk</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/ssh_to_windows_server/">SSH 到 Windows Server</a></h3>
 
                 
                 
@@ -1246,86 +1253,83 @@
 <span class=" u-capitalized ">
     on
 </span>
-2022-08-02
+2022-10-09
 </p>
                 
 
                 
-                <p><h2 id="前言">前言</h2>
-<p>距離上次使用 YouTube Player API 已經是 2014 年的事了</p>
-<p>不知不覺也過了超久了</p>
-<p>剛好最近公司有相關的需求需要在 App 中能夠播放 YouTube 的影片</p>
-<p>原本想說 App 應該和我沒關係了</p>
-<p>所以這次準備躺平(誤</p>
-<p>結果還是被牽扯進來了&hellip;</p>
-<h2 id="2022-年當前如何使用-youtube-player-sdk">2022 年當前如何使用 YouTube player SDK</h2>
-<p>沒想到不看還好, 一看就準備 GG</p>
-<p>一開始把文件丟給 Android 和 iOS</p>
-<p>Android 那邊說無法用</p>
-<p>我當下????</p>
-<p>文件都寫得好好的, 為何說無法用</p>
-<p>和 Android 一起討論了一下, 才確認了一件事</p>
-<p>原來 Android 為了統一 libary, 在 2018 年開始推行 Androidx 要取代 android.support</p>
-<p>最大的改變是 namespace 的變動, 雖然官方有<a href="https://developer.android.com/studio/command-line/jetifier">工具</a>可以對第三方 lib 做轉換, 但也會是一個大換血, 而且對比較老舊的套件還會需要處理 activity 和 fragment 的處理, 因為現今大多的 Android 都以 fragment 實作 UI 了</p>
-<p>所以 Android 開發表示兩手一攤</p>
-<p>所以只能接下來用 iframe player 處理了</p>
-<p>之後我這邊又再次和 iOS 確認了一下</p>
-<p>因為依照<a href="https://developers.google.com/youtube/v3/guides/ios_youtube_helper#best-practices-and-limitations">文件</a>說明 iOS 的 player 底層還是用 webview 封裝起來的, 所以應該沒問題才對</p>
-<p>然後 iOS 很高興的表示, 既然 Android 都要用 webview 搞了, 那 iOS 也一起用吧</p>
-<p>真的是很感謝 client 端幫我創造工作機會&hellip;</p>
-<h2 id="到了-2022-api-發生了許多變動">到了 2022 API 發生了許多變動</h2>
-<p>因為當年的 prototype code 還留著, 所以秒完成</p>
-<p>但還是要看一下文件看看有什麼變動</p>
-<p>一看下去才發現真的變動一卡車東西</p>
-<p>也讚嘆 Google 真的是很認真在維護與更新文件</p>
-<p>都有變動紀錄</p>
-<p><a href="https://developers.google.com/youtube/player_parameters#Revision_History">參數部分可以看這裡</a></p>
-<p><a href="https://developers.google.com/youtube/iframe_api_reference#Revision_History">播放器的 API 變動可以看這裡</a></p>
-<p>主要是這幾年也因為在瀏覽器上因應對 video 的支援做蠻多播放邏輯的變動</p>
-<p>部分是因為 YouTube 的服務策略做變動</p>
-<p>以前 YouTube player 可以魔改到 YouTube 自己都認不出來(可以關掉超多顯示資訊, 完全客製化控制項)</p>
-<p>現在已經無法了&hellip;</p>
-<p>像是左上的影片標題, 右上的選單功能, 右下的 YouTube logo 現在都無法隱藏了&hellip;</p>
-<p>還好現在播放一段時間後會自動隱藏這些資訊</p>
-<h2 id="串接-webview-特有的問題">串接 webview 特有的問題</h2>
-<p>有些問題是在 webview 上特有的問題</p>
-<p>幾乎都是 Android 的問題</p>
-<p>就 Android 的問題最多 XD</p>
-<p>這裡記錄一下</p>
+                <p><p>最近因為需求要接手 Windows Server 進行維護與開發</p>
+<p>因為只有在很久以前幫別人處理 IIS Server 一點經驗</p>
+<p>時間也非常久了</p>
+<p>所以筆記一下這次的處理過程</p>
+<p>這次處理的 server 版本是 Windows Server 2019</p>
+<h2 id="ssh-on-gcp-compute-engine">SSH on GCP Compute Engine</h2>
+<p>如果是建置在 Google Cloud 的 Compute Engine 上的話</p>
+<p>就參考文件 <a href="https://cloud.google.com/blog/products/compute/using-openssh-on-windows-compute-engine-instances">Getting started with OpenSSH on Windows Compute Engine instances</a> 就可以了</p>
+<h2 id="前置作業">前置作業</h2>
+<p>之前似乎是採用 remote desktop 的方式</p>
+<p>這對習慣命令列操作的人來說會有點不習慣</p>
+<p>而且交接程式碼和檔案都放在那台機器上</p>
+<p>所以為了之後方便操作, 首先就要安裝 OpenSSH</p>
+<h3 id="安裝-openssh-server">安裝 OpenSSH server</h3>
+<p>因為 SSH 會有 server 和 client 的部分</p>
+<p>因為是需要連進去 Windows Server</p>
+<p>所以只需要處理 OpenSSH server 的部分</p>
+<p><a href="https://learn.microsoft.com/zh-tw/windows-server/administration/openssh/openssh_install_firstuse">Refer - 安裝 OpenSSH</a></p>
 <ol>
-<li>處理自動播放的問題</li>
+<li>開啟 設定，選取 [應用程式] &gt; 應用程式 &amp; 功能，然後選取 [選用功能]。</li>
 </ol>
-<p>礙於瀏覽器政策, 得是靜音才能自動播放, 或是要有使用者互動才能自動播放</p>
-<p>我們採用的方式, 是靜音自動播放, 也避免使用者一開始被影片聲音嚇到</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.23.05.png?alt=media&amp;token=8e54e549-f3d2-414a-b122-917650205f86" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.25.09.png?alt=media&amp;token=a4217abd-1cd2-424f-9762-0aade608b1c7" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.26.02.png?alt=media&amp;token=b5900fc2-5b5e-4f81-a878-b9bccb97da38" alt=""></p>
 <ol start="2">
-<li>Android 的播放器會因為滑動行為被判定長壓啟動選單</li>
+<li>掃描清單，查看是否已安裝 OpenSSH。 如果沒有，請在頁面頂端選取 [ 新增功能]，然後：</li>
 </ol>
-<p>因為會是個 feed 列表呈現影片, 滑動到畫面內就會播放畫面中的影片</p>
-<p>所以有遇到個問題是頁面在滑動時手指停留在播放器中會誤判長壓造成啟動播放器選單</p>
-<p>解決方式還是老樣子在 webview 的 player 上面蓋一層透明遮罩, 自己客製控制 UI</p>
-<ol start="3">
-<li>在 Android 當影片在播放時使用 Youtube SDK API 取消靜音會有無法播放影片問題</li>
-</ol>
-<p>這問題追了一下, 確認和 iframe player api 還有 JS 無關後, 就換個思路想會不會是 webview 有啥限制(因為在 browser 都正常)</p>
-<p>下了幾個關鍵字丟給 Google 後查到 webview 有個 <code>setMediaPlaybackRequiresUserGesture</code> 的設定</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>webView<span style="color:#f92672">.</span><span style="color:#a6e22e">getSettings</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setMediaPlaybackRequiresUserGesture</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
-</span></span></code></pre></div><p>設定成 false 的意思是在 webview 不用有任何互動就可以自動播放</p>
-<p>想說會不會有關聯, 所以請 Android 開發那邊設定</p>
-<p>結果就解決這問題了</p>
-<p><a href="https://stackoverflow.com/questions/38975229/auto-play-video-in-webview">Refer - Auto play video in webview</a></p>
-<ol start="4">
-<li>全螢幕的功能</li>
-</ol>
-<p>iOS 的全螢幕會給系統的播放器</p>
-<p>Android 的全螢幕功能會受限於 webview 的大小</p>
-<p>所以這部分的差別也得注意</p>
-</p>
+<ul>
+<li>尋找 OpenSSH 用戶端，然後按一下 [安裝]。</li>
+<li>尋找 OpenSSH 伺服器，然後按一下 [安裝]。</li>
+</ul>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.27.27.png?alt=media&amp;token=99f88b20-c30d-49f5-9cc5-e6e2c7a2add1" alt="尋找 OpenSSH 伺服器，然後按一下 [安裝]。"></p>
+<h3 id="設定-ssh">設定 SSH</h3>
+<p>使用 <code>PowerShell</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Start-Service sshd
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Add-WindowsCapability -Online -Name OpenSSH.Server
+</span></span></code></pre></div><p>這時應該會輸出</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Path          <span style="color:#960050;background-color:#1e0010">:</span>
+</span></span><span style="display:flex;"><span>Online        <span style="color:#960050;background-color:#1e0010">:</span> True
+</span></span><span style="display:flex;"><span>RestartNeeded <span style="color:#960050;background-color:#1e0010">:</span> False
+</span></span></code></pre></div><h3 id="設定">設定</h3>
+<p>修改 SSH 設定</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>start-process notepad C:\Programdata\ssh\sshd_config
+</span></span></code></pre></div><h3 id="設定防火牆">設定防火牆</h3>
+<p><code>Server Manager</code> -&gt; <code>Tool</code> -&gt; <code>Windows Defender Firewall with Advanced Security</code></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.46.09.png?alt=media&amp;token=986745f0-c9e1-4fb6-b23f-6184d23e529b" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.47.36.png?alt=media&amp;token=6eef15cc-9f4c-42fd-80cf-3382fb87c218" alt=""></p>
+<p><code>Inbound Rules</code> -&gt; <code>New Rule</code></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.49.png?alt=media&amp;token=ea1cd8a7-5802-4b52-8b63-f316c8cd03cd" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.57.png?alt=media&amp;token=577864f2-5d34-483a-b3c0-4adcf530649d" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.14.png?alt=media&amp;token=2690295a-8c34-4697-b716-a930d6dc1d2a" alt=""></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.35.png?alt=media&amp;token=15ebdba8-78a5-4235-b7c7-84e0fae388b7" alt=""></p>
+<p><a href="https://www.vultr.com/docs/how-to-install-openssh-on-windows-server-2019-or-2022/">Refer - How to Install OpenSSH on Windows Server 2019 or 2022</a></p>
+<h2 id="ssh-連線">SSH 連線</h2>
+<p>因為目前沒有建立 ssh key 來連線的打算</p>
+<p>這邊是還用帳號密碼來連線</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh &lt;用戶名&gt;@&lt;IP&gt;
+</span></span></code></pre></div><p>之後再填入密碼來登入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>administrator@WINDOWS C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\A</span>dministrator&gt;
+</span></span></code></pre></div><p>這邊需要注意的因為是連線到 Windows</p>
+<p>所以要用的指令都得是 Dos 指令</p>
+<h2 id="利用-scp-把資料複製下來">利用 SCP 把資料複製下來</h2>
+<p>這邊的例子是在 Mac scp Windows Server 到 Mac</p>
+<p>需要注意的是在使用 SCP 時, Windows 路徑的分隔符號得調整</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>scp -r &lt;用戶名&gt;@&lt;IP&gt;:C:/&lt;路徑&gt;/&lt;目標資料夾&gt; &lt;本地端資料夾&gt;
+</span></span></code></pre></div></p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/use_youtube_player_sdk_in_2022/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/ssh_to_windows_server/">Read more</a></p>
                 
             </div>
         </div>
@@ -1338,7 +1342,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/ios_sms_support_video_meta/">在 iOS Messages 呈現帶影片預覽的連結</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/">在 JavaScript 處理各個時區對應的日期時間</a></h3>
 
                 
                 
@@ -1348,44 +1352,117 @@
 <span class=" u-capitalized ">
     on
 </span>
-2022-07-20
+2022-10-04
 </p>
                 
 
                 
-                <p><p>最近添加了一個小功能要來測試成效</p>
-<p>就是因為 PM 有看到一些服務的連結在 iOS Messages 上呈現並非常見的圖片而是影片</p>
-<p>PM 說好像是 iOS 15 以上支援(我自己是沒找到相關的資料證明這件事)</p>
-<p>不過應該沒支援的話就呈現圖片</p>
-<p>查了一下文件, 其實也不難</p>
-<p>基本上就是定義 open graph</p>
-<p>多定義</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:video&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.example.com/sample.mp4&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:video:type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;video/mp4&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:video:width&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1280&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">property</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og:video:height&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;720&#34;</span> /&gt;
-</span></span></code></pre></div><p>這邊有個要注意的點是</p>
-<p>原來是產出 1:1 的影片, 但發現會上下截掉</p>
-<p>所以最後採用 16:9 的比例</p>
-<h2 id="demo">demo</h2>
-
-
-
-<video width="1280" height="720" controls>
-  <source src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2Fdemo.mp4?alt=media&token=6c6a2dc8-c859-4f8e-a88f-882d1e77addc" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-
-
-<p><a href="https://developer.apple.com/library/archive/technotes/tn2444/_index.html">Refer - Best Practices for Link Previews in Messages</a></p>
+                <p><h2 id="intro">Intro</h2>
+<p>在 JavaScript 中的日期時間是個當初沒有定義出良好設計的東西</p>
+<p>這裡先舉幾個常見的問題</p>
+<ol>
+<li>日期格式問題</li>
+<li>日期呈現的語系問題</li>
+<li>時區問題</li>
+<li>12 小時 24 小時問題
+&hellip;</li>
+</ol>
+<p>以原生的 API 在處理日期時間大多得自己額外做許多事情或是套用一些第三方 libary 來協助達成目的</p>
+<h2 id="時區問題">時區問題</h2>
+<p>這次主要是討論關於時區的問題</p>
+<p>在早期只能用 <code>getTimezoneOffset()</code> 的方法搭配時區表去換算各地時區</p>
+<p>現在倒是可以使用 <code>Intl.DateTimeFormat</code></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset">refer - Date.prototype.getTimezoneOffset()</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat">refer - Intl.DateTimeFormat</a></p>
+<p>其實上述的問題, 在使用 <code>Intl.DateTimeFormat</code> 基本上都可以解決掉</p>
+<p>詳細方式可以參以下文件</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat">refer - Intl.DateTimeFormat() constructor</a></p>
+<p>在時區中又有一個常常被忽視的的問題就是夏令時間(daylight savings time) 這個在夏季時就得把時間提前一小時的問題</p>
+<p>如果自己處理時區就得記得處理這問題</p>
+<p>使用 <code>Intl.DateTimeFormat</code> 的話系統已經自動處理了</p>
+<h2 id="intldatetimeformat">Intl.DateTimeFormat</h2>
+<p>這邊簡單介紹一下 <code>Intl.DateTimeFormat</code> 的一些用法與注意事項</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Intl</span>.<span style="color:#a6e22e">DateTimeFormat</span>(<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">language</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">timeZone</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;America/Los_Angeles&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">dateStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;full&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">timeStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;full&#39;</span>
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">new</span> Date())
+</span></span></code></pre></div><p>這個範例就表示了當前洛杉磯的時間</p>
+<p>第一個參數是語系, 採用 BCP 47 標準, 基本上建議使用 <code>navigator.language</code> 或是自己寫死(特定情況時使用)或是另外帶入</p>
+<p>第二個參數的物件除了 <code>timeZone</code> 是為了顯示指定時區之外其他的參數基本上都在定義顯示的型式</p>
+<p>例如</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Intl</span>.<span style="color:#a6e22e">DateTimeFormat</span>(<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">language</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;numeric&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">month</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">day</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hour</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">minute</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">second</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hourCycle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;h24&#39;</span>,
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">new</span> Date())
+</span></span></code></pre></div><p>這樣就會返回 <code>YYYY/MM/dd HH:mm:ss</code> 的顯示方式</p>
+<p>額外提幾個比較特別的參數</p>
+<ul>
+<li>timeZone: 時區的值使採用 IANA 所定義出的標準名稱基本就是像是 Asia/Taipei 這樣的格式, 有一個比較特別值是可以使用 &lsquo;UTC&rsquo; 表示當前的 UTC+0 時間(簡單說明就是時區零的時間)</li>
+<li>calendar: 是設定要使用的曆法, 例如: <code>calendar: 'chinese'</code> 就是農曆</li>
+<li>hour12: 是表示是要用 12 小時制或 24 小時制顯示, 用 24 小時制就不會另外顯示上午或下午</li>
+</ul>
+<p>剩下的可以參考文件來使用</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat">refer - Intl.DateTimeFormat() constructor</a></p>
+<h2 id="處理全球性的活動時間問題">處理全球性的活動時間問題</h2>
+<p>接下來來處理實作面的問題</p>
+<p>當服務擴及全球是需要在全球各地或是各別國家的特別節日等舉辦活動</p>
+<p>時間就很重要</p>
+<p>如果時間搞錯, 使用者根本無法在正確的時間參與到活動, 那就準備等著收到一堆抱怨</p>
+<p>所以都會有以下策略來處理這樣的問題</p>
+<h3 id="說明活動開始的時間是對應哪個時區的時間">說明活動開始的時間是對應哪個時區的時間</h3>
+<p>例如活動指定開始時間是 2022/12/25 08:00 GTM-7(洛杉磯時間)</p>
+<p>這公告發在美國地區還沒什麼問題, 因為全美國只有大概橫跨了 5 個時區</p>
+<p>但這公告對在亞洲和歐洲地區的人就很痛苦, 因為還得使用者自己換算成自己當地的時間</p>
+<p>所以如果以全球性的活動來說這對跨比較多時區的人來說很不友善</p>
+<p>但這也是有解法的</p>
+<p>只要在 client 轉換成 client 當地的時間就可以了, 才比較容易讓使用者了解到正確的時間</p>
+<h3 id="針對不同區開始對應區域的公告與活動">針對不同區開始對應區域的公告與活動</h3>
+<p>這是比較常見的做法</p>
+<p>大多時候可以針對像是不同國家的節慶活動或是各個區域不同的活動來處理</p>
+<p>所以只要針對該地區的的時區設定就可以了</p>
+<h2 id="管理系統的設計">管理系統的設計</h2>
+<p>下面說明一個比較麻煩的情況</p>
+<p>當需要設計一個面對全球性的推播或公告系統時會遇到上述的問題</p>
+<p>在管理人員或運營人員在操作系統時</p>
+<p>會有一個很基本的思維是</p>
+<p>想要在美國國慶的時候設定推播通知</p>
+<p>那很理所當然地在介面會希望就是選美國當地的時區, 之後再選美國當地的日期時間</p>
+<p>不會希望要自己換算美國國慶的時間轉成自己當地的時間是什麼時間再去設定</p>
+<p>這在時間處理上就會是一個很有趣的問題</p>
+<p>JavaScript 的 Date 是帶有時區的(client 裝置設定的時區)</p>
+<p>所以是需要做額外處理的</p>
+<p>但原理也很簡單</p>
+<p>先用 <code>new Date(value)</code> 把設定的時間取出來轉成 timestamp</p>
+<p>例如: <code>new Date('2022-10-04T17:00:00')</code></p>
+<p>這會返回 <strong>1664874000000</strong></p>
+<p>但這是當前 client 設定時區的 2022-10-04 下午五點的 timestamp</p>
+<p>並非期望時區的時間</p>
+<p>這時就要做時區的校正</p>
+<p>公式大概如下</p>
+<p><code>new Date(設定推播的時間).getTime() + 當前時區 - 設定推播的時區</code></p>
+<p>所以大概就是</p>
+<p><code>new Date(dateString).getTime() - new Date().getTimezoneOffset()*60*1000 - 設定推播的時區(毫秒)</code></p>
+<p>那只要把這個丟給後端讓後端依照這時間發送就可以了</p>
+<p>到了這邊, 大概剩下一個問題就是麻煩的夏令時間(daylight savings time) 問題</p>
+<p>因為不可能自己處理這問題</p>
+<p>所以這邊採用了一個 <a href="https://timezonedb.com/">timezonedb</a> 的服務</p>
+<p>這個服務的 api 會返回當前所有時區而且是已經校正過夏令時間的時區</p>
+<p>所以就可以拿取得這個服務的資料來當成自己的時區資料</p>
+<p>最後的最後</p>
+<p>剩下一個尷尬的小問題就是如果設定的時間和要推送的時間剛好是跨夏令時間的開始和結束時, 就會有一小時的誤差, 目前還沒想到比較好的解法, 只能在設定時儘量避掉這樣的情況</p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/ios_sms_support_video_meta/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/">Read more</a></p>
                 
             </div>
         </div>

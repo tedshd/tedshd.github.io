@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.98.0" />
+	<meta name="generator" content="Hugo 0.119.0">
     
 
 
@@ -29,7 +29,6 @@
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -189,7 +188,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/">前端工程師工作 10 年心得</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/pay_attention_to_app_iap/">App store &amp; Google Play IAP((In-App Purchase)) 內購與訂閱注意事項</a></h3>
 
                 
                 
@@ -199,135 +198,48 @@
 <span class=" u-capitalized ">
     on
 </span>
-2022-12-31
+2023-01-12
 </p>
                 
 
                 
-                <p><h2 id="前言">前言</h2>
-<p>在 2022/12/31 的日子</p>
-<p>剛好是跨年年假</p>
-<p>也突然發現自己開始工作的時間已經 10 年了</p>
-<p>沒想到已經 10 年了 XD</p>
-<p>還記得當初只是個三流國立大學還是非本科系甚至沒讀研究所就出來找工作的菜雞</p>
-<p>到如今也是個工程師了?</p>
-<p>在這工作第一個 10 年的時間也好好回憶一下當初的路徑</p>
-<p>以便對下一個 10 年做準備</p>
-<h2 id="這-10-年的路徑">這 10 年的路徑</h2>
-<p>講真的在 2007 年到 2011 年個人覺得算是台灣網路產業繼 Kimo, PChome, yam 等入口網站崛起後開始爆發的時代, 也是手機開始朝所謂的智慧型行動裝置邁進的時代</p>
-<p>剛好也是我還在讀大學的時候, 所以當時在學校時就常常在網路上看到這些資訊, 當時遠在美國也是矽谷開始發展起來的時候, 台灣相對較後面才開始有許多所謂的新創公司開始出現</p>
-<p>因為以前就對資訊產業有興趣, 但是因為不會讀書, 所以就只好靠填志願分發學校</p>
-<p>當時直接條列的順序是國立大學-&gt;資訊科系-&gt;機械-&gt;土木</p>
-<p>然後分數實在太爛</p>
-<p>所以最後落在國立臺灣海洋大學的河海工程系 XD</p>
-<p>不過雖然大學都在打電動看動畫和睡覺中度過</p>
-<p>但還是有選修資訊相關和自己開始嘗試寫程式</p>
-<p>最後到大三才知道原來有前端工程師的職業, 而且相對其他資訊類的工作沒有要求那麼高</p>
-<p>而且以前就喜歡搞一些 UI 互動的東西</p>
-<p>所以就決定了職業走向</p>
-<h3 id="2012--2015-miiicasa-雲永科技">2012 ~ 2015 miiiCasa 雲永科技</h3>
-<p>到了 2012 年替代役要退伍了就開始找工作, 還不錯的是當時也有些新創的公司可以投履歷</p>
-<p>直到投到了一家名為 miiiCasa(雲永科技) 的公司, 在當時也算是新創公司(從 D-link 內部新創, 之後獨立出來的), 裡面的面試官(Awoo) 非常熱情</p>
-<p>而且在面試過程中也願意反饋許多東西給我這個第一次找工作的菜鳥</p>
-<p>當時也有拿到其他新創公司的 offer, 但感受到這間公司應該能讓我學習到許多東西</p>
-<p>也真的是很有幸加入這家公司, 進到公司後才知道原來裡面有 5 成以上的人來自大公司(Y!, PChome, PX大通&hellip;)</p>
-<p>公司也不少人在如今業界和社群也是貢獻良多大佬, 一些研討會和社群的創辦發起人都有當時公司的人</p>
-<p>當時網路上開始想要一些技術社群或是實體的技術研討會, 公司有些人很熱血的開始籌劃</p>
-<p>真的在裡面學習良多, 也學到許多工作模式與方式</p>
-<h3 id="2015--2019-第一網站">2015 ~ 2019 第一網站</h3>
-<p>因為在 miiiCasa 後期, 許多人因為生涯規劃, 陸續離開後</p>
-<p>我反而變成裡面最老的 F2E, 外加當時母親有輕微中風且剛恢復, 想要找找看能不能通勤時間短或是能部分在家的時間能有比較多的時間照顧母親</p>
-<p>當時覺得也是時候要換個公司了, 也面試了一些公司(包含我當初在學校時就想去的一些公司, 具體可以看我之前寫的面試文章的<a href="https://blog.tedshd.io/posts/prepare_resume/">求職經歷分享</a>)</p>
-<p>最後也進到一間也是當時 Y! 的人出來創業的公司</p>
-<p>老闆和總經理都算是業界很有名的人(Kimo 創辦人和 Tsung)</p>
-<p>裡面也是很多 Y! 出來的員工</p>
-<p>所以裡面也學習到不少東西</p>
-<p>因為剛進去時也是剛好是公司要成長起來的時候</p>
-<p>所以算是在裡面處理了大多和前端有關的服務的整個重構以便於讓整個服務比較維護和開發</p>
-<p>也因為公司發展起來, 開始增加人力</p>
-<p>在這期間最多底下帶了三個前端工程師</p>
-<p>也是第一次有了帶人的經驗</p>
-<p>如何合理的分配工作與幫助團隊進步也是個難得的經驗</p>
-<h3 id="2019--2021-台灣雪豹科技--樂欣國際">2019 ~ 2021 台灣雪豹科技 / 樂欣國際</h3>
-<p>台灣雪豹科技!!</p>
-<p>當年高調來台灣的陸資</p>
-<p>還租下台北 101 最高的辦公室(83F)</p>
-<p>關於這間公司有很多八卦這裡就不提了</p>
-<p>沒想到當時竟然裡面有團隊要找前端工程師(但要求要對後端熟悉)</p>
-<p>雖然很多八卦與傳聞</p>
-<p>但衝著是 101 最高辦公室名聲</p>
-<p>衝就對了</p>
-<p>也運氣很好的進去了 XD</p>
-<p>雖然我進去的時間點不是爆發的時間點, 甚至開始走下坡了</p>
-<p>但是我是去解成就的(台北 101 最高的辦公室)</p>
-<p>誰管那麼多啊</p>
-<p>這也是第一次進到一個做全球服務的公司</p>
-<p>國際化, 使用者量級, 薪資真的不是只做台灣市場的公司能比</p>
-<p>真的是開了眼界</p>
-<p>跨國協作, 完整的系統架構, 充足的開發與部署流程</p>
-<p>受益良多</p>
-<p>也感受到陸資的狼性(雖然後面這匹狼已經不跑了 XD)</p>
-<h3 id="2021--2022-立應科技">2021 ~ 2022 立應科技</h3>
-<p>因為 2021 年到 2022 年受到疫情影響與 2021 市場的增長</p>
-<p>市場有很多機會加上當時整個後端 team 剩下我ㄧ個人?!</p>
-<p>真的快撐不住了</p>
-<p>也剛好前主管來問我要不要到一間新創試試看</p>
-<p>我就二話不說地答應了</p>
-<p>就到現在這間公司</p>
-<p>也是個陸資, 它的目標也是做全球市場</p>
-<p>而且不知道是不是 A 輪拿了不少錢</p>
-<p>薪資開的都是外商水準</p>
-<p>公司的成員 9 成聽說都是大家互相挖來的 XD</p>
-<p>成員組成也很可怕</p>
-<p>台灣雪豹, 中國獵豹, 字節跳動, 豌豆莢, 百度, 小米</p>
-<p>每個都是從巨量公司逃難(X)挖角(O) 來的</p>
-<p>但有一點比較特別的是拿美國爸爸的錢 XD</p>
-<p>但今年下半年也是受到全球經濟市場的的萎縮</p>
-<p>甚至 pre-B 輪第二階段的錢都說要延後發放&hellip;</p>
-<p>整個公司都還在燒錢的狀態, Q3 甚至 layoff 1/3 左右的人&hellip;</p>
-<p>真的感受到陸資的魄力與果斷&hellip;</p>
-<p>但這間公司也算是敢給&hellip;</p>
-<p>Q1 因為我們部門的 app 衝上 iOS 社交類第一名, 靠著這個拿到 pre-B 輪</p>
-<p>所以整個部門的人都有拿到獎金</p>
-<p>但陸資的狼性也是在的 XD</p>
-<p>ASAP, 996 是基本</p>
-<p>在新創就是拚市場與存活</p>
-<p>成功就起來大家爽爽賺</p>
-<p>不成功就會倒下各自回家 XD</p>
-<h2 id="總結一下">總結一下</h2>
-<ol>
-<li>不要讓自己成為公司的天花板, 要也要有很多人一起成為天花板, 不然就會受限在那邊(這對工程師是致命問題)</li>
-<li>人脈很重要, 好好做事好好幹, 讓人留下好印象, 自然有好缺就會來找你</li>
-<li>服務做得大(全球市場), 薪水才能領的高(因為公司獲利高), 先不要只抱怨公司不加薪, 請思考為什麼公司不加薪和為什麼公司不想給你加薪</li>
-<li>不爽可以不要幹, 外面還是有很多機會的, 只是你看不看的上和你進不進的去</li>
-<li>學什麼程式語言都不重要, 學英文最重要&hellip;</li>
-<li>像我這種外語不行的進不去一般外商可以選擇陸資(如果敢拚和不在意政治問題的話, 以我的經驗, 大家都會避免談論這問題, 畢竟左岸有強大的防火牆在 XD)</li>
-<li>陸資真的大多時候是 996 ~ 007 但是目前待的兩間陸資都是敢給(pay 可以談很好, 獎金也不錯)但績效不好或是公司運營狀況不佳也是敢果斷裁人的</li>
-</ol>
-<p>自己認爲自己是個幸運的人</p>
-<p>在工作上遇到許多貴人</p>
-<p>才能讓我持續地走下去</p>
-<p>在這工作的 10 年間</p>
-<p>會發現在網路的資訊業這領域進步很快</p>
-<p>基本上每年都有新東西要學</p>
-<p>說實在話這是個累人的工作</p>
-<p>講不好聽的</p>
-<p>基本上如果是為了賺更多的錢和能夠在之後找到更好的工作</p>
-<p>幾乎都在無時無刻的學習新東西, 了解基本原理, 儘量加強基本基礎</p>
-<p>不然不考慮未來的話就是在一間穩定的公司內躺平就好, 但未來也不好找工作, 薪資也無法有什麼突破</p>
-<p>這幾年隨著工作量越來越重與一些可能的無形壓力?</p>
-<p>打電動的時間變少, 想做的事情也很多</p>
-<p>身體也快不行了</p>
-<p>大家都說要 Work Life balance</p>
-<p>但我自己對慾望的追求和低下的能力讓我很難做到這樣的事</p>
-<p>這也是未來希望能夠優化和改善的地方&hellip;</p>
+                <p><h2 id="前期比較花時間的準備">前期比較花時間的準備</h2>
+<p>收款銀行帳戶</p>
+<p>公司登記資料</p>
+<h2 id="是否需要試用期">是否需要試用期</h2>
+<h2 id="不同地區設定不同價格">不同地區設定不同價格</h2>
+<p>避開匯率的問題</p>
+<h2 id="退款處理">退款處理</h2>
+<p>由於是可以在商店平台做退款(所以需要客戶端或是服務端定期確認商店的訂閱狀態)</p>
+<p><a href="https://support.apple.com/en-us/HT204084">https://support.apple.com/en-us/HT204084</a></p>
+<p><a href="https://support.google.com/googleplay/answer/2479637">https://support.google.com/googleplay/answer/2479637</a></p>
+<h2 id="取消續訂處理">取消續訂處理</h2>
+<p>取消續訂也是需要服務端或是客戶端確認訂閱狀態</p>
+<p><a href="https://support.apple.com/en-us/HT202039">https://support.apple.com/en-us/HT202039</a></p>
+<p><a href="https://support.google.com/googleplay/answer/7018481">https://support.google.com/googleplay/answer/7018481</a></p>
+<h2 id="取消訂閱流程">取消訂閱流程</h2>
+<p>提供商店的 support 網址</p>
+<p><a href="https://support.apple.com/en-us/HT202039">https://support.apple.com/en-us/HT202039</a></p>
+<p><a href="https://support.google.com/googleplay/answer/7018481">https://support.google.com/googleplay/answer/7018481</a></p>
+<h2 id="價格對應的訂閱-id-需要有後端配置下發給客戶端以利於價格調整">價格對應的訂閱 id 需要有後端配置下發給客戶端以利於價格調整</h2>
+<p>避免用戶使用舊版 app 訂閱舊價格</p>
+<h2 id="訂閱量與續訂的數據埋點取消訂閱也需要上報">訂閱量與續訂的數據埋點(取消訂閱也需要上報)</h2>
+<p>須注意訂閱量與預估收入的計算</p>
+<h2 id="購買--訂閱狀態是跟著-google-或是-apple-帳號">購買 / 訂閱狀態是跟著 Google 或是 Apple 帳號</h2>
+<p>需要注意自己服務如何和 Google 帳號或是 Apple 帳號關聯(或是訂單 id 關聯)</p>
+<h2 id="客戶端需要和商店確認訂單與後端確認訂閱狀態增強安全性">客戶端需要和商店確認訂單與後端確認訂閱狀態(增強安全性)</h2>
+<h2 id="app-store-文案需要添加訂閱相關事項與協議">App store 文案需要添加訂閱相關事項與協議</h2>
+<p><a href="https://developer.apple.com/forums/thread/112963">Guideline 3.1.2 - Business - Payments - Subscriptions</a></p>
+<p>這部分可以參考其他有訂閱或購買制的 App 的 App store 頁面</p>
+<h2 id="ios-需要添加恢復訂閱功能">iOS 需要添加恢復訂閱功能</h2>
+<p>因為服務和訂閱並非緊密關聯, 所以需要實作恢復訂閱來讓服務的帳號和訂閱能重新關聯起來</p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/pay_attention_to_app_iap/">Read more</a></p>
                 
             </div>
         </div>
@@ -340,7 +252,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/nginx_use_host_reverse_proxy/">Nginx 使用 host 判斷作 reverse proxy</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/">修復 mac m1 開機偵測不到 type-c 螢幕</a></h3>
 
                 
                 
@@ -350,33 +262,45 @@
 <span class=" u-capitalized ">
     on
 </span>
-2022-12-02
+2023-01-08
 </p>
                 
 
                 
-                <p><p>直接上設定</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Nginx" data-lang="Nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:80</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">server_name</span> <span style="color:#e6db74">api.example.com,</span> <span style="color:#e6db74">example.com</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-NginX-Proxy</span> <span style="color:#e6db74">true</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">set</span> $proxy <span style="color:#e6db74">http://0.0.0.0:3000</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">if</span> <span style="color:#e6db74">(</span>$host ~ <span style="color:#e6db74">api.example.com)</span> {
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">set</span> $proxy <span style="color:#e6db74">http://0.0.0.0:8000</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_pass</span> $proxy;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></p>
+                <p><p>最近突然發現 mac 在重開機或是關閉後開機時</p>
+<p>type-c 的螢幕無法被偵測到</p>
+<p>拔插 type-c 和 mac 那端的連接也沒用</p>
+<p>得拔插螢幕端的 type-c</p>
+<p>就覺得很奇怪, 因為之前都是正常的</p>
+<p>所以先推測是 mac OS 的版本問題</p>
+<p>從 12.x -&gt; 13.1 後發現還是一樣&hellip;</p>
+<p>所以就認真在網路找了一下有沒有人碰過這樣的問題</p>
+<p>先找到一個類似的</p>
+<p>但是裡面說 12.x 後修復的問題</p>
+<p>所以我推測應該是別的問題</p>
+<p>就繼續找</p>
+<p>最後找的了這篇文章</p>
+<p><a href="https://machow2.com/external-display-issues/">17 Ways To Fix External Monitors Not Working On Mac (inc. M1/ M2 Macs, Ventura &amp; Monterey)</a></p>
+<p>17 種慢慢試總算可以找到原因吧</p>
+<p>但也不是傻了從第一條開始試</p>
+<p>所以先看了一下有哪些方法</p>
+<p>結果就馬上喵到一個最有可能的問題</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E6%88%AA%E5%9C%96%202023-01-08%20%E4%B8%8B%E5%8D%882.36.33.png?alt=media&amp;token=5d8791ee-7a40-4ff2-b0d6-09ba7ea1991c" alt=""></p>
+<p>一改完就恢復正常了</p>
+<p>內文是說到</p>
+<blockquote>
+<p>macOS Ventura introduced a new feature “USB Restricted Mode” for M1 and M2 Macs which requires you to allow USB-C devices such as monitors to connect to your Mac.</p>
+</blockquote>
+<p>但奇怪的是我在 mac OS 12 就遇到這問題</p>
+<p>所以當時就先升版本到 mac OS 13(Ventura) 才改</p>
+<p>所以也不太肯定 mac OS 12 是不是可以用這問題解決</p>
+</p>
                 
 
                 
 
+                
+                <p><a href="https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/">Read more</a></p>
                 
             </div>
         </div>

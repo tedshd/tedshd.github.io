@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.98.0" />
+	<meta name="generator" content="Hugo 0.119.0">
     
 
 
@@ -29,7 +29,6 @@
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
@@ -189,7 +188,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/ssh_to_windows_server/">SSH 到 Windows Server</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/firebase_app_check/">Firebase app check 使用紀錄</a></h3>
 
                 
                 
@@ -199,83 +198,105 @@
 <span class=" u-capitalized ">
     on
 </span>
-2022-10-09
+2022-10-31
 </p>
                 
 
                 
-                <p><p>最近因為需求要接手 Windows Server 進行維護與開發</p>
-<p>因為只有在很久以前幫別人處理 IIS Server 一點經驗</p>
-<p>時間也非常久了</p>
-<p>所以筆記一下這次的處理過程</p>
-<p>這次處理的 server 版本是 Windows Server 2019</p>
-<h2 id="ssh-on-gcp-compute-engine">SSH on GCP Compute Engine</h2>
-<p>如果是建置在 Google Cloud 的 Compute Engine 上的話</p>
-<p>就參考文件 <a href="https://cloud.google.com/blog/products/compute/using-openssh-on-windows-compute-engine-instances">Getting started with OpenSSH on Windows Compute Engine instances</a> 就可以了</p>
-<h2 id="前置作業">前置作業</h2>
-<p>之前似乎是採用 remote desktop 的方式</p>
-<p>這對習慣命令列操作的人來說會有點不習慣</p>
-<p>而且交接程式碼和檔案都放在那台機器上</p>
-<p>所以為了之後方便操作, 首先就要安裝 OpenSSH</p>
-<h3 id="安裝-openssh-server">安裝 OpenSSH server</h3>
-<p>因為 SSH 會有 server 和 client 的部分</p>
-<p>因為是需要連進去 Windows Server</p>
-<p>所以只需要處理 OpenSSH server 的部分</p>
-<p><a href="https://learn.microsoft.com/zh-tw/windows-server/administration/openssh/openssh_install_firstuse">Refer - 安裝 OpenSSH</a></p>
-<ol>
-<li>開啟 設定，選取 [應用程式] &gt; 應用程式 &amp; 功能，然後選取 [選用功能]。</li>
-</ol>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.23.05.png?alt=media&amp;token=8e54e549-f3d2-414a-b122-917650205f86" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.25.09.png?alt=media&amp;token=a4217abd-1cd2-424f-9762-0aade608b1c7" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.26.02.png?alt=media&amp;token=b5900fc2-5b5e-4f81-a878-b9bccb97da38" alt=""></p>
-<ol start="2">
-<li>掃描清單，查看是否已安裝 OpenSSH。 如果沒有，請在頁面頂端選取 [ 新增功能]，然後：</li>
-</ol>
-<ul>
-<li>尋找 OpenSSH 用戶端，然後按一下 [安裝]。</li>
-<li>尋找 OpenSSH 伺服器，然後按一下 [安裝]。</li>
-</ul>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.27.27.png?alt=media&amp;token=99f88b20-c30d-49f5-9cc5-e6e2c7a2add1" alt="尋找 OpenSSH 伺服器，然後按一下 [安裝]。"></p>
-<h3 id="設定-ssh">設定 SSH</h3>
-<p>使用 <code>PowerShell</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Start-Service sshd
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Add-WindowsCapability -Online -Name OpenSSH.Server
-</span></span></code></pre></div><p>這時應該會輸出</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Path          <span style="color:#960050;background-color:#1e0010">:</span>
-</span></span><span style="display:flex;"><span>Online        <span style="color:#960050;background-color:#1e0010">:</span> True
-</span></span><span style="display:flex;"><span>RestartNeeded <span style="color:#960050;background-color:#1e0010">:</span> False
-</span></span></code></pre></div><h3 id="設定">設定</h3>
-<p>修改 SSH 設定</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>start-process notepad C:\Programdata\ssh\sshd_config
-</span></span></code></pre></div><h3 id="設定防火牆">設定防火牆</h3>
-<p><code>Server Manager</code> -&gt; <code>Tool</code> -&gt; <code>Windows Defender Firewall with Advanced Security</code></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.46.09.png?alt=media&amp;token=986745f0-c9e1-4fb6-b23f-6184d23e529b" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.47.36.png?alt=media&amp;token=6eef15cc-9f4c-42fd-80cf-3382fb87c218" alt=""></p>
-<p><code>Inbound Rules</code> -&gt; <code>New Rule</code></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.49.png?alt=media&amp;token=ea1cd8a7-5802-4b52-8b63-f316c8cd03cd" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.57.png?alt=media&amp;token=577864f2-5d34-483a-b3c0-4adcf530649d" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.14.png?alt=media&amp;token=2690295a-8c34-4697-b716-a930d6dc1d2a" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.35.png?alt=media&amp;token=15ebdba8-78a5-4235-b7c7-84e0fae388b7" alt=""></p>
-<p><a href="https://www.vultr.com/docs/how-to-install-openssh-on-windows-server-2019-or-2022/">Refer - How to Install OpenSSH on Windows Server 2019 or 2022</a></p>
-<h2 id="ssh-連線">SSH 連線</h2>
-<p>因為目前沒有建立 ssh key 來連線的打算</p>
-<p>這邊是還用帳號密碼來連線</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh &lt;用戶名&gt;@&lt;IP&gt;
-</span></span></code></pre></div><p>之後再填入密碼來登入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>administrator@WINDOWS C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\A</span>dministrator&gt;
-</span></span></code></pre></div><p>這邊需要注意的因為是連線到 Windows</p>
-<p>所以要用的指令都得是 Dos 指令</p>
-<h2 id="利用-scp-把資料複製下來">利用 SCP 把資料複製下來</h2>
-<p>這邊的例子是在 Mac scp Windows Server 到 Mac</p>
-<p>需要注意的是在使用 SCP 時, Windows 路徑的分隔符號得調整</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>scp -r &lt;用戶名&gt;@&lt;IP&gt;:C:/&lt;路徑&gt;/&lt;目標資料夾&gt; &lt;本地端資料夾&gt;
-</span></span></code></pre></div></p>
+                <p><h2 id="前言">前言</h2>
+<p>因為公司有使用部分的 firebase 服務</p>
+<p>那就順便用一下前一陣子推出的 <a href="https://firebase.google.com/products/app-check">app check</a> 的服務(雖然我覺得這服務還沒到完善的地步)</p>
+<p>這服務主要是要協助驗證來自 client 的請求是否合法</p>
+<p>不只單純是 firebase 的服務可以用</p>
+<p>一般 API 也可以使用</p>
+<h2 id="使用">使用</h2>
+<p>目前 SDK 只支持 Node.js</p>
+<p><a href="https://firebase.google.com/docs/app-check/custom-resource-backend">Verify App Check tokens from a custom backend</a></p>
+<p>因為原本的後端不是 Node 的環境</p>
+<p>所以使用 Node.js 建立起一個 middleware 以便讓原有的 API server 來串接</p>
+<h2 id="流程">流程</h2>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2Ffirebase%20app%20check-Copy%20of%20Page-1.drawio.png?alt=media&amp;token=c8d0b7ee-875f-4380-b4e9-66c33796a990" alt=""></p>
+<h2 id="所需作業">所需作業</h2>
+<p>app 需要使用相關對應的 SDK</p>
+<p>在 firebase console 把 app check 選單中建立的 app 做註冊</p>
+<p>因為是改為單獨建立 Node.js 的服務</p>
+<p>所以會針對文件範例做調整</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">http</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;http&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;url&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">admin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;firebase-admin&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">serviceAccount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#a6e22e">__dirname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/serviceAccountKey.json&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">initializeApp</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">credential</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">credential</span>.<span style="color:#a6e22e">cert</span>(<span style="color:#a6e22e">serviceAccount</span>)
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusOk</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusForbidden</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Forbidden&#39;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusUnauthorized</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Unauthorized&#39;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>(<span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">response</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">queryObject</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>).<span style="color:#a6e22e">query</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">method</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appCheckToken</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">queryObject</span>[<span style="color:#e6db74">&#39;token&#39;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">appCheckToken</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">403</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">statusForbidden</span>));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appCheckClaims</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">appCheck</span>().<span style="color:#a6e22e">verifyToken</span>(<span style="color:#a6e22e">appCheckToken</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// If verifyToken() succeeds, continue with the next middleware
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// function in the stack.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;appCheckClaims&#39;</span>, <span style="color:#a6e22e">appCheckClaims</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>          ...<span style="color:#a6e22e">appCheckClaims</span>,
+</span></span><span style="display:flex;"><span>          ...<span style="color:#a6e22e">statusOk</span>
+</span></span><span style="display:flex;"><span>        }));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;err&#39;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">401</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">statusUnauthorized</span>));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">statusForbidden</span>));
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3300</span>, <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;3300 port&#39;</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>其中 <code>serviceAccountKey.json</code> 是 firebase console 中產生的</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2FScreen_Shot_2022-11-02_at_9_51_27_AM.png?alt=media&amp;token=23519780-f442-4bfd-b1f4-db69739cbb81" alt=""></p>
+<h2 id="使用方式">使用方式</h2>
+<p>可以使用 pm2 之類的服務啟動</p>
+<p>這樣就可以用 <code>http://localhost?token=&lt;app check token&gt;</code> 的方式呼叫驗證</p>
+<p>建議在內部使用, 走內部 IP 或內部網域以減少傳輸時間</p>
+<p>直接以 rest api 的方式呼叫</p>
+<h2 id="後續升級">後續升級</h2>
+<p>如果之後公司其他團隊也有其他的 firebase 的 app check 需求也可以添加參數或路由來使用各自的 firebase 專案設定來共用這個 API</p>
+</p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/ssh_to_windows_server/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/firebase_app_check/">Read more</a></p>
                 
             </div>
         </div>
@@ -288,7 +309,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/">在 JavaScript 處理各個時區對應的日期時間</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/unarchived_firebase_console_dynamic_link/">Unarchived firebase console dynamic link</a></h3>
 
                 
                 
@@ -298,117 +319,45 @@
 <span class=" u-capitalized ">
     on
 </span>
-2022-10-04
+2022-10-22
 </p>
                 
 
                 
-                <p><h2 id="intro">Intro</h2>
-<p>在 JavaScript 中的日期時間是個當初沒有定義出良好設計的東西</p>
-<p>這裡先舉幾個常見的問題</p>
+                <p><p>Sometimes a dynamic link is accidentally archived.</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2FScreen_Shot_2022-10-22_at_9_17_52_PM.png?alt=media&amp;token=af826e6a-8d67-40bb-8f17-f8c5fd2ca7c8" alt=""></p>
+<p>But doesn&rsquo;t have any option show archived dynamic link list.</p>
+<p>BTW</p>
+<p>You have a way to unarchived this dynamic link.</p>
+<h2 id="use-post-api-update-this-dynamic-link">Use POST API update this dynamic link</h2>
 <ol>
-<li>日期格式問題</li>
-<li>日期呈現的語系問題</li>
-<li>時區問題</li>
-<li>12 小時 24 小時問題
-&hellip;</li>
+<li>Find your filebase console auth data</li>
 </ol>
-<p>以原生的 API 在處理日期時間大多得自己額外做許多事情或是套用一些第三方 libary 來協助達成目的</p>
-<h2 id="時區問題">時區問題</h2>
-<p>這次主要是討論關於時區的問題</p>
-<p>在早期只能用 <code>getTimezoneOffset()</code> 的方法搭配時區表去換算各地時區</p>
-<p>現在倒是可以使用 <code>Intl.DateTimeFormat</code></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset">refer - Date.prototype.getTimezoneOffset()</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat">refer - Intl.DateTimeFormat</a></p>
-<p>其實上述的問題, 在使用 <code>Intl.DateTimeFormat</code> 基本上都可以解決掉</p>
-<p>詳細方式可以參以下文件</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat">refer - Intl.DateTimeFormat() constructor</a></p>
-<p>在時區中又有一個常常被忽視的的問題就是夏令時間(daylight savings time) 這個在夏季時就得把時間提前一小時的問題</p>
-<p>如果自己處理時區就得記得處理這問題</p>
-<p>使用 <code>Intl.DateTimeFormat</code> 的話系統已經自動處理了</p>
-<h2 id="intldatetimeformat">Intl.DateTimeFormat</h2>
-<p>這邊簡單介紹一下 <code>Intl.DateTimeFormat</code> 的一些用法與注意事項</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Intl</span>.<span style="color:#a6e22e">DateTimeFormat</span>(<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">language</span>, {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">timeZone</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;America/Los_Angeles&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">dateStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;full&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">timeStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;full&#39;</span>
-</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">new</span> Date())
-</span></span></code></pre></div><p>這個範例就表示了當前洛杉磯的時間</p>
-<p>第一個參數是語系, 採用 BCP 47 標準, 基本上建議使用 <code>navigator.language</code> 或是自己寫死(特定情況時使用)或是另外帶入</p>
-<p>第二個參數的物件除了 <code>timeZone</code> 是為了顯示指定時區之外其他的參數基本上都在定義顯示的型式</p>
-<p>例如</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Intl</span>.<span style="color:#a6e22e">DateTimeFormat</span>(<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">language</span>, {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;numeric&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">month</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">day</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hour</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">minute</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">second</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2-digit&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hourCycle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;h24&#39;</span>,
-</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">new</span> Date())
-</span></span></code></pre></div><p>這樣就會返回 <code>YYYY/MM/dd HH:mm:ss</code> 的顯示方式</p>
-<p>額外提幾個比較特別的參數</p>
-<ul>
-<li>timeZone: 時區的值使採用 IANA 所定義出的標準名稱基本就是像是 Asia/Taipei 這樣的格式, 有一個比較特別值是可以使用 &lsquo;UTC&rsquo; 表示當前的 UTC+0 時間(簡單說明就是時區零的時間)</li>
-<li>calendar: 是設定要使用的曆法, 例如: <code>calendar: 'chinese'</code> 就是農曆</li>
-<li>hour12: 是表示是要用 12 小時制或 24 小時制顯示, 用 24 小時制就不會另外顯示上午或下午</li>
-</ul>
-<p>剩下的可以參考文件來使用</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat">refer - Intl.DateTimeFormat() constructor</a></p>
-<h2 id="處理全球性的活動時間問題">處理全球性的活動時間問題</h2>
-<p>接下來來處理實作面的問題</p>
-<p>當服務擴及全球是需要在全球各地或是各別國家的特別節日等舉辦活動</p>
-<p>時間就很重要</p>
-<p>如果時間搞錯, 使用者根本無法在正確的時間參與到活動, 那就準備等著收到一堆抱怨</p>
-<p>所以都會有以下策略來處理這樣的問題</p>
-<h3 id="說明活動開始的時間是對應哪個時區的時間">說明活動開始的時間是對應哪個時區的時間</h3>
-<p>例如活動指定開始時間是 2022/12/25 08:00 GTM-7(洛杉磯時間)</p>
-<p>這公告發在美國地區還沒什麼問題, 因為全美國只有大概橫跨了 5 個時區</p>
-<p>但這公告對在亞洲和歐洲地區的人就很痛苦, 因為還得使用者自己換算成自己當地的時間</p>
-<p>所以如果以全球性的活動來說這對跨比較多時區的人來說很不友善</p>
-<p>但這也是有解法的</p>
-<p>只要在 client 轉換成 client 當地的時間就可以了, 才比較容易讓使用者了解到正確的時間</p>
-<h3 id="針對不同區開始對應區域的公告與活動">針對不同區開始對應區域的公告與活動</h3>
-<p>這是比較常見的做法</p>
-<p>大多時候可以針對像是不同國家的節慶活動或是各個區域不同的活動來處理</p>
-<p>所以只要針對該地區的的時區設定就可以了</p>
-<h2 id="管理系統的設計">管理系統的設計</h2>
-<p>下面說明一個比較麻煩的情況</p>
-<p>當需要設計一個面對全球性的推播或公告系統時會遇到上述的問題</p>
-<p>在管理人員或運營人員在操作系統時</p>
-<p>會有一個很基本的思維是</p>
-<p>想要在美國國慶的時候設定推播通知</p>
-<p>那很理所當然地在介面會希望就是選美國當地的時區, 之後再選美國當地的日期時間</p>
-<p>不會希望要自己換算美國國慶的時間轉成自己當地的時間是什麼時間再去設定</p>
-<p>這在時間處理上就會是一個很有趣的問題</p>
-<p>JavaScript 的 Date 是帶有時區的(client 裝置設定的時區)</p>
-<p>所以是需要做額外處理的</p>
-<p>但原理也很簡單</p>
-<p>先用 <code>new Date(value)</code> 把設定的時間取出來轉成 timestamp</p>
-<p>例如: <code>new Date('2022-10-04T17:00:00')</code></p>
-<p>這會返回 <strong>1664874000000</strong></p>
-<p>但這是當前 client 設定時區的 2022-10-04 下午五點的 timestamp</p>
-<p>並非期望時區的時間</p>
-<p>這時就要做時區的校正</p>
-<p>公式大概如下</p>
-<p><code>new Date(設定推播的時間).getTime() + 當前時區 - 設定推播的時區</code></p>
-<p>所以大概就是</p>
-<p><code>new Date(dateString).getTime() - new Date().getTimezoneOffset()*60*1000 - 設定推播的時區(毫秒)</code></p>
-<p>那只要把這個丟給後端讓後端依照這時間發送就可以了</p>
-<p>到了這邊, 大概剩下一個問題就是麻煩的夏令時間(daylight savings time) 問題</p>
-<p>因為不可能自己處理這問題</p>
-<p>所以這邊採用了一個 <a href="https://timezonedb.com/">timezonedb</a> 的服務</p>
-<p>這個服務的 api 會返回當前所有時區而且是已經校正過夏令時間的時區</p>
-<p>所以就可以拿取得這個服務的資料來當成自己的時區資料</p>
-<p>最後的最後</p>
-<p>剩下一個尷尬的小問題就是如果設定的時間和要推送的時間剛好是跨夏令時間的開始和結束時, 就會有一小時的誤差, 目前還沒想到比較好的解法, 只能在設定時儘量避掉這樣的情況</p>
+<p>You can edit dynamic link data and then catch request when save it.</p>
+<p>Find this request <code>https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;key=&lt;YOUR KEY&gt;</code> and copy header</p>
+<ol start="2">
+<li>Build POST data</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl --location --request POST <span style="color:#e6db74">&#39;https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;key=&lt;YOUR KEY&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Authorization: &lt;YOUR Authorization&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Origin: https://console.firebase.google.com&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Referer: &lt;REFER YOUR PROJECT LINK&gt;?linkUrl=&lt;YOUR ARCHIVED DYNAMIC LINK&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Host: firebasedurablelinks-pa.clients6.google.com&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Cookie: &lt;YOUR COOKIE&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;X-Goog-AuthUser: &lt;REFER YOUR ORIGIN REQUEST&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Content-Type: text/plain&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{&#34;durableLink&#34;:{&#34;shortDurableLink&#34;:{&#34;link&#34;:&#34;&lt;YOUR ARCHIVED DYNAMIC LINK&gt;&#34;}},&#34;newDurableLink&#34;:{&#34;shortDurableLink&#34;:{&#34;visibility&#34;:&#34;UNARCHIVED&#34;}},&#34;newDurableLinkMask&#34;:&#34;short_durable_link&#34;,&#34;projectInfo&#34;:{&#34;projectNumber&#34;:&#34;&lt;YOUR PROJECT NUMBER&gt;&#34;}}&#39;</span>
+</span></span></code></pre></div><p>Finally you can unarchived this dynamic link.</p>
+<p>Have a nice day.</p>
+<p><a href="https://stackoverflow.com/questions/54086964/where-are-archived-dynamic-links">Refer - Where are archived Dynamic Links?</a></p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/unarchived_firebase_console_dynamic_link/">Read more</a></p>
                 
             </div>
         </div>

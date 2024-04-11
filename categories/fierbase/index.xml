@@ -18,9 +18,9 @@
 But doesn&amp;rsquo;t have any option show archived dynamic link list.
 BTW
 You have a way to unarchived this dynamic link.
-Use POST API update this dynamic link  Find your filebase console auth data  You can edit dynamic link data and then catch request when save it.
+Use POST API update this dynamic link Find your filebase console auth data You can edit dynamic link data and then catch request when save it.
 Find this request https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;amp;key=&amp;lt;YOUR KEY&amp;gt; and copy header
-Build POST data  curl --location --request POST &amp;#39;https://firebasedurablelinks-pa.</description>
+Build POST data curl --location --request POST &amp;#39;https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;amp;key=&amp;lt;YOUR KEY&amp;gt;&amp;#39; \ --header &amp;#39;Authorization: &amp;lt;YOUR Authorization&amp;gt;&amp;#39; \ --header &amp;#39;Origin: https://console.</description>
     </item>
     
   </channel>

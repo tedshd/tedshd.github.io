@@ -31,7 +31,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
-
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
@@ -1220,6 +1219,14 @@
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1236,7 +1243,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/fixed_mac_external_hard_drive_not_detect/">解決 Mac 外接硬碟讀不到 / 沒有顯示</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/multi_line_ellipsis_css/">CSS 處理多行省略</a></h3>
 
                 
                 
@@ -1246,106 +1253,24 @@
 <span class=" u-capitalized ">
     on
 </span>
-2023-10-29
+2023-11-06
 </p>
                 
 
                 
-                <p><h2 id="intro">Intro</h2>
-<p>有時 Mac 會讀不到外接硬碟</p>
-<p>可以試試以下方式解決問題</p>
-<h2 id="重新開機">重新開機</h2>
-<p>可能一些未知的因素導致當下讀取不到</p>
-<p>可以重新開機後再重新連接外接硬碟</p>
-<h2 id="啟用外接硬碟的可見性">啟用外接硬碟的可見性</h2>
-<p>如果你的電腦系統為在 macOS Big Sur 或 Catalina，那你就需要啟用外接硬碟的可見性。你可以根據以下步驟進行操作。</p>
-<ol>
-<li>
-<p>前往「Finder」&gt;「偏好設定」&gt;「一般」。</p>
-</li>
-<li>
-<p>此時，你可以看到「在桌面上顯示這些項目」的欄位，勾選「硬碟」和「外接硬碟」的選項。</p>
-</li>
-</ol>
-<h2 id="檢查系統資訊中的外部硬碟驅動程式">檢查系統資訊中的外部硬碟驅動程式</h2>
-<p><strong>系統資訊</strong> 將會顯示所有連接至Mac的外部裝置、軟體、硬體和網路等所有訊息的地方。因此，你可以先在該位置進行檢測。</p>
-<ol>
-<li>
-<p>前往「應用程式」&gt;「工具程式」&gt;「系統資訊」。</p>
-</li>
-<li>
-<p>在左側欄位點選「USB」，然後查看外接硬碟的資訊。</p>
-</li>
-<li>
-<p>如果你可以看見相關資訊，Mac 卻無法顯示外接硬碟，那它可能正在被 macOS 修復。你可以前往「活動監視器」，以檢查是否有「fsck_hfs」或「fsck_exfat」的活動。</p>
-</li>
-</ol>
-<h2 id="運行apple診斷以檢測硬體問題">運行「Apple診斷」以檢測硬體問題</h2>
-<p>Mac 電腦擁有一套內建的診斷程式「Apple診斷」，以讓你查找故障的硬體問題。修復損壞的硬體也有可能解決Mac讀不到外接硬碟的情況。</p>
-<ol>
-<li>
-<p>拔除所有外接裝置，除了鍵盤、滑鼠等有用的裝置。</p>
-</li>
-<li>
-<p>重啟Mac，並在電腦啟動時按住鍵盤的「D」鍵，直到看到選擇語言的視窗才放手。</p>
-</li>
-<li>
-<p>接著，系統就會開始診斷動作，而你也會在介面看到進度列。</p>
-</li>
-<li>
-<p>完成診斷後，你就會看到電腦所面對的硬體問題以及相對的解決方案。</p>
-</li>
-</ol>
-<h2 id="重置-mac-的-nvram-或-pram">重置 Mac 的 NVRAM 或 PRAM</h2>
-<p>NVRAM 和 PRAM 是 Mac 電腦中的部分暫存。不管開機或關機，它都會保存特定數據。</p>
-<p>如果你的Mac無法讀取外接硬碟是基於硬體受損，那你也可以嘗試使用這個方法解決。</p>
-<ol>
-<li>
-<p>重啟 Mac，然後在電腦啟動時同時按住「control + option + P + R」鍵。</p>
-</li>
-<li>
-<p>按住這些按鍵長達大約 20 秒，直到你聽到電腦重啟的音效，或是看到蘋果標誌出現並消失後才放手。</p>
-</li>
-</ol>
-<h2 id="重置-mac-smc">重置 Mac SMC</h2>
-<p>SMC（System Management Controller）負責演算 Mac 的低階功能，因此如果重置 NVRAM或 PRAM 仍無法解決 Mac 外接硬碟無法顯示的問題，那你也可以嘗試重置 SMC。</p>
-<ol>
-<li>
-<p>將電腦關機，並連接上充電器。</p>
-</li>
-<li>
-<p>同時按住「電源按鈕 + shift + control + option」長達 10 秒。</p>
-</li>
-<li>
-<p>同時放開所有按鈕後，再次將電腦開機以檢查問題是否已被解決。</p>
-</li>
-</ol>
-<h2 id="使用終端機修復外接硬碟">使用「終端機」修復外接硬碟</h2>
-<p>除了磁碟工具程式，終端機也能有效解決電腦故障問題。因此，我們也建議你嘗試進行以下操作。</p>
-<ol>
-<li>
-<p>前往「Finder」&gt;「應用程式」&gt;「工具程式」&gt;「終端機」。</p>
-</li>
-<li>
-<p>輸入「diskutil list」，然後點擊「return」鍵，並記住外接硬碟的序號（disk#）。</p>
-</li>
-<li>
-<p>輸入「diskutil mountDisk /dev/disk#」，然後點擊「return」鍵。</p>
-</li>
-<li>
-<p>輸入「diskutil repairVolume /dev/disk#」，然後點擊「return」鍵。</p>
-</li>
-<li>
-<p>修復過程完成後，將終端機關閉。</p>
-</li>
-</ol>
+                <p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-CSS" data-lang="CSS"><span style="display:flex;"><span>.<span style="color:#a6e22e">multiline-ellipsis</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">-webkit-</span>box;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-webkit-</span>box-orient: <span style="color:#66d9ef">vertical</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-webkit-</span>line-clamp: <span style="color:#ae81ff">3</span>; <span style="color:#75715e">/* start showing ellipsis when 3rd line is reached */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">pre-wrap</span>; <span style="color:#75715e">/* let the text wrap preserving spaces */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="https://codefrontend.com/css-ellipsis/">refer - Easiest Way to Truncate Text With Ellipsis in CSS</a></p>
 </p>
                 
 
                 
 
-                
-                <p><a href="https://blog.tedshd.io/posts/fixed_mac_external_hard_drive_not_detect/">Read more</a></p>
                 
             </div>
         </div>
@@ -1358,7 +1283,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/fixed_mac_android_file_transfer_not_work/">Fixed android file transfer not work in mac</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/angular_build_custom_element/">Angular build custom element</a></h3>
 
                 
                 
@@ -1368,22 +1293,97 @@
 <span class=" u-capitalized ">
     on
 </span>
-2023-03-02
+2023-10-30
 </p>
                 
 
                 
-                <p><p>In macOS Ventura</p>
-<p>When i use android file transfer</p>
-<p>It doesn&rsquo;t work</p>
-<p>And refer to this <a href="https://discussions.apple.com/thread/254428061">question</a></p>
-<p>But I don&rsquo;t have the <strong>Google Drive</strong> app installed</p>
-<p>And then i found out quit the <strong>Dropbox</strong> app solved the problem</p>
+                <p><h2 id="intro">Intro</h2>
+<p>當使用 Angular 時, 有時會有需要自己建立一個自定義的元素</p>
+<p>通常這個都是為了重複使用</p>
+<p>這時會有兩種作法</p>
+<ol>
+<li>
+<p>自己建立一個元件, 再把這元件處理成 module, 這樣就可以有自定義元素了</p>
+</li>
+<li>
+<p>使用 angular create lib 的方式(<a href="https://angular.io/guide/creating-libraries">https://angular.io/guide/creating-libraries</a>)</p>
+</li>
+</ol>
+<p>如果是在公司內部自己使用, 用 1 或是 2 都沒差</p>
+<p>如果是要做成給外部或是別人使用, 甚至是開源出去, 那就是得用 2</p>
+<p>順帶一提如果要使用自己定義的元素, 需要安裝 <code>@angular/elements</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yarn add @angular/elements
+</span></span></code></pre></div><h2 id="自己建立元件">自己建立元件</h2>
+<p>這邊會用 <code>custom-element</code> 當成元件名字舉例</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ng generate component custom-element
+</span></span></code></pre></div><p>建立起一個 <code>custom-element</code> 元件</p>
+<p>之後就是依照寫元件的方式開發</p>
+<p>只是得自己手動處理一下在 <code>custom-element/custom-element.module.ts</code> 得添加和輸出與建立自定義元素的設定</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createCustomElement</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/elements&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createCustomElement</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/elements&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">NgModule</span>, <span style="color:#a6e22e">Injector</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">CustomElementComponent</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;./custom-element.component&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@NgModule</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">declarations</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">CustomElementComponent</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">exports</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">CustomElementComponent</span>],
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomElementModule</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(<span style="color:#66d9ef">private</span> <span style="color:#a6e22e">injector</span>: <span style="color:#66d9ef">Injector</span>) {
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ngDoBootstrap() {</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">customElement</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createCustomElement</span>(<span style="color:#a6e22e">CustomElementComponent</span>, { <span style="color:#a6e22e">injector</span>: <span style="color:#66d9ef">this.injector</span> });
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;app-custom-element&#39;</span>, <span style="color:#a6e22e">customElement</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>之後要使用的元件或是直接在最頂部的 <code>app.module.ts</code> 添加 import</p>
+<p>例如在最頂部的 <code>app.module.ts</code> 添加</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">CustomElementModule</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;./custom-element/custom-element.module&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@NgModule</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">CustomElementModule</span>
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><p>這樣就可以直接在 HTML 使用了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">app-custom-element</span>&gt;&lt;/<span style="color:#f92672">app-custom-element</span>&gt;
+</span></span></code></pre></div><h2 id="使用-angular-create-lib">使用 angular create lib</h2>
+<p>這個方式會比較多步驟</p>
+<p>最後如果要發佈到 npm 還需要做發佈的動作</p>
+<p>也可以做打包給別人用</p>
+<p>但如果不需要打包或發佈</p>
+<p>也可以單純建好後從 lib 載入來使用</p>
+<p>基本上跟著官方文件(<a href="https://angular.io/guide/creating-libraries">https://angular.io/guide/creating-libraries</a>)走就可以了</p>
+<p>這裡就補充下打包的部分</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ng build my-lib
+</span></span><span style="display:flex;"><span>cd dist/my-lib
+</span></span><span style="display:flex;"><span>npm pack
+</span></span></code></pre></div><p>這樣沒有意外的話會產生 <code>my-lib-0.0.1.tgz</code> (0.0.1 這個是隨著這個 lib 的 package.json)</p>
+<h3 id="安裝打包的套件">安裝打包的套件</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yarn add ./my-lib-0.0.1.tgz
+</span></span></code></pre></div><p>這樣就可以安裝了</p>
+<p>之後就正常載入使用</p>
+<h3 id="注意事項">注意事項</h3>
+<p>目前測試 <code>ng generate library my-lib</code> 創建出來的東西打包後</p>
+<p>有注意到如果本身有 import 其他套件的話</p>
+<p>套件 source code 並不會一起放進來</p>
+<p>應該是需要在該 lib 底下的 <code>package.json</code> 添加</p>
+<p>打包後, 這樣之後安裝時才會一起安裝</p>
+<p>例如 <code>projects/my-lib/package.json</code> 添加需要的套件</p>
+<p>或是在 <code>projects/my-lib/</code> 安裝套件, 讓 <code>package.json</code> 有紀錄到安裝什麼套件</p>
+<p>另外因為在開發與測試時如果同一個名字, 版號也一樣, yarn 會 cache, angular 也可能會 cache</p>
+<p>所以移掉後再安裝前建議先下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yarn cache clean
+</span></span></code></pre></div><p>也一起移出掉專案目錄底下的 <code>.angular</code> 資料夾</p>
 </p>
                 
 
                 
 
+                
+                <p><a href="https://blog.tedshd.io/posts/angular_build_custom_element/">Read more</a></p>
                 
             </div>
         </div>

@@ -31,7 +31,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
-
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
 
@@ -1220,6 +1219,14 @@
 
 
 
+
+
+
+
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1236,7 +1243,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-12-20-google-cloud-platform-not-enough-space-set-the-swap-kernel-upgrades/">Google Cloud Platform - 空間不足, 設定 swap, kernel 升級</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2016-01-31-466975/">HTML - redirect page from http-equiv</a></h3>
 
                 
                 
@@ -1246,65 +1253,40 @@
 <span class=" u-capitalized ">
     on
 </span>
-2015-12-20
+2016-01-31
 </p>
                 
 
                 
-                <p><h2 id="google-cloud-platform---空間不足-設定-swap-kernel-升級">Google Cloud Platform - 空間不足, 設定 swap, kernel 升級</h2>
-<h3 id="kernel-升級-設定-swap">kernel 升級, 設定 swap</h3>
-<p>最近強者我朋友在 Google Cloud Platform 上的 computer engine 上的 VM 升級 kernel 時發現升一升就 GG 了</p>
-<p>連不進去了</p>
-<p>用快照再開一台試驗還是如此</p>
-<p>最後跟另一位大大研究了一下發現說原來是升級時記憶體不足導致整個系統卡住了, 然後又可能剛好 kernel 升級失敗所以就進不去 Lunix</p>
-<p>因為是開最小的機器(f1-micro (vCPUs: shared, RAM: 0.60 GB) * does not support local SSD - 10GB storage)</p>
-<p>我朋友又有跑許多 service 在上面, 所以記憶體會不足, 所以大大建議掛 swap 上去, 但 computer engine 在開 VM 時沒設 swap 的選項啊, 沒有切 partition 給 swap 的選項啊</p>
-<p>大大就說了可以用 file 的方式建 swap 出來, 所以強者我朋友就建好後在升級就過了, 成功升級 kernel</p>
-<p>因為我也是開同等級的 VM 所以我朋友也建議我也做一下這機制</p>
-<p>大大的建議怎麼可以忽視呢</p>
-<p>所以就來記錄一下步驟吧</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># count 依自己的設定設置</span>
-</span></span><span style="display:flex;"><span>sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>/swapfile bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 格式化 swap</span>
-</span></span><span style="display:flex;"><span>sudo mkswap /swapfile
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 啟動 swap</span>
-</span></span><span style="display:flex;"><span>swapon /swapfile
-</span></span></code></pre></div><p>為了在開機時掛載 swap</p>
-<p>要做以下處理</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vim /etc/fstab
+                <p><h2 id="html---redirect-page-from-http-equiv">HTML - redirect page from http-equiv</h2>
+<h3 id="intro">Intro</h3>
+<p>We can use JavaScript or PHP redirect page, we also can only use HTML redirect page</p>
+<p>But not suggest use this way</p>
+<blockquote>
+<p>Note: The value &ldquo;refresh&rdquo; should be used carefully, as it takes the control of a page away from the user. Using &ldquo;refresh&rdquo; will cause a failure in W3C&rsquo;s Web Content Accessibility Guidelines.</p>
+</blockquote>
+<blockquote>
+<p>使用 <!-- raw HTML omitted --> 標籤進行重新導向可能會降低搜尋引擎排名。</p>
+</blockquote>
+<h3 id="usage">Usage</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;refresh&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0;url=http://example.com&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 加入</span>
-</span></span><span style="display:flex;"><span>/swapfile    swap    swap    defaults    <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
-</span></span></code></pre></div><p>這時就好了</p>
-<p>有裝 htop 可用 htop 看一下就會發現有 swap 了</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/379436/4H5o7kFbSQCXK2KRdihI_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-12-21%20%E4%B8%8A%E5%8D%8812.13.22.png" alt="螢幕快照 2015-12-21 上午12.13.22.png"></p>
-<p>但是強者我朋友又發現一個問題</p>
-<p>就是明明開 10G 了, 空間卻不夠用?</p>
-<h3 id="空間不足的問題">空間不足的問題</h3>
-<p>經過強者我朋友經過一番地找查</p>
-<p>總算找到原因了</p>
-<p>就是 kernel 的問題!</p>
-<p>他在 <code>/boot</code> 底下發現一卡車的 kernel</p>
-<p>原來是這一卡車的 kernel 佔掉一堆空間</p>
-<p>所以其實只要做 <code>sudo apt-get autoremove</code> 就可以移掉無用的 kernel</p>
-<p>移除前</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/379436/rKWHb6ETTdyssTBjdZZM_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-12-21%20%E4%B8%8A%E5%8D%8812.27.46.png" alt="螢幕快照 2015-12-21 上午12.27.46.png"></p>
-<p>移除後</p>
-<p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/379436/lcw6zUl5TGukhWZXNxsZ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-12-21%20%E4%B8%8A%E5%8D%8812.26.27.png" alt="螢幕快照 2015-12-21 上午12.26.27.png"></p>
-<p><strong>省了一半空間!</strong></p>
-<p>且發現一個現象</p>
-<p>VM 在重啟時會自動升級 kernel</p>
-<p>所以機器開小沒掛 swap 或空間不足</p>
-<p>在重開 VM 就可能會 GG</p>
-<p><a href="http://iammic.pixnet.net/blog/post/6204976-centos-%E5%BB%BA%E7%AB%8B-swap-file">refer - CentOS 建立 Swap File</a></p>
-<p><a href="http://wiki.ubuntu-tw.org/index.php?title=Aptitude">refer - Aptitude - Ubuntu 正體中文 Wiki</a></p>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- add content --&gt;</span>
+</span></span><span style="display:flex;"><span>If you are not redirected automatically, follow the &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http://example.com&#39;</span>&gt;link to example&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><h3 id="best-way">Best way</h3>
+<p>Use PHP redirect or JavaScript
+And http status is 301</p>
+<p><a href="http://www.w3schools.com/tags/att_meta_http_equiv.asp">Refer - HTML meta http-equiv Attribute</a></p>
+<p><a href="https://msdn.microsoft.com/zh-tw/library/ff724055(v=expression.40).aspx">Refer - WEB1041 - 目前使用 &lt;meta http-equiv=&quot;refresh&quot;&gt; 元素進行重新導向</a></p>
+<p><a href="http://stackoverflow.com/questions/5411538/redirect-from-an-html-page">Refer - Redirect from an HTML page? - Stack Overflow</a></p>
+<p><a href="http://rental.zhupiter.com/postshow_184_1_1.html">Refer - 轉導、轉向(Redirect)網址的方法. - 諸彼特租屋網</a></p>
 </p>
                 
 
                 
 
                 
-                <p><a href="https://blog.tedshd.io/posts/2015-12-20-google-cloud-platform-not-enough-space-set-the-swap-kernel-upgrades/">Read more</a></p>
+                <p><a href="https://blog.tedshd.io/posts/2016-01-31-466975/">Read more</a></p>
                 
             </div>
         </div>
@@ -1317,7 +1299,7 @@
 
         <div class="col-12">
             <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2015-11-20-css4-css4-thoughts-and-postcss/">CSS4 - 關於 css4 and postcss 的一些想法</a></h3>
+                <h3><a href="https://blog.tedshd.io/posts/2016-01-27-javascript-get-css-style/">JavaScript - get CSS style</a></h3>
 
                 
                 
@@ -1327,70 +1309,26 @@
 <span class=" u-capitalized ">
     on
 </span>
-2015-11-20
+2016-01-27
 </p>
                 
 
                 
-                <p><h2 id="css4---關於-css4-and-postcss-的一些想法">CSS4 - 關於 css4 and postcss 的一些想法</h2>
-<h3 id="前言">前言</h3>
-<p>在年末才來發這篇文&hellip;</p>
-<p>在今年大家開始瘋 <a href="https://facebook.github.io/react/">react</a>(咦? AngularJS 勒&hellip;), <a href="https://babeljs.io/">Babel</a>, <a href="https://github.com/postcss/postcss">postcss</a></p>
-<p>好像沒聽過上述這幾個詞就沒法自稱前端工程師(還好我現在都自稱打字員)</p>
-<p>到了最近才有空閒研究 postcss 到底在做啥</p>
-<p>一開始聽說可以無痛接軌未來(welcome to feature), 不像 <a href="http://sass-lang.com/">Sass</a> 未來如果要轉換就不好轉換(其實見仁見智啦)</p>
-<p>聽起來好潮喔, 但很忙沒時間搭理它</p>
-<p>而且這年頭的 tool 都越來越多步驟和許多工具要搞, 除非靜下心來專心研究, 不然哪有時間搞啊(感覺像是逃避的藉口&hellip;)</p>
-<p>直到了最近自己有些小東西要改, 需要用到變數的功能, 就想到 CSS4 不是有大家夢寐以求的 var() 功能嗎(感覺潮潮的)</p>
-<p>就花了點時間研究一下 <a href="https://github.com/postcss/postcss">postcss</a> 這在 github 的專案</p>
-<p>一看下去不得了, 包山包海一卡車功能, 還包含了之前聽別人介紹的連 Sass 的部分寫法的功能都有&hellip;</p>
-<p>看完的瞬間想翻桌, 只是要寫個 CSS, RD 何苦為難 RD 呢, 我不需要那麼多功能啊~</p>
-<p>還好有仔細看到主要 CSS4[<!-- raw HTML omitted -->註<!-- raw HTML omitted -->] 是用 <a href="http://cssnext.io/">cssnext</a> 這專案來處理(網站還用回到未來的梗&hellip;)</p>
-<p>所以我就果斷使用 cssnext 就好了(我真的很討厭用一套工具還要裝許多套件, 然後有的套件還不一定是你需要的不然就是有套件的部分功能是重複的&hellip;)</p>
-<h3 id="gulpfile-設定">gulpfile 設定</h3>
-<p>現在有一大堆 build tool 像是 <a href="http://gruntjs.com/">grunt</a>, <a href="http://gulpjs.com/">gulp</a>, <a href="http://browserify.org/">browserify</a>, <a href="https://webpack.github.io/">webpack</a> 等工具</p>
-<p>我還是習慣用 gulp, 除非等 gulp 不合需求才會再去看 browserify 或 webpack 怎麼用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cssnext</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-cssnext&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;default&#39;</span>, <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">run</span>(<span style="color:#e6db74">&#39;css&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">watch</span>([<span style="color:#e6db74">&#39;./src/**&#39;</span>], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">run</span>(<span style="color:#e6db74">&#39;css&#39;</span>);
-</span></span><span style="display:flex;"><span>    });
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;css&#39;</span>, <span style="color:#66d9ef">function</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;src/*.css&#39;</span>)
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">cssnext</span>({
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">compress</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>    }))
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;./build/&#39;</span>));
-</span></span><span style="display:flex;"><span>});
-</span></span></code></pre></div><h3 id="結語">結語</h3>
-<p>以下為我自己個人看法, 絕對不是要戰網路上的大大和大神們(本魯小弟什麼咖啊)</p>
-<p>所以聽聽就好</p>
-<p>個人覺得上述講的 postcss 啊, cssnext 啊等等都是在自嗨</p>
-<p>大家一定會說:『靠!你什麼咖啊?竟然敢這樣說』</p>
-<p>因為我發現有個現實點就是 CSS4[<!-- raw HTML omitted -->註<!-- raw HTML omitted -->] 在 W3C 根本還在草案啊(翻桌)</p>
-<p><a href="http://www.w3.org/TR/selectors4/">Selectors Level 4</a></p>
-<p>連 var() 都還是在編輯中的草案</p>
-<p><a href="https://drafts.csswg.org/css-variables/">CSS Custom Properties for Cascading Variables Module Level 1</a></p>
-<p><a href="http://css4-selectors.com/">CSS4 Selectors</a> 上也說它就是還在草案階段</p>
-<p>不了解 W3C 流程的可以看一下 <a href="http://www.w3.org/2015/Process-20150901/">World Wide Web Consortium Process Document</a></p>
-<p>依 W3C 的進度就知道真的還很遙遠, 真的可能得像回到未來一樣得搭時光車到 30 年後才能用&hellip;</p>
-<p>所以這不是在自嗨那什麼才是自嗨</p>
-<p>如果問我會不會用, 我會說我會玩一下, 但現在應該還不會用在公司的專案上</p>
-<p>Refers 就在上述連結中, 所以文末就不附了</p>
-<p><!-- raw HTML omitted -->[註]經友人補充雖然說 CSS4, 但在 W3C 上不這樣說, 它其實是 Selectors Level 4<!-- raw HTML omitted --></p>
+                <p><h2 id="javascript---get-css-style">JavaScript - get CSS style</h2>
+<p>Sometimes i want to use JavaScript get dom CSS style.</p>
+<p>Use <code>DOM.currentStyle</code> and <code>window.getComputedStyle(DOM)</code></p>
+<p>For IE use <strong>DOM.currentStyle</strong></p>
+<p>Other use <strong>window.getComputedStyle(DOM)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dom</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;target&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">style</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">currentStyle</span> <span style="color:#f92672">||</span> window.<span style="color:#a6e22e">getComputedStyle</span>(<span style="color:#a6e22e">dom</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">marginTop</span>);
+</span></span></code></pre></div><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle">refer - Window.getComputedStyle() - Web APIs | MDN</a></p>
+<p><a href="https://msdn.microsoft.com/en-us/library/ms535231(v=vs.85).aspx">refer - currentStyle object (Internet Explorer)</a></p>
 </p>
                 
 
                 
 
-                
-                <p><a href="https://blog.tedshd.io/posts/2015-11-20-css4-css4-thoughts-and-postcss/">Read more</a></p>
                 
             </div>
         </div>
