@@ -216,6 +216,11 @@
 </span></span><span style="display:flex;"><span>sudo sh -c <span style="color:#e6db74">&#39;echo &#34;deb https://packagecloud.io/golang-migrate/migrate/ubuntu/ $(lsb_release -sc) main&#34; &gt; /etc/apt/sources.list.d/migrate.list&#39;</span>
 </span></span><span style="display:flex;"><span>sudo apt-get update
 </span></span><span style="display:flex;"><span>sudo apt-get install -y migrate
+</span></span></code></pre></div><h2 id="usage">Usage</h2>
+<p>要連接的 DB 的格式</p>
+<p>下面是使用 mysql</p>
+<p><code>mysql://帳號:密碼@tcp(主機位置:PORT)/DB名稱?charset=utf8mb4&amp;loc=UTC&amp;parseTime=True</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>migrate -database <span style="color:#e6db74">&#39;DB_URL&#39;</span> -path schema/migrations up
 </span></span></code></pre></div></p>
                 
 
