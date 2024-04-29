@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 24 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/vue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/vue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vue - 使用 Vue cli 3 開發 SSR 紀錄</title>
       <link>https://blog.tedshd.io/posts/2019-06-24-vue-develop-ssr-records-with-vue-cli-3/</link>
       <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/2019-06-24-vue-develop-ssr-records-with-vue-cli-3/</guid>
       <description>Vue - 使用 Vue cli 3 開發 SSR 紀錄 Intro 因為工作需求需要一個能夠 SSR 的工具 由於是接手別的團隊回來的程式也剛好要做大動作的重構(打掉重練 之前的團隊是使用 koot.js 個人</description>
     </item>
-    
   </channel>
 </rss>

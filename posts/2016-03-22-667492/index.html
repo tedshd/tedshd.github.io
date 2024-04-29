@@ -5,7 +5,7 @@
 
 
 
-<title>JavaScript - DOM object check array & isArray polyfill | tedshd&#39;s DevNote</title>
+<title>JavaScript - DOM object check array &amp; isArray polyfill | tedshd&#39;s DevNote</title>
 <meta charset="utf-8">
 <meta name="google" content="notranslate">
 <meta id="viewport" name="viewport"
@@ -39,14 +39,12 @@ Object.prototype.toString.call(arg) === &#39;[object Array]&#39;; Still fail
 Object.prototype.toString.call(document.getElementsByClassName(&#39;product-img&#39;)); // [object HTMLCollection] Object.prototype.toString.call(document.querySelectorAll(&#39;div&#39;)); // [object NodeList] So i try to make a polyfill
 Array.isArray = function(arg) { var type = Object.prototype.toString.call(arg); if (type === &#39;[object Array]&#39; || type === &#39;[object HTMLCollection]&#39; || type === &#39;[object NodeList]&#39;) { return true; } return false; }; " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2016-03-22-667492/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/2016-03-22-667492/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2016-03-22T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-
-<meta name="twitter:title" content="JavaScript - DOM object check array &amp; isArray polyfill"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="JavaScript - DOM object check array &amp; isArray polyfill"/>
 <meta name="twitter:description" content="JavaScript - DOM object check array &amp; isArray polyfill One day my colleague find a question.
 ECMA script isArray is not work when object is DOM element
 Array.isArray(document.querySelectorAll(&#39;div&#39;)); // false And polyfill for old browser

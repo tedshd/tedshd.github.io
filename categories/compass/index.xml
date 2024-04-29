@@ -7,28 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Fri, 29 Aug 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/compass/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/compass/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compass - Use transform in compass 1.0.1</title>
       <link>https://blog.tedshd.io/posts/2014-08-29-compass-use-transform-in-compass-101/</link>
       <pubDate>Fri, 29 Aug 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/2014-08-29-compass-use-transform-in-compass-101/</guid>
-      <description>Compass - Use transform in compass 1.0.1 On august 15, 2014 Compass release 1.0.1 Some code in scss change wording. This article provide CSS3 transform wording in scss.
-I use this Mixin
-@import &amp;#34;compass/css3&amp;#34;; /*simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y)*/ @include simple-transform(1, 45deg, 5px, -15px, 0, 0, 0, 0); /* Advance Usage */ /*@include create-transform($perspective, $scale-x, $scale-y, $scale-z, $rotate-x, $rotate-y, $rotate-z, $rotate3d, $trans-x, $trans-y, $trans-z, $skew-x, $skew-y, $origin-x, $origin-y, $origin-z, $only3d);*/ Refer - Compass Transform | Compass Documentation</description>
+      <description>Compass - Use transform in compass 1.0.1 On august 15, 2014 Compass release 1.0.1 Some code in scss change wording. This article provide CSS3 transform wording in scss.&#xA;I use this Mixin&#xA;@import &amp;#34;compass/css3&amp;#34;; /*simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y)*/ @include simple-transform(1, 45deg, 5px, -15px, 0, 0, 0, 0); /* Advance Usage */ /*@include create-transform($perspective, $scale-x, $scale-y, $scale-z, $rotate-x, $rotate-y, $rotate-z, $rotate3d, $trans-x, $trans-y, $trans-z, $skew-x, $skew-y, $origin-x, $origin-y, $origin-z, $only3d);*/ Refer - Compass Transform | Compass Documentation</description>
     </item>
-    
     <item>
       <title>Use CSS3 animation in Compass</title>
       <link>https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/</link>
       <pubDate>Sat, 12 Oct 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/</guid>
-      <description>Use CSS3 Animation In Compass Compass default dosen&amp;rsquo;t have mixin in CSS3 animation We can use this method in scss
-/* define */ $animation-support: webkit, moz, o, ms, not khtml; /* use */ .animation { @include experimental(&amp;#39;animation-name&amp;#39;, move, $animation-support); @include experimental(&amp;#39;animation-duration&amp;#39;, 5s, $animation-support); @include experimental(&amp;#39;animation-iteration-count&amp;#39;, 1, $animation-support); } and add keyframes
-/* define */ $animation-support: webkit, moz, o, ms, not khtml; @mixin keyframes($name) { @-webkit-keyframes #{$name} { @content; } @-moz-keyframes #{$name} { @content; } @-ms-keyframes #{$name} { @content; } @keyframes #{$name} { @content; } } /* use */ .</description>
+      <description>Use CSS3 Animation In Compass Compass default dosen&amp;rsquo;t have mixin in CSS3 animation We can use this method in scss&#xA;/* define */ $animation-support: webkit, moz, o, ms, not khtml; /* use */ .animation { @include experimental(&amp;#39;animation-name&amp;#39;, move, $animation-support); @include experimental(&amp;#39;animation-duration&amp;#39;, 5s, $animation-support); @include experimental(&amp;#39;animation-iteration-count&amp;#39;, 1, $animation-support); } and add keyframes&#xA;/* define */ $animation-support: webkit, moz, o, ms, not khtml; @mixin keyframes($name) { @-webkit-keyframes #{$name} { @content; } @-moz-keyframes #{$name} { @content; } @-ms-keyframes #{$name} { @content; } @keyframes #{$name} { @content; } } /* use */ .</description>
     </item>
-    
   </channel>
 </rss>

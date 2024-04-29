@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 30 Oct 2023 09:22:36 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/angular/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Apr 2024 11:14:03 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/angular/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Angular build custom element</title>
       <link>https://blog.tedshd.io/posts/angular_build_custom_element/</link>
       <pubDate>Mon, 30 Oct 2023 09:22:36 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/angular_build_custom_element/</guid>
       <description>Intro 當使用 Angular 時, 有時會有需要自己建立一個自定義的元素 通常這個都是為了重複使用 這時會有兩種作法 自己建立一個元件, 再把這元件處理成 module, 這樣就可以有自</description>
     </item>
-    
   </channel>
 </rss>

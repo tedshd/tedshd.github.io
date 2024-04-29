@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pm2 on tedshd&#39;s DevNote</title>
+    <title>Pm2 on tedshd&#39;s DevNote</title>
     <link>https://blog.tedshd.io/categories/pm2/</link>
-    <description>Recent content in pm2 on tedshd&#39;s DevNote</description>
+    <description>Recent content in Pm2 on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Fri, 18 Nov 2022 10:47:52 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/pm2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Nov 2022 11:42:22 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/pm2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Node PM2 使用紀錄</title>
       <link>https://blog.tedshd.io/posts/node_pm2_usage/</link>
       <pubDate>Fri, 18 Nov 2022 10:47:52 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/node_pm2_usage/</guid>
       <description>介紹 PM2 是一個可以方便處理 node process 的工具 大多用於線上環境 這邊主要紀錄 PM2 的一些用法與指令 基本使用 可以參考官方文件 PM2 Process Management Quick Start 安裝 npm install pm2 -g 啟動 pm2 start &amp;lt</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,37 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mysql on tedshd&#39;s DevNote</title>
+    <title>Mysql on tedshd&#39;s DevNote</title>
     <link>https://blog.tedshd.io/categories/mysql/</link>
-    <description>Recent content in mysql on tedshd&#39;s DevNote</description>
+    <description>Recent content in Mysql on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Tue, 03 May 2022 15:53:18 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Apr 2023 14:31:02 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mac M1 run MySQL in local docker</title>
       <link>https://blog.tedshd.io/posts/mysql_in_docker/</link>
       <pubDate>Tue, 03 May 2022 15:53:18 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/mysql_in_docker/</guid>
-      <description>Usage docker hub
-In Apple M1
-no-official image
-amd64/mysql
-MySQL 5.7
-docker pull amd64/mysql:5.7 Run docker in local Sample for M1(different of image name)
-docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d amd64/mysql:latest Container run in 0.0.0.0
-mysql --default-character-set=utf8mb4 -u root -h 0.0.0.0 -P 3306 -p -A </description>
+      <description>Usage docker hub&#xA;In Apple M1&#xA;no-official image&#xA;amd64/mysql&#xA;MySQL 5.7&#xA;docker pull amd64/mysql:5.7 Run docker in local Sample for M1(different of image name)&#xA;docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d amd64/mysql:latest Container run in 0.0.0.0&#xA;mysql --default-character-set=utf8mb4 -u root -h 0.0.0.0 -P 3306 -p -A </description>
     </item>
-    
     <item>
       <title>MySQL command</title>
       <link>https://blog.tedshd.io/posts/2013-08-28-mysql-command/</link>
       <pubDate>Wed, 28 Aug 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/2013-08-28-mysql-command/</guid>
       <description>MySQL Monitor Setting mysql -u root -h &amp;lt;HOST&amp;gt; -P &amp;lt;PORT&amp;gt; &amp;lt;DATABASE_NAME&amp;gt; -p -A database 每一個 command 最後都要加 ; status; create database database_name; drop database database_name; show databases; show tables; use database_name; table create table table_name( column1 type1, column2 type2); create table table_name( column1 type1, column2 type2) charset=utf8; desc table_name; show create table &amp;lt;table_name&amp;gt; MySQL 8.0 Reference Manual :: 3.3.2 Creating a Table - MySQL</description>
     </item>
-    
   </channel>
 </rss>

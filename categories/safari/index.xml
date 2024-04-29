@@ -1,30 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>safari on tedshd&#39;s DevNote</title>
+    <title>Safari on tedshd&#39;s DevNote</title>
     <link>https://blog.tedshd.io/categories/safari/</link>
-    <description>Recent content in safari on tedshd&#39;s DevNote</description>
+    <description>Recent content in Safari on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 20 Jun 2022 14:44:30 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/safari/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 16:09:58 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/safari/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Safari 設定 100vh 還是出現卷軸(scroll bar)</title>
       <link>https://blog.tedshd.io/posts/safari_100vh_show_scroll/</link>
       <pubDate>Mon, 20 Jun 2022 14:44:30 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/safari_100vh_show_scroll/</guid>
       <description>前言 最近注意到 Safari 設定 100vh 在未滿內容的情況還是出現滑動的卷軸 這導致了體驗不佳 研究了一下發現是因為在 Safari 上有 url bar 的關係(iOS 15 以下還有 function bar) 100vh 的大小</description>
     </item>
-    
     <item>
       <title>在點擊連結或是 redirect 前送出請求</title>
       <link>https://blog.tedshd.io/posts/send_request_before_click_outbound_or_redirect/</link>
       <pubDate>Wed, 02 Mar 2022 11:21:17 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/send_request_before_click_outbound_or_redirect/</guid>
       <description>Intro 有時在看 GA 的 Web 數據時會發現在 Safari 的點擊 click 事件似乎會比較少 其實這背後是有原因的 主要是各個瀏覽器再處理新 direct 時的行為不一致所導致的 在 Safari 上面發生 direct 到</description>
     </item>
-    
   </channel>
 </rss>

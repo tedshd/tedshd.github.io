@@ -1,48 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iOS on tedshd&#39;s DevNote</title>
+    <title>Ios on tedshd&#39;s DevNote</title>
     <link>https://blog.tedshd.io/categories/ios/</link>
-    <description>Recent content in iOS on tedshd&#39;s DevNote</description>
+    <description>Recent content in Ios on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 20 Jul 2022 10:02:11 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/ios/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jul 2022 10:51:14 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/ios/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 iOS Messages 呈現帶影片預覽的連結</title>
       <link>https://blog.tedshd.io/posts/ios_sms_support_video_meta/</link>
       <pubDate>Wed, 20 Jul 2022 10:02:11 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/ios_sms_support_video_meta/</guid>
       <description>最近添加了一個小功能要來測試成效 就是因為 PM 有看到一些服務的連結在 iOS Messages 上呈現並非常見的圖片而是影片 PM 說好像是 iOS 15 以上支援(我自己是沒找到相關的</description>
     </item>
-    
     <item>
       <title>Safari 設定 100vh 還是出現卷軸(scroll bar)</title>
       <link>https://blog.tedshd.io/posts/safari_100vh_show_scroll/</link>
       <pubDate>Mon, 20 Jun 2022 14:44:30 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/safari_100vh_show_scroll/</guid>
       <description>前言 最近注意到 Safari 設定 100vh 在未滿內容的情況還是出現滑動的卷軸 這導致了體驗不佳 研究了一下發現是因為在 Safari 上有 url bar 的關係(iOS 15 以下還有 function bar) 100vh 的大小</description>
     </item>
-    
     <item>
       <title>web - mobile web on iPhone X first preview</title>
       <link>https://blog.tedshd.io/posts/2017-10-02-web-mobile-web-on-iphone-x-first-preview/</link>
       <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/2017-10-02-web-mobile-web-on-iphone-x-first-preview/</guid>
-      <description>web - mobile web on iPhone X first preview Intro On 2017 9/12.
-Apple published iPhone X.
-And this device has so special screen.
-So many web &amp;amp; iOS developer worry about some case like.
-(form Apple)
-OMG!
-It can effect app show on full screen.
-So Apple has provide guideline about iPhone X.
-iPhone X - Overview - iOS Human Interface Guidelines
-It is great change for web &amp;amp; iOS developer.</description>
+      <description>web - mobile web on iPhone X first preview Intro On 2017 9/12.&#xA;Apple published iPhone X.&#xA;And this device has so special screen.&#xA;So many web &amp;amp; iOS developer worry about some case like.&#xA;(form Apple)&#xA;OMG!&#xA;It can effect app show on full screen.&#xA;So Apple has provide guideline about iPhone X.&#xA;iPhone X - Overview - iOS Human Interface Guidelines&#xA;It is great change for web &amp;amp; iOS developer.</description>
     </item>
-    
   </channel>
 </rss>

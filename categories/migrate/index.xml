@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Migrate on tedshd&#39;s DevNote</title>
+    <link>https://blog.tedshd.io/categories/migrate/</link>
+    <description>Recent content in Migrate on tedshd&#39;s DevNote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2022 Tedshd</copyright>
+    <lastBuildDate>Mon, 29 Apr 2024 11:15:52 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/migrate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 golang migrate 安裝紀錄</title>
+      <link>https://blog.tedshd.io/posts/use_golang_migrate/</link>
+      <pubDate>Mon, 29 Apr 2024 11:15:52 +0800</pubDate>
+      <guid>https://blog.tedshd.io/posts/use_golang_migrate/</guid>
+      <description>Intro 在使用 golang 的情境下, 有一個很常用的 migration 工具 golang-migrate 但是在不同系統下安裝我覺得不太容易 所以記錄一下 Install github 上有提供不同作業系統的安裝方式 cmd/migrate 目前測試 Mac / Ubuntu 有</description>
+    </item>
+  </channel>
+</rss>

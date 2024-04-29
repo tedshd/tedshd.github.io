@@ -1,55 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker on tedshd&#39;s DevNote</title>
+    <title>Docker on tedshd&#39;s DevNote</title>
     <link>https://blog.tedshd.io/categories/docker/</link>
-    <description>Recent content in docker on tedshd&#39;s DevNote</description>
+    <description>Recent content in Docker on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jun 2022 10:45:39 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Apr 2023 14:31:02 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker 建立不同平台的 image</title>
       <link>https://blog.tedshd.io/posts/build_different_platform_docker_image/</link>
       <pubDate>Wed, 29 Jun 2022 10:45:39 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/build_different_platform_docker_image/</guid>
       <description>前言 現在在開發與線上環境常常會遇到不同 CPU 架構的問題 不同 CPU 架構底層的指令集也不一樣 最常見的影響就是在其中一個平台編譯出來的程式會無法在另一個平</description>
     </item>
-    
     <item>
       <title>Mac M1 run MySQL in local docker</title>
       <link>https://blog.tedshd.io/posts/mysql_in_docker/</link>
       <pubDate>Tue, 03 May 2022 15:53:18 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/mysql_in_docker/</guid>
-      <description>Usage docker hub
-In Apple M1
-no-official image
-amd64/mysql
-MySQL 5.7
-docker pull amd64/mysql:5.7 Run docker in local Sample for M1(different of image name)
-docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d amd64/mysql:latest Container run in 0.0.0.0
-mysql --default-character-set=utf8mb4 -u root -h 0.0.0.0 -P 3306 -p -A </description>
+      <description>Usage docker hub&#xA;In Apple M1&#xA;no-official image&#xA;amd64/mysql&#xA;MySQL 5.7&#xA;docker pull amd64/mysql:5.7 Run docker in local Sample for M1(different of image name)&#xA;docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d amd64/mysql:latest Container run in 0.0.0.0&#xA;mysql --default-character-set=utf8mb4 -u root -h 0.0.0.0 -P 3306 -p -A </description>
     </item>
-    
     <item>
       <title>docker 使用紀錄</title>
       <link>https://blog.tedshd.io/posts/docker_usage/</link>
       <pubDate>Thu, 24 Dec 2020 10:12:17 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/docker_usage/</guid>
       <description>docker images 列出所有拉下來的 docker image docker images REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE ubuntu latest 07f8e8c5e660 3 weeks ago 188.3 MB build dockerfile 使用 dockerfile 建立 docker image 直接建立 docker build . 預設會找當前的目錄的 Dockerfile -t 可以設定建立的 image &amp;amp; tag name docker build</description>
     </item>
-    
     <item>
       <title>Docker - Mac research log</title>
       <link>https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/</link>
       <pubDate>Fri, 15 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/</guid>
       <description>Docker - Mac research log Install by Mac Register Docker Hub Docker Hub Use Kitematic kitematic Install Ubuntu Search ubuntu on docker hub Run command docker pull ubuntu Use docker images docker images REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE ubuntu latest 07f8e8c5e660 3 weeks ago 188.3 MB build dockerfile docker build . -t ubuntu_dev:16.04 -f local.Dockerfile run container docker run -t -i ubuntu /bin/bash docker run -t -i ubuntu</description>
     </item>
-    
   </channel>
 </rss>

@@ -29,12 +29,10 @@
 <meta property="og:title" content="Posts" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-
-<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content="Develop &amp; Design Note by Ted"/>
 
 
@@ -1227,6 +1225,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1237,6 +1239,49 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2017-12-13-php-loop-directory/">php - loop directory</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2017-12-13
+</p>
+                
+
+                
+                <p><h2 id="php---loop-directory">php - loop directory</h2>
+<p>Sometime need use php loop directory list all file in this directory</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$directory <span style="color:#f92672">=</span> <span style="color:#a6e22e">scandir</span>(<span style="color:#e6db74">&#39;./js&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span>($directory <span style="color:#66d9ef">as</span> $file) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ($file <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> $file <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;..&#39;</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> $file;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1266,87 +1311,6 @@
 
                 
 
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2017-10-02-web-mobile-web-on-iphone-x-first-preview/">web - mobile web on iPhone X first preview</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2017-10-02
-</p>
-                
-
-                
-                <p><h2 id="web---mobile-web-on-iphone-x-first-preview">web - mobile web on iPhone X first preview</h2>
-<h3 id="intro">Intro</h3>
-<p>On 2017 9/12.</p>
-<p>Apple published iPhone X.</p>
-<p>And this device has so special screen.</p>
-<!-- raw HTML omitted -->
-<p>So many web &amp; iOS developer worry about some case like.</p>
-<!-- raw HTML omitted -->
-<p>(form Apple)</p>
-<p>OMG!</p>
-<p>It can effect app show on full screen.</p>
-<p>So Apple has provide guideline about iPhone X.</p>
-<p><a href="https://developer.apple.com/ios/human-interface-guidelines/overview/iphone-x/">iPhone X - Overview - iOS Human Interface Guidelines</a></p>
-<p>It is great change for web &amp; iOS developer.</p>
-<p>For web developer, we need this design guideline</p>
-<p><a href="https://webkit.org/blog/7929/designing-websites-for-iphone-x/">Designing Websites for iPhone X | WebKit</a></p>
-<p>Apple provide new CSS function handle this problem.</p>
-<p>And it is in W3C <a href="https://github.com/w3c/csswg-drafts/issues/1693#issuecomment-330909067">working group</a></p>
-<h3 id="preview-iphone-x">Preview iPhone X</h3>
-<p>But we can preview iPhone X in Xcode.</p>
-<ol>
-<li>
-<p>Update your Xcode to Xcode 9.</p>
-</li>
-<li>
-<p>Open a new Project and set build iOS simulator as iPhone X.</p>
-</li>
-</ol>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8A%E5%8D%8811.51.49.png?alt=media&amp;token=df8b38b8-add6-4a49-812b-8a65d5cc2a2a" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8A%E5%8D%8811.52.03.png?alt=media&amp;token=dff6a51f-979d-415e-ad37-fff7c01fcb83" alt=""></p>
-<ol start="3">
-<li>Xcode &gt; Open Developer Tool &gt; iOS Simulator</li>
-</ol>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8A%E5%8D%8811.52.46.png?alt=media&amp;token=a3318002-8d07-47b8-9c2b-05960bc3c356" alt=""></p>
-<ol start="4">
-<li>we can use Safari test web now.</li>
-</ol>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8B%E5%8D%8812.11.24.png?alt=media&amp;token=05515073-1ba1-4b98-a1d1-be3b08587fc2" alt=""></p>
-<h3 id="result">Result</h3>
-<p>Some case</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8B%E5%8D%8812.14.15.png?alt=media&amp;token=c91ea97a-e1ac-4ee6-9b7e-ab06ad0e0d42" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8B%E5%8D%8812.13.27.png?alt=media&amp;token=c43337d7-fec7-4e5a-a6d1-951b8aed1228" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8B%E5%8D%8812.14.41.png?alt=media&amp;token=bf6b3221-45a6-4c14-afa1-c353e9aa485c" alt=""></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8B%E5%8D%8812.14.57.png?alt=media&amp;token=5a6a397d-d109-4d9e-8720-2e7d72f79125" alt=""></p>
-<p>Safari App has handle safe area &amp; follow iPhone X design.</p>
-<p>So we maybe don&rsquo;t worry about this problem on Safari.</p>
-<p>But maybe we need worry about chrome on iOS and other webview in App.</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/2017-10-02-web-mobile-web-on-iphone-x-first-preview/">Read more</a></p>
                 
             </div>
         </div>

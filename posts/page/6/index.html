@@ -29,12 +29,10 @@
 <meta property="og:title" content="Posts" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/posts/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-
-<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content="Develop &amp; Design Note by Ted"/>
 
 
@@ -1227,6 +1225,10 @@
 
 
 
+
+
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
@@ -1237,6 +1239,55 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/nginx_use_host_reverse_proxy/">Nginx 使用 host 判斷作 reverse proxy</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2022-12-02
+</p>
+                
+
+                
+                <p><p>直接上設定</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Nginx" data-lang="Nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:80</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">server_name</span> <span style="color:#e6db74">api.example.com,</span> <span style="color:#e6db74">example.com</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-NginX-Proxy</span> <span style="color:#e6db74">true</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">set</span> $proxy <span style="color:#e6db74">http://0.0.0.0:3000</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">if</span> <span style="color:#e6db74">(</span>$host ~ <span style="color:#e6db74">api.example.com)</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">set</span> $proxy <span style="color:#e6db74">http://0.0.0.0:8000</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_pass</span> $proxy;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -1371,89 +1422,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/gcp_artifact_registry_compute_engine/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/node_pm2_usage/">Node PM2 使用紀錄</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2022-11-18
-</p>
-                
-
-                
-                <p><h2 id="介紹">介紹</h2>
-<p><a href="https://pm2.keymetrics.io/">PM2</a> 是一個可以方便處理 node process 的工具</p>
-<p>大多用於線上環境</p>
-<p>這邊主要紀錄 PM2 的一些用法與指令</p>
-<h2 id="基本使用">基本使用</h2>
-<p>可以參考官方文件 <a href="https://pm2.keymetrics.io/docs/usage/quick-start/">PM2 Process Management Quick Start</a></p>
-<p>安裝</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npm install pm2 -g
-</span></span></code></pre></div><p>啟動</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 start &lt;要啟動的 js&gt;
-</span></span></code></pre></div><p>通常建議啟動時的指令搭配以下參數(更多參數請詳閱文件)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Specify an app name</span>
-</span></span><span style="display:flex;"><span>--name &lt;app_name&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Watch and Restart app when files change</span>
-</span></span><span style="display:flex;"><span>--watch
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set memory threshold for app reload</span>
-</span></span><span style="display:flex;"><span>--max-memory-restart &lt;200MB&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Specify log file</span>
-</span></span><span style="display:flex;"><span>--log &lt;log_path&gt;
-</span></span></code></pre></div><h2 id="重新載入">重新載入</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 reload &lt;要重啟的 app&gt;
-</span></span></code></pre></div><p>大多用於程式部署更新後, 有較好的體驗(和 restart 相比)</p>
-<p>可以參考以下比較</p>
-<p><a href="https://stackoverflow.com/questions/44883269/what-is-the-difference-between-pm2-restart-and-pm2-reload">refer - What is the difference between pm2 restart and pm2 reload</a></p>
-<h2 id="log-紀錄">log 紀錄</h2>
-<p>推薦使用 <a href="https://github.com/keymetrics/pm2-logrotate">pm2-logrotate</a></p>
-<p>來處理 logrotate</p>
-<p>當然如果有指定 log path 的話, 用系統處理 logrotate 也是可以的</p>
-<p>如果要清空 log</p>
-<p>可以使用 <code>pm2 flush</code></p>
-<h2 id="監控">監控</h2>
-<p>預設有兩種</p>
-<ol>
-<li>Terminal</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 monit
-</span></span></code></pre></div><p>就會開啟終端機的 dashboard 可以監控狀態</p>
-<ol start="2">
-<li>web</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 plus
-</span></span></code></pre></div><p>或是用</p>
-<p><a href="https://pm2.io/docs/plus/overview/#features-available-in-pm2-plus">app.pm2.io</a></p>
-<h2 id="load-balancing">LOAD-BALANCING</h2>
-<p>pm2 已經內建負載平衡的功能</p>
-<p><a href="https://pm2.io/docs/runtime/guide/load-balancing/">LOAD-BALANCING (CLUSTER MODE)</a></p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/node_pm2_usage/">Read more</a></p>
                 
             </div>
         </div>

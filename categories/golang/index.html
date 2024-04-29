@@ -5,7 +5,7 @@
 
 
 
-<title>golang | tedshd&#39;s DevNote</title>
+<title>Golang | tedshd&#39;s DevNote</title>
 <meta charset="utf-8">
 <meta name="google" content="notranslate">
 <meta id="viewport" name="viewport"
@@ -26,15 +26,13 @@
 <meta name="robots" content="index, follow">
 <meta name="copyright" content="Tedshd">
 
-<meta property="og:title" content="golang" />
+<meta property="og:title" content="Golang" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/golang/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/categories/golang/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-
-<meta name="twitter:title" content="golang"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="Golang"/>
 <meta name="twitter:description" content="Develop &amp; Design Note by Ted"/>
 
 
@@ -127,7 +125,7 @@
     <div class="row">
         <h1>
             <span class="u-capitalized">category</span>:
-            golang
+            Golang
         </h1>
         
     </div>
@@ -174,6 +172,63 @@
 
 <div class="p-strip is-wrapper posts">
     <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/use_golang_migrate/">使用 golang migrate 安裝紀錄</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2024-04-29
+</p>
+                
+
+                
+                <p><h2 id="intro">Intro</h2>
+<p>在使用 golang 的情境下, 有一個很常用的 migration 工具 <a href="https://github.com/golang-migrate/migrate">golang-migrate</a></p>
+<p>但是在不同系統下安裝我覺得不太容易</p>
+<p>所以記錄一下</p>
+<h2 id="install">Install</h2>
+<p>github 上有提供不同作業系統的安裝方式</p>
+<p><a href="https://github.com/golang-migrate/migrate/tree/master/cmd/migrate">cmd/migrate</a></p>
+<p>目前測試 Mac / Ubuntu 有成功</p>
+<ol>
+<li>Mac OS X</li>
+</ol>
+<p>使用 homebrew 安裝</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>brew install golang-migrate
+</span></span></code></pre></div><p>在 mac 上面安裝是蠻容易的</p>
+<ol start="2">
+<li>Ubuntu 20.04</li>
+</ol>
+<p>在 ubuntu 遇到許多權限的問題</p>
+<p>github 上面的 <code>*.deb</code> 安裝需要調整指令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey | sudo apt-key add -
+</span></span><span style="display:flex;"><span>sudo sh -c <span style="color:#e6db74">&#39;echo &#34;deb https://packagecloud.io/golang-migrate/migrate/ubuntu/ $(lsb_release -sc) main&#34; &gt; /etc/apt/sources.list.d/migrate.list&#39;</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install -y migrate
+</span></span></code></pre></div></p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/use_golang_migrate/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
         
 
         
@@ -317,56 +372,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/form_multi_checked_in_php_nodejs_golang/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2019-09-03-golang-note/">golang - note</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2019-09-03
-</p>
-                
-
-                
-                <p><h2 id="golang---note-log">golang - note log</h2>
-<h3 id="時間格式的雷">時間格式的雷</h3>
-<p><strong>2006-01-02 15:04:05</strong></p>
-<p><a href="https://golang.org/pkg/time/#Time.Format">https://golang.org/pkg/time/#Time.Format</a></p>
-<p><a href="https://segmentfault.com/a/1190000004222341">Golang 时间格式化的奇怪设定 —— 为什么你一直出错</a></p>
-<h3 id="array">Array</h3>
-<p><a href="https://hsinyu.gitbooks.io/golang_note/content/array.html">Array</a></p>
-<h3 id="確認-type">確認 type</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;reflect&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">7</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>(<span style="color:#a6e22e">x</span>).<span style="color:#a6e22e">Kind</span>();
-</span></span></code></pre></div><h3 id="convert-interface-to-string">Convert interface to string</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">interface</span>{} = <span style="color:#e6db74">&#34;abc&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">str</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%v&#34;</span>, <span style="color:#a6e22e">x</span>)
-</span></span></code></pre></div><h3 id="print-statuct">Print statuct</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%+v\n&#34;</span>, <span style="color:#66d9ef">struct</span>)
-</span></span></code></pre></div></p>
-                
-
-                
-
                 
             </div>
         </div>

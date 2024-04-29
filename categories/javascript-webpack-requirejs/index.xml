@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JavaScript webpack RequireJS on tedshd&#39;s DevNote</title>
+    <title>JavaScript Webpack RequireJS on tedshd&#39;s DevNote</title>
     <link>https://blog.tedshd.io/categories/javascript-webpack-requirejs/</link>
-    <description>Recent content in JavaScript webpack RequireJS on tedshd&#39;s DevNote</description>
+    <description>Recent content in JavaScript Webpack RequireJS on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Tue, 28 Jun 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/javascript-webpack-requirejs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/javascript-webpack-requirejs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript - Why i from RequireJS to webpack</title>
       <link>https://blog.tedshd.io/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/</link>
       <pubDate>Tue, 28 Jun 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/</guid>
-      <description>Why i from RequireJS to webpack RequireJS is a Asynchronous Module Definition(AMD) lib
-Its powerful to handle modulize on your page and you can handle all loader on JavaScript, you can focus on JavaScript function and web page.
-But if your module is become complex and more module, you can find JavaScript request become more and more.
-You can find it is a serious performance problem.
-Your network has lot of request of js.</description>
+      <description>Why i from RequireJS to webpack RequireJS is a Asynchronous Module Definition(AMD) lib&#xA;Its powerful to handle modulize on your page and you can handle all loader on JavaScript, you can focus on JavaScript function and web page.&#xA;But if your module is become complex and more module, you can find JavaScript request become more and more.&#xA;You can find it is a serious performance problem.&#xA;Your network has lot of request of js.</description>
     </item>
-    
   </channel>
 </rss>

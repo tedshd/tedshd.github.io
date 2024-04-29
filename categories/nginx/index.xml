@@ -1,53 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nginx on tedshd&#39;s DevNote</title>
+    <title>Nginx on tedshd&#39;s DevNote</title>
     <link>https://blog.tedshd.io/categories/nginx/</link>
-    <description>Recent content in nginx on tedshd&#39;s DevNote</description>
+    <description>Recent content in Nginx on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Fri, 02 Dec 2022 09:54:36 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Dec 2022 15:20:30 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx 使用 host 判斷作 reverse proxy</title>
       <link>https://blog.tedshd.io/posts/nginx_use_host_reverse_proxy/</link>
       <pubDate>Fri, 02 Dec 2022 09:54:36 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/nginx_use_host_reverse_proxy/</guid>
       <description>直接上設定 server { listen 80; listen [::]:80; server_name api.example.com, example.com; location / { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-NginX-Proxy true; set $proxy http://0.0.0.0:3000; if ($host ~ api.example.com) { set $proxy http://0.0.0.0:8000; } proxy_pass $proxy; } }</description>
     </item>
-    
     <item>
       <title>Nginx 使用 refer 處理 CORS header</title>
       <link>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</link>
       <pubDate>Fri, 30 Apr 2021 15:51:04 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</guid>
       <description>處理 CORS 算是許多 Web 開發者會處理的情況 其中要又有一個比較重要的部分就是要設定 Access-Control-Allow-Origin 這個允許來源的 header 通常為了安全性問題, 都是只會設定允許的 host 上去 但是常</description>
     </item>
-    
     <item>
       <title>Let&#39;s Encrypt - Has a certificate problem in Android Chrome</title>
       <link>https://blog.tedshd.io/posts/2016-07-17-lets-encrypt-has-a-certificate-problem-in-android-chrome/</link>
       <pubDate>Sun, 17 Jul 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/2016-07-17-lets-encrypt-has-a-certificate-problem-in-android-chrome/</guid>
-      <description>Let&amp;rsquo;s Encrypt - Has a certificate problem in Android Chrome If you use Let&amp;rsquo;s Encrypt as SSL certificate
-Then setting this in Nginx
-ssl_certificate /etc/letsencrypt/live/&amp;lt;domain&amp;gt;/cert.pem; You can find it maybe has problem in Android Chrome
-Now you can modify this
-ssl_certificate /etc/letsencrypt/live/&amp;lt;domain&amp;gt;/fullchain.pem; Test your SSL SSL Server Test
-Refer - Let’s encrypt certificate not working for Andriod’s Google Chrome</description>
+      <description>Let&amp;rsquo;s Encrypt - Has a certificate problem in Android Chrome If you use Let&amp;rsquo;s Encrypt as SSL certificate&#xA;Then setting this in Nginx&#xA;ssl_certificate /etc/letsencrypt/live/&amp;lt;domain&amp;gt;/cert.pem; You can find it maybe has problem in Android Chrome&#xA;Now you can modify this&#xA;ssl_certificate /etc/letsencrypt/live/&amp;lt;domain&amp;gt;/fullchain.pem; Test your SSL SSL Server Test&#xA;Refer - Let’s encrypt certificate not working for Andriod’s Google Chrome</description>
     </item>
-    
     <item>
       <title>nginx - study log</title>
       <link>https://blog.tedshd.io/posts/2015-09-30-nginx-study-log/</link>
       <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/2015-09-30-nginx-study-log/</guid>
       <description>nginx - Study Log 半調子的紀錄&amp;hellip; Command Line sudo service nginx start sudo service nginx restart sudo service nginx stop # 測試 nginx 設定 sudo nginx -t config # document root root /usr/share/nginx/html; # set page show index index.html index.htm index.php; # 把 lib 目錄打開 location /lib { autoindex on; } refer -</description>
     </item>
-    
   </channel>
 </rss>

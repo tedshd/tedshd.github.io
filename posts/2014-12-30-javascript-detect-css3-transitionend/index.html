@@ -33,14 +33,12 @@ function transitionEnd() { var el = document.createElement(&#39;div&#39;), //wha
 It is a event can fired when CSS3 transition end.
 function transitionEnd() { var el = document.createElement(&#39;div&#39;), //what the hack is bootstrap transEndEventNames = { WebkitTransition : &#39;webkitTransitionEnd&#39;, MozTransition : &#39;transitionend&#39;, OTransition : &#39;oTransitionEnd otransitionend&#39;, transition : &#39;transitionend&#39; }; for (var name in transEndEventNames) { if (el.style[name] !== undefined) { return transEndEventNames[name]; } } return false; // explicit for ie8 ( ._.) } // Usage document." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2014-12-30-javascript-detect-css3-transitionend/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://blog.tedshd.io/posts/2014-12-30-javascript-detect-css3-transitionend/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-12-30T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-
-<meta name="twitter:title" content="JavaScript - detect CSS3 transitionEnd"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="JavaScript - detect CSS3 transitionEnd"/>
 <meta name="twitter:description" content="JavaScript - Detect CSS3 transitionEnd transitionend
 It is a event can fired when CSS3 transition end.
 function transitionEnd() { var el = document.createElement(&#39;div&#39;), //what the hack is bootstrap transEndEventNames = { WebkitTransition : &#39;webkitTransitionEnd&#39;, MozTransition : &#39;transitionend&#39;, OTransition : &#39;oTransitionEnd otransitionend&#39;, transition : &#39;transitionend&#39; }; for (var name in transEndEventNames) { if (el.style[name] !== undefined) { return transEndEventNames[name]; } } return false; // explicit for ie8 ( ._.) } // Usage document."/>

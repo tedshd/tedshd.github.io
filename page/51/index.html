@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.119.0">
+	<meta name="generator" content="Hugo 0.124.1">
     
 
 
@@ -28,12 +28,10 @@
 <meta property="og:title" content="tedshd&#39;s DevNote" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-
-<meta name="twitter:title" content="tedshd&#39;s DevNote"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="tedshd&#39;s DevNote"/>
 <meta name="twitter:description" content="Develop &amp; Design Note by Ted"/>
 
 
@@ -188,6 +186,67 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/2016-09-01-sublime-text-how-to-modify-font-size-in-sidebar/">Sublime Text - How to modify font size in sidebar</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-09-01
+</p>
+                
+
+                
+                <p><h2 id="sublime-text---how-to-modify-font-size-in-sidebar">Sublime Text - How to modify font size in sidebar</h2>
+<p>In sublime text 3</p>
+<p>If you want modify font size in sidebar</p>
+<p>Follow step</p>
+<ol>
+<li>Preferences -&gt; Browse Packages</li>
+<li>Open User directory</li>
+<li>Create a file</li>
+<li>File named your theme name
+<ul>
+<li>How to get it</li>
+<li>Preferences -&gt; Settings - User -&gt; theme</li>
+<li>Or default theme <code>Default.sublime-theme</code></li>
+</ul>
+</li>
+<li>Add content</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;class&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sidebar_label&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;font.size&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span>	},
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h3 id="other">other</h3>
+<p>in Mac the path is</p>
+<pre tabindex="0"><code>~/Library/Application Support/Sublime Text 3/Packages/User
+</code></pre><p><a href="http://stackoverflow.com/questions/18288870/sublime-text-3-how-to-change-the-font-size-of-the-file-sidebar">Reference - Sublime Text 3 how to change the font size of the file sidebar?</a></p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/2016-09-01-sublime-text-how-to-modify-font-size-in-sidebar/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/2016-08-31-gulp-one-problem-i-found-when-i-use-css-minify-with-some-css-library/">gulp - One problem i found when i use CSS minify with some CSS library</a></h3>
 
                 
@@ -228,47 +287,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/2016-08-31-gulp-one-problem-i-found-when-i-use-css-minify-with-some-css-library/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/2016-08-03-linux-install-gogole-chrome-in-debian-linux/">Linux - install gogole chrome in debian Linux</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2016-08-03
-</p>
-                
-
-                
-                <p><h2 id="linux---install-gogole-chrome-in-debian-linux">Linux - install gogole chrome in debian Linux</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo sh -c <span style="color:#e6db74">&#39;echo &#34;deb http://dl.google.com/linux/chrome/deb/ stable main&#34; &gt;&gt; /etc/apt/sources.list.d/google.list&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo apt-get update
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo apt-get install google-chrome-stable
-</span></span></code></pre></div><p><a href="http://askubuntu.com/questions/79280/how-to-install-chrome-browser-properly-via-command-line">refer - How to install Chrome browser properly via command line?</a></p>
-</p>
-                
-
-                
-
                 
             </div>
         </div>

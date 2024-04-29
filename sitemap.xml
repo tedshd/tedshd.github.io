@@ -3,19 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.tedshd.io/categories/</loc>
-    <lastmod>2024-04-11T11:28:12+08:00</lastmod>
+    <lastmod>2024-04-29T11:15:52+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/categories/firebase/</loc>
-    <lastmod>2024-04-11T11:28:12+08:00</lastmod>
+    <loc>https://blog.tedshd.io/categories/golang/</loc>
+    <lastmod>2024-04-29T11:15:52+08:00</lastmod>
   </url><url>
-    <loc>https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/</loc>
-    <lastmod>2024-04-11T11:28:12+08:00</lastmod>
+    <loc>https://blog.tedshd.io/categories/migrate/</loc>
+    <lastmod>2024-04-29T11:15:52+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/</loc>
-    <lastmod>2024-04-11T11:28:12+08:00</lastmod>
+    <lastmod>2024-04-29T11:15:52+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/</loc>
-    <lastmod>2024-04-11T11:28:12+08:00</lastmod>
+    <lastmod>2024-04-29T11:15:52+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/use_golang_migrate/</loc>
+    <lastmod>2024-04-29T11:15:52+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/categories/firebase/</loc>
+    <lastmod>2024-04-29T11:14:03+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/</loc>
+    <lastmod>2024-04-29T11:14:03+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/javascript/</loc>
     <lastmod>2024-03-18T23:29:26+08:00</lastmod>
@@ -33,10 +42,10 @@
     <lastmod>2023-11-06T00:52:57+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/angular/</loc>
-    <lastmod>2023-10-30T09:22:36+08:00</lastmod>
+    <lastmod>2024-04-29T11:14:03+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/angular_build_custom_element/</loc>
-    <lastmod>2023-10-30T09:22:36+08:00</lastmod>
+    <lastmod>2024-04-29T11:14:03+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/mac/</loc>
     <lastmod>2023-10-29T18:39:20+08:00</lastmod>
@@ -261,9 +270,6 @@
     <lastmod>2020-10-30T15:20:10+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/categories/go/</loc>
-    <lastmod>2020-10-30T15:20:10+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.tedshd.io/categories/golang/</loc>
     <lastmod>2020-10-30T15:20:10+08:00</lastmod>
   </url><url>
     <loc>https://blog.tedshd.io/posts/form_multi_checked_in_php_nodejs_golang/</loc>

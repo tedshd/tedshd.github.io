@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>app store on tedshd&#39;s DevNote</title>
+    <title>App Store on tedshd&#39;s DevNote</title>
     <link>https://blog.tedshd.io/categories/app-store/</link>
-    <description>Recent content in app store on tedshd&#39;s DevNote</description>
+    <description>Recent content in App Store on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Thu, 12 Jan 2023 14:51:11 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/app-store/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Jan 2023 10:24:18 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/app-store/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>App store &amp; Google Play IAP((In-App Purchase)) 內購與訂閱注意事項</title>
       <link>https://blog.tedshd.io/posts/pay_attention_to_app_iap/</link>
       <pubDate>Thu, 12 Jan 2023 14:51:11 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/pay_attention_to_app_iap/</guid>
       <description>前期比較花時間的準備 收款銀行帳戶 公司登記資料 是否需要試用期 不同地區設定不同價格 避開匯率的問題 退款處理 由於是可以在商店平台做退款(所以需要客戶</description>
     </item>
-    
   </channel>
 </rss>

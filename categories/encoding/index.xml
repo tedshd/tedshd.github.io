@@ -7,17 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Tue, 16 Jun 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/encoding/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/encoding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux - Set Encoding In Linux Environment</title>
       <link>https://blog.tedshd.io/posts/2015-06-16-linux-set-encoding-in-linux-environment/</link>
       <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/2015-06-16-linux-set-encoding-in-linux-environment/</guid>
-      <description>Linux - Set Encoding In Linux Environment Add
-export LC_ALL=en_US.UTF-8 export LANG=en_US.UTF-8 export LANGUAGE=en_US.UTF-8 in .bashrc or .zshrc
-Refer - How to set up a clean UTF-8 environment in Linux</description>
+      <description>Linux - Set Encoding In Linux Environment Add&#xA;export LC_ALL=en_US.UTF-8 export LANG=en_US.UTF-8 export LANGUAGE=en_US.UTF-8 in .bashrc or .zshrc&#xA;Refer - How to set up a clean UTF-8 environment in Linux</description>
     </item>
-    
   </channel>
 </rss>

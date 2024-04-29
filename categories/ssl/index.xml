@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ssl on tedshd&#39;s DevNote</title>
+    <title>Ssl on tedshd&#39;s DevNote</title>
     <link>https://blog.tedshd.io/categories/ssl/</link>
-    <description>Recent content in ssl on tedshd&#39;s DevNote</description>
+    <description>Recent content in Ssl on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Sun, 17 Jul 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/ssl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/ssl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Let&#39;s Encrypt - Has a certificate problem in Android Chrome</title>
       <link>https://blog.tedshd.io/posts/2016-07-17-lets-encrypt-has-a-certificate-problem-in-android-chrome/</link>
       <pubDate>Sun, 17 Jul 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/2016-07-17-lets-encrypt-has-a-certificate-problem-in-android-chrome/</guid>
-      <description>Let&amp;rsquo;s Encrypt - Has a certificate problem in Android Chrome If you use Let&amp;rsquo;s Encrypt as SSL certificate
-Then setting this in Nginx
-ssl_certificate /etc/letsencrypt/live/&amp;lt;domain&amp;gt;/cert.pem; You can find it maybe has problem in Android Chrome
-Now you can modify this
-ssl_certificate /etc/letsencrypt/live/&amp;lt;domain&amp;gt;/fullchain.pem; Test your SSL SSL Server Test
-Refer - Let’s encrypt certificate not working for Andriod’s Google Chrome</description>
+      <description>Let&amp;rsquo;s Encrypt - Has a certificate problem in Android Chrome If you use Let&amp;rsquo;s Encrypt as SSL certificate&#xA;Then setting this in Nginx&#xA;ssl_certificate /etc/letsencrypt/live/&amp;lt;domain&amp;gt;/cert.pem; You can find it maybe has problem in Android Chrome&#xA;Now you can modify this&#xA;ssl_certificate /etc/letsencrypt/live/&amp;lt;domain&amp;gt;/fullchain.pem; Test your SSL SSL Server Test&#xA;Refer - Let’s encrypt certificate not working for Andriod’s Google Chrome</description>
     </item>
-    
   </channel>
 </rss>

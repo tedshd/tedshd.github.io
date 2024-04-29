@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>timeZone on tedshd&#39;s DevNote</title>
+    <title>TimeZone on tedshd&#39;s DevNote</title>
     <link>https://blog.tedshd.io/categories/timezone/</link>
-    <description>Recent content in timeZone on tedshd&#39;s DevNote</description>
+    <description>Recent content in TimeZone on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Tue, 04 Oct 2022 11:16:31 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/timezone/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Nov 2022 17:24:23 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/timezone/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 JavaScript 處理各個時區對應的日期時間</title>
       <link>https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/</link>
       <pubDate>Tue, 04 Oct 2022 11:16:31 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/</guid>
       <description>Intro 在 JavaScript 中的日期時間是個當初沒有定義出良好設計的東西 這裡先舉幾個常見的問題 日期格式問題 日期呈現的語系問題 時區問題 12 小時 24 小時問題 &amp;hellip; 以原生的 API 在</description>
     </item>
-    
   </channel>
 </rss>

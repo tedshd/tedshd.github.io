@@ -1,36 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>uglifyjs on tedshd&#39;s DevNote</title>
+    <title>Uglifyjs on tedshd&#39;s DevNote</title>
     <link>https://blog.tedshd.io/categories/uglifyjs/</link>
-    <description>Recent content in uglifyjs on tedshd&#39;s DevNote</description>
+    <description>Recent content in Uglifyjs on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Sat, 15 Aug 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/uglifyjs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/uglifyjs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript - Google Closure Compiler V.S. Gulp uglify</title>
       <link>https://blog.tedshd.io/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/</link>
       <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/</guid>
-      <description>JavaScript - Google Closure Compiler V.S. Gulp uglify Intro I have two choice
-Google Closure Compiler
-UglifyJs
-Google Closure Compiler Google Closure Compiler
-Google Closure Compiler is a tool for minify and uglify js.
-From Google
-Java
-Command Line
-Slow
-UglifyJs mishoo/UglifyJS2
-More option setting
-Node.js
-Command Line
-Fast
-Test Google Closure Compiler When i run command line, it used lot of cpu source.
-Can feel it lock some seconds.</description>
+      <description>JavaScript - Google Closure Compiler V.S. Gulp uglify Intro I have two choice&#xA;Google Closure Compiler&#xA;UglifyJs&#xA;Google Closure Compiler Google Closure Compiler&#xA;Google Closure Compiler is a tool for minify and uglify js.&#xA;From Google&#xA;Java&#xA;Command Line&#xA;Slow&#xA;UglifyJs mishoo/UglifyJS2&#xA;More option setting&#xA;Node.js&#xA;Command Line&#xA;Fast&#xA;Test Google Closure Compiler When i run command line, it used lot of cpu source.&#xA;Can feel it lock some seconds.</description>
     </item>
-    
   </channel>
 </rss>

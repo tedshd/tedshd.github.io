@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cors on tedshd&#39;s DevNote</title>
+    <title>Cors on tedshd&#39;s DevNote</title>
     <link>https://blog.tedshd.io/categories/cors/</link>
-    <description>Recent content in cors on tedshd&#39;s DevNote</description>
+    <description>Recent content in Cors on tedshd&#39;s DevNote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Fri, 30 Apr 2021 15:51:04 +0800</lastBuildDate><atom:link href="https://blog.tedshd.io/categories/cors/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Apr 2021 18:40:48 +0800</lastBuildDate>
+    <atom:link href="https://blog.tedshd.io/categories/cors/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx 使用 refer 處理 CORS header</title>
       <link>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</link>
       <pubDate>Fri, 30 Apr 2021 15:51:04 +0800</pubDate>
-      
       <guid>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</guid>
       <description>處理 CORS 算是許多 Web 開發者會處理的情況 其中要又有一個比較重要的部分就是要設定 Access-Control-Allow-Origin 這個允許來源的 header 通常為了安全性問題, 都是只會設定允許的 host 上去 但是常</description>
     </item>
-    
   </channel>
 </rss>

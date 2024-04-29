@@ -5,7 +5,7 @@
 
 
 
-<title>javascript | tedshd&#39;s DevNote</title>
+<title>JavaScript | tedshd&#39;s DevNote</title>
 <meta charset="utf-8">
 <meta name="google" content="notranslate">
 <meta id="viewport" name="viewport"
@@ -26,15 +26,13 @@
 <meta name="robots" content="index, follow">
 <meta name="copyright" content="Tedshd">
 
-<meta property="og:title" content="javascript" />
+<meta property="og:title" content="JavaScript" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/javascript/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/categories/javascript/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-
-<meta name="twitter:title" content="javascript"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="JavaScript"/>
 <meta name="twitter:description" content="Develop &amp; Design Note by Ted"/>
 
 
@@ -127,7 +125,7 @@
     <div class="row">
         <h1>
             <span class="u-capitalized">category</span>:
-            javascript
+            JavaScript
         </h1>
         
     </div>
@@ -252,7 +250,7 @@
 </ol>
 <p>這問題追了一下, 確認和 iframe player api 還有 JS 無關後, 就換個思路想會不會是 webview 有啥限制(因為在 browser 都正常)</p>
 <p>下了幾個關鍵字丟給 Google 後查到 webview 有個 <code>setMediaPlaybackRequiresUserGesture</code> 的設定</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>webView<span style="color:#f92672">.</span><span style="color:#a6e22e">getSettings</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setMediaPlaybackRequiresUserGesture</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>webView.<span style="color:#a6e22e">getSettings</span>().<span style="color:#a6e22e">setMediaPlaybackRequiresUserGesture</span>(<span style="color:#66d9ef">false</span>)
 </span></span></code></pre></div><p>設定成 false 的意思是在 webview 不用有任何互動就可以自動播放</p>
 <p>想說會不會有關聯, 所以請 Android 開發那邊設定</p>
 <p>結果就解決這問題了</p>

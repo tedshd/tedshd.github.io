@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.119.0">
+	<meta name="generator" content="Hugo 0.124.1">
     
 
 
@@ -28,12 +28,10 @@
 <meta property="og:title" content="tedshd&#39;s DevNote" />
 <meta property="og:description" content="Develop &amp; Design Note by Ted" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
+<meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png"/>
-
-<meta name="twitter:title" content="tedshd&#39;s DevNote"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="tedshd&#39;s DevNote"/>
 <meta name="twitter:description" content="Develop &amp; Design Note by Ted"/>
 
 
@@ -188,6 +186,119 @@
 
         <div class="col-12">
             <div class="p-card">
+                <h3><a href="https://blog.tedshd.io/posts/angular_build_custom_element/">Angular build custom element</a></h3>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2023-10-30
+</p>
+                
+
+                
+                <p><h2 id="intro">Intro</h2>
+<p>當使用 Angular 時, 有時會有需要自己建立一個自定義的元素</p>
+<p>通常這個都是為了重複使用</p>
+<p>這時會有兩種作法</p>
+<ol>
+<li>
+<p>自己建立一個元件, 再把這元件處理成 module, 這樣就可以有自定義元素了</p>
+</li>
+<li>
+<p>使用 angular create lib 的方式(<a href="https://angular.io/guide/creating-libraries">https://angular.io/guide/creating-libraries</a>)</p>
+</li>
+</ol>
+<p>如果是在公司內部自己使用, 用 1 或是 2 都沒差</p>
+<p>如果是要做成給外部或是別人使用, 甚至是開源出去, 那就是得用 2</p>
+<p>順帶一提如果要使用自己定義的元素, 需要安裝 <code>@angular/elements</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yarn add @angular/elements
+</span></span></code></pre></div><h2 id="自己建立元件">自己建立元件</h2>
+<p>這邊會用 <code>custom-element</code> 當成元件名字舉例</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ng generate component custom-element
+</span></span></code></pre></div><p>建立起一個 <code>custom-element</code> 元件</p>
+<p>之後就是依照寫元件的方式開發</p>
+<p>只是得自己手動處理一下在 <code>custom-element/custom-element.module.ts</code> 得添加和輸出與建立自定義元素的設定</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createCustomElement</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/elements&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createCustomElement</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/elements&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">NgModule</span>, <span style="color:#a6e22e">Injector</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">CustomElementComponent</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;./custom-element.component&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@NgModule</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">declarations</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">CustomElementComponent</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">exports</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">CustomElementComponent</span>],
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomElementModule</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(<span style="color:#66d9ef">private</span> <span style="color:#a6e22e">injector</span>: <span style="color:#66d9ef">Injector</span>) {
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ngDoBootstrap() {</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">customElement</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createCustomElement</span>(<span style="color:#a6e22e">CustomElementComponent</span>, { <span style="color:#a6e22e">injector</span>: <span style="color:#66d9ef">this.injector</span> });
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;app-custom-element&#39;</span>, <span style="color:#a6e22e">customElement</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>之後要使用的元件或是直接在最頂部的 <code>app.module.ts</code> 添加 import</p>
+<p>例如在最頂部的 <code>app.module.ts</code> 添加</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">CustomElementModule</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;./custom-element/custom-element.module&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@NgModule</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">CustomElementModule</span>
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><p>這樣就可以直接在 HTML 使用了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">app-custom-element</span>&gt;&lt;/<span style="color:#f92672">app-custom-element</span>&gt;
+</span></span></code></pre></div><h2 id="使用-angular-create-lib">使用 angular create lib</h2>
+<p>這個方式會比較多步驟</p>
+<p>最後如果要發佈到 npm 還需要做發佈的動作</p>
+<p>也可以做打包給別人用</p>
+<p>但如果不需要打包或發佈</p>
+<p>也可以單純建好後從 lib 載入來使用</p>
+<p>基本上跟著官方文件(<a href="https://angular.io/guide/creating-libraries">https://angular.io/guide/creating-libraries</a>)走就可以了</p>
+<p>這裡就補充下打包的部分</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ng build my-lib
+</span></span><span style="display:flex;"><span>cd dist/my-lib
+</span></span><span style="display:flex;"><span>npm pack
+</span></span></code></pre></div><p>這樣沒有意外的話會產生 <code>my-lib-0.0.1.tgz</code> (0.0.1 這個是隨著這個 lib 的 package.json)</p>
+<h3 id="安裝打包的套件">安裝打包的套件</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yarn add ./my-lib-0.0.1.tgz
+</span></span></code></pre></div><p>這樣就可以安裝了</p>
+<p>之後就正常載入使用</p>
+<h3 id="注意事項">注意事項</h3>
+<p>目前測試 <code>ng generate library my-lib</code> 創建出來的東西打包後</p>
+<p>有注意到如果本身有 import 其他套件的話</p>
+<p>套件 source code 並不會一起放進來</p>
+<p>應該是需要在該 lib 底下的 <code>package.json</code> 添加</p>
+<p>打包後, 這樣之後安裝時才會一起安裝</p>
+<p>例如 <code>projects/my-lib/package.json</code> 添加需要的套件</p>
+<p>或是在 <code>projects/my-lib/</code> 安裝套件, 讓 <code>package.json</code> 有紀錄到安裝什麼套件</p>
+<p>另外因為在開發與測試時如果同一個名字, 版號也一樣, yarn 會 cache, angular 也可能會 cache</p>
+<p>所以移掉後再安裝前建議先下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yarn cache clean
+</span></span></code></pre></div><p>也一起移出掉專案目錄底下的 <code>.angular</code> 資料夾</p>
+</p>
+                
+
+                
+
+                
+                <p><a href="https://blog.tedshd.io/posts/angular_build_custom_element/">Read more</a></p>
+                
+            </div>
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
                 <h3><a href="https://blog.tedshd.io/posts/fixed_mac_external_hard_drive_not_detect/">解決 Mac 外接硬碟讀不到 / 沒有顯示</a></h3>
 
                 
@@ -298,44 +409,6 @@
 
                 
                 <p><a href="https://blog.tedshd.io/posts/fixed_mac_external_hard_drive_not_detect/">Read more</a></p>
-                
-            </div>
-        </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
-        
-
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/fixed_mac_android_file_transfer_not_work/">Fixed android file transfer not work in mac</a></h3>
-
-                
-                
-                <p>
-
-
-<span class=" u-capitalized ">
-    on
-</span>
-2023-03-02
-</p>
-                
-
-                
-                <p><p>In macOS Ventura</p>
-<p>When i use android file transfer</p>
-<p>It doesn&rsquo;t work</p>
-<p>And refer to this <a href="https://discussions.apple.com/thread/254428061">question</a></p>
-<p>But I don&rsquo;t have the <strong>Google Drive</strong> app installed</p>
-<p>And then i found out quit the <strong>Dropbox</strong> app solved the problem</p>
-</p>
-                
-
-                
-
                 
             </div>
         </div>
