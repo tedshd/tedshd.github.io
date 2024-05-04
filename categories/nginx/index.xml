@@ -1,41 +1,164 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nginx on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/nginx/</link>
-    <description>Recent content in Nginx on tedshd&#39;s DevNote</description>
+    <title>Nginx on Tedshd&#39;s Dev note</title>
+    <link>/categories/nginx/</link>
+    <description>Tedshd&#39;s Dev note (Nginx)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Fri, 02 Dec 2022 15:20:30 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Dec 2022 09:54:36 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Nginx 使用 host 判斷作 reverse proxy</title>
-      <link>https://blog.tedshd.io/posts/nginx_use_host_reverse_proxy/</link>
+      <link>/posts/nginx_use_host_reverse_proxy/</link>
       <pubDate>Fri, 02 Dec 2022 09:54:36 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/nginx_use_host_reverse_proxy/</guid>
-      <description>直接上設定 server { listen 80; listen [::]:80; server_name api.example.com, example.com; location / { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-NginX-Proxy true; set $proxy http://0.0.0.0:3000; if ($host ~ api.example.com) { set $proxy http://0.0.0.0:8000; } proxy_pass $proxy; } }</description>
+      
+      <guid>/posts/nginx_use_host_reverse_proxy/</guid>
+      <description>&lt;p&gt;直接上設定&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Nginx&#34; data-lang=&#34;Nginx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;server&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;listen&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;80&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;listen&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;[::]:80&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;server_name&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;api.example.com,&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;example.com&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;/&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;Host&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$host&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;X-Real-IP&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$remote_addr&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;X-Forwarded-For&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;proxy_set_header&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;X-NginX-Proxy&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;true&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$proxy&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;http://0.0.0.0:3000&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$host&lt;/span&gt; ~ &lt;span style=&#34;color:#5af78e&#34;&gt;api.example.com)&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$proxy&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;http://0.0.0.0:8000&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;proxy_pass&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$proxy&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>Nginx 使用 refer 處理 CORS header</title>
-      <link>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</link>
+      <link>/posts/nginx_add_refer_handle_cors/</link>
       <pubDate>Fri, 30 Apr 2021 15:51:04 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</guid>
-      <description>處理 CORS 算是許多 Web 開發者會處理的情況 其中要又有一個比較重要的部分就是要設定 Access-Control-Allow-Origin 這個允許來源的 header 通常為了安全性問題, 都是只會設定允許的 host 上去 但是常</description>
+      
+      <guid>/posts/nginx_add_refer_handle_cors/</guid>
+      <description>&lt;p&gt;處理 CORS 算是許多 Web 開發者會處理的情況&lt;/p&gt;
+&lt;p&gt;其中要又有一個比較重要的部分就是要設定 &lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt; 這個允許來源的 header&lt;/p&gt;
+&lt;p&gt;通常為了安全性問題, 都是只會設定允許的 host 上去&lt;/p&gt;
+&lt;p&gt;但是常常設定而且在不同環境設定也是有點麻煩&lt;/p&gt;
+&lt;p&gt;所以這邊就用了直接在 server 設定的方式來處理&lt;/p&gt;
+&lt;p&gt;這樣直接看 server 的 rule 設定即可&lt;/p&gt;
+&lt;p&gt;也可以快速的條列不同環境的 host&lt;/p&gt;
+&lt;h2 id=&#34;用法&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%94%a8%e6%b3%95&#34;&gt;
+        #
+    &lt;/a&gt;
+    用法
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-conf&#34; data-lang=&#34;conf&#34;&gt;if ($http_referer ~* example.com) {
+    add_header &amp;#39;Access-Control-Allow-Origin&amp;#39; &amp;#39;https://example.com&amp;#39;;
+}
+
+if ($http_referer ~* dev.example.com) {
+    add_header &amp;#39;Access-Control-Allow-Origin&amp;#39; &amp;#39;https://dev.example.com&amp;#39;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;這個判斷沒有固定的寫法&lt;/p&gt;
+&lt;p&gt;可以參考底下 Nginx 對 &lt;code&gt;http_referer&lt;/code&gt; 的介紹來針對需要判斷 host 的方式進行修改&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS&#34;&gt;Refer - 跨來源資源共用（CORS）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://nginx.org/en/docs/http/ngx_http_referer_module.html&#34;&gt;Refer - Module ngx_http_referer_module&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Let&#39;s Encrypt - Has a certificate problem in Android Chrome</title>
-      <link>https://blog.tedshd.io/posts/2016-07-17-lets-encrypt-has-a-certificate-problem-in-android-chrome/</link>
+      <link>/posts/2016-07-17-lets-encrypt-has-a-certificate-problem-in-android-chrome/</link>
       <pubDate>Sun, 17 Jul 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-07-17-lets-encrypt-has-a-certificate-problem-in-android-chrome/</guid>
-      <description>Let&amp;rsquo;s Encrypt - Has a certificate problem in Android Chrome If you use Let&amp;rsquo;s Encrypt as SSL certificate&#xA;Then setting this in Nginx&#xA;ssl_certificate /etc/letsencrypt/live/&amp;lt;domain&amp;gt;/cert.pem; You can find it maybe has problem in Android Chrome&#xA;Now you can modify this&#xA;ssl_certificate /etc/letsencrypt/live/&amp;lt;domain&amp;gt;/fullchain.pem; Test your SSL SSL Server Test&#xA;Refer - Let’s encrypt certificate not working for Andriod’s Google Chrome</description>
+      
+      <guid>/posts/2016-07-17-lets-encrypt-has-a-certificate-problem-in-android-chrome/</guid>
+      <description>&lt;h2 id=&#34;lets-encrypt---has-a-certificate-problem-in-android-chrome&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#lets-encrypt---has-a-certificate-problem-in-android-chrome&#34;&gt;
+        #
+    &lt;/a&gt;
+    Let&amp;rsquo;s Encrypt - Has a certificate problem in Android Chrome
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;If you use Let&amp;rsquo;s Encrypt as SSL certificate&lt;/p&gt;
+&lt;p&gt;Then setting this in Nginx&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-config&#34; data-lang=&#34;config&#34;&gt;ssl_certificate /etc/letsencrypt/live/&amp;lt;domain&amp;gt;/cert.pem;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can find it maybe has problem in Android Chrome&lt;/p&gt;
+&lt;p&gt;Now you can modify this&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-config&#34; data-lang=&#34;config&#34;&gt;ssl_certificate /etc/letsencrypt/live/&amp;lt;domain&amp;gt;/fullchain.pem;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;test-your-ssl&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#test-your-ssl&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Test your SSL
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ssllabs.com/ssltest/index.html&#34;&gt;SSL Server Test&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://community.letsencrypt.org/t/lets-encrypt-certificate-not-working-for-andriods-google-chrome/7184&#34;&gt;Refer - Let’s encrypt certificate not working for Andriod’s Google Chrome&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>nginx - study log</title>
-      <link>https://blog.tedshd.io/posts/2015-09-30-nginx-study-log/</link>
+      <link>/posts/2015-09-30-nginx-study-log/</link>
       <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-09-30-nginx-study-log/</guid>
-      <description>nginx - Study Log 半調子的紀錄&amp;hellip; Command Line sudo service nginx start sudo service nginx restart sudo service nginx stop # 測試 nginx 設定 sudo nginx -t config # document root root /usr/share/nginx/html; # set page show index index.html index.htm index.php; # 把 lib 目錄打開 location /lib { autoindex on; } refer -</description>
+      
+      <guid>/posts/2015-09-30-nginx-study-log/</guid>
+      <description>&lt;h2 id=&#34;nginx---study-log&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#nginx---study-log&#34;&gt;
+        #
+    &lt;/a&gt;
+    nginx - Study Log
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;半調子的紀錄&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;command-line&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#command-line&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Command Line
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo service nginx start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo service nginx restart
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo service nginx stop
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 測試 nginx 設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nginx -t
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;config&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#config&#34;&gt;
+        ##
+    &lt;/a&gt;
+    config
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# document root&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root /usr/share/nginx/html;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# set page show&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;index index.html index.htm index.php;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 把 lib 目錄打開&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;location /lib &lt;span style=&#34;color:#ff6ac1&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    autoindex on;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://serverfault.com/questions/214242/can-i-hide-all-server-os-info&#34;&gt;refer - Can I hide all server / os info?&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

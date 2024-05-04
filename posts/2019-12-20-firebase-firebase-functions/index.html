@@ -1,187 +1,533 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+
+
+<html lang="en-us" data-theme="">
+<head>
     
-
-
-
-
-<title>Firebase - Firebase functions 使用紀錄 | tedshd&#39;s DevNote</title>
+        
 <meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Firebase - Firebase functions 使用紀錄 - Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="# Firebase - Firebase functions 使用紀錄 最近想把一些自己在用的小東西丟到 severless 的服務
+因為之前發生過一次 server 掛掉過一次的情況
+當時是 GCP CE 不知為何 VM 中的網卡設定出問題
+整個網卡消失
+然後外部根本連不進去
+最後請教大大後
+只好開一個新的 instance 然後把原本的那個儲存空間掛到新開的 instance
+因為那台平常在試驗的 server
+裡面亂七八糟而且大多的 code 都不會做 git 控管
+所以就想說把一些常用的功能用 serverless 拆出來好了
+就想說來研究一下火了一陣子然後設定沒設定好就會噴一堆預算和安全性問題的 Firebase 所推出的 functions
+其實 GCP 自己本身也有 cloud functions
+但我這是玩票性質的
+所以就先用 firebase functions 來試試啦
+先說一下目前 firebase functions 只支援 Nodejs
+但是 Google cloud 的 cloud functions 支援 Nodejs python golnag
+首先先裝 firebase-tools CLI npm install -g firebase-tools 執行 firebase login firebase login 到要建立 functions 的資料夾 這時候要注意如果你要做版本控管">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta name="google" content="notranslate">
-<meta id="viewport" name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='Firebase - Firebase functions 使用紀錄 最近想把一些自己在用的小東西丟到 severless 的服務 因為之前發生過一次 server 掛掉過一次的情況 當時是 GCP CE 不知為何 VM 中的網卡設定出問題 整個網卡消'>
-<meta name="keywords" content=''>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/2019-12-20-firebase-firebase-functions/">
-<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/2019-12-20-firebase-firebase-functions/" />
-
-<link rel="canonical" href="https://blog.tedshd.io/posts/2019-12-20-firebase-firebase-functions/" />
-<link rel="shortcut icon" href="/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
-<meta name="theme-color" content="">
-<meta name="robots" content="index, follow">
-<meta name="copyright" content="Tedshd">
-
-<meta property="og:title" content="Firebase - Firebase functions 使用紀錄" />
-<meta property="og:description" content="Firebase - Firebase functions 使用紀錄 最近想把一些自己在用的小東西丟到 severless 的服務 因為之前發生過一次 server 掛掉過一次的情況 當時是 GCP CE 不知為何 VM 中的網卡設定出問題 整個網卡消" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2019-12-20-firebase-firebase-functions/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-12-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="Firebase - Firebase functions 使用紀錄"/>
-<meta name="twitter:description" content="Firebase - Firebase functions 使用紀錄 最近想把一些自己在用的小東西丟到 severless 的服務 因為之前發生過一次 server 掛掉過一次的情況 當時是 GCP CE 不知為何 VM 中的網卡設定出問題 整個網卡消"/>
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-<script data-ad-client="ca-pub-0553186380244641" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
+
+        
+
+
+
+
+
 
 
     
+        <div class="theme-switcher">
+            <span class="inline-svg">
 
     
 
-    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
 
     
-<link>
-
-<link
-    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
-    rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
-
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
 
-    gtag('config', 'G-1NKP3D2ZGG');
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
     </script>
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
-                    tedshd&#39;s DevNote
-                </a>
-            </div>
-            
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
-                <i class="p-icon--menu"></i>
+
+
+        <ul class="social-icons noselect">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
             </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
-                <i class="p-icon--close"></i>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
             </a>
-        </div>
+        </li>
+    
 
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
 
-            <ul class="p-navigation__links" role="menu">
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/categories">Categories</a>
-                </li>
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/tags">tags</a>
-                </li>
-                
-            </ul>
+    
 
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-            
-        </nav>
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
     </div>
-</header><div id="main-content">
-<div class="page-banner">
-    <div class="row u-vertically-center">
-        <div class="col-8 pure-g">
-            <div class="pure-u">
-                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
-                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
-            </div>
-            <div class="pure-u">
-                <h2>tedshd&#39;s DevNote</h2>
-                <p>Develop &amp; Design Note by Ted</p>
-            </div>
-        </div>
+    <div class="header-top-right">
+
     </div>
 </div>
 
-<ul class="p-navigation__links sub_menu" role="menu">
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tedshd.github.io/resume/">About</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tysh310246.blogspot.tw/">Blog</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://github.com/tedshd">Github</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
-    </li>
-    
-</ul>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
 
-<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Firebase - Firebase functions 使用紀錄</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2019-12-20">2019-12-20</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2019-12-20-firebase-firebase-functions/">/posts/2019-12-20-firebase-firebase-functions/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/firebase/">Firebase</a></li>
+                
+                    
+                    <li><a href="/categories/functions/">Functions</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#firebase---firebase-functions-使用紀錄">Firebase - Firebase functions 使用紀錄</a>
+      <ul>
+        <li><a href="#要注意的事和開始寫扣啦">要注意的事和開始寫扣啦</a></li>
+        <li><a href="#部署區域">部署區域</a></li>
+        <li><a href="#本地測試">本地測試</a></li>
+        <li><a href="#呼叫第三方或外部-api-時出現-eai_again">呼叫第三方或外部 api 時出現 EAI_AGAIN</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
 </script>
 
-
-<header class="">
-    <div class="row">
-        <h1>Firebase - Firebase functions 使用紀錄</h1>
-    </div>
-</header>
-
-
-<section class="p-strip is-shallow">
-    <main class="row post-content">
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2019-12-20
-        </p>
-        
-        <h2 id="firebase---firebase-functions-使用紀錄">Firebase - Firebase functions 使用紀錄</h2>
+        <div class="content e-content">
+            <h2 id="firebase---firebase-functions-使用紀錄" >
+<div>
+    <a href="#firebase---firebase-functions-%e4%bd%bf%e7%94%a8%e7%b4%80%e9%8c%84">
+        #
+    </a>
+    Firebase - Firebase functions 使用紀錄
+</div>
+</h2>
 <p>最近想把一些自己在用的小東西丟到 severless 的服務</p>
 <p>因為之前發生過一次 server 掛掉過一次的情況</p>
 <p>當時是 GCP CE 不知為何 VM 中的網卡設定出問題</p>
@@ -201,11 +547,11 @@
 <ol>
 <li>首先先裝 firebase-tools CLI</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npm install -g firebase-tools
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npm install -g firebase-tools
 </span></span></code></pre></div><ol start="2">
 <li>執行 firebase login</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>firebase login
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>firebase login
 </span></span></code></pre></div><ol start="3">
 <li>到要建立 functions 的資料夾</li>
 </ol>
@@ -215,7 +561,7 @@
 <ol start="4">
 <li>執行 firebase init functions</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>firebase init functions
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>firebase init functions
 </span></span></code></pre></div><p>過程中會請你選擇或新開專案</p>
 <p>這邊的專案是指 firebase 上面的專案</p>
 <p>可以用 <code>JavaScript</code> 寫或 <code>TypeScript</code> 寫 code</p>
@@ -236,20 +582,27 @@
       |
       +- node_modules/ # directory where your dependencies (declared in
                        # package.json) are installed
-</code></pre><h3 id="要注意的事和開始寫扣啦">要注意的事和開始寫扣啦</h3>
+</code></pre><h3 id="要注意的事和開始寫扣啦" >
+<div>
+    <a href="#%e8%a6%81%e6%b3%a8%e6%84%8f%e7%9a%84%e4%ba%8b%e5%92%8c%e9%96%8b%e5%a7%8b%e5%af%ab%e6%89%a3%e5%95%a6">
+        ##
+    </a>
+    要注意的事和開始寫扣啦
+</div>
+</h3>
 <p>index.js 就是 functions 會執行的程式</p>
 <p>你可以依照自己的需求安裝需要的 node 套件</p>
 <p>但需要注意的是該套件安裝完你的 <code>package.json</code> 的 <code>dependencies</code> 必須有紀錄該套件的版號</p>
 <p><code>package.json</code> 中的</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;engines&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;node&#34;</span>: <span style="color:#e6db74">&#34;8&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#5af78e">&#34;engines&#34;</span><span style="color:#ff5c57">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff6ac1">&#34;node&#34;</span>: <span style="color:#5af78e">&#34;8&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>表示使用的 node 版本</p>
 <p>目前預設是 8</p>
 <p>10 有支援但目前是 beta</p>
 <p>可以看目前<a href="https://firebase.google.com/docs/functions/manage-functions#set_nodejs_version">文件</a>來決定用哪一版的 nodejs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">ok</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">functions</span>.<span style="color:#a6e22e">https</span>.<span style="color:#a6e22e">onRequest</span>((<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">response</span>) =&gt; {
-</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#34;Hello from Firebase!&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>exports.ok <span style="color:#ff6ac1">=</span> functions.https.onRequest((request, response) =&gt; {
+</span></span><span style="display:flex;"><span> response.send(<span style="color:#5af78e">&#34;Hello from Firebase!&#34;</span>);
 </span></span><span style="display:flex;"><span>});
 </span></span></code></pre></div><p>ok 就會是實際上 url path</p>
 <p>上線後的 url 會是</p>
@@ -260,7 +613,14 @@ http://us-central1-my-project.cloudfunctions.net/ok
 </code></pre><p>相關 <a href="https://firebase.google.com/docs/reference/functions">API</a> 可以參考</p>
 <p>很多 API 都和 express 幾乎一樣</p>
 <p>如果要帶參數的話可以用 <a href="https://expressjs.com/en/api.html#req.params">params</a></p>
-<h3 id="部署區域">部署區域</h3>
+<h3 id="部署區域" >
+<div>
+    <a href="#%e9%83%a8%e7%bd%b2%e5%8d%80%e5%9f%9f">
+        ##
+    </a>
+    部署區域
+</div>
+</h3>
 <p>可以決定該功能在那個區域部署</p>
 <p>同一個 index 檔案可以部署不同地區</p>
 <p>預設是 us-central1 (Iowa) 艾荷華</p>
@@ -272,19 +632,33 @@ http://us-central1-my-project.cloudfunctions.net/ok
 <p>不然官方是建議建立不同 region 的 entry</p>
 <p><a href="https://firebase.google.com/docs/functions/manage-functions#modify-region">modify-region</a></p>
 <p>再把 function 邏輯抽象出來就可以了</p>
-<h3 id="本地測試">本地測試</h3>
+<h3 id="本地測試" >
+<div>
+    <a href="#%e6%9c%ac%e5%9c%b0%e6%b8%ac%e8%a9%a6">
+        ##
+    </a>
+    本地測試
+</div>
+</h3>
 <p>可以參考<a href="https://firebase.google.com/docs/functions/local-emulator">Run functions locally</a></p>
 <p>會在本地開啟 local server</p>
 <p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2019-12-20_%E4%B8%8B%E5%8D%882_12_47.png?alt=media&amp;token=f2b94428-cd21-4452-8718-c6aceb378c08" alt=""></p>
 <p>也會有對應的 url path 可以讓你直接點</p>
 <p>如果要測試 log</p>
 <p>在 node 中寫</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>()
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">info</span>()
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>()
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">warn</span>()
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>console.log()
+</span></span><span style="display:flex;"><span>console.info()
+</span></span><span style="display:flex;"><span>console.error()
+</span></span><span style="display:flex;"><span>console.warn()
 </span></span></code></pre></div><p>就可以了</p>
-<h3 id="呼叫第三方或外部-api-時出現-eai_again">呼叫第三方或外部 api 時出現 EAI_AGAIN</h3>
+<h3 id="呼叫第三方或外部-api-時出現-eai_again" >
+<div>
+    <a href="#%e5%91%bc%e5%8f%ab%e7%ac%ac%e4%b8%89%e6%96%b9%e6%88%96%e5%a4%96%e9%83%a8-api-%e6%99%82%e5%87%ba%e7%8f%be-eai_again">
+        ##
+    </a>
+    呼叫第三方或外部 api 時出現 EAI_AGAIN
+</div>
+</h3>
 <p>查了一下</p>
 <p>這是 DNS 解析的問題</p>
 <p>在 Free 方案只允許呼叫 Google service 自己的 api</p>
@@ -292,45 +666,77 @@ http://us-central1-my-project.cloudfunctions.net/ok
 <p>用 Blaze plan 就可以了</p>
 <p><a href="https://github.com/sendgrid/sendgrid-nodejs/issues/927">Refer - getaddrinfo EAI_AGAIN api.sendgrid.com:443</a></p>
 
-    </main>
-</section>
+        </div>
 
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
+    </article>
+
     
-    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/2019-12-02-header-accept-language/">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            Header -  Accept-Language &amp; Content-Language
-        </span>
-    </a>
     
 
     
-    <a class="p-article-pagination__link--next" href="https://blog.tedshd.io/posts/2019-12-23-seo-enhanced-youtube-video-seo/">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            SEO - 增強 Youtube video SEO
-        </span>
-    </a>
+        
+        
     
-</div>
-    </div>
-</footer>
 
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Tedshd
-            </p>
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
         </div>
     </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
 </footer>
 
-
-
-
+        
+    </div>
 </body>
 </html>

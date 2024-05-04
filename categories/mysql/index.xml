@@ -1,27 +1,328 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mysql on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/mysql/</link>
-    <description>Recent content in Mysql on tedshd&#39;s DevNote</description>
+    <title>Mysql on Tedshd&#39;s Dev note</title>
+    <link>/categories/mysql/</link>
+    <description>Tedshd&#39;s Dev note (Mysql)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Sat, 08 Apr 2023 14:31:02 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 May 2022 15:53:18 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Mac M1 run MySQL in local docker</title>
-      <link>https://blog.tedshd.io/posts/mysql_in_docker/</link>
+      <link>/posts/mysql_in_docker/</link>
       <pubDate>Tue, 03 May 2022 15:53:18 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/mysql_in_docker/</guid>
-      <description>Usage docker hub&#xA;In Apple M1&#xA;no-official image&#xA;amd64/mysql&#xA;MySQL 5.7&#xA;docker pull amd64/mysql:5.7 Run docker in local Sample for M1(different of image name)&#xA;docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d amd64/mysql:latest Container run in 0.0.0.0&#xA;mysql --default-character-set=utf8mb4 -u root -h 0.0.0.0 -P 3306 -p -A </description>
+      
+      <guid>/posts/mysql_in_docker/</guid>
+      <description>&lt;h2 id=&#34;usage&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#usage&#34;&gt;
+        #
+    &lt;/a&gt;
+    Usage
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/_/mysql&#34;&gt;docker hub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In Apple M1&lt;/p&gt;
+&lt;p&gt;no-official image&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/amd64/mysql/&#34;&gt;amd64/mysql&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;MySQL 5.7&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker pull amd64/mysql:5.7
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;run-docker-in-local&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#run-docker-in-local&#34;&gt;
+        #
+    &lt;/a&gt;
+    Run docker in local
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Sample for M1(different of image name)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run --name mysql -p 3306:3306 -e &lt;span style=&#34;color:#ff5c57&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;password -d amd64/mysql:latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Container run in &lt;code&gt;0.0.0.0&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql --default-character-set&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;utf8mb4 -u root -h 0.0.0.0 -P &lt;span style=&#34;color:#ff9f43&#34;&gt;3306&lt;/span&gt; -p -A
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>MySQL command</title>
-      <link>https://blog.tedshd.io/posts/2013-08-28-mysql-command/</link>
+      <link>/posts/2013-08-28-mysql-command/</link>
       <pubDate>Wed, 28 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-08-28-mysql-command/</guid>
-      <description>MySQL Monitor Setting mysql -u root -h &amp;lt;HOST&amp;gt; -P &amp;lt;PORT&amp;gt; &amp;lt;DATABASE_NAME&amp;gt; -p -A database 每一個 command 最後都要加 ; status; create database database_name; drop database database_name; show databases; show tables; use database_name; table create table table_name( column1 type1, column2 type2); create table table_name( column1 type1, column2 type2) charset=utf8; desc table_name; show create table &amp;lt;table_name&amp;gt; MySQL 8.0 Reference Manual :: 3.3.2 Creating a Table - MySQL</description>
+      
+      <guid>/posts/2013-08-28-mysql-command/</guid>
+      <description>&lt;h2 id=&#34;mysql-monitor&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mysql-monitor&#34;&gt;
+        #
+    &lt;/a&gt;
+    MySQL Monitor
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;setting&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#setting&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Setting
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;u root &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;h &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;HOST&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;P &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;PORT&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;DATABASE_NAME&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;p &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;A
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;database&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#database&#34;&gt;
+        ##
+    &lt;/a&gt;
+    database
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;每一個 command 最後都要加 &lt;code&gt;;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;status;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;create&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;database&lt;/span&gt; database_name;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;drop&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;database&lt;/span&gt; database_name;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;show&lt;/span&gt; databases;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;show&lt;/span&gt; tables;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;use database_name;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;table&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#table&#34;&gt;
+        ##
+    &lt;/a&gt;
+    table
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;create&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;table&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    column1 type1,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    column2 type2);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;create&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;table&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    column1 type1,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    column2 type2) charset&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;utf8;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;desc&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;show&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;create&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;table&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html&#34;&gt;MySQL 8.0 Reference Manual :: 3.3.2 Creating a Table - MySQL&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dev.mysql.com/doc/refman/8.0/en/create-table.html&#34;&gt;13.1.20 CREATE TABLE Statement - MySQL :: Developer Zone&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;欄位 1&lt;/th&gt;
+&lt;th&gt;欄位 2&lt;/th&gt;
+&lt;th&gt;欄位 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;資料 1&lt;/td&gt;
+&lt;td&gt;資料 2&lt;/td&gt;
+&lt;td&gt;資料 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;寫入資料&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;insert&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;into&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;資料表名稱&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;欄位名稱&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ff5c57&#34;&gt;欄位名稱&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;) value(&lt;span style=&#34;color:#ff5c57&#34;&gt;資料&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ff5c57&#34;&gt;資料&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;顯示資料&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;欄位名稱&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ff5c57&#34;&gt;欄位名稱&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;資料表名稱&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;limit&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;select&lt;/span&gt; id,create_time &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;limit&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;where&lt;/span&gt; id &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;123&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;刪除該-table-所有的資料&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%88%aa%e9%99%a4%e8%a9%b2-table-%e6%89%80%e6%9c%89%e7%9a%84%e8%b3%87%e6%96%99&#34;&gt;
+        ###
+    &lt;/a&gt;
+    刪除該 table 所有的資料
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;TRUNCATE&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;auto_increment 的欄位會 reset&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;truncate&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;table&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;DELETE&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;delete&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;or&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;delete&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;where&lt;/span&gt; id&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;100&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;刪除全部資料的效能: TRUNCATE &amp;gt; DELETE&lt;/p&gt;
+&lt;h4 id=&#34;刪除該-table&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%88%aa%e9%99%a4%e8%a9%b2-table&#34;&gt;
+        ###
+    &lt;/a&gt;
+    刪除該 table
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;drop&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;table&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://www.opencli.com/mysql/mysql-truncate-delete-drop-difference&#34;&gt;MySQL – DELETE, TRUNCATE 及 DROP 的分別&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;資料型別&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%b3%87%e6%96%99%e5%9e%8b%e5%88%a5&#34;&gt;
+        ##
+    &lt;/a&gt;
+    資料型別
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;顯示欄位型別&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;show&lt;/span&gt; columns &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;字串型別&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%ad%97%e4%b8%b2%e5%9e%8b%e5%88%a5&#34;&gt;
+        ##
+    &lt;/a&gt;
+    字串型別
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;varchar &amp;ndash; 最多到 255 字
+text
+輸入時要加引號
+如要輸入 &lt;code&gt;’\’&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;日期時間型別&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%97%a5%e6%9c%9f%e6%99%82%e9%96%93%e5%9e%8b%e5%88%a5&#34;&gt;
+        ##
+    &lt;/a&gt;
+    日期時間型別
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;datetime&amp;ndash;2011-8-8 00:00:00
+date&amp;ndash;2011-8-8
+year&amp;ndash;2011
+time&amp;ndash;00:00:00&lt;/p&gt;
+&lt;p&gt;sql TYPE timestamp&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// PHP
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$timestamp&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; date(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Y-m-d H:i:s&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;TABLE&lt;/span&gt; t1 (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  created &lt;span style=&#34;color:#ff6ac1&#34;&gt;TIMESTAMP&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;DEFAULT&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;CURRENT_TIMESTAMP&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  updated &lt;span style=&#34;color:#ff6ac1&#34;&gt;TIMESTAMP&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;DEFAULT&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;CURRENT_TIMESTAMP&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;ON&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;UPDATE&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;CURRENT_TIMESTAMP&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://dev.mysql.com/doc/refman/8.0/en/timestamp-initialization.html&#34;&gt;11.2.5 Automatic Initialization and Updating for TIMESTAMP and DATETIME&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;修改欄位名稱&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bf%ae%e6%94%b9%e6%ac%84%e4%bd%8d%e5%90%8d%e7%a8%b1&#34;&gt;
+        #
+    &lt;/a&gt;
+    修改欄位名稱
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;ALTER&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;TABLE&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; CHANGE &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;old&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;varchar&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;255&lt;/span&gt;)&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;修改-table-裡-column-的編碼改成-utf8mb4&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bf%ae%e6%94%b9-table-%e8%a3%a1-column-%e7%9a%84%e7%b7%a8%e7%a2%bc%e6%94%b9%e6%88%90-utf8mb4&#34;&gt;
+        ##
+    &lt;/a&gt;
+    修改 table 裡 column 的編碼改成 utf8mb4
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;alter&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;table&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;modify&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;column&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;varchar&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;255&lt;/span&gt;) &lt;span style=&#34;color:#ff5c57&#34;&gt;CHARACTER&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;SET&lt;/span&gt; utf8mb4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;where-多筆資料&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#where-%e5%a4%9a%e7%ad%86%e8%b3%87%e6%96%99&#34;&gt;
+        ##
+    &lt;/a&gt;
+    where 多筆資料
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;FROM&lt;/span&gt; users &lt;span style=&#34;color:#ff6ac1&#34;&gt;where&lt;/span&gt; id &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; (&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;,&lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;,&lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;,&lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;dump-table&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#dump-table&#34;&gt;
+        ##
+    &lt;/a&gt;
+    dump table
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysqldump -A --ssl-mode&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;DISABLED -u &amp;lt;user&amp;gt; -p&amp;lt;password&amp;gt; -h &amp;lt;host&amp;gt; &amp;lt;database&amp;gt; &amp;lt;table&amp;gt; | mysql -u root -h &amp;lt;host&amp;gt; -P &amp;lt;post&amp;gt; &amp;lt;database&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;必要時需要另外添加參數&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--column-statistics&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; --lock-tables&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_column-statistics&#34;&gt;Refer - mysqldump — A Database Backup Program&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;直接把-query-出來的一筆資料新增複製&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%9b%b4%e6%8e%a5%e6%8a%8a-query-%e5%87%ba%e4%be%86%e7%9a%84%e4%b8%80%e7%ad%86%e8%b3%87%e6%96%99%e6%96%b0%e5%a2%9e%e8%a4%87%e8%a3%bd&#34;&gt;
+        ##
+    &lt;/a&gt;
+    直接把 query 出來的一筆資料新增(複製)
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;insert&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;into&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;欄位&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;欄位&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;欄位&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;欄位&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;欄位&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;欄位&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;where&lt;/span&gt; id&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;找出欄位有重複的值&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%89%be%e5%87%ba%e6%ac%84%e4%bd%8d%e6%9c%89%e9%87%8d%e8%a4%87%e7%9a%84%e5%80%bc&#34;&gt;
+        ##
+    &lt;/a&gt;
+    找出欄位有重複的值
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;column_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;COUNT&lt;/span&gt;(&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;column_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;FROM&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;GROUP&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;BY&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;column_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;HAVING&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;COUNT&lt;/span&gt;(&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;column_name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;time-zone-相關&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#time-zone-%e7%9b%b8%e9%97%9c&#34;&gt;
+        ##
+    &lt;/a&gt;
+    time zone 相關
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;確認時區&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%a2%ba%e8%aa%8d%e6%99%82%e5%8d%80&#34;&gt;
+        ###
+    &lt;/a&gt;
+    確認時區
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;@@&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;global&lt;/span&gt;.time_zone;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;確認當前時間&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%a2%ba%e8%aa%8d%e7%95%b6%e5%89%8d%e6%99%82%e9%96%93&#34;&gt;
+        ###
+    &lt;/a&gt;
+    確認當前時間
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;SELECT&lt;/span&gt; NOW();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;設定時區&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a8%ad%e5%ae%9a%e6%99%82%e5%8d%80&#34;&gt;
+        ###
+    &lt;/a&gt;
+    設定時區
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;SET&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;GLOBAL&lt;/span&gt; time_zone &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;‘&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;6&lt;/span&gt;:&lt;span style=&#34;color:#ff9f43&#34;&gt;00&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;’&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;troubleshooting&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#troubleshooting&#34;&gt;
+        ##
+    &lt;/a&gt;
+    troubleshooting
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;On Mac
+Q:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ERROR &lt;span style=&#34;color:#ff9f43&#34;&gt;2002&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;HY000&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;: Can&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;t connect to local MySQL server through socket &amp;#39;&lt;/span&gt;/tmp/mysql.sock&lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;2&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A:
+mysql 沒啟動&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql.server start
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or 設定沒有設定 socket 的路徑&lt;/p&gt;
+&lt;p&gt;for mac brew 安裝的 mysql 在 &lt;code&gt;/usr/local/var/mysql&lt;/code&gt; 所以設定就設定該路徑(底下不必有 mysql.sock)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;client&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;socket&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;/usr/local/var/mysql/mysql.sock
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;mysqld&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;socket&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;/usr/local/var/mysql/mysql.sock
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;reference&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#reference&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Reference
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mysqltutorial.org/basic-mysql-tutorial.aspx&#34;&gt;Basic MySQL Tutorial&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

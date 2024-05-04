@@ -1,20 +1,208 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vue on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/vue/</link>
-    <description>Recent content in Vue on tedshd&#39;s DevNote</description>
+    <title>Vue on Tedshd&#39;s Dev note</title>
+    <link>/categories/vue/</link>
+    <description>Tedshd&#39;s Dev note (Vue)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/vue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Vue - 使用 Vue cli 3 開發 SSR 紀錄</title>
-      <link>https://blog.tedshd.io/posts/2019-06-24-vue-develop-ssr-records-with-vue-cli-3/</link>
+      <link>/posts/2019-06-24-vue-develop-ssr-records-with-vue-cli-3/</link>
       <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2019-06-24-vue-develop-ssr-records-with-vue-cli-3/</guid>
-      <description>Vue - 使用 Vue cli 3 開發 SSR 紀錄 Intro 因為工作需求需要一個能夠 SSR 的工具 由於是接手別的團隊回來的程式也剛好要做大動作的重構(打掉重練 之前的團隊是使用 koot.js 個人</description>
+      
+      <guid>/posts/2019-06-24-vue-develop-ssr-records-with-vue-cli-3/</guid>
+      <description>&lt;h2 id=&#34;vue---使用-vue-cli-3-開發-ssr-紀錄&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#vue---%e4%bd%bf%e7%94%a8-vue-cli-3-%e9%96%8b%e7%99%bc-ssr-%e7%b4%80%e9%8c%84&#34;&gt;
+        #
+    &lt;/a&gt;
+    Vue - 使用 Vue cli 3 開發 SSR 紀錄
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;因為工作需求需要一個能夠 SSR 的工具&lt;/p&gt;
+&lt;p&gt;由於是接手別的團隊回來的程式也剛好要做大動作的重構(打掉重練&lt;/p&gt;
+&lt;p&gt;之前的團隊是使用 koot.js&lt;/p&gt;
+&lt;p&gt;個人花了點時間看了一下還不錯, 但是&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;對 react 不太熟&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;居然還是用 less, 我在 2017 就已經捨棄使用預處理器來處理樣式了, 擁抱 CSS L4&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;還是比較喜歡 Vue 的架構&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所以就心痛的來研究一下 Vue cli 處理 SSR 的方式&lt;/p&gt;
+&lt;p&gt;官方有文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ssr.vuejs.org/zh/&#34;&gt;Vue.js 服务器端渲染指南&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;看完以後&lt;/p&gt;
+&lt;p&gt;恩&amp;hellip;&lt;/p&gt;
+&lt;p&gt;好麻煩啊&lt;/p&gt;
+&lt;p&gt;使用工具和 framework 的目的就是要無腦使用啊&lt;/p&gt;
+&lt;p&gt;還要寫一大堆 code 幹嘛&lt;/p&gt;
+&lt;p&gt;這邊先列出自己的需求&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;SSR 而且需要是 &lt;a href=&#34;https://blog.v123582.tw/2016/04/03/%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84%E5%89%8D%E7%AB%AF%E8%B6%A8%E5%8B%A2-Isomorphic-%E8%88%87-UniversalJS/&#34;&gt;Universal&lt;/a&gt; 的處理方式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在樣式能夠使用 postcss 處理 CSS L4&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;能夠處理 Metadata&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;能夠把環境需求用設定處理掉或根本不用設定就處理掉&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;因為工作需求需要多語系..&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最好是要有 PWA&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所以就開始了痛苦的尋找之旅&lt;/p&gt;
+&lt;h3 id=&#34;result&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#result&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Result
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;使用-vue-clihttpsclivuejsorg&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8-vue-clihttpsclivuejsorg&#34;&gt;
+        ###
+    &lt;/a&gt;
+    使用 &lt;a href=&#34;https://cli.vuejs.org&#34;&gt;vue cli&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;之前從第一版就開始在使用了, 所以算是比較熟的, 且學習成本低&lt;/p&gt;
+&lt;p&gt;跟 react 比我比較喜歡 vue 的寫法&lt;/p&gt;
+&lt;p&gt;且到了第三版的現在已經越來越成熟且方便設定&lt;/p&gt;
+&lt;p&gt;還有自己的生態圈&lt;/p&gt;
+&lt;p&gt;插件可以方便找查與安裝&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第 6 點滿足&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;使用-vue-cli-plugin-ssrhttpsgithubcomakryumvue-cli-plugin-ssr&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8-vue-cli-plugin-ssrhttpsgithubcomakryumvue-cli-plugin-ssr&#34;&gt;
+        ###
+    &lt;/a&gt;
+    使用 &lt;a href=&#34;https://github.com/Akryum/vue-cli-plugin-ssr&#34;&gt;vue-cli-plugin-ssr&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;這個用 vue ui 在找 plugin 時有不少人用&lt;/p&gt;
+&lt;p&gt;預設不用設定&lt;/p&gt;
+&lt;p&gt;在開發時就可以直接把 vue 轉成 SSR 輸出來看很方便(寫一套就自動幫你處理好 SSR &amp;amp; CSR)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第 1 點滿足&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;處理非同步資料-client--server-side&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%99%95%e7%90%86%e9%9d%9e%e5%90%8c%e6%ad%a5%e8%b3%87%e6%96%99-client--server-side&#34;&gt;
+        ###
+    &lt;/a&gt;
+    處理非同步資料 client &amp;amp; server side
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://ssr.vuejs.org/guide/data.html#data-store&#34;&gt;Data Pre-Fetching and State&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;主要就是先處理 API 然後 response 回來的資料放到 store 裡&lt;/p&gt;
+&lt;p&gt;這邊可以結合 &lt;a href=&#34;https://github.com/axios/axios&#34;&gt;axios&lt;/a&gt; 去使用&lt;/p&gt;
+&lt;h4 id=&#34;處理-meta-data&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%99%95%e7%90%86-meta-data&#34;&gt;
+        ###
+    &lt;/a&gt;
+    處理 Meta data
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;這比較麻煩&lt;/p&gt;
+&lt;p&gt;除了要 SSR 以外必須也需要能在 CSR 一起處理掉&lt;/p&gt;
+&lt;p&gt;有一個套件蠻多人推的是 &lt;a href=&#34;https://github.com/nuxt/vue-meta&#34;&gt;vue meta&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但是在搭配上述的 &lt;code&gt;vue-cli-plugin-ssr&lt;/code&gt; 時, vue meta 的 SSR 設定是不 work 的&lt;/p&gt;
+&lt;p&gt;有人開了 &lt;a href=&#34;https://github.com/Akryum/vue-cli-plugin-ssr/issues/33&#34;&gt;issue&lt;/a&gt; 但是被擺很久了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;其實很多套件都可以處理 SSR 和 CSR 的 meta tag&lt;/p&gt;
+&lt;p&gt;但是在跟 &lt;a href=&#34;https://github.com/Akryum/vue-cli-plugin-ssr&#34;&gt;vue-cli-plugin-ssr&lt;/a&gt; 搭配時都遇到個問題就是當 meta 資訊是從後端動態來的話就不行了&lt;/p&gt;
+&lt;p&gt;因為從 api 來的話要在 SSR 處理必須要在 vue component 中的 &lt;code&gt;serverPrefetch&lt;/code&gt; 先處理 async 回來的動作&lt;/p&gt;
+&lt;p&gt;然後把 API 拉回來的資料放到 store 中處理才能讓 SSR 處理時有資料&lt;/p&gt;
+&lt;p&gt;但是 meta tag 的資訊很不好處理&lt;/p&gt;
+&lt;p&gt;必須要遵循以下文件中的方式&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ssr.vuejs.org/zh/guide/head.html&#34;&gt;Head Management&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但是試過用 mixin 沒法處理 meta 上的 case&amp;hellip;&lt;/p&gt;
+&lt;p&gt;如果把 meta 的資料獨立 API 處理也許有機會&lt;/p&gt;
+&lt;p&gt;最後只好自己寫個 function 做 hack 的處理&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;computed&lt;/code&gt; 做了一個 init 的 function 來處理建立 metadata&lt;/p&gt;
+&lt;p&gt;但是目前這 function 處理 CSR 的部分還不算太 ok, 因為自己目前都是動態砍掉 HTML DOM 在重建 DOM 會有些微效能上的問題&lt;/p&gt;
+&lt;h4 id=&#34;樣式處理&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%a8%a3%e5%bc%8f%e8%99%95%e7%90%86&#34;&gt;
+        ###
+    &lt;/a&gt;
+    樣式處理
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;Vue 採用 CSS module 的設計&lt;/p&gt;
+&lt;p&gt;Vue cli 使用了 CSS Loader&lt;/p&gt;
+&lt;p&gt;但是個人其實不是很喜歡使用 CSS module 的方法&lt;/p&gt;
+&lt;p&gt;因為它是採用動態處理 style 的方式&lt;/p&gt;
+&lt;p&gt;在某些 case 底下會造成 UI 大量重繪&lt;/p&gt;
+&lt;p&gt;這在畫面上體驗很差&lt;/p&gt;
+&lt;p&gt;除非自己做一個 loading 處理掉這問題&lt;/p&gt;
+&lt;p&gt;再加上如果要使用 CSS L4 feature 得有些調整&lt;/p&gt;
+&lt;p&gt;最後使用 &lt;a href=&#34;https://github.com/postcss/postcss-import&#34;&gt;postcss-import&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;就可以維持用 CSS loader 且在使用 import 可以適當的使用 CSS L4 而且是可以做簡單的模組化&lt;/p&gt;
+&lt;h4 id=&#34;使用-vue-cli-plugin-i18nhttpsgithubcomkazuponvue-cli-plugin-i18n&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8-vue-cli-plugin-i18nhttpsgithubcomkazuponvue-cli-plugin-i18n&#34;&gt;
+        ###
+    &lt;/a&gt;
+    使用 &lt;a href=&#34;https://github.com/kazupon/vue-cli-plugin-i18n&#34;&gt;vue-cli-plugin-i18n&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;切換語系&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://kazupon.github.io/vue-i18n/zh/guide/locale.html&#34;&gt;语言环境变更&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這部分還沒試驗&lt;/p&gt;
+&lt;h4 id=&#34;device-detect&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#device-detect&#34;&gt;
+        ###
+    &lt;/a&gt;
+    device detect
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;這套健在 &lt;code&gt;vue-cli-plugin-ssr&lt;/code&gt; 底下無痛使用可以在 SSR 的情況就處理依照 UA 判斷 device&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/duskload/mobile-device-detect&#34;&gt;mobile-device-detect&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;目前情況&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%9b%ae%e5%89%8d%e6%83%85%e6%b3%81&#34;&gt;
+        ##
+    &lt;/a&gt;
+    目前情況
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;這些解決方案目前還沒用在線上環境&lt;/p&gt;
+&lt;p&gt;主要因為發現接回來的東西根本沒必要那麼的費工&lt;/p&gt;
+&lt;p&gt;加上合適的新專案喊停了&lt;/p&gt;
+&lt;p&gt;所以目前還是在研究階段&lt;/p&gt;
+&lt;p&gt;有興趣這邊有研究一下我目前正在研究用的 prototype&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tedshd/vue_ssr&#34;&gt;ssr&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

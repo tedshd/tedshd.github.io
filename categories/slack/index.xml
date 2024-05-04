@@ -1,20 +1,106 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Slack on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/slack/</link>
-    <description>Recent content in Slack on tedshd&#39;s DevNote</description>
+    <title>Slack on Tedshd&#39;s Dev note</title>
+    <link>/categories/slack/</link>
+    <description>Tedshd&#39;s Dev note (Slack)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/slack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 May 2016 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/slack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Slack - bot 研究雜記</title>
-      <link>https://blog.tedshd.io/posts/2016-05-28-slack-bot-research-notes/</link>
+      <link>/posts/2016-05-28-slack-bot-research-notes/</link>
       <pubDate>Sat, 28 May 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-05-28-slack-bot-research-notes/</guid>
-      <description>Slack - bot 研究雜記 最近 bot 很夯 再加上公司需要一些自動部署與指令化的一些流程要改善, 所以就來研究一下 剛好我們是用 Slack 所以就先來試試 Slack bot 了 Intro 先說明下最簡</description>
+      
+      <guid>/posts/2016-05-28-slack-bot-research-notes/</guid>
+      <description>&lt;h2 id=&#34;slack---bot-研究雜記&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#slack---bot-%e7%a0%94%e7%a9%b6%e9%9b%9c%e8%a8%98&#34;&gt;
+        #
+    &lt;/a&gt;
+    Slack - bot 研究雜記
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;最近 bot 很夯&lt;/p&gt;
+&lt;p&gt;再加上公司需要一些自動部署與指令化的一些流程要改善, 所以就來研究一下&lt;/p&gt;
+&lt;p&gt;剛好我們是用 Slack 所以就先來試試 Slack bot 了&lt;/p&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;先說明下最簡單的指令化處理事件的流程&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/734936/S29JhWJdQ6qMF0w2i440_bot.png&#34; alt=&#34;bot.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;大致上就是如此&lt;/p&gt;
+&lt;p&gt;再來說明一下 Slack bot 流程&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/734936/eDj3Ctc1Rh6U8wVcOI3T_slack_bot.png&#34; alt=&#34;slack_bot.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;所以我們需要做兩件事&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在 Slack 建立一支 bot&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;建立 bot client 的程式&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在此先說明一下 bot client&lt;/p&gt;
+&lt;p&gt;Slack bot client 是用 nodejs 寫的, 但基本上會寫 JavaScript 就可以了, 而 bot client 是放在任何可以連上網路的機器, 只要能跑 nodejs 的環境即可, 所以基本上可以先在 local 測完再上到線上的機器&lt;/p&gt;
+&lt;h3 id=&#34;建立-slack-bot&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%bb%ba%e7%ab%8b-slack-bot&#34;&gt;
+        ##
+    &lt;/a&gt;
+    建立 Slack bot
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://api.slack.com/bot-users&#34;&gt;Bot Users&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;建立-bot&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%bb%ba%e7%ab%8b-bot&#34;&gt;
+        ###
+    &lt;/a&gt;
+    建立 bot
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;Go to url &lt;code&gt;https://&amp;lt;your team name&amp;gt;.slack.com/apps/manage/A0F7YS25R-bots&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Add a new configuration&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/734936/rG79uE4iSA2AWLX6EUdm_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-05-28%20%E4%B8%8B%E5%8D%8810.22.39.png&#34; alt=&#34;螢幕快照 2016-05-28 下午10.22.39.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;安裝-botkit&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%ae%89%e8%a3%9d-botkit&#34;&gt;
+        ###
+    &lt;/a&gt;
+    安裝 botkit
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://howdy.ai/botkit/&#34;&gt;Botkit&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;依照頁面指示即可見出自己的 Slack bot&lt;/p&gt;
+&lt;h3 id=&#34;遇到的問題&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%81%87%e5%88%b0%e7%9a%84%e5%95%8f%e9%a1%8c&#34;&gt;
+        ##
+    &lt;/a&gt;
+    遇到的問題
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;在 local 端測試時都很順&lt;/p&gt;
+&lt;p&gt;在上線時一開始測試也都 ok, 但當我斷開線上環境時卻 GG 了, 我的機器人立刻顯示下線, 這先說一下就是當 bot 啟動時 bot 會顯示上線, 但當 bot 的程式停止時就會在 Slack 顯示離線&lt;/p&gt;
+&lt;p&gt;在 local 端都沒發現是因為在測試時直接下 &lt;code&gt;node bot.js&lt;/code&gt; 是直接在前景 run, 但是在用 ssh 時, 在斷開時就會停止執行 node&lt;/p&gt;
+&lt;p&gt;所以必須把 node 在線上環境執行時是在背景執行&lt;/p&gt;
+&lt;p&gt;但這又遇到了問題&lt;/p&gt;
+&lt;p&gt;用 &lt;code&gt;node bot.js &amp;amp;&lt;/code&gt; 沒用&lt;/p&gt;
+&lt;p&gt;用 &lt;code&gt;nohup node bot.js &amp;amp;&lt;/code&gt; 也沒用&lt;/p&gt;
+&lt;p&gt;最後是靠一個叫 &lt;a href=&#34;https://www.npmjs.com/package/forever&#34;&gt;forever&lt;/a&gt; 的套件處理才成功的讓 node 在背景執行&lt;/p&gt;
+&lt;p&gt;接下來就要研究替 bot 加上一些功能了&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

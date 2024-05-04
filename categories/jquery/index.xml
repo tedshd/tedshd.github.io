@@ -1,27 +1,133 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jquery on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/jquery/</link>
-    <description>Recent content in Jquery on tedshd&#39;s DevNote</description>
+    <title>Jquery on Tedshd&#39;s Dev note</title>
+    <link>/categories/jquery/</link>
+    <description>Tedshd&#39;s Dev note (Jquery)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/jquery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Aug 2013 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>jQuery-design pattern</title>
-      <link>https://blog.tedshd.io/posts/2013-08-08-jquery-design-pattern/</link>
+      <link>/posts/2013-08-08-jquery-design-pattern/</link>
       <pubDate>Thu, 08 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-08-08-jquery-design-pattern/</guid>
-      <description>modulize modulize selector var module = $(&amp;#39;body&amp;#39;); module.on(&amp;#39;click&amp;#39;, &amp;#39;a&amp;#39;, function() { // dosomething... }); initialize if ($(&amp;#39;body&amp;#39;).length) { // dosomething } selector id is better than tag and class&#xA;HTML&#xA;&amp;lt;div&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li id=&amp;#34;id&amp;#34; class=&amp;#34;class&amp;#34;&amp;gt;text&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; JavaScript&#xA;$(&amp;#39;#id&amp;#39;).html(); $(&amp;#39;body&amp;#39;).find(&amp;#39;#id&amp;#39;); jsperf&#xA;##bind event use on bind on parent selector&#xA;$(&amp;#39;ul&amp;#39;).on(&amp;#39;click&amp;#39;, &amp;#39;li&amp;#39;, function () { // dosomething }); js Bin</description>
+      
+      <guid>/posts/2013-08-08-jquery-design-pattern/</guid>
+      <description>&lt;h2 id=&#34;modulize&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#modulize&#34;&gt;
+        #
+    &lt;/a&gt;
+    modulize
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;modulize selector&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; module &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; $(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;body&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module.on(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#78787e&#34;&gt;// dosomething...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;initialize&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; ($(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;body&amp;#39;&lt;/span&gt;).length) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#78787e&#34;&gt;// dosomething
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;selector&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#selector&#34;&gt;
+        #
+    &lt;/a&gt;
+    selector
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;id is better than tag and class&lt;/p&gt;
+&lt;p&gt;HTML&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;ul&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    	&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;class&amp;#34;&lt;/span&gt;&amp;gt;text&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;ul&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;JavaScript&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#id&amp;#39;&lt;/span&gt;).html();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;body&amp;#39;&lt;/span&gt;).find(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#id&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://jsperf.com/jquery-getnode-test/2&#34;&gt;jsperf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##bind event
+use on
+bind on parent selector&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;ul&amp;#39;&lt;/span&gt;).on(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;li&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#78787e&#34;&gt;// dosomething
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://jsbin.com/ijovot/1/edit&#34;&gt;js Bin&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>jQuery selector</title>
-      <link>https://blog.tedshd.io/posts/2013-08-03-jquery-selector/</link>
+      <link>/posts/2013-08-03-jquery-selector/</link>
       <pubDate>Sat, 03 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-08-03-jquery-selector/</guid>
-      <description>* 所有元素 E 所有E元素， E:nth-child(n) 傳回在所屬父元素下，排行第 n 的元素 E。(注意: 從 1 開始算，而非從 0) E:first-child 傳回在所屬父元素下，排行第一的元素(老大) E:last-child 傳</description>
+      
+      <guid>/posts/2013-08-03-jquery-selector/</guid>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;* 所有元素
+E 所有E元素，
+E:nth-child(n) 傳回在所屬父元素下，排行第 n 的元素 E。(注意: 從 1 開始算，而非從 0)
+E:first-child 傳回在所屬父元素下，排行第一的元素(老大)
+E:last-child 傳回在所屬父元素下，排行最後的元素(老么)
+E:only-child 傳回在所屬父元素下，是唯一子元素(獨子)
+E:empty 沒有任何子元素者(有文字也不算，例如 &amp;lt;span&amp;gt;TEXT&amp;lt;/span&amp;gt; 就不合格)
+E:enabled 未被停用的 UI 元素 E
+E:disabled 被停用的 UI 元素 E
+E:checked 被勾選的 UI 元素 E(適用於 Radio, Checkbox)
+E:selected 被選取的 UI 元素 E(適用於 Select 下的 Option 元素)
+E.myClassName CSS 類別設為 myClassName 的元素 E
+E#myId id=&amp;#34;myId&amp;#34; 的元素 E
+E:not(s) 不符合 s 條件的元素 E，例如: $(&amp;#34;span:not(:empty)&amp;#34;) 即為找出有包含子元素的 span
+E F 由包含在 E 底下的 F 元素，不必直接為父子關係，例如: F 可以是 E 的子元素的子元素。
+E &amp;gt; F 找出父元素為 E 的 F 元素
+E + F 找出緊接在 E 元素後方的 F 元素
+E ~ F 找出緊接在 E 元素前方的 F 元素
+E,F,G 利用逗號可以呈現 &amp;#34; 或 &amp;#34; 的聯集效果，指 E 元素或 F 元素或 G 元素
+E[foo] 具有 foo 屬性 (Attribute) 的E元素(1.2.6 以前的版本亦可用 E[@foo] 表示，1.3 版本起取消 @ 符號的使用)
+E[foo=bar] 有 foo 屬性，且 foo 屬性值為 bar 的 E 元素
+E[foo!=bar] 有 foo 屬性，且 foo 屬性值不等於 bar 的 E 元素
+E[foo^=bar] 有 foo 屬性，且 foo 屬性值以 bar 開頭的 E 元素
+E[foo$=bar] 有 foo 屬性，且 foo 屬性值以 bar 結尾的 E 元素
+E[foo*=bar] 有 foo 屬性，且 foo 屬性值中包含 bar 字眼的 E 元素
+E[foo=bar][baz=bop] 同時具備 foo 及 baz 屬性，且其值分別為 bar 及 bop 的 E 元素
+:even 由選取結果中只挑出第雙數個
+:odd 由選取結果中只挑出第單數個
+:eq(N) and :nth(N) 由選取結果中取出第 N 個，由 0 起算
+:gt(N) 由選取結果中只保留第 N 個以後者(不含 N)
+:lt(N) 由選取結果中只保留第 N 個以前者(不含 N)
+:first 選取結果中的第一個，等同於 :eq(0)
+:last 選取結果中的最後一個
+:parent 選取包含子元素者(文字內容也算，例如:&amp;lt;span&amp;gt;Text&amp;lt;/span&amp;gt;)
+:contains(&amp;#39;test&amp;#39;) 選取元素內的文字包含特定字串者
+:visible 選取所有可見的元素(包含 CSS display=block 或 inline, visibility=visible 但不含 &amp;lt;input type=&amp;#34;hidden&amp;#34;&amp;gt;)
+:hidden 選取所有不可見的元素(包含 CSS display=none, visibility=hidden以及&amp;lt;input type=&amp;#34;hidden&amp;#34;&amp;gt;)
+:input 選取所有表單輸入元素(包含 input, select, textarea, button).
+:text 選取所有 &amp;lt;input type=&amp;#34;text&amp;#34;&amp;gt;
+:password 選取所有 &amp;lt;input type=&amp;#34;password &amp;#34;&amp;gt;
+:radio 選取所有 &amp;lt;input type=&amp;#34;radio &amp;#34;&amp;gt;
+:checkbox 選取所有 &amp;lt;input type=&amp;#34;checkbox&amp;#34;&amp;gt;
+:submit 選取所有 &amp;lt;input type=&amp;#34;submit&amp;#34;&amp;gt;
+:image 選取所有 &amp;lt;input type=&amp;#34;image&amp;#34;&amp;gt;
+:reset 選取所有 &amp;lt;input type=&amp;#34;reset&amp;#34;&amp;gt;
+:button 選取所有 &amp;lt;input type=&amp;#34;button&amp;#34;&amp;gt;
+:file 選取所有 &amp;lt;input type=&amp;#34;file&amp;#34;&amp;gt;
+
+size() 或 length 傳回群組的物件個數
+eq(N) 取出群組中第 N 個 jQuery 物件
+get() 傳回元素的陣列
+get(N) 取出第 N 個元素
+index(element 或 jQuery 物件) 用來找某元素在選取結果中的排名順序，例如網頁上有五個 &amp;lt;div&amp;gt;，&amp;lt;div id=&amp;#34;dvX&amp;#34;&amp;gt; 為第三個，則$(&amp;#34;div&amp;#34;).index(document.getElementById(&amp;#34;dvX&amp;#34;)) 可以得到 2 (由 0 起算，故第三個為 2)，$(&amp;#34;div&amp;#34;).index($(&amp;#34;#dvX&amp;#34;)) 也可得到同樣結果。元素不在群組時傳回 -1。
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
+    
   </channel>
 </rss>

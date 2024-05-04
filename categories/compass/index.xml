@@ -1,27 +1,108 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Compass on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/compass/</link>
-    <description>Recent content in Compass on tedshd&#39;s DevNote</description>
+    <title>Compass on Tedshd&#39;s Dev note</title>
+    <link>/categories/compass/</link>
+    <description>Tedshd&#39;s Dev note (Compass)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/compass/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Aug 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/compass/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Compass - Use transform in compass 1.0.1</title>
-      <link>https://blog.tedshd.io/posts/2014-08-29-compass-use-transform-in-compass-101/</link>
+      <link>/posts/2014-08-29-compass-use-transform-in-compass-101/</link>
       <pubDate>Fri, 29 Aug 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-08-29-compass-use-transform-in-compass-101/</guid>
-      <description>Compass - Use transform in compass 1.0.1 On august 15, 2014 Compass release 1.0.1 Some code in scss change wording. This article provide CSS3 transform wording in scss.&#xA;I use this Mixin&#xA;@import &amp;#34;compass/css3&amp;#34;; /*simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y)*/ @include simple-transform(1, 45deg, 5px, -15px, 0, 0, 0, 0); /* Advance Usage */ /*@include create-transform($perspective, $scale-x, $scale-y, $scale-z, $rotate-x, $rotate-y, $rotate-z, $rotate3d, $trans-x, $trans-y, $trans-z, $skew-x, $skew-y, $origin-x, $origin-y, $origin-z, $only3d);*/ Refer - Compass Transform | Compass Documentation</description>
+      
+      <guid>/posts/2014-08-29-compass-use-transform-in-compass-101/</guid>
+      <description>&lt;h2 id=&#34;compass---use-transform-in-compass-101&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#compass---use-transform-in-compass-101&#34;&gt;
+        #
+    &lt;/a&gt;
+    Compass - Use transform in compass 1.0.1
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;On august 15, 2014
+Compass release 1.0.1
+Some code in scss change wording.
+This article provide CSS3 transform wording in scss.&lt;/p&gt;
+&lt;p&gt;I use this Mixin&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;@import&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;compass/css3&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;/*simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y)*/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; simple-transform&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;45&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;deg&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;px&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;15&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;px&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;/* Advance Usage */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;/*@include create-transform($perspective, $scale-x, $scale-y, $scale-z, $rotate-x, $rotate-y, $rotate-z, $rotate3d, $trans-x, $trans-y, $trans-z, $skew-x, $skew-y, $origin-x, $origin-y, $origin-z, $only3d);*/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://compass-style.org/reference/compass/css3/transform/#mixin-simple-transform&#34;&gt;Refer - Compass Transform | Compass Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Use CSS3 animation in Compass</title>
-      <link>https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/</link>
+      <link>/posts/2013-10-12-use-css3-animation-in-compass/</link>
       <pubDate>Sat, 12 Oct 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/</guid>
-      <description>Use CSS3 Animation In Compass Compass default dosen&amp;rsquo;t have mixin in CSS3 animation We can use this method in scss&#xA;/* define */ $animation-support: webkit, moz, o, ms, not khtml; /* use */ .animation { @include experimental(&amp;#39;animation-name&amp;#39;, move, $animation-support); @include experimental(&amp;#39;animation-duration&amp;#39;, 5s, $animation-support); @include experimental(&amp;#39;animation-iteration-count&amp;#39;, 1, $animation-support); } and add keyframes&#xA;/* define */ $animation-support: webkit, moz, o, ms, not khtml; @mixin keyframes($name) { @-webkit-keyframes #{$name} { @content; } @-moz-keyframes #{$name} { @content; } @-ms-keyframes #{$name} { @content; } @keyframes #{$name} { @content; } } /* use */ .</description>
+      
+      <guid>/posts/2013-10-12-use-css3-animation-in-compass/</guid>
+      <description>&lt;h2 id=&#34;use-css3-animation-in-compass&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#use-css3-animation-in-compass&#34;&gt;
+        #
+    &lt;/a&gt;
+    Use CSS3 Animation In Compass
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Compass default dosen&amp;rsquo;t have mixin in CSS3 animation
+We can use this method in &lt;strong&gt;scss&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;/* define */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; webkit&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; moz&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; o&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; ms&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;not&lt;/span&gt; khtml;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;/* use */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f3f99d&#34;&gt;.animation&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; experimental&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;animation-name&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; move&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; experimental&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;animation-duration&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; experimental&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;animation-iteration-count&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and add &lt;code&gt;keyframes&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;/* define */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; webkit&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; moz&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; o&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; ms&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;not&lt;/span&gt; khtml;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;@mixin&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt; keyframes&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$name&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@-webkit-keyframes&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$name&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;}&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;@content&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@-moz-keyframes&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$name&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;}&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;@content&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@-ms-keyframes&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$name&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;}&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;@content&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@keyframes&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$name&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;}&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;@content&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;/* use */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f3f99d&#34;&gt;.animation&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; experimental&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;animation-name&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; move&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; experimental&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;animation-duration&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; experimental&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;animation-iteration-count&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; keyframes&lt;/span&gt;(move) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;%&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#57c7ff&#34;&gt;top&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;780&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#57c7ff&#34;&gt;opacity&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;%&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#57c7ff&#34;&gt;top&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;450&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://gist.github.com/ericam/1607696&#34;&gt;Refer - keyframes-sass-output.css&lt;/a&gt;
+&lt;a href=&#34;http://stackoverflow.com/questions/17618082/getting-compass-to-add-vendor-prefixes-to-animation-selectors&#34;&gt;Refer - Getting Compass to add vendor prefixes to animation selectors&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

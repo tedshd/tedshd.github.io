@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Node on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/node/</link>
-    <description>Recent content in Node on tedshd&#39;s DevNote</description>
+    <title>Node on Tedshd&#39;s Dev note</title>
+    <link>/categories/node/</link>
+    <description>Tedshd&#39;s Dev note (Node)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Thu, 05 Mar 2020 00:22:26 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/node/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Feb 2020 17:51:34 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/node/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Npm install local</title>
-      <link>https://blog.tedshd.io/posts/npm_install_local/</link>
+      <link>/posts/npm_install_local/</link>
       <pubDate>Mon, 03 Feb 2020 17:51:34 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/npm_install_local/</guid>
-      <description>How to install package use local package? If you want install package from other local directory&#xA;npm link &amp;lt;package path&amp;gt; Refer - Installing a local module using npm?</description>
+      
+      <guid>/posts/npm_install_local/</guid>
+      <description>&lt;h2 id=&#34;how-to-install-package-use-local-package&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#how-to-install-package-use-local-package&#34;&gt;
+        #
+    &lt;/a&gt;
+    How to install package use local package?
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;If you want install package from other local directory&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm link &amp;lt;package path&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/8088795/installing-a-local-module-using-npm&#34;&gt;Refer - Installing a local module using npm?&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

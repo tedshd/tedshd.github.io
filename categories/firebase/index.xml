@@ -1,48 +1,673 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Firebase on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/firebase/</link>
-    <description>Recent content in Firebase on tedshd&#39;s DevNote</description>
+    <title>Firebase on Tedshd&#39;s Dev note</title>
+    <link>/categories/firebase/</link>
+    <description>Tedshd&#39;s Dev note (Firebase)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 29 Apr 2024 11:14:03 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/firebase/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Apr 2024 11:28:12 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/firebase/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Firebase dynamic links 遷移轉換</title>
-      <link>https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/</link>
+      <link>/posts/firebase_dynamic_links_migrate/</link>
       <pubDate>Thu, 11 Apr 2024 11:28:12 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/</guid>
-      <description>Intro 服務終有停止的一天 firebase 動態連結將於 2025 年 8 月 25 日關閉。 所以要提前做遷移轉換或是找其他替代方案 Firebase 建議 可以參考 Firebase 文件的建議自己搞 從動態鏈接遷移到應</description>
+      
+      <guid>/posts/firebase_dynamic_links_migrate/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;服務終有停止的一天&lt;/p&gt;
+&lt;p&gt;firebase 動態連結將於 2025 年 8 月 25 日關閉。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202024-04-11%20%E4%B8%8A%E5%8D%8811.34.10.png?alt=media&amp;amp;token=177c4740-af77-4b0d-8ad3-b6b85d5304f8&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;所以要提前做遷移轉換或是找其他替代方案&lt;/p&gt;
+&lt;h2 id=&#34;firebase-建議&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#firebase-%e5%bb%ba%e8%ad%b0&#34;&gt;
+        #
+    &lt;/a&gt;
+    Firebase 建議
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;可以參考 Firebase 文件的建議自己搞&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/support/guides/app-links-universal-links?hl=zh-tw&#34;&gt;從動態鏈接遷移到應用程式連結和應用程式鏈接通用連結&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;自己搞的好處是能搞成符合自己需求的東西&lt;/p&gt;
+&lt;p&gt;但是最大的麻煩點是要記錄的話就得自己搞數據&lt;/p&gt;
+&lt;p&gt;很多時候都會需要紀錄點擊轉換&lt;/p&gt;
+&lt;p&gt;這就得自己搞了&lt;/p&gt;
+&lt;h2 id=&#34;第三方服務&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%ac%ac%e4%b8%89%e6%96%b9%e6%9c%8d%e5%8b%99&#34;&gt;
+        #
+    &lt;/a&gt;
+    第三方服務
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;其實除了自己搞以外&lt;/p&gt;
+&lt;p&gt;還有很多第三方服務有在做這個東西&lt;/p&gt;
+&lt;p&gt;目前有找到的有&lt;/p&gt;
+&lt;h3 id=&#34;branch-iohttpswwwbranchio&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#branch-iohttpswwwbranchio&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;a href=&#34;https://www.branch.io/&#34;&gt;Branch io&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.branch.io/what-is-deep-linking/&#34;&gt;https://www.branch.io/what-is-deep-linking/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;branch io 還有個教學文&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.branch.io/guides/how-to-migrate-from-firebase-dynamic-links/&#34;&gt;How to migrate from Firebase Dynamic Links&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;appsflyerhttpswwwappsflyercom&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#appsflyerhttpswwwappsflyercom&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;a href=&#34;https://www.appsflyer.com/&#34;&gt;Appsflyer&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.appsflyer.com/products/customer-experience-deep-linking/&#34;&gt;https://www.appsflyer.com/products/customer-experience-deep-linking/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;kochavahttpswwwkochavacom&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#kochavahttpswwwkochavacom&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;a href=&#34;https://www.kochava.com/&#34;&gt;kochava&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.kochava.com/product/deep-linking/links/?int-link=menu-links&#34;&gt;https://www.kochava.com/product/deep-linking/links/?int-link=menu-links&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上面列出來的是比較常見的幾個&lt;/p&gt;
+&lt;p&gt;應該還有其他服務沒有列出來&lt;/p&gt;
+&lt;p&gt;這個就評估下要用哪個服務&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Firebase app check 使用紀錄</title>
-      <link>https://blog.tedshd.io/posts/firebase_app_check/</link>
+      <link>/posts/firebase_app_check/</link>
       <pubDate>Mon, 31 Oct 2022 10:31:56 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/firebase_app_check/</guid>
-      <description>前言 因為公司有使用部分的 firebase 服務 那就順便用一下前一陣子推出的 app check 的服務(雖然我覺得這服務還沒到完善的地步) 這服務主要是要協助驗證來自 client 的請求是</description>
+      
+      <guid>/posts/firebase_app_check/</guid>
+      <description>&lt;h2 id=&#34;前言&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%89%8d%e8%a8%80&#34;&gt;
+        #
+    &lt;/a&gt;
+    前言
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;因為公司有使用部分的 firebase 服務&lt;/p&gt;
+&lt;p&gt;那就順便用一下前一陣子推出的 &lt;a href=&#34;https://firebase.google.com/products/app-check&#34;&gt;app check&lt;/a&gt; 的服務(雖然我覺得這服務還沒到完善的地步)&lt;/p&gt;
+&lt;p&gt;這服務主要是要協助驗證來自 client 的請求是否合法&lt;/p&gt;
+&lt;p&gt;不只單純是 firebase 的服務可以用&lt;/p&gt;
+&lt;p&gt;一般 API 也可以使用&lt;/p&gt;
+&lt;h2 id=&#34;使用&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8&#34;&gt;
+        #
+    &lt;/a&gt;
+    使用
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;目前 SDK 只支持 Node.js&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/app-check/custom-resource-backend&#34;&gt;Verify App Check tokens from a custom backend&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;因為原本的後端不是 Node 的環境&lt;/p&gt;
+&lt;p&gt;所以使用 Node.js 建立起一個 middleware 以便讓原有的 API server 來串接&lt;/p&gt;
+&lt;h2 id=&#34;流程&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%b5%81%e7%a8%8b&#34;&gt;
+        #
+    &lt;/a&gt;
+    流程
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2Ffirebase%20app%20check-Copy%20of%20Page-1.drawio.png?alt=media&amp;amp;token=c8d0b7ee-875f-4380-b4e9-66c33796a990&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;所需作業&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%89%80%e9%9c%80%e4%bd%9c%e6%a5%ad&#34;&gt;
+        #
+    &lt;/a&gt;
+    所需作業
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;app 需要使用相關對應的 SDK&lt;/p&gt;
+&lt;p&gt;在 firebase console 把 app check 選單中建立的 app 做註冊&lt;/p&gt;
+&lt;p&gt;因為是改為單獨建立 Node.js 的服務&lt;/p&gt;
+&lt;p&gt;所以會針對文件範例做調整&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; http &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;http&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; url &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;url&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; admin &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;firebase-admin&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; serviceAccount &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(__dirname &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;/serviceAccountKey.json&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;admin.initializeApp({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  credential&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; admin.credential.cert(serviceAccount)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; statusOk &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;status&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;success&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; statusForbidden &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;status&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Forbidden&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; statusUnauthorized &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;status&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Unauthorized&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; server &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; http.createServer(&lt;span style=&#34;color:#ff6ac1&#34;&gt;async&lt;/span&gt; (request, response) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; queryObject &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; url.parse(request.url, &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;).query;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;switch&lt;/span&gt; (request.method) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; appCheckToken &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; queryObject[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;token&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;appCheckToken) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        response.writeHead(&lt;span style=&#34;color:#ff9f43&#34;&gt;403&lt;/span&gt;, { &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;application/json&amp;#39;&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        response.end(JSON.stringify(statusForbidden));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; appCheckClaims &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; admin.appCheck().verifyToken(appCheckToken);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#78787e&#34;&gt;// If verifyToken() succeeds, continue with the next middleware
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#78787e&#34;&gt;// function in the stack.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        console.log(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;appCheckClaims&amp;#39;&lt;/span&gt;, appCheckClaims);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        response.writeHead(&lt;span style=&#34;color:#ff9f43&#34;&gt;200&lt;/span&gt;, { &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;application/json&amp;#39;&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        response.end(JSON.stringify({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          ...appCheckClaims,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          ...statusOk
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      } &lt;span style=&#34;color:#ff6ac1&#34;&gt;catch&lt;/span&gt; (err) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        console.log(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;err&amp;#39;&lt;/span&gt;, err)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        response.writeHead(&lt;span style=&#34;color:#ff9f43&#34;&gt;401&lt;/span&gt;, { &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;application/json&amp;#39;&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        response.end(JSON.stringify(statusUnauthorized));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;default&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      response.writeHead(&lt;span style=&#34;color:#ff9f43&#34;&gt;200&lt;/span&gt;, { &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;application/json&amp;#39;&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      response.end(JSON.stringify(statusForbidden));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;server.listen(&lt;span style=&#34;color:#ff9f43&#34;&gt;3300&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  console.log(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;3300 port&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中 &lt;code&gt;serviceAccountKey.json&lt;/code&gt; 是 firebase console 中產生的&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2FScreen_Shot_2022-11-02_at_9_51_27_AM.png?alt=media&amp;amp;token=23519780-f442-4bfd-b1f4-db69739cbb81&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;使用方式&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8%e6%96%b9%e5%bc%8f&#34;&gt;
+        #
+    &lt;/a&gt;
+    使用方式
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;可以使用 pm2 之類的服務啟動&lt;/p&gt;
+&lt;p&gt;這樣就可以用 &lt;code&gt;http://localhost?token=&amp;lt;app check token&amp;gt;&lt;/code&gt; 的方式呼叫驗證&lt;/p&gt;
+&lt;p&gt;建議在內部使用, 走內部 IP 或內部網域以減少傳輸時間&lt;/p&gt;
+&lt;p&gt;直接以 rest api 的方式呼叫&lt;/p&gt;
+&lt;h2 id=&#34;後續升級&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%be%8c%e7%ba%8c%e5%8d%87%e7%b4%9a&#34;&gt;
+        #
+    &lt;/a&gt;
+    後續升級
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;如果之後公司其他團隊也有其他的 firebase 的 app check 需求也可以添加參數或路由來使用各自的 firebase 專案設定來共用這個 API&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Firebase remote config rest 更新</title>
-      <link>https://blog.tedshd.io/posts/firebase_remote_config/</link>
+      <link>/posts/firebase_remote_config/</link>
       <pubDate>Mon, 25 Oct 2021 09:22:33 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/firebase_remote_config/</guid>
-      <description>Refer - Firebase Remote Config API 取用和更新都需要以下 Google oauth2.0 的權限 https://www.googleapis.com/auth/firebase.remoteconfig https://www.googleapis.com/auth/cloud-platform</description>
+      
+      <guid>/posts/firebase_remote_config/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/reference/remote-config/rest&#34;&gt;Refer - Firebase Remote Config API&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;取用和更新都需要以下 Google oauth2.0 的權限&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.googleapis.com/auth/firebase.remoteconfig&#34;&gt;https://www.googleapis.com/auth/firebase.remoteconfig&lt;/a&gt;
+&lt;a href=&#34;https://www.googleapis.com/auth/cloud-platform&#34;&gt;https://www.googleapis.com/auth/cloud-platform&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Firebase - Firebase functions 使用紀錄</title>
-      <link>https://blog.tedshd.io/posts/2019-12-20-firebase-firebase-functions/</link>
+      <link>/posts/2019-12-20-firebase-firebase-functions/</link>
       <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2019-12-20-firebase-firebase-functions/</guid>
-      <description>Firebase - Firebase functions 使用紀錄 最近想把一些自己在用的小東西丟到 severless 的服務 因為之前發生過一次 server 掛掉過一次的情況 當時是 GCP CE 不知為何 VM 中的網卡設定出問題 整個網卡消</description>
+      
+      <guid>/posts/2019-12-20-firebase-firebase-functions/</guid>
+      <description>&lt;h2 id=&#34;firebase---firebase-functions-使用紀錄&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#firebase---firebase-functions-%e4%bd%bf%e7%94%a8%e7%b4%80%e9%8c%84&#34;&gt;
+        #
+    &lt;/a&gt;
+    Firebase - Firebase functions 使用紀錄
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;最近想把一些自己在用的小東西丟到 severless 的服務&lt;/p&gt;
+&lt;p&gt;因為之前發生過一次 server 掛掉過一次的情況&lt;/p&gt;
+&lt;p&gt;當時是 GCP CE 不知為何 VM 中的網卡設定出問題&lt;/p&gt;
+&lt;p&gt;整個網卡消失&lt;/p&gt;
+&lt;p&gt;然後外部根本連不進去&lt;/p&gt;
+&lt;p&gt;最後請教大大後&lt;/p&gt;
+&lt;p&gt;只好開一個新的 instance 然後把原本的那個儲存空間掛到新開的 instance&lt;/p&gt;
+&lt;p&gt;因為那台平常在試驗的 server&lt;/p&gt;
+&lt;p&gt;裡面亂七八糟而且大多的 code 都不會做 git 控管&lt;/p&gt;
+&lt;p&gt;所以就想說把一些常用的功能用 serverless 拆出來好了&lt;/p&gt;
+&lt;p&gt;就想說來研究一下火了一陣子然後設定沒設定好就會噴一堆預算和安全性問題的 Firebase 所推出的 &lt;a href=&#34;https://firebase.google.com/docs/functions&#34;&gt;functions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其實 GCP 自己本身也有 cloud functions&lt;/p&gt;
+&lt;p&gt;但我這是玩票性質的&lt;/p&gt;
+&lt;p&gt;所以就先用 firebase functions 來試試啦&lt;/p&gt;
+&lt;p&gt;先說一下目前 firebase functions 只支援 Nodejs&lt;/p&gt;
+&lt;p&gt;但是 Google cloud 的 &lt;a href=&#34;https://cloud.google.com/functions/docs/writing/&#34;&gt;cloud functions&lt;/a&gt; 支援 Nodejs python golnag&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先先裝 firebase-tools CLI&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install -g firebase-tools
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;執行 firebase login&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firebase login
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;到要建立 functions 的資料夾&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這時候要注意如果你要做版本控管&lt;/p&gt;
+&lt;p&gt;就是直接到該 repository 的目錄下即可&lt;/p&gt;
+&lt;p&gt;下一步會在這目錄建立需要的程式&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;執行 firebase init functions&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firebase init functions
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;過程中會請你選擇或新開專案&lt;/p&gt;
+&lt;p&gt;這邊的專案是指 firebase 上面的專案&lt;/p&gt;
+&lt;p&gt;可以用 &lt;code&gt;JavaScript&lt;/code&gt; 寫或 &lt;code&gt;TypeScript&lt;/code&gt; 寫 code&lt;/p&gt;
+&lt;p&gt;整個 functions 的結構&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;myproject
+ +- .firebaserc    # Hidden file that helps you quickly switch between
+ |                 # projects with `firebase use`
+ |
+ +- firebase.json  # Describes properties for your project
+ |
+ +- functions/     # Directory containing all your functions code
+      |
+      +- .eslintrc.json  # Optional file containing rules for JavaScript linting.
+      |
+      +- package.json  # npm package file describing your Cloud Functions code
+      |
+      +- index.js      # main source file for your Cloud Functions code
+      |
+      +- node_modules/ # directory where your dependencies (declared in
+                       # package.json) are installed
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;要注意的事和開始寫扣啦&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a6%81%e6%b3%a8%e6%84%8f%e7%9a%84%e4%ba%8b%e5%92%8c%e9%96%8b%e5%a7%8b%e5%af%ab%e6%89%a3%e5%95%a6&#34;&gt;
+        ##
+    &lt;/a&gt;
+    要注意的事和開始寫扣啦
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;index.js 就是 functions 會執行的程式&lt;/p&gt;
+&lt;p&gt;你可以依照自己的需求安裝需要的 node 套件&lt;/p&gt;
+&lt;p&gt;但需要注意的是該套件安裝完你的 &lt;code&gt;package.json&lt;/code&gt; 的 &lt;code&gt;dependencies&lt;/code&gt; 必須有紀錄該套件的版號&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;package.json&lt;/code&gt; 中的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;engines&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;node&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;8&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;表示使用的 node 版本&lt;/p&gt;
+&lt;p&gt;目前預設是 8&lt;/p&gt;
+&lt;p&gt;10 有支援但目前是 beta&lt;/p&gt;
+&lt;p&gt;可以看目前&lt;a href=&#34;https://firebase.google.com/docs/functions/manage-functions#set_nodejs_version&#34;&gt;文件&lt;/a&gt;來決定用哪一版的 nodejs&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;exports.ok &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; functions.https.onRequest((request, response) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; response.send(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Hello from Firebase!&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ok 就會是實際上 url path&lt;/p&gt;
+&lt;p&gt;上線後的 url 會是&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://&amp;lt;region&amp;gt;-&amp;lt;firebase project name&amp;gt;.cloudfunctions.net/&amp;lt;exports name&amp;gt;
+
+ex:
+http://us-central1-my-project.cloudfunctions.net/ok
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;相關 &lt;a href=&#34;https://firebase.google.com/docs/reference/functions&#34;&gt;API&lt;/a&gt; 可以參考&lt;/p&gt;
+&lt;p&gt;很多 API 都和 express 幾乎一樣&lt;/p&gt;
+&lt;p&gt;如果要帶參數的話可以用 &lt;a href=&#34;https://expressjs.com/en/api.html#req.params&#34;&gt;params&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;部署區域&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%83%a8%e7%bd%b2%e5%8d%80%e5%9f%9f&#34;&gt;
+        ##
+    &lt;/a&gt;
+    部署區域
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;可以決定該功能在那個區域部署&lt;/p&gt;
+&lt;p&gt;同一個 index 檔案可以部署不同地區&lt;/p&gt;
+&lt;p&gt;預設是 us-central1 (Iowa) 艾荷華&lt;/p&gt;
+&lt;p&gt;可以查看&lt;a href=&#34;https://firebase.google.com/docs/functions/locations&#34;&gt;支援的 region 列表&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;只要添加在 code 之中即可&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-Javasctipt&#34; data-lang=&#34;Javasctipt&#34;&gt;exports.ok = functions.region(&amp;#39;asia-northeast1&amp;#39;).https.onRequest((request, response) =&amp;gt; {
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;目前沒法在程式中直接設定 multi region 得一個一個上&lt;/p&gt;
+&lt;p&gt;不然官方是建議建立不同 region 的 entry&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/functions/manage-functions#modify-region&#34;&gt;modify-region&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;再把 function 邏輯抽象出來就可以了&lt;/p&gt;
+&lt;h3 id=&#34;本地測試&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%9c%ac%e5%9c%b0%e6%b8%ac%e8%a9%a6&#34;&gt;
+        ##
+    &lt;/a&gt;
+    本地測試
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;可以參考&lt;a href=&#34;https://firebase.google.com/docs/functions/local-emulator&#34;&gt;Run functions locally&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;會在本地開啟 local server&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2019-12-20_%E4%B8%8B%E5%8D%882_12_47.png?alt=media&amp;amp;token=f2b94428-cd21-4452-8718-c6aceb378c08&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;也會有對應的 url path 可以讓你直接點&lt;/p&gt;
+&lt;p&gt;如果要測試 log&lt;/p&gt;
+&lt;p&gt;在 node 中寫&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.info()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.error()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.warn()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就可以了&lt;/p&gt;
+&lt;h3 id=&#34;呼叫第三方或外部-api-時出現-eai_again&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%91%bc%e5%8f%ab%e7%ac%ac%e4%b8%89%e6%96%b9%e6%88%96%e5%a4%96%e9%83%a8-api-%e6%99%82%e5%87%ba%e7%8f%be-eai_again&#34;&gt;
+        ##
+    &lt;/a&gt;
+    呼叫第三方或外部 api 時出現 EAI_AGAIN
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;查了一下&lt;/p&gt;
+&lt;p&gt;這是 DNS 解析的問題&lt;/p&gt;
+&lt;p&gt;在 Free 方案只允許呼叫 Google service 自己的 api&lt;/p&gt;
+&lt;p&gt;要切到付費方案才可以&lt;/p&gt;
+&lt;p&gt;用 Blaze plan 就可以了&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/sendgrid/sendgrid-nodejs/issues/927&#34;&gt;Refer - getaddrinfo EAI_AGAIN api.sendgrid.com:443&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Firebase - Firebase Cloud Message(FCM) Research Log</title>
-      <link>https://blog.tedshd.io/posts/2016-12-08-1183912/</link>
+      <link>/posts/2016-12-08-1183912/</link>
       <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-12-08-1183912/</guid>
-      <description>Firebase - Firebase Cloud Message(FCM) Research Log This article is focus on web version&#xA;Intro You can easy to use web notification push notification to your web site.&#xA;Set Up a JavaScript Firebase Cloud Messaging Client App&#xA;Different with use pure web notification Using the Notifications API&#xA;Browser support FCM - Chrome(desktop &amp;amp; Android) &amp;amp; Firefox(desktop &amp;amp; Android) pure notification api - Chrome(desktop &amp;amp; Android) &amp;amp; Firefox(desktop &amp;amp; Android) &amp;amp; Opera(desktop) &amp;amp; Safari(desktop) Android need service worker Service Worker FCM - require pure notification api - option pure web notification only a notification object, you need handle connection push message from server.</description>
+      
+      <guid>/posts/2016-12-08-1183912/</guid>
+      <description>&lt;h2 id=&#34;firebase---firebase-cloud-messagefcm-research-log&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#firebase---firebase-cloud-messagefcm-research-log&#34;&gt;
+        #
+    &lt;/a&gt;
+    Firebase - Firebase Cloud Message(FCM) Research Log
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;This article is focus on web version&lt;/p&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;You can easy to use web notification push notification to your web site.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/cloud-messaging/js/client&#34;&gt;Set Up a JavaScript Firebase Cloud Messaging Client App&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;different-with-use-pure-web-notification&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#different-with-use-pure-web-notification&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Different with use pure web notification
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API&#34;&gt;Using the Notifications API&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Browser support
+&lt;ul&gt;
+&lt;li&gt;FCM - Chrome(desktop &amp;amp; Android) &amp;amp; Firefox(desktop &amp;amp; Android)&lt;/li&gt;
+&lt;li&gt;pure notification api - Chrome(desktop &amp;amp; Android) &amp;amp; Firefox(desktop &amp;amp; Android) &amp;amp; Opera(desktop) &amp;amp; Safari(desktop)
+&lt;ul&gt;
+&lt;li&gt;Android need service worker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Service Worker
+&lt;ul&gt;
+&lt;li&gt;FCM - require&lt;/li&gt;
+&lt;li&gt;pure notification api - option&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;pure web notification only a notification object, you need handle connection push message from server.&lt;/p&gt;
+&lt;p&gt;But FCM had handle this connect.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://node.tedshd.io/socket.io&#34;&gt;web notification demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://tedshd.io/demo/fcm/quickstart-js/messaging/&#34;&gt;FCM demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://tedshd.io/demo/fcm/send_message.php&#34;&gt;FCM push service&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;different-whith-use-service-worker-or-not-use-service-worker&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#different-whith-use-service-worker-or-not-use-service-worker&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Different whith use Service Worker or not use Service Worker
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;use Service Worker&lt;/th&gt;
+&lt;th&gt;no use Service Worker&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;service open on browser tab and focus&lt;/td&gt;
+&lt;td&gt;receive&lt;/td&gt;
+&lt;td&gt;receive&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;service open on browser tab and not focus&lt;/td&gt;
+&lt;td&gt;receive&lt;/td&gt;
+&lt;td&gt;receive&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;service open not on browser tab&lt;/td&gt;
+&lt;td&gt;receive&lt;/td&gt;
+&lt;td&gt;can&amp;rsquo;t receive&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;prepare&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#prepare&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Prepare
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;app server
+&lt;ul&gt;
+&lt;li&gt;a server can send message&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;HTTPS
+&lt;ul&gt;
+&lt;li&gt;web service need https for handle &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API&#34;&gt;Service Worker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;manifest.json
+&lt;ul&gt;
+&lt;li&gt;set gcm send id&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;step&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#step&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Step
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Use &lt;a href=&#34;https://firebase.google.com&#34;&gt;firebase&lt;/a&gt; console create a project(If you had project for your web service, you can skip this setp&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Overview -&amp;gt; setting -&amp;gt; cloud message&lt;/code&gt; and you can get &lt;code&gt;YOUR-SERVER-KEY&lt;/code&gt; &amp;amp; &lt;code&gt;SENDER-ID&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;And then you can use the simple code from &lt;a href=&#34;https://github.com/firebase/quickstart-js/tree/master/messaging&#34;&gt;https://github.com/firebase/quickstart-js/tree/master/messaging&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;fcm-flow&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#fcm-flow&#34;&gt;
+        ##
+    &lt;/a&gt;
+    FCM Flow
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/instance-id/&#34;&gt;What is Instance ID?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Web notification dosen&amp;rsquo;t have &lt;code&gt;Instance ID&lt;/code&gt; so we only can use token&lt;/p&gt;
+&lt;p&gt;Base flow&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2Ffcm%20base%20flow.png?alt=media&amp;amp;token=3c5ab074-94c4-403b-9e16-eeaebce252d1&#34; alt=&#34;base flow&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;app-server&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#app-server&#34;&gt;
+        ##
+    &lt;/a&gt;
+    App server
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Build it to send message or do something like send topic message or personal message&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;HTTP&lt;/code&gt; or &lt;code&gt;XMPP&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/cloud-messaging/http-server-ref&#34;&gt;Firebase Cloud Messaging HTTP Protocol&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;personal-push&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#personal-push&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Personal push
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;You can bind user info &amp;amp; their token created from client web browser, then you can push personal message for user.&lt;/p&gt;
+&lt;p&gt;And it use api push notification like this&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://fcm.googleapis.com/fcm/send
+Content-Type:application/json
+Authorization:key=AIzaSyZ-1u...0GBYzPu7Udno5aA
+
+{ &amp;#34;data&amp;#34;: {
+    &amp;#34;score&amp;#34;: &amp;#34;5x1&amp;#34;,
+    &amp;#34;time&amp;#34;: &amp;#34;15:10&amp;#34;
+  },
+  &amp;#34;to&amp;#34; : &amp;#34;bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1...&amp;#34;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;Authorization&lt;/code&gt; key is Firebase console server key&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/cloud-messaging/send-message&#34;&gt;Reference - Build App Server Send Requests&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;multiple-device-push&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#multiple-device-push&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Multiple device push
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/cloud-messaging/js/send-multiple&#34;&gt;Send Messages to Multiple Devices&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s base on sub / pub pattern, you can reference &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/ff649664.aspx&#34;&gt;Publish/Subscribe pattern - MSDN - Microsoft&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;two-way&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#two-way&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Two way
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/cloud-messaging/js/send-multiple#about_topic_messaging&#34;&gt;topic(suggest)&lt;/a&gt;
+Suggest use this, it&amp;rsquo;s fast and easy to use&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/cloud-messaging/js/send-multiple#about_device_group_messaging&#34;&gt;group&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you want to know any token push status and tracking which in this group, you can use group way&lt;/p&gt;
+&lt;p&gt;But you must handle group yourself&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/cloud-messaging/server#http-request&#34;&gt;Group send request format&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;about-tracking&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#about-tracking&#34;&gt;
+        ##
+    &lt;/a&gt;
+    About Tracking
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;FCM web notification not support analytics&lt;/p&gt;
+&lt;p&gt;So you can add querystring on action url or add log on receive message on foreground&lt;/p&gt;
+&lt;h3 id=&#34;error-handle&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#error-handle&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Error handle
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;If user clear token on offline, need handle cleared token let app server and IID server know&lt;/p&gt;
+&lt;p&gt;Two way can handle this thing&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;client initiative handle&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If your web service provide unsubscribe function, you must handle this behavior.&lt;/p&gt;
+&lt;p&gt;And you need handle if user clear data from client, you need update token.&lt;/p&gt;
+&lt;p&gt;Firebase&amp;rsquo;s api &lt;code&gt;messaging.deleteToken()&lt;/code&gt; handle delete from IID server but delete token from app server need handle yourself.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;server side detect&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When server push notification and response error make some error handle like delete &lt;code&gt;InvalidRegistration&lt;/code&gt; token&lt;/p&gt;
+&lt;p&gt;And you can log token active time, if long time not active, you can delete it from app server and also suggest delete it from IID server&lt;/p&gt;
+&lt;h3 id=&#34;notice&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#notice&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Notice
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;On desktop device Chrome or Firefox not on process it can not receive message&lt;/p&gt;
+&lt;p&gt;But message will queued until Browser open&lt;/p&gt;
+&lt;p&gt;So don&amp;rsquo;t worried about this thing&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Notice don&amp;rsquo;t send error target user&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Notice don&amp;rsquo;t send the push token that doesn&amp;rsquo;t had any user or device&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And then i find Firebase hosting seem doesn&amp;rsquo;t support service worker, so it can&amp;rsquo;t use FCM on Firebase hosting.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/cloud-messaging/js/receive&#34;&gt;Receive Messages in a JavaScript Client&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API&#34;&gt;Reference - Using the Notifications API - Web APIs | MDN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/instance-id/reference/server&#34;&gt;instance-id&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/ff649664.aspx&#34;&gt;Reference - Publish/Subscribe pattern - MSDN - Microsoft&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/web/fundamentals/engage-and-retain/push-notifications/good-notification&#34;&gt;Reference - What Makes a Good Notification?&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

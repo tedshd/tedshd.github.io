@@ -1,20 +1,77 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mac Sublime-Text on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/mac-sublime-text/</link>
-    <description>Recent content in Mac Sublime-Text on tedshd&#39;s DevNote</description>
+    <title>Mac Sublime-Text on Tedshd&#39;s Dev note</title>
+    <link>/categories/mac-sublime-text/</link>
+    <description>Tedshd&#39;s Dev note (Mac Sublime-Text)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/mac-sublime-text/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/mac-sublime-text/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Sublime - Command Line</title>
-      <link>https://blog.tedshd.io/posts/2014-04-04-sublime-command-line/</link>
+      <link>/posts/2014-04-04-sublime-command-line/</link>
       <pubDate>Fri, 04 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-04-04-sublime-command-line/</guid>
-      <description>Sublime - Command Line in Mac OS X make a symlink ln -s &amp;#34;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&amp;#34; /bin/subl // sublimetext 3 ln -s &amp;#34;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&amp;#34; /bin/subl And Use it subl --help Usage: subl [arguments] [files] edit the given files or: subl [arguments] [directories] open the given directories or: subl [arguments] - edit stdin Arguments: --project &amp;lt;project&amp;gt;: Load the given project --command &amp;lt;command&amp;gt;: Run the given command -n or --new-window: Open a</description>
+      
+      <guid>/posts/2014-04-04-sublime-command-line/</guid>
+      <description>&lt;h2 id=&#34;sublime---command-line&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sublime---command-line&#34;&gt;
+        #
+    &lt;/a&gt;
+    Sublime - Command Line
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;in Mac OS X
+make a symlink&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ln -s &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&amp;#34;&lt;/span&gt; /bin/subl
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// sublimetext &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ln -s &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&amp;#34;&lt;/span&gt; /bin/subl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And Use it&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;subl --help
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Usage: subl &lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;arguments&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;files&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;         edit the given files
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   or: subl &lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;arguments&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;directories&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;   open the given directories
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   or: subl &lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;arguments&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt; -               edit stdin
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Arguments:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  --project &amp;lt;project&amp;gt;: Load the given project
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  --command &amp;lt;command&amp;gt;: Run the given &lt;span style=&#34;color:#ff5c57&#34;&gt;command&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -n or --new-window:  Open a new window
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -a or --add:         Add folders to the current window
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -w or --wait:        Wait &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; the files to be closed before returning
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -b or --background:  Don&lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;#39;&lt;/span&gt;t activate the application
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -s or --stay:        Keep the application activated after closing the file
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -h or --help:        Show &lt;span style=&#34;color:#ff5c57&#34;&gt;help&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;this message&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt; and &lt;span style=&#34;color:#ff5c57&#34;&gt;exit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -v or --version:     Show version and &lt;span style=&#34;color:#ff5c57&#34;&gt;exit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--wait is implied &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; reading from stdin. Use --stay to not switch back
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;to the terminal when a file is closed &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;only relevant &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; waiting &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; a file&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Filenames may be given a :line or :line:column suffix to open at a specific
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;location.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;update&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#update&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Update
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/22b89f19afd6&#34;&gt;Mac OS X 11中的/usr/bin 的“Operation not permitted”&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;trun on power&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Command + R&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Go to recovery mode&lt;/p&gt;
+&lt;p&gt;Open terminal&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;csrutil disable
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;set bin shell&lt;/p&gt;
+&lt;p&gt;If want to disable&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;csrutil enable
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://www.sublimetext.com/docs/2/osx_command_line.html&#34;&gt;Refer - OS X Command Line&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

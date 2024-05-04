@@ -1,69 +1,1355 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Google on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/google/</link>
-    <description>Recent content in Google on tedshd&#39;s DevNote</description>
+    <title>Google on Tedshd&#39;s Dev note</title>
+    <link>/categories/google/</link>
+    <description>Tedshd&#39;s Dev note (Google)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/google/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/google/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Research - 加強在 Web 服務在搜尋引擎與部分社群的呈現</title>
-      <link>https://blog.tedshd.io/posts/2019-11-21-google-enhance-disonion-in-google-search-results/</link>
+      <link>/posts/2019-11-21-google-enhance-disonion-in-google-search-results/</link>
       <pubDate>Thu, 21 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2019-11-21-google-enhance-disonion-in-google-search-results/</guid>
-      <description>Research - 加強在 Web 服務在搜尋引擎與部分社群的呈現 這是一份紀錄著如何加強 SEO? 的筆記 參考來源大部分會是 Google 文件或者是 blog 發佈的消息與部分試驗出來的結果 僅供參</description>
+      
+      <guid>/posts/2019-11-21-google-enhance-disonion-in-google-search-results/</guid>
+      <description>&lt;h2 id=&#34;research---加強在-web-服務在搜尋引擎與部分社群的呈現&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#research---%e5%8a%a0%e5%bc%b7%e5%9c%a8-web-%e6%9c%8d%e5%8b%99%e5%9c%a8%e6%90%9c%e5%b0%8b%e5%bc%95%e6%93%8e%e8%88%87%e9%83%a8%e5%88%86%e7%a4%be%e7%be%a4%e7%9a%84%e5%91%88%e7%8f%be&#34;&gt;
+        #
+    &lt;/a&gt;
+    Research - 加強在 Web 服務在搜尋引擎與部分社群的呈現
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;這是一份紀錄著如何加強 SEO? 的筆記&lt;/p&gt;
+&lt;p&gt;參考來源大部分會是 Google 文件或者是 blog 發佈的消息與部分試驗出來的結果&lt;/p&gt;
+&lt;p&gt;僅供參考&lt;/p&gt;
+&lt;h3 id=&#34;從-0-到-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%be%9e-0-%e5%88%b0-1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    從 0 到 1
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;建立-gogole-search-consolegoogle-search-console&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%bb%ba%e7%ab%8b-gogole-search-consolegoogle-search-console&#34;&gt;
+        ###
+    &lt;/a&gt;
+    建立 [Gogole search console](google search console)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;瞭解-sitemaphttpssupportgooglecomwebmastersanswer156184&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%9e%ad%e8%a7%a3-sitemaphttpssupportgooglecomwebmastersanswer156184&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://support.google.com/webmasters/answer/156184&#34;&gt;瞭解 Sitemap&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;social-metag-og&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#social-metag-og&#34;&gt;
+        ###
+    &lt;/a&gt;
+    social metag og
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://schema.org&#34;&gt;schema.org&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://developers.google.com/search/docs/guides/intro-structured-data&#34;&gt;json-ld&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ogp.me/&#34;&gt;The Open Graph protocol&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.facebook.com/docs/sharing/webmasters#markup&#34;&gt;facebook og&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.facebook.com/tools/debug/sharing/&#34;&gt;Sharing Debugger&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started&#34;&gt;twitter card&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cards-dev.twitter.com/validator&#34;&gt;card validator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.pinterest.com/docs/rich-pins/overview/?&#34;&gt;Pinterest Rich Pins&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.pinterest.com/tools/url-debugger/&#34;&gt;Rich Pins Validator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;結構化資料格式httpsdevelopersgooglecomsearchdocsguidesintro-structured-datastructured-data-format&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b5%90%e6%a7%8b%e5%8c%96%e8%b3%87%e6%96%99%e6%a0%bc%e5%bc%8fhttpsdevelopersgooglecomsearchdocsguidesintro-structured-datastructured-data-format&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://developers.google.com/search/docs/guides/intro-structured-data#structured-data-format&#34;&gt;結構化資料格式&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://search.google.com/structured-data/testing-tool&#34;&gt;結構化資料測試工具&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;google-rich-content&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-rich-content&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Google rich content
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/search/docs/guides/search-gallery&#34;&gt;探索 Search Gallery&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;favicon&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#favicon&#34;&gt;
+        ###
+    &lt;/a&gt;
+    favicon
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;http://tedshd.logdown.com/posts/7834497-web-icon-use-notes&#34;&gt;web - favicon 使用筆記&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;可讓-google-識別的特殊標記httpssupportgooglecomwebmastersanswer79812&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%8f%af%e8%ae%93-google-%e8%ad%98%e5%88%a5%e7%9a%84%e7%89%b9%e6%ae%8a%e6%a8%99%e8%a8%98httpssupportgooglecomwebmastersanswer79812&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://support.google.com/webmasters/answer/79812&#34;&gt;可讓 Google 識別的特殊標記&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;lang&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#lang&#34;&gt;
+        ###
+    &lt;/a&gt;
+    lang
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;pwaoption&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#pwaoption&#34;&gt;
+        ###
+    &lt;/a&gt;
+    PWA(Option)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;ampoption&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ampoption&#34;&gt;
+        ###
+    &lt;/a&gt;
+    AMP(Option)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;app-linkoption&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#app-linkoption&#34;&gt;
+        ###
+    &lt;/a&gt;
+    App link(Option)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;google-news-publisher-center---partnerdashhttpspartnerdashgooglecompartnerdashdnewspidpfehomeoption&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-news-publisher-center---partnerdashhttpspartnerdashgooglecompartnerdashdnewspidpfehomeoption&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://partnerdash.google.com/partnerdash/d/news#p:id=pfehome&#34;&gt;Google News Publisher Center - Partnerdash&lt;/a&gt;(Option)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;google-my-business---stand-out-on-google-for-freehttpswwwgooglecombusinessoption&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-my-business---stand-out-on-google-for-freehttpswwwgooglecombusinessoption&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://www.google.com/business/&#34;&gt;Google My Business - Stand Out on Google for Free&lt;/a&gt;(Option)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;提高在-google-搜尋中的能見度httpsdevelopersgooglecomsearch&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%8f%90%e9%ab%98%e5%9c%a8-google-%e6%90%9c%e5%b0%8b%e4%b8%ad%e7%9a%84%e8%83%bd%e8%a6%8b%e5%ba%a6httpsdevelopersgooglecomsearch&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://developers.google.com/search&#34;&gt;提高在 Google 搜尋中的能見度&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;wikioption&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#wikioption&#34;&gt;
+        ###
+    &lt;/a&gt;
+    wiki(Option)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;建立 wiki 頁面, 因為 Google 會把 wiki 中相關頁面呈現在前面&lt;/p&gt;
+&lt;p&gt;對品牌較有效益&lt;/p&gt;
+&lt;h4 id=&#34;更新您的-google-知識面板httpssupportgooglecomknowledgepanelanswer7534842hlzh-hantoption&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%9b%b4%e6%96%b0%e6%82%a8%e7%9a%84-google-%e7%9f%a5%e8%ad%98%e9%9d%a2%e6%9d%bfhttpssupportgooglecomknowledgepanelanswer7534842hlzh-hantoption&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://support.google.com/knowledgepanel/answer/7534842?hl=zh-Hant&#34;&gt;更新您的 Google 知識面板&lt;/a&gt;(Option)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;google-knowledge-graph-search-apihttpsdevelopersgooglecomknowledge-graphoption&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-knowledge-graph-search-apihttpsdevelopersgooglecomknowledge-graphoption&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://developers.google.com/knowledge-graph&#34;&gt;Google Knowledge Graph Search API&lt;/a&gt;(Option)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;Knowledge Graph &amp;amp; 知識面板是 Google 一個很猛的計畫&lt;/p&gt;
+&lt;p&gt;涵蓋範圍不只是只有 web&lt;/p&gt;
+&lt;h3 id=&#34;當有-1-之後&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%95%b6%e6%9c%89-1-%e4%b9%8b%e5%be%8c&#34;&gt;
+        ##
+    &lt;/a&gt;
+    當有 1 之後
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;資料品質&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%b3%87%e6%96%99%e5%93%81%e8%b3%aa&#34;&gt;
+        ###
+    &lt;/a&gt;
+    資料品質
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/search/docs/guides/sd-policies&#34;&gt;Follow the structured data guidelines&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.google.com/webmasters/answer/35769#quality_guidelines&#34;&gt;品質指南&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;避免使用下列手法：&lt;/p&gt;
+&lt;p&gt;自動產生的內容
+加入連結配罝
+建立沒有原創內容或極少原創內容的網頁
+偽裝
+幕後重新導向
+隱藏的文字或連結
+入口網頁
+剪輯的內容
+加入無法有效增值的聯盟計畫
+載入含有無用關鍵字的網頁
+建立具有惡意行為的網頁，例如網路詐騙，或是植入病毒、木馬程式或其他惡意程式
+濫用結構化資料標記
+對 Google 傳送自動查詢&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.google.com/webmasters/answer/66353&#34;&gt;隱藏的文字與連結&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;為操控 Google 搜尋排名而在內容中加入隱藏的文字與連結，可能會遭系統視為詐欺行為，同時也違反 Google 的《網站管理員指南》。隱藏文字 (例如過多關鍵字) 的方式有很多種，例如：&lt;/p&gt;
+&lt;p&gt;在白色背景上使用白色文字
+將文字藏在圖片底下
+透過 CSS 將文字放置於畫面外
+將字型大小設為 0
+透過建立某個小字元的連結來隱藏連結，例如段落中的連字號&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.google.com/webmasters/answer/66358&#34;&gt;濫填關鍵字&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;在搜尋結果中顯示合適的網頁標題和摘要httpssupportgooglecomwebmastersanswer35624hlzh-hant&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%9c%a8%e6%90%9c%e5%b0%8b%e7%b5%90%e6%9e%9c%e4%b8%ad%e9%a1%af%e7%a4%ba%e5%90%88%e9%81%a9%e7%9a%84%e7%b6%b2%e9%a0%81%e6%a8%99%e9%a1%8c%e5%92%8c%e6%91%98%e8%a6%81httpssupportgooglecomwebmastersanswer35624hlzh-hant&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://support.google.com/webmasters/answer/35624?hl=zh-Hant&#34;&gt;在搜尋結果中顯示合適的網頁標題和摘要&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;圖片&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%9c%96%e7%89%87&#34;&gt;
+        ###
+    &lt;/a&gt;
+    圖片
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;http://tedshd.logdown.com/posts/7858371-web-html-metadata-image-size-with-open-graph-etc&#34;&gt;Web - HTML metadata image size with open graph&amp;hellip;etc&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;網址檢查工具httpssupportgooglecomwebmastersanswer9012289&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b6%b2%e5%9d%80%e6%aa%a2%e6%9f%a5%e5%b7%a5%e5%85%b7httpssupportgooglecomwebmastersanswer9012289&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://support.google.com/webmasters/answer/9012289&#34;&gt;網址檢查工具&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;向-google-說明您的出站連結限制httpssupportgooglecomwebmastersanswer96569&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%90%91-google-%e8%aa%aa%e6%98%8e%e6%82%a8%e7%9a%84%e5%87%ba%e7%ab%99%e9%80%a3%e7%b5%90%e9%99%90%e5%88%b6httpssupportgooglecomwebmastersanswer96569&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://support.google.com/webmasters/answer/96569&#34;&gt;向 Google 說明您的出站連結限制&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rel=&amp;quot;sponsored&amp;quot;&lt;/code&gt; - Ad&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rel=&amp;quot;ugc&amp;quot;&lt;/code&gt; - User generate content&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rel=&amp;quot;nofollow&amp;quot;&lt;/code&gt; - not follow link&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;在測試網站時保持-google-搜尋排名的最佳做法httpssupportgooglecomwebmastersanswer7238431&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%9c%a8%e6%b8%ac%e8%a9%a6%e7%b6%b2%e7%ab%99%e6%99%82%e4%bf%9d%e6%8c%81-google-%e6%90%9c%e5%b0%8b%e6%8e%92%e5%90%8d%e7%9a%84%e6%9c%80%e4%bd%b3%e5%81%9a%e6%b3%95httpssupportgooglecomwebmastersanswer7238431&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://support.google.com/webmasters/answer/7238431&#34;&gt;在測試網站時保持 Google 搜尋排名的最佳做法&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;不過就我的經驗在搞 A/B 測試時沒在導頁的&lt;/p&gt;
+&lt;h4 id=&#34;整合重複的網址httpssupportgooglecomwebmastersanswer139066&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%95%b4%e5%90%88%e9%87%8d%e8%a4%87%e7%9a%84%e7%b6%b2%e5%9d%80httpssupportgooglecomwebmastersanswer139066&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://support.google.com/webmasters/answer/139066&#34;&gt;整合重複的網址&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;如果要有效的 redirect 頁面請使用 301 作為永久導頁用&lt;/p&gt;
+&lt;h4 id=&#34;本地化多國語系&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%9c%ac%e5%9c%b0%e5%8c%96%e5%a4%9a%e5%9c%8b%e8%aa%9e%e7%b3%bb&#34;&gt;
+        ###
+    &lt;/a&gt;
+    本地化(多國語系)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.google.com/webmasters/answer/182192&#34;&gt;管理多地區和多語言版本的網站&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.google.com/webmasters/answer/189077&#34;&gt;向 Google 提供網頁的本地化版本&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML tag&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;alternate&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;hreflang&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;en-us&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://en-us.example.com/page.html&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;HTTP header&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Link: &amp;lt;http://example.com/file.pdf&amp;gt;; rel=&amp;#34;alternate&amp;#34;; hreflang=&amp;#34;en&amp;#34;, &amp;lt;http://de-ch.example.com/file.pdf&amp;gt;; rel=&amp;#34;alternate&amp;#34;; hreflang=&amp;#34;de-ch&amp;#34;, &amp;lt;http://de.example.com/file.pdf&amp;gt;; rel=&amp;#34;alternate&amp;#34;; hreflang=&amp;#34;de&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;stiemap&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;url&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;loc&amp;gt;&lt;/span&gt;http://www.example.com/deutsch/page.html&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;/loc&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;xhtml:link&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;rel=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;alternate&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;hreflang=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;de&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://www.example.com/deutsch/page.html&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;xhtml:link&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;rel=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;alternate&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;hreflang=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;de-ch&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://www.example.com/schweiz-deutsch/page.html&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;xhtml:link&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;rel=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;alternate&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;hreflang=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://www.example.com/english/page.html&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;/url&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;請勿使用 IP 分析來調整內容。 分析 IP 位置資訊相當困難，而且往往並不可靠。此外，Google 可能無法正確檢索您網站的變化版本。雖然有部分例外，但 Google 檢索器在大多數情況下是源自美國，我們也不會為了偵測網站變化版本而試圖變更位置。如要針對特定地區提供內容，請採用本文列出的方式 (hreflang、替代網址和明確連結)。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;當然如果是 App 服務那就沒差了, 因為又不用顧及 Google 爬蟲 XD&lt;/p&gt;
+&lt;h4 id=&#34;保持簡單的網址結構httpssupportgooglecomwebmastersanswer76329&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bf%9d%e6%8c%81%e7%b0%a1%e5%96%ae%e7%9a%84%e7%b6%b2%e5%9d%80%e7%b5%90%e6%a7%8bhttpssupportgooglecomwebmastersanswer76329&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://support.google.com/webmasters/answer/76329&#34;&gt;保持簡單的網址結構&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;您可以試著在網址中使用標點符號。http://www.example.com/green-dress.html 這樣的網址比 &lt;a href=&#34;http://www.example.com/greendress.html&#34;&gt;http://www.example.com/greendress.html&lt;/a&gt; 更實用。建議您在網址中使用連字號 (-)，而不要使用底線 (_)。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
     </item>
+    
     <item>
       <title>Chrome headless 研究筆記</title>
-      <link>https://blog.tedshd.io/posts/2018-12-26-chrome-headless-research-notes/</link>
+      <link>/posts/2018-12-26-chrome-headless-research-notes/</link>
       <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2018-12-26-chrome-headless-research-notes/</guid>
-      <description>Chrome headless 研究筆記 最近要用到 chrome headless 的部分功能 且得在 ubuntu or debian server 實踐 所以筆記一下 Intro headless 大致分兩種用法 CLI libary Refer - Getting Started with Headless Chrome CLI 用法簡單但是受限很多且沒有找到具體詳</description>
+      
+      <guid>/posts/2018-12-26-chrome-headless-research-notes/</guid>
+      <description>&lt;h2 id=&#34;chrome-headless-研究筆記&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#chrome-headless-%e7%a0%94%e7%a9%b6%e7%ad%86%e8%a8%98&#34;&gt;
+        #
+    &lt;/a&gt;
+    Chrome headless 研究筆記
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;最近要用到 chrome headless 的部分功能&lt;/p&gt;
+&lt;p&gt;且得在 ubuntu or debian server 實踐&lt;/p&gt;
+&lt;p&gt;所以筆記一下&lt;/p&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;headless 大致分兩種用法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;CLI&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;libary&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/web/updates/2017/04/headless-chrome&#34;&gt;Refer - Getting Started with Headless Chrome&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CLI 用法簡單但是受限很多且沒有找到具體詳細完整的文件, 就連用 man 查都查不到&amp;hellip;&lt;/p&gt;
+&lt;p&gt;也有可能是我自己沒有認真找&lt;/p&gt;
+&lt;p&gt;libary 就相對容易, 連 Google 自己都有提供部分語言的版本, 且有前端工程師很熟的 Node 版本&lt;/p&gt;
+&lt;h3 id=&#34;on-ubuntu-server&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#on-ubuntu-server&#34;&gt;
+        ##
+    &lt;/a&gt;
+    on ubuntu server
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt-get install chromium-browser
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ex:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chromium-browser --headless --screenshot=test.png --disable-gpu --window-size=320,480 --user-agent=&amp;#34;Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D257 Safari/9537.53&amp;#34; http://tedshd.logdown.com
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;這指令下了截圖, 設定寬高, 模擬 UserAgent&lt;/p&gt;
+&lt;p&gt;當然也有 &lt;code&gt;--dump-dom&lt;/code&gt; 可以看 source code&lt;/p&gt;
+&lt;h3 id=&#34;使用-puppeteer-處理&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8-puppeteer-%e8%99%95%e7%90%86&#34;&gt;
+        ##
+    &lt;/a&gt;
+    使用 puppeteer 處理
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/GoogleChrome/puppeteer&#34;&gt;puppeteer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;puppeteer 是 Google 維護的用 node 處理 headless 的套件&lt;/p&gt;
+&lt;p&gt;用了一下真是感到清爽好用&lt;/p&gt;
+&lt;p&gt;放一段最簡單的 smaple code&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; puppeteer &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;puppeteer&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#ff6ac1&#34;&gt;async&lt;/span&gt; () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; browser &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; puppeteer.launch();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; page &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; browser.newPage();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    page.setUserAgent(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:64.0) Gecko/20100101 Firefox/64.0&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; page.&lt;span style=&#34;color:#ff6ac1&#34;&gt;goto&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;https://tysh310246.blogspot.com&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; page.screenshot({path&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;example.png&amp;#39;&lt;/span&gt;, fullPage&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; browser.close();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就是如此清爽&lt;/p&gt;
+&lt;p&gt;且有很多包好的 function 可以用&lt;/p&gt;
+&lt;p&gt;看了一下文件根本可以用 headless 取代 selenium + webdriver.io 了&lt;/p&gt;
+&lt;p&gt;但是目前的需求也不需要用到太多其他的功能&lt;/p&gt;
+&lt;p&gt;有空再慢慢研究&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md&#34;&gt;Puppeteer API Tip-Of-Tree&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;字型&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%ad%97%e5%9e%8b&#34;&gt;
+        ##
+    &lt;/a&gt;
+    字型
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;在一台 server 上除非要截的網站是用 webfont 不然就會發現截的圖因為沒有字型所以中文會是方塊字&lt;/p&gt;
+&lt;p&gt;這部分就得處理一下&lt;/p&gt;
+&lt;p&gt;可以直接裝 Google 的 noto 字型&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget -c https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;把字型檔載下來放在&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/usr/local/share/fonts/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;設定 owner&lt;/p&gt;
+&lt;p&gt;設定權限&lt;/p&gt;
+&lt;p&gt;安裝字型&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo fc-cache -fv
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;搞定&lt;/p&gt;
+&lt;p&gt;這邊建議直接裝全部語系的字型較為完整, 以免會遇到其他語系還是會有問題&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://samwhelp.github.io/blog/read/linux/ubuntu/font/font-noto/&#34;&gt;Refer - Ubuntu環境下，手動安裝思源字型&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Google Adsense domain 設置</title>
-      <link>https://blog.tedshd.io/posts/2016-04-15-google-adsense-domain-settings/</link>
+      <link>/posts/2016-04-15-google-adsense-domain-settings/</link>
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-04-15-google-adsense-domain-settings/</guid>
-      <description>Google Adsense domain 設置 一點設定 Google adsense 的心得 因為有時會寫一寫筆記或部落格記錄人生 然後因為工作進到跟廣告有點關係的公司, 遇到裡面的一些專家 有人提議說, 既然我有</description>
+      
+      <guid>/posts/2016-04-15-google-adsense-domain-settings/</guid>
+      <description>&lt;h2 id=&#34;google-adsense-domain-設置&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-adsense-domain-%e8%a8%ad%e7%bd%ae&#34;&gt;
+        #
+    &lt;/a&gt;
+    Google Adsense domain 設置
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;一點設定 Google adsense 的心得&lt;/p&gt;
+&lt;p&gt;因為有時會寫一寫筆記或部落格記錄人生&lt;/p&gt;
+&lt;p&gt;然後因為工作進到跟廣告有點關係的公司, 遇到裡面的一些專家&lt;/p&gt;
+&lt;p&gt;有人提議說, 既然我有寫文章的習慣, 那也可以放個廣告賺一點錢&lt;/p&gt;
+&lt;p&gt;但我個人是不太喜歡放廣告, 畢竟大家都知道廣告是拖累網站速度的元凶&lt;/p&gt;
+&lt;p&gt;但最近想說試試可不可以在自己的網站放個一個版位的廣告, 看能不能抵掉 GCP 維持的費用(應該是不太可能&amp;hellip;&lt;/p&gt;
+&lt;p&gt;所以就在自己寫的 blog 和自己做的一些 service 放上去試試&lt;/p&gt;
+&lt;p&gt;這紀錄一下一些在用 Google adsense 比較特別的行為與情況&lt;/p&gt;
+&lt;h3 id=&#34;us-100-才能領出來&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#us-100-%e6%89%8d%e8%83%bd%e9%a0%98%e5%87%ba%e4%be%86&#34;&gt;
+        ##
+    &lt;/a&gt;
+    US 100 才能領出來
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;我這要等到幾時啊&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;google-adsense-是動態-cpc--cpm-計算價錢&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-adsense-%e6%98%af%e5%8b%95%e6%85%8b-cpc--cpm-%e8%a8%88%e7%ae%97%e5%83%b9%e9%8c%a2&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Google adsense 是動態 CPC + CPM 計算價錢
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;所以沒一定的價格, 似乎有受流量影響&lt;/p&gt;
+&lt;h3 id=&#34;眾所皆知-廣告通常是-by-domain-申請-現在用-subdomain-是不行的&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%9c%be%e6%89%80%e7%9a%86%e7%9f%a5-%e5%bb%a3%e5%91%8a%e9%80%9a%e5%b8%b8%e6%98%af-by-domain-%e7%94%b3%e8%ab%8b-%e7%8f%be%e5%9c%a8%e7%94%a8-subdomain-%e6%98%af%e4%b8%8d%e8%a1%8c%e7%9a%84&#34;&gt;
+        ##
+    &lt;/a&gt;
+    眾所皆知, 廣告通常是 by domain 申請, 現在用 subdomain 是不行的
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;很久以前依據在 subdomain service 的話似乎可以, 但現在不行了&lt;/p&gt;
+&lt;p&gt;因為我用 logdown 申請說不能用 subdomain 申請&amp;hellip;(明明約半年前還可以, 只是當時不知為何一直說我違反他們的協議, 所以一直申請不過&lt;/p&gt;
+&lt;p&gt;但 Google 自己的 blogger 卻可以, 我試過了因為我有個 blogger, 但 Pixnet 我沒試過(不過 Pixnet 可以跟他們自己申請廣告分潤&lt;/p&gt;
+&lt;h3 id=&#34;google-adsense-的網站審查蠻嚴謹的&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-adsense-%e7%9a%84%e7%b6%b2%e7%ab%99%e5%af%a9%e6%9f%a5%e8%a0%bb%e5%9a%b4%e8%ac%b9%e7%9a%84&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Google Adsense 的網站審查蠻嚴謹的
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;嚴謹到我這 logdown 之前都過不了(靠, 搞得我都認為是 XXX 的錯&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;把自己的站用-submain-掛到申請過-doamin-下去可行&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%8a%8a%e8%87%aa%e5%b7%b1%e7%9a%84%e7%ab%99%e7%94%a8-submain-%e6%8e%9b%e5%88%b0%e7%94%b3%e8%ab%8b%e9%81%8e-doamin-%e4%b8%8b%e5%8e%bb%e5%8f%af%e8%a1%8c&#34;&gt;
+        ##
+    &lt;/a&gt;
+    把自己的站用 submain 掛到申請過 doamin 下去可行
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;我本身是這樣試出來可以的&lt;/p&gt;
+&lt;h3 id=&#34;how-to-do&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#how-to-do&#34;&gt;
+        ##
+    &lt;/a&gt;
+    How to do?
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;我申請 tedshd.io 放 Google adsense&lt;/p&gt;
+&lt;p&gt;在 tedshd.io 開個 subdomain blog.tedshd.io&lt;/p&gt;
+&lt;p&gt;設定 blog.tedshd.io CNAME	tedshd.logdown.com&lt;/p&gt;
+&lt;p&gt;這樣 blog.tedshd.io 就是 tedshd.logdown.com&lt;/p&gt;
+&lt;p&gt;這樣 Google adsense 就會有了&lt;/p&gt;
+&lt;p&gt;且去 Google adsense 後台看也有數據進來了&lt;/p&gt;
+&lt;p&gt;但這不知道是漏洞還是 Google 有意為之&lt;/p&gt;
+&lt;p&gt;個人覺得這算黑的做法&lt;/p&gt;
+&lt;p&gt;所以哪天被鎖就 GG 了&amp;hellip;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Google Cloud Platform - Study Log</title>
-      <link>https://blog.tedshd.io/posts/2015-09-28-google-cloud-platform-study-log/</link>
+      <link>/posts/2015-09-28-google-cloud-platform-study-log/</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-09-28-google-cloud-platform-study-log/</guid>
-      <description>Google Cloud Platform - Study Log Intro 之前有幸參加亞太區 Google Cloud Platform 發表會, 聽完後就有點心動(因為價錢低於 AWS), 但ㄧ直沒時間研究怎麼用就這樣拖了很久&amp;hellip; 加上之前用</description>
+      
+      <guid>/posts/2015-09-28-google-cloud-platform-study-log/</guid>
+      <description>&lt;h2 id=&#34;google-cloud-platform---study-log&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-cloud-platform---study-log&#34;&gt;
+        #
+    &lt;/a&gt;
+    Google Cloud Platform - Study Log
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;之前有幸參加亞太區 Google Cloud Platform 發表會, 聽完後就有點心動(因為價錢低於 AWS), 但ㄧ直沒時間研究怎麼用就這樣拖了很久&amp;hellip;&lt;/p&gt;
+&lt;p&gt;加上之前用的網路空間不穩又常常換硬體主機, 換完就要重建帳號很麻煩(雖然是免費的, 但去常常在假日跟我一起休息&amp;hellip;)&lt;/p&gt;
+&lt;p&gt;所以打算把 demo code 和一些小東西丟到 GCP 試試, 改用 GCP(開始要花錢了&amp;hellip;)&lt;/p&gt;
+&lt;h3 id=&#34;service-type&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#service-type&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Service type
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;compute-engine&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#compute-engine&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Compute Engine
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/compute/&#34;&gt;Google Compute Engine&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;簡單說就是 AWS 的 EC2&lt;/p&gt;
+&lt;p&gt;就是在上面 run VM 開 web service 的服務&lt;/p&gt;
+&lt;h3 id=&#34;usage-for-me&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#usage-for-me&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Usage for me
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/products/calculator/#id=09d716db-1840-4c5d-90b2-4e9f6449590a&#34;&gt;f1-micro (vCPUs: shared, RAM: 0.60 GB) * does not support local SSD - 10GB storage&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這樣 USD 5, 不含流量&lt;/p&gt;
+&lt;p&gt;但基本上對外流量是 1GB USD 0.01&lt;/p&gt;
+&lt;p&gt;所以還好&lt;/p&gt;
+&lt;p&gt;GCP 還有個優勢就是利用它呼叫 Google service 的 API(Map, youtube&amp;hellip;) 是不算流量的(free!)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先開個 VM&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/302354/jOyuia6MR5KEWR8yXI0S_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-09-29%20%E4%B8%8B%E5%8D%884.13.09.png&#34; alt=&#34;螢幕快照 2015-09-29 下午4.13.09.png&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;設定 SSH key&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/302354/THj1yAEvQ7a8FfCD8OCW_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-09-29_%E4%B8%8B%E5%8D%888_00_04.png&#34; alt=&#34;螢幕快照_2015-09-29_下午8_00_04.png&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;設定成靜態 IP, 這跟 AWS 一樣有組靜態 IP, 設定綁完給 VM 用就不會再算錢&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/302354/VY3oI7wQ52QIhA7j7otd_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-09-29_%E4%B8%8B%E5%8D%888_00_18.png&#34; alt=&#34;螢幕快照_2015-09-29_下午8_00_18.png&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;如果別人要 SSH 進來的話, 就到&lt;strong&gt;中繼資料&lt;/strong&gt;加 key&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/302354/CPqWJD7R2XfUoffkjUoA_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-09-29%20%E4%B8%8B%E5%8D%884.12.37.png&#34; alt=&#34;螢幕快照 2015-09-29 下午4.12.37.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;some-help-data&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#some-help-data&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Some help data
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;首頁&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/&#34;&gt;Google Cloud Computing, Hosting Services &amp;amp; Cloud Support — Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;價錢計算機&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/products/calculator/&#34;&gt;Google Cloud Platform Pricing Calculator - Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Compute Engine 計價方式&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/compute/pricing&#34;&gt;Google Compute Engine Pricing - Compute Engine - Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/compute/pricing#network&#34;&gt;流量計價方式&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>JavaScript - Google Closure Compiler V.S. Gulp uglify</title>
-      <link>https://blog.tedshd.io/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/</link>
+      <link>/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/</link>
       <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/</guid>
-      <description>JavaScript - Google Closure Compiler V.S. Gulp uglify Intro I have two choice&#xA;Google Closure Compiler&#xA;UglifyJs&#xA;Google Closure Compiler Google Closure Compiler&#xA;Google Closure Compiler is a tool for minify and uglify js.&#xA;From Google&#xA;Java&#xA;Command Line&#xA;Slow&#xA;UglifyJs mishoo/UglifyJS2&#xA;More option setting&#xA;Node.js&#xA;Command Line&#xA;Fast&#xA;Test Google Closure Compiler When i run command line, it used lot of cpu source.&#xA;Can feel it lock some seconds.</description>
+      
+      <guid>/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/</guid>
+      <description>&lt;h2 id=&#34;javascript---google-closure-compiler-vs-gulp-uglify&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript---google-closure-compiler-vs-gulp-uglify&#34;&gt;
+        #
+    &lt;/a&gt;
+    JavaScript - Google Closure Compiler V.S. Gulp uglify
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;I have two choice&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Google Closure Compiler&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;UglifyJs&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;google-closure-compiler&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-closure-compiler&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Google Closure Compiler
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/closure/compiler/&#34;&gt;Google Closure Compiler&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Google Closure Compiler&lt;/em&gt; is a tool for minify and uglify js.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;From Google&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Java&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Command Line&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slow&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;uglifyjs&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#uglifyjs&#34;&gt;
+        ###
+    &lt;/a&gt;
+    UglifyJs
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/mishoo/UglifyJS2&#34;&gt;mishoo/UglifyJS2&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;More option setting&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Node.js&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Command Line&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fast&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;test&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#test&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Test
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;google-closure-compiler-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-closure-compiler-1&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Google Closure Compiler
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;When i run command line, it used lot of cpu source.&lt;/p&gt;
+&lt;p&gt;Can feel it lock some seconds.&lt;/p&gt;
+&lt;p&gt;If compiler error,it can show error message.&lt;/p&gt;
+&lt;h4 id=&#34;uglifyjs-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#uglifyjs-1&#34;&gt;
+        ###
+    &lt;/a&gt;
+    UglifyJs
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;It&amp;rsquo;s so fast.&lt;/p&gt;
+&lt;p&gt;It can fix some small error when it compiler.&lt;/p&gt;
+&lt;p&gt;So i recommendation this tool.&lt;/p&gt;
+&lt;p&gt;Finally i use &lt;a href=&#34;http://gulpjs.com/&#34;&gt;Gulp&lt;/a&gt; handle uglifyJs.&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>HTML5 - Full Screen Mode</title>
-      <link>https://blog.tedshd.io/posts/2014-05-08-html5-full-screen-mode/</link>
+      <link>/posts/2014-05-08-html5-full-screen-mode/</link>
       <pubDate>Thu, 08 May 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-05-08-html5-full-screen-mode/</guid>
-      <description>HTML5 - Full Screen Mode It can control full screen the browser IE if it is to be more than IE11 Code function toggleFullScreen() { if (!document.fullscreenElement &amp;amp;&amp;amp; // alternative standard method !document.mozFullScreenElement &amp;amp;&amp;amp; !document.webkitFullscreenElement &amp;amp;&amp;amp; !document.msFullscreenElement ) { // current working methods if (document.documentElement.requestFullscreen) { document.documentElement.requestFullscreen(); } else if (document.documentElement.msRequestFullscreen) { document.documentElement.msRequestFullscreen(); } else if (document.documentElement.mozRequestFullScreen) { document.documentElement.mozRequestFullScreen(); } else if (document.documentElement.webkitRequestFullscreen) { document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT); } } else { if</description>
+      
+      <guid>/posts/2014-05-08-html5-full-screen-mode/</guid>
+      <description>&lt;h2 id=&#34;html5---full-screen-mode&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#html5---full-screen-mode&#34;&gt;
+        #
+    &lt;/a&gt;
+    HTML5 - Full Screen Mode
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;It can control full screen the browser
+IE if it is to be more than IE11&lt;/p&gt;
+&lt;h3 id=&#34;code&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#code&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Code
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; toggleFullScreen() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.fullscreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// alternative standard method
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozFullScreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitFullscreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msFullscreenElement ) {  &lt;span style=&#34;color:#78787e&#34;&gt;// current working methods
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.requestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.requestFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.msRequestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.msRequestFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.mozRequestFullScreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.mozRequestFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.webkitRequestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.exitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.exitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msExitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msExitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozCancelFullScreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozCancelFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitExitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitExitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;example&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#example&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Example
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;HTML&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;button&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;full&amp;#34;&lt;/span&gt;&amp;gt;Full Screen&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;button&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;JavaScript&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#full&amp;#39;&lt;/span&gt;).addEventListener(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    toggleFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; toggleFullScreen() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.fullscreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// alternative standard method
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozFullScreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitFullscreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msFullscreenElement ) {  &lt;span style=&#34;color:#78787e&#34;&gt;// current working methods
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.requestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.requestFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.msRequestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.msRequestFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.mozRequestFullScreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.mozRequestFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.webkitRequestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.exitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.exitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msExitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msExitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozCancelFullScreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozCancelFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitExitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitExitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;codepen&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#codepen&#34;&gt;
+        ##
+    &lt;/a&gt;
+    CodePen
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p data-height=&#34;268&#34; data-theme-id=&#34;2982&#34; data-slug-hash=&#34;ExLCA&#34; data-default-tab=&#34;result&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/tedshd/pen/ExLCA/&#39;&gt;full screen mode&lt;/a&gt; by Ted (&lt;a href=&#39;http://codepen.io/tedshd&#39;&gt;@tedshd&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;
+&lt;h3 id=&#34;other-use&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#other-use&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Other use
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Use it make youtube api player full screen
+If render player on &lt;code&gt;&amp;lt;div id=&amp;quot;player&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#full&amp;#39;&lt;/span&gt;).addEventListener(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  toggleFullScreen(&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#player&amp;#39;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; toggleFullScreen(el) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.fullscreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// alternative standard method
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozFullScreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitFullscreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msFullscreenElement ) {  &lt;span style=&#34;color:#78787e&#34;&gt;// current working methods
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.requestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      el.requestFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.msRequestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      el.msRequestFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.mozRequestFullScreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      el.mozRequestFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.webkitRequestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      el.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.exitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.exitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msExitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msExitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozCancelFullScreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozCancelFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitExitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitExitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode&#34;&gt;Refer - Using fullscreen mode - Web developer guide | MDN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/zh-tw/library/ie/dn265028(v=vs.85).aspx&#34;&gt;Refer - 全螢幕 API (Windows)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.sitepoint.com/use-html5-full-screen-api/&#34;&gt;Refer - How to Use the HTML5 Full-Screen API (Again) - SitePoint&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>JavaScript - YouTube API note</title>
-      <link>https://blog.tedshd.io/posts/2013-12-20-javascript-youtube-api-note/</link>
+      <link>/posts/2013-12-20-javascript-youtube-api-note/</link>
       <pubDate>Fri, 20 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-12-20-javascript-youtube-api-note/</guid>
-      <description>JavaScript - YouTube API note player demo YouTube JavaScript Player API Reference YouTube 嵌入式播放器参数 YouTube Embedded Players and Player Parameters YouTube Player API Reference for iframe Embeds Use YouTube video must init a youtube player There have 2 player we can use flash player iframe player I suggest use iframe player because it can support flash and HTML5 If use Apple mobile devices,</description>
+      
+      <guid>/posts/2013-12-20-javascript-youtube-api-note/</guid>
+      <description>&lt;h2 id=&#34;javascript---youtube-api-note&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript---youtube-api-note&#34;&gt;
+        #
+    &lt;/a&gt;
+    JavaScript - YouTube API note
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/youtube/youtube_player_demo&#34;&gt;player demo&lt;/a&gt;
+&lt;a href=&#34;https://developers.google.com/youtube/js_api_reference&#34;&gt;YouTube JavaScript Player API Reference&lt;/a&gt;
+&lt;a href=&#34;https://developers.google.com/youtube/player_parameters?playerVersion=HTML5&amp;amp;hl=zh-cn&#34;&gt;YouTube 嵌入式播放器参数&lt;/a&gt;
+&lt;a href=&#34;https://developers.google.com/youtube/player_parameters?hl=en&#34;&gt;YouTube Embedded Players and Player Parameters&lt;/a&gt;
+&lt;a href=&#34;https://developers.google.com/youtube/iframe_api_reference&#34;&gt;YouTube Player API Reference for iframe Embeds&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Use YouTube video must init a youtube player
+There have 2 player we can use&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;flash player&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;iframe player&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I suggest use iframe player because it can support flash and HTML5
+If use Apple mobile devices, they can&amp;rsquo;t support flash
+Use iframe player can solve this problem
+We can use javascript control player&lt;/p&gt;
+&lt;h3 id=&#34;this-is-a-note-to-iframe-api&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#this-is-a-note-to-iframe-api&#34;&gt;
+        ##
+    &lt;/a&gt;
+    This is a note to iframe API
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;embed script&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;https://www.youtube.com/iframe_api&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;JavaScript generate&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; tag &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.createElement(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    firstScriptTag &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tag.src &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;https://www.youtube.com/iframe_api&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;1.First check load iframe API&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; onYouTubeIframeAPIReady() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2.Init YouTube player&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; player;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;player &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; YT.Player(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;player&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        width&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;1280&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#78787e&#34;&gt;// player width
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        height&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;720&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#78787e&#34;&gt;// player height
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        videoId&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; videoList[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;], &lt;span style=&#34;color:#78787e&#34;&gt;// youtube id ex: &amp;#39;0lfDNu-k6oo&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        playerVars&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            rel&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            autoplay&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            disablekb&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            showsearch&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            showinfo&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            controls&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            wmode&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;opaque&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            hd&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            html5&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            iv_load_policy&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        events&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onReady&amp;#39;&lt;/span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; onPlayerReady,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onStateChange&amp;#39;&lt;/span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; onPlayerStateChange,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onError&amp;#39;&lt;/span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; error
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;playerVars can refer &lt;a href=&#34;https://developers.google.com/youtube/player_parameters?playerVersion=HTML5&amp;amp;hl=zh-cn&#34;&gt;YouTube 嵌入式播放器参数&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.Handle onPlayerReady, onPlayerStateChange, error&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; onPlayerReady(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; onPlayerStateChange(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; error(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;sample-code&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sample-code&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Sample code
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;title&lt;/span&gt;&amp;gt;youtube_iframe_api&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;title&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;player&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; player;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; loadPlayer() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#player&amp;#39;&lt;/span&gt;)) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#78787e&#34;&gt;// get API
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; tag &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.createElement(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            firstScriptTag &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            tag.src &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;https://www.youtube.com/iframe_api&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; videoList &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; [],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                playCount &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; video_ID &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_2&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;V8BTsiMxyaQ&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_0&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;7wvNwOPprBE&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_1&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;mTSuiGubCHE&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_8&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;DDs5bXh4erM&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_3&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;n-BXNXvTvV4&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_4&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;CRJDQQXS4uE&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_5&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;ASO_zypdnsQ&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_6&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;IZkYdqRWKaY&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_7&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;9Y15es8OY0U&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_9&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;LWV-f6dMN3Q&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#78787e&#34;&gt;// videoList array
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; key &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; video_ID) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; value &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; video_ID[key];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                videoList.push(value);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; playChannel() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;// init player
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;                player &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; YT.Player(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;player&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        width&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;1280&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        height&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;720&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        videoId&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; videoList[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        playerVars&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            rel&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            autoplay&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            disablekb&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            showsearch&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            showinfo&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            controls&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            autohide&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            modestbranding&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            wmode&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;opaque&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            hd&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            html5&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            iv_load_policy&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        events&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onReady&amp;#39;&lt;/span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; onPlayerReady,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onStateChange&amp;#39;&lt;/span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; onPlayerStateChange,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onError&amp;#39;&lt;/span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; error
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;// play video
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; onPlayerReady(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    console.log(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onPlayerReady&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; error(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    console.log(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Error&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    console.log(e);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; onPlayerStateChange(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;// get state
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;                console.log(e);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;// play list loop when video end play next video
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (e.data &lt;span style=&#34;color:#ff6ac1&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    playCount&lt;span style=&#34;color:#ff6ac1&#34;&gt;++&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (playCount &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; (videoList.length &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;)) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        playCount &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    player.loadVideoById(videoList[playCount]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    player.playVideo();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; onYouTubeIframeAPIReady() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                playChannel();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            setTimeout(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                onYouTubeIframeAPIReady();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }, &lt;span style=&#34;color:#ff9f43&#34;&gt;1200&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    loadPlayer();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/5845484/force-html5-youtube-video&#34;&gt;Refer - Force HTML5 youtube video&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;onerror-error-code&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#onerror-error-code&#34;&gt;
+        ##
+    &lt;/a&gt;
+    onError error code
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;2 – The request contains an invalid parameter value. For example, this error occurs if you specify a video ID that does not have 11 characters, or if the video ID contains invalid characters, such as exclamation points or asterisks.&lt;/li&gt;
+&lt;li&gt;5 – The requested content cannot be played in an HTML5 player or another error related to the HTML5 player has occurred.&lt;/li&gt;
+&lt;li&gt;100 – The video requested was not found. This error occurs when a video has been removed (for any reason) or has been marked as private.&lt;/li&gt;
+&lt;li&gt;101 – The owner of the requested video does not allow it to be played in embedded players.&lt;/li&gt;
+&lt;li&gt;150 – This error is the same as 101. It&amp;rsquo;s just a 101 error in disguise!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;youtube-data-api&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#youtube-data-api&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Youtube Data api
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Get video data api&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://gdata.youtube.com/feeds/api/videos/&amp;lt;youtube_id&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It return format is XML&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://gdata.youtube.com/feeds/api/videos/&amp;lt;youtube_id&amp;gt;?alt=json
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It return format is json&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/youtube/reference?hl=zh-cn&#34;&gt;参考指南：Data API 协议&lt;/a&gt;
+&lt;a href=&#34;https://developers.google.com/youtube/2.0/developers_guide_json?hl=zh-cn&#34;&gt;Developer&amp;rsquo;s Guide: JSON / JavaScript&lt;/a&gt;
+&lt;a href=&#34;http://stackoverflow.com/questions/2601193/how-to-ensure-youtube-api-only-returns-videos-that-are-streamable-on-iphone&#34;&gt;Refer- How to ensure YouTube API only returns videos that are streamable on iPhone?&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;something-note&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#something-note&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Something note
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Player API 其中有個參數允許強制使用 HTML5 player 這建議有個好處與壞處
+好處是不會有廣告
+壞處是如果遇到訊源只有 flash 格式的影片 player 會重啟為 flash player
+用 gData 抓影片資訊可抓到其中一個 &lt;code&gt;content&lt;/code&gt; 的 key 其中就有提供此影片所帶有的格式
+&lt;a href=&#34;http://tedshd.lionfree.net/demo/youtube_api/youtube_video_gdata.html&#34;&gt;test page&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;5 - HTTP URL to the embeddable player (SWF) for this video. This format is not available for a video that is not embeddable. Developers commonly add &amp;amp;format=5 to their queries to restrict results to videos that can be embedded on their sites.&lt;/li&gt;
+&lt;li&gt;1 - RTSP streaming URL for mobile video playback. H.263 video (up to 176x144) and AMR audio.&lt;/li&gt;
+&lt;li&gt;6 - RTSP streaming URL for mobile video playback. MPEG-4 SP video (up to 176x144) and AAC audio.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/youtube/2.0/reference?hl=zh-tw#Custom_parameters&#34;&gt;Refer - Reference Guide: Data API Protocol&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;實測在 mobile 裝置上(Android, iOS), 參數設定 autoplay 是無效的, 利用 JavaScript 控制讓 youtube 播放也是無效的, 必須用手去點擊播放&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Google map api - research log</title>
-      <link>https://blog.tedshd.io/posts/2013-12-03-google-map-api-research-log/</link>
+      <link>/posts/2013-12-03-google-map-api-research-log/</link>
       <pubDate>Tue, 03 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-12-03-google-map-api-research-log/</guid>
-      <description>Google map api - research log Introduction 使用 Google Maps JavaScript v3 static map 嵌入地圖到網頁中以圖片方式呈現 使用限制 基本上不要一日載超過 25000 次都沒事 區域化 - 語系 Library Init map &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;!--使用 &amp;lt;!DOCTYPE</description>
+      
+      <guid>/posts/2013-12-03-google-map-api-research-log/</guid>
+      <description>&lt;h2 id=&#34;google-map-api---research-log&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-map-api---research-log&#34;&gt;
+        #
+    &lt;/a&gt;
+    Google map api - research log
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;introduction&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#introduction&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Introduction
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;使用 &lt;a href=&#34;https://developers.google.com/maps/documentation/javascript/?hl=zh-tw&#34;&gt;Google Maps JavaScript v3&lt;/a&gt;
+&lt;a href=&#34;https://developers.google.com/maps/documentation/staticmaps/?hl=zh-tw&#34;&gt;static map&lt;/a&gt; 嵌入地圖到網頁中以圖片方式呈現
+&lt;a href=&#34;https://developers.google.com/maps/documentation/javascript/usage?hl=zh-tw&#34;&gt;使用限制&lt;/a&gt; 基本上不要一日載超過 25000 次都沒事
+&lt;a href=&#34;https://developers.google.com/maps/documentation/javascript/basics?hl=zh-tw#Localization&#34;&gt;區域化 - 語系&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://code.google.com/p/google-maps-utility-library-v3/wiki/Libraries&#34;&gt;Library&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;init-map&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#init-map&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Init map
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!--使用 &amp;lt;!DOCTYPE html&amp;gt; 宣告，將應用程式宣告為 HTML5--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;title&lt;/span&gt;&amp;gt;Google_map_api_basic&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;title&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;initial-scale=1.0, user-scalable=no&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!--最新的瀏覽器會將使用此 DOCTYPE 宣告的內容以「標準模式」呈現，也就是說，您的應用程式應更具備跨瀏覽器相容性。此外，DOCTYPE 也設計成會逐漸適應，但無法理解它的瀏覽器將會忽略它，而採用「快速模式」顯示內容。請注意，有些 CSS 在快速模式中可以運作，但在標準模式中卻無效。具體來說，所有百分比的大小都必須繼承父區塊項目，但這些上階中如有任何一個無法指定大小，就會假設為 0 x 0 像素大小。基於這個理由，我們加入了下列 &amp;lt;style&amp;gt; 宣告--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;text/css&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;height&lt;/span&gt;: &lt;span style=&#34;color:#ff9f43&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;%&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;height&lt;/span&gt;: &lt;span style=&#34;color:#ff9f43&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;%&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;margin&lt;/span&gt;: &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;padding&lt;/span&gt;: &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#map_canvas {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;height&lt;/span&gt;: &lt;span style=&#34;color:#ff9f43&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;%&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;style&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!--這個 CSS 宣告表示地圖容器 &amp;lt;div&amp;gt; (名為 map_canvas) 應使用 HTML 主體的 100% 高度。請注意，我們也必須特別宣告 &amp;lt;body&amp;gt; 和 &amp;lt;html&amp;gt; 的這些百分比--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;https://maps.google.com/maps/api/js?sensor=true&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!--使用 script 標記來涵蓋 Maps API JavaScript--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!--請注意，我們也必須設定 sensor 參數，以指出這個應用程式是否有使用感應器來判斷使用者的位置。必須明確地將這個值設為 true 或 false--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;onload&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;initialize()&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!--從 body 標記的 onload 事件初始化地圖物件--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;map_canvas&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;width:100%; height:100%&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!--建立 div 元素 (名稱為「map_canvas」) 來容納「地圖」--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!--建立 JavaScript 物件實字以存放多個地圖屬性--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!--JavaScript 函式以建立「地圖」物件--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; initialize() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; myOptions &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        center&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; google.maps.LatLng(&lt;span style=&#34;color:#ff9f43&#34;&gt;25.05060&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;121.51870&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        zoom&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        mapTypeId&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; google.maps.MapTypeId.ROADMAP
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; map &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; google.maps.Map(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;map_canvas&amp;#34;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        myOptions
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;javascript-map-object&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript-map-object&#34;&gt;
+        ##
+    &lt;/a&gt;
+    JavaScript map object
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;先建立地圖的設定
+&lt;a href=&#34;https://developers.google.com/maps/documentation/javascript/tutorial?hl=zh-tw#MapOptions&#34;&gt;地圖選項&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; myOptions &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    center&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; google.maps.LatLng(&lt;span style=&#34;color:#ff9f43&#34;&gt;25.05060&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;121.51870&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    zoom&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    mapTypeId&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; google.maps.MapTypeId.ROADMAP
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;center 表示一開始地圖的中心位置&lt;/li&gt;
+&lt;li&gt;zoom 地圖縮放(0 ~ 18)&lt;/li&gt;
+&lt;li&gt;mapTypeId 地圖類型
+&lt;ul&gt;
+&lt;li&gt;ROADMAP 顯示 Google 地圖的正常、預設 2D 地圖方塊。&lt;/li&gt;
+&lt;li&gt;SATELLITE 可顯示攝影地圖方塊。&lt;/li&gt;
+&lt;li&gt;HYBRID 可顯示混合攝影地圖方塊與重要地圖項 (道路、城市名稱) 的地圖方塊圖層。&lt;/li&gt;
+&lt;li&gt;TERRAIN 可顯示實際起伏的地圖方塊，以呈現海拔高度和水域圖徵 (山嶽、河流等)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;初始化地圖
+&lt;a href=&#34;https://developers.google.com/maps/documentation/javascript/tutorial?hl=zh-tw#google.maps.Map&#34;&gt;地圖物件&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; map &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; google.maps.Map(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;map_canvas&amp;#34;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    myOptions
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;mark-google-map&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mark-google-map&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Mark Google map
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/maps/documentation/javascript/overlays?hl=zh-tw#Markers&#34;&gt;標記&lt;/a&gt;
+標記在地圖上的位置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// list marks
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; arr &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;Array&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        position&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; google.maps.LatLng(&lt;span style=&#34;color:#ff9f43&#34;&gt;25.05060&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;121.51870&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        title&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Hello World!&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        position&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; google.maps.LatLng(&lt;span style=&#34;color:#ff9f43&#34;&gt;25.056304&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;121.522079&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        title&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;春漾咖啡&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// put marks in map
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;; arr.length&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;=&lt;/span&gt; i; i&lt;span style=&#34;color:#ff6ac1&#34;&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; marker &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; google.maps.Marker(arr[i]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    marker.setMap(map);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;info-windows&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#info-windows&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Info windows
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/maps/documentation/javascript/infowindows&#34;&gt;infowindows&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;標記上的 pop tooltip&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; infowindow &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; google.maps.InfoWindow();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;method&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#method&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Method
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;setContent()&lt;/li&gt;
+&lt;li&gt;open()&lt;/li&gt;
+&lt;li&gt;close()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;propertieshttpsdevelopersgooglecommapsdocumentationjavascriptreferenceinfowindowoptions&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#propertieshttpsdevelopersgooglecommapsdocumentationjavascriptreferenceinfowindowoptions&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;a href=&#34;https://developers.google.com/maps/documentation/javascript/reference#InfoWindowOptions&#34;&gt;Properties&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;content&lt;/li&gt;
+&lt;li&gt;disableAutoPan&lt;/li&gt;
+&lt;li&gt;maxWidth&lt;/li&gt;
+&lt;li&gt;pixelOffset&lt;/li&gt;
+&lt;li&gt;position&lt;/li&gt;
+&lt;li&gt;zIndex&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;event&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#event&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Event
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/maps/documentation/javascript/events?hl=zh-tw&#34;&gt;事件&lt;/a&gt;
+Google map api 提供許多與 map 有關的事件&lt;/p&gt;
+&lt;h3 id=&#34;style&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#style&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Style
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/maps/documentation/javascript/styling?hl=zh-tw&#34;&gt;樣式標記地圖&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

@@ -1,396 +1,778 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+
+
+<html lang="en-us" data-theme="">
+<head>
     
-
-
-
-
-<title>Firebase | tedshd&#39;s DevNote</title>
-<meta charset="utf-8">
-<meta name="google" content="notranslate">
-<meta id="viewport" name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='Develop &amp; Design Note by Ted'>
-<meta name="keywords" content=''>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/categories/firebase/">
-<link rel="alternate" media="handheld" href="https://blog.tedshd.io/categories/firebase/" />
-
-<link rel="canonical" href="https://blog.tedshd.io/categories/firebase/" />
-<link rel="shortcut icon" href="/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
-<meta name="theme-color" content="">
-<meta name="robots" content="index, follow">
-<meta name="copyright" content="Tedshd">
-
-<meta property="og:title" content="Firebase" />
-<meta property="og:description" content="Develop &amp; Design Note by Ted" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/categories/firebase/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="Firebase"/>
-<meta name="twitter:description" content="Develop &amp; Design Note by Ted"/>
-
-
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-<script data-ad-client="ca-pub-0553186380244641" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-    
-    <link href="/categories/firebase/index.xml" rel="alternate" type="application/rss+xml" title="tedshd&#39;s DevNote" />
-    
-
-    
-
-    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
-
-    
-<link>
-
-<link
-    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
-    rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
-
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-1NKP3D2ZGG');
-    </script>
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
-                    tedshd&#39;s DevNote
-                </a>
-            </div>
-            
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
-                <i class="p-icon--menu"></i>
-            </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
-                <i class="p-icon--close"></i>
-            </a>
-        </div>
-
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
-
-            <ul class="p-navigation__links" role="menu">
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/categories">Categories</a>
-                </li>
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/tags">tags</a>
-                </li>
-                
-            </ul>
-
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-            
-        </nav>
-    </div>
-</header><div id="main-content">
-
-
-
-<div class="page-banner">
-    <div class="row">
-        <h1>
-            <span class="u-capitalized">category</span>:
-            Firebase
-        </h1>
         
-    </div>
-</div>
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Firebase - Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="">
 
 
 
-<ul class="p-navigation__links sub_menu" role="menu">
+
+
+<link rel="alternate" type="application/rss+xml" href="/categories/firebase/index.xml" title="Tedshd's Dev note" />
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
     
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tedshd.github.io/resume/">About</a>
-    </li>
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
     
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tysh310246.blogspot.tw/">Blog</a>
-    </li>
+
+
+
+
+
     
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
-    </li>
     
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://github.com/tedshd">Github</a>
-    </li>
+        
     
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
-    </li>
     
-</ul>
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
 
 
 
 
 
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta name="google" content="notranslate">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
 </script>
 
-<div class="p-strip is-wrapper posts">
-    <div class="row">
-        
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
 
         
 
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/">Firebase dynamic links 遷移轉換</a></h3>
-
-                
-                
-                <p>
 
 
-<span class=" u-capitalized ">
-    on
+
+
+
+
+    
+        <div class="theme-switcher">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
 </span>
-2024-04-11
-</p>
-                
 
-                
-                <p><h2 id="intro">Intro</h2>
-<p>服務終有停止的一天</p>
-<p>firebase 動態連結將於 2025 年 8 月 25 日關閉。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202024-04-11%20%E4%B8%8A%E5%8D%8811.34.10.png?alt=media&amp;token=177c4740-af77-4b0d-8ad3-b6b85d5304f8" alt=""></p>
-<p>所以要提前做遷移轉換或是找其他替代方案</p>
-<h2 id="firebase-建議">Firebase 建議</h2>
-<p>可以參考 Firebase 文件的建議自己搞</p>
-<p><a href="https://firebase.google.com/support/guides/app-links-universal-links?hl=zh-tw">從動態鏈接遷移到應用程式連結和應用程式鏈接通用連結</a></p>
-<p>自己搞的好處是能搞成符合自己需求的東西</p>
-<p>但是最大的麻煩點是要記錄的話就得自己搞數據</p>
-<p>很多時候都會需要紀錄點擊轉換</p>
-<p>這就得自己搞了</p>
-<h2 id="第三方服務">第三方服務</h2>
-<p>其實除了自己搞以外</p>
-<p>還有很多第三方服務有在做這個東西</p>
-<p>目前有找到的有</p>
-<h3 id="branch-iohttpswwwbranchio"><a href="https://www.branch.io/">Branch io</a></h3>
-<ul>
-<li><a href="https://www.branch.io/what-is-deep-linking/">https://www.branch.io/what-is-deep-linking/</a></li>
-</ul>
-<p>branch io 還有個教學文</p>
-<p><a href="https://www.branch.io/guides/how-to-migrate-from-firebase-dynamic-links/">How to migrate from Firebase Dynamic Links</a></p>
-<h3 id="appsflyerhttpswwwappsflyercom"><a href="https://www.appsflyer.com/">Appsflyer</a></h3>
-<ul>
-<li><a href="https://www.appsflyer.com/products/customer-experience-deep-linking/">https://www.appsflyer.com/products/customer-experience-deep-linking/</a></li>
-</ul>
-<h3 id="kochavahttpswwwkochavacom"><a href="https://www.kochava.com/">kochava</a></h3>
-<ul>
-<li><a href="https://www.kochava.com/product/deep-linking/links/?int-link=menu-links">https://www.kochava.com/product/deep-linking/links/?int-link=menu-links</a></li>
-</ul>
-<p>上面列出來的是比較常見的幾個</p>
-<p>應該還有其他服務沒有列出來</p>
-<p>這個就評估下要用哪個服務</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/firebase_dynamic_links_migrate/">Read more</a></p>
-                
-            </div>
         </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+    <script>
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
+
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
+    </script>
+
+
+        <ul class="social-icons noselect">
+
+
+    
         
         
-        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
 
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/firebase_app_check/">Firebase app check 使用紀錄</a></h3>
-
-                
-                
-                <p>
+    
 
 
-<span class=" u-capitalized ">
-    on
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
 </span>
-2022-10-31
-</p>
-                
 
-                
-                <p><h2 id="前言">前言</h2>
-<p>因為公司有使用部分的 firebase 服務</p>
-<p>那就順便用一下前一陣子推出的 <a href="https://firebase.google.com/products/app-check">app check</a> 的服務(雖然我覺得這服務還沒到完善的地步)</p>
-<p>這服務主要是要協助驗證來自 client 的請求是否合法</p>
-<p>不只單純是 firebase 的服務可以用</p>
-<p>一般 API 也可以使用</p>
-<h2 id="使用">使用</h2>
-<p>目前 SDK 只支持 Node.js</p>
-<p><a href="https://firebase.google.com/docs/app-check/custom-resource-backend">Verify App Check tokens from a custom backend</a></p>
-<p>因為原本的後端不是 Node 的環境</p>
-<p>所以使用 Node.js 建立起一個 middleware 以便讓原有的 API server 來串接</p>
-<h2 id="流程">流程</h2>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2Ffirebase%20app%20check-Copy%20of%20Page-1.drawio.png?alt=media&amp;token=c8d0b7ee-875f-4380-b4e9-66c33796a990" alt=""></p>
-<h2 id="所需作業">所需作業</h2>
-<p>app 需要使用相關對應的 SDK</p>
-<p>在 firebase console 把 app check 選單中建立的 app 做註冊</p>
-<p>因為是改為單獨建立 Node.js 的服務</p>
-<p>所以會針對文件範例做調整</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">http</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;http&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;url&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">admin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;firebase-admin&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">serviceAccount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#a6e22e">__dirname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/serviceAccountKey.json&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">initializeApp</span>({
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">credential</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">credential</span>.<span style="color:#a6e22e">cert</span>(<span style="color:#a6e22e">serviceAccount</span>)
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusOk</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;success&#39;</span>
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusForbidden</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Forbidden&#39;</span>
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusUnauthorized</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Unauthorized&#39;</span>
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>(<span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">response</span>) =&gt; {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">queryObject</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>).<span style="color:#a6e22e">query</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">method</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appCheckToken</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">queryObject</span>[<span style="color:#e6db74">&#39;token&#39;</span>];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">appCheckToken</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">403</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">statusForbidden</span>));
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appCheckClaims</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">appCheck</span>().<span style="color:#a6e22e">verifyToken</span>(<span style="color:#a6e22e">appCheckToken</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// If verifyToken() succeeds, continue with the next middleware
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// function in the stack.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;appCheckClaims&#39;</span>, <span style="color:#a6e22e">appCheckClaims</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
-</span></span><span style="display:flex;"><span>          ...<span style="color:#a6e22e">appCheckClaims</span>,
-</span></span><span style="display:flex;"><span>          ...<span style="color:#a6e22e">statusOk</span>
-</span></span><span style="display:flex;"><span>        }));
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;err&#39;</span>, <span style="color:#a6e22e">err</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">401</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">statusUnauthorized</span>));
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">statusForbidden</span>));
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3300</span>, <span style="color:#66d9ef">function</span> () {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;3300 port&#39;</span>);
-</span></span><span style="display:flex;"><span>});
-</span></span></code></pre></div><p>其中 <code>serviceAccountKey.json</code> 是 firebase console 中產生的</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2FScreen_Shot_2022-11-02_at_9_51_27_AM.png?alt=media&amp;token=23519780-f442-4bfd-b1f4-db69739cbb81" alt=""></p>
-<h2 id="使用方式">使用方式</h2>
-<p>可以使用 pm2 之類的服務啟動</p>
-<p>這樣就可以用 <code>http://localhost?token=&lt;app check token&gt;</code> 的方式呼叫驗證</p>
-<p>建議在內部使用, 走內部 IP 或內部網域以減少傳輸時間</p>
-<p>直接以 rest api 的方式呼叫</p>
-<h2 id="後續升級">後續升級</h2>
-<p>如果之後公司其他團隊也有其他的 firebase 的 app check 需求也可以添加參數或路由來使用各自的 firebase 專案設定來共用這個 API</p>
-</p>
-                
+            </a>
+        </li>
+    
 
-                
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
 
-                
-                <p><a href="https://blog.tedshd.io/posts/firebase_app_check/">Read more</a></p>
-                
-            </div>
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
+    </div>
+    <div class="header-top-right">
+
+    </div>
+</div>
+
+
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
+
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    <h1>Category: Firebase</h1>
+    <div class="post-info">
+        <a href="/categories/">To all categories</a>
+    </div>
+    
+    
+        <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/firebase_dynamic_links_migrate/">Firebase dynamic links 遷移轉換</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Intro 服務終有停止的一天
+firebase 動態連結將於 2025 年 8 月 25 日關閉。
+所以要提前做遷移轉換或是找其他替代方案
+# Firebase 建議 可以參考 Firebase 文件的建議自己搞
+從動態鏈接遷移到應用程式連結和應用程式鏈接通用連結
+自己搞的好處是能搞成符合自己需求的東西
+但是最大的麻煩點是要記錄的話就得自己搞數據
+很多時候都會需要紀錄點擊轉換
+這就得自己搞了
+# 第三方服務 其實除了自己搞以外
+還有很多第三方服務有在做這個東西
+目前有找到的有
+## Branch io https://www.branch.io/what-is-deep-linking/ branch io 還有個教學文
+How to migrate from Firebase Dynamic Links
+## Appsflyer https://www.appsflyer.com/products/customer-experience-deep-linking/ ## kochava https://www.kochava.com/product/deep-linking/links/?int-link=menu-links 上面列出來的是比較常見的幾個
+應該還有其他服務沒有列出來
+這個就評估下要用哪個服務
+            ...
         </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2024-04-11">2024-04-11</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/firebase_dynamic_links_migrate/">/posts/firebase_dynamic_links_migrate/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/firebase/">Firebase</a></li>
+                
+            </ul>
         
         
         
     </div>
 </div>
 
-<div class="p-strip is-wrapper">
-    <div class="row">
-        <footer class="p-article-pagination">
+</article>
+
+    
+        <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/firebase_app_check/">Firebase app check 使用紀錄</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # 前言 因為公司有使用部分的 firebase 服務
+那就順便用一下前一陣子推出的 app check 的服務(雖然我覺得這服務還沒到完善的地步)
+這服務主要是要協助驗證來自 client 的請求是否合法
+不只單純是 firebase 的服務可以用
+一般 API 也可以使用
+# 使用 目前 SDK 只支持 Node.js
+Verify App Check tokens from a custom backend
+因為原本的後端不是 Node 的環境
+所以使用 Node.js 建立起一個 middleware 以便讓原有的 API server 來串接
+# 流程 # 所需作業 app 需要使用相關對應的 SDK
+在 firebase console 把 app check 選單中建立的 app 做註冊
+因為是改為單獨建立 Node.js 的服務
+所以會針對文件範例做調整
+const http = require(&#39;http&#39;); const url = require(&#39;url&#39;); var admin = require(&#39;firebase-admin&#39;); var serviceAccount = require(__dirname + &#39;/serviceAccountKey.
+            ...
+        </div>
+    
     
 
     
-    <a class="p-article-pagination__link--next p-article-pagination__link--no-title" href="/categories/firebase/page/2/">
-        <span class="p-article-pagination__label">Next</span>
-    </a>
+
+
+
+<div class="post-info noselect">
     
-</footer>
+        <div class="post-date dt-published">
+            <time datetime="2022-10-31">2022-10-31</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/firebase_app_check/">/posts/firebase_app_check/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/firebase/">Firebase</a></li>
+                
+            </ul>
+        
+        
+        
     </div>
 </div>
 
+</article>
 
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Tedshd
-            </p>
+    
+        <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/firebase_remote_config/">Firebase remote config rest 更新</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            Refer - Firebase Remote Config API
+取用和更新都需要以下 Google oauth2.0 的權限
+https://www.googleapis.com/auth/firebase.remoteconfig https://www.googleapis.com/auth/cloud-platform
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2021-10-25">2021-10-25</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/firebase_remote_config/">/posts/firebase_remote_config/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/firebase/">Firebase</a></li>
+                
+                    
+                    <li><a href="/categories/remote-config/">Remote Config</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+    
+        <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2019-12-20-firebase-firebase-functions/">Firebase - Firebase functions 使用紀錄</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Firebase - Firebase functions 使用紀錄 最近想把一些自己在用的小東西丟到 severless 的服務
+因為之前發生過一次 server 掛掉過一次的情況
+當時是 GCP CE 不知為何 VM 中的網卡設定出問題
+整個網卡消失
+然後外部根本連不進去
+最後請教大大後
+只好開一個新的 instance 然後把原本的那個儲存空間掛到新開的 instance
+因為那台平常在試驗的 server
+裡面亂七八糟而且大多的 code 都不會做 git 控管
+所以就想說把一些常用的功能用 serverless 拆出來好了
+就想說來研究一下火了一陣子然後設定沒設定好就會噴一堆預算和安全性問題的 Firebase 所推出的 functions
+其實 GCP 自己本身也有 cloud functions
+但我這是玩票性質的
+所以就先用 firebase functions 來試試啦
+先說一下目前 firebase functions 只支援 Nodejs
+但是 Google cloud 的 cloud functions 支援 Nodejs python golnag
+首先先裝 firebase-tools CLI npm install -g firebase-tools 執行 firebase login firebase login 到要建立 functions 的資料夾 這時候要注意如果你要做版本控管
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2019-12-20">2019-12-20</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2019-12-20-firebase-firebase-functions/">/posts/2019-12-20-firebase-firebase-functions/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/firebase/">Firebase</a></li>
+                
+                    
+                    <li><a href="/categories/functions/">Functions</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+    
+        <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-12-08-1183912/">Firebase - Firebase Cloud Message(FCM) Research Log</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Firebase - Firebase Cloud Message(FCM) Research Log This article is focus on web version
+## Intro You can easy to use web notification push notification to your web site.
+Set Up a JavaScript Firebase Cloud Messaging Client App
+## Different with use pure web notification Using the Notifications API
+Browser support FCM - Chrome(desktop &amp; Android) &amp; Firefox(desktop &amp; Android) pure notification api - Chrome(desktop &amp; Android) &amp; Firefox(desktop &amp; Android) &amp; Opera(desktop) &amp; Safari(desktop) Android need service worker Service Worker FCM - require pure notification api - option pure web notification only a notification object, you need handle connection push message from server.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2016-12-08">2016-12-08</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2016-12-08-1183912/">/posts/2016-12-08-1183912/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+                    
+                    <li><a href="/categories/firebase/">Firebase</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+    
+    
+
+
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
         </div>
     </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
 </footer>
 
-
-
-
+        
+    </div>
 </body>
 </html>

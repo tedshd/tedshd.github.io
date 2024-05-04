@@ -1,27 +1,102 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apache on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/apache/</link>
-    <description>Recent content in Apache on tedshd&#39;s DevNote</description>
+    <title>Apache on Tedshd&#39;s Dev note</title>
+    <link>/categories/apache/</link>
+    <description>Tedshd&#39;s Dev note (Apache)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/apache/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Aug 2015 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/apache/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Apache - Apache Command Line on Mac / Ubuntu</title>
-      <link>https://blog.tedshd.io/posts/2015-08-05-apache-apache-command-line-on-mac-ubuntu/</link>
+      <link>/posts/2015-08-05-apache-apache-command-line-on-mac-ubuntu/</link>
       <pubDate>Wed, 05 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-08-05-apache-apache-command-line-on-mac-ubuntu/</guid>
-      <description>Apache - Apache Command Line on Mac / Ubuntu Mac sudo apachectl start sudo apachectl restart sudo apachectl status sudo apachectl stop Ubuntu sudo /etc/init.d/apache2 start sudo /etc/init.d/apache2 restart sudo /etc/init.d/apache2 status sudo /etc/init.d/apache2 stop sudo service apache2 start sudo service apache2 restart sudo service apache2 status sudo service apache2 stop Refer - Ubuntu Linux: Start / Restart / Stop Apache Web Server</description>
+      
+      <guid>/posts/2015-08-05-apache-apache-command-line-on-mac-ubuntu/</guid>
+      <description>&lt;h2 id=&#34;apache---apache-command-line-on-mac--ubuntu&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#apache---apache-command-line-on-mac--ubuntu&#34;&gt;
+        #
+    &lt;/a&gt;
+    Apache - Apache Command Line on Mac / Ubuntu
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;mac&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Mac
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apachectl start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apachectl restart
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apachectl status
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apachectl stop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ubuntu&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ubuntu&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Ubuntu
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo /etc/init.d/apache2 start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo /etc/init.d/apache2 restart
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo /etc/init.d/apache2 status
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo /etc/init.d/apache2 stop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo service apache2 start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo service apache2 restart
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo service apache2 status
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo service apache2 stop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://www.cyberciti.biz/faq/ubuntu-linux-start-restart-stop-apache-web-server/&#34;&gt;Refer - Ubuntu Linux: Start / Restart / Stop Apache Web Server&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Apache - dir permission cnfig</title>
-      <link>https://blog.tedshd.io/posts/2015-05-07-apache-dir-permission-cnfig/</link>
+      <link>/posts/2015-05-07-apache-dir-permission-cnfig/</link>
       <pubDate>Thu, 07 May 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-05-07-apache-dir-permission-cnfig/</guid>
-      <description>Apache - dir permission cnfig If yooouo want use virtual host&#xA;Yoou can set /etc/apache2/extra/httpd-vhosts.conf this file&#xA;Add&#xA;&amp;lt;Directory /Users/ted/tedadev/local/bomb01&amp;gt; AllowOverride All Options Indexes MultiViews FollowSymLinks Require all granted &amp;lt;/Directory&amp;gt; &amp;lt;VirtualHost *:80&amp;gt; DocumentRoot &amp;#34;/Users/ted/tedadev/local/bomb01&amp;#34; ServerName www.bomb01.com ErrorLog &amp;#34;/Volumes/RamDisk/ysm-error.log&amp;#34; CustomLog &amp;#34;/Volumes/RamDisk/ysm-access.log&amp;#34; common &amp;lt;/VirtualHost&amp;gt; Refer - Forbidden 403, You don’t have permission to access /~username/ on this server</description>
+      
+      <guid>/posts/2015-05-07-apache-dir-permission-cnfig/</guid>
+      <description>&lt;h2 id=&#34;apache---dir-permission-cnfig&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#apache---dir-permission-cnfig&#34;&gt;
+        #
+    &lt;/a&gt;
+    Apache - dir permission cnfig
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;If yooouo want use virtual host&lt;/p&gt;
+&lt;p&gt;Yoou can set &lt;code&gt;/etc/apache2/extra/httpd-vhosts.conf&lt;/code&gt; this file&lt;/p&gt;
+&lt;p&gt;Add&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;Directory /Users/ted/tedadev/local/bomb01&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    AllowOverride All
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Options Indexes MultiViews FollowSymLinks
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Require all granted
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/Directory&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;VirtualHost *:80&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    DocumentRoot &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/Users/ted/tedadev/local/bomb01&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ServerName www.bomb01.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ErrorLog &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/Volumes/RamDisk/ysm-error.log&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    CustomLog &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/Volumes/RamDisk/ysm-access.log&amp;#34;&lt;/span&gt; common
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/VirtualHost&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://coolestguidesontheplanet.com/forbidden-403-you-dont-have-permission-to-access-username-on-this-server/&#34;&gt;Refer - Forbidden 403, You don’t have permission to access /~username/ on this server&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

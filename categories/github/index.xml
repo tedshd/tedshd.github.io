@@ -1,20 +1,109 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Github on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/github/</link>
-    <description>Recent content in Github on tedshd&#39;s DevNote</description>
+    <title>Github on Tedshd&#39;s Dev note</title>
+    <link>/categories/github/</link>
+    <description>Tedshd&#39;s Dev note (Github)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Aug 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Git - GitHub gh-pages</title>
-      <link>https://blog.tedshd.io/posts/2014-08-16-git-github-gh-pages/</link>
+      <link>/posts/2014-08-16-git-github-gh-pages/</link>
       <pubDate>Sat, 16 Aug 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-08-16-git-github-gh-pages/</guid>
-      <description>Git - GitHub gh-pages 有時在 GitHub 上亂晃 常常發現一個問題就是有一些很有趣的前端實作, 或別人寫的一些功能沒有所謂的 demo page(當然有些是不需要 demo page) 我不知道是把 GitHub</description>
+      
+      <guid>/posts/2014-08-16-git-github-gh-pages/</guid>
+      <description>&lt;h2 id=&#34;git---github-gh-pages&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#git---github-gh-pages&#34;&gt;
+        #
+    &lt;/a&gt;
+    Git - GitHub gh-pages
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;有時在 GitHub 上亂晃
+常常發現一個問題就是有一些很有趣的前端實作, 或別人寫的一些功能沒有所謂的 demo page(當然有些是不需要 demo page)
+我不知道是把 GitHub 當成備份的 codebase 或是覺得 demo 不重要所以沒放, 又或者是根本不知道要怎麼放
+But
+這都不重要
+其實 GitHub 提供一個 gh-pages 的 branch(或者說是功能)可以讓我們這些前端攻城獅快速的建出個 demo page(&lt;strong style=&#34;color:red&#34;&gt;但不包含後端功能&lt;/strong&gt;)&lt;/p&gt;
+&lt;h3 id=&#34;如何使用&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8&#34;&gt;
+        ##
+    &lt;/a&gt;
+    如何使用?
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;1-從-master-建出名為-gh-pages-的-branch&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#1-%e5%be%9e-master-%e5%bb%ba%e5%87%ba%e5%90%8d%e7%82%ba-gh-pages-%e7%9a%84-branch&#34;&gt;
+        ###
+    &lt;/a&gt;
+    1. 從 master 建出名為 &lt;code&gt;gh-pages&lt;/code&gt; 的 branch
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;git branch gh-pages&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/220973/Aig3e92WQniG9jC7k6vg_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_51_52.png&#34; alt=&#34;螢幕快照_2014-08-17_上午12_51_52.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-切到-gh-pahes-的-branch&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2-%e5%88%87%e5%88%b0-gh-pahes-%e7%9a%84-branch&#34;&gt;
+        ##
+    &lt;/a&gt;
+    2. 切到 gh-pahes 的 branch
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;git checkout gh-pages&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/220973/pjRYDGZQ6apuuAPzf7Yb_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_51_53.png&#34; alt=&#34;螢幕快照_2014-08-17_上午12_51_53.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-把-gh-pages-git-push-上-github&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#3-%e6%8a%8a-gh-pages-git-push-%e4%b8%8a-github&#34;&gt;
+        ##
+    &lt;/a&gt;
+    3. 把 gh-pages &lt;code&gt;git push&lt;/code&gt; 上 GitHub
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;git push&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/220973/P9bJMwV8RledVKws4KBG_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_51_54.png&#34; alt=&#34;螢幕快照_2014-08-17_上午12_51_54.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;因為剛建出新的 branch, 該 branch 還未在 GitHub 上所以會提示你要用 &lt;code&gt;git push --set-upstream origin gh-pages&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-快樂的去-github-拿網址&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#4-%e5%bf%ab%e6%a8%82%e7%9a%84%e5%8e%bb-github-%e6%8b%bf%e7%b6%b2%e5%9d%80&#34;&gt;
+        ##
+    &lt;/a&gt;
+    4. 快樂的去 GitHub 拿網址
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/220973/QzdO4XAQ7iYka0DruqTg_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_55_02.png&#34; alt=&#34;螢幕快照_2014-08-17_上午12_55_02.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/220973/kdMyQ6tMQ1SSRBl6Sj9K_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_55_16.png&#34; alt=&#34;螢幕快照_2014-08-17_上午12_55_16.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;gh-pages 的 url 結構一律都是 http:// + &lt;code&gt;&amp;lt;GitHub user name&amp;gt;&lt;/code&gt; + .github.io/ + &lt;code&gt;&amp;lt;repository name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;5-等等-網頁沒東西&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#5-%e7%ad%89%e7%ad%89-%e7%b6%b2%e9%a0%81%e6%b2%92%e6%9d%b1%e8%a5%bf&#34;&gt;
+        ##
+    &lt;/a&gt;
+    5. 等等.. 網頁沒東西?
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;需注意的是該 url root 的 html 必須是 &lt;code&gt;index.html&lt;/code&gt; 才會出預設的網頁, 其他的檔案路徑都是建立在該 url 上&lt;/p&gt;
+&lt;h3 id=&#34;6-update&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#6-update&#34;&gt;
+        ##
+    &lt;/a&gt;
+    6. Update
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;其實後續維護不太容易, 必須要熟悉 git 才知道要怎麼做
+通常會在 &lt;code&gt;master&lt;/code&gt; or 切出個 &lt;code&gt;dev&lt;/code&gt; 來開發, 等開發完在 merge
+所以在持續開發時, 要更新 demo page, 就必須要在 gh-pages merge 要更新的 branch&lt;/p&gt;
+&lt;p&gt;據說好像 grunt 還是 gulp 有套件可以自動 build, 但還沒試驗就是了&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

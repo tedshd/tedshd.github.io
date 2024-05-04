@@ -1,27 +1,278 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Keyboard on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/keyboard/</link>
-    <description>Recent content in Keyboard on tedshd&#39;s DevNote</description>
+    <title>Keyboard on Tedshd&#39;s Dev note</title>
+    <link>/categories/keyboard/</link>
+    <description>Tedshd&#39;s Dev note (Keyboard)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/keyboard/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 May 2015 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/keyboard/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Maker - GH60 RevCHN</title>
-      <link>https://blog.tedshd.io/posts/2015-05-02-maker-gh60-revchn/</link>
+      <link>/posts/2015-05-02-maker-gh60-revchn/</link>
       <pubDate>Sat, 02 May 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-05-02-maker-gh60-revchn/</guid>
-      <description>Maker - GH60 RevCHN 拿了這板子有段時間了 一開始有試著用 Windows 刷 layout 進去, 但一直失敗(應該跟 Windows 不合吧 但直到前一陣子有人分享用 Mac 刷, 這真是太好了, 終於可以開工了 經</description>
+      
+      <guid>/posts/2015-05-02-maker-gh60-revchn/</guid>
+      <description>&lt;h2 id=&#34;maker---gh60-revchn&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#maker---gh60-revchn&#34;&gt;
+        #
+    &lt;/a&gt;
+    Maker - GH60 RevCHN
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/262828/D9JyzdoQberA9w8jKbMc_2015-01-23%2000.20.57.jpg&#34; alt=&#34;2015-01-23 00.20.57.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;拿了這板子有段時間了&lt;/p&gt;
+&lt;p&gt;一開始有試著用 Windows 刷 layout 進去, 但一直失敗(應該跟 Windows 不合吧&lt;/p&gt;
+&lt;p&gt;但直到前一陣子有人分享用 Mac 刷, 這真是太好了, 終於可以開工了&lt;/p&gt;
+&lt;p&gt;經過漫長的收集材料加焊接(詳情請見 &lt;a href=&#34;http://tysh310246.blogspot.tw/2015/05/gh-60.html&#34;&gt;GH-60 刷刷刷~開發月誌?&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;廢話不多說&lt;/p&gt;
+&lt;h3 id=&#34;install-crosspack--dfu-programmer&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#install-crosspack--dfu-programmer&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Install crosspack &amp;amp; dfu-programmer
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;利用 homebrew 安裝&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install Caskroom/cask/crosspack-avr
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install dfu-programmer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;git-clone-firmware&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#git-clone-firmware&#34;&gt;
+        ##
+    &lt;/a&gt;
+    git clone Firmware
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/kairyu/tmk_keyboard_custom&#34;&gt;tmk_keyboard_custom&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/kairyu/tmk_keyboard_custom.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;modify-config&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#modify-config&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Modify Config
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;進到拉下來的 &lt;code&gt;tmk_keyboard_custom&lt;/code&gt; 目錄, 再進到 gh60 的目錄&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;cd&lt;/span&gt; keyboard/gh60
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim config.h
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;找到 &lt;code&gt;#define CONFIG_H&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在底下加上 &lt;code&gt;#define GH60_REV_CHN&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim Makefile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;註解或刪掉下面的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;KEYMAP_IN_EEPROM_ENABLE&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; yes &lt;span style=&#34;color:#78787e&#34;&gt;# Read keymap from eeprom&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;check-device&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#check-device&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Check Device
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;接上 gh60&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;system_profiler SPUSBDataType
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;會顯示&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GH60:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Product ID: 0x6060
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Vendor ID: 0xfeed
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Version: 0.01
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Speed: Up to &lt;span style=&#34;color:#ff9f43&#34;&gt;12&lt;/span&gt; Mb/sec
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Manufacturer: geekhack
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Location ID: 0x14100000 / &lt;span style=&#34;color:#ff9f43&#34;&gt;14&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Current Available &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;mA&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;: &lt;span style=&#34;color:#ff9f43&#34;&gt;500&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Current Required &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;mA&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;: &lt;span style=&#34;color:#ff9f43&#34;&gt;100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然後按一下背面的按鈕後, 在下一次 &lt;code&gt;system_profiler SPUSBDataType&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;會抓到&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ATm32U4DFU:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Product ID: 0x2ff4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Vendor ID: 0x03eb  &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;Atmel Corporation&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Version: 0.00
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Serial Number: 1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Speed: Up to &lt;span style=&#34;color:#ff9f43&#34;&gt;12&lt;/span&gt; Mb/sec
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Manufacturer: ATMEL
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Location ID: 0x14100000 / &lt;span style=&#34;color:#ff9f43&#34;&gt;15&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Current Available &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;mA&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;: &lt;span style=&#34;color:#ff9f43&#34;&gt;500&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Current Required &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;mA&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;: Unknown &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;Device has not been configured&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;要是這個狀態才能刷分位進去&lt;/p&gt;
+&lt;h3 id=&#34;update-firmware&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#update-firmware&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Update Firmware
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;先刷 poker layout 試試&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make dfu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;開始刷到下列訊息出現代表成功&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Creating load file &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; Flash: gh60_lufa.hex
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;avr-objcopy -O ihex -R .eeprom -R .fuse -R .lock -R .signature gh60_lufa.elf gh60_lufa.hex
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dfu-programmer atmega32u4 erase --force
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Erasing flash...  Success
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Checking memory from 0x0 to 0x6FFF...  Empty.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dfu-programmer atmega32u4 erase
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Checking memory from 0x0 to 0x6FFF...  Empty.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Chip already blank, to force erase use --force.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dfu-programmer atmega32u4 flash gh60_lufa.hex
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Checking memory from 0x0 to 0x6A7F...  Empty.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;0%                            100%  Programming 0x6A80 bytes...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;  Success
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;0%                            100%  Reading 0x7000 bytes...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;  Success
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Validating...  Success
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;0x6A80 bytes written into 0x7000 bytes memory &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;95.09%&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dfu-programmer atmega32u4 reset
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果出現&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;avr-gcc: &lt;span style=&#34;color:#ff5c57&#34;&gt;command&lt;/span&gt; not found
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;代表 AVR 的環境變數沒加進去&lt;/p&gt;
+&lt;p&gt;開 &lt;code&gt;.zshrc&lt;/code&gt; 或 &lt;code&gt;.bashrc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#AVR&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/usr/local/CrossPack-AVR/bin:&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$PATH&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;再重啟 terminal 後重刷&lt;/p&gt;
+&lt;p&gt;測試鍵盤 layout 輸入 &lt;a href=&#34;http://tedshd.github.io/keyboard_test_page/&#34;&gt;keyboard test page&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;custom-layout&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#custom-layout&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Custom Layout
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;需要兩個 tool&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.keyboard-layout-editor.com&#34;&gt;keyboard-layout-editor (KLE)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.enjoyclick.org/tkg/&#34;&gt;TMK Keymap Generator (TKG)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;layout editor 產生 keymap raw data 再丟到 keymap generator 產生 .c&lt;/p&gt;
+&lt;p&gt;以下為我設計的 layout&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.keyboard-layout-editor.com/#/layouts/f5090521ca5239e85d1f2663c18fd9b5&#34;&gt;Default&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.keyboard-layout-editor.com/#/layouts/cdb94b80ee1a27a733b98b06aeda4c94&#34;&gt;Function layer&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Function layer 是 fn 組合鍵用的&lt;/p&gt;
+&lt;p&gt;keymap generator 的設定&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keyboard - GH60 (RevCHN)&lt;/li&gt;
+&lt;li&gt;Layer Mode - Normal&lt;/li&gt;
+&lt;li&gt;Number of Layers - 2&lt;/li&gt;
+&lt;li&gt;Layer0 - Default&lt;/li&gt;
+&lt;li&gt;Layer1 - Function layer&lt;/li&gt;
+&lt;li&gt;Fn - Layer action &amp;gt; Momentary layer 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這裡要注意 layer 的層級 &lt;a href=&#34;https://www.ptt.cc/bbs/Key_Mou_Pad/M.1390542876.A.073.html&#34;&gt;PTT - GH60 上手第一回&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Fn &lt;code&gt;Momentary&lt;/code&gt; layer 1 的意思就是當 fn 按下時是 layer 1 的 keymap, 但不按 fn 時就關掉 layer1&lt;/p&gt;
+&lt;p&gt;這試了好久&amp;hellip;&lt;/p&gt;
+&lt;p&gt;下載 .c 檔後, 把名字改成 &lt;strong&gt;&lt;code&gt;keymap_tkg.c&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;丟到 gh60 目錄後執行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make &lt;span style=&#34;color:#ff5c57&#34;&gt;KEYMAP&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;tkg dfu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就 ok 了&lt;/p&gt;
+&lt;p&gt;Finish&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/262828/CpjyWNMTjWocrq5fRfsV_2015-05-02%2018.45.33.jpg&#34; alt=&#34;2015-05-02 18.45.33.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/262828/dyInnZqtQPW7Xyhj1hjp_2015-05-02%2018.45.54.jpg&#34; alt=&#34;2015-05-02 18.45.54.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.dm4.tw/blog/2015/03/17/build-gh60-revchn-on-mac/&#34;&gt;Refer - 在 Mac OSX 上編譯 GH60 RevCHN Firmware&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>KBtalking pure pro programming</title>
-      <link>https://blog.tedshd.io/posts/2013-09-23-kbtalking-pure-pro-programming/</link>
+      <link>/posts/2013-09-23-kbtalking-pure-pro-programming/</link>
       <pubDate>Mon, 23 Sep 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-09-23-kbtalking-pure-pro-programming/</guid>
-      <description>KBtalking pure pro programming Reset Fn + R 這時右邊 Fn LED 會亮一下 再按 Fn + R 不放 這時右邊 Fn LED 會一直閃直到它停止 放開 Fn + R 重設完畢 programming 錄製巨集 按 Fn + right Ctrl 表示進入錄製巨集的模式</description>
+      
+      <guid>/posts/2013-09-23-kbtalking-pure-pro-programming/</guid>
+      <description>&lt;h2 id=&#34;kbtalking-pure-pro-programming&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#kbtalking-pure-pro-programming&#34;&gt;
+        #
+    &lt;/a&gt;
+    KBtalking pure pro programming
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;reset&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#reset&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Reset
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Fn + R
+這時右邊 Fn LED 會亮一下
+再按 Fn + R 不放
+這時右邊 Fn LED 會一直閃直到它停止
+放開 Fn + R
+重設完畢&lt;/p&gt;
+&lt;h3 id=&#34;programming&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#programming&#34;&gt;
+        ##
+    &lt;/a&gt;
+    programming
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;錄製巨集&lt;/strong&gt;
+按 Fn + right Ctrl
+表示進入錄製巨集的模式(Pn 開始閃)
+按一個要用的巨集鍵(按完 Pn 不閃)
+開始錄巨集
+按 Pn(按完 Pn 開始閃, 表示可以開始設定其他巨集)
+按 Fn + right Ctrl
+結束錄製巨集的模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;使用巨集模式&lt;/strong&gt;
+Fn + right Shift
+此時 right Fn LED 亮起來, 表示可以使用錄製的巨集鍵&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Win &amp;amp; Alt 互換(for Mac)&lt;/strong&gt;
+按 Fn + right Ctrl
+表示進入錄製巨集的模式
+Pn 開始閃
+表示要設定跑巨集的按鍵
+按 Alt Pn 不閃
+表示要開始錄巨集
+按 Win
+按 Pn
+表示結束此次的錄製
+按 Win Pn 不閃
+按 Alt
+按 Pn
+表示結束此次的錄製
+按 Fn + right Ctrl
+結束錄製巨集的模式
+這樣就達到 Win &amp;amp; Alt 互換&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;refer&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#refer&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Refer
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://tedshd.github.io/keyboard_test_page/&#34;&gt;鍵盤測試網頁&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

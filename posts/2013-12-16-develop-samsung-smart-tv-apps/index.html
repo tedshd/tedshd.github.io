@@ -1,187 +1,517 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+
+
+<html lang="en-us" data-theme="">
+<head>
     
-
-
-
-
-<title>Develop Samsung Smart TV Apps | tedshd&#39;s DevNote</title>
+        
 <meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Develop Samsung Smart TV Apps - Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="# Develop Samsung Smart TV Apps 由於最近應公司需求而開始要開發 Samsung 的 Smart TV 上的 App 身為一個前端攻城獅要去開發電視的 App? 沒想到 Smart TV 的 App 竟然是用前端技術寫的(HTML, JavaScript, CSS) Smart TV 是 base on Linux 所以效能似乎 OK? 於是就來研究一下 SAMSUNG SMART TV APPS Developer Forum 載 SDK 與 TV 模擬器(除非 money 多多直接買一台 Smart TV, 不過有開發過 Android 的都知道 模擬器都是假的 ) SDK Download(Software development kit) 載 virtualBox Oracle VM VirtualBox
+## 建立開發環境 裝 virtualBox 開 SDK(用超吃資源的 eclipse Orz) 開 virtualBox, 掛 Smart TV Emulator 檔案 -&gt; 匯入應用裝置(選擇下載的 Smart TV Emulator) 設定值 -&gt; 共用資料夾 -&gt; 編輯(資料夾名稱 / Apps, 資料夾路徑 / /Users/tedshd/Documents/workspace (SDK workspace 路徑)) ## 開始開發 懶得看下去有 YouTube 影片 Samsung smart tv development tutorial - 01 Samsung smart tv development tutorial - 02 Samsung smart tv development tutorial - 03 GTUG 的 Samsung Smart TV開發簡介 圖文版">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta name="google" content="notranslate">
-<meta id="viewport" name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='Develop Samsung Smart TV Apps 由於最近應公司需求而開始要開發 Samsung 的 Smart TV 上的 App 身為一個前端攻城獅要去開發電視的 App? 沒想到 Smart TV 的 App 竟然是用前端技術寫的(HTML, JavaScript, CSS) Smart'>
-<meta name="keywords" content=''>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/2013-12-16-develop-samsung-smart-tv-apps/">
-<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/2013-12-16-develop-samsung-smart-tv-apps/" />
-
-<link rel="canonical" href="https://blog.tedshd.io/posts/2013-12-16-develop-samsung-smart-tv-apps/" />
-<link rel="shortcut icon" href="/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
-<meta name="theme-color" content="">
-<meta name="robots" content="index, follow">
-<meta name="copyright" content="Tedshd">
-
-<meta property="og:title" content="Develop Samsung Smart TV Apps" />
-<meta property="og:description" content="Develop Samsung Smart TV Apps 由於最近應公司需求而開始要開發 Samsung 的 Smart TV 上的 App 身為一個前端攻城獅要去開發電視的 App? 沒想到 Smart TV 的 App 竟然是用前端技術寫的(HTML, JavaScript, CSS) Smart" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2013-12-16-develop-samsung-smart-tv-apps/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2013-12-16T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="Develop Samsung Smart TV Apps"/>
-<meta name="twitter:description" content="Develop Samsung Smart TV Apps 由於最近應公司需求而開始要開發 Samsung 的 Smart TV 上的 App 身為一個前端攻城獅要去開發電視的 App? 沒想到 Smart TV 的 App 竟然是用前端技術寫的(HTML, JavaScript, CSS) Smart"/>
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-<script data-ad-client="ca-pub-0553186380244641" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
+
+        
+
+
+
+
+
 
 
     
+        <div class="theme-switcher">
+            <span class="inline-svg">
 
     
 
-    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
 
     
-<link>
-
-<link
-    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
-    rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
-
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
 
-    gtag('config', 'G-1NKP3D2ZGG');
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
     </script>
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
-                    tedshd&#39;s DevNote
-                </a>
-            </div>
-            
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
-                <i class="p-icon--menu"></i>
+
+
+        <ul class="social-icons noselect">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
             </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
-                <i class="p-icon--close"></i>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
             </a>
-        </div>
+        </li>
+    
 
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
 
-            <ul class="p-navigation__links" role="menu">
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/categories">Categories</a>
-                </li>
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/tags">tags</a>
-                </li>
-                
-            </ul>
+    
 
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-            
-        </nav>
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
     </div>
-</header><div id="main-content">
-<div class="page-banner">
-    <div class="row u-vertically-center">
-        <div class="col-8 pure-g">
-            <div class="pure-u">
-                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
-                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
-            </div>
-            <div class="pure-u">
-                <h2>tedshd&#39;s DevNote</h2>
-                <p>Develop &amp; Design Note by Ted</p>
-            </div>
-        </div>
+    <div class="header-top-right">
+
     </div>
 </div>
 
-<ul class="p-navigation__links sub_menu" role="menu">
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tedshd.github.io/resume/">About</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tysh310246.blogspot.tw/">Blog</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://github.com/tedshd">Github</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
-    </li>
-    
-</ul>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
 
-<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Develop Samsung Smart TV Apps</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-12-16">2013-12-16</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-12-16-develop-samsung-smart-tv-apps/">/posts/2013-12-16-develop-samsung-smart-tv-apps/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/samsung/">Samsung</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#develop-samsung-smart-tv-apps">Develop Samsung Smart TV Apps</a>
+      <ul>
+        <li><a href="#建立開發環境">建立開發環境</a></li>
+        <li><a href="#開始開發">開始開發</a></li>
+        <li><a href="#test-app-on-tv">Test app on TV</a></li>
+        <li><a href="#some-tip">Some Tip</a></li>
+        <li><a href="#some-documents">Some Documents</a></li>
+        <li><a href="#issue">Issue</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
 </script>
 
-
-<header class="">
-    <div class="row">
-        <h1>Develop Samsung Smart TV Apps</h1>
-    </div>
-</header>
-
-
-<section class="p-strip is-shallow">
-    <main class="row post-content">
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2013-12-16
-        </p>
-        
-        <h2 id="develop-samsung-smart-tv-apps">Develop Samsung Smart TV Apps</h2>
+        <div class="content e-content">
+            <h2 id="develop-samsung-smart-tv-apps" >
+<div>
+    <a href="#develop-samsung-smart-tv-apps">
+        #
+    </a>
+    Develop Samsung Smart TV Apps
+</div>
+</h2>
 <p>由於最近應公司需求而開始要開發 Samsung 的 Smart TV 上的 App
 身為一個前端攻城獅要去開發電視的 App?
 沒想到 Smart TV 的 App 竟然是用前端技術寫的(HTML, JavaScript, CSS)
@@ -193,7 +523,14 @@ Smart TV 是 base on Linux
 <a href="http://www.samsungdforum.com/Devtools/SdkDownload">SDK Download(Software development kit)</a>
 載 virtualBox
 <a href="https://www.virtualbox.org/">Oracle VM VirtualBox</a></p>
-<h3 id="建立開發環境">建立開發環境</h3>
+<h3 id="建立開發環境" >
+<div>
+    <a href="#%e5%bb%ba%e7%ab%8b%e9%96%8b%e7%99%bc%e7%92%b0%e5%a2%83">
+        ##
+    </a>
+    建立開發環境
+</div>
+</h3>
 <ol>
 <li>裝 virtualBox</li>
 <li>開 SDK(用超吃資源的 eclipse Orz)</li>
@@ -203,7 +540,14 @@ Smart TV 是 base on Linux
 <li>檔案 -&gt; 匯入應用裝置(選擇下載的 Smart TV Emulator)</li>
 <li>設定值 -&gt; 共用資料夾 -&gt; 編輯(資料夾名稱 / Apps, 資料夾路徑 / /Users/tedshd/Documents/workspace (SDK workspace 路徑))</li>
 </ul>
-<h3 id="開始開發">開始開發</h3>
+<h3 id="開始開發" >
+<div>
+    <a href="#%e9%96%8b%e5%a7%8b%e9%96%8b%e7%99%bc">
+        ##
+    </a>
+    開始開發
+</div>
+</h3>
 <p>懶得看下去有 YouTube 影片
 <a href="https://www.youtube.com/watch?v=oujq32KKg4M">Samsung smart tv development tutorial - 01</a>
 <a href="https://www.youtube.com/watch?v=wgdewmQr7sM">Samsung smart tv development tutorial - 02</a>
@@ -227,7 +571,14 @@ Smart TV 是 base on Linux
 <p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/166874/c8cZqxUGSpGRVy4C3el5_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_38.png" alt="全熒幕_2013_12_16_下午5_38.png"></p>
 <p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/166874/1zsXeDWgQkefq3VyPkz8_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_40.png" alt="全熒幕_2013_12_16_下午5_40.png"></p>
 <p><img src="http://user-image.logdown.io/user/3170/blog/3202/post/166874/jOXKDQa5RV4u1iwdG2sw_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_41.png" alt="全熒幕_2013_12_16_下午5_41.png"></p>
-<h3 id="test-app-on-tv">Test app on TV</h3>
+<h3 id="test-app-on-tv" >
+<div>
+    <a href="#test-app-on-tv">
+        ##
+    </a>
+    Test app on TV
+</div>
+</h3>
 <p>先決條件
 開發的 PC or Mac 必須有 server
 因為它是把 app 打包後由 smart TV 連 server 去抓 app
@@ -236,9 +587,16 @@ Smart TV 是 base on Linux
 <a href="https://www.samsungdforum.com/Guide/art00012/index.html">Debugging and Testing Applications</a>
 <a href="https://www.samsungdforum.com/Guide/art00013/index.html">Testing Your Application on a TV</a>
 <a href="http://www.samsungdforum.com/Guide/art00121/index.html">Testing Your Application on a TV for 2014</a></p>
-<h3 id="some-tip">Some Tip</h3>
+<h3 id="some-tip" >
+<div>
+    <a href="#some-tip">
+        ##
+    </a>
+    Some Tip
+</div>
+</h3>
 <p>在打包 app 時 config.xml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;ver</span> <span style="color:#a6e22e">itemtype=</span><span style="color:#e6db74">&#34;string&#34;</span><span style="color:#f92672">&gt;</span>0.100<span style="color:#f92672">&lt;/ver&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;ver</span> <span style="color:#57c7ff">itemtype=</span><span style="color:#5af78e">&#34;string&#34;</span><span style="color:#ff6ac1">&gt;</span>0.100<span style="color:#ff6ac1">&lt;/ver&gt;</span>
 </span></span></code></pre></div><p>版號必須與打包時的版號相同</p>
 <p>SDK 的大版號對應該年度的 Samsung Smart TV</p>
 <ul>
@@ -260,7 +618,14 @@ Smart TV 是 base on Linux
 <p>網路中斷 Samsung Smart TV 會出 notification, 所以可不處理, 但有時不靈光</p>
 <p>在 eclipse 接 TV 的 log
 <a href="http://stackoverflow.com/questions/15922620/how-to-view-logs-in-samsung-smart-tv-log-viewer">Refer - How to view logs in Samsung Smart TV log viewer</a></p>
-<h3 id="some-documents">Some Documents</h3>
+<h3 id="some-documents" >
+<div>
+    <a href="#some-documents">
+        ##
+    </a>
+    Some Documents
+</div>
+</h3>
 <p><a href="https://www.samsungdforum.com/Guide/c02/index.html">Introduction to Smart TV platform</a>
 <a href="https://www.samsungdforum.com/Guide/art00015/index.html">JavaScript</a>
 <a href="https://www.samsungdforum.com/Guide/art00023/index.html">UI</a>
@@ -270,7 +635,14 @@ Smart TV 是 base on Linux
 <a href="https://www.samsungdforum.com/Guide/art00065/index.html">CSS3 Browser Specification</a>
 <a href="http://www.samsungdforum.com/Guide/tec00101/index.html">The difference between Return and Exit keys</a>
 <a href="http://samsungdforum.com/Guide/ref00006/common_module_tvkeyvalue_object.html">TVKeyValue Object</a> remote control key code</p>
-<h3 id="issue">Issue</h3>
+<h3 id="issue" >
+<div>
+    <a href="#issue">
+        ##
+    </a>
+    Issue
+</div>
+</h3>
 <ul>
 <li>deploy apps on TV version and update not easy</li>
 <li>deploy apps have cache?</li>
@@ -279,45 +651,77 @@ Smart TV 是 base on Linux
 <li>third party login(Fb, Google &hellip;)<a href="https://www.samsungdforum.com/Guide/art00077/index.html">Single Sign-On</a> / <a href="https://www.samsungdforum.com/Guide/tut00053/index.html">Using Single Sign-On (SSO)</a></li>
 </ul>
 
-    </main>
-</section>
+        </div>
 
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
+    </article>
+
     
-    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/2013-12-10-css-opacity-effect-child-element/">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            CSS - Opacity effect child element
-        </span>
-    </a>
     
 
     
-    <a class="p-article-pagination__link--next" href="https://blog.tedshd.io/posts/2013-12-18-javascript-some-articles-collection/">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            JavaScript - Some Articles Collection
-        </span>
-    </a>
+        
+        
     
-</div>
-    </div>
-</footer>
 
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Tedshd
-            </p>
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
         </div>
     </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
 </footer>
 
-
-
-
+        
+    </div>
 </body>
 </html>

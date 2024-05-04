@@ -1,20 +1,80 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Node.js on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/node.js/</link>
-    <description>Recent content in Node.js on tedshd&#39;s DevNote</description>
+    <title>Node.js on Tedshd&#39;s Dev note</title>
+    <link>/categories/node.js/</link>
+    <description>Tedshd&#39;s Dev note (Node.js)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/node.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Node.js - install</title>
-      <link>https://blog.tedshd.io/posts/2014-04-04-nodejs-install/</link>
+      <link>/posts/2014-04-04-nodejs-install/</link>
       <pubDate>Fri, 04 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-04-04-nodejs-install/</guid>
-      <description>Node.js - install Mac 利用 homebrew 安裝 brew install node node.js Refer - Install Node.js and npm using Homebrew on OS X Ubuntu sudo apt-get install nodejs-legacy sudo apt-get install npm Refer - Can not install packages using node package manager in Ubuntu Update Now node merge iojs and version update to v4 But now homebrew not updgrade to v4 So i use nvm Refer - Node.js 安</description>
+      
+      <guid>/posts/2014-04-04-nodejs-install/</guid>
+      <description>&lt;h2 id=&#34;nodejs---install&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#nodejs---install&#34;&gt;
+        #
+    &lt;/a&gt;
+    Node.js - install
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;mac&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Mac
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;利用 homebrew 安裝&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install node
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://nodejs.org/&#34;&gt;node.js&lt;/a&gt;
+&lt;a href=&#34;http://thechangelog.com/install-node-js-with-homebrew-on-os-x/&#34;&gt;Refer - Install Node.js and npm using Homebrew on OS X&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ubuntu&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ubuntu&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Ubuntu
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install nodejs-legacy
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install npm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/21168141/can-not-install-packages-using-node-package-manager-in-ubuntu&#34;&gt;Refer - Can not install packages using node package manager in Ubuntu&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;update&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#update&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Update
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Now node merge iojs and version update to v4&lt;/p&gt;
+&lt;p&gt;But now homebrew not updgrade to v4&lt;/p&gt;
+&lt;p&gt;So i use nvm&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://icarus4.logdown.com/posts/175092-nodejs-installation-guide&#34;&gt;Refer - Node.js 安裝與版本切換教學 (for MAC)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;npm-upgrade-node-version&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#npm-upgrade-node-version&#34;&gt;
+        ##
+    &lt;/a&gt;
+    npm upgrade node version
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo npm cache clean -f
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo npm install -g n
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo n stable
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://davidwalsh.name/upgrade-nodejs&#34;&gt;Refer - Upgrade Node.js via NPM&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

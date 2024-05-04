@@ -1,27 +1,71 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Paypal on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/paypal/</link>
-    <description>Recent content in Paypal on tedshd&#39;s DevNote</description>
+    <title>Paypal on Tedshd&#39;s Dev note</title>
+    <link>/categories/paypal/</link>
+    <description>Tedshd&#39;s Dev note (Paypal)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/paypal/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/paypal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Paypal - 如何取得 API 簽章</title>
-      <link>https://blog.tedshd.io/posts/2018-10-20-paypal-how-to-take-the-api-seal/</link>
+      <link>/posts/2018-10-20-paypal-how-to-take-the-api-seal/</link>
       <pubDate>Sat, 20 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2018-10-20-paypal-how-to-take-the-api-seal/</guid>
-      <description>登入 Payapl account 接下來如下圖步驟即可 這樣就有 API 用戶名稱 API 密碼 API 電子簽章 這樣即可使用在一些第三方串接 Paypal 的服務了 Refer - How to get PayPal API username, password and signature information?</description>
+      
+      <guid>/posts/2018-10-20-paypal-how-to-take-the-api-seal/</guid>
+      <description>&lt;p&gt;登入 Payapl account&lt;/p&gt;
+&lt;p&gt;接下來如下圖步驟即可&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2Fpaypal_api_1.png?alt=media&amp;amp;token=d1b2566c-ce85-4db0-92e4-226b6cb1cd5a&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2Fpaypal_api_2.png?alt=media&amp;amp;token=d4a5e166-0cba-497b-a553-50dac926f0fb&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2Fpaypal_api_3.png?alt=media&amp;amp;token=e554b12b-0abf-4b63-9e79-1c2f74d38207&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2Fpaypal_api_4.png?alt=media&amp;amp;token=a8a7d958-ac6e-4ad9-9ea5-97c87c3915d0&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;這樣就有&lt;/p&gt;
+&lt;p&gt;API 用戶名稱
+API 密碼
+API 電子簽章&lt;/p&gt;
+&lt;p&gt;這樣即可使用在一些第三方串接 Paypal 的服務了&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.putler.com/support/faq/how-to-get-paypal-api-username-password-and-signature-information/&#34;&gt;Refer - How to get PayPal API username, password and signature information?&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>paypal - 利用 paypal 開發一個簡單的 EC</title>
-      <link>https://blog.tedshd.io/posts/2018-05-11-paypal-paypal-ec/</link>
+      <link>/posts/2018-05-11-paypal-paypal-ec/</link>
       <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2018-05-11-paypal-paypal-ec/</guid>
-      <description>paypal - 利用 paypal 開發一個簡單的 EC Intro Paypal 大致分兩種方式來處理支付功能 api paypal button 這邊大致上會以paypal button 的方式來處理, 相對起來較為簡易</description>
+      
+      <guid>/posts/2018-05-11-paypal-paypal-ec/</guid>
+      <description>&lt;h2 id=&#34;paypal---利用-paypal-開發一個簡單的-ec&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#paypal---%e5%88%a9%e7%94%a8-paypal-%e9%96%8b%e7%99%bc%e4%b8%80%e5%80%8b%e7%b0%a1%e5%96%ae%e7%9a%84-ec&#34;&gt;
+        #
+    &lt;/a&gt;
+    paypal - 利用 paypal 開發一個簡單的 EC
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Paypal 大致分兩種方式來處理支付功能&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;api&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;paypal button&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這邊大致上會以paypal button 的方式來處理, 相對起來較為簡易&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

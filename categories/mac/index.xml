@@ -1,104 +1,1028 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mac on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/mac/</link>
-    <description>Recent content in Mac on tedshd&#39;s DevNote</description>
+    <title>Mac on Tedshd&#39;s Dev note</title>
+    <link>/categories/mac/</link>
+    <description>Tedshd&#39;s Dev note (Mac)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Sun, 29 Oct 2023 18:39:20 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/mac/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Oct 2023 18:19:59 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>解決 Mac 外接硬碟讀不到 / 沒有顯示</title>
-      <link>https://blog.tedshd.io/posts/fixed_mac_external_hard_drive_not_detect/</link>
+      <link>/posts/fixed_mac_external_hard_drive_not_detect/</link>
       <pubDate>Sun, 29 Oct 2023 18:19:59 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/fixed_mac_external_hard_drive_not_detect/</guid>
-      <description>Intro 有時 Mac 會讀不到外接硬碟 可以試試以下方式解決問題 重新開機 可能一些未知的因素導致當下讀取不到 可以重新開機後再重新連接外接硬碟 啟用外接硬碟的可見</description>
+      
+      <guid>/posts/fixed_mac_external_hard_drive_not_detect/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;有時 Mac 會讀不到外接硬碟&lt;/p&gt;
+&lt;p&gt;可以試試以下方式解決問題&lt;/p&gt;
+&lt;h2 id=&#34;重新開機&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%87%8d%e6%96%b0%e9%96%8b%e6%a9%9f&#34;&gt;
+        #
+    &lt;/a&gt;
+    重新開機
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;可能一些未知的因素導致當下讀取不到&lt;/p&gt;
+&lt;p&gt;可以重新開機後再重新連接外接硬碟&lt;/p&gt;
+&lt;h2 id=&#34;啟用外接硬碟的可見性&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%95%9f%e7%94%a8%e5%a4%96%e6%8e%a5%e7%a1%ac%e7%a2%9f%e7%9a%84%e5%8f%af%e8%a6%8b%e6%80%a7&#34;&gt;
+        #
+    &lt;/a&gt;
+    啟用外接硬碟的可見性
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;如果你的電腦系統為在 macOS Big Sur 或 Catalina，那你就需要啟用外接硬碟的可見性。你可以根據以下步驟進行操作。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;前往「Finder」&amp;gt;「偏好設定」&amp;gt;「一般」。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;此時，你可以看到「在桌面上顯示這些項目」的欄位，勾選「硬碟」和「外接硬碟」的選項。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;檢查系統資訊中的外部硬碟驅動程式&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%aa%a2%e6%9f%a5%e7%b3%bb%e7%b5%b1%e8%b3%87%e8%a8%8a%e4%b8%ad%e7%9a%84%e5%a4%96%e9%83%a8%e7%a1%ac%e7%a2%9f%e9%a9%85%e5%8b%95%e7%a8%8b%e5%bc%8f&#34;&gt;
+        #
+    &lt;/a&gt;
+    檢查系統資訊中的外部硬碟驅動程式
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;系統資訊&lt;/strong&gt; 將會顯示所有連接至Mac的外部裝置、軟體、硬體和網路等所有訊息的地方。因此，你可以先在該位置進行檢測。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;前往「應用程式」&amp;gt;「工具程式」&amp;gt;「系統資訊」。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在左側欄位點選「USB」，然後查看外接硬碟的資訊。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果你可以看見相關資訊，Mac 卻無法顯示外接硬碟，那它可能正在被 macOS 修復。你可以前往「活動監視器」，以檢查是否有「fsck_hfs」或「fsck_exfat」的活動。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;運行apple診斷以檢測硬體問題&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%81%8b%e8%a1%8capple%e8%a8%ba%e6%96%b7%e4%bb%a5%e6%aa%a2%e6%b8%ac%e7%a1%ac%e9%ab%94%e5%95%8f%e9%a1%8c&#34;&gt;
+        #
+    &lt;/a&gt;
+    運行「Apple診斷」以檢測硬體問題
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Mac 電腦擁有一套內建的診斷程式「Apple診斷」，以讓你查找故障的硬體問題。修復損壞的硬體也有可能解決Mac讀不到外接硬碟的情況。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;拔除所有外接裝置，除了鍵盤、滑鼠等有用的裝置。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重啟Mac，並在電腦啟動時按住鍵盤的「D」鍵，直到看到選擇語言的視窗才放手。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接著，系統就會開始診斷動作，而你也會在介面看到進度列。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;完成診斷後，你就會看到電腦所面對的硬體問題以及相對的解決方案。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;重置-mac-的-nvram-或-pram&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%87%8d%e7%bd%ae-mac-%e7%9a%84-nvram-%e6%88%96-pram&#34;&gt;
+        #
+    &lt;/a&gt;
+    重置 Mac 的 NVRAM 或 PRAM
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;NVRAM 和 PRAM 是 Mac 電腦中的部分暫存。不管開機或關機，它都會保存特定數據。&lt;/p&gt;
+&lt;p&gt;如果你的Mac無法讀取外接硬碟是基於硬體受損，那你也可以嘗試使用這個方法解決。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;重啟 Mac，然後在電腦啟動時同時按住「control + option + P + R」鍵。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按住這些按鍵長達大約 20 秒，直到你聽到電腦重啟的音效，或是看到蘋果標誌出現並消失後才放手。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;重置-mac-smc&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%87%8d%e7%bd%ae-mac-smc&#34;&gt;
+        #
+    &lt;/a&gt;
+    重置 Mac SMC
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;SMC（System Management Controller）負責演算 Mac 的低階功能，因此如果重置 NVRAM或 PRAM 仍無法解決 Mac 外接硬碟無法顯示的問題，那你也可以嘗試重置 SMC。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;將電腦關機，並連接上充電器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;同時按住「電源按鈕 + shift + control + option」長達 10 秒。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;同時放開所有按鈕後，再次將電腦開機以檢查問題是否已被解決。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;使用終端機修復外接硬碟&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8%e7%b5%82%e7%ab%af%e6%a9%9f%e4%bf%ae%e5%be%a9%e5%a4%96%e6%8e%a5%e7%a1%ac%e7%a2%9f&#34;&gt;
+        #
+    &lt;/a&gt;
+    使用「終端機」修復外接硬碟
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;除了磁碟工具程式，終端機也能有效解決電腦故障問題。因此，我們也建議你嘗試進行以下操作。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;前往「Finder」&amp;gt;「應用程式」&amp;gt;「工具程式」&amp;gt;「終端機」。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;輸入「diskutil list」，然後點擊「return」鍵，並記住外接硬碟的序號（disk#）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;輸入「diskutil mountDisk /dev/disk#」，然後點擊「return」鍵。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;輸入「diskutil repairVolume /dev/disk#」，然後點擊「return」鍵。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;修復過程完成後，將終端機關閉。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
+    
     <item>
       <title>Fixed android file transfer not work in mac</title>
-      <link>https://blog.tedshd.io/posts/fixed_mac_android_file_transfer_not_work/</link>
+      <link>/posts/fixed_mac_android_file_transfer_not_work/</link>
       <pubDate>Thu, 02 Mar 2023 08:03:30 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/fixed_mac_android_file_transfer_not_work/</guid>
-      <description>In macOS Ventura&#xA;When i use android file transfer&#xA;It doesn&amp;rsquo;t work&#xA;And refer to this question&#xA;But I don&amp;rsquo;t have the Google Drive app installed&#xA;And then i found out quit the Dropbox app solved the problem</description>
+      
+      <guid>/posts/fixed_mac_android_file_transfer_not_work/</guid>
+      <description>&lt;p&gt;In macOS Ventura&lt;/p&gt;
+&lt;p&gt;When i use android file transfer&lt;/p&gt;
+&lt;p&gt;It doesn&amp;rsquo;t work&lt;/p&gt;
+&lt;p&gt;And refer to this &lt;a href=&#34;https://discussions.apple.com/thread/254428061&#34;&gt;question&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;But I don&amp;rsquo;t have the &lt;strong&gt;Google Drive&lt;/strong&gt; app installed&lt;/p&gt;
+&lt;p&gt;And then i found out quit the &lt;strong&gt;Dropbox&lt;/strong&gt; app solved the problem&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>修復 mac m1 開機偵測不到 type-c 螢幕</title>
-      <link>https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/</link>
+      <link>/posts/fix_mac_m1_startup_can_not_detect_monitor/</link>
       <pubDate>Sun, 08 Jan 2023 14:40:14 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/</guid>
-      <description>最近突然發現 mac 在重開機或是關閉後開機時 type-c 的螢幕無法被偵測到 拔插 type-c 和 mac 那端的連接也沒用 得拔插螢幕端的 type-c 就覺得很奇怪, 因為之前都是正常的 所以先推</description>
+      
+      <guid>/posts/fix_mac_m1_startup_can_not_detect_monitor/</guid>
+      <description>&lt;p&gt;最近突然發現 mac 在重開機或是關閉後開機時&lt;/p&gt;
+&lt;p&gt;type-c 的螢幕無法被偵測到&lt;/p&gt;
+&lt;p&gt;拔插 type-c 和 mac 那端的連接也沒用&lt;/p&gt;
+&lt;p&gt;得拔插螢幕端的 type-c&lt;/p&gt;
+&lt;p&gt;就覺得很奇怪, 因為之前都是正常的&lt;/p&gt;
+&lt;p&gt;所以先推測是 mac OS 的版本問題&lt;/p&gt;
+&lt;p&gt;從 12.x -&amp;gt; 13.1 後發現還是一樣&amp;hellip;&lt;/p&gt;
+&lt;p&gt;所以就認真在網路找了一下有沒有人碰過這樣的問題&lt;/p&gt;
+&lt;p&gt;先找到一個類似的&lt;/p&gt;
+&lt;p&gt;但是裡面說 12.x 後修復的問題&lt;/p&gt;
+&lt;p&gt;所以我推測應該是別的問題&lt;/p&gt;
+&lt;p&gt;就繼續找&lt;/p&gt;
+&lt;p&gt;最後找的了這篇文章&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://machow2.com/external-display-issues/&#34;&gt;17 Ways To Fix External Monitors Not Working On Mac (inc. M1/ M2 Macs, Ventura &amp;amp; Monterey)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;17 種慢慢試總算可以找到原因吧&lt;/p&gt;
+&lt;p&gt;但也不是傻了從第一條開始試&lt;/p&gt;
+&lt;p&gt;所以先看了一下有哪些方法&lt;/p&gt;
+&lt;p&gt;結果就馬上喵到一個最有可能的問題&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E6%88%AA%E5%9C%96%202023-01-08%20%E4%B8%8B%E5%8D%882.36.33.png?alt=media&amp;amp;token=5d8791ee-7a40-4ff2-b0d6-09ba7ea1991c&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;一改完就恢復正常了&lt;/p&gt;
+&lt;p&gt;內文是說到&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;macOS Ventura introduced a new feature “USB Restricted Mode” for M1 and M2 Macs which requires you to allow USB-C devices such as monitors to connect to your Mac.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但奇怪的是我在 mac OS 12 就遇到這問題&lt;/p&gt;
+&lt;p&gt;所以當時就先升版本到 mac OS 13(Ventura) 才改&lt;/p&gt;
+&lt;p&gt;所以也不太肯定 mac OS 12 是不是可以用這問題解決&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>docker 使用紀錄</title>
-      <link>https://blog.tedshd.io/posts/docker_usage/</link>
+      <link>/posts/docker_usage/</link>
       <pubDate>Thu, 24 Dec 2020 10:12:17 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/docker_usage/</guid>
-      <description>docker images 列出所有拉下來的 docker image docker images REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE ubuntu latest 07f8e8c5e660 3 weeks ago 188.3 MB build dockerfile 使用 dockerfile 建立 docker image 直接建立 docker build . 預設會找當前的目錄的 Dockerfile -t 可以設定建立的 image &amp;amp; tag name docker build</description>
+      
+      <guid>/posts/docker_usage/</guid>
+      <description>&lt;h2 id=&#34;docker-images&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-images&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker images&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;列出所有拉下來的 docker image&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker images
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ubuntu              latest              07f8e8c5e660        &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt; weeks ago         188.3 MB
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;build-dockerfile&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#build-dockerfile&#34;&gt;
+        #
+    &lt;/a&gt;
+    build dockerfile
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;使用 dockerfile 建立 docker image&lt;/p&gt;
+&lt;p&gt;直接建立&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker build .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;預設會找當前的目錄的 &lt;code&gt;Dockerfile&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-t&lt;/code&gt; 可以設定建立的 image &amp;amp; tag name&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker build . -t image_name:tag_name
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;-f&lt;/code&gt; 指定用哪個 dockerfile 建立&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker build . -t ubuntu_dev:16.04 -f local.Dockerfile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;dockerfile-使用&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#dockerfile-%e4%bd%bf%e7%94%a8&#34;&gt;
+        #
+    &lt;/a&gt;
+    dockerfile 使用
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;使用-nginx-official-image-建立&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8-nginx-official-image-%e5%bb%ba%e7%ab%8b&#34;&gt;
+        ##
+    &lt;/a&gt;
+    使用 nginx official image 建立
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; nginx:1.19.6-alpine&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;COPY&lt;/span&gt; ~/www /usr/share/nginx/html&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;EXPOSE&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; 80&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;multi-stage-多次-build-image&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#multi-stage-%e5%a4%9a%e6%ac%a1-build-image&#34;&gt;
+        ##
+    &lt;/a&gt;
+    multi stage 多次 build image
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;有時最終要包起來的 image 會做多次處理&lt;/p&gt;
+&lt;p&gt;兩種做法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;要多次處理的部份&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;依照要處理的部份個別建立 docker 處理&lt;/p&gt;
+&lt;p&gt;最後在把要包起來的東西包成 docker&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;用 multi stage&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; golang:1.7.3 AS builder&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;WORKDIR&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; /go/src/github.com/alexellis/href-counter/&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;RUN&lt;/span&gt; go get -d -v golang.org/x/net/html&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;COPY&lt;/span&gt; app.go    .&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;RUN&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;CGO_ENABLED&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;GOOS&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;linux go build -a -installsuffix cgo -o app .&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; alpine:latest&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;RUN&lt;/span&gt; apk --no-cache add ca-certificates&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;WORKDIR&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; /root/&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;COPY&lt;/span&gt; --from&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;builder /go/src/github.com/alexellis/href-counter/app .&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;CMD&lt;/span&gt; [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;./app&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;都是放在一起 build, build 完之後可以把結果複製到會後再使用的 image 裡面&lt;/p&gt;
+&lt;p&gt;大致上就是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; image_a AS a&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# dosomething...&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; image_b&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;COPY&lt;/span&gt; --from&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;a path ./&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# dosomething...&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;多用於要先編譯的情況&lt;/p&gt;
+&lt;p&gt;先在其他 image 編譯完&lt;/p&gt;
+&lt;p&gt;最後在之前在其他 image 編譯完的結果和要執行的環境包成 image&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds&#34;&gt;Refer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但是 build 完之後會有個問題, 就是之前 stage build 出來的 image 基本上沒有必要保留&lt;/p&gt;
+&lt;p&gt;所以可以用 &lt;code&gt;docker image prune f&lt;/code&gt; 移除掉之前 stage 建立的 image&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/50126741/how-to-remove-intermediate-images-from-a-build-after-the-build&#34;&gt;Refer - How to remove intermediate images from a build after the build?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/config/pruning/&#34;&gt;Refer - Prune unused Docker objects&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;建立-container-docker-run&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%bb%ba%e7%ab%8b-container-docker-run&#34;&gt;
+        #
+    &lt;/a&gt;
+    建立 container &lt;code&gt;docker run&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;docker run -t -i ubuntu /bin/bash&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -t -i ubuntu /bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root@b0cdeb409841:/#
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;建立 container 並執行 bash&lt;/p&gt;
+&lt;h3 id=&#34;docker-run&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-run&#34;&gt;
+        ##
+    &lt;/a&gt;
+    docker run
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -idt --name &amp;lt;container name&amp;gt; -v &amp;lt;mount absolute path or ~ path&amp;gt;:&amp;lt;docker path&amp;gt; &amp;lt;IMAGE&amp;gt;:&amp;lt;TAG&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;docker-ps--a&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-ps--a&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker ps -a&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;列出所有已經建立的 container&lt;/p&gt;
+&lt;h2 id=&#34;docker-ps&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-ps&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker ps&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;列出所有正在執行的 container&lt;/p&gt;
+&lt;h2 id=&#34;docker-start-container_id&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-start-container_id&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker start &amp;lt;container_id&amp;gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;執行 container&lt;/p&gt;
+&lt;h2 id=&#34;docker-stop-container_id&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-stop-container_id&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker stop &amp;lt;container_id&amp;gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;停止 container&lt;/p&gt;
+&lt;h2 id=&#34;docker-logs-container_id&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-logs-container_id&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker logs &amp;lt;container_id&amp;gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;查看 docker 處理的紀錄&lt;/p&gt;
+&lt;h2 id=&#34;docker-cp-file-container_idfile&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-cp-file-container_idfile&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker cp &amp;lt;file&amp;gt; &amp;lt;container_id&amp;gt;:/&amp;lt;file&amp;gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;把檔案複製到 docker container 裡面&lt;/p&gt;
+&lt;h2 id=&#34;docker-cp-container_idfile-file&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-cp-container_idfile-file&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker cp &amp;lt;container_id&amp;gt;:/&amp;lt;file&amp;gt; &amp;lt;file&amp;gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;把檔案從 container 裡面複製出來&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Mac - Get file user(owner) name &amp; user id</title>
-      <link>https://blog.tedshd.io/posts/2018-11-16-mac-get-file-user-name/</link>
+      <link>/posts/2018-11-16-mac-get-file-user-name/</link>
       <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2018-11-16-mac-get-file-user-name/</guid>
-      <description>Mac - Get file user name &amp;amp; user id Get file owner name stat -f &amp;#39;%Su&amp;#39; &amp;lt;file or folder name&amp;gt; Get user id show user id // or id &amp;lt;user name&amp;gt; get uid id -u // or id -u &amp;lt;user name&amp;gt; get file owner uid stat -f &amp;lsquo;%Su&amp;rsquo; &amp;lt;file or folder name&amp;gt; | xargs id -u stat -f &amp;#39;%u&amp;#39; &amp;lt;file or folder name&amp;gt; Refer - 将Linu</description>
+      
+      <guid>/posts/2018-11-16-mac-get-file-user-name/</guid>
+      <description>&lt;h2 id=&#34;mac---get-file-user-name--user-id&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac---get-file-user-name--user-id&#34;&gt;
+        #
+    &lt;/a&gt;
+    Mac - Get file user name &amp;amp; user id
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;get-file-owner-name&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#get-file-owner-name&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Get file owner name
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;stat -f &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;%Su&amp;#39;&lt;/span&gt; &amp;lt;file or folder name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;get-user-id&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#get-user-id&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Get user id
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;show-user&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#show-user&#34;&gt;
+        ###
+    &lt;/a&gt;
+    show user
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;id
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// or
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;id &amp;lt;user name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;get-uid&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#get-uid&#34;&gt;
+        ###
+    &lt;/a&gt;
+    get uid
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;id -u
+// or
+id -u &amp;lt;user name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;get-file-owner-uid&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#get-file-owner-uid&#34;&gt;
+        ##
+    &lt;/a&gt;
+    get file owner uid
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;del&gt;stat -f &amp;lsquo;%Su&amp;rsquo; &lt;code&gt;&amp;lt;file or folder name&amp;gt;&lt;/code&gt; | xargs id -u&lt;/del&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;stat -f &amp;#39;%u&amp;#39; &amp;lt;file or folder name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://my.oschina.net/leopardsaga/blog/112335&#34;&gt;Refer - 将Linux命令的结果作为下一个命令的参数&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Mac - Use readlink in Mac OS X</title>
-      <link>https://blog.tedshd.io/posts/2018-10-24-mac-use-readlink-in-mac-os-x/</link>
+      <link>/posts/2018-10-24-mac-use-readlink-in-mac-os-x/</link>
       <pubDate>Wed, 24 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2018-10-24-mac-use-readlink-in-mac-os-x/</guid>
-      <description>Mac - Use readlink in Mac OS X install coreutils brew install coreutils test greadlink greadlink -f &amp;lt;file name&amp;gt; alias command line alias readlink=greadlink refer - How can I get the behavior of GNU&amp;rsquo;s readlink -f on a Mac?;</description>
+      
+      <guid>/posts/2018-10-24-mac-use-readlink-in-mac-os-x/</guid>
+      <description>&lt;h2 id=&#34;mac---use-readlink-in-mac-os-x&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac---use-readlink-in-mac-os-x&#34;&gt;
+        #
+    &lt;/a&gt;
+    Mac - Use readlink in Mac OS X
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;install &lt;code&gt;coreutils&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install coreutils
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;test greadlink&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;greadlink -f &amp;lt;file name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;alias command line&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;readlink&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;greadlink
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/1055671/how-can-i-get-the-behavior-of-gnus-readlink-f-on-a-mac&#34;&gt;refer - How can I get the behavior of GNU&amp;rsquo;s readlink -f on a Mac?&lt;/a&gt;;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Linux / Unix - terminal control</title>
-      <link>https://blog.tedshd.io/posts/2015-09-30-linux-unix-terminal-control/</link>
+      <link>/posts/2015-09-30-linux-unix-terminal-control/</link>
       <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-09-30-linux-unix-terminal-control/</guid>
-      <description>Linux / Unix - terminal control 終端機指令列的一些操作 Ctrl + a: 回到此行最前面 Ctrl + e: 到此行的最後面 Ctrl + u: 清除一行中游標之前的所有文字 Ctrl + k: 清除一行字游標之後的所有文</description>
+      
+      <guid>/posts/2015-09-30-linux-unix-terminal-control/</guid>
+      <description>&lt;h2 id=&#34;linux--unix---terminal-control&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#linux--unix---terminal-control&#34;&gt;
+        #
+    &lt;/a&gt;
+    Linux / Unix - terminal control
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;終端機指令列的一些操作&lt;/p&gt;
+&lt;p&gt;Ctrl + a: 回到此行最前面&lt;/p&gt;
+&lt;p&gt;Ctrl + e: 到此行的最後面&lt;/p&gt;
+&lt;p&gt;Ctrl + u: 清除一行中游標之前的所有文字&lt;/p&gt;
+&lt;p&gt;Ctrl + k: 清除一行字游標之後的所有文字&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Mac - hide desktop icon</title>
-      <link>https://blog.tedshd.io/posts/2015-07-22-mac-hide-desktop-icon/</link>
+      <link>/posts/2015-07-22-mac-hide-desktop-icon/</link>
       <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-07-22-mac-hide-desktop-icon/</guid>
-      <description>Mac - hide desktop icon Hide defaults write com.apple.finder CreateDesktop -bool false Then&#xA;killall Finder Show defaults write com.apple.finder CreateDesktop -bool true Then&#xA;killall Finder Refer - Hide All Desktop Icons in Mac OS X</description>
+      
+      <guid>/posts/2015-07-22-mac-hide-desktop-icon/</guid>
+      <description>&lt;h2 id=&#34;mac---hide-desktop-icon&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac---hide-desktop-icon&#34;&gt;
+        #
+    &lt;/a&gt;
+    Mac - hide desktop icon
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;hide&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#hide&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Hide
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;defaults write com.apple.finder CreateDesktop -bool &lt;span style=&#34;color:#ff5c57&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;killall Finder
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;show&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#show&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Show
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;defaults write com.apple.finder CreateDesktop -bool &lt;span style=&#34;color:#ff5c57&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;killall Finder
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://osxdaily.com/2009/09/23/hide-all-desktop-icons-in-mac-os-x/&#34;&gt;Refer - Hide All Desktop Icons in Mac OS X&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Mac - SSHFS</title>
-      <link>https://blog.tedshd.io/posts/2014-08-21-mac-sshfs/</link>
+      <link>/posts/2014-08-21-mac-sshfs/</link>
       <pubDate>Thu, 21 Aug 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-08-21-mac-sshfs/</guid>
-      <description>Mac - SSHFS SSHFS can help Mac user mount remote support SSH protocol. Intro&#xA;Usage&#xA;It has problem in oh-my-zsh! </description>
+      
+      <guid>/posts/2014-08-21-mac-sshfs/</guid>
+      <description>&lt;h2 id=&#34;mac---sshfs&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac---sshfs&#34;&gt;
+        #
+    &lt;/a&gt;
+    Mac - SSHFS
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;SSHFS can help Mac user mount remote support SSH protocol.
+&lt;a href=&#34;http://fuse.sourceforge.net/sshfs.html&#34;&gt;Intro&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/osxfuse/osxfuse/wiki/SSHFS&#34;&gt;Usage&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;strong-stylecolorredit-has-problem-in-oh-my-zshstrong&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#strong-stylecolorredit-has-problem-in-oh-my-zshstrong&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;strong style=&#34;color:red&#34;&gt;It has problem in oh-my-zsh!&lt;/strong&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+</description>
     </item>
+    
     <item>
       <title>Vim - colorscheme</title>
-      <link>https://blog.tedshd.io/posts/2014-04-05-vim-colorscheme/</link>
+      <link>/posts/2014-04-05-vim-colorscheme/</link>
       <pubDate>Sat, 05 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-04-05-vim-colorscheme/</guid>
-      <description>Vim - colorscheme Vim 主題 mkdir ~/.vim/colors/ 找到 &amp;lt;colorscheme&amp;gt;.vim 並丟到 ~/.vim/colors/ 即可 在 .vimrc 設定 colorscheme &amp;lt;colorscheme&amp;gt; 就會變成該主題 Some Colorscheme Vim Colorscheme Gallery vimcolorschemetest vim online Newest - Vim Colors Refer - 挑選 Vim 顏色(Color Scheme)</description>
+      
+      <guid>/posts/2014-04-05-vim-colorscheme/</guid>
+      <description>&lt;h2 id=&#34;vim---colorscheme&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#vim---colorscheme&#34;&gt;
+        #
+    &lt;/a&gt;
+    Vim - colorscheme
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Vim 主題&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;mkdir ~/.vim/colors/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;找到 &lt;code&gt;&amp;lt;colorscheme&amp;gt;.vim&lt;/code&gt; 並丟到 &lt;code&gt;~/.vim/colors/&lt;/code&gt; 即可&lt;/li&gt;
+&lt;li&gt;在 &lt;code&gt;.vimrc&lt;/code&gt; 設定 &lt;code&gt;colorscheme &amp;lt;colorscheme&amp;gt;&lt;/code&gt; 就會變成該主題&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;some-colorscheme&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#some-colorscheme&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Some Colorscheme
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://cocopon.me/app/vim-color-gallery/&#34;&gt;Vim Colorscheme Gallery&lt;/a&gt;
+&lt;a href=&#34;https://code.google.com/p/vimcolorschemetest/&#34;&gt;vimcolorschemetest&lt;/a&gt;
+&lt;a href=&#34;http://www.vim.org/scripts/script_search_results.php?keywords=&amp;amp;script_type=color+scheme&amp;amp;order_by=creation_date&amp;amp;direction=descending&amp;amp;search=search&#34;&gt;vim online&lt;/a&gt;
+&lt;a href=&#34;http://vimcolors.com/&#34;&gt;Newest - Vim Colors&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.longwin.com.tw/2009/03/choose-vim-color-scheme-2009/&#34;&gt;Refer - 挑選 Vim 顏色(Color Scheme)&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Node.js - install</title>
-      <link>https://blog.tedshd.io/posts/2014-04-04-nodejs-install/</link>
+      <link>/posts/2014-04-04-nodejs-install/</link>
       <pubDate>Fri, 04 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-04-04-nodejs-install/</guid>
-      <description>Node.js - install Mac 利用 homebrew 安裝 brew install node node.js Refer - Install Node.js and npm using Homebrew on OS X Ubuntu sudo apt-get install nodejs-legacy sudo apt-get install npm Refer - Can not install packages using node package manager in Ubuntu Update Now node merge iojs and version update to v4 But now homebrew not updgrade to v4 So i use nvm Refer - Node.js 安</description>
+      
+      <guid>/posts/2014-04-04-nodejs-install/</guid>
+      <description>&lt;h2 id=&#34;nodejs---install&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#nodejs---install&#34;&gt;
+        #
+    &lt;/a&gt;
+    Node.js - install
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;mac&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Mac
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;利用 homebrew 安裝&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install node
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://nodejs.org/&#34;&gt;node.js&lt;/a&gt;
+&lt;a href=&#34;http://thechangelog.com/install-node-js-with-homebrew-on-os-x/&#34;&gt;Refer - Install Node.js and npm using Homebrew on OS X&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ubuntu&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ubuntu&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Ubuntu
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install nodejs-legacy
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install npm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/21168141/can-not-install-packages-using-node-package-manager-in-ubuntu&#34;&gt;Refer - Can not install packages using node package manager in Ubuntu&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;update&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#update&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Update
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Now node merge iojs and version update to v4&lt;/p&gt;
+&lt;p&gt;But now homebrew not updgrade to v4&lt;/p&gt;
+&lt;p&gt;So i use nvm&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://icarus4.logdown.com/posts/175092-nodejs-installation-guide&#34;&gt;Refer - Node.js 安裝與版本切換教學 (for MAC)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;npm-upgrade-node-version&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#npm-upgrade-node-version&#34;&gt;
+        ##
+    &lt;/a&gt;
+    npm upgrade node version
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo npm cache clean -f
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo npm install -g n
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo n stable
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://davidwalsh.name/upgrade-nodejs&#34;&gt;Refer - Upgrade Node.js via NPM&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Mac - Build Front End Developer Environment</title>
-      <link>https://blog.tedshd.io/posts/2014-01-27-mac-build-front-end-developer-environment/</link>
+      <link>/posts/2014-01-27-mac-build-front-end-developer-environment/</link>
       <pubDate>Mon, 27 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-01-27-mac-build-front-end-developer-environment/</guid>
-      <description>Mac - Build Front End Developer Environment 趁入手新 Mac 順便重溫一下如何建立給前端攻城獅爽爽用的開發環境 大部分都會涉及 terminal 操作 由於 Mac 是 unix, 基本上 terminal 操作指令都跟 Linux 一樣 常見的指令 Mac</description>
+      
+      <guid>/posts/2014-01-27-mac-build-front-end-developer-environment/</guid>
+      <description>&lt;h2 id=&#34;mac---build-front-end-developer-environment&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac---build-front-end-developer-environment&#34;&gt;
+        #
+    &lt;/a&gt;
+    Mac - Build Front End Developer Environment
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;趁入手新 Mac 順便重溫一下如何建立給前端攻城獅爽爽用的開發環境
+大部分都會涉及 terminal 操作
+由於 Mac 是 unix, 基本上 terminal 操作指令都跟 Linux 一樣
+&lt;a href=&#34;http://tedshd.logdown.com/posts/87094-linux-unix-command&#34;&gt;常見的指令&lt;/a&gt;
+Mac 上取代預設 terminal 的好物 - &lt;a href=&#34;http://www.iterm2.com/#/section/home&#34;&gt;iTerm 2&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;1-套件與環境&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#1-%e5%a5%97%e4%bb%b6%e8%88%87%e7%92%b0%e5%a2%83&#34;&gt;
+        #
+    &lt;/a&gt;
+    1. 套件與環境
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;xcode-必裝&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#xcode-%e5%bf%85%e8%a3%9d&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Xcode 必裝
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;雖然前端攻城獅幾乎沒什麼人有在同時寫 ios 或 Mac 的 app, 但是還是要裝 Xcode, 不然會有不少東西裝不了(在裝 oh-my-zsh 和 Homebrew 時就被警告了)
+&lt;span style=&#34;color:red&#34;&gt;裝完後至少要先開過一次, 不然會當做沒裝過&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;homebrewhttpbrewsh&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#homebrewhttpbrewsh&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;a href=&#34;http://brew.sh/&#34;&gt;Homebrew&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Mac 上好用的套件管理工具, 相當於 linux 的 apt-get
+用它安裝了 wget 與 git&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew uninstall
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew list
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew search
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew info
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// example
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install wget
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://www.yangzhiping.com/tech/mac3.html&#34;&gt;Mac入门笔记（3）：一键装机&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;git分散式版本控制系統httpgit-scmcom&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#git%e5%88%86%e6%95%a3%e5%bc%8f%e7%89%88%e6%9c%ac%e6%8e%a7%e5%88%b6%e7%b3%bb%e7%b5%b1httpgit-scmcom&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;a href=&#34;http://git-scm.com/&#34;&gt;Git(分散式版本控制系統)&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;這應該是必裝的吧?
+下面可參考
+&lt;a href=&#34;http://blog.longwin.com.tw/2009/05/git-learn-initial-command-2009/&#34;&gt;Git 初學筆記 - 指令操作教學&lt;/a&gt;
+&lt;a href=&#34;http://ihower.tw/git/&#34;&gt;版本控制系統Git 精要| ihower 的Git 教室&lt;/a&gt;
+git 其實也有具 GUI 的 app 可用, 不過就沒研究了&lt;/p&gt;
+&lt;h3 id=&#34;oh-my-zshhttpsgithubcomrobbyrusselloh-my-zsh&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#oh-my-zshhttpsgithubcomrobbyrusselloh-my-zsh&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;a href=&#34;https://github.com/robbyrussell/oh-my-zsh&#34;&gt;oh-my-zsh&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;有在用 terminal 的都會用到的
+雖然以前在用 linux 的時候都是用 bash, 但是個人還是覺得 zsh 好用, 視個人習慣
+zsh 附加換 theme 的功能
+&lt;a href=&#34;https://github.com/robbyrussell/oh-my-zsh/wiki/themes&#34;&gt;themes&lt;/a&gt;
+找到自己喜歡主題&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;找到 &lt;code&gt;ZSH_THEME=&amp;quot;candy&amp;quot;&lt;/code&gt; , 把 candy 換成自己想要的主題名稱
+重啟 shell&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;source&lt;/span&gt; ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;常用的 alias&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#mysql&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/usr/local/mysql/bin:&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$PATH&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# java&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;/opt/local/bin:/opt/local/sbin:&lt;span style=&#34;color:#ff5c57&#34;&gt;$PATH&lt;/span&gt;:/path/to/java/bin
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Short command aliases&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;l=ls&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;la=ls -a&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;ll=ls -l&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v=vim&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;rmall=sudo rm *&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;cdw=cd ~/WebServer/Documents&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2-開發工具&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2-%e9%96%8b%e7%99%bc%e5%b7%a5%e5%85%b7&#34;&gt;
+        #
+    &lt;/a&gt;
+    2. 開發工具
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;目前個人是用 Vim 與 sublime 所以大致說明一下&lt;/p&gt;
+&lt;h3 id=&#34;vimhttpzhwikipediaorgwindexphptitlevimvariantzh-twmac-預設&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#vimhttpzhwikipediaorgwindexphptitlevimvariantzh-twmac-%e9%a0%90%e8%a8%ad&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;a href=&#34;http://zh.wikipedia.org/w/index.php?title=Vim&amp;amp;variant=zh-tw&#34;&gt;Vim&lt;/a&gt;(Mac 預設)
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;vi 的進化版, 學過 Linux 的都一定知道 vi
+以前不覺得 Vim 有多強, 只認為有 vi 就夠了, 直到 &lt;del&gt;膝蓋中了一箭&lt;/del&gt; 要用 terminal 寫 code 才知道它的厲害
+Vim 主要依靠 .vimrc 的設定檔來做個人化設定(可以參考網路上別人的設定)
+&lt;a href=&#34;http://blog.longwin.com.tw/2010/05/vim-cheatsheet-ppt-learn-2010/&#34;&gt;Vim 小抄 與 入門投影片&lt;/a&gt;
+&lt;a href=&#34;http://www.study-area.org/tips/vim/index.html&#34;&gt;大家來學VIM(一個歷久彌新的編輯器)&lt;/a&gt;
+&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/177454/mWlvzoATz6t3V0oAWBPl_Vi-vim-cheat-sheet.png&#34; alt=&#34;Vi-vim-cheat-sheet.png&#34;&gt;
+&lt;a href=&#34;http://note.drx.tw/2008/01/vimrc-config.html&#34;&gt;Vim 環境設定 - vimrc&lt;/a&gt;
+&lt;a href=&#34;http://blog.csdn.net/yzhy_ocean/article/details/7272222&#34;&gt;Macintosh Lion下初试Vim——配置vimrc文件&lt;/a&gt;
+&lt;a href=&#34;http://www.study-area.org/tips/vim/Vim-9.html&#34;&gt;大家來學VIM（一個歷久彌新的編輯器）[九] set 功能設定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;基本的 .vimrc 設定(.vimrc 存在 ~ 底下)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34; encode
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;set encoding=utf-8
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;set fileencodings=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936,utf-16,big5,euc-jp,latin1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt; highlight
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;syntax on
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34; highlight focus line
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;autocmd InsertLeave * se nocul
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;autocmd InsertEnter * se cul
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt; highlight search
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; hlsearch
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; incsearch
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34; 高亮显示对应的括号
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;set showmatch
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt; theme
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;colorscheme torte
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34; Tab
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;set tabstop=4
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;  indent
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;softtabstop&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;shiftwidth&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34; smart alignment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;set smartindent
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt; auto alignment
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; autoindent
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34; show line number
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;set number
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;history&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;history&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;50&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34; 在状态行显示目前所执行的命令，未完成的指令片段亦会显示出来
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; showcmd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34; 命令行（在状态行）的高度，默认为1,这里是2
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;set cmdheight=1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt; 在编辑过程中，在右下角显示光标位置的状态行
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; ruler
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34; 总是显示状态行
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;set laststatus=2
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt; 搜尋不分大小寫
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; ic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;sublimehttpwwwsublimetextcom&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sublimehttpwwwsublimetextcom&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;a href=&#34;http://www.sublimetext.com/&#34;&gt;Sublime&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;應該算是最多前端攻城獅用的 IDE 吧
+&lt;a href=&#34;http://tedshd.logdown.com/tags/sublime-text&#34;&gt;個人設定&lt;/a&gt;
+&lt;a href=&#34;https://gist.github.com/lucasfais/1207002&#34;&gt;Mac 上的一些快捷健&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;輔助開發用的-fireapphttpfireappkkboxcom&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%bc%94%e5%8a%a9%e9%96%8b%e7%99%bc%e7%94%a8%e7%9a%84-fireapphttpfireappkkboxcom&#34;&gt;
+        ##
+    &lt;/a&gt;
+    輔助開發用的 &lt;a href=&#34;http://fireapp.kkbox.com/&#34;&gt;fire.app&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;不管是寫 Haml, CoffeeScript, Sass 還是 HTML, JavaScript, CSS 都可以快速開發, 其中又具備 LiveReload(個人的 LiveReload 是配合 &lt;a href=&#34;https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei&#34;&gt;chrome extension&lt;/a&gt;)
+也可以針對專案直接起一台 server
+讓專案開發可以更快速
+不過個人都是用在實驗或搞 prototype 用
+&lt;a href=&#34;http://demo.tc/Post/757&#34;&gt;更新更強大的網頁設計師好幫手 Fire.app 基礎篇&lt;/a&gt;
+硬派攻城獅的替代方案 - &lt;a href=&#34;http://yeoman.io/&#34;&gt;YEOMAN&lt;/a&gt; or &lt;a href=&#34;http://gruntjs.com/&#34;&gt;Grunt&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-直接架一台-server-在-mac-上非必要&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#3-%e7%9b%b4%e6%8e%a5%e6%9e%b6%e4%b8%80%e5%8f%b0-server-%e5%9c%a8-mac-%e4%b8%8a%e9%9d%9e%e5%bf%85%e8%a6%81&#34;&gt;
+        #
+    &lt;/a&gt;
+    3. 直接架一台 server 在 Mac 上(非必要)
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;雖然有許多方式可以在要測 AJAX 行為時起一台 server, 但生為一個懶人還是覺得直接架一個 server 起來用較方便&lt;/p&gt;
+&lt;h3 id=&#34;apache&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#apache&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Apache
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Mac 已內建 Apache&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apachectl start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apachectl stop
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apachectl restart
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// check apache version
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apachectl -v
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// or
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;httpd -v
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Default server root&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Library/WebServer/Documents
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如要改變預設的 root&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim /etc/apache2/httpd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// find /Library/WebServer/Documents and change it
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;php&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php&#34;&gt;
+        ##
+    &lt;/a&gt;
+    PHP
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Mac 也內建 PHP 了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo vim /etc/apache2/httpd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// find
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#LoadModule php5_module libexec/apache2/libphp5.so&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// del &lt;span style=&#34;color:#78787e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apachectl restart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;升級 PHP 可參考 &lt;a href=&#34;http://php-osx.liip.ch/&#34;&gt;PHP 5.5/5.4/5.3 for OS X 10.6/10.7/10.8/10.9 as binary package&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;mysql&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mysql&#34;&gt;
+        ##
+    &lt;/a&gt;
+    MySQL
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;這次 Mac 就沒附了(也可用 Homebrew 裝)
+Install MySQL(&lt;a href=&#34;http://dev.mysql.com/downloads/mysql/5.5.html&#34;&gt;http://dev.mysql.com/downloads/mysql/5.5.html&lt;/a&gt;)
+載 dmg 檔
+在要下載時會問說是否要登入或註冊 Oracle 的帳號, 不必理它, 直接點下面小小一行的 &lt;strong&gt;No thanks, just start my download.&lt;/strong&gt;
+假如出現 &lt;strong&gt;無法打開「mysql5.5.35-osx10.6-x86_64.pkg」, 因為它來自未識別的開發者&lt;/strong&gt; 的警告
+這時要去 &lt;code&gt;系統偏好設定&lt;/code&gt; -&amp;gt; &lt;code&gt;安全性與隱私&lt;/code&gt; -&amp;gt; &lt;code&gt;允許以下來源下載的應用程式&lt;/code&gt; 改成 &lt;code&gt;任何來源&lt;/code&gt; 即可
+設定 MySQL 密碼&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/usr/local/mysql/bin/mysqladmin -u root password &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;changepassword&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;設定環境變數&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// add
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#mysql&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/usr/local/mysql/bin:&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$PATH&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// save and &lt;span style=&#34;color:#ff6ac1&#34;&gt;then&lt;/span&gt; restart shell
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;source&lt;/span&gt; ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;homebrew-install&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#homebrew-install&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Homebrew install
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://ihower.tw/rails4/advanced-installation.html&#34;&gt;Refer - Ruby on Rails 實戰聖經&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://discussions.apple.com/docs/DOC-3083&#34;&gt;Refer - Setting up a local web server on OS X&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;設定-virtual-host&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a8%ad%e5%ae%9a-virtual-host&#34;&gt;
+        ##
+    &lt;/a&gt;
+    設定 virtual host
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://coolestguidesontheplanet.com/set-virtual-hosts-apache-mac-osx-10-10-yosemite/&#34;&gt;Refer - How to set up Virtual Hosts in Apache on Mac OSX 10.10 Yosemite&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Vim config in Mac</title>
-      <link>https://blog.tedshd.io/posts/2013-08-27-vim-config-in-mac/</link>
+      <link>/posts/2013-08-27-vim-config-in-mac/</link>
       <pubDate>Tue, 27 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-08-27-vim-config-in-mac/</guid>
-      <description>Some different in Mac PageDown, PageUp, Home, End It is not useful in setting vimrc.&#xA;Solution Terminal-&amp;gt;Preference-&amp;gt;KeyBoard&#xA;Home: \033[1~&#xD;End: \033[4~&#xD;PageUp: \033[5~&#xD;PageDown: \033[6~ </description>
+      
+      <guid>/posts/2013-08-27-vim-config-in-mac/</guid>
+      <description>&lt;h2 id=&#34;some-different-in-mac&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#some-different-in-mac&#34;&gt;
+        #
+    &lt;/a&gt;
+    Some different in Mac
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;pagedown-pageup-home-end&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#pagedown-pageup-home-end&#34;&gt;
+        ##
+    &lt;/a&gt;
+    PageDown, PageUp, Home, End
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;It is not useful in setting vimrc.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;
+Terminal-&amp;gt;Preference-&amp;gt;KeyBoard&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-config&#34; data-lang=&#34;config&#34;&gt;Home:     \033[1~
+End:      \033[4~
+PageUp:   \033[5~
+PageDown: \033[6~
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
+    
   </channel>
 </rss>

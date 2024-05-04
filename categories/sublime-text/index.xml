@@ -1,41 +1,635 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sublime-Text on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/sublime-text/</link>
-    <description>Recent content in Sublime-Text on tedshd&#39;s DevNote</description>
+    <title>Sublime-Text on Tedshd&#39;s Dev note</title>
+    <link>/categories/sublime-text/</link>
+    <description>Tedshd&#39;s Dev note (Sublime-Text)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/sublime-text/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Feb 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/sublime-text/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Sublime - change layout view in 2 columns</title>
-      <link>https://blog.tedshd.io/posts/2014-02-27-sublime-change-layout-view-in-2-columns/</link>
+      <link>/posts/2014-02-27-sublime-change-layout-view-in-2-columns/</link>
       <pubDate>Thu, 27 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-02-27-sublime-change-layout-view-in-2-columns/</guid>
-      <description>Sublime - change layout view in 2 columns Video&#xA;Setting Preferences -&amp;gt; Key Bindings - User&#xA;set key to use&#xA;[ { &amp;#34;keys&amp;#34;: [&amp;#34;super+ctrl+left&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;set_layout&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;cols&amp;#34;: [0.0, 0.95, 1.0], &amp;#34;rows&amp;#34;: [0.0, 1.0], &amp;#34;cells&amp;#34;: [[0, 0, 1, 1], [1, 0, 2, 1]] } }, { &amp;#34;keys&amp;#34;: [&amp;#34;super+ctrl+right&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;set_layout&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;cols&amp;#34;: [0.0, 0.05, 1.0], &amp;#34;rows&amp;#34;: [0.0, 1.0], &amp;#34;cells&amp;#34;: [[0, 0, 1, 1], [1, 0, 2, 1]] } } ] Update Add focus If add focus, it need 2 commands so need write a python plugin</description>
+      
+      <guid>/posts/2014-02-27-sublime-change-layout-view-in-2-columns/</guid>
+      <description>&lt;h2 id=&#34;sublime---change-layout-view-in-2-columns&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sublime---change-layout-view-in-2-columns&#34;&gt;
+        #
+    &lt;/a&gt;
+    Sublime - change layout view in 2 columns
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/181166/n0cayJWESiKZXwNBOvJa_output_T7Ok8b.gif&#34; alt=&#34;output_T7Ok8b.gif&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Video&lt;/p&gt;
+&lt;iframe width=&#34;640&#34; height=&#34;360&#34; src=&#34;//www.youtube.com/embed/t9xq08x1tlw?rel=0&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h3 id=&#34;setting&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#setting&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Setting
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Preferences&lt;/code&gt; -&amp;gt; &lt;code&gt;Key Bindings - User&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;set key to use&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;keys&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;super+ctrl+left&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;set_layout&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;cols&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#ff9f43&#34;&gt;0.0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0.95&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1.0&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;rows&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#ff9f43&#34;&gt;0.0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1.0&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;cells&amp;#34;&lt;/span&gt;: [[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;], [&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;keys&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;super+ctrl+right&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;set_layout&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;cols&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#ff9f43&#34;&gt;0.0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0.05&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1.0&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;rows&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#ff9f43&#34;&gt;0.0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1.0&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;cells&amp;#34;&lt;/span&gt;: [[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;], [&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;update&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#update&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;strong&gt;Update&lt;/strong&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;add-focus&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#add-focus&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Add focus
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;If add focus, it need 2 commands so need write a python plugin&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Tools&lt;/code&gt; -&amp;gt; &lt;code&gt;New Plugin&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# save as run_multiple.py&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; sublime&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; sublime_plugin
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Takes an array of commands (same as those you&amp;#39;d provide to a key binding) with&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# an optional context (defaults to view commands) &amp;amp; runs each command in order.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Valid contexts are &amp;#39;text&amp;#39;, &amp;#39;window&amp;#39;, and &amp;#39;app&amp;#39; for running a TextCommand,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# WindowCommands, or ApplicationCommand respectively.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#f3f99d&#34;&gt;RunMultipleCommand&lt;/span&gt;(sublime_plugin&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;TextCommand):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;exec_command&lt;/span&gt;(self, command):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;command&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; command:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;raise&lt;/span&gt; Exception(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;No command name provided.&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    args &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;None&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;args&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; command:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      args &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; command[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;args&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;# default context is the view since it&amp;#39;s easiest to get the other contexts&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;# from the view&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    context &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;view
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;context&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; command:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      context_name &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; command[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;context&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; context_name &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;window&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        context &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; context&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;window()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;elif&lt;/span&gt; context_name &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;app&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        context &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; sublime
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;elif&lt;/span&gt; context_name &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;text&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;raise&lt;/span&gt; Exception(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Invalid command context &amp;#34;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt;context_name&lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#34;.&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;# skip args if not needed&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; args &lt;span style=&#34;color:#ff6ac1&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;None&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      context&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;run_command(command[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;command&amp;#39;&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      context&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;run_command(command[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;command&amp;#39;&lt;/span&gt;], args)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;run&lt;/span&gt;(self, edit, commands &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;None&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; commands &lt;span style=&#34;color:#ff6ac1&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;None&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#78787e&#34;&gt;# not an error&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; command &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; commands:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      self&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;exec_command(command)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;code&gt;Preferences&lt;/code&gt; -&amp;gt; &lt;code&gt;Key Bindings - User&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;keys&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;super+ctrl+left&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;run_multiple&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;commands&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;set_layout&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;cols&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#ff9f43&#34;&gt;0.0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0.95&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1.0&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;rows&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#ff9f43&#34;&gt;0.0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1.0&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;cells&amp;#34;&lt;/span&gt;: [[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;], [&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;context&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;window&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;focus_group&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: { &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;group&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;context&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;window&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;keys&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;super+ctrl+right&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;run_multiple&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;commands&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;set_layout&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;cols&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#ff9f43&#34;&gt;0.0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0.05&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1.0&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;rows&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#ff9f43&#34;&gt;0.0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1.0&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;cells&amp;#34;&lt;/span&gt;: [[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;], [&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;context&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;window&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;focus_group&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: { &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;group&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;context&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;window&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/10913138/how-to-create-a-custom-layout-in-sublime-text-2&#34;&gt;Refer - how to create a custom layout in sublime text 2?&lt;/a&gt;
+&lt;a href=&#34;http://stackoverflow.com/questions/13149800/custom-layouts-sublime-text-2&#34;&gt;Refer - Custom layouts, Sublime text 2&lt;/a&gt;
+&lt;a href=&#34;http://www.sublimetext.com/forum/viewtopic.php?f=6&amp;amp;t=7284&amp;amp;start=0&amp;amp;hilit=set+layout&#34;&gt;Refer - set_layout reference&lt;/a&gt;
+Update
+&lt;a href=&#34;http://stackoverflow.com/questions/9646552/is-it-possible-to-chain-key-binding-commands-in-sublime-text-2&#34;&gt;Refer - Is it possible to chain key binding commands in sublime text 2?&lt;/a&gt;
+&lt;a href=&#34;https://gist.github.com/nilium/3327730&#34;&gt;Refer - nilium / key-bindings.json&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>‎Sublime Text - Plug-In</title>
-      <link>https://blog.tedshd.io/posts/2013-09-02-sublime-text-plug-in/</link>
+      <link>/posts/2013-09-02-sublime-text-plug-in/</link>
       <pubDate>Mon, 02 Sep 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-09-02-sublime-text-plug-in/</guid>
-      <description>Plug-In Install by Package Control Fisrt use sublime need install Package Control Ctrl + ~ show command line enter import urllib2,os; pf=&amp;#39;Package Control.sublime-package&amp;#39;; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),&amp;#39;wb&amp;#39;).write(urllib2.urlopen(&amp;#39;http://sublime.wbond.net/&amp;#39;+pf.replace(&amp;#39; &amp;#39;,&amp;#39;%20&amp;#39;)).read()); print &amp;#39;Please restart Sublime Text to finish installation&amp;#39; restart sublime finish ZenCoding jsFormat 讓 js 整齊 ctrl + alt + f GitHub SublimeTmpl 載入預設的樣板 Emmet 快速輸入 Gist</description>
+      
+      <guid>/posts/2013-09-02-sublime-text-plug-in/</guid>
+      <description>&lt;h2 id=&#34;plug-in&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#plug-in&#34;&gt;
+        #
+    &lt;/a&gt;
+    Plug-In
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Install by Package Control&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Fisrt use sublime need install Package Control
+Ctrl + ~
+show command line
+enter&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;import urllib2,os; &lt;span style=&#34;color:#ff5c57&#34;&gt;pf&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Package Control.sublime-package&amp;#39;&lt;/span&gt;; &lt;span style=&#34;color:#ff5c57&#34;&gt;ipp&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;sublime.installed_packages_path&lt;span style=&#34;color:#ff6ac1&#34;&gt;()&lt;/span&gt;; os.makedirs&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;ipp&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; not os.path.exists&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;ipp&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; None; urllib2.install_opener&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;urllib2.build_opener&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;urllib2.ProxyHandler&lt;span style=&#34;color:#ff6ac1&#34;&gt;()))&lt;/span&gt;; open&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;os.path.join&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;ipp,pf&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;,&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;wb&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;.write&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;urllib2.urlopen&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;http://sublime.wbond.net/&amp;#39;&lt;/span&gt;+pf.replace&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;%20&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;))&lt;/span&gt;.read&lt;span style=&#34;color:#ff6ac1&#34;&gt;())&lt;/span&gt;; print &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Please restart Sublime Text to finish installation&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;restart sublime
+finish&lt;/p&gt;
+&lt;h3 id=&#34;zencoding&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#zencoding&#34;&gt;
+        ##
+    &lt;/a&gt;
+    ZenCoding
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h3 id=&#34;jsformat&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#jsformat&#34;&gt;
+        ##
+    &lt;/a&gt;
+    jsFormat
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;讓 js 整齊
+ctrl + alt + f
+&lt;a href=&#34;https://github.com/jdc0589/JsFormat&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sublimetmpl&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sublimetmpl&#34;&gt;
+        ##
+    &lt;/a&gt;
+    SublimeTmpl
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;載入預設的樣板&lt;/p&gt;
+&lt;h3 id=&#34;emmethttpdocsemmetio&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#emmethttpdocsemmetio&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;a href=&#34;http://docs.emmet.io/&#34;&gt;Emmet&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;快速輸入&lt;/p&gt;
+&lt;h3 id=&#34;gist&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#gist&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Gist
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h3 id=&#34;brackethighlighter&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#brackethighlighter&#34;&gt;
+        ##
+    &lt;/a&gt;
+    BracketHighlighter
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h3 id=&#34;themes&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#themes&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Themes
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Dayle Rees Color Schemes&lt;/li&gt;
+&lt;li&gt;Farzher&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sublime.wbond.net/packages/Theme%20-%20Fox&#34;&gt;Fox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sublime-jslint&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sublime-jslint&#34;&gt;
+        ##
+    &lt;/a&gt;
+    sublime-jslint
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/fbzhong/sublime-jslint&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// Path to the jslint jar.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// Leave blank to use bundled jar.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;jslint_jar&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// Options pass to jslint.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;jslint_options&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;--continue --nomen --regexp --sloppy&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// Ignore errors, regex.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;ignore_errors&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#78787e&#34;&gt;// &amp;#34;Expected an identifier and instead saw &amp;#39;undefined&amp;#39; \(a reserved word\)&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// run jslint on save.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;run_on_save&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// debug flag.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;debug&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;javascript-and-jquery-api-completions&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript-and-jquery-api-completions&#34;&gt;
+        ##
+    &lt;/a&gt;
+    javascript and jQuery API Completions
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/slene/Sublime-JavaScript-API-Completions&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;better-completion&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#better-completion&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Better Completion
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h3 id=&#34;phplntel&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#phplntel&#34;&gt;
+        ##
+    &lt;/a&gt;
+    PHPLntel
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h3 id=&#34;sublimelinter&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sublimelinter&#34;&gt;
+        ##
+    &lt;/a&gt;
+    SublimeLinter
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/SublimeLinter/SublimeLinter-for-ST2&#34;&gt;SublimeLinter-for-ST2&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;sublimelinter_popup_errors_on_save&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;sublimelinter_mark_style&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;fill&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;sublimelinter_gutter_marks&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;colorpicker&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#colorpicker&#34;&gt;
+        ##
+    &lt;/a&gt;
+    ColorPicker
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;調色盤
+&lt;a href=&#34;http://weslly.github.io/ColorPicker/&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;scss&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#scss&#34;&gt;
+        ##
+    &lt;/a&gt;
+    SCSS
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/MarioRicalde/SCSS.tmbundle&#34;&gt;GiHub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sftp&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sftp&#34;&gt;
+        ##
+    &lt;/a&gt;
+    SFTP
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;利用 SFTP 連 server
+&lt;a href=&#34;http://wbond.net/sublime_packages/sftp&#34;&gt;Sublime SFTP&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;docblockr&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docblockr&#34;&gt;
+        ##
+    &lt;/a&gt;
+    DocBlockr
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;加強添加注釋
+/** 按 &lt;code&gt;tab&lt;/code&gt;
+&lt;a href=&#34;https://github.com/spadgos/sublime-jsdocs&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ascii-decorator&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ascii-decorator&#34;&gt;
+        ##
+    &lt;/a&gt;
+    ASCII-Decorator
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;利用 ASCII 文字當注釋
+選擇要轉的文字後, 選選單的 Edit -&amp;gt; ASCII-Decorator, 就會轉換了
+&lt;a href=&#34;https://github.com/viisual/ASCII-Decorator&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bootstrap-3-snippets&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#bootstrap-3-snippets&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Bootstrap 3 Snippets
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/JasonMortonNZ/bs3-sublime-plugin&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;marking-changed-rows&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#marking-changed-rows&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Marking Changed Rows
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Harurow/sublime_markingchangedrows&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;colorhighlighter&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#colorhighlighter&#34;&gt;
+        ##
+    &lt;/a&gt;
+    ColorHighlighter
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;顯示 HEX 顏色
+&lt;a href=&#34;https://github.com/Monnoroch/ColorHighlighter&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;aligntab&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#aligntab&#34;&gt;
+        ##
+    &lt;/a&gt;
+    AlignTab
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;對齊 :, =, &amp;hellip;
+&lt;a href=&#34;https://github.com/randy3k/AlignTab&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;find-function-definition&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#find-function-definition&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Find Function Definition
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;找到 function 定義的位置
+&lt;a href=&#34;https://sublime.wbond.net/packages/Find%20Function%20Definition&#34;&gt;Find Function Definition&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sublimetext-markdown-preview&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sublimetext-markdown-preview&#34;&gt;
+        ##
+    &lt;/a&gt;
+    sublimetext-markdown-preview
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Preview Markdown 文件
+&lt;a href=&#34;https://github.com/revolunet/sublimetext-markdown-preview&#34;&gt;sublimetext-markdown-preview&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sublimebookmark&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sublimebookmark&#34;&gt;
+        ##
+    &lt;/a&gt;
+    sublimeBookmark
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;可以 mark line, 方便臨時標記找 code
+&lt;a href=&#34;https://github.com/bollu/sublimeBookmark&#34;&gt;sublimeBookmark&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;css-format&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#css-format&#34;&gt;
+        ##
+    &lt;/a&gt;
+    CSS format
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://packagecontrol.io/packages/CSS%20Format&#34;&gt;CSS Format&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;sublime-text-3&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sublime-text-3&#34;&gt;
+        #
+    &lt;/a&gt;
+    Sublime text 3
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;jslint&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#jslint&#34;&gt;
+        ##
+    &lt;/a&gt;
+    JSLint
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/73rhodes/Sublime-JSLint&#34;&gt;JSLint&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;jshint&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#jshint&#34;&gt;
+        ##
+    &lt;/a&gt;
+    JSHint
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jshint/jshint&#34;&gt;jshint&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sublimelinter-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sublimelinter-1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    sublimeLinter
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h3 id=&#34;sublimelinter-annotations&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sublimelinter-annotations&#34;&gt;
+        ##
+    &lt;/a&gt;
+    SublimeLinter-annotations
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;highlight TODO, README and FIXME
+&lt;a href=&#34;https://github.com/SublimeLinter/SublimeLinter-annotations&#34;&gt;SublimeLinter-annotations&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>‎Sublime Text - Hot Key</title>
-      <link>https://blog.tedshd.io/posts/2013-09-01-sublime-text-hot-key/</link>
+      <link>/posts/2013-09-01-sublime-text-hot-key/</link>
       <pubDate>Sun, 01 Sep 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-09-01-sublime-text-hot-key/</guid>
-      <description>Hot Key Document Mac OS X Windows Ctrl+Shift+p 開啟指令列 Tab 自動完成字詞 ctrl + d 選單字 alt + F3 選相同的字 ctrl + f 搜尋 ctrl + 0 focus 到 siderbar Ctrl + Shift + &amp;lt;- or -&amp;gt; Alt + &amp;lt;- or -&amp;gt; 單字 or 符號間移動 Ctrl + Alt + up</description>
+      
+      <guid>/posts/2013-09-01-sublime-text-hot-key/</guid>
+      <description>&lt;h2 id=&#34;hot-key&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#hot-key&#34;&gt;
+        #
+    &lt;/a&gt;
+    Hot Key
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.sublimetext.com/docs/2/&#34;&gt;Document&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/lucasfais/1207002&#34;&gt;Mac OS X&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;windows&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#windows&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Windows
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Ctrl+Shift+p
+開啟指令列
+Tab
+自動完成字詞
+ctrl + d
+選單字
+alt + F3
+選相同的字
+ctrl + f
+搜尋
+ctrl + 0
+focus 到 siderbar
+Ctrl + Shift + &amp;lt;- or -&amp;gt;
+Alt + &amp;lt;- or -&amp;gt;
+單字 or 符號間移動
+Ctrl + Alt + up or down
+輸入多選
+Ctrl + g
+跳行&lt;/p&gt;
+&lt;h3 id=&#34;mac-os-x&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac-os-x&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Mac OS X
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Command + shift + p
+開啓指令列
+Ctrl + Shift + up or down
+輸入多選
+Ctrl + g
+跳行
+Command + &amp;lt;- or -&amp;gt;
+跳到行首 or 行尾
+Ctrl + tab
+上一個 focus 的分頁
+Ctrl + shift + tab
+下一個 focus 的分頁
+Command + K + L
+tolowercase
+Command + K + U
+touppercase&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Sublime Text - initial setting</title>
-      <link>https://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/</link>
+      <link>/posts/2013-09-01-sublime-text-initial-setting/</link>
       <pubDate>Sun, 01 Sep 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-09-01-sublime-text-initial-setting/</guid>
-      <description>Initial Setting Sublime Text 手冊 Preferences-&amp;gt;Settings-Default &amp;#34;default_encoding&amp;#34;: &amp;#34;UTF-8&amp;#34; &amp;#34;default_line_ending&amp;#34;: &amp;#34;unix&amp;#34; &amp;#34;tab_size&amp;#34;: 4 &amp;#34;translate_tabs_to_spaces&amp;#34;: true &amp;#34;save_on_focus_lost&amp;#34;: true &amp;#34;highlight_line&amp;#34;: true &amp;#34;trim_trailing_white_space_on_save&amp;#34;: true &amp;#34;rulers&amp;#34;: [80, 120] &amp;#34;highlight_modified_tabs&amp;#34;: true choose &amp;#34;ensure_newline_at_eof_on_save&amp;#34;: true &amp;#34;use_simple_full_screen&amp;#34;: true if want change font size Preferences-&amp;gt;Settings-User { &amp;#34;default_encoding&amp;#34;: &amp;#34;UTF-8&amp;#34;, &amp;#34;default_line_ending&amp;#34;: &amp;#34;unix&amp;#34;, &amp;#34;tab_size&amp;#34;: 4, &amp;#34;translate_tabs_to_spaces&amp;#34;: true, &amp;#34;save_on_focus_lost&amp;#34;: true, &amp;#34;highlight_line&amp;#34;: true, &amp;#34;trim_trailing_white_space_on_save&amp;#34;: true, &amp;#34;rulers&amp;#34;: [80, 120], &amp;#34;highlight_modified_tabs&amp;#34;: true, &amp;#34;font_size&amp;#34;: 18.0, &amp;#34;ignored_packages&amp;#34;: [ &amp;#34;Vintage&amp;#34; ] }</description>
+      
+      <guid>/posts/2013-09-01-sublime-text-initial-setting/</guid>
+      <description>&lt;h2 id=&#34;initial-setting&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#initial-setting&#34;&gt;
+        #
+    &lt;/a&gt;
+    Initial Setting
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://docs.sublimetext.tw/&#34;&gt;Sublime Text 手冊&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Preferences-&amp;gt;Settings-Default&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;default_encoding&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;default_line_ending&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;unix&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;tab_size&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;translate_tabs_to_spaces&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;save_on_focus_lost&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;highlight_line&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;trim_trailing_white_space_on_save&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;rulers&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; [&lt;span style=&#34;color:#ff9f43&#34;&gt;80&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;120&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;highlight_modified_tabs&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;choose&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;ensure_newline_at_eof_on_save&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;use_simple_full_screen&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;if want change font size&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Preferences-&amp;gt;Settings-User&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;default_encoding&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;default_line_ending&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;unix&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;tab_size&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;translate_tabs_to_spaces&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;save_on_focus_lost&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;highlight_line&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;trim_trailing_white_space_on_save&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;rulers&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#ff9f43&#34;&gt;80&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;120&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;highlight_modified_tabs&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;font_size&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff9f43&#34;&gt;18.0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;ignored_packages&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Vintage&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
   </channel>
 </rss>

@@ -1,34 +1,460 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AngularJS on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/angularjs/</link>
-    <description>Recent content in AngularJS on tedshd&#39;s DevNote</description>
+    <title>AngularJS on Tedshd&#39;s Dev note</title>
+    <link>/categories/angularjs/</link>
+    <description>Tedshd&#39;s Dev note (AngularJS)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/angularjs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jun 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/angularjs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>AngularJS - $http</title>
-      <link>https://blog.tedshd.io/posts/2014-06-01-angularjs-http/</link>
+      <link>/posts/2014-06-01-angularjs-http/</link>
       <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-06-01-angularjs-http/</guid>
-      <description>AngularJS - $http Angular use $http handle AJAX behavior. It support method to handle rest API and basic usage. But its default Content-type is application/json Basic usage $http({ method: &amp;#39;GET&amp;#39;, // support GET, POST, PUT, DELETE url: &amp;#39;../php/response.php&amp;#39;, params: data, // GET method query string data: data, headers: { &amp;#39;Content-Type&amp;#39;: &amp;#39;application/x-www-form-urlencoded; charset=UTF-8&amp;#39; }, timeout: 30000, // timeout abort AJAX cache: false }). success(function(data, status, headers, config) { // this callback</description>
+      
+      <guid>/posts/2014-06-01-angularjs-http/</guid>
+      <description>&lt;h2 id=&#34;angularjs---http&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#angularjs---http&#34;&gt;
+        #
+    &lt;/a&gt;
+    AngularJS - $http
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Angular use $http handle AJAX behavior.
+It support method to handle rest API and basic usage.
+&lt;strong&gt;But its default &lt;code&gt;Content-type&lt;/code&gt; is &lt;code&gt;application/json&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;basic-usage&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#basic-usage&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Basic usage
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$http({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    method&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#78787e&#34;&gt;// support GET, POST, PUT, DELETE
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    url&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;../php/response.php&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    params&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; data, &lt;span style=&#34;color:#78787e&#34;&gt;// GET method query string
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    data&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; data,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    headers&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;application/x-www-form-urlencoded; charset=UTF-8&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    timeout&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;30000&lt;/span&gt;, &lt;span style=&#34;color:#78787e&#34;&gt;// timeout abort AJAX
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    cache&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}).
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;success(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(data, status, headers, config) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// this callback will be called asynchronously
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// when the response is available
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    console.log(data);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}).
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;error(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(data, status, headers, config) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// called asynchronously if an error occurs
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// or server returns response with an error status.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    console.error(data);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$http#usage&#34;&gt;Refer - $http&lt;/a&gt;
+&lt;a href=&#34;http://tutorials.jenkov.com/angularjs/ajax.html&#34;&gt;Refer - AngularJS AJAX&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;get-post-put-delete-head-jsonp&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#get-post-put-delete-head-jsonp&#34;&gt;
+        ##
+    &lt;/a&gt;
+    get, post, put, delete, head, jsonp
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;data is a object like&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; data &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {user&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Ted&amp;#39;&lt;/span&gt;, pwd&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;12345&lt;/span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;httpgeturl-config&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#httpgeturl-config&#34;&gt;
+        ###
+    &lt;/a&gt;
+    $http.get(url, config)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;httpposturl-dataconfig&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#httpposturl-dataconfig&#34;&gt;
+        ###
+    &lt;/a&gt;
+    $http.post(url, data,config)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;httpputurl-data-config&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#httpputurl-data-config&#34;&gt;
+        ###
+    &lt;/a&gt;
+    $http.put(url, data, config)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;httpdeleteurl-config&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#httpdeleteurl-config&#34;&gt;
+        ###
+    &lt;/a&gt;
+    $http.delete(url, config)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;httpheadurl-config&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#httpheadurl-config&#34;&gt;
+        ###
+    &lt;/a&gt;
+    $http.head(url, config)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;httpjsonpurl-config&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#httpjsonpurl-config&#34;&gt;
+        ###
+    &lt;/a&gt;
+    $http.jsonp(url, config)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;jsonp url must add callback&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$http.jsonp(url &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;?callback=JSON_CALLBACK&amp;#39;&lt;/span&gt;).
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;success(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(data, status, headers, config) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    console.log(data);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// this callback will be called asynchronously
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// when the response is available
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;}).
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;error(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(data, status, headers, config) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// called asynchronously if an error occurs
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// or server returns response with an error status.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    console.error(data);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;php-handle-request&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php-handle-request&#34;&gt;
+        ##
+    &lt;/a&gt;
+    PHP handle request
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;rest-api&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#rest-api&#34;&gt;
+        ###
+    &lt;/a&gt;
+    rest API
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;Beacuse AngularJS default request &lt;code&gt;Content-type&lt;/code&gt; is &lt;code&gt;application/json&lt;/code&gt;
+So we must use &lt;code&gt;json_decode&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$request&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; file_get_contents(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;php://input&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$method&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$_SERVER&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;REQUEST_METHOD&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;switch&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$method&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;PUT&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print_r(&lt;span style=&#34;color:#ff5c57&#34;&gt;$method&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;lt;br&amp;gt;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print_r(json_decode(&lt;span style=&#34;color:#ff5c57&#34;&gt;$request&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;lt;br&amp;gt;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print_r(json_decode(&lt;span style=&#34;color:#ff5c57&#34;&gt;$request&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;)[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;GET&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print_r(&lt;span style=&#34;color:#ff5c57&#34;&gt;$method&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print_r(&lt;span style=&#34;color:#ff5c57&#34;&gt;$_GET&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;lt;br&amp;gt;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print_r(&lt;span style=&#34;color:#ff5c57&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;DELETE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print_r(&lt;span style=&#34;color:#ff5c57&#34;&gt;$method&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;lt;br&amp;gt;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print_r(json_decode(&lt;span style=&#34;color:#ff5c57&#34;&gt;$request&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;lt;br&amp;gt;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print_r(json_decode(&lt;span style=&#34;color:#ff5c57&#34;&gt;$request&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;)[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;POST&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print_r(&lt;span style=&#34;color:#ff5c57&#34;&gt;$method&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;lt;br&amp;gt;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print_r(json_decode(&lt;span style=&#34;color:#ff5c57&#34;&gt;$request&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;lt;br&amp;gt;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print_r(json_decode(&lt;span style=&#34;color:#ff5c57&#34;&gt;$request&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;)[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;other-wayonly-use-get--post&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#other-wayonly-use-get--post&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Other way(only use GET &amp;amp; POST)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;Set &lt;code&gt;Content-type&lt;/code&gt; as &lt;code&gt;application/x-www-form-urlencoded; charset=UTF-8&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Set all request as &amp;lsquo;application/x-www-form-urlencoded; charset=UTF-8&amp;rsquo;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; module &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; angular.module(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;module&amp;#39;&lt;/span&gt;, []);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module.config(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;($httpProvider) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	$httpProvider.defaults.headers.post[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;application/x-www-form-urlencoded; charset=UTF-8&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Set request header if it need&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$http({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    method&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    url&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;../php/response.php&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    data&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; data,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    headers&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;application/x-www-form-urlencoded; charset=UTF-8&amp;#39;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}).
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;success(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(data, status, headers, config) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// this callback will be called asynchronously
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// when the response is available
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    console.log(data);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}).
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;error(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(data, status, headers, config) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// called asynchronously if an error occurs
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// or server returns response with an error status.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    console.error(data);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And then data is stringify object like&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; data &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {user&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Ted&amp;#39;&lt;/span&gt;, pwd&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;12345&lt;/span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;data &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;data=&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; JSON.stringify(data);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So php is&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$data&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; json_decode(&lt;span style=&#34;color:#ff5c57&#34;&gt;$_POST&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;], &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// or
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$data&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; json_decode(&lt;span style=&#34;color:#ff5c57&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;], &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/15485354/angular-http-post-to-php-and-undefined/&#34;&gt;Refer - Angular HTTP post to PHP and undefined&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/zh-tw/library/aa287673(v=vs.71).aspx&#34;&gt;HTTP 標頭參照&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>AngularJS - do something after ng-repeat</title>
-      <link>https://blog.tedshd.io/posts/2014-05-25-angularjs-do-something-after-ng-repeat/</link>
+      <link>/posts/2014-05-25-angularjs-do-something-after-ng-repeat/</link>
       <pubDate>Sun, 25 May 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-05-25-angularjs-do-something-after-ng-repeat/</guid>
-      <description>AngularJS - do something after ng-repeat 在學習用 AngularJS 的過程中遇到個問題就是 ng-repeat 好厲害喔, code 變得好少喔 但我想再 ng-repeat 完移掉 loading view 要怎麼移啊? 用 setTimeout 跟白癡一樣, 又不知道時間要設多久 只好</description>
+      
+      <guid>/posts/2014-05-25-angularjs-do-something-after-ng-repeat/</guid>
+      <description>&lt;h2 id=&#34;angularjs---do-something-after-ng-repeat&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#angularjs---do-something-after-ng-repeat&#34;&gt;
+        #
+    &lt;/a&gt;
+    AngularJS - do something after ng-repeat
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;在學習用 AngularJS 的過程中遇到個問題就是
+ng-repeat 好厲害喔, code 變得好少喔
+但我想再 ng-repeat 完移掉 loading view 要怎麼移啊?
+用 &lt;code&gt;setTimeout&lt;/code&gt; 跟白癡一樣, 又不知道時間要設多久
+只好向 fb 求救
+沒想到有人立馬給出解決方案
+&lt;a href=&#34;http://www.nodewiz.biz/angular-js-final-callback-after-ng-repeat/&#34;&gt;原文來源 blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;由於對 AngularJS 不是了解的很透徹, 所以在此不詳加說明(原文內有說明)
+這裡只上 code&lt;/p&gt;
+&lt;h3 id=&#34;html&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#html&#34;&gt;
+        ##
+    &lt;/a&gt;
+    HTML
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;list&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;ng-app&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;testApp&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;ng-controller&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;blogger&amp;#34;&lt;/span&gt; &amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;ul&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;ng-repeat&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;list in blog&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#57c7ff&#34;&gt;on-last-repeat&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                {{list.title.$t}}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;ul&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;javascript&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript&#34;&gt;
+        ##
+    &lt;/a&gt;
+    JavaScript
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; module &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; angular.module(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;testApp&amp;#39;&lt;/span&gt;, [])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     .directive(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onLastRepeat&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(scope, element, attrs) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (scope.$last) setTimeout(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                scope.$emit(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onRepeatLast&amp;#39;&lt;/span&gt;, element, attrs);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }, &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    })
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.controller(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;blogger&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;($scope, $http, $parse) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        $scope.$on(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onRepeatLast&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(scope, element, attrs){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        alert(&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#list&amp;#39;&lt;/span&gt;).offsetHeight &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;px&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#78787e&#34;&gt;// json callback must JSON_CALLBACK
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        $http.jsonp(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;http://tysh310246.blogspot.com/feeds/posts/default?alt=json&amp;amp;callback=JSON_CALLBACK&amp;#39;&lt;/span&gt;).success(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(data) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                $scope.blog &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; data.feed.entry;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這段 code 最後 &lt;code&gt;alert&lt;/code&gt; 的高度是 &lt;code&gt;ng-repeat&lt;/code&gt; 完後 list 的高度&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>AngularJS - routing</title>
-      <link>https://blog.tedshd.io/posts/2014-05-25-angularjs-routing/</link>
+      <link>/posts/2014-05-25-angularjs-routing/</link>
       <pubDate>Sun, 25 May 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-05-25-angularjs-routing/</guid>
-      <description>AngularJS - routing 這裡不探究 AngularJS 是如何辦到的 基本上就是用 hash #, 也可用 HTML5 的 history API 這裡只有說有哪些用法 基本 sample 這寫法是 1.2.16 的寫法, 不保證以後會變(因為在舊版的 AngularJS 寫法不</description>
+      
+      <guid>/posts/2014-05-25-angularjs-routing/</guid>
+      <description>&lt;h2 id=&#34;angularjs---routing&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#angularjs---routing&#34;&gt;
+        #
+    &lt;/a&gt;
+    AngularJS - routing
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;這裡不探究 AngularJS 是如何辦到的
+基本上就是用 hash &lt;code&gt;#&lt;/code&gt;, 也可用 HTML5 的 &lt;a href=&#34;https://developer.mozilla.org/zh-TW/docs/Web/API/Window.history&#34;&gt;history API&lt;/a&gt;
+這裡只有說有哪些用法&lt;/p&gt;
+&lt;h3 id=&#34;基本-sample&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%9f%ba%e6%9c%ac-sample&#34;&gt;
+        ##
+    &lt;/a&gt;
+    基本 sample
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;這寫法是 1.2.16 的寫法, 不保證以後會變(因為在舊版的 AngularJS 寫法不一樣, 差點搞死我, &lt;strong style=&#34;color:red&#34;&gt;當升版本後以前的 code run 不出來時最好去官方看文件&lt;/strong&gt;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;load AngularJS &amp;amp; angular-route&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://angularjs.org/&#34;&gt;AngularJS&lt;/a&gt;
+&lt;a href=&#34;http://tedshd.lionfree.net/lib/angular_v1.2.16.js&#34;&gt;v1.2.16&lt;/a&gt;
+&lt;a href=&#34;https://github.com/angular/bower-angular-route&#34;&gt;angular-route&lt;/a&gt;
+&lt;a href=&#34;http://tedshd.lionfree.net/lib/angular-route.js&#34;&gt;backup&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;index.html&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;ng-app&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;route&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;title&lt;/span&gt;&amp;gt;routing&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;title&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://tedshd.lionfree.net/lib/angular_v1.2.16.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://tedshd.lionfree.net/lib/angular-route.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;h1&lt;/span&gt;&amp;gt;A-Mail&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;h1&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;ng-view&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;controllers.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;list.html&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;table&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;ng-controller&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;ListController&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;tr&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;td&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt;Sender&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;td&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;td&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt;Subject&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;td&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;td&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt;Date&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;string&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;td&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;tr&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;tr&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;ng-repeat&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;message in messages&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;td&lt;/span&gt;&amp;gt;{{message.sender}}&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;td&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;td&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#/view/{{message.id}}&amp;#39;&lt;/span&gt;&amp;gt;{{message.subject}}&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;a&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;td&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;td&lt;/span&gt;&amp;gt;{{message.date}}&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;td&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;tr&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;table&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;detail.html&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt;Subject:&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt; {{message.subject}}&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt;Sender:&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt; {{message.sender}}&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt;Date:&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt; {{message.date}}&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt;To:&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;strong&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;span&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;ng-repeat&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;recipient in message.recipients&amp;#34;&lt;/span&gt;&amp;gt;{{recipient}}&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;span&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;{{message.message}}&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;#/&amp;#34;&lt;/span&gt;&amp;gt;Back to message list&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;controller.js&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;//Create a module for our core AMail services
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; aMailServices &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; angular.module(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;route&amp;#39;&lt;/span&gt;, [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;ngRoute&amp;#39;&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;//Set up our mappings between URLs, tempaltes. and  controllers
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; emailRouteConfig($routeProvider, $locationProvider){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    $routeProvider.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    when(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;, {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        controller&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; ListController,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        templateUrl&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;list.html&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }).
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// Notice that for the detail view, we specify a parameterized URL component by placing a colon in front of the id
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    when(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;/view/:id&amp;#39;&lt;/span&gt;, {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        controller&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; DetailController,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        templateUrl&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;detail.html&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }).
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    otherwise({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        redirectTo&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// $locationProvider.html5Mode(true);
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;//Set up our route so the AMailservice can find it
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;aMailServices.config(emailRouteConfig);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;//Some take emails
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;messages &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; [{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    id&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, sender&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;jean@somecompany.com&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    subject&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Hi there, old friend&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    date&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Dec 7, 2013 12:32:00&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    recipients&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;greg@somecompany.com&amp;#39;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    message&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Hey, we should get together for lunch somet ime and catch up. There are many things we should collaborate on this year.&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;},{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    id&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, sender&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;maria@somecompany.com&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    subject &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Where did you leave my laptop?&amp;#39;&lt;/span&gt; ,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    date&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Dec 7, 2013 8:15:12&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    recipients&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;greg@somecompany.com&amp;#39;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    message&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;I thought you were going to put it in my desk drawer. But i t does not seem to be there. &amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;},{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    id&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;, sender&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;bill@somecompany.com&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    subject&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Lost python&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    date&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Dec 6, 2013 20:35:02&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    recipients&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;greg@somecompany.com&amp;#39;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    message&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Nobody panic, but my pet python is missing from her cage. She doesn&amp;#39;t move too fast, so just call me if you see her.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// Publish our messages for the list template
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; ListController($scope){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    $scope.messages &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; messages;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;//Get the message id fron the route (parsed from the URL) and use it to find the right message object.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; DetailController($scope, $routeParams){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    $scope.message &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; messages[$routeParams.id];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這裡說明一下 AngularJS 做 &lt;code&gt;$routeProvider&lt;/code&gt; 時路徑會加上 hash
+即 url 會是 &lt;code&gt;http://localhost/demo/angular/routing/#/&lt;/code&gt; or &lt;code&gt;http://localhost/demo/angular/routing/#/view/1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如果要移掉 hash 可參考
+&lt;a href=&#34;http://scotch.io/quick-tips/js/angular/pretty-urls-in-angularjs-removing-the-hashtag&#34;&gt;Pretty URLs in AngularJS: Removing the #&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;需注意的是, 移 hash 後 url 需為絕對路徑, 且該頁必須有辦法為實體 url, 否則刷新後會出現該頁面不存在的訊息&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

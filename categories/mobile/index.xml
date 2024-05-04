@@ -1,27 +1,341 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mobile on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/mobile/</link>
-    <description>Recent content in Mobile on tedshd&#39;s DevNote</description>
+    <title>Mobile on Tedshd&#39;s Dev note</title>
+    <link>/categories/mobile/</link>
+    <description>Tedshd&#39;s Dev note (Mobile)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 18 Mar 2024 23:29:26 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/mobile/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Feb 2024 11:24:18 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/mobile/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>JavaScript 確認頁面有沒有縮放</title>
-      <link>https://blog.tedshd.io/posts/detect_web_page_zoom/</link>
+      <link>/posts/detect_web_page_zoom/</link>
       <pubDate>Mon, 19 Feb 2024 11:24:18 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/detect_web_page_zoom/</guid>
-      <description>前言 不管在 mobile 還是 desktop 都有個困擾就是要處理用戶縮放頁面的問題 如果只是資料類型的頁面, 縮放的話大多都只是畫面 UI 跑版 但如果是複合功能型的頁面, 縮放的</description>
+      
+      <guid>/posts/detect_web_page_zoom/</guid>
+      <description>&lt;h2 id=&#34;前言&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%89%8d%e8%a8%80&#34;&gt;
+        #
+    &lt;/a&gt;
+    前言
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;不管在 mobile 還是 desktop 都有個困擾就是要處理用戶縮放頁面的問題&lt;/p&gt;
+&lt;p&gt;如果只是資料類型的頁面, 縮放的話大多都只是畫面 UI 跑版&lt;/p&gt;
+&lt;p&gt;但如果是複合功能型的頁面, 縮放的話大概率會讓功能壞掉&lt;/p&gt;
+&lt;p&gt;就得找一些方法處理&lt;/p&gt;
+&lt;h2 id=&#34;確認可行性&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%a2%ba%e8%aa%8d%e5%8f%af%e8%a1%8c%e6%80%a7&#34;&gt;
+        #
+    &lt;/a&gt;
+    確認可行性
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;JavaScript 有一個 api &lt;code&gt;window.devicePixelRatio&lt;/code&gt; 是顯示畫面解析度比率的&lt;/p&gt;
+&lt;p&gt;早期可以用這個是不是 1 來判斷&lt;/p&gt;
+&lt;p&gt;但是螢幕的解析度其實會影響這個值&lt;/p&gt;
+&lt;p&gt;所以這個 api 沒有辦法當作判斷的基準&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;resize&lt;/code&gt; 事件可以在頁面縮放時會觸發&lt;/p&gt;
+&lt;p&gt;搭配 &lt;code&gt;window.outerWidth/window.innerWidth&lt;/code&gt; 的值的變化可以知道有沒有縮放&lt;/p&gt;
+&lt;p&gt;但是這在 mobile device 的兩指縮放是不會觸發&lt;/p&gt;
+&lt;p&gt;所以也沒用&amp;hellip;&lt;/p&gt;
+&lt;p&gt;但是針對 mobile 兩指縮放&lt;/p&gt;
+&lt;p&gt;可以使用 &lt;code&gt;window.visualViewport&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;window.visualViewport.scale&lt;/code&gt; 可以知道現在縮放比例&lt;/p&gt;
+&lt;p&gt;如果只是要判斷有沒有所放的話&lt;/p&gt;
+&lt;p&gt;可以使用 &lt;code&gt;resize&lt;/code&gt; 事件 + mobile 判斷來拿取 &lt;code&gt;window.visualViewport.scale&lt;/code&gt; 或是 &lt;code&gt;let zoom = window.outerWidth/window.innerWidth;&lt;/code&gt; 的組合來處理&lt;/p&gt;
+&lt;p&gt;sample code&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;let&lt;/span&gt; zoom &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.outerWidth &lt;span style=&#34;color:#ff6ac1&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.innerWidth;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; isMobileDevice() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;/Mobi/i&lt;/span&gt;.test(navigator.userAgent);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; handleZoom() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (isMobileDevice()) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;visualViewport&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            zoom &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.visualViewport.scale;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            zoom &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.outerWidth &lt;span style=&#34;color:#ff6ac1&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.innerWidth;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        zoom &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.outerWidth &lt;span style=&#34;color:#ff6ac1&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.innerWidth;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    console.log(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Zoom level: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; zoom);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.addEventListener(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;resize&amp;#39;&lt;/span&gt;, handleZoom);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;handleZoom();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://www.zhangxinxu.com/wordpress/2021/02/js-if-page-zoom/&#34;&gt;refer - 如何使用JS檢測使用者是否縮放了頁面？&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Web Develop on mobile web &amp; WebView</title>
-      <link>https://blog.tedshd.io/posts/2018-09-16-web-develop-on-mobile-web/</link>
+      <link>/posts/2018-09-16-web-develop-on-mobile-web/</link>
       <pubDate>Sun, 16 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2018-09-16-web-develop-on-mobile-web/</guid>
-      <description>Web Develop on mobile web &amp;amp; WebView 因為某些原因必須把這些東西紀錄一下 其實實在太多東西要寫但實在是太忙且有點沒動力寫文章&amp;hellip; 會分成兩個 mobile OS 與 mobile browser 加上 WebView</description>
+      
+      <guid>/posts/2018-09-16-web-develop-on-mobile-web/</guid>
+      <description>&lt;h2 id=&#34;web-develop-on-mobile-web--webview&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#web-develop-on-mobile-web--webview&#34;&gt;
+        #
+    &lt;/a&gt;
+    Web Develop on mobile web &amp;amp; WebView
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;因為某些原因必須把這些東西紀錄一下&lt;/p&gt;
+&lt;p&gt;其實實在太多東西要寫但實在是太忙且有點沒動力寫文章&amp;hellip;&lt;/p&gt;
+&lt;p&gt;會分成兩個 mobile OS 與 mobile browser 加上 WebView 共 4 部分&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Android&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mobile web&lt;/li&gt;
+&lt;li&gt;WebView&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;iOS&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mobile web&lt;/li&gt;
+&lt;li&gt;WebView&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;android&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#android&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Android
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;需準備的東西&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;電腦版的 chrome browser&lt;/li&gt;
+&lt;li&gt;Android 手機(需要有 Android Chrome browser)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在 2018 年的當下這裡不想再提非 chrome browser 的開發, 因為很難 debug&lt;/p&gt;
+&lt;p&gt;以下就簡單說明一下&lt;/p&gt;
+&lt;h4 id=&#34;1-首先得把-android-手機的開發者模式打開&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#1-%e9%a6%96%e5%85%88%e5%be%97%e6%8a%8a-android-%e6%89%8b%e6%a9%9f%e7%9a%84%e9%96%8b%e7%99%bc%e8%80%85%e6%a8%a1%e5%bc%8f%e6%89%93%e9%96%8b&#34;&gt;
+        ###
+    &lt;/a&gt;
+    1. 首先得把 Android 手機的開發者模式打開
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;設定&lt;/strong&gt; -&amp;gt; &lt;strong&gt;關於手機&lt;/strong&gt; -&amp;gt; &lt;strong&gt;軟體版本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;找到&lt;strong&gt;軟體版本&lt;/strong&gt;的選項就一直點, 直到點出提示您現在已成為開發人員, 這樣就可以了&lt;/p&gt;
+&lt;p&gt;進去&lt;strong&gt;開發人員選項&lt;/strong&gt; 把 &lt;strong&gt;USB 偵錯模式&lt;/strong&gt; 打開&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2FCapture%2B_2018-10-14-22-28-13.png?alt=media&amp;amp;token=cf2e0e3c-296d-45ee-a10c-0ac00ce13864&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-連接手機到電腦&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2-%e9%80%a3%e6%8e%a5%e6%89%8b%e6%a9%9f%e5%88%b0%e9%9b%bb%e8%85%a6&#34;&gt;
+        ###
+    &lt;/a&gt;
+    2. 連接手機到電腦
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;3-允許金鑰授權&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#3-%e5%85%81%e8%a8%b1%e9%87%91%e9%91%b0%e6%8e%88%e6%ac%8a&#34;&gt;
+        ###
+    &lt;/a&gt;
+    3. 允許金鑰授權
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2FScreenshot_2018-10-11-15-36-36.png?alt=media&amp;amp;token=57443793-b3ea-464e-82c6-7568413a26f7&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4-打開電腦-chrome-browser&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#4-%e6%89%93%e9%96%8b%e9%9b%bb%e8%85%a6-chrome-browser&#34;&gt;
+        ###
+    &lt;/a&gt;
+    4. 打開電腦 chrome browser
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;5-打開-開發人員工具mac-command--option--i-pc-f12&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#5-%e6%89%93%e9%96%8b-%e9%96%8b%e7%99%bc%e4%ba%ba%e5%93%a1%e5%b7%a5%e5%85%b7mac-command--option--i-pc-f12&#34;&gt;
+        ###
+    &lt;/a&gt;
+    5. 打開 &lt;code&gt;開發人員工具&lt;/code&gt;(Mac: &lt;code&gt;Command&lt;/code&gt; + &lt;code&gt;Option&lt;/code&gt; + &lt;code&gt;i&lt;/code&gt;, PC: &lt;code&gt;F12&lt;/code&gt;)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;6-打開-remove-device&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#6-%e6%89%93%e9%96%8b-remove-device&#34;&gt;
+        ###
+    &lt;/a&gt;
+    6. 打開 &lt;code&gt;remove device&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-10%20%E4%B8%8B%E5%8D%887.19.23.png?alt=media&amp;amp;token=d85970c0-613a-4f08-9a2f-020cebf8c227&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;7-確認連接的裝置&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#7-%e7%a2%ba%e8%aa%8d%e9%80%a3%e6%8e%a5%e7%9a%84%e8%a3%9d%e7%bd%ae&#34;&gt;
+        ###
+    &lt;/a&gt;
+    7. 確認連接的裝置
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2018-10-11_%E4%B8%8B%E5%8D%884_13_29.png?alt=media&amp;amp;token=d0310aab-d4b7-4f03-b80e-cd29e3c5bc0d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;8-選擇-inspect&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#8-%e9%81%b8%e6%93%87-inspect&#34;&gt;
+        ###
+    &lt;/a&gt;
+    8. 選擇 Inspect
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-11%20%E4%B8%8B%E5%8D%884.10.12.png?alt=media&amp;amp;token=dbf559eb-a83c-4862-af71-e8b1c627cee5&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/web/tools/chrome-devtools/remote-debugging/&#34;&gt;Refer - Get Started with Remote Debugging Android Devices&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;9-開始-debug&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#9-%e9%96%8b%e5%a7%8b-debug&#34;&gt;
+        ###
+    &lt;/a&gt;
+    9. 開始 debug
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;notice&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#notice&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Notice
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;Webiew 的部分需要注意的就是必須是 Android WebView 的 debug 是打開的&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews&#34;&gt;Refer - Remote Debugging WebViews&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ios&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ios&#34;&gt;
+        ##
+    &lt;/a&gt;
+    iOS
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;需準備的東西&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mac 的 Safari browser&lt;/li&gt;
+&lt;li&gt;iPhone 手機&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;iPhone 目前只能針對 Safari debug, 其他 Browser 都沒辦法 debug&lt;/p&gt;
+&lt;h4 id=&#34;1-把-iphone-safari-的開發者模式打開&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#1-%e6%8a%8a-iphone-safari-%e7%9a%84%e9%96%8b%e7%99%bc%e8%80%85%e6%a8%a1%e5%bc%8f%e6%89%93%e9%96%8b&#34;&gt;
+        ###
+    &lt;/a&gt;
+    1. 把 iPhone Safari 的開發者模式打開
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;設定&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Safari&lt;/strong&gt; -&amp;gt; &lt;strong&gt;進階&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2FIMG_0311.PNG?alt=media&amp;amp;token=4999363b-a40a-4940-9a33-ed9bdc38864f&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;JavaScript On&lt;/p&gt;
+&lt;p&gt;網頁檢閱器 On&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2FIMG_0310.PNG?alt=media&amp;amp;token=6efccdcc-f6e3-4932-806c-07daa5a828b7&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-把-mac-safari-的開發模式打開&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2-%e6%8a%8a-mac-safari-%e7%9a%84%e9%96%8b%e7%99%bc%e6%a8%a1%e5%bc%8f%e6%89%93%e9%96%8b&#34;&gt;
+        ###
+    &lt;/a&gt;
+    2. 把 Mac Safari 的開發模式打開
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;偏好設定&lt;/strong&gt; -&amp;gt; &lt;strong&gt;進階&lt;/strong&gt; -&amp;gt; &lt;strong&gt;在選單列中顯示「開發」選單&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-11%20%E4%B8%8B%E5%8D%884.42.51.png?alt=media&amp;amp;token=55415544-998f-4bf2-b187-28572d933a8b&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3-連接手機到電腦&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#3-%e9%80%a3%e6%8e%a5%e6%89%8b%e6%a9%9f%e5%88%b0%e9%9b%bb%e8%85%a6&#34;&gt;
+        ###
+    &lt;/a&gt;
+    3. 連接手機到電腦
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;4-選擇信任這台電腦&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#4-%e9%81%b8%e6%93%87%e4%bf%a1%e4%bb%bb%e9%80%99%e5%8f%b0%e9%9b%bb%e8%85%a6&#34;&gt;
+        ###
+    &lt;/a&gt;
+    4. 選擇信任這台電腦
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;5-打開電腦-safari-browser&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#5-%e6%89%93%e9%96%8b%e9%9b%bb%e8%85%a6-safari-browser&#34;&gt;
+        ###
+    &lt;/a&gt;
+    5. 打開電腦 Safari browser
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;6-到選單列---開發-確認-iphone-已經顯示出來&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#6-%e5%88%b0%e9%81%b8%e5%96%ae%e5%88%97---%e9%96%8b%e7%99%bc-%e7%a2%ba%e8%aa%8d-iphone-%e5%b7%b2%e7%b6%93%e9%a1%af%e7%a4%ba%e5%87%ba%e4%be%86&#34;&gt;
+        ###
+    &lt;/a&gt;
+    6. 到選單列 -&amp;gt; &lt;strong&gt;開發&lt;/strong&gt; 確認 iPhone 已經顯示出來
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-11%20%E4%B8%8B%E5%8D%884.59.47.png?alt=media&amp;amp;token=1fab5a46-044a-40d7-a6a6-032135393c7f&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;7-選擇要-debug-的網址&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#7-%e9%81%b8%e6%93%87%e8%a6%81-debug-%e7%9a%84%e7%b6%b2%e5%9d%80&#34;&gt;
+        ###
+    &lt;/a&gt;
+    7. 選擇要 debug 的網址
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-11%20%E4%B8%8B%E5%8D%885.13.50.png?alt=media&amp;amp;token=45048bb1-d2a4-4cb5-923e-7ea9477021d9&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;8-開始-debug&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#8-%e9%96%8b%e5%a7%8b-debug&#34;&gt;
+        ###
+    &lt;/a&gt;
+    8. 開始 debug
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;notice-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#notice-1&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Notice
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;iOS 的 debug 只有 beta 和 Xcode building 出來的 App 會出現, 線上版不會出現&lt;/p&gt;
+&lt;p&gt;在選單中不會分出該 url 是 WebView 或 browser 的 url, 且有時頁面關掉還會在選單中存在, 所以要仔細確認&lt;/p&gt;
+&lt;h3 id=&#34;最後&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%9c%80%e5%be%8c&#34;&gt;
+        ##
+    &lt;/a&gt;
+    最後
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;還有二個在 WebView 勉強可以稍微 debug 的方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;掛 proxy&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可以看到手機上的的 Network 情況&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Xcode or Android studio log&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上述兩種方法對 WebView 所能做的 debug 有限&lt;/p&gt;
+&lt;p&gt;PPT&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://hackmd.io/_Zte5OdFT5OhhO72BoTp-A&#34;&gt;HackMD&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

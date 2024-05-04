@@ -1,20 +1,58 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MongoDB on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/mongodb/</link>
-    <description>Recent content in MongoDB on tedshd&#39;s DevNote</description>
+    <title>MongoDB on Tedshd&#39;s Dev note</title>
+    <link>/categories/mongodb/</link>
+    <description>Tedshd&#39;s Dev note (MongoDB)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>MongoDB - Note</title>
-      <link>https://blog.tedshd.io/posts/2014-04-29-mongodb-note/</link>
+      <link>/posts/2014-04-29-mongodb-note/</link>
       <pubDate>Tue, 29 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-04-29-mongodb-note/</guid>
-      <description>MongoDB - Note MongoDB&#xA;Wiki&#xA;1st. Install It support Linux, Mac OS X, Windows&#xA;Install MongoDB&#xA;2nd. Getting Started Getting Started with MongoDB&#xA;In Mac, if show message&#xA;** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000 input command&#xA;launchctl limit maxfiles 1024 1024 Refer</description>
+      
+      <guid>/posts/2014-04-29-mongodb-note/</guid>
+      <description>&lt;h2 id=&#34;mongodb---note&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mongodb---note&#34;&gt;
+        #
+    &lt;/a&gt;
+    MongoDB - Note
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.mongodb.org/&#34;&gt;MongoDB&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://zh.wikipedia.org/wiki/MongoDB&#34;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;1st-install&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#1st-install&#34;&gt;
+        ##
+    &lt;/a&gt;
+    1st. Install
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;It support Linux, Mac OS X, Windows&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://docs.mongodb.org/manual/installation/&#34;&gt;Install MongoDB&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2nd-getting-started&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2nd-getting-started&#34;&gt;
+        ##
+    &lt;/a&gt;
+    2nd. Getting Started
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://docs.mongodb.org/manual/tutorial/getting-started/&#34;&gt;Getting Started with MongoDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In Mac, if show message&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;** WARNING: soft rlimits too low. Number of files is 256, should be at least &lt;span style=&#34;color:#ff9f43&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;input command&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;launchctl limit maxfiles &lt;span style=&#34;color:#ff9f43&#34;&gt;1024&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1024&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://tech.enekochan.com/2013/12/08/warning-soft-rlimits-too-low-in-mongodb-with-mac-os-x/&#34;&gt;Refer&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

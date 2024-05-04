@@ -1,188 +1,540 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+
+
+<html lang="en-us" data-theme="">
+<head>
     
-
-
-
-
-<title>AMP - Accelerated Mobile Pages 研究筆記 | tedshd&#39;s DevNote</title>
+        
 <meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>AMP - Accelerated Mobile Pages 研究筆記 - Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="# AMP - develop log ## Intro 這是針對對 AMP 有基本概念的筆記, 基本概念請去 amp project 看就好
+知道 AMP 是啥的再來看這文章會較有用
+&ndash; 我是分隔線 &mdash;
+會被 cache 在 Google domain 下
+更新分主動 / 被動
+主動(跟 Google 說該頁面有更新)
+被動(當有任何人開啟該 AMP 頁面, Google 會在背後重新跟該頁面 AMP url 重新拉來 cache,但 15s 內不重新拉)
+## 限制 廣告問題(需第三方有支援的廣告商, amp-ad 中有支援的)
+AJAX cross domain 問題(需 server side allow)
+Cookie 讀不到
+user login 問題(需使用 AMP 的元件)
+App Indexing on Google Search &amp; AMP 衝突(Google 正在解這問題)">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta name="google" content="notranslate">
-<meta id="viewport" name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='AMP - develop log Intro 這是針對對 AMP 有基本概念的筆記, 基本概念請去 amp project 看就好 知道 AMP 是啥的再來看這文章會較有用 &ndash; 我是分隔線 &mdash; 會被 cache 在 Google domain 下 更新分主動 / 被動 主'>
-<meta name="keywords" content=''>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/2017-02-24-amp-accelerated-mobile-pages/">
-<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/2017-02-24-amp-accelerated-mobile-pages/" />
-
-<link rel="canonical" href="https://blog.tedshd.io/posts/2017-02-24-amp-accelerated-mobile-pages/" />
-<link rel="shortcut icon" href="/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
-<meta name="theme-color" content="">
-<meta name="robots" content="index, follow">
-<meta name="copyright" content="Tedshd">
-
-<meta property="og:title" content="AMP - Accelerated Mobile Pages 研究筆記" />
-<meta property="og:description" content="AMP - develop log Intro 這是針對對 AMP 有基本概念的筆記, 基本概念請去 amp project 看就好 知道 AMP 是啥的再來看這文章會較有用 &ndash; 我是分隔線 &mdash; 會被 cache 在 Google domain 下 更新分主動 / 被動 主" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2017-02-24-amp-accelerated-mobile-pages/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2017-02-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="AMP - Accelerated Mobile Pages 研究筆記"/>
-<meta name="twitter:description" content="AMP - develop log Intro 這是針對對 AMP 有基本概念的筆記, 基本概念請去 amp project 看就好 知道 AMP 是啥的再來看這文章會較有用 &ndash; 我是分隔線 &mdash; 會被 cache 在 Google domain 下 更新分主動 / 被動 主"/>
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-<script data-ad-client="ca-pub-0553186380244641" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
+
+        
+
+
+
+
+
 
 
     
+        <div class="theme-switcher">
+            <span class="inline-svg">
 
     
 
-    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
 
     
-<link>
-
-<link
-    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
-    rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
-
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
 
-    gtag('config', 'G-1NKP3D2ZGG');
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
     </script>
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
-                    tedshd&#39;s DevNote
-                </a>
-            </div>
-            
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
-                <i class="p-icon--menu"></i>
+
+
+        <ul class="social-icons noselect">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
             </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
-                <i class="p-icon--close"></i>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
             </a>
-        </div>
+        </li>
+    
 
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
 
-            <ul class="p-navigation__links" role="menu">
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/categories">Categories</a>
-                </li>
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/tags">tags</a>
-                </li>
-                
-            </ul>
+    
 
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-            
-        </nav>
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
     </div>
-</header><div id="main-content">
-<div class="page-banner">
-    <div class="row u-vertically-center">
-        <div class="col-8 pure-g">
-            <div class="pure-u">
-                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
-                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
-            </div>
-            <div class="pure-u">
-                <h2>tedshd&#39;s DevNote</h2>
-                <p>Develop &amp; Design Note by Ted</p>
-            </div>
-        </div>
+    <div class="header-top-right">
+
     </div>
 </div>
 
-<ul class="p-navigation__links sub_menu" role="menu">
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tedshd.github.io/resume/">About</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tysh310246.blogspot.tw/">Blog</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://github.com/tedshd">Github</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
-    </li>
-    
-</ul>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
 
-<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">AMP - Accelerated Mobile Pages 研究筆記</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2017-02-24">2017-02-24</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2017-02-24-amp-accelerated-mobile-pages/">/posts/2017-02-24-amp-accelerated-mobile-pages/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/amp/">Amp</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#amp---develop-log">AMP - develop log</a>
+      <ul>
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#限制">限制</a></li>
+        <li><a href="#google-如何知道有-amp-的頁面">Google 如何知道有 AMP 的頁面</a></li>
+        <li><a href="#基本-amp-結構">基本 AMP 結構</a></li>
+        <li><a href="#style">Style</a></li>
+        <li><a href="#amp-components">AMP Components</a></li>
+        <li><a href="#analytics">Analytics</a></li>
+        <li><a href="#amp-目的與目標">AMP 目的與目標</a></li>
+        <li><a href="#validate-amp">Validate AMP</a></li>
+        <li><a href="#amp--app-indexing-on-google-search">AMP &amp; App Indexing on Google Search</a></li>
+        <li><a href="#結語">結語</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
 </script>
 
-
-<header class="">
-    <div class="row">
-        <h1>AMP - Accelerated Mobile Pages 研究筆記</h1>
-    </div>
-</header>
-
-
-<section class="p-strip is-shallow">
-    <main class="row post-content">
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2017-02-24
-        </p>
-        
-        <h2 id="amp---develop-log">AMP - develop log</h2>
-<h3 id="intro">Intro</h3>
+        <div class="content e-content">
+            <h2 id="amp---develop-log" >
+<div>
+    <a href="#amp---develop-log">
+        #
+    </a>
+    AMP - develop log
+</div>
+</h2>
+<h3 id="intro" >
+<div>
+    <a href="#intro">
+        ##
+    </a>
+    Intro
+</div>
+</h3>
 <p>這是針對對 AMP 有基本概念的筆記, 基本概念請去 <a href="https://www.ampproject.org">amp project</a> 看就好</p>
 <p>知道 AMP 是啥的再來看這文章會較有用</p>
 <p>&ndash; 我是分隔線 &mdash;</p>
@@ -190,7 +542,14 @@
 <p>更新分主動 / 被動</p>
 <p>主動(跟 Google 說該頁面有更新)</p>
 <p>被動(當有任何人開啟該 AMP 頁面, Google 會在背後重新跟該頁面 AMP url 重新拉來 cache,但 15s 內不重新拉)</p>
-<h3 id="限制">限制</h3>
+<h3 id="限制" >
+<div>
+    <a href="#%e9%99%90%e5%88%b6">
+        ##
+    </a>
+    限制
+</div>
+</h3>
 <ol>
 <li>
 <p>廣告問題(需第三方有支援的廣告商, amp-ad 中有支援的)</p>
@@ -217,15 +576,29 @@
 <p><strong>使用新技術一定有風險, 技術使用有賺有賠, 使用前應詳閱文件或他人心得.</strong></p>
 <p>這裡會稍微講一下文件中沒提到的一些東西或技術背景, 但沒去挖 source code, 所以只會說明解決了啥問題, 不會涉及技術實作</p>
 <p>如有錯誤歡迎指正</p>
-<h3 id="google-如何知道有-amp-的頁面">Google 如何知道有 AMP 的頁面</h3>
+<h3 id="google-如何知道有-amp-的頁面" >
+<div>
+    <a href="#google-%e5%a6%82%e4%bd%95%e7%9f%a5%e9%81%93%e6%9c%89-amp-%e7%9a%84%e9%a0%81%e9%9d%a2">
+        ##
+    </a>
+    Google 如何知道有 AMP 的頁面
+</div>
+</h3>
 <p>使用 <code>&lt;link&gt;</code> tag</p>
 <p>在非 AMP 頁面使用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;amphtml&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/url/to/amp/document.html&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#ff6ac1">link</span> <span style="color:#57c7ff">rel</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;amphtml&#34;</span> <span style="color:#57c7ff">href</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;https://www.example.com/url/to/amp/document.html&#34;</span>&gt;
 </span></span></code></pre></div><p>在 AMP 頁面使用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;canonical&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/url/to/full/document.html&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#ff6ac1">link</span> <span style="color:#57c7ff">rel</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;canonical&#34;</span> <span style="color:#57c7ff">href</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;https://www.example.com/url/to/full/document.html&#34;</span>&gt;
 </span></span></code></pre></div><p>以下文章有說明</p>
 <p><a href="https://www.ampproject.org/docs/get_started/create/prepare_for_discovery">Prepare Your Page for Discovery and Distribution</a></p>
-<h3 id="基本-amp-結構">基本 AMP 結構</h3>
+<h3 id="基本-amp-結構" >
+<div>
+    <a href="#%e5%9f%ba%e6%9c%ac-amp-%e7%b5%90%e6%a7%8b">
+        ##
+    </a>
+    基本 AMP 結構
+</div>
+</h3>
 <pre tabindex="0"><code>&lt;!doctype html&gt;
 &lt;html amp lang=&#34;en&#34;&gt;
   &lt;head&gt;
@@ -255,7 +628,14 @@
 <p>因為 amp project 的 js 有處理 amp component, 會影響 UI 渲染, 所以會先讓畫面不可見</p>
 <p>但實際上是不會那麼慢, 因為 js 提前處理完就會顯示</p>
 <p><a href="https://www.ampproject.org/docs/tutorials/create/basic_markup">Refer - Create Your AMP HTML Page</a></p>
-<h3 id="style">Style</h3>
+<h3 id="style" >
+<div>
+    <a href="#style">
+        ##
+    </a>
+    Style
+</div>
+</h3>
 <p>使用 <code>&lt;style amp-custom&gt;</code> 來放置 style</p>
 <ul>
 <li>
@@ -267,33 +647,47 @@
 </ul>
 <p>可參考</p>
 <p><a href="https://www.ampproject.org/docs/guides/responsive/style_pages">Supported CSS – AMP</a></p>
-<h3 id="amp-components">AMP Components</h3>
+<h3 id="amp-components" >
+<div>
+    <a href="#amp-components">
+        ##
+    </a>
+    AMP Components
+</div>
+</h3>
 <p><a href="https://www.ampproject.org/docs/reference/components">Components / Tags – AMP</a></p>
-<h3 id="analytics">Analytics</h3>
+<h3 id="analytics" >
+<div>
+    <a href="#analytics">
+        ##
+    </a>
+    Analytics
+</div>
+</h3>
 <p>AMP 有自己的 GA 使用方式</p>
 <p>是以 <code>&lt;amp-analytics&gt;</code> 的 component 呈現</p>
 <p>而非使用 js 的 <code>ga()</code> 來處理</p>
 <p>不用這個用一般網頁用的 <code>ga()</code> 的話 GA 是送不出去的(這跟 Google 確認過了)</p>
 <p>基本範例</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">amp-analytics</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;googleanalytics&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;application/json&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#ff6ac1">amp-analytics</span> <span style="color:#57c7ff">type</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;googleanalytics&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#ff6ac1">script</span> <span style="color:#57c7ff">type</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;application/json&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;vars&#34;</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;account&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;UA-XXXXXX-X&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#34;vars&#34;</span><span style="color:#ff6ac1">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#5af78e">&#34;account&#34;</span><span style="color:#ff6ac1">:</span> <span style="color:#5af78e">&#34;UA-XXXXXX-X&#34;</span>
 </span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;triggers&#34;</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;trackPageview&#34;</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;on&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;visible&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;request&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;pageview&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;vars&#34;</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;?php echo htmlspecialchars($title); ?&gt;&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;documentLocation&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;?php echo $site_url; ?&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#34;triggers&#34;</span><span style="color:#ff6ac1">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#5af78e">&#34;trackPageview&#34;</span><span style="color:#ff6ac1">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#5af78e">&#34;on&#34;</span><span style="color:#ff6ac1">:</span> <span style="color:#5af78e">&#34;visible&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#5af78e">&#34;request&#34;</span><span style="color:#ff6ac1">:</span> <span style="color:#5af78e">&#34;pageview&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#5af78e">&#34;vars&#34;</span><span style="color:#ff6ac1">:</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#5af78e">&#34;title&#34;</span><span style="color:#ff6ac1">:</span> <span style="color:#5af78e">&#34;&lt;?php echo htmlspecialchars($title); ?&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#5af78e">&#34;documentLocation&#34;</span><span style="color:#ff6ac1">:</span> <span style="color:#5af78e">&#34;&lt;?php echo $site_url; ?&gt;&#34;</span>
 </span></span><span style="display:flex;"><span>            }
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">amp-analytics</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#ff6ac1">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#ff6ac1">amp-analytics</span>&gt;
 </span></span></code></pre></div><p>目前有個很大的問題就是</p>
 <p>針對 DOM 的事件每一個都需要用到對應的 <code>&lt;amp-analytics&gt;</code></p>
 <p>所以舉例來說</p>
@@ -306,18 +700,32 @@
 <p>具體可以參考以下文件</p>
 <p><a href="https://developers.google.com/analytics/devguides/collection/amp-analytics/">Adding Analytics to your AMP pages</a></p>
 <p>關於 AMP 與非 AMP 的 GA 數據可以在<code>維度</code> 中<code>使用者</code>的<code>資料來源</code> 中區分出來</p>
-<!-- raw HTML omitted -->
+<img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-28%20%E4%B8%8B%E5%8D%8812.42.10.png?alt=media&amp;token=5ac3278c-44e3-464c-b2bf-58d0fcd6b548">
 <p>可以使用自訂區隔處理會比較好看數據</p>
 <p>不建議另外用一個 ga-id 因為 ga session 會斷掉(ga id 不同, 資料的完整性不夠)</p>
 <p>但目前也有這問題(跨 AMP 到 non-AMP)</p>
 <p>所以要解決從 AMP 到 non-AMP oogle 提出以下解法</p>
 <p><a href="https://support.google.com/analytics/answer/7486764">Set up Google AMP Client ID API</a></p>
 <p><a href="https://developers.google.com/analytics/devguides/collection/amp-analytics/#amp_vs_non-amp_traffic">AMP vs non-AMP traffic</a></p>
-<h3 id="amp-目的與目標">AMP 目的與目標</h3>
+<h3 id="amp-目的與目標" >
+<div>
+    <a href="#amp-%e7%9b%ae%e7%9a%84%e8%88%87%e7%9b%ae%e6%a8%99">
+        ##
+    </a>
+    AMP 目的與目標
+</div>
+</h3>
 <p>加速 mobile page 速度(廢話</p>
 <p>那具體上 AMP 有處理哪些東西</p>
 <p>我這會列舉一些我有注意到的部分, 但實際上應該還有不少我沒注意到的, 畢竟沒有把所有的東西都試一遍</p>
-<h4 id="style-1">Style</h4>
+<h4 id="style-1" >
+<div>
+    <a href="#style-1">
+        ###
+    </a>
+    Style
+</div>
+</h4>
 <p>當然能繼續使用 <code>&lt;link&gt;</code> 去載入你的 CSS</p>
 <p>但發現在一些情境下會發生 CSS 被延後載入(這應該是跟 amp 的 js 的機制有關, 他不會先處理非同步載入的 CSS</p>
 <p>我遇到的 case 是當我加上 <code>&lt;amp-analytics&gt;</code> 後就這樣了</p>
@@ -327,11 +735,25 @@
 <p>讓它一起進入 amp 的 js 的處理</p>
 <p>但要注意的是<strong>一頁只能有一個 <code>&lt;style amp-custom&gt;</code></strong></p>
 <p><a href="https://www.ampproject.org/docs/guides/responsive_amp">Style &amp; Layout</a></p>
-<h4 id="placeholders--fallbacks">Placeholders &amp; fallbacks</h4>
+<h4 id="placeholders--fallbacks" >
+<div>
+    <a href="#placeholders--fallbacks">
+        ###
+    </a>
+    Placeholders &amp; fallbacks
+</div>
+</h4>
 <p>AMP 針對圖片有處理 Placeholders 和 fallback</p>
 <p>讓使用者輕鬆使用</p>
 <p><a href="https://www.ampproject.org/docs/guides/responsive/placeholders">Placeholders &amp; fallbacks</a></p>
-<h4 id="amp-img"><code>&lt;amp-img&gt;</code></h4>
+<h4 id="amp-img" >
+<div>
+    <a href="#amp-img">
+        ###
+    </a>
+    <code>&lt;amp-img&gt;</code>
+</div>
+</h4>
 <p>為何要用 <code>&lt;amp-img&gt;</code> 並非使用 <code>&lt;img&gt;</code> 就好</p>
 <ul>
 <li>
@@ -342,7 +764,14 @@
 </li>
 </ul>
 <p><a href="https://www.ampproject.org/docs/guides/amp_replacements">Include Images &amp; Video</a></p>
-<h4 id="amp-app-banner"><code>&lt;amp-app-banner&gt;</code></h4>
+<h4 id="amp-app-banner" >
+<div>
+    <a href="#amp-app-banner">
+        ###
+    </a>
+    <code>&lt;amp-app-banner&gt;</code>
+</div>
+</h4>
 <p>這更好用了</p>
 <p>這是針對有 app link 的服務</p>
 <p>以前有類似的像 <a href="https://branch.io/">branch.io</a></p>
@@ -351,7 +780,14 @@
 <p>Android 得自己幹</p>
 <p>但這元件就是 branch.io 這服務要做的事, 然後 AMP 幫你做了</p>
 <p>他的機制是當你有設定 app link 時他會 parse 分析出來並出 banner 來提示 user 用 APP 開或到 Google Play 或 Apple store</p>
-<h3 id="validate-amp">Validate AMP</h3>
+<h3 id="validate-amp" >
+<div>
+    <a href="#validate-amp">
+        ##
+    </a>
+    Validate AMP
+</div>
+</h3>
 <ol>
 <li>
 <p>Add <code>#development=1</code> on url and open browser develop tool console tab.</p>
@@ -366,12 +802,26 @@
 <p><a href="https://www.ampproject.org/docs/guides/validate">Validate AMP Pages</a></p>
 <p><a href="https://search.google.com/test/amp">AMP 測試 - Google Search Console</a></p>
 <p><strong>千萬要記住有任何 error 的話 Google 都不會 cacahe 成 AMP</strong></p>
-<h3 id="amp--app-indexing-on-google-search">AMP &amp; App Indexing on Google Search</h3>
+<h3 id="amp--app-indexing-on-google-search" >
+<div>
+    <a href="#amp--app-indexing-on-google-search">
+        ##
+    </a>
+    AMP &amp; App Indexing on Google Search
+</div>
+</h3>
 <p>有 AMP 出現後不會出現 App Indexing on Google Search</p>
 <p>Google 說這是 <strong>Bug</strong></p>
 <p>基本上 Google search result 是要 AMP 和 App Indexing on Google Search 都出現</p>
 <p>Google 正在修這個問題</p>
-<h3 id="結語">結語</h3>
+<h3 id="結語" >
+<div>
+    <a href="#%e7%b5%90%e8%aa%9e">
+        ##
+    </a>
+    結語
+</div>
+</h3>
 <p>就目前看到搜尋結果的情況</p>
 <p><del>隨然 Google 沒有明示, 但很明顯 AMP 的搜尋結果有都被排在前面</del></p>
 <p><del>所以整體來說對排名還是有影響的</del></p>
@@ -385,45 +835,77 @@
 <p>最後補充一下, 因為我們的服務上 AMP 對流量影響會很大所以目前還在測試上線階段也沒有全上</p>
 <p>所以一開始列舉的一些問題是我們假設上線後可能面臨的情況</p>
 
-    </main>
-</section>
+        </div>
 
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
+    </article>
+
     
-    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/2016-12-08-1183912/">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            Firebase - Firebase Cloud Message(FCM) Research Log
-        </span>
-    </a>
     
 
     
-    <a class="p-article-pagination__link--next" href="https://blog.tedshd.io/posts/2017-04-24-google-search-develop-for-seo-research-log/">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            Google search develop for SEO - research log
-        </span>
-    </a>
+        
+        
     
-</div>
-    </div>
-</footer>
 
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Tedshd
-            </p>
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
         </div>
     </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
 </footer>
 
-
-
-
+        
+    </div>
 </body>
 </html>

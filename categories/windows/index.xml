@@ -1,27 +1,216 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Windows on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/windows/</link>
-    <description>Recent content in Windows on tedshd&#39;s DevNote</description>
+    <title>Windows on Tedshd&#39;s Dev note</title>
+    <link>/categories/windows/</link>
+    <description>Tedshd&#39;s Dev note (Windows)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Thu, 27 Oct 2022 14:12:03 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Oct 2022 18:36:00 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>SSH 到 Windows Server</title>
-      <link>https://blog.tedshd.io/posts/ssh_to_windows_server/</link>
+      <link>/posts/ssh_to_windows_server/</link>
       <pubDate>Sun, 09 Oct 2022 18:36:00 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/ssh_to_windows_server/</guid>
-      <description>最近因為需求要接手 Windows Server 進行維護與開發 因為只有在很久以前幫別人處理 IIS Server 一點經驗 時間也非常久了 所以筆記一下這次的處理過程 這次處理的 server 版本是 Windows Server 2019</description>
+      
+      <guid>/posts/ssh_to_windows_server/</guid>
+      <description>&lt;p&gt;最近因為需求要接手 Windows Server 進行維護與開發&lt;/p&gt;
+&lt;p&gt;因為只有在很久以前幫別人處理 IIS Server 一點經驗&lt;/p&gt;
+&lt;p&gt;時間也非常久了&lt;/p&gt;
+&lt;p&gt;所以筆記一下這次的處理過程&lt;/p&gt;
+&lt;p&gt;這次處理的 server 版本是 Windows Server 2019&lt;/p&gt;
+&lt;h2 id=&#34;ssh-on-gcp-compute-engine&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ssh-on-gcp-compute-engine&#34;&gt;
+        #
+    &lt;/a&gt;
+    SSH on GCP Compute Engine
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;如果是建置在 Google Cloud 的 Compute Engine 上的話&lt;/p&gt;
+&lt;p&gt;就參考文件 &lt;a href=&#34;https://cloud.google.com/blog/products/compute/using-openssh-on-windows-compute-engine-instances&#34;&gt;Getting started with OpenSSH on Windows Compute Engine instances&lt;/a&gt; 就可以了&lt;/p&gt;
+&lt;h2 id=&#34;前置作業&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%89%8d%e7%bd%ae%e4%bd%9c%e6%a5%ad&#34;&gt;
+        #
+    &lt;/a&gt;
+    前置作業
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;之前似乎是採用 remote desktop 的方式&lt;/p&gt;
+&lt;p&gt;這對習慣命令列操作的人來說會有點不習慣&lt;/p&gt;
+&lt;p&gt;而且交接程式碼和檔案都放在那台機器上&lt;/p&gt;
+&lt;p&gt;所以為了之後方便操作, 首先就要安裝 OpenSSH&lt;/p&gt;
+&lt;h3 id=&#34;安裝-openssh-server&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%ae%89%e8%a3%9d-openssh-server&#34;&gt;
+        ##
+    &lt;/a&gt;
+    安裝 OpenSSH server
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;因為 SSH 會有 server 和 client 的部分&lt;/p&gt;
+&lt;p&gt;因為是需要連進去 Windows Server&lt;/p&gt;
+&lt;p&gt;所以只需要處理 OpenSSH server 的部分&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows-server/administration/openssh/openssh_install_firstuse&#34;&gt;Refer - 安裝 OpenSSH&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;開啟 設定，選取 [應用程式] &amp;gt; 應用程式 &amp;amp; 功能，然後選取 [選用功能]。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.23.05.png?alt=media&amp;amp;token=8e54e549-f3d2-414a-b122-917650205f86&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.25.09.png?alt=media&amp;amp;token=a4217abd-1cd2-424f-9762-0aade608b1c7&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.26.02.png?alt=media&amp;amp;token=b5900fc2-5b5e-4f81-a878-b9bccb97da38&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;掃描清單，查看是否已安裝 OpenSSH。 如果沒有，請在頁面頂端選取 [ 新增功能]，然後：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;尋找 OpenSSH 用戶端，然後按一下 [安裝]。&lt;/li&gt;
+&lt;li&gt;尋找 OpenSSH 伺服器，然後按一下 [安裝]。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.27.27.png?alt=media&amp;amp;token=99f88b20-c30d-49f5-9cc5-e6e2c7a2add1&#34; alt=&#34;尋找 OpenSSH 伺服器，然後按一下 [安裝]。&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;設定-ssh&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a8%ad%e5%ae%9a-ssh&#34;&gt;
+        ##
+    &lt;/a&gt;
+    設定 SSH
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;PowerShell&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PowerShell&#34; data-lang=&#34;PowerShell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;Start-Service&lt;/span&gt; sshd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PowerShell&#34; data-lang=&#34;PowerShell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;Add-WindowsCapability&lt;/span&gt; -Online -Name OpenSSH.Server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這時應該會輸出&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PowerShell&#34; data-lang=&#34;PowerShell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Path          &lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Online        &lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; True
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;RestartNeeded &lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; False
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;設定&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a8%ad%e5%ae%9a&#34;&gt;
+        ##
+    &lt;/a&gt;
+    設定
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;修改 SSH 設定&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PowerShell&#34; data-lang=&#34;PowerShell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;start-process&lt;/span&gt; notepad C:\Programdata\ssh\sshd_config
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;設定防火牆&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a8%ad%e5%ae%9a%e9%98%b2%e7%81%ab%e7%89%86&#34;&gt;
+        ##
+    &lt;/a&gt;
+    設定防火牆
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Server Manager&lt;/code&gt; -&amp;gt; &lt;code&gt;Tool&lt;/code&gt; -&amp;gt; &lt;code&gt;Windows Defender Firewall with Advanced Security&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.46.09.png?alt=media&amp;amp;token=986745f0-c9e1-4fb6-b23f-6184d23e529b&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.47.36.png?alt=media&amp;amp;token=6eef15cc-9f4c-42fd-80cf-3382fb87c218&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Inbound Rules&lt;/code&gt; -&amp;gt; &lt;code&gt;New Rule&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.49.png?alt=media&amp;amp;token=ea1cd8a7-5802-4b52-8b63-f316c8cd03cd&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.57.png?alt=media&amp;amp;token=577864f2-5d34-483a-b3c0-4adcf530649d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.14.png?alt=media&amp;amp;token=2690295a-8c34-4697-b716-a930d6dc1d2a&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.35.png?alt=media&amp;amp;token=15ebdba8-78a5-4235-b7c7-84e0fae388b7&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.vultr.com/docs/how-to-install-openssh-on-windows-server-2019-or-2022/&#34;&gt;Refer - How to Install OpenSSH on Windows Server 2019 or 2022&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ssh-連線&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ssh-%e9%80%a3%e7%b7%9a&#34;&gt;
+        #
+    &lt;/a&gt;
+    SSH 連線
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;因為目前沒有建立 ssh key 來連線的打算&lt;/p&gt;
+&lt;p&gt;這邊是還用帳號密碼來連線&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh &amp;lt;用戶名&amp;gt;@&amp;lt;IP&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之後再填入密碼來登入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;administrator@WINDOWS C:&lt;span style=&#34;color:#5af78e&#34;&gt;\U&lt;/span&gt;sers&lt;span style=&#34;color:#5af78e&#34;&gt;\A&lt;/span&gt;dministrator&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這邊需要注意的因為是連線到 Windows&lt;/p&gt;
+&lt;p&gt;所以要用的指令都得是 Dos 指令&lt;/p&gt;
+&lt;h2 id=&#34;利用-scp-把資料複製下來&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%88%a9%e7%94%a8-scp-%e6%8a%8a%e8%b3%87%e6%96%99%e8%a4%87%e8%a3%bd%e4%b8%8b%e4%be%86&#34;&gt;
+        #
+    &lt;/a&gt;
+    利用 SCP 把資料複製下來
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;這邊的例子是在 Mac scp Windows Server 到 Mac&lt;/p&gt;
+&lt;p&gt;需要注意的是在使用 SCP 時, Windows 路徑的分隔符號得調整&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;scp -r &amp;lt;用戶名&amp;gt;@&amp;lt;IP&amp;gt;:C:/&amp;lt;路徑&amp;gt;/&amp;lt;目標資料夾&amp;gt; &amp;lt;本地端資料夾&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>Windows 8.1 app develop - Introduction</title>
-      <link>https://blog.tedshd.io/posts/2014-06-23-windows-81-app-develop-introduction/</link>
+      <link>/posts/2014-06-23-windows-81-app-develop-introduction/</link>
       <pubDate>Mon, 23 Jun 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-06-23-windows-81-app-develop-introduction/</guid>
-      <description>Windows 8.1 app - Introduction Develop Win 8.1 app with JavaScript. 死心吧, 請準備一台 Windows 8.1 的電腦(一直以來我都以為生為前端攻城獅只要用 Mac 就可以打天下了) 下載 Visual Studio 2013, 要下載 Visual Studio Express 的版本 開始努</description>
+      
+      <guid>/posts/2014-06-23-windows-81-app-develop-introduction/</guid>
+      <description>&lt;h2 id=&#34;windows-81-app---introduction&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#windows-81-app---introduction&#34;&gt;
+        #
+    &lt;/a&gt;
+    Windows 8.1 app - Introduction
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Develop Win 8.1 app with JavaScript.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;死心吧, 請準備一台 Windows 8.1 的電腦(一直以來我都以為生為前端攻城獅只要用 Mac 就可以打天下了)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下載 &lt;a href=&#34;http://www.visualstudio.com/zh-tw/downloads&#34;&gt;Visual Studio 2013&lt;/a&gt;, 要下載 Visual Studio Express 的版本&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;開始努力地讀文件 &lt;del&gt;&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/windows/apps/br211385.aspx&#34;&gt;Doc&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;strong-stylecolorrednotice--tipstrong&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#strong-stylecolorrednotice--tipstrong&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;strong style=&#34;color:red&#34;&gt;Notice &amp;amp; Tip&lt;/strong&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;先了解一些限制與規範以免踩雷&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Microsoft 提供 &lt;a href=&#34;https://github.com/winjs/winjs&#34;&gt;WinJS&lt;/a&gt; 來協助開發 Windows 8.1 app&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;無法使用網路的 source&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;無法使用 remote 的 CSS or JavaScript, 必須全部 download 下來&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;無法直接使用 iframe&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;package.appxmainifest&lt;/code&gt; -&amp;gt; &lt;code&gt;內容 URI&lt;/code&gt;, 把 iframe url 設成例外, 但是該 url 必須用 https&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;x-ms-webview&lt;/code&gt; tag 來代替 &lt;code&gt;iframe&lt;/code&gt;, &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx&#34;&gt;x-ms-webview element | x-ms-webview object&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;handle-ajax&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#handle-ajax&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Handle AJAX
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;在開發 Windows 8.1 時, 並不能直接的 &lt;code&gt;XMLHttpRequest&lt;/code&gt; 處理 AJAX 行為, 需用 WinJS 來處理
+&lt;a href=&#34;http://msdn.microsoft.com/en-us/library/windows/apps/xaml/br229787.aspx&#34;&gt;WinJS.xhr function&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://software.intel.com/sites/landingpage/tw/windows8-college-10.php&#34;&gt;Refer - Windows8軟體開發小學堂(十)：使用WinJS自訂Javascript類&lt;/a&gt;
+&lt;a href=&#34;https://software.intel.com/sites/landingpage/tw/windows8-college-11.php&#34;&gt;Refer - Windows8軟體開發小學堂(十一)：使用WinJS自訂Javascript的名字空間&lt;/a&gt;
+&lt;a href=&#34;https://software.intel.com/sites/landingpage/tw/windows8-college-12.php&#34;&gt;Refer - Windows8軟體開發小學堂(十二)：使用WinJS在已有Namespace中添加新成員&lt;/a&gt;
+&lt;a href=&#34;https://software.intel.com/sites/landingpage/tw/windows8-college-13.php&#34;&gt;Refer - Windows8軟體開發小學堂(十三)：給Metro應用添加Wide Logo&lt;/a&gt;
+&lt;a href=&#34;https://software.intel.com/sites/landingpage/tw/windows8-metro-splash-screen.php&#34;&gt;Refer - Windows8軟體開發小學堂(十四) : 修改Metro應用的Splash Screen&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

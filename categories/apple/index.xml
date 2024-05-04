@@ -1,20 +1,99 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apple on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/apple/</link>
-    <description>Recent content in Apple on tedshd&#39;s DevNote</description>
+    <title>Apple on Tedshd&#39;s Dev note</title>
+    <link>/categories/apple/</link>
+    <description>Tedshd&#39;s Dev note (Apple)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/apple/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/apple/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>web - mobile web on iPhone X first preview</title>
-      <link>https://blog.tedshd.io/posts/2017-10-02-web-mobile-web-on-iphone-x-first-preview/</link>
+      <link>/posts/2017-10-02-web-mobile-web-on-iphone-x-first-preview/</link>
       <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2017-10-02-web-mobile-web-on-iphone-x-first-preview/</guid>
-      <description>web - mobile web on iPhone X first preview Intro On 2017 9/12.&#xA;Apple published iPhone X.&#xA;And this device has so special screen.&#xA;So many web &amp;amp; iOS developer worry about some case like.&#xA;(form Apple)&#xA;OMG!&#xA;It can effect app show on full screen.&#xA;So Apple has provide guideline about iPhone X.&#xA;iPhone X - Overview - iOS Human Interface Guidelines&#xA;It is great change for web &amp;amp; iOS developer.</description>
+      
+      <guid>/posts/2017-10-02-web-mobile-web-on-iphone-x-first-preview/</guid>
+      <description>&lt;h2 id=&#34;web---mobile-web-on-iphone-x-first-preview&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#web---mobile-web-on-iphone-x-first-preview&#34;&gt;
+        #
+    &lt;/a&gt;
+    web - mobile web on iPhone X first preview
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;On 2017 9/12.&lt;/p&gt;
+&lt;p&gt;Apple published iPhone X.&lt;/p&gt;
+&lt;p&gt;And this device has so special screen.&lt;/p&gt;
+&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8A%E5%8D%8811.23.11.png?alt=media&amp;amp;token=2072f272-5d9a-4d36-9552-ea68113a4afe&#34;&gt;
+&lt;p&gt;So many web &amp;amp; iOS developer worry about some case like.&lt;/p&gt;
+&lt;img src=&#34;https://www.apple.com/newsroom/videos/iphone-x-ar/posters/iPhone_X_AR_The_Machines_571x321.jpg.large.jpg&#34;&gt;
+&lt;p&gt;(form Apple)&lt;/p&gt;
+&lt;p&gt;OMG!&lt;/p&gt;
+&lt;p&gt;It can effect app show on full screen.&lt;/p&gt;
+&lt;p&gt;So Apple has provide guideline about iPhone X.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.apple.com/ios/human-interface-guidelines/overview/iphone-x/&#34;&gt;iPhone X - Overview - iOS Human Interface Guidelines&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It is great change for web &amp;amp; iOS developer.&lt;/p&gt;
+&lt;p&gt;For web developer, we need this design guideline&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://webkit.org/blog/7929/designing-websites-for-iphone-x/&#34;&gt;Designing Websites for iPhone X | WebKit&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Apple provide new CSS function handle this problem.&lt;/p&gt;
+&lt;p&gt;And it is in W3C &lt;a href=&#34;https://github.com/w3c/csswg-drafts/issues/1693#issuecomment-330909067&#34;&gt;working group&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;preview-iphone-x&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#preview-iphone-x&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Preview iPhone X
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;But we can preview iPhone X in Xcode.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Update your Xcode to Xcode 9.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open a new Project and set build iOS simulator as iPhone X.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8A%E5%8D%8811.51.49.png?alt=media&amp;amp;token=df8b38b8-add6-4a49-812b-8a65d5cc2a2a&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8A%E5%8D%8811.52.03.png?alt=media&amp;amp;token=dff6a51f-979d-415e-ad37-fff7c01fcb83&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Xcode &amp;gt; Open Developer Tool &amp;gt; iOS Simulator&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8A%E5%8D%8811.52.46.png?alt=media&amp;amp;token=a3318002-8d07-47b8-9c2b-05960bc3c356&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;we can use Safari test web now.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8B%E5%8D%8812.11.24.png?alt=media&amp;amp;token=05515073-1ba1-4b98-a1d1-be3b08587fc2&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;result&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#result&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Result
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Some case&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8B%E5%8D%8812.14.15.png?alt=media&amp;amp;token=c91ea97a-e1ac-4ee6-9b7e-ab06ad0e0d42&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8B%E5%8D%8812.13.27.png?alt=media&amp;amp;token=c43337d7-fec7-4e5a-a6d1-951b8aed1228&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8B%E5%8D%8812.14.41.png?alt=media&amp;amp;token=bf6b3221-45a6-4c14-afa1-c353e9aa485c&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-02%20%E4%B8%8B%E5%8D%8812.14.57.png?alt=media&amp;amp;token=5a6a397d-d109-4d9e-8720-2e7d72f79125&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Safari App has handle safe area &amp;amp; follow iPhone X design.&lt;/p&gt;
+&lt;p&gt;So we maybe don&amp;rsquo;t worry about this problem on Safari.&lt;/p&gt;
+&lt;p&gt;But maybe we need worry about chrome on iOS and other webview in App.&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

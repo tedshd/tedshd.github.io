@@ -1,20 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gulp JavaScript CSS on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/gulp-javascript-css/</link>
-    <description>Recent content in Gulp JavaScript CSS on tedshd&#39;s DevNote</description>
+    <title>Gulp JavaScript CSS on Tedshd&#39;s Dev note</title>
+    <link>/categories/gulp-javascript-css/</link>
+    <description>Tedshd&#39;s Dev note (Gulp JavaScript CSS)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/gulp-javascript-css/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/gulp-javascript-css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>gulp - One problem i found when i use CSS minify with some CSS library</title>
-      <link>https://blog.tedshd.io/posts/2016-08-31-gulp-one-problem-i-found-when-i-use-css-minify-with-some-css-library/</link>
+      <link>/posts/2016-08-31-gulp-one-problem-i-found-when-i-use-css-minify-with-some-css-library/</link>
       <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-08-31-gulp-one-problem-i-found-when-i-use-css-minify-with-some-css-library/</guid>
-      <description>gulp - One problem i found when i use CSS minify with some CSS library When i use pure. And i use gulp as my front-end build tool. I used cssmin as my CSS minify tool. By default it can extreme compress CSS file. The one problem happen! display not match Because use CSS minify can remove inherited CSS property. So in webkit browser doesn&amp;rsquo;t has display: -webkit-flex; and layout</description>
+      
+      <guid>/posts/2016-08-31-gulp-one-problem-i-found-when-i-use-css-minify-with-some-css-library/</guid>
+      <description>&lt;h2 id=&#34;gulp---one-problem-i-found-when-i-use-css-minify-with-some-css-library&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#gulp---one-problem-i-found-when-i-use-css-minify-with-some-css-library&#34;&gt;
+        #
+    &lt;/a&gt;
+    gulp - One problem i found when i use CSS minify with some CSS library
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;When i use &lt;a href=&#34;http://purecss.io/&#34;&gt;pure&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And i use gulp as my front-end build tool.&lt;/p&gt;
+&lt;p&gt;I used &lt;a href=&#34;https://www.npmjs.com/package/gulp-cssmin&#34;&gt;cssmin&lt;/a&gt; as my CSS minify tool.&lt;/p&gt;
+&lt;p&gt;By default it can extreme compress CSS file.&lt;/p&gt;
+&lt;p&gt;The one problem happen!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/824645/XoWnChm1TTqJGipwNfkQ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-31%20%E4%B8%8B%E5%8D%884.07.02.png&#34; alt=&#34;螢幕快照 2016-08-31 下午4.07.02.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;display&lt;/code&gt; not match&lt;/p&gt;
+&lt;p&gt;Because use CSS minify can remove inherited CSS property.&lt;/p&gt;
+&lt;p&gt;So in webkit browser doesn&amp;rsquo;t has &lt;code&gt;display: -webkit-flex;&lt;/code&gt; and layout will be an error.&lt;/p&gt;
+&lt;p&gt;But this is not a bug, it is a feature.&lt;/p&gt;
+&lt;p&gt;It can avoid inherited CSS property and it can decrease CSS file size.&lt;/p&gt;
+&lt;p&gt;But in this case, it is not good feature.&lt;/p&gt;
+&lt;p&gt;So i need add option in my gulp file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cssmin({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    aggressiveMerging&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It represent to aggressive merging of CSS properties.&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

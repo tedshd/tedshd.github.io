@@ -1,20 +1,190 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Life on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/life/</link>
-    <description>Recent content in Life on tedshd&#39;s DevNote</description>
+    <title>Life on Tedshd&#39;s Dev note</title>
+    <link>/categories/life/</link>
+    <description>Tedshd&#39;s Dev note (Life)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Sun, 08 Jan 2023 14:38:33 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Dec 2022 12:14:01 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>前端工程師工作 10 年心得</title>
-      <link>https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/</link>
+      <link>/posts/work_for_10_year_in_front_engineer/</link>
       <pubDate>Sat, 31 Dec 2022 12:14:01 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/work_for_10_year_in_front_engineer/</guid>
-      <description>前言 在 2022/12/31 的日子 剛好是跨年年假 也突然發現自己開始工作的時間已經 10 年了 沒想到已經 10 年了 XD 還記得當初只是個三流國立大學還是非本科系甚至沒讀研究所就</description>
+      
+      <guid>/posts/work_for_10_year_in_front_engineer/</guid>
+      <description>&lt;h2 id=&#34;前言&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%89%8d%e8%a8%80&#34;&gt;
+        #
+    &lt;/a&gt;
+    前言
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;在 2022/12/31 的日子&lt;/p&gt;
+&lt;p&gt;剛好是跨年年假&lt;/p&gt;
+&lt;p&gt;也突然發現自己開始工作的時間已經 10 年了&lt;/p&gt;
+&lt;p&gt;沒想到已經 10 年了 XD&lt;/p&gt;
+&lt;p&gt;還記得當初只是個三流國立大學還是非本科系甚至沒讀研究所就出來找工作的菜雞&lt;/p&gt;
+&lt;p&gt;到如今也是個工程師了?&lt;/p&gt;
+&lt;p&gt;在這工作第一個 10 年的時間也好好回憶一下當初的路徑&lt;/p&gt;
+&lt;p&gt;以便對下一個 10 年做準備&lt;/p&gt;
+&lt;h2 id=&#34;這-10-年的路徑&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%80%99-10-%e5%b9%b4%e7%9a%84%e8%b7%af%e5%be%91&#34;&gt;
+        #
+    &lt;/a&gt;
+    這 10 年的路徑
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;講真的在 2007 年到 2011 年個人覺得算是台灣網路產業繼 Kimo, PChome, yam 等入口網站崛起後開始爆發的時代, 也是手機開始朝所謂的智慧型行動裝置邁進的時代&lt;/p&gt;
+&lt;p&gt;剛好也是我還在讀大學的時候, 所以當時在學校時就常常在網路上看到這些資訊, 當時遠在美國也是矽谷開始發展起來的時候, 台灣相對較後面才開始有許多所謂的新創公司開始出現&lt;/p&gt;
+&lt;p&gt;因為以前就對資訊產業有興趣, 但是因為不會讀書, 所以就只好靠填志願分發學校&lt;/p&gt;
+&lt;p&gt;當時直接條列的順序是國立大學-&amp;gt;資訊科系-&amp;gt;機械-&amp;gt;土木&lt;/p&gt;
+&lt;p&gt;然後分數實在太爛&lt;/p&gt;
+&lt;p&gt;所以最後落在國立臺灣海洋大學的河海工程系 XD&lt;/p&gt;
+&lt;p&gt;不過雖然大學都在打電動看動畫和睡覺中度過&lt;/p&gt;
+&lt;p&gt;但還是有選修資訊相關和自己開始嘗試寫程式&lt;/p&gt;
+&lt;p&gt;最後到大三才知道原來有前端工程師的職業, 而且相對其他資訊類的工作沒有要求那麼高&lt;/p&gt;
+&lt;p&gt;而且以前就喜歡搞一些 UI 互動的東西&lt;/p&gt;
+&lt;p&gt;所以就決定了職業走向&lt;/p&gt;
+&lt;h3 id=&#34;2012--2015-miiicasa-雲永科技&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2012--2015-miiicasa-%e9%9b%b2%e6%b0%b8%e7%a7%91%e6%8a%80&#34;&gt;
+        ##
+    &lt;/a&gt;
+    2012 ~ 2015 miiiCasa 雲永科技
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;到了 2012 年替代役要退伍了就開始找工作, 還不錯的是當時也有些新創的公司可以投履歷&lt;/p&gt;
+&lt;p&gt;直到投到了一家名為 miiiCasa(雲永科技) 的公司, 在當時也算是新創公司(從 D-link 內部新創, 之後獨立出來的), 裡面的面試官(Awoo) 非常熱情&lt;/p&gt;
+&lt;p&gt;而且在面試過程中也願意反饋許多東西給我這個第一次找工作的菜鳥&lt;/p&gt;
+&lt;p&gt;當時也有拿到其他新創公司的 offer, 但感受到這間公司應該能讓我學習到許多東西&lt;/p&gt;
+&lt;p&gt;也真的是很有幸加入這家公司, 進到公司後才知道原來裡面有 5 成以上的人來自大公司(Y!, PChome, PX大通&amp;hellip;)&lt;/p&gt;
+&lt;p&gt;公司也不少人在如今業界和社群也是貢獻良多大佬, 一些研討會和社群的創辦發起人都有當時公司的人&lt;/p&gt;
+&lt;p&gt;當時網路上開始想要一些技術社群或是實體的技術研討會, 公司有些人很熱血的開始籌劃&lt;/p&gt;
+&lt;p&gt;真的在裡面學習良多, 也學到許多工作模式與方式&lt;/p&gt;
+&lt;h3 id=&#34;2015--2019-第一網站&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2015--2019-%e7%ac%ac%e4%b8%80%e7%b6%b2%e7%ab%99&#34;&gt;
+        ##
+    &lt;/a&gt;
+    2015 ~ 2019 第一網站
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;因為在 miiiCasa 後期, 許多人因為生涯規劃, 陸續離開後&lt;/p&gt;
+&lt;p&gt;我反而變成裡面最老的 F2E, 外加當時母親有輕微中風且剛恢復, 想要找找看能不能通勤時間短或是能部分在家的時間能有比較多的時間照顧母親&lt;/p&gt;
+&lt;p&gt;當時覺得也是時候要換個公司了, 也面試了一些公司(包含我當初在學校時就想去的一些公司, 具體可以看我之前寫的面試文章的&lt;a href=&#34;https://blog.tedshd.io/posts/prepare_resume/&#34;&gt;求職經歷分享&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;最後也進到一間也是當時 Y! 的人出來創業的公司&lt;/p&gt;
+&lt;p&gt;老闆和總經理都算是業界很有名的人(Kimo 創辦人和 Tsung)&lt;/p&gt;
+&lt;p&gt;裡面也是很多 Y! 出來的員工&lt;/p&gt;
+&lt;p&gt;所以裡面也學習到不少東西&lt;/p&gt;
+&lt;p&gt;因為剛進去時也是剛好是公司要成長起來的時候&lt;/p&gt;
+&lt;p&gt;所以算是在裡面處理了大多和前端有關的服務的整個重構以便於讓整個服務比較維護和開發&lt;/p&gt;
+&lt;p&gt;也因為公司發展起來, 開始增加人力&lt;/p&gt;
+&lt;p&gt;在這期間最多底下帶了三個前端工程師&lt;/p&gt;
+&lt;p&gt;也是第一次有了帶人的經驗&lt;/p&gt;
+&lt;p&gt;如何合理的分配工作與幫助團隊進步也是個難得的經驗&lt;/p&gt;
+&lt;h3 id=&#34;2019--2021-台灣雪豹科技--樂欣國際&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2019--2021-%e5%8f%b0%e7%81%a3%e9%9b%aa%e8%b1%b9%e7%a7%91%e6%8a%80--%e6%a8%82%e6%ac%a3%e5%9c%8b%e9%9a%9b&#34;&gt;
+        ##
+    &lt;/a&gt;
+    2019 ~ 2021 台灣雪豹科技 / 樂欣國際
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;台灣雪豹科技!!&lt;/p&gt;
+&lt;p&gt;當年高調來台灣的陸資&lt;/p&gt;
+&lt;p&gt;還租下台北 101 最高的辦公室(83F)&lt;/p&gt;
+&lt;p&gt;關於這間公司有很多八卦這裡就不提了&lt;/p&gt;
+&lt;p&gt;沒想到當時竟然裡面有團隊要找前端工程師(但要求要對後端熟悉)&lt;/p&gt;
+&lt;p&gt;雖然很多八卦與傳聞&lt;/p&gt;
+&lt;p&gt;但衝著是 101 最高辦公室名聲&lt;/p&gt;
+&lt;p&gt;衝就對了&lt;/p&gt;
+&lt;p&gt;也運氣很好的進去了 XD&lt;/p&gt;
+&lt;p&gt;雖然我進去的時間點不是爆發的時間點, 甚至開始走下坡了&lt;/p&gt;
+&lt;p&gt;但是我是去解成就的(台北 101 最高的辦公室)&lt;/p&gt;
+&lt;p&gt;誰管那麼多啊&lt;/p&gt;
+&lt;p&gt;這也是第一次進到一個做全球服務的公司&lt;/p&gt;
+&lt;p&gt;國際化, 使用者量級, 薪資真的不是只做台灣市場的公司能比&lt;/p&gt;
+&lt;p&gt;真的是開了眼界&lt;/p&gt;
+&lt;p&gt;跨國協作, 完整的系統架構, 充足的開發與部署流程&lt;/p&gt;
+&lt;p&gt;受益良多&lt;/p&gt;
+&lt;p&gt;也感受到陸資的狼性(雖然後面這匹狼已經不跑了 XD)&lt;/p&gt;
+&lt;h3 id=&#34;2021--2022-立應科技&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2021--2022-%e7%ab%8b%e6%87%89%e7%a7%91%e6%8a%80&#34;&gt;
+        ##
+    &lt;/a&gt;
+    2021 ~ 2022 立應科技
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;因為 2021 年到 2022 年受到疫情影響與 2021 市場的增長&lt;/p&gt;
+&lt;p&gt;市場有很多機會加上當時整個後端 team 剩下我ㄧ個人?!&lt;/p&gt;
+&lt;p&gt;真的快撐不住了&lt;/p&gt;
+&lt;p&gt;也剛好前主管來問我要不要到一間新創試試看&lt;/p&gt;
+&lt;p&gt;我就二話不說地答應了&lt;/p&gt;
+&lt;p&gt;就到現在這間公司&lt;/p&gt;
+&lt;p&gt;也是個陸資, 它的目標也是做全球市場&lt;/p&gt;
+&lt;p&gt;而且不知道是不是 A 輪拿了不少錢&lt;/p&gt;
+&lt;p&gt;薪資開的都是外商水準&lt;/p&gt;
+&lt;p&gt;公司的成員 9 成聽說都是大家互相挖來的 XD&lt;/p&gt;
+&lt;p&gt;成員組成也很可怕&lt;/p&gt;
+&lt;p&gt;台灣雪豹, 中國獵豹, 字節跳動, 豌豆莢, 百度, 小米&lt;/p&gt;
+&lt;p&gt;每個都是從巨量公司逃難(X)挖角(O) 來的&lt;/p&gt;
+&lt;p&gt;但有一點比較特別的是拿美國爸爸的錢 XD&lt;/p&gt;
+&lt;p&gt;但今年下半年也是受到全球經濟市場的的萎縮&lt;/p&gt;
+&lt;p&gt;甚至 pre-B 輪第二階段的錢都說要延後發放&amp;hellip;&lt;/p&gt;
+&lt;p&gt;整個公司都還在燒錢的狀態, Q3 甚至 layoff 1/3 左右的人&amp;hellip;&lt;/p&gt;
+&lt;p&gt;真的感受到陸資的魄力與果斷&amp;hellip;&lt;/p&gt;
+&lt;p&gt;但這間公司也算是敢給&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Q1 因為我們部門的 app 衝上 iOS 社交類第一名, 靠著這個拿到 pre-B 輪&lt;/p&gt;
+&lt;p&gt;所以整個部門的人都有拿到獎金&lt;/p&gt;
+&lt;p&gt;但陸資的狼性也是在的 XD&lt;/p&gt;
+&lt;p&gt;ASAP, 996 是基本&lt;/p&gt;
+&lt;p&gt;在新創就是拚市場與存活&lt;/p&gt;
+&lt;p&gt;成功就起來大家爽爽賺&lt;/p&gt;
+&lt;p&gt;不成功就會倒下各自回家 XD&lt;/p&gt;
+&lt;h2 id=&#34;總結一下&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b8%bd%e7%b5%90%e4%b8%80%e4%b8%8b&#34;&gt;
+        #
+    &lt;/a&gt;
+    總結一下
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;不要讓自己成為公司的天花板, 要也要有很多人一起成為天花板, 不然就會受限在那邊(這對工程師是致命問題)&lt;/li&gt;
+&lt;li&gt;人脈很重要, 好好做事好好幹, 讓人留下好印象, 自然有好缺就會來找你&lt;/li&gt;
+&lt;li&gt;服務做得大(全球市場), 薪水才能領的高(因為公司獲利高), 先不要只抱怨公司不加薪, 請思考為什麼公司不加薪和為什麼公司不想給你加薪&lt;/li&gt;
+&lt;li&gt;不爽可以不要幹, 外面還是有很多機會的, 只是你看不看的上和你進不進的去&lt;/li&gt;
+&lt;li&gt;學什麼程式語言都不重要, 學英文最重要&amp;hellip;&lt;/li&gt;
+&lt;li&gt;像我這種外語不行的進不去一般外商可以選擇陸資(如果敢拚和不在意政治問題的話, 以我的經驗, 大家都會避免談論這問題, 畢竟左岸有強大的防火牆在 XD)&lt;/li&gt;
+&lt;li&gt;陸資真的大多時候是 996 ~ 007 但是目前待的兩間陸資都是敢給(pay 可以談很好, 獎金也不錯)但績效不好或是公司運營狀況不佳也是敢果斷裁人的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;自己認爲自己是個幸運的人&lt;/p&gt;
+&lt;p&gt;在工作上遇到許多貴人&lt;/p&gt;
+&lt;p&gt;才能讓我持續地走下去&lt;/p&gt;
+&lt;p&gt;在這工作的 10 年間&lt;/p&gt;
+&lt;p&gt;會發現在網路的資訊業這領域進步很快&lt;/p&gt;
+&lt;p&gt;基本上每年都有新東西要學&lt;/p&gt;
+&lt;p&gt;說實在話這是個累人的工作&lt;/p&gt;
+&lt;p&gt;講不好聽的&lt;/p&gt;
+&lt;p&gt;基本上如果是為了賺更多的錢和能夠在之後找到更好的工作&lt;/p&gt;
+&lt;p&gt;幾乎都在無時無刻的學習新東西, 了解基本原理, 儘量加強基本基礎&lt;/p&gt;
+&lt;p&gt;不然不考慮未來的話就是在一間穩定的公司內躺平就好, 但未來也不好找工作, 薪資也無法有什麼突破&lt;/p&gt;
+&lt;p&gt;這幾年隨著工作量越來越重與一些可能的無形壓力?&lt;/p&gt;
+&lt;p&gt;打電動的時間變少, 想做的事情也很多&lt;/p&gt;
+&lt;p&gt;身體也快不行了&lt;/p&gt;
+&lt;p&gt;大家都說要 Work Life balance&lt;/p&gt;
+&lt;p&gt;但我自己對慾望的追求和低下的能力讓我很難做到這樣的事&lt;/p&gt;
+&lt;p&gt;這也是未來希望能夠優化和改善的地方&amp;hellip;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

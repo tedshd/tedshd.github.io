@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>MySQL export import 紀錄 - Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="# Intro 紀錄一下 MySQL 匯出與匯入資料的一些情況
+# 匯出 mysqldump --column-statistics=0 -u &lt;user&gt; -h &lt;host&gt; -P 3306 -p &lt;database&gt; &gt; output_file.sql --column-statistics=0 忽略掉一些匯出時的一些資訊, 節省容量
+匯出資料庫中個別的 table
+mysqldump --column-statistics=0 -u &lt;user&gt; -h &lt;host&gt; -P 3306 -p &lt;database&gt; &lt;table&gt; &gt; output_file.sql # 匯入 mysql -u &lt;user&gt; -h &lt;host&gt; -P 3306 -p &lt;database&gt; &lt; ./file.sql 如果要忽略一些錯誤並強制執行可以添加 -f
+mysql -f -u &lt;user&gt; -h &lt;host&gt; -P 3306 -p &lt;database&gt; &lt; ./file.sql # troubleshooting # 如果遇到有 table 的欄位是使用 binary 的形式像是 point 匯出時在匯入會出現格式錯誤 如果欄位中有以 point 的型態儲存經緯度數據">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta name="google" content="notranslate">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
+
+        
+
+
+
+
+
+
+
+    
+        <div class="theme-switcher">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
+    <script>
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
+
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
+    </script>
+
+
+        <ul class="social-icons noselect">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
+    </div>
+    <div class="header-top-right">
+
+    </div>
+</div>
+
+
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
+
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">MySQL export import 紀錄</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2024-05-05">2024-05-05</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/mysql_export_import/">/posts/mysql_export_import/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#匯出">匯出</a></li>
+    <li><a href="#匯入">匯入</a></li>
+    <li><a href="#troubleshooting">troubleshooting</a></li>
+    <li><a href="#如果遇到有-table-的欄位是使用-binary-的形式像是-point-匯出時在匯入會出現格式錯誤">如果遇到有 table 的欄位是使用 binary 的形式像是 point 匯出時在匯入會出現格式錯誤</a></li>
+    <li><a href="#如果遇到匯入時的權限而且無法改變要匯入的-mysql-的使用者的權限時">如果遇到匯入時的權限而且無法改變要匯入的 mysql 的使用者的權限時</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
+<script>
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
+</script>
+
+        <div class="content e-content">
+            <h2 id="intro" >
+<div>
+    <a href="#intro">
+        #
+    </a>
+    Intro
+</div>
+</h2>
+<p>紀錄一下 MySQL 匯出與匯入資料的一些情況</p>
+<h2 id="匯出" >
+<div>
+    <a href="#%e5%8c%af%e5%87%ba">
+        #
+    </a>
+    匯出
+</div>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysqldump --column-statistics<span style="color:#ff6ac1">=</span><span style="color:#ff9f43">0</span> -u &lt;user&gt; -h &lt;host&gt; -P <span style="color:#ff9f43">3306</span> -p &lt;database&gt; &gt; output_file.sql
+</span></span></code></pre></div><p><code>--column-statistics=0</code> 忽略掉一些匯出時的一些資訊, 節省容量</p>
+<p>匯出資料庫中個別的 table</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysqldump --column-statistics<span style="color:#ff6ac1">=</span><span style="color:#ff9f43">0</span> -u &lt;user&gt; -h &lt;host&gt; -P <span style="color:#ff9f43">3306</span> -p &lt;database&gt; &lt;table&gt; &gt; output_file.sql
+</span></span></code></pre></div><h2 id="匯入" >
+<div>
+    <a href="#%e5%8c%af%e5%85%a5">
+        #
+    </a>
+    匯入
+</div>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> mysql -u &lt;user&gt; -h &lt;host&gt; -P <span style="color:#ff9f43">3306</span> -p &lt;database&gt; &lt; ./file.sql
+</span></span></code></pre></div><p>如果要忽略一些錯誤並強制執行可以添加 <code>-f</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> mysql -f -u &lt;user&gt; -h &lt;host&gt; -P <span style="color:#ff9f43">3306</span> -p &lt;database&gt; &lt; ./file.sql
+</span></span></code></pre></div><h2 id="troubleshooting" >
+<div>
+    <a href="#troubleshooting">
+        #
+    </a>
+    troubleshooting
+</div>
+</h2>
+<h2 id="如果遇到有-table-的欄位是使用-binary-的形式像是-point-匯出時在匯入會出現格式錯誤" >
+<div>
+    <a href="#%e5%a6%82%e6%9e%9c%e9%81%87%e5%88%b0%e6%9c%89-table-%e7%9a%84%e6%ac%84%e4%bd%8d%e6%98%af%e4%bd%bf%e7%94%a8-binary-%e7%9a%84%e5%bd%a2%e5%bc%8f%e5%83%8f%e6%98%af-point-%e5%8c%af%e5%87%ba%e6%99%82%e5%9c%a8%e5%8c%af%e5%85%a5%e6%9c%83%e5%87%ba%e7%8f%be%e6%a0%bc%e5%bc%8f%e9%8c%af%e8%aa%a4">
+        #
+    </a>
+    如果遇到有 table 的欄位是使用 binary 的形式像是 point 匯出時在匯入會出現格式錯誤
+</div>
+</h2>
+<p>如果欄位中有以 <code>point</code> 的型態儲存經緯度數據</p>
+<p>有可能會出現這個問題 <code>ERROR 1416 (22003): Cannot get geometry object from data you send to the GEOMETRY field</code></p>
+<p>這時候就需要添加 <code>--hex-blob</code> 參數</p>
+<p><a href="https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_hex-blob">mysqldump — A Database Backup Program</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysqldump --column-statistics<span style="color:#ff6ac1">=</span><span style="color:#ff9f43">0</span> --hex-blob -u &lt;user&gt; -h &lt;host&gt; -P <span style="color:#ff9f43">3306</span> -p &lt;database&gt; &gt; file.sql
+</span></span></code></pre></div><h2 id="如果遇到匯入時的權限而且無法改變要匯入的-mysql-的使用者的權限時" >
+<div>
+    <a href="#%e5%a6%82%e6%9e%9c%e9%81%87%e5%88%b0%e5%8c%af%e5%85%a5%e6%99%82%e7%9a%84%e6%ac%8a%e9%99%90%e8%80%8c%e4%b8%94%e7%84%a1%e6%b3%95%e6%94%b9%e8%ae%8a%e8%a6%81%e5%8c%af%e5%85%a5%e7%9a%84-mysql-%e7%9a%84%e4%bd%bf%e7%94%a8%e8%80%85%e7%9a%84%e6%ac%8a%e9%99%90%e6%99%82">
+        #
+    </a>
+    如果遇到匯入時的權限而且無法改變要匯入的 mysql 的使用者的權限時
+</div>
+</h2>
+<p>出現像是 <code>Access denied; you need (at least one of) the SUPER or SYSTEM_VARIABLES_ADMIN privilege(s) for this operation</code> 的錯誤</p>
+<p>而且你使用的 user 是無法透過</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff6ac1">GRANT</span> SUPER <span style="color:#ff6ac1">ON</span> <span style="color:#ff6ac1">*</span>.<span style="color:#ff6ac1">*</span> <span style="color:#ff6ac1">TO</span> <span style="color:#5af78e">&#39;your_username&#39;</span><span style="color:#ff6ac1">@</span><span style="color:#5af78e">&#39;localhost&#39;</span>;
+</span></span><span style="display:flex;"><span>FLUSH <span style="color:#ff6ac1">PRIVILEGES</span>;
+</span></span></code></pre></div><p>等指令改權限</p>
+<p>可以移除掉 .sql 中部分的內容來略過</p>
+<p><code>SET @@SESSION.SQL_LOG_BIN= 0;</code></p>
+<p><code>SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '';</code></p>
+<p><code>SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;</code></p>
+<p><a href="https://stackoverflow.com/a/59454713">Access denied; you need (at least one of) the SUPER privilege(s) for this operation</a></p>
+
+        </div>
+
+    </article>
+
+    
+    
+
+    
+        
+        
+    
+
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
+</footer>
+
+        
+    </div>
+</body>
+</html>

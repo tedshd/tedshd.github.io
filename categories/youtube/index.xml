@@ -1,41 +1,726 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>YouTube on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/youtube/</link>
-    <description>Recent content in YouTube on tedshd&#39;s DevNote</description>
+    <title>YouTube on Tedshd&#39;s Dev note</title>
+    <link>/categories/youtube/</link>
+    <description>Tedshd&#39;s Dev note (YouTube)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 03 Aug 2022 01:18:50 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/youtube/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Aug 2022 13:04:37 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/youtube/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>2022 年使用 YouTube player sdk</title>
-      <link>https://blog.tedshd.io/posts/use_youtube_player_sdk_in_2022/</link>
+      <link>/posts/use_youtube_player_sdk_in_2022/</link>
       <pubDate>Tue, 02 Aug 2022 13:04:37 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/use_youtube_player_sdk_in_2022/</guid>
-      <description>前言 距離上次使用 YouTube Player API 已經是 2014 年的事了 不知不覺也過了超久了 剛好最近公司有相關的需求需要在 App 中能夠播放 YouTube 的影片 原本想說 App 應該和我沒關係了 所以這</description>
+      
+      <guid>/posts/use_youtube_player_sdk_in_2022/</guid>
+      <description>&lt;h2 id=&#34;前言&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%89%8d%e8%a8%80&#34;&gt;
+        #
+    &lt;/a&gt;
+    前言
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;距離上次使用 YouTube Player API 已經是 2014 年的事了&lt;/p&gt;
+&lt;p&gt;不知不覺也過了超久了&lt;/p&gt;
+&lt;p&gt;剛好最近公司有相關的需求需要在 App 中能夠播放 YouTube 的影片&lt;/p&gt;
+&lt;p&gt;原本想說 App 應該和我沒關係了&lt;/p&gt;
+&lt;p&gt;所以這次準備躺平(誤&lt;/p&gt;
+&lt;p&gt;結果還是被牽扯進來了&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;2022-年當前如何使用-youtube-player-sdk&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2022-%e5%b9%b4%e7%95%b6%e5%89%8d%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8-youtube-player-sdk&#34;&gt;
+        #
+    &lt;/a&gt;
+    2022 年當前如何使用 YouTube player SDK
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;沒想到不看還好, 一看就準備 GG&lt;/p&gt;
+&lt;p&gt;一開始把文件丟給 Android 和 iOS&lt;/p&gt;
+&lt;p&gt;Android 那邊說無法用&lt;/p&gt;
+&lt;p&gt;我當下????&lt;/p&gt;
+&lt;p&gt;文件都寫得好好的, 為何說無法用&lt;/p&gt;
+&lt;p&gt;和 Android 一起討論了一下, 才確認了一件事&lt;/p&gt;
+&lt;p&gt;原來 Android 為了統一 libary, 在 2018 年開始推行 Androidx 要取代 android.support&lt;/p&gt;
+&lt;p&gt;最大的改變是 namespace 的變動, 雖然官方有&lt;a href=&#34;https://developer.android.com/studio/command-line/jetifier&#34;&gt;工具&lt;/a&gt;可以對第三方 lib 做轉換, 但也會是一個大換血, 而且對比較老舊的套件還會需要處理 activity 和 fragment 的處理, 因為現今大多的 Android 都以 fragment 實作 UI 了&lt;/p&gt;
+&lt;p&gt;所以 Android 開發表示兩手一攤&lt;/p&gt;
+&lt;p&gt;所以只能接下來用 iframe player 處理了&lt;/p&gt;
+&lt;p&gt;之後我這邊又再次和 iOS 確認了一下&lt;/p&gt;
+&lt;p&gt;因為依照&lt;a href=&#34;https://developers.google.com/youtube/v3/guides/ios_youtube_helper#best-practices-and-limitations&#34;&gt;文件&lt;/a&gt;說明 iOS 的 player 底層還是用 webview 封裝起來的, 所以應該沒問題才對&lt;/p&gt;
+&lt;p&gt;然後 iOS 很高興的表示, 既然 Android 都要用 webview 搞了, 那 iOS 也一起用吧&lt;/p&gt;
+&lt;p&gt;真的是很感謝 client 端幫我創造工作機會&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;到了-2022-api-發生了許多變動&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%88%b0%e4%ba%86-2022-api-%e7%99%bc%e7%94%9f%e4%ba%86%e8%a8%b1%e5%a4%9a%e8%ae%8a%e5%8b%95&#34;&gt;
+        #
+    &lt;/a&gt;
+    到了 2022 API 發生了許多變動
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;因為當年的 prototype code 還留著, 所以秒完成&lt;/p&gt;
+&lt;p&gt;但還是要看一下文件看看有什麼變動&lt;/p&gt;
+&lt;p&gt;一看下去才發現真的變動一卡車東西&lt;/p&gt;
+&lt;p&gt;也讚嘆 Google 真的是很認真在維護與更新文件&lt;/p&gt;
+&lt;p&gt;都有變動紀錄&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/youtube/player_parameters#Revision_History&#34;&gt;參數部分可以看這裡&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/youtube/iframe_api_reference#Revision_History&#34;&gt;播放器的 API 變動可以看這裡&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;主要是這幾年也因為在瀏覽器上因應對 video 的支援做蠻多播放邏輯的變動&lt;/p&gt;
+&lt;p&gt;部分是因為 YouTube 的服務策略做變動&lt;/p&gt;
+&lt;p&gt;以前 YouTube player 可以魔改到 YouTube 自己都認不出來(可以關掉超多顯示資訊, 完全客製化控制項)&lt;/p&gt;
+&lt;p&gt;現在已經無法了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;像是左上的影片標題, 右上的選單功能, 右下的 YouTube logo 現在都無法隱藏了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;還好現在播放一段時間後會自動隱藏這些資訊&lt;/p&gt;
+&lt;h2 id=&#34;串接-webview-特有的問題&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%b8%b2%e6%8e%a5-webview-%e7%89%b9%e6%9c%89%e7%9a%84%e5%95%8f%e9%a1%8c&#34;&gt;
+        #
+    &lt;/a&gt;
+    串接 webview 特有的問題
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;有些問題是在 webview 上特有的問題&lt;/p&gt;
+&lt;p&gt;幾乎都是 Android 的問題&lt;/p&gt;
+&lt;p&gt;就 Android 的問題最多 XD&lt;/p&gt;
+&lt;p&gt;這裡記錄一下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;處理自動播放的問題&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;礙於瀏覽器政策, 得是靜音才能自動播放, 或是要有使用者互動才能自動播放&lt;/p&gt;
+&lt;p&gt;我們採用的方式, 是靜音自動播放, 也避免使用者一開始被影片聲音嚇到&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Android 的播放器會因為滑動行為被判定長壓啟動選單&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因為會是個 feed 列表呈現影片, 滑動到畫面內就會播放畫面中的影片&lt;/p&gt;
+&lt;p&gt;所以有遇到個問題是頁面在滑動時手指停留在播放器中會誤判長壓造成啟動播放器選單&lt;/p&gt;
+&lt;p&gt;解決方式還是老樣子在 webview 的 player 上面蓋一層透明遮罩, 自己客製控制 UI&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;在 Android 當影片在播放時使用 Youtube SDK API 取消靜音會有無法播放影片問題&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這問題追了一下, 確認和 iframe player api 還有 JS 無關後, 就換個思路想會不會是 webview 有啥限制(因為在 browser 都正常)&lt;/p&gt;
+&lt;p&gt;下了幾個關鍵字丟給 Google 後查到 webview 有個 &lt;code&gt;setMediaPlaybackRequiresUserGesture&lt;/code&gt; 的設定&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Java&#34; data-lang=&#34;Java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;webView.&lt;span style=&#34;color:#57c7ff&#34;&gt;getSettings&lt;/span&gt;().&lt;span style=&#34;color:#57c7ff&#34;&gt;setMediaPlaybackRequiresUserGesture&lt;/span&gt;(&lt;span style=&#34;color:#ff6ac1&#34;&gt;false&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;設定成 false 的意思是在 webview 不用有任何互動就可以自動播放&lt;/p&gt;
+&lt;p&gt;想說會不會有關聯, 所以請 Android 開發那邊設定&lt;/p&gt;
+&lt;p&gt;結果就解決這問題了&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/38975229/auto-play-video-in-webview&#34;&gt;Refer - Auto play video in webview&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;全螢幕的功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;iOS 的全螢幕會給系統的播放器&lt;/p&gt;
+&lt;p&gt;Android 的全螢幕功能會受限於 webview 的大小&lt;/p&gt;
+&lt;p&gt;所以這部分的差別也得注意&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>SEO - 增強 Youtube video SEO</title>
-      <link>https://blog.tedshd.io/posts/2019-12-23-seo-enhanced-youtube-video-seo/</link>
+      <link>/posts/2019-12-23-seo-enhanced-youtube-video-seo/</link>
       <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2019-12-23-seo-enhanced-youtube-video-seo/</guid>
-      <description>Intro 最近因為公司的需求開始研究這潭深水 剛好看到一篇文章介紹的還不錯 雖然已經是 2016 的文章 但它寫的一些觀點我覺得現在還是適用 雖然這文章有在業配服務 XD</description>
+      
+      <guid>/posts/2019-12-23-seo-enhanced-youtube-video-seo/</guid>
+      <description>&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;最近因為公司的需求開始研究這潭深水&lt;/p&gt;
+&lt;p&gt;剛好看到一篇文章介紹的還不錯&lt;/p&gt;
+&lt;p&gt;雖然已經是 2016 的文章&lt;/p&gt;
+&lt;p&gt;但它寫的一些觀點我覺得現在還是適用&lt;/p&gt;
+&lt;p&gt;雖然這文章有在業配服務 XD&lt;/p&gt;
+&lt;p&gt;稍微整理記錄一下&lt;/p&gt;
+&lt;p&gt;英文的片段都是原文&lt;/p&gt;
+&lt;p&gt;中文會是我的總結&lt;/p&gt;
+&lt;p&gt;就當作一個紀錄吧&lt;/p&gt;
+&lt;h3 id=&#34;video-information&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#video-information&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Video Information
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;video-content&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#video-content&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Video Content
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;以解決需求為優先&lt;/li&gt;
+&lt;li&gt;產品介紹&lt;/li&gt;
+&lt;li&gt;教程&lt;/li&gt;
+&lt;li&gt;知識分享&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;video-length&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#video-length&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Video Length
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;While aggregated clicks are still counted, the amount of engagement on your videos play a huge role like the likes, dislikes, comments, watch time, shares, views on other sites, engagement on other sites. This required YouTubers to create better videos with more engaging content in order to rank higher.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;點擊&lt;/li&gt;
+&lt;li&gt;like&lt;/li&gt;
+&lt;li&gt;dislike&lt;/li&gt;
+&lt;li&gt;評論&lt;/li&gt;
+&lt;li&gt;觀看時間&lt;/li&gt;
+&lt;li&gt;分享到其他地方(影片的擴散)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Make your videos at least at least 2 minutes in length; it’ll be really good if it’s 10 but don’t compromise the quality for Watch Time. If your viewers are engaged in your video for a longer duration, your videos will rank better. But if you’re just stretching your videos for this, you won’t be able to keep a user on your video and they won’t rank well.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最少兩分鐘&lt;/li&gt;
+&lt;li&gt;十分鐘非常好&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;video-name&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#video-name&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Video Name
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Select finished video file that you will upload. &lt;strong&gt;Rename the file Video Title&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;And then right click on the file and select “Get Info/Properties”.&lt;/li&gt;
+&lt;li&gt;Then go to “Details”.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add some tags&lt;/strong&gt; related to the content.&lt;/li&gt;
+&lt;li&gt;Under “Title” or “Name &amp;amp; Extension”, &lt;strong&gt;name the file&lt;/strong&gt; which includes your top 2 keywords.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Write a short description&lt;/strong&gt; of your video in “Comments”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;先編輯好影片檔案 meta 在上傳&lt;/p&gt;
+&lt;h4 id=&#34;description&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#description&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Description
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Make it at least 200 words.&lt;/li&gt;
+&lt;li&gt;Use synonyms for your keywords.&lt;/li&gt;
+&lt;li&gt;Don’t stuff keywords or you won’t rank.&lt;/li&gt;
+&lt;li&gt;Write a different description for each video. Or it’ll go down as duplicated content.&lt;/li&gt;
+&lt;li&gt;Write out the video transcript using some software.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;make-playlists&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#make-playlists&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Make Playlists
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;customise-thumbnails&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#customise-thumbnails&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Customise Thumbnails
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;take-advantage-of-social-media&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#take-advantage-of-social-media&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Take advantage of Social Media
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;Search engine optimisation (SEO) has 3 facets:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On-page SEO– As in how your website is structured, image tags, keyword density, tags, etc.&lt;/li&gt;
+&lt;li&gt;Off-page SEO– Other domains that link back to your website.&lt;/li&gt;
+&lt;li&gt;Relevance– As in how many people found it helpful. This is measured by Social media engagement, like how many people liked it, shared it, etc. Make this process easier by syncing your YouTube account with your social media accounts, and post your videos on your profile and relevant pages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;make-your-channel-page-pretty&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#make-your-channel-page-pretty&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Make Your Channel Page Pretty
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;YouTube sees a channel without a profile picture, header, description and links as spam. It is an additional ranking hack, adds a pop to your channel, and can show what your videos are about.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add links to all your social media accounts.&lt;/li&gt;
+&lt;li&gt;Add a nice and relevant channel image and banner.&lt;/li&gt;
+&lt;li&gt;Write a long description in the about section (include synonym keywords).&lt;/li&gt;
+&lt;li&gt;Subscribe to similar channels.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;share-links&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#share-links&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Share Links
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;For beginners trying to understand SEO, stick with low competition/long tail keywords.&lt;/p&gt;
+&lt;p&gt;The hacks laid out above will rank any low competitive or long tail keyword. If you want to rank your video for added competitive terms you have to embed the HTML on other sites and build links to your video.&lt;/p&gt;
+&lt;p&gt;But make a few high-quality links steadily instead of spamming all at once. You can use link sources such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Private blog networks (PBN)&lt;/li&gt;
+&lt;li&gt;Other blogging sites like WordPress, Blogger, Tumblr&lt;/li&gt;
+&lt;li&gt;Social bookmarks&lt;/li&gt;
+&lt;li&gt;Guest posts&lt;/li&gt;
+&lt;li&gt;Your own site&lt;/li&gt;
+&lt;li&gt;Comment links on relevant places&lt;/li&gt;
+&lt;li&gt;Pinterest pins&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;利用其他 social mdeia 或管道增強曝光&lt;/p&gt;
+&lt;h3 id=&#34;tags&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#tags&#34;&gt;
+        ##
+    &lt;/a&gt;
+    TAGS
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Tags aren’t the most important, but they help a lot. They help YouTube and Google learn what your video is about. Targeted tags not only help you rank for your target keyword but get you to you show up more often as a related video in the sidebar area of YouTube. &lt;strong&gt;When someone’s watching a video with a similar tag as your video then you’re added to the sidebar.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下 tag 會幫助你顯示在其他相似 tag 的 video 旁邊的側邊欄&lt;/p&gt;
+&lt;h4 id=&#34;types-of-tags&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#types-of-tags&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Types of Tags:
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;Tags are another important way to get ranking in youtube search, here are few tips to put tags in your video-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;List Specific Tags first&lt;/strong&gt;: These are one-word keywords that represent the topic at hand. If YouTube gives you pre-filled suggestions that are essentially what you want, then use those, but also use the same words in a generic way.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;List Generic Tags&lt;/strong&gt;: These are words like how-to, tutorial, and vlog. YouTube offers suggestions, so use them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Also, Long-Tail Tags&lt;/strong&gt;: These are multiple-word tags. You can just copy the title and use it as a tag, leaving out conjunctions and prepositions (such as “of,” “in,” “and,” etc.), because YouTube ignores these words.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Don’t miss the Misspellings&lt;/strong&gt;: Derral misspells words on purpose because people search for these words. For eg. Some tags like these: “Ellen Show” and also “elen show” , “ellen degeneres” and “ellen degenrous”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;先是重要的特殊專門的 tag&lt;/p&gt;
+&lt;p&gt;再來是一般的 tag&lt;/p&gt;
+&lt;p&gt;再來是長尾的 tag&lt;/p&gt;
+&lt;p&gt;最後加上一些容易拼錯的 tag&lt;/p&gt;
+&lt;h4 id=&#34;more-dos-and-donts&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#more-dos-and-donts&#34;&gt;
+        ###
+    &lt;/a&gt;
+    More Dos and Dont’s:
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;You can only use 500 characters in your tags.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Don’t use misleading tags as this process will end up working against you in the search algorithm.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;YouTube uses the meta information to do a quick assessment of your video, then it ignores your meta data. However, when the meta data is updated, it can help you in search after a few weeks when YouTube inventories the data again.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you use repetitive keywords across all your videos, they will have a higher likelihood of referring to each other in the suggested videos column on the right of the page. Setting default tags from settings can make that process easier.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最後也附上原文&lt;/p&gt;
+&lt;p&gt;有興趣也可以去看一下&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vidooly.com/blog/youtube-video-seo-google-search/&#34;&gt;Refer - How To Rank Your YouTube Video On The First Page Of Google Search Results&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vidooly.com/blog/youtube-tags-optimize-search-results/&#34;&gt;Refer - How To Use YouTube Tags To Rank Higher In Search Results&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;補充&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a3%9c%e5%85%85&#34;&gt;
+        ##
+    &lt;/a&gt;
+    補充
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;call-to-action&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#call-to-action&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Call-To-Action
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;在影片中添加外部連結&lt;/p&gt;
+&lt;p&gt;已引導使用者去社群或者是產品連結等等&lt;/p&gt;
+&lt;p&gt;或者是引導到下一步或相關影片&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.hubspot.com/marketing/youtube-ctas&#34;&gt;8 Types of CTAs you Should Be Using in Your YouTube Channel&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;tools&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#tools&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Tools
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;Tube Buddy or vidIQ&lt;/p&gt;
+&lt;p&gt;玩了一下&lt;/p&gt;
+&lt;p&gt;Tube Buddy 個人蠻喜歡的&lt;/p&gt;
+&lt;p&gt;它有個不錯的功能是會給建議的 tags&lt;/p&gt;
+&lt;p&gt;但是它應該是從 title 找出相關的 tag&lt;/p&gt;
+&lt;p&gt;測了一下還蠻實用的&lt;/p&gt;
+&lt;h4 id=&#34;行銷面&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a1%8c%e9%8a%b7%e9%9d%a2&#34;&gt;
+        ###
+    &lt;/a&gt;
+    行銷面
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.searchenginejournal.com/youtube-video-ideas-build-brand/235789/&#34;&gt;15 Inspiring YouTube Video Ideas to Build Your Brand&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這篇文章說明了可以用哪些方式來建立你的品牌&lt;/p&gt;
+&lt;p&gt;可以針對要行銷的方式來決定影片用哪種方式拍攝&lt;/p&gt;
+&lt;h4 id=&#34;發現一個-youtube-影片的搜尋結果很有趣&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%99%bc%e7%8f%be%e4%b8%80%e5%80%8b-youtube-%e5%bd%b1%e7%89%87%e7%9a%84%e6%90%9c%e5%b0%8b%e7%b5%90%e6%9e%9c%e5%be%88%e6%9c%89%e8%b6%a3&#34;&gt;
+        ###
+    &lt;/a&gt;
+    發現一個 Youtube 影片的搜尋結果很有趣
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202019-12-23%20%E4%B8%8A%E5%8D%8810.37.59.png?alt=media&amp;amp;token=69da39b2-878c-4f46-8c32-b54e6c81dd24&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202019-12-23%20%E4%B8%8A%E5%8D%8810.38.47.png?alt=media&amp;amp;token=40fdf928-0e19-490d-b558-752c723ae6ca&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202019-12-23%20%E4%B8%8A%E5%8D%8810.38.31.png?alt=media&amp;amp;token=56680c4c-df95-416a-86ed-37f366675d44&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202019-12-23%20%E4%B8%8A%E5%8D%8810.38.13.png?alt=media&amp;amp;token=c5ad10a1-0684-44ff-84a2-1ac45c2184b6&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Google 會自動把內容擷取出來&lt;/p&gt;
+&lt;p&gt;有點類似 How to 的 video 結果&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>youtube-dl - 使用筆記</title>
-      <link>https://blog.tedshd.io/posts/2019-11-04-youtube-dl-using-notes/</link>
+      <link>/posts/2019-11-04-youtube-dl-using-notes/</link>
       <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2019-11-04-youtube-dl-using-notes/</guid>
-      <description>youtube-dl - 使用筆記 youtube-dl 是一個跟影音相關方便使用的 cli 工具 這裡筆記一下一些用法 列出該影片可以下載的 format youtube-dl -F &amp;lt;URL&amp;gt; output [youtube] e17Um7wExuQ: Downloading webpage [youtube] e17Um7wExuQ: Downloading video info webpage [info] Available formats for e17Um7wExuQ: format code extension resolution note 249 webm</description>
+      
+      <guid>/posts/2019-11-04-youtube-dl-using-notes/</guid>
+      <description>&lt;h2 id=&#34;youtube-dl---使用筆記&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#youtube-dl---%e4%bd%bf%e7%94%a8%e7%ad%86%e8%a8%98&#34;&gt;
+        #
+    &lt;/a&gt;
+    youtube-dl - 使用筆記
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://ytdl-org.github.io/youtube-dl/index.html&#34;&gt;youtube-dl&lt;/a&gt; 是一個跟影音相關方便使用的 cli 工具&lt;/p&gt;
+&lt;p&gt;這裡筆記一下一些用法&lt;/p&gt;
+&lt;p&gt;列出該影片可以下載的 format&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;youtube-dl -F &amp;lt;URL&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;output&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;youtube&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt; e17Um7wExuQ: Downloading webpage
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;youtube&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt; e17Um7wExuQ: Downloading video info webpage
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;info&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt; Available formats &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; e17Um7wExuQ:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;format code  extension  resolution note
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;249&lt;/span&gt;          webm       audio only tiny   54k , opus @ 50k &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;48000Hz&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;, 192.69KiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;250&lt;/span&gt;          webm       audio only tiny   72k , opus @ 70k &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;48000Hz&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;, 255.58KiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;140&lt;/span&gt;          m4a        audio only tiny  130k , m4a_dash container, mp4a.40.2@128k &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;44100Hz&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;, 476.29KiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;251&lt;/span&gt;          webm       audio only tiny  138k , opus @160k &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;48000Hz&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;, 500.94KiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;278&lt;/span&gt;          webm       82x144     144p   32k , webm container, vp9, 30fps, video only, 105.14KiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;160&lt;/span&gt;          mp4        82x144     144p   43k , avc1.4d400b, 30fps, video only, 147.87KiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;242&lt;/span&gt;          webm       136x240    144p   72k , vp9, 30fps, video only, 224.00KiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;133&lt;/span&gt;          mp4        136x240    144p   90k , avc1.4d400c, 30fps, video only, 303.08KiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;243&lt;/span&gt;          webm       202x360    240p  130k , vp9, 30fps, video only, 379.65KiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;134&lt;/span&gt;          mp4        202x360    240p  219k , avc1.4d400d, 30fps, video only, 659.67KiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;244&lt;/span&gt;          webm       270x480    240p  235k , vp9, 30fps, video only, 670.44KiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;135&lt;/span&gt;          mp4        270x480    240p  375k , avc1.4d4015, 30fps, video only, 1.10MiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;247&lt;/span&gt;          webm       406x720    360p  428k , vp9, 30fps, video only, 1.19MiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;248&lt;/span&gt;          webm       608x1080   480p  737k , vp9, 30fps, video only, 2.03MiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;136&lt;/span&gt;          mp4        406x720    360p  761k , avc1.4d401e, 30fps, video only, 2.09MiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;137&lt;/span&gt;          mp4        608x1080   480p 1458k , avc1.64001f, 30fps, video only, 3.95MiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;271&lt;/span&gt;          webm       810x1440   720p 2767k , vp9, 30fps, video only, 6.69MiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;313&lt;/span&gt;          webm       1080x1920  1080p 4410k , vp9, 30fps, video only, 12.22MiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;43&lt;/span&gt;           webm       640x360    360p , vp8.0, vorbis@128k, 1.28MiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;18&lt;/span&gt;           mp4        202x360    240p  359k , avc1.42001E, mp4a.40.2@ 96k &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;44100Hz&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;, 1.29MiB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;22&lt;/span&gt;           mp4        406x720    360p  713k , avc1.64001F, mp4a.40.2@192k &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;44100Hz&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;best&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下載指定的 format&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;youtube-dl -f &amp;lt;format code&amp;gt; &amp;lt;URL&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下載最好的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;youtube-dl -f best &amp;lt;URL&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下載指定的 format&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;youtube-dl -f mp4 &amp;lt;URL&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>JavaScript - YouTube API note</title>
-      <link>https://blog.tedshd.io/posts/2013-12-20-javascript-youtube-api-note/</link>
+      <link>/posts/2013-12-20-javascript-youtube-api-note/</link>
       <pubDate>Fri, 20 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-12-20-javascript-youtube-api-note/</guid>
-      <description>JavaScript - YouTube API note player demo YouTube JavaScript Player API Reference YouTube 嵌入式播放器参数 YouTube Embedded Players and Player Parameters YouTube Player API Reference for iframe Embeds Use YouTube video must init a youtube player There have 2 player we can use flash player iframe player I suggest use iframe player because it can support flash and HTML5 If use Apple mobile devices,</description>
+      
+      <guid>/posts/2013-12-20-javascript-youtube-api-note/</guid>
+      <description>&lt;h2 id=&#34;javascript---youtube-api-note&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript---youtube-api-note&#34;&gt;
+        #
+    &lt;/a&gt;
+    JavaScript - YouTube API note
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/youtube/youtube_player_demo&#34;&gt;player demo&lt;/a&gt;
+&lt;a href=&#34;https://developers.google.com/youtube/js_api_reference&#34;&gt;YouTube JavaScript Player API Reference&lt;/a&gt;
+&lt;a href=&#34;https://developers.google.com/youtube/player_parameters?playerVersion=HTML5&amp;amp;hl=zh-cn&#34;&gt;YouTube 嵌入式播放器参数&lt;/a&gt;
+&lt;a href=&#34;https://developers.google.com/youtube/player_parameters?hl=en&#34;&gt;YouTube Embedded Players and Player Parameters&lt;/a&gt;
+&lt;a href=&#34;https://developers.google.com/youtube/iframe_api_reference&#34;&gt;YouTube Player API Reference for iframe Embeds&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Use YouTube video must init a youtube player
+There have 2 player we can use&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;flash player&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;iframe player&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I suggest use iframe player because it can support flash and HTML5
+If use Apple mobile devices, they can&amp;rsquo;t support flash
+Use iframe player can solve this problem
+We can use javascript control player&lt;/p&gt;
+&lt;h3 id=&#34;this-is-a-note-to-iframe-api&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#this-is-a-note-to-iframe-api&#34;&gt;
+        ##
+    &lt;/a&gt;
+    This is a note to iframe API
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;embed script&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;https://www.youtube.com/iframe_api&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;JavaScript generate&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; tag &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.createElement(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    firstScriptTag &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tag.src &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;https://www.youtube.com/iframe_api&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;1.First check load iframe API&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; onYouTubeIframeAPIReady() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2.Init YouTube player&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; player;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;player &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; YT.Player(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;player&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        width&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;1280&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#78787e&#34;&gt;// player width
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        height&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;720&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#78787e&#34;&gt;// player height
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        videoId&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; videoList[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;], &lt;span style=&#34;color:#78787e&#34;&gt;// youtube id ex: &amp;#39;0lfDNu-k6oo&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        playerVars&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            rel&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            autoplay&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            disablekb&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            showsearch&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            showinfo&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            controls&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            wmode&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;opaque&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            hd&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            html5&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            iv_load_policy&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        events&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onReady&amp;#39;&lt;/span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; onPlayerReady,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onStateChange&amp;#39;&lt;/span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; onPlayerStateChange,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onError&amp;#39;&lt;/span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; error
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;playerVars can refer &lt;a href=&#34;https://developers.google.com/youtube/player_parameters?playerVersion=HTML5&amp;amp;hl=zh-cn&#34;&gt;YouTube 嵌入式播放器参数&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.Handle onPlayerReady, onPlayerStateChange, error&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; onPlayerReady(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; onPlayerStateChange(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; error(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;sample-code&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sample-code&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Sample code
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;title&lt;/span&gt;&amp;gt;youtube_iframe_api&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;title&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;player&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; player;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; loadPlayer() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#player&amp;#39;&lt;/span&gt;)) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#78787e&#34;&gt;// get API
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; tag &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.createElement(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            firstScriptTag &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            tag.src &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;https://www.youtube.com/iframe_api&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; videoList &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; [],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                playCount &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; video_ID &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_2&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;V8BTsiMxyaQ&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_0&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;7wvNwOPprBE&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_1&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;mTSuiGubCHE&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_8&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;DDs5bXh4erM&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_3&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;n-BXNXvTvV4&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_4&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;CRJDQQXS4uE&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_5&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;ASO_zypdnsQ&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_6&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;IZkYdqRWKaY&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_7&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;9Y15es8OY0U&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v_9&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;LWV-f6dMN3Q&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#78787e&#34;&gt;// videoList array
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; key &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; video_ID) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; value &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; video_ID[key];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                videoList.push(value);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; playChannel() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;// init player
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;                player &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; YT.Player(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;player&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        width&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;1280&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        height&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;720&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        videoId&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; videoList[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        playerVars&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            rel&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            autoplay&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            disablekb&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            showsearch&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            showinfo&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            controls&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            autohide&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            modestbranding&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            wmode&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;opaque&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            hd&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            html5&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            iv_load_policy&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        events&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onReady&amp;#39;&lt;/span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; onPlayerReady,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onStateChange&amp;#39;&lt;/span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; onPlayerStateChange,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onError&amp;#39;&lt;/span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; error
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;// play video
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; onPlayerReady(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    console.log(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;onPlayerReady&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; error(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    console.log(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Error&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    console.log(e);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; onPlayerStateChange(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;// get state
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;                console.log(e);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;// play list loop when video end play next video
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (e.data &lt;span style=&#34;color:#ff6ac1&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    playCount&lt;span style=&#34;color:#ff6ac1&#34;&gt;++&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (playCount &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; (videoList.length &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;)) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        playCount &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    player.loadVideoById(videoList[playCount]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    player.playVideo();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; onYouTubeIframeAPIReady() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                playChannel();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            setTimeout(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                onYouTubeIframeAPIReady();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }, &lt;span style=&#34;color:#ff9f43&#34;&gt;1200&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    loadPlayer();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/5845484/force-html5-youtube-video&#34;&gt;Refer - Force HTML5 youtube video&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;onerror-error-code&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#onerror-error-code&#34;&gt;
+        ##
+    &lt;/a&gt;
+    onError error code
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;2 – The request contains an invalid parameter value. For example, this error occurs if you specify a video ID that does not have 11 characters, or if the video ID contains invalid characters, such as exclamation points or asterisks.&lt;/li&gt;
+&lt;li&gt;5 – The requested content cannot be played in an HTML5 player or another error related to the HTML5 player has occurred.&lt;/li&gt;
+&lt;li&gt;100 – The video requested was not found. This error occurs when a video has been removed (for any reason) or has been marked as private.&lt;/li&gt;
+&lt;li&gt;101 – The owner of the requested video does not allow it to be played in embedded players.&lt;/li&gt;
+&lt;li&gt;150 – This error is the same as 101. It&amp;rsquo;s just a 101 error in disguise!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;youtube-data-api&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#youtube-data-api&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Youtube Data api
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Get video data api&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://gdata.youtube.com/feeds/api/videos/&amp;lt;youtube_id&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It return format is XML&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://gdata.youtube.com/feeds/api/videos/&amp;lt;youtube_id&amp;gt;?alt=json
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It return format is json&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/youtube/reference?hl=zh-cn&#34;&gt;参考指南：Data API 协议&lt;/a&gt;
+&lt;a href=&#34;https://developers.google.com/youtube/2.0/developers_guide_json?hl=zh-cn&#34;&gt;Developer&amp;rsquo;s Guide: JSON / JavaScript&lt;/a&gt;
+&lt;a href=&#34;http://stackoverflow.com/questions/2601193/how-to-ensure-youtube-api-only-returns-videos-that-are-streamable-on-iphone&#34;&gt;Refer- How to ensure YouTube API only returns videos that are streamable on iPhone?&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;something-note&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#something-note&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Something note
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Player API 其中有個參數允許強制使用 HTML5 player 這建議有個好處與壞處
+好處是不會有廣告
+壞處是如果遇到訊源只有 flash 格式的影片 player 會重啟為 flash player
+用 gData 抓影片資訊可抓到其中一個 &lt;code&gt;content&lt;/code&gt; 的 key 其中就有提供此影片所帶有的格式
+&lt;a href=&#34;http://tedshd.lionfree.net/demo/youtube_api/youtube_video_gdata.html&#34;&gt;test page&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;5 - HTTP URL to the embeddable player (SWF) for this video. This format is not available for a video that is not embeddable. Developers commonly add &amp;amp;format=5 to their queries to restrict results to videos that can be embedded on their sites.&lt;/li&gt;
+&lt;li&gt;1 - RTSP streaming URL for mobile video playback. H.263 video (up to 176x144) and AMR audio.&lt;/li&gt;
+&lt;li&gt;6 - RTSP streaming URL for mobile video playback. MPEG-4 SP video (up to 176x144) and AAC audio.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/youtube/2.0/reference?hl=zh-tw#Custom_parameters&#34;&gt;Refer - Reference Guide: Data API Protocol&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;實測在 mobile 裝置上(Android, iOS), 參數設定 autoplay 是無效的, 利用 JavaScript 控制讓 youtube 播放也是無效的, 必須用手去點擊播放&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

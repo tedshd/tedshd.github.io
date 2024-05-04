@@ -1,27 +1,124 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Codeigniter on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/codeigniter/</link>
-    <description>Recent content in Codeigniter on tedshd&#39;s DevNote</description>
+    <title>Codeigniter on Tedshd&#39;s Dev note</title>
+    <link>/categories/codeigniter/</link>
+    <description>Tedshd&#39;s Dev note (Codeigniter)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/codeigniter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Sep 2013 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/codeigniter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Codeigniter - Note</title>
-      <link>https://blog.tedshd.io/posts/2013-09-02-codeigniter-note/</link>
+      <link>/posts/2013-09-02-codeigniter-note/</link>
       <pubDate>Mon, 02 Sep 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-09-02-codeigniter-note/</guid>
-      <description>Something about CI note user guide&#xA;redirect $this-&amp;gt;load-&amp;gt;helper(&amp;#39;url&amp;#39;); </description>
+      
+      <guid>/posts/2013-09-02-codeigniter-note/</guid>
+      <description>&lt;h2 id=&#34;something-about-ci-note&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#something-about-ci-note&#34;&gt;
+        #
+    &lt;/a&gt;
+    Something about CI note
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.codeigniter.org.tw/user_guide/&#34;&gt;user guide&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;redirect&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#redirect&#34;&gt;
+        ##
+    &lt;/a&gt;
+    redirect
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;load&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;helper&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;url&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>Codeigniter - AJAX(post)</title>
-      <link>https://blog.tedshd.io/posts/2013-08-29-codeigniter-ajaxpost/</link>
+      <link>/posts/2013-08-29-codeigniter-ajaxpost/</link>
       <pubDate>Thu, 29 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-08-29-codeigniter-ajaxpost/</guid>
-      <description>CI AJAX(Post) Usage JavaScript(jQuery)&#xA;$.post( &amp;#39;/api/post&amp;#39;, { val: &amp;#39;string&amp;#39;, val2: 1 }, function(data) { console.log(data); if(data.status === &amp;#39;ok&amp;#39;) { // dosomething } else { // alert fail } }, &amp;#39;json&amp;#39; ); $.ajax({ url: &amp;#39;/login/signup&amp;#39;, type: &amp;#39;POST&amp;#39;, data: { account: $(&amp;#39;input[name=&amp;#34;account&amp;#34;]&amp;#39;).val() }, success: function(data) { console.log(data); } }); PHP&#xA;&amp;lt;?php // api.php public function post() { $val = $this-&amp;gt;input-&amp;gt;post(&amp;#39;val&amp;#39;); $val2 = $this-&amp;gt;input-&amp;gt;post(&amp;#39;val2&amp;#39;); if ($val) { // dosomething //response $output = array( &amp;#39;status&amp;#39; =&amp;gt; &amp;#39;ok&amp;#39;, &amp;#39;msg&amp;#39; =&amp;gt; &amp;#39;success&amp;#39; ); echo json_encode($output); exit; } $output = array( &amp;#39;status&amp;#39; =&amp;gt; &amp;#39;fail&amp;#39;, &amp;#39;msg&amp;#39; =&amp;gt; &amp;#39;error&amp;#39; ); echo json_encode($output); exit; } ?</description>
+      
+      <guid>/posts/2013-08-29-codeigniter-ajaxpost/</guid>
+      <description>&lt;h2 id=&#34;ci-ajaxpost&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ci-ajaxpost&#34;&gt;
+        #
+    &lt;/a&gt;
+    CI AJAX(Post)
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;usage&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#usage&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Usage
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;JavaScript(jQuery)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$.post(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;/api/post&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        val&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;string&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        val2&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(data) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        console.log(data);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt;(data.status &lt;span style=&#34;color:#ff6ac1&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;ok&amp;#39;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#78787e&#34;&gt;// dosomething
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#78787e&#34;&gt;// alert fail
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;json&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$.ajax({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  url&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;/login/signup&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  type&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  data&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  	account&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; $(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;input[name=&amp;#34;account&amp;#34;]&amp;#39;&lt;/span&gt;).val()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  success&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(data) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  	console.log(data);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;PHP&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// api.php
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;post&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$val&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;post&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;val&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$val2&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;post&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;val2&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;$val&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#78787e&#34;&gt;// dosomething
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#78787e&#34;&gt;//response
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#ff5c57&#34;&gt;$output&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;array&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;status&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;ok&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;msg&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;success&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; json_encode(&lt;span style=&#34;color:#ff5c57&#34;&gt;$output&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;exit&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$output&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;array&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;status&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;fail&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;msg&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;error&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; json_encode(&lt;span style=&#34;color:#ff5c57&#34;&gt;$output&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;exit&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
   </channel>
 </rss>

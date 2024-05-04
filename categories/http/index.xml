@@ -1,20 +1,109 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HTTP on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/http/</link>
-    <description>Recent content in HTTP on tedshd&#39;s DevNote</description>
+    <title>HTTP on Tedshd&#39;s Dev note</title>
+    <link>/categories/http/</link>
+    <description>Tedshd&#39;s Dev note (HTTP)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/http/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/http/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Header -  Accept-Language &amp; Content-Language</title>
-      <link>https://blog.tedshd.io/posts/2019-12-02-header-accept-language/</link>
+      <link>/posts/2019-12-02-header-accept-language/</link>
       <pubDate>Mon, 02 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2019-12-02-header-accept-language/</guid>
-      <description>Header - Accept-Language &amp;amp; Content-Language Intro 多國語系的判定主要靠這兩個來處理 Accept-Language Content-Language 這裡的語言代碼一率遵循 ISO 639-1 codes Accept-Language 系統或是 client 需要帶在 request header 中 表示 client 所使用的語言 有時會帶有 location 資訊(l</description>
+      
+      <guid>/posts/2019-12-02-header-accept-language/</guid>
+      <description>&lt;h2 id=&#34;header----accept-language--content-language&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#header----accept-language--content-language&#34;&gt;
+        #
+    &lt;/a&gt;
+    Header -  Accept-Language &amp;amp; Content-Language
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;多國語系的判定主要靠這兩個來處理&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language&#34;&gt;Accept-Language&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language&#34;&gt;Content-Language&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這裡的語言代碼一率遵循 &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes&#34;&gt;ISO 639-1 codes&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;accept-language&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#accept-language&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Accept-Language
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;系統或是 client 需要帶在 request header 中&lt;/p&gt;
+&lt;p&gt;表示 client 所使用的語言&lt;/p&gt;
+&lt;p&gt;有時會帶有 location 資訊(location 依照 &lt;a href=&#34;https://en.wikipedia.org/wiki/ISO_3166-2&#34;&gt;ISO 3166-2&lt;/a&gt; 標準且都是大寫&lt;/p&gt;
+&lt;p&gt;多語言時用 &lt;code&gt;,&lt;/code&gt; 分隔&lt;/p&gt;
+&lt;p&gt;會在後面用 &lt;code&gt;q&lt;/code&gt; 表示權重&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-http&#34; data-lang=&#34;http&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;accept-language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這個  header 常被用來判斷 client 的主要語言來判斷處理要回給 client 用哪個語言&lt;/p&gt;
+&lt;h3 id=&#34;content-language&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#content-language&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Content-Language
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;server 帶在 response header 中&lt;/p&gt;
+&lt;p&gt;用以表示該 response 是提供哪些語言的內容&lt;/p&gt;
+&lt;p&gt;一樣可以是單純的 &lt;code&gt;lang&lt;/code&gt; 或是 &lt;code&gt;&amp;lt;lang&amp;gt;-&amp;lt;location&amp;gt;&lt;/code&gt; 也可以用 &lt;code&gt;,&lt;/code&gt; 分隔多語言&lt;/p&gt;
+&lt;p&gt;也可以在 HTML 中宣告&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;de&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;w3c-i18n-checker&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#w3c-i18n-checker&#34;&gt;
+        ##
+    &lt;/a&gt;
+    W3C I18n Checker
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;W3C 提供一個可以確認的網站&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://validator.w3.org/i18n-checker/&#34;&gt;W3C I18n Checker&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;向-google-提供網頁的本地化版本httpssupportgooglecomwebmastersanswer189077&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%90%91-google-%e6%8f%90%e4%be%9b%e7%b6%b2%e9%a0%81%e7%9a%84%e6%9c%ac%e5%9c%b0%e5%8c%96%e7%89%88%e6%9c%achttpssupportgooglecomwebmastersanswer189077&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;a href=&#34;https://support.google.com/webmasters/answer/189077&#34;&gt;向 Google 提供網頁的本地化版本&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;HTML meta tag&lt;/li&gt;
+&lt;li&gt;HTTP header&lt;/li&gt;
+&lt;li&gt;Sitemap&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;使用以上三種方法來讓 Google 爬&lt;/p&gt;
+&lt;h3 id=&#34;keypoint&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#keypoint&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Keypoint
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;可以依照 &lt;code&gt;Accept-Language&lt;/code&gt; 裡面的多語系權重去判斷要給予使用者適合的語系&lt;/li&gt;
+&lt;li&gt;不管是 W3C 還是 Google 其實都建議不能單純的依靠上述來判斷語系, 還是需要有提供能讓使用者手動切換語言的選項&lt;/li&gt;
+&lt;li&gt;Chrome 的同步設定會連 browser 慣用語言的設定一起同步&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

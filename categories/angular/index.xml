@@ -1,20 +1,138 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Angular on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/angular/</link>
-    <description>Recent content in Angular on tedshd&#39;s DevNote</description>
+    <title>Angular on Tedshd&#39;s Dev note</title>
+    <link>/categories/angular/</link>
+    <description>Tedshd&#39;s Dev note (Angular)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 29 Apr 2024 11:14:03 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/angular/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Oct 2023 09:22:36 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/angular/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Angular build custom element</title>
-      <link>https://blog.tedshd.io/posts/angular_build_custom_element/</link>
+      <link>/posts/angular_build_custom_element/</link>
       <pubDate>Mon, 30 Oct 2023 09:22:36 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/angular_build_custom_element/</guid>
-      <description>Intro 當使用 Angular 時, 有時會有需要自己建立一個自定義的元素 通常這個都是為了重複使用 這時會有兩種作法 自己建立一個元件, 再把這元件處理成 module, 這樣就可以有自</description>
+      
+      <guid>/posts/angular_build_custom_element/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;當使用 Angular 時, 有時會有需要自己建立一個自定義的元素&lt;/p&gt;
+&lt;p&gt;通常這個都是為了重複使用&lt;/p&gt;
+&lt;p&gt;這時會有兩種作法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;自己建立一個元件, 再把這元件處理成 module, 這樣就可以有自定義元素了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 angular create lib 的方式(&lt;a href=&#34;https://angular.io/guide/creating-libraries&#34;&gt;https://angular.io/guide/creating-libraries&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果是在公司內部自己使用, 用 1 或是 2 都沒差&lt;/p&gt;
+&lt;p&gt;如果是要做成給外部或是別人使用, 甚至是開源出去, 那就是得用 2&lt;/p&gt;
+&lt;p&gt;順帶一提如果要使用自己定義的元素, 需要安裝 &lt;code&gt;@angular/elements&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yarn add @angular/elements
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;自己建立元件&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%87%aa%e5%b7%b1%e5%bb%ba%e7%ab%8b%e5%85%83%e4%bb%b6&#34;&gt;
+        #
+    &lt;/a&gt;
+    自己建立元件
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;這邊會用 &lt;code&gt;custom-element&lt;/code&gt; 當成元件名字舉例&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ng generate component custom-element
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;建立起一個 &lt;code&gt;custom-element&lt;/code&gt; 元件&lt;/p&gt;
+&lt;p&gt;之後就是依照寫元件的方式開發&lt;/p&gt;
+&lt;p&gt;只是得自己手動處理一下在 &lt;code&gt;custom-element/custom-element.module.ts&lt;/code&gt; 得添加和輸出與建立自定義元素的設定&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; { createCustomElement } &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;@angular/elements&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; { createCustomElement } &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;@angular/elements&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; { NgModule, Injector } &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;@angular/core&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; { CustomElementComponent } &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./custom-element.component&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;@NgModule&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  declarations&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; [CustomElementComponent],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  exports&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; [CustomElementComponent],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;class&lt;/span&gt; CustomElementModule {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;constructor&lt;/span&gt;(&lt;span style=&#34;color:#ff6ac1&#34;&gt;private&lt;/span&gt; injector: &lt;span style=&#34;color:#9aedfe&#34;&gt;Injector&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ngDoBootstrap() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; customElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; createCustomElement(CustomElementComponent, { injector: &lt;span style=&#34;color:#9aedfe&#34;&gt;this.injector&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    customElements.define(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;app-custom-element&amp;#39;&lt;/span&gt;, customElement);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之後要使用的元件或是直接在最頂部的 &lt;code&gt;app.module.ts&lt;/code&gt; 添加 import&lt;/p&gt;
+&lt;p&gt;例如在最頂部的 &lt;code&gt;app.module.ts&lt;/code&gt; 添加&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; { CustomElementModule } &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./custom-element/custom-element.module&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;@NgModule&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  imports&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    CustomElementModule
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這樣就可以直接在 HTML 使用了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;app-custom-element&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;app-custom-element&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;使用-angular-create-lib&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8-angular-create-lib&#34;&gt;
+        #
+    &lt;/a&gt;
+    使用 angular create lib
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;這個方式會比較多步驟&lt;/p&gt;
+&lt;p&gt;最後如果要發佈到 npm 還需要做發佈的動作&lt;/p&gt;
+&lt;p&gt;也可以做打包給別人用&lt;/p&gt;
+&lt;p&gt;但如果不需要打包或發佈&lt;/p&gt;
+&lt;p&gt;也可以單純建好後從 lib 載入來使用&lt;/p&gt;
+&lt;p&gt;基本上跟著官方文件(&lt;a href=&#34;https://angular.io/guide/creating-libraries&#34;&gt;https://angular.io/guide/creating-libraries&lt;/a&gt;)走就可以了&lt;/p&gt;
+&lt;p&gt;這裡就補充下打包的部分&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ng build my-lib
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;cd&lt;/span&gt; dist/my-lib
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm pack
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這樣沒有意外的話會產生 &lt;code&gt;my-lib-0.0.1.tgz&lt;/code&gt; (0.0.1 這個是隨著這個 lib 的 package.json)&lt;/p&gt;
+&lt;h3 id=&#34;安裝打包的套件&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%ae%89%e8%a3%9d%e6%89%93%e5%8c%85%e7%9a%84%e5%a5%97%e4%bb%b6&#34;&gt;
+        ##
+    &lt;/a&gt;
+    安裝打包的套件
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yarn add ./my-lib-0.0.1.tgz
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這樣就可以安裝了&lt;/p&gt;
+&lt;p&gt;之後就正常載入使用&lt;/p&gt;
+&lt;h3 id=&#34;注意事項&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a0%85&#34;&gt;
+        ##
+    &lt;/a&gt;
+    注意事項
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;目前測試 &lt;code&gt;ng generate library my-lib&lt;/code&gt; 創建出來的東西打包後&lt;/p&gt;
+&lt;p&gt;有注意到如果本身有 import 其他套件的話&lt;/p&gt;
+&lt;p&gt;套件 source code 並不會一起放進來&lt;/p&gt;
+&lt;p&gt;應該是需要在該 lib 底下的 &lt;code&gt;package.json&lt;/code&gt; 添加&lt;/p&gt;
+&lt;p&gt;打包後, 這樣之後安裝時才會一起安裝&lt;/p&gt;
+&lt;p&gt;例如 &lt;code&gt;projects/my-lib/package.json&lt;/code&gt; 添加需要的套件&lt;/p&gt;
+&lt;p&gt;或是在 &lt;code&gt;projects/my-lib/&lt;/code&gt; 安裝套件, 讓 &lt;code&gt;package.json&lt;/code&gt; 有紀錄到安裝什麼套件&lt;/p&gt;
+&lt;p&gt;另外因為在開發與測試時如果同一個名字, 版號也一樣, yarn 會 cache, angular 也可能會 cache&lt;/p&gt;
+&lt;p&gt;所以移掉後再安裝前建議先下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yarn cache clean
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;也一起移出掉專案目錄底下的 &lt;code&gt;.angular&lt;/code&gt; 資料夾&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

@@ -1,20 +1,104 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ad on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/ad/</link>
-    <description>Recent content in Ad on tedshd&#39;s DevNote</description>
+    <title>Ad on Tedshd&#39;s Dev note</title>
+    <link>/categories/ad/</link>
+    <description>Tedshd&#39;s Dev note (Ad)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/ad/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/ad/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Google Adsense domain 設置</title>
-      <link>https://blog.tedshd.io/posts/2016-04-15-google-adsense-domain-settings/</link>
+      <link>/posts/2016-04-15-google-adsense-domain-settings/</link>
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-04-15-google-adsense-domain-settings/</guid>
-      <description>Google Adsense domain 設置 一點設定 Google adsense 的心得 因為有時會寫一寫筆記或部落格記錄人生 然後因為工作進到跟廣告有點關係的公司, 遇到裡面的一些專家 有人提議說, 既然我有</description>
+      
+      <guid>/posts/2016-04-15-google-adsense-domain-settings/</guid>
+      <description>&lt;h2 id=&#34;google-adsense-domain-設置&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-adsense-domain-%e8%a8%ad%e7%bd%ae&#34;&gt;
+        #
+    &lt;/a&gt;
+    Google Adsense domain 設置
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;一點設定 Google adsense 的心得&lt;/p&gt;
+&lt;p&gt;因為有時會寫一寫筆記或部落格記錄人生&lt;/p&gt;
+&lt;p&gt;然後因為工作進到跟廣告有點關係的公司, 遇到裡面的一些專家&lt;/p&gt;
+&lt;p&gt;有人提議說, 既然我有寫文章的習慣, 那也可以放個廣告賺一點錢&lt;/p&gt;
+&lt;p&gt;但我個人是不太喜歡放廣告, 畢竟大家都知道廣告是拖累網站速度的元凶&lt;/p&gt;
+&lt;p&gt;但最近想說試試可不可以在自己的網站放個一個版位的廣告, 看能不能抵掉 GCP 維持的費用(應該是不太可能&amp;hellip;&lt;/p&gt;
+&lt;p&gt;所以就在自己寫的 blog 和自己做的一些 service 放上去試試&lt;/p&gt;
+&lt;p&gt;這紀錄一下一些在用 Google adsense 比較特別的行為與情況&lt;/p&gt;
+&lt;h3 id=&#34;us-100-才能領出來&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#us-100-%e6%89%8d%e8%83%bd%e9%a0%98%e5%87%ba%e4%be%86&#34;&gt;
+        ##
+    &lt;/a&gt;
+    US 100 才能領出來
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;我這要等到幾時啊&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;google-adsense-是動態-cpc--cpm-計算價錢&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-adsense-%e6%98%af%e5%8b%95%e6%85%8b-cpc--cpm-%e8%a8%88%e7%ae%97%e5%83%b9%e9%8c%a2&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Google adsense 是動態 CPC + CPM 計算價錢
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;所以沒一定的價格, 似乎有受流量影響&lt;/p&gt;
+&lt;h3 id=&#34;眾所皆知-廣告通常是-by-domain-申請-現在用-subdomain-是不行的&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%9c%be%e6%89%80%e7%9a%86%e7%9f%a5-%e5%bb%a3%e5%91%8a%e9%80%9a%e5%b8%b8%e6%98%af-by-domain-%e7%94%b3%e8%ab%8b-%e7%8f%be%e5%9c%a8%e7%94%a8-subdomain-%e6%98%af%e4%b8%8d%e8%a1%8c%e7%9a%84&#34;&gt;
+        ##
+    &lt;/a&gt;
+    眾所皆知, 廣告通常是 by domain 申請, 現在用 subdomain 是不行的
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;很久以前依據在 subdomain service 的話似乎可以, 但現在不行了&lt;/p&gt;
+&lt;p&gt;因為我用 logdown 申請說不能用 subdomain 申請&amp;hellip;(明明約半年前還可以, 只是當時不知為何一直說我違反他們的協議, 所以一直申請不過&lt;/p&gt;
+&lt;p&gt;但 Google 自己的 blogger 卻可以, 我試過了因為我有個 blogger, 但 Pixnet 我沒試過(不過 Pixnet 可以跟他們自己申請廣告分潤&lt;/p&gt;
+&lt;h3 id=&#34;google-adsense-的網站審查蠻嚴謹的&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-adsense-%e7%9a%84%e7%b6%b2%e7%ab%99%e5%af%a9%e6%9f%a5%e8%a0%bb%e5%9a%b4%e8%ac%b9%e7%9a%84&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Google Adsense 的網站審查蠻嚴謹的
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;嚴謹到我這 logdown 之前都過不了(靠, 搞得我都認為是 XXX 的錯&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;把自己的站用-submain-掛到申請過-doamin-下去可行&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%8a%8a%e8%87%aa%e5%b7%b1%e7%9a%84%e7%ab%99%e7%94%a8-submain-%e6%8e%9b%e5%88%b0%e7%94%b3%e8%ab%8b%e9%81%8e-doamin-%e4%b8%8b%e5%8e%bb%e5%8f%af%e8%a1%8c&#34;&gt;
+        ##
+    &lt;/a&gt;
+    把自己的站用 submain 掛到申請過 doamin 下去可行
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;我本身是這樣試出來可以的&lt;/p&gt;
+&lt;h3 id=&#34;how-to-do&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#how-to-do&#34;&gt;
+        ##
+    &lt;/a&gt;
+    How to do?
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;我申請 tedshd.io 放 Google adsense&lt;/p&gt;
+&lt;p&gt;在 tedshd.io 開個 subdomain blog.tedshd.io&lt;/p&gt;
+&lt;p&gt;設定 blog.tedshd.io CNAME	tedshd.logdown.com&lt;/p&gt;
+&lt;p&gt;這樣 blog.tedshd.io 就是 tedshd.logdown.com&lt;/p&gt;
+&lt;p&gt;這樣 Google adsense 就會有了&lt;/p&gt;
+&lt;p&gt;且去 Google adsense 後台看也有數據進來了&lt;/p&gt;
+&lt;p&gt;但這不知道是漏洞還是 Google 有意為之&lt;/p&gt;
+&lt;p&gt;個人覺得這算黑的做法&lt;/p&gt;
+&lt;p&gt;所以哪天被鎖就 GG 了&amp;hellip;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

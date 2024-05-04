@@ -1,34 +1,402 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gulp on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/gulp/</link>
-    <description>Recent content in Gulp on tedshd&#39;s DevNote</description>
+    <title>Gulp on Tedshd&#39;s Dev note</title>
+    <link>/categories/gulp/</link>
+    <description>Tedshd&#39;s Dev note (Gulp)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/gulp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Aug 2015 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/gulp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>JavaScript - Google Closure Compiler V.S. Gulp uglify</title>
-      <link>https://blog.tedshd.io/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/</link>
+      <link>/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/</link>
       <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/</guid>
-      <description>JavaScript - Google Closure Compiler V.S. Gulp uglify Intro I have two choice&#xA;Google Closure Compiler&#xA;UglifyJs&#xA;Google Closure Compiler Google Closure Compiler&#xA;Google Closure Compiler is a tool for minify and uglify js.&#xA;From Google&#xA;Java&#xA;Command Line&#xA;Slow&#xA;UglifyJs mishoo/UglifyJS2&#xA;More option setting&#xA;Node.js&#xA;Command Line&#xA;Fast&#xA;Test Google Closure Compiler When i run command line, it used lot of cpu source.&#xA;Can feel it lock some seconds.</description>
+      
+      <guid>/posts/2015-08-15-javascript-google-closure-compiler-vs-gulp-uglify/</guid>
+      <description>&lt;h2 id=&#34;javascript---google-closure-compiler-vs-gulp-uglify&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript---google-closure-compiler-vs-gulp-uglify&#34;&gt;
+        #
+    &lt;/a&gt;
+    JavaScript - Google Closure Compiler V.S. Gulp uglify
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;I have two choice&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Google Closure Compiler&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;UglifyJs&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;google-closure-compiler&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-closure-compiler&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Google Closure Compiler
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/closure/compiler/&#34;&gt;Google Closure Compiler&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Google Closure Compiler&lt;/em&gt; is a tool for minify and uglify js.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;From Google&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Java&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Command Line&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slow&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;uglifyjs&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#uglifyjs&#34;&gt;
+        ###
+    &lt;/a&gt;
+    UglifyJs
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/mishoo/UglifyJS2&#34;&gt;mishoo/UglifyJS2&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;More option setting&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Node.js&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Command Line&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fast&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;test&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#test&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Test
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;google-closure-compiler-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-closure-compiler-1&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Google Closure Compiler
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;When i run command line, it used lot of cpu source.&lt;/p&gt;
+&lt;p&gt;Can feel it lock some seconds.&lt;/p&gt;
+&lt;p&gt;If compiler error,it can show error message.&lt;/p&gt;
+&lt;h4 id=&#34;uglifyjs-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#uglifyjs-1&#34;&gt;
+        ###
+    &lt;/a&gt;
+    UglifyJs
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;It&amp;rsquo;s so fast.&lt;/p&gt;
+&lt;p&gt;It can fix some small error when it compiler.&lt;/p&gt;
+&lt;p&gt;So i recommendation this tool.&lt;/p&gt;
+&lt;p&gt;Finally i use &lt;a href=&#34;http://gulpjs.com/&#34;&gt;Gulp&lt;/a&gt; handle uglifyJs.&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>gulp.js - Concatenate File When Gulp Watch</title>
-      <link>https://blog.tedshd.io/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/</link>
+      <link>/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/</link>
       <pubDate>Sun, 09 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/</guid>
-      <description>gulp.js - Concatenate File When Gulp Watch package.json { &amp;#34;name&amp;#34;: &amp;#34;gulp&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;3.8.7&amp;#34;, &amp;#34;devDependencies&amp;#34;: { &amp;#34;gulp&amp;#34;: &amp;#34;^3.9.0&amp;#34;, &amp;#34;gulp-concat&amp;#34;: &amp;#34;^2.6.0&amp;#34;, &amp;#34;gulp-watch&amp;#34;: &amp;#34;^4.3.4&amp;#34; } } gulpfile.js var gulp = require(&amp;#39;gulp&amp;#39;), watch = require(&amp;#39;gulp-watch&amp;#39;), concat = require(&amp;#39;gulp-concat&amp;#39;); var js; gulp.task(&amp;#39;concat&amp;#39;, function (cb) { var options = {}; watch(&amp;#39;dev/*.js&amp;#39;, options, function (e) { // console.log(&amp;#39;e:&amp;#39;+JSON.stringify(e)); // console.log(&amp;#39;\n&amp;#39;); console.log(new Date() + &amp;#39; -- &amp;#39; + e.history[0].replace(e.base, &amp;#39;&amp;#39;)); js = e.history[0].replace(e.base, &amp;#39;&amp;#39;); gulp.src([&amp;#39;util/util.js&amp;#39;, &amp;#39;util/mod.js&amp;#39;, &amp;#39;dev/&amp;#39; + js]) .</description>
+      
+      <guid>/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/</guid>
+      <description>&lt;h2 id=&#34;gulpjs---concatenate-file-when-gulp-watch&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#gulpjs---concatenate-file-when-gulp-watch&#34;&gt;
+        #
+    &lt;/a&gt;
+    gulp.js - Concatenate File When Gulp Watch
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;packagejson&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#packagejson&#34;&gt;
+        ##
+    &lt;/a&gt;
+    package.json
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;gulp&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;version&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;3.8.7&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;devDependencies&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;gulp&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;^3.9.0&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;gulp-concat&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;^2.6.0&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;gulp-watch&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;^4.3.4&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;gulpfilejs&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#gulpfilejs&#34;&gt;
+        ##
+    &lt;/a&gt;
+    gulpfile.js
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; gulp &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;gulp&amp;#39;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    watch &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;gulp-watch&amp;#39;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    concat &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;gulp-concat&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; js;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp.task(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;concat&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; (cb) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; options &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    watch(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;dev/*.js&amp;#39;&lt;/span&gt;, options, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; (e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#78787e&#34;&gt;// console.log(&amp;#39;e:&amp;#39;+JSON.stringify(e));
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#78787e&#34;&gt;// console.log(&amp;#39;\n&amp;#39;);
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        console.log(&lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;Date&lt;/span&gt;() &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39; -- &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; e.history[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;].replace(e.base, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        js &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; e.history[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;].replace(e.base, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        gulp.src([&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;util/util.js&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;util/mod.js&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;dev/&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; js])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .pipe(concat(js, {newLine&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;}))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .pipe(gulp.dest(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;dist/&amp;#39;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;what-it-mean&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#what-it-mean&#34;&gt;
+        ##
+    &lt;/a&gt;
+    What it mean?
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;watch something change in &lt;code&gt;dev/*.js&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If js change, concatenate &lt;code&gt;util/util.js&lt;/code&gt;, &lt;code&gt;util/mod.js&lt;/code&gt; and current modify js.&lt;/p&gt;
+&lt;p&gt;New js name is current modify js.&lt;/p&gt;
+&lt;p&gt;Finally put new js in &lt;code&gt;dist/&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;how-to-use&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#how-to-use&#34;&gt;
+        ##
+    &lt;/a&gt;
+    How to use
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;install&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#install&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Install
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install --save-dev gulp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install . --save-dev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;use&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#use&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Use
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp concat
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/package/gulp-watch&#34;&gt;Refer - gulp-watch&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/package/gulp-concat&#34;&gt;Refer - gulp-concat&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>gulp.js - Use Log</title>
-      <link>https://blog.tedshd.io/posts/2014-08-07-gulpjs-use-log/</link>
+      <link>/posts/2014-08-07-gulpjs-use-log/</link>
       <pubDate>Thu, 07 Aug 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-08-07-gulpjs-use-log/</guid>
-      <description>gulp.js - Use Log Intro gulp.js&#xA;Getting Started&#xA;Grunt vs Gulp - Beyond the Numbers&#xA;package.json version setting dependencies&#xA;How to pipe to another task in Gulp? gulp.task(&amp;#39;first&amp;#39;, function() { // first task }); gulp.task(&amp;#39;second&amp;#39;, [&amp;#39;first&amp;#39;], function() { // this occurs after &amp;#39;first&amp;#39; finishes }); Refer - How to pipe to another task in Gulp?&#xA;Use Package Compass First, must install compass&#xA;gulp-compass&#xA;var gulp = require(&amp;#39;gulp&amp;#39;); var compass = require(&amp;#39;gulp-compass&amp;#39;); gulp.</description>
+      
+      <guid>/posts/2014-08-07-gulpjs-use-log/</guid>
+      <description>&lt;h2 id=&#34;gulpjs---use-log&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#gulpjs---use-log&#34;&gt;
+        #
+    &lt;/a&gt;
+    gulp.js - Use Log
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started&#34;&gt;Getting Started&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/&#34;&gt;Grunt vs Gulp - Beyond the Numbers&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;packagejson-version-setting&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#packagejson-version-setting&#34;&gt;
+        ##
+    &lt;/a&gt;
+    package.json version setting
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.npmjs.com/files/package.json#dependencies&#34;&gt;dependencies&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;how-to-pipe-to-another-task-in-gulp&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#how-to-pipe-to-another-task-in-gulp&#34;&gt;
+        ##
+    &lt;/a&gt;
+    How to pipe to another task in Gulp?
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp.task(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;first&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#78787e&#34;&gt;// first task
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp.task(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;second&amp;#39;&lt;/span&gt;, [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;first&amp;#39;&lt;/span&gt;], &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#78787e&#34;&gt;// this occurs after &amp;#39;first&amp;#39; finishes
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/23458428/how-to-pipe-to-another-task-in-gulp&#34;&gt;Refer - How to pipe to another task in Gulp?&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;use-package&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#use-package&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Use Package
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h3 id=&#34;compass&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#compass&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Compass
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;First, must install &lt;a href=&#34;http://compass-style.org/install/&#34;&gt;compass&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.org/package/gulp-compass&#34;&gt;gulp-compass&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; gulp &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;gulp&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; compass &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;gulp-compass&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp.task(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;default&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  gulp.run(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;compass&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    gulp.watch([
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./sass/**&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./img/**&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ], &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(event) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        gulp.run(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;compass&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp.task(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;compass&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  gulp.src(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./sass/*.scss&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .pipe(compass({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        comments&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;false&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        css&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;css&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#78787e&#34;&gt;// css folder
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        sass&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;sass&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#78787e&#34;&gt;// scss folder
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        image&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;img&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#78787e&#34;&gt;// image folder
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    }));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;commond&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# or&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp compass
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;jshint&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#jshint&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Jshint
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.org/package/gulp-jshint&#34;&gt;gulp-jshint&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; jshint &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;gulp-jshint&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp.task(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;lint&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; gulp.src(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./*.js&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#78787e&#34;&gt;// js file
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    .pipe(jshint())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .pipe(jshint.reporter(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;jshint-stylish&amp;#39;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// .pipe(jshint.reporter(&amp;#39;default&amp;#39;))
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;commond&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp lint
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;minify-html&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#minify-html&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Minify Html
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.org/package/gulp-minify-html&#34;&gt;gulp-minify-html&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; minifyHTML &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;gulp-minify-html&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp.task(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;minify-html&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; opts &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {comments&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,spare&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    gulp.src(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./*.html&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#78787e&#34;&gt;// html file
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    .pipe(minifyHTML(opts))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .pipe(gulp.dest(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./dist/&amp;#39;&lt;/span&gt;)); &lt;span style=&#34;color:#78787e&#34;&gt;// result minify html
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;commond&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp minify-html
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;minify-css&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#minify-css&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Minify CSS
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.org/package/gulp-minify-css&#34;&gt;gulp-minify-css&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; minifyCSS &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;gulp-minify-css&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp.task(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;minify-css&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    gulp.src(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./css/*.css&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#78787e&#34;&gt;// css files
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    .pipe(minifyCSS({keepBreaks&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;}))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .pipe(gulp.dest(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./dist/&amp;#39;&lt;/span&gt;)); &lt;span style=&#34;color:#78787e&#34;&gt;// result minify css
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;commond&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp minify-css
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;minify-javascript&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#minify-javascript&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Minify JavaScript
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.org/package/gulp-uglify&#34;&gt;gulp-uglify&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; uglify &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;gulp-uglify&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp.task(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;uglify&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    gulp.src(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./*.js&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .pipe(uglify())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .pipe(gulp.dest(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;dist&amp;#39;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;commond&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gulp compress
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
   </channel>
 </rss>

@@ -1,20 +1,115 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>RTL on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/rtl/</link>
-    <description>Recent content in RTL on tedshd&#39;s DevNote</description>
+    <title>RTL on Tedshd&#39;s Dev note</title>
+    <link>/categories/rtl/</link>
+    <description>Tedshd&#39;s Dev note (RTL)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Fri, 15 Apr 2022 15:56:09 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/rtl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Apr 2022 10:09:15 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/rtl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>網頁處理 RTL(Right To Left) 右到左的文字排版</title>
-      <link>https://blog.tedshd.io/posts/web_text_rtl_handle/</link>
+      <link>/posts/web_text_rtl_handle/</link>
       <pubDate>Fri, 15 Apr 2022 10:09:15 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/web_text_rtl_handle/</guid>
-      <description>前言 在 web 的世界中有一個需要處理的是文字排版的呈現 因為從電腦到整個計算機科學的領域都是在拉丁語系為主宗的國家發展的 所以在介面的文字排版上自然以</description>
+      
+      <guid>/posts/web_text_rtl_handle/</guid>
+      <description>&lt;h2 id=&#34;前言&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%89%8d%e8%a8%80&#34;&gt;
+        #
+    &lt;/a&gt;
+    前言
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;在 web 的世界中有一個需要處理的是文字排版的呈現&lt;/p&gt;
+&lt;p&gt;因為從電腦到整個計算機科學的領域都是在拉丁語系為主宗的國家發展的&lt;/p&gt;
+&lt;p&gt;所以在介面的文字排版上自然以從左到右為主&lt;/p&gt;
+&lt;p&gt;但是在這世界上的文字排版有從左到右, 上到下, 右到左等呈現方式&lt;/p&gt;
+&lt;p&gt;所以需要依照需求或不同語系的文字上有相對應的處理, 尤其是在多語系的情況下&lt;/p&gt;
+&lt;p&gt;上到下的排版大多是書面用的排版, 相對在資訊領域比較少呈現, 且因為上到下的排版方式也大多是亞洲地區的國家, 在標準化的話語權不高&lt;/p&gt;
+&lt;p&gt;但也漸漸在 web 領域中有開始支援上到下的排版(&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode&#34;&gt;writing-mode&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;且在資訊領域也大多是用左到右的呈現, 所以影響相對小&lt;/p&gt;
+&lt;p&gt;額外補充一下大部分的方塊文字像是中文、日文、韓文等其實左到右、右到左、上到下都可以書寫與呈現&lt;/p&gt;
+&lt;p&gt;但在部份語系像是&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;阿拉伯文&lt;/li&gt;
+&lt;li&gt;烏爾都文&lt;/li&gt;
+&lt;li&gt;庫德文&lt;/li&gt;
+&lt;li&gt;波斯文&lt;/li&gt;
+&lt;li&gt;希伯來文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上述文字排版就固定都是從右到左&lt;/p&gt;
+&lt;p&gt;除了希伯來文以外都是從阿拉伯文字延伸的, 就像是英文、德文、法文都是拉丁文延伸出來一樣&lt;/p&gt;
+&lt;p&gt;至於為何在世界各地的文字排版會有差異其實主要是起源於早期該文字書寫的方式與被書寫在什麼材質上面為主&lt;/p&gt;
+&lt;p&gt;右到左主要起源於早期是文字是刻在石板上面, 左手拿鑿子, 右手拿錘子, 這樣從右到左是相對順手的&lt;/p&gt;
+&lt;p&gt;中文早期大多從上到下從右到左的排列主要起源於以前是在竹片上捲成冊的(竹簡)&lt;/p&gt;
+&lt;p&gt;在單片竹片上面書寫自然是上到下, 那捲成冊之後在閱讀時為了方便持握, 會是左手拿著竹簡, 右手打開來看內容, 自然就變成了右到左來閱讀&lt;/p&gt;
+&lt;p&gt;不過現在大多也因為資訊科學的發展後在電子載體上就沿用左到右的排版(前面提到電腦乃至資訊科學都是在拉丁語系的國家發展出來的)&lt;/p&gt;
+&lt;p&gt;不過在亞洲地區的國家部分書面印刷還是有保留上到下右到左的排版&lt;/p&gt;
+&lt;p&gt;不過有點扯遠了&lt;/p&gt;
+&lt;h2 id=&#34;實作-rtlright-to-left-的方式&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%af%a6%e4%bd%9c-rtlright-to-left-%e7%9a%84%e6%96%b9%e5%bc%8f&#34;&gt;
+        #
+    &lt;/a&gt;
+    實作 RTL(Right To Left) 的方式
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;這次主要是要處理 RTL 的問題&lt;/p&gt;
+&lt;p&gt;但其實在實作上也很好解&lt;/p&gt;
+&lt;p&gt;HTML tag 有個屬性是 &lt;code&gt;dir&lt;/code&gt; 只要設定是 &lt;code&gt;rtl&lt;/code&gt; 或是 &lt;code&gt;ltr&lt;/code&gt; 就可以了&lt;/p&gt;
+&lt;p&gt;那麼要在什麼情況下設定這個東西?&lt;/p&gt;
+&lt;p&gt;大致上會在兩種情況設定&lt;/p&gt;
+&lt;h3 id=&#34;1-多語系且有右到左語系&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#1-%e5%a4%9a%e8%aa%9e%e7%b3%bb%e4%b8%94%e6%9c%89%e5%8f%b3%e5%88%b0%e5%b7%a6%e8%aa%9e%e7%b3%bb&#34;&gt;
+        ##
+    &lt;/a&gt;
+    1. 多語系且有右到左語系
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;網站是多語系的網站且有右到左語系提供切換呈現&lt;/p&gt;
+&lt;p&gt;所以只要在使用者決定好語系時針對該語系時需要呈現 RTL 的 tag 做處理就可以了&lt;/p&gt;
+&lt;p&gt;以下有個例子是 Apple 的官網就是如此設計的&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2FScreen%20Shot%202022-04-15%20at%2011.48.23%20AM.png?alt=media&amp;amp;token=c8a644ca-20bc-4d0a-83a2-16d8929a58d1&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2FScreen%20Shot%202022-04-15%20at%2011.47.18%20AM.png?alt=media&amp;amp;token=fd076287-6bef-49fd-90dc-5b6f00b6b472&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Apple 的官網就是在切換成不同語系時就設定不同的 &lt;code&gt;dir&lt;/code&gt; 值來處理&lt;/p&gt;
+&lt;h3 id=&#34;2-ugcuser-generated-content-有右到左語系的內容&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2-ugcuser-generated-content-%e6%9c%89%e5%8f%b3%e5%88%b0%e5%b7%a6%e8%aa%9e%e7%b3%bb%e7%9a%84%e5%85%a7%e5%ae%b9&#34;&gt;
+        ##
+    &lt;/a&gt;
+    2. UGC(user generated content) 有右到左語系的內容
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;像是討論區或是可以讓使用者輸入內容呈現的部分這部分也要注意處理&lt;/p&gt;
+&lt;p&gt;這樣的話呈現內容就不會是我們能夠先掌控的&lt;/p&gt;
+&lt;p&gt;不像一般網站如果要呈現多語系, 那網站內容都會是自己的多語系檔與自己判斷多語系&lt;/p&gt;
+&lt;p&gt;這情況就可以使用 &lt;code&gt;dir&lt;/code&gt; 的第三種設定 &lt;code&gt;auto&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;瀏覽器會依照 tag 裡面的文字來判斷語系是 RTL 的語系時就自動轉成右到左, 如果是一般 LTR 的語系需維持左到右&lt;/p&gt;
+&lt;p&gt;這個方法很實用但也有個小缺點&lt;/p&gt;
+&lt;p&gt;就是當內容一開始是 LTR 的文字時就會讓整個內容是 LTR&lt;/p&gt;
+&lt;p&gt;像是以下情況&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;dir&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;auto&amp;#34;&lt;/span&gt;&amp;gt;This content هذه الفقرة باللغة العربية ، لذا يجب الانتقال من اليمين إلى اليسار.&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;會有點尷尬, 也不太確定這樣的呈現是不是可行的&lt;/p&gt;
+&lt;p&gt;但是可以用另一個方式就是用 regex 來確認內容是不是有 RTL 的字元&lt;/p&gt;
+&lt;p&gt;找了一下網路上整理出來的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; IsRTL (s) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; rtlChars &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;\u0591-\u07FF\u200F\u202B\u202E\uFB1D-\uFDFD\uFE70-\uFEFC&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; rtlDirCheck &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;RegExp&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;[&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; rtlChars &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;]&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; rtlDirCheck.test(s)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這個 function 可以判斷內容是否含有 RTL 的字元&lt;/p&gt;
+&lt;p&gt;但這個也不適合有混合了 RTL 和 LTR 的內容&lt;/p&gt;
+&lt;p&gt;總之還是得自己評估採用哪種方式比較好&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir&#34;&gt;dir - HTML: HyperText Markup Language | MDN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%B8%B1%E6%9B%B8%E8%88%87%E6%A9%AB%E6%9B%B8&#34;&gt;Refer - 縱書與橫書&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

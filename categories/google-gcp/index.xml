@@ -1,20 +1,385 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Google GCP on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/google-gcp/</link>
-    <description>Recent content in Google GCP on tedshd&#39;s DevNote</description>
+    <title>Google GCP on Tedshd&#39;s Dev note</title>
+    <link>/categories/google-gcp/</link>
+    <description>Tedshd&#39;s Dev note (Google GCP)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/google-gcp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/google-gcp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>2018 Google cloud 訓練營 筆記</title>
-      <link>https://blog.tedshd.io/posts/2018-12-18-2018-google-cloud-training-camp-notes/</link>
+      <link>/posts/2018-12-18-2018-google-cloud-training-camp-notes/</link>
       <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2018-12-18-2018-google-cloud-training-camp-notes/</guid>
-      <description>2018 Google cloud 訓練營 筆記 Become a Google Cloud Platform expert with hands-on training. GCP Essentials Gcloud cli PROJECT_ID: gcloud auth list gcloud config list project BASIC gcloud -h gcloud config --help || gcloud help config gcloud config list --all Managing Cloud Storage data Try creating a Cloud Storage bucket. Bucket names must be unique, so replace unique-name with something else, or append the name to make</description>
+      
+      <guid>/posts/2018-12-18-2018-google-cloud-training-camp-notes/</guid>
+      <description>&lt;h1 id=&#34;2018-google-cloud-訓練營-筆記&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2018-google-cloud-%e8%a8%93%e7%b7%b4%e7%87%9f-%e7%ad%86%e8%a8%98&#34;&gt;
+        ##
+    &lt;/a&gt;
+    2018 Google cloud 訓練營 筆記
+&lt;/div&gt;
+&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://google.qwiklabs.com/quests/23?locale=en&#34;&gt;Become a Google Cloud Platform expert with hands-on training. GCP Essentials&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;gcloud-cli&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#gcloud-cli&#34;&gt;
+        #
+    &lt;/a&gt;
+    Gcloud cli
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;project_id&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#project_id&#34;&gt;
+        ##
+    &lt;/a&gt;
+    PROJECT_ID:
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud auth list
+
+gcloud config list project
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;basic&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#basic&#34;&gt;
+        ##
+    &lt;/a&gt;
+    BASIC
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud -h
+
+gcloud config --help || gcloud help config
+
+gcloud config list --all
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;managing-cloud-storage-data&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#managing-cloud-storage-data&#34;&gt;
+        #
+    &lt;/a&gt;
+    Managing Cloud Storage data
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Try creating a Cloud Storage bucket. Bucket names must be unique, so replace unique-name with something else, or append the name to make it unique.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gsutil mb gs://&amp;lt;unique-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Upload file to bucket&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gsutil cp &amp;lt;file&amp;gt; gs://&amp;lt;unique-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;create-a-new-persistent-disk&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#create-a-new-persistent-disk&#34;&gt;
+        #
+    &lt;/a&gt;
+    Create a new persistent disk
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Because we want to attach this disk to the virtual machine instance we created in the previous step, the zone must be the same.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute disks create &amp;lt;mydisk name&amp;gt; --size=200GB \ --zone us-central1-c
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-12-18%20%E4%B8%8A%E5%8D%8811.31.26.png?alt=media&amp;amp;token=7170d434-2bd3-46de-ba25-b9733ba9880f&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;attaching-a-disk&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#attaching-a-disk&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Attaching a disk
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Attaching the persistent disk&lt;/p&gt;
+&lt;p&gt;You can attach a disk to a running virtual machine. Let&amp;rsquo;s attach the new disk (mydisk) to the virtual machine instance you just created (gcelab).&lt;/p&gt;
+&lt;p&gt;gcloud compute instances attach-disk &lt;gcelab&gt; &amp;ndash;disk &lt;mydisk&gt; &amp;ndash;zone us-central1-c&lt;/p&gt;
+&lt;h3 id=&#34;finding-the-persistent-disk-in-the-virtual-machine&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#finding-the-persistent-disk-in-the-virtual-machine&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Finding the persistent disk in the virtual machine
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;The persistent disk is now available as a block device in the virtual machine instance. Let&amp;rsquo;s take a look.&lt;/p&gt;
+&lt;p&gt;go to this instance&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ls -l /dev/disk/by-id/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You found the file, the default name is:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scsi-0Google_PersistentDisk_persistent-disk-1.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you want a different device name, when you attach the disk, you would specify the device-name parameter. For example, to specify a device name, when you attach the disk you would use the command:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute instances attach-disk gcelab --disk mydisk --device-name &amp;lt;YOUR_DEVICE_NAME&amp;gt; --zone us-central1-c
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;formatting-and-mounting-the-persistent-disk&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#formatting-and-mounting-the-persistent-disk&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Formatting and mounting the persistent disk
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Once you find the block device, you can partition the disk, format it, and then mount it using the following Linux utilities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mkfs: creates a filesystem&lt;/li&gt;
+&lt;li&gt;mount: attaches to a filesystem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Make a mount point:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo mkdir /mnt/mydisk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Next, format the disk with a single ext4 filesystem using the mkfs tool. This command deletes all data from the specified disk:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo mkfs.ext4 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Last lines of the output.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Allocating group tables: done
+Writing inode tables: done
+Creating journal (262144 blocks): done
+Writing superblocks and filesystem accounting information: done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now use the mount tool to mount the disk to the instance with the discard option enabled:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo mount -o discard,defaults /dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1 /mnt/mydisk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Q: Can you prevent the destruction of an attached persistent disk when the instance is deleted?&lt;/p&gt;
+&lt;p&gt;A: Yes, deselect the option &lt;code&gt;Delete boot disk when instance is deleted&lt;/code&gt; when creating an instance&lt;/p&gt;
+&lt;p&gt;A:Yes, use the &lt;code&gt;–keep-disks&lt;/code&gt; option with the &lt;code&gt;gcloud compute instances delete&lt;/code&gt; command&lt;/p&gt;
+&lt;p&gt;Q: For migrating data from a persistent disk to another region, reorder the following steps in which they should be performed:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Unmount file system(s)&lt;/li&gt;
+&lt;li&gt;Create snapshot&lt;/li&gt;
+&lt;li&gt;Create disk&lt;/li&gt;
+&lt;li&gt;Create instance&lt;/li&gt;
+&lt;li&gt;Attach disk&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;hello-node-kubernetes&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#hello-node-kubernetes&#34;&gt;
+        #
+    &lt;/a&gt;
+    Hello Node Kubernetes
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;push docker image to instance&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud docker -- push gcr.io/&amp;lt;PROJECT_ID&amp;gt;/&amp;lt;hello-node&amp;gt;:&amp;lt;v1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-12-18%20%E4%B8%8B%E5%8D%881.31.39.png?alt=media&amp;amp;token=954769f2-dd42-4586-bf25-9a65b7662012&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;create-your-cluster&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#create-your-cluster&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Create your cluster
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud config set project &amp;lt;PROJECT_ID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Create a cluster with two n1-standard-1 nodes (this will take a few minutes to complete):&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud container clusters create &amp;lt;cluster name&amp;gt; \
+                --num-nodes 2 \
+                --machine-type n1-standard-1 \
+                --zone us-central1-a
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note: You can also create this cluster through the Console, image shown above: Kubernetes Engine &amp;gt; Kubernetes clusters &amp;gt; Create cluster.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;It is recommended to create the cluster in the same zone as the storage bucket used by the container registry (see previous step).&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-12-18%20%E4%B8%8B%E5%8D%881.42.05.png?alt=media&amp;amp;token=116b1f1c-9aa7-41b4-b34b-2104216d375d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;create-your-pod&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#create-your-pod&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Create your pod
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;A Kubernetes pod is a group of containers tied together for administration and networking purposes. It can contain single or multiple containers. Here you&amp;rsquo;ll use one container built with your Node.js image stored in your private container registry. It will serve content on port 8080.&lt;/p&gt;
+&lt;p&gt;Create a pod with the kubectl run command (replace PROJECT_ID with your GCP Project ID, found in the console and in the Connection Details section of the lab):&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl run &amp;lt;hello-node&amp;gt; \
+    --image=gcr.io/&amp;lt;PROJECT_ID&amp;gt;/&amp;lt;hello-node&amp;gt;:v1 \
+    --port=8080
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong style=&#34;color:red&#34;&gt;hello-node is container image name&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To view the deployment, run:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl get deployments
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To view the pod created by the deployment, run:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl get pods
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl cluster-info
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/docs/reference/kubectl/overview/&#34;&gt;Overview of kubectl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And for troubleshooting :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl get events
+
+kubectl logs &amp;lt;pod-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;allow-external-traffic&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#allow-external-traffic&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Allow external traffic
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;By default, the pod is only accessible by its internal IP within the cluster. In order to make the hello-node container accessible from outside the Kubernetes virtual network, you have to expose the pod as a Kubernetes service.(預設只有內部 IP 可以讀取)&lt;/p&gt;
+&lt;p&gt;From Cloud Shell you can expose the pod to the public internet with the kubectl expose command combined with the &amp;ndash;type=&amp;ldquo;LoadBalancer&amp;rdquo; flag. This flag is required for the creation of an externally accessible IP:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl expose deployment &amp;lt;container image name&amp;gt; --type=&amp;#34;LoadBalancer&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To find the publicly-accessible IP address of the service, request kubectl to list all the cluster services:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl get services
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This is the output you should see:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;NAME         CLUSTER-IP     EXTERNAL-IP      PORT(S)    AGE
+hello-node   10.3.250.149   104.154.90.147   8080/TCP   1m
+kubernetes   10.3.240.1     &amp;lt;none&amp;gt;           443/TCP    5m
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;open &lt;code&gt;104.154.90.147:8080&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;scale-up-your-service&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#scale-up-your-service&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Scale up your service
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;One of the powerful features offered by Kubernetes is how easy it is to scale your application. Suppose you suddenly need more capacity for your application. You can tell the replication controller to manage a new number of replicas for your pod:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl scale deployment &amp;lt;hello-node&amp;gt; --replicas=4
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can request a description of the updated deployment:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl get deployment
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can also list the all pods:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl get pods
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;roll-out-an-upgrade-to-your-service&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#roll-out-an-upgrade-to-your-service&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Roll out an upgrade to your service
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;At some point the application that you&amp;rsquo;ve deployed to production will require bug fixes or additional features. Kubernetes helps you deploy a new version to production without impacting your users.&lt;/p&gt;
+&lt;p&gt;Modify files &amp;amp; rebuild &amp;amp; push&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker build -t gcr.io/&amp;lt;PROJECT_ID&amp;gt;/&amp;lt;hello-node&amp;gt;:v2 .
+gcloud docker -- push gcr.io/&amp;lt;PROJECT_ID&amp;gt;/&amp;lt;hello-node&amp;gt;:v2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-12-18%20%E4%B8%8B%E5%8D%882.13.30.png?alt=media&amp;amp;token=f3bf4752-a5f5-48d0-881e-224ecdff6858&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;New version image&lt;/p&gt;
+&lt;p&gt;To do this, use the kubectl edit command. It opens a text editor displaying the full deployment yaml configuration. It isn&amp;rsquo;t necessary to understand the full yaml config right now, just understand that by updating the spec.template.spec.containers.image field in the config you are telling the deployment to update the pods with the new image.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl edit deployment &amp;lt;hello-node&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Modify &lt;code&gt;image&lt;/code&gt; &amp;amp; save&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-12-18%20%E4%B8%8B%E5%8D%882.19.57.png?alt=media&amp;amp;token=02c0746c-cc40-4f9e-9886-70f59d9a8d1a&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Run the following to update the deployment with the new image. New pods will be created with the new image and the old pods will be deleted.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl get deployments
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;While this is happening, the users of your services shouldn&amp;rsquo;t see any interruption. After a little while they&amp;rsquo;ll start accessing the new version of your application. You can find more details on rolling updates in &lt;a href=&#34;https://kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/&#34;&gt;this documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Hopefully with these deployment, scaling, and updated features, once you&amp;rsquo;ve set up your Kubernetes Engine cluster, you&amp;rsquo;ll agree that Kubernetes will help you focus on the application rather than the infrastructure.&lt;/p&gt;
+&lt;h2 id=&#34;set-up-network-and-http-load-balancers&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#set-up-network-and-http-load-balancers&#34;&gt;
+        #
+    &lt;/a&gt;
+    Set Up Network and HTTP Load Balancers
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;In this hands-on lab, you&amp;rsquo;ll learn the differences between a network load balancer and a HTTP load balancer, and how to set them up for your applications running on Google Compute Engine virtual machines.&lt;/p&gt;
+&lt;p&gt;There are several ways you can load balance in Google Cloud Platform. This lab takes you through the setup of the following load balancers.:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;L3 &lt;a href=&#34;https://cloud.google.com/compute/docs/load-balancing/network/&#34;&gt;Network Load Balancer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;L7 &lt;a href=&#34;https://cloud.google.com/compute/docs/load-balancing/http/&#34;&gt;HTTP(s) Load Balancer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;set-the-default-region-and-zone-for-all-resources&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#set-the-default-region-and-zone-for-all-resources&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Set the default region and zone for all resources
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;In Cloud Shell, set the default zone:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud config set compute/zone us-central1-a
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Set the default region:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud config set compute/region us-central1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/compute/docs/regions-zones/&#34;&gt;Regions &amp;amp; Zones documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;create-multiple-web-server-instances&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#create-multiple-web-server-instances&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Create multiple web server instances
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;To simulate serving from a cluster of machines, create a simple cluster of Nginx web servers to serve static content using &lt;strong&gt;Instance Templates&lt;/strong&gt; and &lt;strong&gt;Managed Instance Groups&lt;/strong&gt;. Instance Templates define the look of every virtual machine in the cluster (disk, CPUs, memory, etc). Managed Instance Groups instantiate a number of virtual machine instances using the Instance Template.&lt;/p&gt;
+&lt;p&gt;To create the Nginx web server clusters, create the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A startup script to be used by every virtual machine instance to setup Nginx server upon startup&lt;/li&gt;
+&lt;li&gt;An instance template to use the startup script&lt;/li&gt;
+&lt;li&gt;A target pool&lt;/li&gt;
+&lt;li&gt;A managed instance group using the instance template&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Still in Cloud Shell, create a startup script to be used by every virtual machine instance. This script sets up the Nginx server upon startup:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat &amp;lt;&amp;lt; EOF &amp;gt; startup.sh
+#! /bin/bash
+apt-get update
+apt-get install -y nginx
+service nginx start
+sed -i -- &amp;#39;s/nginx/Google Cloud Platform - &amp;#39;&amp;#34;\$HOSTNAME&amp;#34;&amp;#39;/&amp;#39; /var/www/html/index.nginx-debian.html
+EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Create an instance template, which uses the startup script:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute instance-templates create nginx-template \
+         --metadata-from-file startup-script=startup.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Create a target pool. A target pool allows a single access point to all the instances in a group and is necessary for load balancing in the future steps.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute target-pools create nginx-pool
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Create a managed instance group using the instance template:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute instance-groups managed create nginx-group \
+         --base-instance-name nginx \
+         --size 2 \
+         --template nginx-template \
+         --target-pool nginx-pool \
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List instance&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute instances list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now configure a firewall so that you can connect to the machines on port 80 via the EXTERNAL_IP addresses:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute firewall-rules create www-firewall --allow tcp:80
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;create-a-network-load-balancer&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#create-a-network-load-balancer&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Create a Network Load Balancer
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Network load balancing allows you to balance the load of your systems based on incoming IP protocol data, such as address, port, and protocol type. You also get some options that are not available, with HTTP(S) load balancing. For example, you can load balance additional TCP/UDP-based protocols such as SMTP traffic. And if your application is interested in TCP-connection-related characteristics, network load balancing allows your app to inspect the packets, where HTTP(S) load balancing does not.&lt;/p&gt;
+&lt;p&gt;For more information, see &lt;a href=&#34;https://cloud.google.com/compute/docs/load-balancing/network/&#34;&gt;Setting Up Network Load Balancing&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Create an L3 network load balancer targeting your instance group:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute forwarding-rules create nginx-lb \
+         --region us-central1 \
+         --ports=80 \
+         --target-pool nginx-pool
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List all Google Compute Engine forwarding rules in your project.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute forwarding-rules list
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;create-a-https-load-balancer&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#create-a-https-load-balancer&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Create a HTTP(s) Load Balancer
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;HTTP(S) load balancing provides global load balancing for HTTP(S) requests destined for your instances. You can configure URL rules that route some URLs to one set of instances and route other URLs to other instances. Requests are always routed to the instance group that is closest to the user, provided that group has enough capacity and is appropriate for the request. If the closest group does not have enough capacity, the request is sent to the closest group that does have capacity.&lt;/p&gt;
+&lt;p&gt;Learn more about the &lt;a href=&#34;https://cloud.google.com/compute/docs/load-balancing/http/&#34;&gt;HTTP(s) Load Balancer in the documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;First, create a health check. Health checks verify that the instance is responding to HTTP or HTTPS traffic:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute http-health-checks create http-basic-check
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Define an HTTP service and map a port name to the relevant port for the instance group. Now the load balancing service can forward traffic to the named port:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute instance-groups managed \
+       set-named-ports nginx-group \
+       --named-ports http:80
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Create a &lt;a href=&#34;https://cloud.google.com/compute/docs/reference/latest/backendServices&#34;&gt;backend service&lt;/a&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute backend-services create nginx-backend \
+      --protocol HTTP --http-health-checks http-basic-check --global
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Add the instance group into the backend service:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute backend-services add-backend nginx-backend \
+    --instance-group nginx-group \
+    --instance-group-zone us-central1-a \
+    --global
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Create a default URL map that directs all incoming requests to all your instances:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute url-maps create web-map \
+    --default-service nginx-backend
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To direct traffic to different instances based on the URL being requested, see &lt;a href=&#34;https://cloud.google.com/compute/docs/load-balancing/http/content-based-example&#34;&gt;content-based routing&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Create a target HTTP proxy to route requests to your URL map:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute target-http-proxies create http-lb-proxy \
+    --url-map web-map
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Create a global forwarding rule to handle and route incoming requests. A forwarding rule sends traffic to a specific target HTTP or HTTPS proxy depending on the IP address, IP protocol, and port specified. The global forwarding rule does not support multiple ports.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute forwarding-rules create http-content-rule \
+        --global \
+        --target-http-proxy http-lb-proxy \
+        --ports 80
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After creating the global forwarding rule, it can take several minutes for your configuration to propagate.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gcloud compute forwarding-rules list
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;finally&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#finally&#34;&gt;
+        #
+    &lt;/a&gt;
+    Finally
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://google.qwiklabs.com/public_profiles/041a2178-a884-4c58-8d19-29612e95164c&#34;&gt;GCP Essentials&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

@@ -1,20 +1,169 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Functions on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/functions/</link>
-    <description>Recent content in Functions on tedshd&#39;s DevNote</description>
+    <title>Functions on Tedshd&#39;s Dev note</title>
+    <link>/categories/functions/</link>
+    <description>Tedshd&#39;s Dev note (Functions)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/functions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/functions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Firebase - Firebase functions 使用紀錄</title>
-      <link>https://blog.tedshd.io/posts/2019-12-20-firebase-firebase-functions/</link>
+      <link>/posts/2019-12-20-firebase-firebase-functions/</link>
       <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2019-12-20-firebase-firebase-functions/</guid>
-      <description>Firebase - Firebase functions 使用紀錄 最近想把一些自己在用的小東西丟到 severless 的服務 因為之前發生過一次 server 掛掉過一次的情況 當時是 GCP CE 不知為何 VM 中的網卡設定出問題 整個網卡消</description>
+      
+      <guid>/posts/2019-12-20-firebase-firebase-functions/</guid>
+      <description>&lt;h2 id=&#34;firebase---firebase-functions-使用紀錄&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#firebase---firebase-functions-%e4%bd%bf%e7%94%a8%e7%b4%80%e9%8c%84&#34;&gt;
+        #
+    &lt;/a&gt;
+    Firebase - Firebase functions 使用紀錄
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;最近想把一些自己在用的小東西丟到 severless 的服務&lt;/p&gt;
+&lt;p&gt;因為之前發生過一次 server 掛掉過一次的情況&lt;/p&gt;
+&lt;p&gt;當時是 GCP CE 不知為何 VM 中的網卡設定出問題&lt;/p&gt;
+&lt;p&gt;整個網卡消失&lt;/p&gt;
+&lt;p&gt;然後外部根本連不進去&lt;/p&gt;
+&lt;p&gt;最後請教大大後&lt;/p&gt;
+&lt;p&gt;只好開一個新的 instance 然後把原本的那個儲存空間掛到新開的 instance&lt;/p&gt;
+&lt;p&gt;因為那台平常在試驗的 server&lt;/p&gt;
+&lt;p&gt;裡面亂七八糟而且大多的 code 都不會做 git 控管&lt;/p&gt;
+&lt;p&gt;所以就想說把一些常用的功能用 serverless 拆出來好了&lt;/p&gt;
+&lt;p&gt;就想說來研究一下火了一陣子然後設定沒設定好就會噴一堆預算和安全性問題的 Firebase 所推出的 &lt;a href=&#34;https://firebase.google.com/docs/functions&#34;&gt;functions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其實 GCP 自己本身也有 cloud functions&lt;/p&gt;
+&lt;p&gt;但我這是玩票性質的&lt;/p&gt;
+&lt;p&gt;所以就先用 firebase functions 來試試啦&lt;/p&gt;
+&lt;p&gt;先說一下目前 firebase functions 只支援 Nodejs&lt;/p&gt;
+&lt;p&gt;但是 Google cloud 的 &lt;a href=&#34;https://cloud.google.com/functions/docs/writing/&#34;&gt;cloud functions&lt;/a&gt; 支援 Nodejs python golnag&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先先裝 firebase-tools CLI&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install -g firebase-tools
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;執行 firebase login&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firebase login
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;到要建立 functions 的資料夾&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這時候要注意如果你要做版本控管&lt;/p&gt;
+&lt;p&gt;就是直接到該 repository 的目錄下即可&lt;/p&gt;
+&lt;p&gt;下一步會在這目錄建立需要的程式&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;執行 firebase init functions&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firebase init functions
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;過程中會請你選擇或新開專案&lt;/p&gt;
+&lt;p&gt;這邊的專案是指 firebase 上面的專案&lt;/p&gt;
+&lt;p&gt;可以用 &lt;code&gt;JavaScript&lt;/code&gt; 寫或 &lt;code&gt;TypeScript&lt;/code&gt; 寫 code&lt;/p&gt;
+&lt;p&gt;整個 functions 的結構&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;myproject
+ +- .firebaserc    # Hidden file that helps you quickly switch between
+ |                 # projects with `firebase use`
+ |
+ +- firebase.json  # Describes properties for your project
+ |
+ +- functions/     # Directory containing all your functions code
+      |
+      +- .eslintrc.json  # Optional file containing rules for JavaScript linting.
+      |
+      +- package.json  # npm package file describing your Cloud Functions code
+      |
+      +- index.js      # main source file for your Cloud Functions code
+      |
+      +- node_modules/ # directory where your dependencies (declared in
+                       # package.json) are installed
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;要注意的事和開始寫扣啦&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a6%81%e6%b3%a8%e6%84%8f%e7%9a%84%e4%ba%8b%e5%92%8c%e9%96%8b%e5%a7%8b%e5%af%ab%e6%89%a3%e5%95%a6&#34;&gt;
+        ##
+    &lt;/a&gt;
+    要注意的事和開始寫扣啦
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;index.js 就是 functions 會執行的程式&lt;/p&gt;
+&lt;p&gt;你可以依照自己的需求安裝需要的 node 套件&lt;/p&gt;
+&lt;p&gt;但需要注意的是該套件安裝完你的 &lt;code&gt;package.json&lt;/code&gt; 的 &lt;code&gt;dependencies&lt;/code&gt; 必須有紀錄該套件的版號&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;package.json&lt;/code&gt; 中的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;engines&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;node&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;8&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;表示使用的 node 版本&lt;/p&gt;
+&lt;p&gt;目前預設是 8&lt;/p&gt;
+&lt;p&gt;10 有支援但目前是 beta&lt;/p&gt;
+&lt;p&gt;可以看目前&lt;a href=&#34;https://firebase.google.com/docs/functions/manage-functions#set_nodejs_version&#34;&gt;文件&lt;/a&gt;來決定用哪一版的 nodejs&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;exports.ok &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; functions.https.onRequest((request, response) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; response.send(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Hello from Firebase!&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ok 就會是實際上 url path&lt;/p&gt;
+&lt;p&gt;上線後的 url 會是&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://&amp;lt;region&amp;gt;-&amp;lt;firebase project name&amp;gt;.cloudfunctions.net/&amp;lt;exports name&amp;gt;
+
+ex:
+http://us-central1-my-project.cloudfunctions.net/ok
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;相關 &lt;a href=&#34;https://firebase.google.com/docs/reference/functions&#34;&gt;API&lt;/a&gt; 可以參考&lt;/p&gt;
+&lt;p&gt;很多 API 都和 express 幾乎一樣&lt;/p&gt;
+&lt;p&gt;如果要帶參數的話可以用 &lt;a href=&#34;https://expressjs.com/en/api.html#req.params&#34;&gt;params&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;部署區域&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%83%a8%e7%bd%b2%e5%8d%80%e5%9f%9f&#34;&gt;
+        ##
+    &lt;/a&gt;
+    部署區域
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;可以決定該功能在那個區域部署&lt;/p&gt;
+&lt;p&gt;同一個 index 檔案可以部署不同地區&lt;/p&gt;
+&lt;p&gt;預設是 us-central1 (Iowa) 艾荷華&lt;/p&gt;
+&lt;p&gt;可以查看&lt;a href=&#34;https://firebase.google.com/docs/functions/locations&#34;&gt;支援的 region 列表&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;只要添加在 code 之中即可&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-Javasctipt&#34; data-lang=&#34;Javasctipt&#34;&gt;exports.ok = functions.region(&amp;#39;asia-northeast1&amp;#39;).https.onRequest((request, response) =&amp;gt; {
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;目前沒法在程式中直接設定 multi region 得一個一個上&lt;/p&gt;
+&lt;p&gt;不然官方是建議建立不同 region 的 entry&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/functions/manage-functions#modify-region&#34;&gt;modify-region&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;再把 function 邏輯抽象出來就可以了&lt;/p&gt;
+&lt;h3 id=&#34;本地測試&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%9c%ac%e5%9c%b0%e6%b8%ac%e8%a9%a6&#34;&gt;
+        ##
+    &lt;/a&gt;
+    本地測試
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;可以參考&lt;a href=&#34;https://firebase.google.com/docs/functions/local-emulator&#34;&gt;Run functions locally&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;會在本地開啟 local server&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2019-12-20_%E4%B8%8B%E5%8D%882_12_47.png?alt=media&amp;amp;token=f2b94428-cd21-4452-8718-c6aceb378c08&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;也會有對應的 url path 可以讓你直接點&lt;/p&gt;
+&lt;p&gt;如果要測試 log&lt;/p&gt;
+&lt;p&gt;在 node 中寫&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.info()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.error()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.warn()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就可以了&lt;/p&gt;
+&lt;h3 id=&#34;呼叫第三方或外部-api-時出現-eai_again&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%91%bc%e5%8f%ab%e7%ac%ac%e4%b8%89%e6%96%b9%e6%88%96%e5%a4%96%e9%83%a8-api-%e6%99%82%e5%87%ba%e7%8f%be-eai_again&#34;&gt;
+        ##
+    &lt;/a&gt;
+    呼叫第三方或外部 api 時出現 EAI_AGAIN
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;查了一下&lt;/p&gt;
+&lt;p&gt;這是 DNS 解析的問題&lt;/p&gt;
+&lt;p&gt;在 Free 方案只允許呼叫 Google service 自己的 api&lt;/p&gt;
+&lt;p&gt;要切到付費方案才可以&lt;/p&gt;
+&lt;p&gt;用 Blaze plan 就可以了&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/sendgrid/sendgrid-nodejs/issues/927&#34;&gt;Refer - getaddrinfo EAI_AGAIN api.sendgrid.com:443&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

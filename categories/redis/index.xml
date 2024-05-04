@@ -1,27 +1,161 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Redis on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/redis/</link>
-    <description>Recent content in Redis on tedshd&#39;s DevNote</description>
+    <title>Redis on Tedshd&#39;s Dev note</title>
+    <link>/categories/redis/</link>
+    <description>Tedshd&#39;s Dev note (Redis)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/redis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>redis - note</title>
-      <link>https://blog.tedshd.io/posts/2019-09-05-redis-note/</link>
+      <link>/posts/2019-09-05-redis-note/</link>
       <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2019-09-05-redis-note/</guid>
-      <description>redis - note doc http://redisdoc.com/index.html php redis https://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html go redis https://godoc.org/github.com/go-redis/redis 連到 redis server local server redis-cli remote server redis-cli -h host -p port -a password Get all key KEYS &amp;#39;*&amp;#39; Troubleshooting ERR Operation against a key holding the wrong kind of value 取 Key 的類型不對 用 type &amp;lt;KEY&amp;gt; 來確認存的類型</description>
+      
+      <guid>/posts/2019-09-05-redis-note/</guid>
+      <description>&lt;h2 id=&#34;redis---note&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#redis---note&#34;&gt;
+        #
+    &lt;/a&gt;
+    redis - note
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;doc&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://redisdoc.com/index.html&#34;&gt;http://redisdoc.com/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;php redis&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html&#34;&gt;https://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;go redis&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://godoc.org/github.com/go-redis/redis&#34;&gt;https://godoc.org/github.com/go-redis/redis&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;連到-redis-server&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%80%a3%e5%88%b0-redis-server&#34;&gt;
+        ##
+    &lt;/a&gt;
+    連到 redis server
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;local server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;redis-cli
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;remote server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;redis-cli -h host -p port -a password
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;get-all-key&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#get-all-key&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Get all key
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;KEYS &amp;#39;*&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;troubleshooting&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#troubleshooting&#34;&gt;
+        #
+    &lt;/a&gt;
+    Troubleshooting
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;err-operation-against-a-key-holding-the-wrong-kind-of-value&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#err-operation-against-a-key-holding-the-wrong-kind-of-value&#34;&gt;
+        ##
+    &lt;/a&gt;
+    ERR Operation against a key holding the wrong kind of value
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;取 Key 的類型不對&lt;/p&gt;
+&lt;p&gt;用&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;type &amp;lt;KEY&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;來確認存的類型&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Mac - php redis install</title>
-      <link>https://blog.tedshd.io/posts/2019-06-19-mac-php-redis-install/</link>
+      <link>/posts/2019-06-19-mac-php-redis-install/</link>
       <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2019-06-19-mac-php-redis-install/</guid>
-      <description>Mac - php redis install Mac Env Mac OSX 10.14.5 Step git clone https://www.github.com/phpredis/phpredis.git cd phpredis phpize &amp;amp;&amp;amp; ./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install test php -r &amp;#34;if (new Redis() == true){ echo \&amp;#34;\r\n OK \r\n\&amp;#34;; }&amp;#34; Troubleshooting phpize 1. $ phpize grep: /usr/include/php/main/php.h: No such file or directory grep: /usr/include/php/Zend/zend_modules.h: No such file or directory grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory Configuring for: PHP Api Version: Zend</description>
+      
+      <guid>/posts/2019-06-19-mac-php-redis-install/</guid>
+      <description>&lt;h2 id=&#34;mac---php-redis-install&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac---php-redis-install&#34;&gt;
+        #
+    &lt;/a&gt;
+    Mac - php redis install
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;mac-env&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac-env&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Mac Env
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Mac OSX 10.14.5&lt;/p&gt;
+&lt;h3 id=&#34;step&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#step&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Step
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://www.github.com/phpredis/phpredis.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;cd&lt;/span&gt; phpredis
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;phpize &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./configure &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo make install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;test&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;php -r &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;if (new Redis() == true){ echo \&amp;#34;\r\n OK \r\n\&amp;#34;; }&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;troubleshooting&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#troubleshooting&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Troubleshooting
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;phpize&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#phpize&#34;&gt;
+        ###
+    &lt;/a&gt;
+    phpize
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;1.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ phpize
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: /usr/include/php/main/php.h: No such file or directory
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: /usr/include/php/Zend/zend_modules.h: No such file or directory
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Configuring &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PHP Api Version:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Zend Module Api No:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Zend Extension Api No:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;cd&lt;/span&gt; /Library/Developer/CommandLineTools/Packages/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;open macOS_SDK_headers_for_macOS_10.14.pkg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ phpize
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Cannot find autoconf. Please check your autoconf installation and the &lt;span style=&#34;color:#ff5c57&#34;&gt;$PHP_AUTOCONF&lt;/span&gt; environment variable. Then, rerun this script.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install autoconf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/51908004/install-phpredis-mac-osx&#34;&gt;Refer - install-phpredis-mac-osx&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhile.io/2018/09/26/macOS-10.14-install-sdk-headers.html&#34;&gt;Refer - macOS 10.14软件编译时找不到头文件的解决方法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.mayanlong.com/archives/2016/349.html&#34;&gt;Refer - macOS 中使用 phpize 动态添加 PHP 扩展的错误解决方法&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

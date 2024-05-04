@@ -1,20 +1,120 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Headless on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/headless/</link>
-    <description>Recent content in Headless on tedshd&#39;s DevNote</description>
+    <title>Headless on Tedshd&#39;s Dev note</title>
+    <link>/categories/headless/</link>
+    <description>Tedshd&#39;s Dev note (Headless)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/headless/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/headless/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Chrome headless 研究筆記</title>
-      <link>https://blog.tedshd.io/posts/2018-12-26-chrome-headless-research-notes/</link>
+      <link>/posts/2018-12-26-chrome-headless-research-notes/</link>
       <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2018-12-26-chrome-headless-research-notes/</guid>
-      <description>Chrome headless 研究筆記 最近要用到 chrome headless 的部分功能 且得在 ubuntu or debian server 實踐 所以筆記一下 Intro headless 大致分兩種用法 CLI libary Refer - Getting Started with Headless Chrome CLI 用法簡單但是受限很多且沒有找到具體詳</description>
+      
+      <guid>/posts/2018-12-26-chrome-headless-research-notes/</guid>
+      <description>&lt;h2 id=&#34;chrome-headless-研究筆記&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#chrome-headless-%e7%a0%94%e7%a9%b6%e7%ad%86%e8%a8%98&#34;&gt;
+        #
+    &lt;/a&gt;
+    Chrome headless 研究筆記
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;最近要用到 chrome headless 的部分功能&lt;/p&gt;
+&lt;p&gt;且得在 ubuntu or debian server 實踐&lt;/p&gt;
+&lt;p&gt;所以筆記一下&lt;/p&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;headless 大致分兩種用法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;CLI&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;libary&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/web/updates/2017/04/headless-chrome&#34;&gt;Refer - Getting Started with Headless Chrome&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CLI 用法簡單但是受限很多且沒有找到具體詳細完整的文件, 就連用 man 查都查不到&amp;hellip;&lt;/p&gt;
+&lt;p&gt;也有可能是我自己沒有認真找&lt;/p&gt;
+&lt;p&gt;libary 就相對容易, 連 Google 自己都有提供部分語言的版本, 且有前端工程師很熟的 Node 版本&lt;/p&gt;
+&lt;h3 id=&#34;on-ubuntu-server&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#on-ubuntu-server&#34;&gt;
+        ##
+    &lt;/a&gt;
+    on ubuntu server
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt-get install chromium-browser
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ex:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chromium-browser --headless --screenshot=test.png --disable-gpu --window-size=320,480 --user-agent=&amp;#34;Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D257 Safari/9537.53&amp;#34; http://tedshd.logdown.com
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;這指令下了截圖, 設定寬高, 模擬 UserAgent&lt;/p&gt;
+&lt;p&gt;當然也有 &lt;code&gt;--dump-dom&lt;/code&gt; 可以看 source code&lt;/p&gt;
+&lt;h3 id=&#34;使用-puppeteer-處理&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8-puppeteer-%e8%99%95%e7%90%86&#34;&gt;
+        ##
+    &lt;/a&gt;
+    使用 puppeteer 處理
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/GoogleChrome/puppeteer&#34;&gt;puppeteer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;puppeteer 是 Google 維護的用 node 處理 headless 的套件&lt;/p&gt;
+&lt;p&gt;用了一下真是感到清爽好用&lt;/p&gt;
+&lt;p&gt;放一段最簡單的 smaple code&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; puppeteer &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;puppeteer&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#ff6ac1&#34;&gt;async&lt;/span&gt; () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; browser &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; puppeteer.launch();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; page &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; browser.newPage();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    page.setUserAgent(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:64.0) Gecko/20100101 Firefox/64.0&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; page.&lt;span style=&#34;color:#ff6ac1&#34;&gt;goto&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;https://tysh310246.blogspot.com&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; page.screenshot({path&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;example.png&amp;#39;&lt;/span&gt;, fullPage&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; browser.close();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就是如此清爽&lt;/p&gt;
+&lt;p&gt;且有很多包好的 function 可以用&lt;/p&gt;
+&lt;p&gt;看了一下文件根本可以用 headless 取代 selenium + webdriver.io 了&lt;/p&gt;
+&lt;p&gt;但是目前的需求也不需要用到太多其他的功能&lt;/p&gt;
+&lt;p&gt;有空再慢慢研究&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md&#34;&gt;Puppeteer API Tip-Of-Tree&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;字型&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%ad%97%e5%9e%8b&#34;&gt;
+        ##
+    &lt;/a&gt;
+    字型
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;在一台 server 上除非要截的網站是用 webfont 不然就會發現截的圖因為沒有字型所以中文會是方塊字&lt;/p&gt;
+&lt;p&gt;這部分就得處理一下&lt;/p&gt;
+&lt;p&gt;可以直接裝 Google 的 noto 字型&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget -c https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;把字型檔載下來放在&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/usr/local/share/fonts/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;設定 owner&lt;/p&gt;
+&lt;p&gt;設定權限&lt;/p&gt;
+&lt;p&gt;安裝字型&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo fc-cache -fv
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;搞定&lt;/p&gt;
+&lt;p&gt;這邊建議直接裝全部語系的字型較為完整, 以免會遇到其他語系還是會有問題&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://samwhelp.github.io/blog/read/linux/ubuntu/font/font-noto/&#34;&gt;Refer - Ubuntu環境下，手動安裝思源字型&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

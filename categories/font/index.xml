@@ -1,20 +1,64 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Font on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/font/</link>
-    <description>Recent content in Font on tedshd&#39;s DevNote</description>
+    <title>Font on Tedshd&#39;s Dev note</title>
+    <link>/categories/font/</link>
+    <description>Tedshd&#39;s Dev note (Font)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/font/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Aug 2015 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/font/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>CSS - web font</title>
-      <link>https://blog.tedshd.io/posts/2015-08-11-css-web-font/</link>
+      <link>/posts/2015-08-11-css-web-font/</link>
       <pubDate>Tue, 11 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-08-11-css-web-font/</guid>
-      <description>CSS - web font Use our font&#xA;Put your font file on your server.&#xA;Default font can&amp;rsquo;t cross domain used.&#xA;Suggest use OTF or TTF format.&#xA;@font-face { font-family: playstation; src: url(TRIIYP.otf); } @font-face { font-family: sony; src: url(sony.TTF); } Fonts SONY&amp;rsquo;s Logo Font Download&#xA;Free ps4 fonts - FontSpace&#xA;Demo ps4&#xA;Refer - CSS3 Web Fonts</description>
+      
+      <guid>/posts/2015-08-11-css-web-font/</guid>
+      <description>&lt;h2 id=&#34;css---web-font&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#css---web-font&#34;&gt;
+        #
+    &lt;/a&gt;
+    CSS - web font
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Use our font&lt;/p&gt;
+&lt;p&gt;Put your font file on your server.&lt;/p&gt;
+&lt;p&gt;Default font can&amp;rsquo;t cross domain used.&lt;/p&gt;
+&lt;p&gt;Suggest use &lt;code&gt;OTF&lt;/code&gt; or &lt;code&gt;TTF&lt;/code&gt; format.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#ff6ac1&#34;&gt;font-face&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;font-family&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;playstation&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;url&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;TRIIYP&lt;/span&gt;.&lt;span style=&#34;color:#f3f99d&#34;&gt;otf&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#ff6ac1&#34;&gt;font-face&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;font-family&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;sony&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;url&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;sony&lt;/span&gt;.&lt;span style=&#34;color:#f3f99d&#34;&gt;TTF&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;fonts&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#fonts&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Fonts
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.ffonts.net/SONYs-Logo.font.download&#34;&gt;SONY&amp;rsquo;s Logo Font Download&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.fontspace.com/category/ps4&#34;&gt;Free ps4 fonts - FontSpace&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;demo&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#demo&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Demo
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://tedse.0fees.net/demo/ps4/&#34;&gt;ps4&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.w3schools.com/css/css3_fonts.asp&#34;&gt;Refer - CSS3 Web Fonts&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

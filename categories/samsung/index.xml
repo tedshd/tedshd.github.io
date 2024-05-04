@@ -1,48 +1,498 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Samsung on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/samsung/</link>
-    <description>Recent content in Samsung on tedshd&#39;s DevNote</description>
+    <title>Samsung on Tedshd&#39;s Dev note</title>
+    <link>/categories/samsung/</link>
+    <description>Tedshd&#39;s Dev note (Samsung)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/samsung/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/samsung/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Samsung Samrt TV - Network Error Handle</title>
-      <link>https://blog.tedshd.io/posts/2014-04-28-samsung-samrt-tv-network-error-handle/</link>
+      <link>/posts/2014-04-28-samsung-samrt-tv-network-error-handle/</link>
       <pubDate>Mon, 28 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-04-28-samsung-samrt-tv-network-error-handle/</guid>
-      <description>Samsung Samrt TV - Network Error Handle Example Watch network connect status&#xA;Add web api in HTML &amp;lt;script type=&amp;#34;text/javascript&amp;#34; language=&amp;#34;javascript&amp;#34; src=&amp;#34;$MANAGER_WIDGET/Common/webapi/1.0/webapis.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; Add JavaScript code var watchCB = { onconnect : function (type) { // (1) connected alert(type + &amp;#34; is connected successfully&amp;#34;); }, ondisconnect : function(type) { // (0) disconnected alert(type + &amp;#34; is disconnected&amp;#34;); } }; function successCB(networks) { for (var i = 0; networks.length; i++) { if (networks[i].isActive()) { networks[i].</description>
+      
+      <guid>/posts/2014-04-28-samsung-samrt-tv-network-error-handle/</guid>
+      <description>&lt;h2 id=&#34;samsung-samrt-tv---network-error-handle&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#samsung-samrt-tv---network-error-handle&#34;&gt;
+        #
+    &lt;/a&gt;
+    Samsung Samrt TV - Network Error Handle
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;example&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#example&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Example
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Watch network connect status&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Add web api in HTML&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;language&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;$MANAGER_WIDGET/Common/webapi/1.0/webapis.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Add JavaScript code&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; watchCB &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    onconnect &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; (type) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#78787e&#34;&gt;// (1) connected
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        alert(type &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34; is connected successfully&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ondisconnect &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(type) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#78787e&#34;&gt;// (0) disconnected
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        alert(type &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34; is disconnected&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; successCB(networks) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;; networks.length; i&lt;span style=&#34;color:#ff6ac1&#34;&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (networks[i].isActive()) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            networks[i].setWatchListener(watchCB, errorCB);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; errorCB(error) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    alert(error.message);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    webapis.network.getAvailableNetworks(successCB, errorCB);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} &lt;span style=&#34;color:#ff6ac1&#34;&gt;catch&lt;/span&gt; (error) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;h4&amp;#39;&lt;/span&gt;).innerHTML &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; error.name;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    alert(error.name);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This sample code can detect network connect status&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.samsungdforum.com/Guide/ref00008/index.html&#34;&gt;Refer - Web Device API&lt;/a&gt;
+&lt;a href=&#34;http://www.samsungdforum.com/Guide/ref00008/network/dtv_network_module.html&#34;&gt;Refer - Network&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Develop Samsung Smart TV Apps - Update(SDK 5.0)</title>
-      <link>https://blog.tedshd.io/posts/2014-03-07-develop-samsung-smart-tv-apps-updatesdk-50/</link>
+      <link>/posts/2014-03-07-develop-samsung-smart-tv-apps-updatesdk-50/</link>
       <pubDate>Fri, 07 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-03-07-develop-samsung-smart-tv-apps-updatesdk-50/</guid>
-      <description>SDK 5.0 Update diff SDK 5.0 改變了 IDE UI 打包到 Server 設定 package app</description>
+      
+      <guid>/posts/2014-03-07-develop-samsung-smart-tv-apps-updatesdk-50/</guid>
+      <description>&lt;h2 id=&#34;sdk-50-update-diff&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sdk-50-update-diff&#34;&gt;
+        #
+    &lt;/a&gt;
+    SDK 5.0 Update diff
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;SDK 5.0
+改變了 IDE UI&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打包到 Server 設定&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/184048/x8I9mWBdTeK3kThDxRJi_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-03-07%20%E4%B8%8B%E5%8D%883.26.15.png&#34; alt=&#34;螢幕快照 2014-03-07 下午3.26.15.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/184048/QbRPbPk8S42WrGi1AcZ2_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-03-07%20%E4%B8%8B%E5%8D%883.26.53.png&#34; alt=&#34;螢幕快照 2014-03-07 下午3.26.53.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/184048/4b1vzY8kSXmJGoPYl8tg_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-03-07%20%E4%B8%8B%E5%8D%883.26.58.png&#34; alt=&#34;螢幕快照 2014-03-07 下午3.26.58.png&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;package app&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/184048/tRKJRnS0TYq2ffQ3xAnY_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-03-07%20%E4%B8%8B%E5%8D%883.22.40.png&#34; alt=&#34;螢幕快照 2014-03-07 下午3.22.40.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/184048/gvF5gWhQTPkEIt83VjRQ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-03-07%20%E4%B8%8B%E5%8D%883.23.01.png&#34; alt=&#34;螢幕快照 2014-03-07 下午3.23.01.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/184048/jugva99vTZ2fqWkn1YwI_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-03-07%20%E4%B8%8B%E5%8D%883.25.53.png&#34; alt=&#34;螢幕快照 2014-03-07 下午3.25.53.png&#34;&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Samsung Samrt TV - volume OSD</title>
-      <link>https://blog.tedshd.io/posts/2014-01-23-samsung-samrt-tv-volume-osd/</link>
+      <link>/posts/2014-01-23-samsung-samrt-tv-volume-osd/</link>
       <pubDate>Thu, 23 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-01-23-samsung-samrt-tv-volume-osd/</guid>
-      <description>Samsung Samrt TV - volume OSD 假如要做影片類的 App, 音量控制算是重要的一環 建議維持 Samsung Samrt TV 預設的 OSD(On Screen Display), 假如自己刻 UI, 會有許多要顧及的地方, 會較費時 How to add code to show volume OSD HTML &amp;lt;!--</description>
+      
+      <guid>/posts/2014-01-23-samsung-samrt-tv-volume-osd/</guid>
+      <description>&lt;h2 id=&#34;samsung-samrt-tv---volume-osd&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#samsung-samrt-tv---volume-osd&#34;&gt;
+        #
+    &lt;/a&gt;
+    Samsung Samrt TV - volume OSD
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;假如要做影片類的 App, 音量控制算是重要的一環
+建議維持 Samsung Samrt TV 預設的 OSD(On Screen Display), 假如自己刻 UI, 會有許多要顧及的地方, 會較費時&lt;/p&gt;
+&lt;h3 id=&#34;how-to-add-code-to-show-volume-osd&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#how-to-add-code-to-show-volume-osd&#34;&gt;
+        ##
+    &lt;/a&gt;
+    How to add code to show volume OSD
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!-- for volume SOD --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;object&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;pluginObjectNNavi&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;border&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;classid&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;clsid:SAMSUNG-INFOLINK-NNAVI&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;opacity:0.0;background-color:#000000;width:0px;height:0px;&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;object&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;object&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;pluginObjectTVMW&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;border&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;classid&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;clsid:SAMSUNG-INFOLINK-TVMW&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#57c7ff&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;opacity:0.0;background-color:#000000;width:0px;height:0px;&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;object&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!-- add plugin js --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;text/javascript&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;language&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;javascript&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;$MANAGER_WIDGET/Common/API/Plugin.js&amp;#39;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// add pluginAPI
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; pluginAPI &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; Common.API.Plugin();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// set volume OSD(On Screen Display)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.onShow &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; Main.volumeOSD;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Main.volumeOSD&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; NNaviPlugin &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;pluginObjectNNavi&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.SetBannerState(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	NNaviPlugin.SetBannerState(&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(tvKey.KEY_VOL_UP);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(tvKey.KEY_VOL_DOWN);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(tvKey.KEY_MUTE);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(&lt;span style=&#34;color:#ff9f43&#34;&gt;262&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(&lt;span style=&#34;color:#ff9f43&#34;&gt;147&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(&lt;span style=&#34;color:#ff9f43&#34;&gt;45&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(&lt;span style=&#34;color:#ff9f43&#34;&gt;261&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;example&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#example&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Example
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://app.box.com/s/8xclf7olt14p2uvqxepm&#34;&gt;Samsung example zip&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;http-equiv&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Content-Type&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;text/html; charset=utf-8&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;title&lt;/span&gt;&amp;gt;Samsung_miiiTV&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;title&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!-- TODO : Style sheets code --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;app/stylesheets/Main.css&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;text/css&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!-- TODO: Plugins --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;onload&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Main.onLoad();&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;onunload&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Main.onUnload();&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!-- Dummy anchor as focus for key events --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;javascript:void(0);&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;anchor&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;onkeydown&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Main.keyDown();&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!-- for volume SOD --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;object&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;pluginObjectNNavi&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;border&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;classid&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;clsid:SAMSUNG-INFOLINK-NNAVI&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;opacity:0.0;background-color:#000000;width:0px;height:0px;&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;object&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;object&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;pluginObjectTVMW&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;border&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;classid&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;clsid:SAMSUNG-INFOLINK-TVMW&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#57c7ff&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;opacity:0.0;background-color:#000000;width:0px;height:0px;&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;object&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!-- TODO: your code here --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!-- TODO : Common API --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;text/javascript&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;language&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;javascript&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;$MANAGER_WIDGET/Common/API/Plugin.js&amp;#39;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;language&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;$MANAGER_WIDGET/Common/API/Widget.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;language&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;$MANAGER_WIDGET/Common/API/TVKeyValue.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!-- TODO : Javascript code --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;language&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;app/javascript/Main.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; widgetAPI &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; Common.API.Widget();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; tvKey &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; Common.API.TVKeyValue();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// add pluginAPI
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; pluginAPI &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; Common.API.Plugin();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; Main &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Main.onLoad &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#78787e&#34;&gt;// Enable key event processing
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#ff6ac1&#34;&gt;this&lt;/span&gt;.enableKeys();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	widgetAPI.sendReadyEvent();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#78787e&#34;&gt;// set volume OSD(On Screen Display)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.onShow &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; Main.volumeOSD;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Main.volumeOSD&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; NNaviPlugin &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;pluginObjectNNavi&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.SetBannerState(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	NNaviPlugin.SetBannerState(&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(tvKey.KEY_VOL_UP);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(tvKey.KEY_VOL_DOWN);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(tvKey.KEY_MUTE);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(&lt;span style=&#34;color:#ff9f43&#34;&gt;262&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(&lt;span style=&#34;color:#ff9f43&#34;&gt;147&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(&lt;span style=&#34;color:#ff9f43&#34;&gt;45&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	pluginAPI.unregistKey(&lt;span style=&#34;color:#ff9f43&#34;&gt;261&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Main.onUnload &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Main.enableKeys &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;anchor&amp;#34;&lt;/span&gt;).focus();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Main.keyDown &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; keyCode &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; event.keyCode;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	alert(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Key pressed: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; keyCode);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#ff6ac1&#34;&gt;switch&lt;/span&gt;(keyCode)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; tvKey.KEY_RETURN&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; tvKey.KEY_PANEL_RETURN&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			alert(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;RETURN&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			widgetAPI.sendReturnEvent();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; tvKey.KEY_LEFT&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			alert(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;LEFT&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; tvKey.KEY_RIGHT&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			alert(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;RIGHT&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; tvKey.KEY_UP&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			alert(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;UP&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; tvKey.KEY_DOWN&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			alert(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;DOWN&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; tvKey.KEY_ENTER&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff6ac1&#34;&gt;case&lt;/span&gt; tvKey.KEY_PANEL_ENTER&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			alert(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;ENTER&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff6ac1&#34;&gt;default&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			alert(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Unhandled key&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#ff6ac1&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>Samsung Samrt TV - save / load data</title>
-      <link>https://blog.tedshd.io/posts/2014-01-18-samsung-samrt-tv-save-load-data/</link>
+      <link>/posts/2014-01-18-samsung-samrt-tv-save-load-data/</link>
       <pubDate>Sat, 18 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-01-18-samsung-samrt-tv-save-load-data/</guid>
-      <description>Samsung Samrt TV - save / load data 如果要儲存資料(ex: 使用者資訊&amp;hellip;)建議使用 Samsung 的 file API 使用 HTML5 的 localStorage 在電視關機後會被清掉 File API Refer - Can I access a local file from JavaScript code? Refer</description>
+      
+      <guid>/posts/2014-01-18-samsung-samrt-tv-save-load-data/</guid>
+      <description>&lt;h2 id=&#34;samsung-samrt-tv---save--load-data&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#samsung-samrt-tv---save--load-data&#34;&gt;
+        #
+    &lt;/a&gt;
+    Samsung Samrt TV - save / load data
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;如果要儲存資料(ex: 使用者資訊&amp;hellip;)建議使用 Samsung 的 file API
+使用 HTML5 的 localStorage 在電視關機後會被清掉&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.samsungdforum.com/Guide/ref00001/index.html&#34;&gt;File API&lt;/a&gt;
+&lt;a href=&#34;http://www.samsungdforum.com/Guide/tec00111/index.html&#34;&gt;Refer - Can I access a local file from JavaScript code?&lt;/a&gt;
+&lt;a href=&#34;http://www.samsungdforum.com/Guide/ref00001/file_api_opencommonfile.html&#34;&gt;Refer - openCommonFile&lt;/a&gt;
+&lt;a href=&#34;http://www.samsungdforum.com/Guide/ref00001/file_api_readall.html&#34;&gt;Refer - readAll&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;example&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#example&#34;&gt;
+        ##
+    &lt;/a&gt;
+    example
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; fileSystemObj &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; FileSystem();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; save() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (fileSystemObj.isValidCommonPath(curWidget.id) &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        fileSystemObj.createCommonDir(curWidget.id);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; fileObj &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; fileSystemObj.openCommonFile(curWidget.id &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;/testFile.data&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fileObj.writeAll(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;test save&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fileSystemObj.closeCommonFile(fileObj);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Main.save &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; save;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; read() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; file &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; fileSystemObj.openCommonFile(curWidget.id &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;/testFile.data&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; strResult &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; file.readAll();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Main.read &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; read;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>Develop Samsung Smart TV Apps</title>
-      <link>https://blog.tedshd.io/posts/2013-12-16-develop-samsung-smart-tv-apps/</link>
+      <link>/posts/2013-12-16-develop-samsung-smart-tv-apps/</link>
       <pubDate>Mon, 16 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-12-16-develop-samsung-smart-tv-apps/</guid>
-      <description>Develop Samsung Smart TV Apps 由於最近應公司需求而開始要開發 Samsung 的 Smart TV 上的 App 身為一個前端攻城獅要去開發電視的 App? 沒想到 Smart TV 的 App 竟然是用前端技術寫的(HTML, JavaScript, CSS) Smart</description>
+      
+      <guid>/posts/2013-12-16-develop-samsung-smart-tv-apps/</guid>
+      <description>&lt;h2 id=&#34;develop-samsung-smart-tv-apps&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#develop-samsung-smart-tv-apps&#34;&gt;
+        #
+    &lt;/a&gt;
+    Develop Samsung Smart TV Apps
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;由於最近應公司需求而開始要開發 Samsung 的 Smart TV 上的 App
+身為一個前端攻城獅要去開發電視的 App?
+沒想到 Smart TV 的 App 竟然是用前端技術寫的(HTML, JavaScript, CSS)
+Smart TV 是 base on Linux
+所以效能似乎 OK?
+於是就來研究一下
+&lt;a href=&#34;http://www.samsungdforum.com/&#34;&gt;SAMSUNG SMART TV APPS Developer Forum&lt;/a&gt;
+載 SDK 與 TV 模擬器(除非 money 多多直接買一台 Smart TV, 不過有開發過 Android 的都知道 &lt;strong&gt;模擬器都是假的&lt;/strong&gt; )
+&lt;a href=&#34;http://www.samsungdforum.com/Devtools/SdkDownload&#34;&gt;SDK Download(Software development kit)&lt;/a&gt;
+載 virtualBox
+&lt;a href=&#34;https://www.virtualbox.org/&#34;&gt;Oracle VM VirtualBox&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;建立開發環境&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%bb%ba%e7%ab%8b%e9%96%8b%e7%99%bc%e7%92%b0%e5%a2%83&#34;&gt;
+        ##
+    &lt;/a&gt;
+    建立開發環境
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;裝 virtualBox&lt;/li&gt;
+&lt;li&gt;開 SDK(用超吃資源的 eclipse Orz)&lt;/li&gt;
+&lt;li&gt;開 virtualBox, 掛 Smart TV Emulator&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;檔案 -&amp;gt; 匯入應用裝置(選擇下載的 Smart TV Emulator)&lt;/li&gt;
+&lt;li&gt;設定值 -&amp;gt; 共用資料夾 -&amp;gt; 編輯(資料夾名稱 / Apps, 資料夾路徑 / /Users/tedshd/Documents/workspace (SDK workspace 路徑))&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;開始開發&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%96%8b%e5%a7%8b%e9%96%8b%e7%99%bc&#34;&gt;
+        ##
+    &lt;/a&gt;
+    開始開發
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;懶得看下去有 YouTube 影片
+&lt;a href=&#34;https://www.youtube.com/watch?v=oujq32KKg4M&#34;&gt;Samsung smart tv development tutorial - 01&lt;/a&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=wgdewmQr7sM&#34;&gt;Samsung smart tv development tutorial - 02&lt;/a&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=C8WlV9FqoFU&#34;&gt;Samsung smart tv development tutorial - 03&lt;/a&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=u5DvRiAfD7Q&#34;&gt;GTUG 的 Samsung Smart TV開發簡介&lt;/a&gt;
+圖文版&lt;/p&gt;
+&lt;p&gt;1.建立 JavaScript 專案&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/xQzOznimQe2pKD77pl0A_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_14.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_14.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/Dd7yUTOOSCCwkpAsSl22_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_15.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_15.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/du6udFsTS3OQCcOGg3ac_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_16.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_16.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/JZtas4eeQL6fSqt32YU6_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_17.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_17.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/gGKbDf5sQIu7f0hZRqQQ_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_18.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_18.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/9PRttEwfQ4e0c0I9JC6T_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_19.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_19.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2.開始修改&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/bvpgZL3QPyc6HRePxK4V_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_21.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_21.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/FYXcgt1QTYuxBnz5lfJx_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_23.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_23.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;3.Run 模擬器&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/vPhbXInRai7FvFISrvHI_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_28.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_28.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/is1SR6DMT6lNhNdDvpnw_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_36.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_36.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/2rXHSi6TdKkNPMMD1OhD_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_37.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_37.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/c8cZqxUGSpGRVy4C3el5_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_38.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_38.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/1zsXeDWgQkefq3VyPkz8_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_40.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_40.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/166874/jOXKDQa5RV4u1iwdG2sw_%E5%85%A8%E7%86%92%E5%B9%95_2013_12_16_%E4%B8%8B%E5%8D%885_41.png&#34; alt=&#34;全熒幕_2013_12_16_下午5_41.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;test-app-on-tv&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#test-app-on-tv&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Test app on TV
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;先決條件
+開發的 PC or Mac 必須有 server
+因為它是把 app 打包後由 smart TV 連 server 去抓 app
+&lt;strong&gt;在 smart TV 上 Samung 帳號要用 develop 才能跑出抓 app 的選項&lt;/strong&gt;
+基本上照著底下 Testing Your Application on TV 做就可以順利把 app 丟到 TV 上
+&lt;a href=&#34;https://www.samsungdforum.com/Guide/art00012/index.html&#34;&gt;Debugging and Testing Applications&lt;/a&gt;
+&lt;a href=&#34;https://www.samsungdforum.com/Guide/art00013/index.html&#34;&gt;Testing Your Application on a TV&lt;/a&gt;
+&lt;a href=&#34;http://www.samsungdforum.com/Guide/art00121/index.html&#34;&gt;Testing Your Application on a TV for 2014&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;some-tip&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#some-tip&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Some Tip
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;在打包 app 時 config.xml&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;ver&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;itemtype=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;0.100&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;/ver&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;版號必須與打包時的版號相同&lt;/p&gt;
+&lt;p&gt;SDK 的大版號對應該年度的 Samsung Smart TV&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SDK Emulator 1.5 - for 2010 platform&lt;/li&gt;
+&lt;li&gt;SDK Emulator 2.5 - for 2011 platform&lt;/li&gt;
+&lt;li&gt;SDK Emulator 3.5 - for 2012 platform&lt;/li&gt;
+&lt;li&gt;SDK Emulator 4.5 - for 2013 platform&lt;/li&gt;
+&lt;li&gt;SDK Emulator 5.0 Beta - for 2014 platform&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以要用其他年度的 TV 上必須要用對應的 SDK 打包
+其中也必須小心 API 的支援程度
+目前發現新版 SDK(5.0) 打包可在 2013 年的 TV 跑&lt;/p&gt;
+&lt;p&gt;在 app 中需有提示 user 遙控器哪些按鍵有功能的 info bar&lt;/p&gt;
+&lt;p&gt;在 app 最上層(或是所謂的首頁)按返回須有 confirm 的行為&lt;/p&gt;
+&lt;p&gt;影片相關的 app 需注意音量控制&lt;/p&gt;
+&lt;p&gt;在 web 跑爽爽, 到 TV 上可不一定
+有可能有 JavaScript method、event or API 不支援
+也有網路連線上速度的問題, 拉 API 時會卡住&lt;/p&gt;
+&lt;p&gt;網路中斷 Samsung Smart TV 會出 notification, 所以可不處理, 但有時不靈光&lt;/p&gt;
+&lt;p&gt;在 eclipse 接 TV 的 log
+&lt;a href=&#34;http://stackoverflow.com/questions/15922620/how-to-view-logs-in-samsung-smart-tv-log-viewer&#34;&gt;Refer - How to view logs in Samsung Smart TV log viewer&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;some-documents&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#some-documents&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Some Documents
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.samsungdforum.com/Guide/c02/index.html&#34;&gt;Introduction to Smart TV platform&lt;/a&gt;
+&lt;a href=&#34;https://www.samsungdforum.com/Guide/art00015/index.html&#34;&gt;JavaScript&lt;/a&gt;
+&lt;a href=&#34;https://www.samsungdforum.com/Guide/art00023/index.html&#34;&gt;UI&lt;/a&gt;
+&lt;a href=&#34;https://www.samsungdforum.com/Guide/ref00011/index.html&#34;&gt;Device API&lt;/a&gt;
+&lt;a href=&#34;https://www.samsungdforum.com/Guide/ref00008/index.html&#34;&gt;Web Device API&lt;/a&gt;
+&lt;a href=&#34;https://www.samsungdforum.com/Guide/rel00010/index.html&#34;&gt;Player Specification&lt;/a&gt; video/audio support
+&lt;a href=&#34;https://www.samsungdforum.com/Guide/art00065/index.html&#34;&gt;CSS3 Browser Specification&lt;/a&gt;
+&lt;a href=&#34;http://www.samsungdforum.com/Guide/tec00101/index.html&#34;&gt;The difference between Return and Exit keys&lt;/a&gt;
+&lt;a href=&#34;http://samsungdforum.com/Guide/ref00006/common_module_tvkeyvalue_object.html&#34;&gt;TVKeyValue Object&lt;/a&gt; remote control key code&lt;/p&gt;
+&lt;h3 id=&#34;issue&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#issue&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Issue
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;deploy apps on TV version and update not easy&lt;/li&gt;
+&lt;li&gt;deploy apps have cache?&lt;/li&gt;
+&lt;li&gt;Samsung some sample code can&amp;rsquo;t run on TV&lt;/li&gt;
+&lt;li&gt;device API, web device API 支援不多&lt;/li&gt;
+&lt;li&gt;third party login(Fb, Google &amp;hellip;)&lt;a href=&#34;https://www.samsungdforum.com/Guide/art00077/index.html&#34;&gt;Single Sign-On&lt;/a&gt; / &lt;a href=&#34;https://www.samsungdforum.com/Guide/tut00053/index.html&#34;&gt;Using Single Sign-On (SSO)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

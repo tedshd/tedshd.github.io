@@ -1,41 +1,427 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nodejs on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/nodejs/</link>
-    <description>Recent content in Nodejs on tedshd&#39;s DevNote</description>
+    <title>Nodejs on Tedshd&#39;s Dev note</title>
+    <link>/categories/nodejs/</link>
+    <description>Tedshd&#39;s Dev note (Nodejs)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Fri, 18 Nov 2022 11:42:22 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Nov 2022 10:47:52 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Node PM2 使用紀錄</title>
-      <link>https://blog.tedshd.io/posts/node_pm2_usage/</link>
+      <link>/posts/node_pm2_usage/</link>
       <pubDate>Fri, 18 Nov 2022 10:47:52 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/node_pm2_usage/</guid>
-      <description>介紹 PM2 是一個可以方便處理 node process 的工具 大多用於線上環境 這邊主要紀錄 PM2 的一些用法與指令 基本使用 可以參考官方文件 PM2 Process Management Quick Start 安裝 npm install pm2 -g 啟動 pm2 start &amp;lt</description>
+      
+      <guid>/posts/node_pm2_usage/</guid>
+      <description>&lt;h2 id=&#34;介紹&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bb%8b%e7%b4%b9&#34;&gt;
+        #
+    &lt;/a&gt;
+    介紹
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://pm2.keymetrics.io/&#34;&gt;PM2&lt;/a&gt; 是一個可以方便處理 node process 的工具&lt;/p&gt;
+&lt;p&gt;大多用於線上環境&lt;/p&gt;
+&lt;p&gt;這邊主要紀錄 PM2 的一些用法與指令&lt;/p&gt;
+&lt;h2 id=&#34;基本使用&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8&#34;&gt;
+        #
+    &lt;/a&gt;
+    基本使用
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;可以參考官方文件 &lt;a href=&#34;https://pm2.keymetrics.io/docs/usage/quick-start/&#34;&gt;PM2 Process Management Quick Start&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安裝&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install pm2 -g
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;啟動&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pm2 start &amp;lt;要啟動的 js&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通常建議啟動時的指令搭配以下參數(更多參數請詳閱文件)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Specify an app name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--name &amp;lt;app_name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Watch and Restart app when files change&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--watch
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Set memory threshold for app reload&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--max-memory-restart &amp;lt;200MB&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Specify log file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--log &amp;lt;log_path&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;重新載入&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%87%8d%e6%96%b0%e8%bc%89%e5%85%a5&#34;&gt;
+        #
+    &lt;/a&gt;
+    重新載入
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pm2 reload &amp;lt;要重啟的 app&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;大多用於程式部署更新後, 有較好的體驗(和 restart 相比)&lt;/p&gt;
+&lt;p&gt;可以參考以下比較&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/44883269/what-is-the-difference-between-pm2-restart-and-pm2-reload&#34;&gt;refer - What is the difference between pm2 restart and pm2 reload&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;log-紀錄&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#log-%e7%b4%80%e9%8c%84&#34;&gt;
+        #
+    &lt;/a&gt;
+    log 紀錄
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;推薦使用 &lt;a href=&#34;https://github.com/keymetrics/pm2-logrotate&#34;&gt;pm2-logrotate&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;來處理 logrotate&lt;/p&gt;
+&lt;p&gt;當然如果有指定 log path 的話, 用系統處理 logrotate 也是可以的&lt;/p&gt;
+&lt;p&gt;如果要清空 log&lt;/p&gt;
+&lt;p&gt;可以使用 &lt;code&gt;pm2 flush&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;監控&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%9b%a3%e6%8e%a7&#34;&gt;
+        #
+    &lt;/a&gt;
+    監控
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;預設有兩種&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pm2 monit
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就會開啟終端機的 dashboard 可以監控狀態&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;web&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pm2 plus
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或是用&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://pm2.io/docs/plus/overview/#features-available-in-pm2-plus&#34;&gt;app.pm2.io&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;load-balancing&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#load-balancing&#34;&gt;
+        #
+    &lt;/a&gt;
+    LOAD-BALANCING
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;pm2 已經內建負載平衡的功能&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://pm2.io/docs/runtime/guide/load-balancing/&#34;&gt;LOAD-BALANCING (CLUSTER MODE)&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>HTML form submit same name in php, nodejs, golang</title>
-      <link>https://blog.tedshd.io/posts/form_multi_checked_in_php_nodejs_golang/</link>
+      <link>/posts/form_multi_checked_in_php_nodejs_golang/</link>
       <pubDate>Sat, 24 Oct 2020 15:39:19 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/form_multi_checked_in_php_nodejs_golang/</guid>
-      <description>一直以來大部分時間都在用 PHP 開發 所以也用 PHP 來處理 HTML Form 所以都下意識地認為 &amp;lt;input type=&amp;quot;checkbox&amp;quot; name=&amp;quot;game[]&amp;quot; value=&amp;quot;FGO&amp;quot;&amp;gt; 這樣的 name=&amp;quot;game[]&amp;quot; 的處理方式是正規的處理 HTML Form 的多選的方式 也疑惑為何大多的 HTML</description>
+      
+      <guid>/posts/form_multi_checked_in_php_nodejs_golang/</guid>
+      <description>&lt;p&gt;一直以來大部分時間都在用 PHP 開發&lt;/p&gt;
+&lt;p&gt;所以也用 PHP 來處理 HTML Form&lt;/p&gt;
+&lt;p&gt;所以都下意識地認為 &lt;code&gt;&amp;lt;input type=&amp;quot;checkbox&amp;quot; name=&amp;quot;game[]&amp;quot; value=&amp;quot;FGO&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;這樣的 &lt;code&gt;name=&amp;quot;game[]&amp;quot;&lt;/code&gt; 的處理方式是正規的處理 HTML Form 的多選的方式&lt;/p&gt;
+&lt;p&gt;也疑惑為何大多的 HTML Form 的教學甚至 MDN 都沒有提到這件事&lt;/p&gt;
+&lt;p&gt;就在某一天我在檢視到同事寫的 code 時&lt;/p&gt;
+&lt;p&gt;發現同事用 JavaScript 處理&lt;/p&gt;
+&lt;p&gt;硬爬出來自己組字串送出去&lt;/p&gt;
+&lt;p&gt;我才想起這令人感到恐懼的事情&lt;/p&gt;
+&lt;p&gt;因為公司同事是寫 golang 的專門, 就算前端不熟&lt;/p&gt;
+&lt;p&gt;應該也不至於連這樣概念都沒有就用硬爬的方式處理&lt;/p&gt;
+&lt;p&gt;所以再調整的同時也跟同事確認後&lt;/p&gt;
+&lt;p&gt;我也真正的直視這問題&lt;/p&gt;
+&lt;p&gt;到底要怎麼處理表單中多選的資料?&lt;/p&gt;
+&lt;p&gt;PHP 寫久的人大多都知道要用上面列出的方法&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;name=&amp;quot;game[]&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;就是 &lt;code&gt;game&lt;/code&gt; + &lt;code&gt;[]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;但是當我認真地尋找關於這個問題時&lt;/p&gt;
+&lt;p&gt;意外地發現了一篇 stackoverflow 的問答&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/16552680/several-checkboxes-sharing-the-same-name&#34;&gt;Several Checkboxes sharing the same name&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其實 W3C 根本沒有管你 name=&amp;quot;&amp;quot; 重複要如何處理&lt;/p&gt;
+&lt;p&gt;以下是 PHP, nodejs, golang 的原生方式來測試的結果&lt;/p&gt;
+&lt;h2 id=&#34;php&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php&#34;&gt;
+        #
+    &lt;/a&gt;
+    PHP
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;以下問答有提供了 PHP &lt;a href=&#34;https://www.php.net/manual/en/faq.html.php#faq.html.arrays&#34;&gt;doc&lt;/a&gt; 說明 PHP 如何處理多選&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/14026361/php-multiple-checkbox-array&#34;&gt;PHP Multiple Checkbox Array&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 name 後面添加 &lt;code&gt;[]&lt;/code&gt; 即可處理把相同的 name 組成 Array&lt;/p&gt;
+&lt;p&gt;沒有加的話是會取&lt;strong&gt;最後一個&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;POST &amp;amp; GET 都是如此處理&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game[]&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;FGO&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game[]&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;GirlsFrontline&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;game&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$_POST&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;game&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;nodejs&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#nodejs&#34;&gt;
+        #
+    &lt;/a&gt;
+    nodejs
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;GET 和 POST 用的方式不一樣&lt;/p&gt;
+&lt;p&gt;基本上都會用到 &lt;code&gt;querystring&lt;/code&gt; module&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;querystring&lt;/code&gt; module 主要都在處理 querystring 相關的功能&lt;/p&gt;
+&lt;p&gt;主要靠它 parse querystring format(ex: key=calue&amp;amp;key2=value2)&lt;/p&gt;
+&lt;p&gt;所以 nodejs 會自動把同樣的 name 併在一起組成 array&lt;/p&gt;
+&lt;h3 id=&#34;get&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#get&#34;&gt;
+        ##
+    &lt;/a&gt;
+    GET
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;會需要用 &lt;code&gt;url&lt;/code&gt; module&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;url&lt;/code&gt; module 主要是要拿掉 GET 的 url 的 querystring 再丟給 &lt;code&gt;querystring&lt;/code&gt; 處理&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;FGO&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;GirlsFrontline&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; url &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;url&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; querystring &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;querystring&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; thisUrl &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; URL(req.url, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; req.headers.host);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; query &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; URLSearchParams(thisUrl.search).toString(); &lt;span style=&#34;color:#78787e&#34;&gt;// 這一段是要把 `?key=calue&amp;amp;key2=value2` =&amp;gt; `key=calue&amp;amp;key2=value2`
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;querystring.parse(query)[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;post&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#post&#34;&gt;
+        ##
+    &lt;/a&gt;
+    POST
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;把接進來的 body 組起來再使用 &lt;code&gt;querystring&lt;/code&gt; parse&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; formData &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;req.on(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;data&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; (data) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  formData &lt;span style=&#34;color:#ff6ac1&#34;&gt;+=&lt;/span&gt; data;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;req.on(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;end&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  console.log(querystring.parse(formData)[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://nodejs.org/api/url.html&#34;&gt;URL | Node.js v15.0.1 Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://nodejs.org/api/querystring.html&#34;&gt;Query string | Node.js v15.0.1 Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;golang&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#golang&#34;&gt;
+        #
+    &lt;/a&gt;
+    golang
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;import &lt;code&gt;http&lt;/code&gt; 就可以處理 GET 和 POST 的情況&lt;/p&gt;
+&lt;p&gt;大致上的處理方式和行為和 nodejs 一樣(只差在語言的寫法不一樣)&lt;/p&gt;
+&lt;p&gt;也是會自動把同樣的 name 併在一起&lt;/p&gt;
+&lt;p&gt;組成 slice&lt;/p&gt;
+&lt;h3 id=&#34;get-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#get-1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    GET
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;request struct 裡面有 URL 有 function &lt;code&gt;Query&lt;/code&gt; 可以拿到所有的 querystring&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;FGO&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;GirlsFrontline&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;package&lt;/span&gt; main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;getHandler&lt;/span&gt;(w http.ResponseWriter, r &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt;http.Request) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fmt.&lt;span style=&#34;color:#57c7ff&#34;&gt;Println&lt;/span&gt;(r.URL.&lt;span style=&#34;color:#57c7ff&#34;&gt;Query&lt;/span&gt;()[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    http.&lt;span style=&#34;color:#57c7ff&#34;&gt;HandleFunc&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/get&amp;#34;&lt;/span&gt;, getHandler)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;post-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#post-1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    POST
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;request 有一個 &lt;code&gt;parseForm&lt;/code&gt; 的 function 可以抓取 HTTP &lt;code&gt;POST&lt;/code&gt;, &lt;code&gt;PUT&lt;/code&gt;, and &lt;code&gt;PATCH&lt;/code&gt; 的 body&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;package&lt;/span&gt; main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;postHandler&lt;/span&gt;(w http.ResponseWriter, r &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt;http.Request) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r.&lt;span style=&#34;color:#57c7ff&#34;&gt;ParseForm&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fmt.&lt;span style=&#34;color:#57c7ff&#34;&gt;Println&lt;/span&gt;(r.Form[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    http.&lt;span style=&#34;color:#57c7ff&#34;&gt;HandleFunc&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/post&amp;#34;&lt;/span&gt;, postHandler)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/net/http/#Request.ParseForm&#34;&gt;http - parseForm&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;最後總結&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%9c%80%e5%be%8c%e7%b8%bd%e7%b5%90&#34;&gt;
+        #
+    &lt;/a&gt;
+    最後總結
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;只有 PHP 要在相同的 name 後面添加 &lt;code&gt;[]&lt;/code&gt; 才可以在 PHP 端收到的 name 併在一起&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;nodejs 和 golang 都只要是 name 一樣就可以了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;針對這三種語言都有寫了 demo code&lt;/p&gt;
+&lt;p&gt;只要三種語言的環境裝好&lt;/p&gt;
+&lt;p&gt;都可以直接起 local server 來試驗看看&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tedshd/html_form_multiple_name&#34;&gt;html_form_multiple_name&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Node.js - 簡單起一個 local server 進行測試</title>
-      <link>https://blog.tedshd.io/posts/2017-09-05-2262937/</link>
+      <link>/posts/2017-09-05-2262937/</link>
       <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2017-09-05-2262937/</guid>
-      <description>Node.js - 簡單起一個 local server 進行測試 緣由 如果要臨時起一個 local 的 server 測試前端可以考慮用 Node 的一個套件 http-server 來做 為啥有這需求呢? 可能的情境如下 原本的 localhost(127.0.0.1) 被其他服務佔用</description>
+      
+      <guid>/posts/2017-09-05-2262937/</guid>
+      <description>&lt;h2 id=&#34;nodejs---簡單起一個-local-server-進行測試&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#nodejs---%e7%b0%a1%e5%96%ae%e8%b5%b7%e4%b8%80%e5%80%8b-local-server-%e9%80%b2%e8%a1%8c%e6%b8%ac%e8%a9%a6&#34;&gt;
+        #
+    &lt;/a&gt;
+    Node.js - 簡單起一個 local server 進行測試
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h2 id=&#34;緣由&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b7%a3%e7%94%b1&#34;&gt;
+        #
+    &lt;/a&gt;
+    緣由
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;如果要臨時起一個 local 的 server 測試前端可以考慮用 Node 的一個套件 &lt;code&gt;http-server&lt;/code&gt; 來做&lt;/p&gt;
+&lt;p&gt;為啥有這需求呢?&lt;/p&gt;
+&lt;p&gt;可能的情境如下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;原本的 localhost(127.0.0.1) 被其他服務佔用時, 且無法依附在該 localhost 底下時&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;當要測試的前端程式需要是有第三方 API 驗證 domain 時且在上述情境時可以用(大部分的第三方 API 或 oauth 通常允許可以設置 localhost)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;PS. 假設無法設定 localhost(得設定一個真實的 domain) 也可設定 host 解決這問題(但 host 是不吃 port 的所以在第一點的情況下這方案是無法成立的&lt;/p&gt;
+&lt;h2 id=&#34;其他建議&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%85%b6%e4%bb%96%e5%bb%ba%e8%ad%b0&#34;&gt;
+        #
+    &lt;/a&gt;
+    其他建議
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;其實還有其他我覺得不太好的方式&lt;/p&gt;
+&lt;p&gt;例如&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在本地的的 Apache or Nginx 設定 RewriteRule or Path or Proxy&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;用最方便的 file 方式打開(但如果有用到第三方服務需要 domain 驗證的就 GG 了)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;使用方式&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8%e6%96%b9%e5%bc%8f&#34;&gt;
+        #
+    &lt;/a&gt;
+    使用方式
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;這裡只提供簡單的用法&lt;/p&gt;
+&lt;p&gt;詳細參數用法請參考 NPM 上的文件 &lt;a href=&#34;https://www.npmjs.com/package/http-server&#34;&gt;http-server - npm&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install http-server -g
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;裝在 global 後就可用在任意專案上&lt;/p&gt;
+&lt;p&gt;之後再切到專案目錄下以下指令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;http-server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;會看到以下訊息這就表示已經在 local 開了一個 8080 port 的 server&lt;/p&gt;
+&lt;p&gt;路徑理所當然的就是當前專案目錄的路徑&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Starting up http-server, serving ./
+Available on:
+  http://127.0.0.1:8080
+  http://192.168.2.187:8080
+Hit CTRL-C to stop the server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;當然也可指定 port 以避免跟其他服務 port 相撞&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://jasonwatmore.com/post/2016/06/22/nodejs-setup-simple-http-server-local-web-server&#34;&gt;Refer - NodeJS - Setup a Simple HTTP Server / Local Web Server&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Node.js - 直接執行指令</title>
-      <link>https://blog.tedshd.io/posts/2016-05-25-nodejs-direct-instruction/</link>
+      <link>/posts/2016-05-25-nodejs-direct-instruction/</link>
       <pubDate>Wed, 25 May 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-05-25-nodejs-direct-instruction/</guid>
-      <description>Node.js - 直接執行指令 因為最近要用 nodejs 做一些事, 所以就趕鴨子上架的先把功能做出來再說 然後就立馬遇到問題了&amp;hellip; 在 PHP 中要直接執行 command line 是使用 exec</description>
+      
+      <guid>/posts/2016-05-25-nodejs-direct-instruction/</guid>
+      <description>&lt;h2 id=&#34;nodejs---直接執行指令&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#nodejs---%e7%9b%b4%e6%8e%a5%e5%9f%b7%e8%a1%8c%e6%8c%87%e4%bb%a4&#34;&gt;
+        #
+    &lt;/a&gt;
+    Node.js - 直接執行指令
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;因為最近要用 nodejs 做一些事, 所以就趕鴨子上架的先把功能做出來再說&lt;/p&gt;
+&lt;p&gt;然後就立馬遇到問題了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;在 PHP 中要直接執行 command line 是使用 &lt;code&gt;exec&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;因為之前都用 PHP 寫 Shell Scripts 所以找了一下用 nodejs 要如何寫&lt;/p&gt;
+&lt;p&gt;先是找到了以下的 code&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; run_cmd(cmd, args, callBack ) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; spawn &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;child_process&amp;#39;&lt;/span&gt;).spawn;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; child &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; spawn(cmd, args);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; resp &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    child.stdout.on(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; (buffer) { resp &lt;span style=&#34;color:#ff6ac1&#34;&gt;+=&lt;/span&gt; buffer.toString(); });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    child.stdout.on(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;end&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() { callBack (resp); });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// example
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;run_cmd( &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;ls&amp;#34;&lt;/span&gt;, [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;-l&amp;#34;&lt;/span&gt;], &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(text) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    console.log (text) ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;但是發現如果是要用像是 &lt;code&gt;mkdir&lt;/code&gt; 或者要 run shell 就會出 &lt;code&gt;ENOENT&lt;/code&gt; 的 error&lt;/p&gt;
+&lt;p&gt;結果找到了其他的範例程式碼改良後&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; exec_cmd(cmd, callBack ) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; childProcess &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;child_process&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; ls &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; childProcess.exec(cmd, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; (error, stdout, stderr) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (error) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            console.log(error.stack);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            console.log(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Error code: &amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt;error.code);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        console.log(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Child Process STDOUT: &amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; stdout);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        callBack(stdout);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這樣就行了&lt;/p&gt;
+&lt;p&gt;這似乎是因為 &lt;code&gt;spawn&lt;/code&gt; 和 &lt;code&gt;exec&lt;/code&gt; 的機制的問題&lt;/p&gt;
+&lt;p&gt;但查了一下, 還是不了解 &lt;code&gt;spawn&lt;/code&gt; 和 &lt;code&gt;exec&lt;/code&gt; 在這例子中的差別與錯誤的發生原因, 只能等有空時再來研究了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.fens.me/nodejs-child-process/&#34;&gt;Refer - Node.js进程通信模块child_process&lt;/a&gt;
+&lt;a href=&#34;http://www.html-js.com/article/A-day-to-learn-to-talk-about-JavaScript-spawn-and-exec-Nodejs-in-the-childprocess-module&#34;&gt;Refer - 说说Node.js child_process模块中的spawn和exec方法&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

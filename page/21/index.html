@@ -1,654 +1,1014 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-	<meta name="generator" content="Hugo 0.124.1">
+
+
+<html lang="en-us" data-theme="">
+<head>
+	<meta name="generator" content="Hugo 0.125.4">
     
-
-
-<title>tedshd&#39;s DevNote</title>
+        
 <meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="">
+
+
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Tedshd's Dev note" />
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta name="google" content="notranslate">
-<meta id="viewport" name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='Develop &amp; Design Note by Ted'>
-<meta name="keywords" content=''>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/">
-<link rel="alternate" media="handheld" href="https://blog.tedshd.io/" />
-
-<link rel="canonical" href="https://blog.tedshd.io/" />
-<link rel="shortcut icon" href="/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
-<meta name="theme-color" content="">
-<meta name="robots" content="index, follow">
-<meta name="copyright" content="Tedshd">
-
-<meta property="og:title" content="tedshd&#39;s DevNote" />
-<meta property="og:description" content="Develop &amp; Design Note by Ted" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.tedshd.io/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="tedshd&#39;s DevNote"/>
-<meta name="twitter:description" content="Develop &amp; Design Note by Ted"/>
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-<script data-ad-client="ca-pub-0553186380244641" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-    
-    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="tedshd&#39;s DevNote" />
-    
-
-    
-
-    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
-
-    
-<link>
-
-<link
-    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
-    rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
-
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-1NKP3D2ZGG');
-    </script>
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
-                    tedshd&#39;s DevNote
-                </a>
-            </div>
-            
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
-                <i class="p-icon--menu"></i>
-            </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
-                <i class="p-icon--close"></i>
-            </a>
-        </div>
-
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
-
-            <ul class="p-navigation__links" role="menu">
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/categories">Categories</a>
-                </li>
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/tags">tags</a>
-                </li>
-                
-            </ul>
-
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-            
-        </nav>
-    </div>
-</header><div id="main-content">
-
-
-
-<div class="page-banner">
-    <div class="row u-vertically-center">
-        <div class="col-8 pure-g">
-            <div class="pure-u">
-                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
-                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
-            </div>
-            <div class="pure-u">
-                <h1>tedshd&#39;s DevNote</h1>
-                <p>Develop &amp; Design Note by Ted</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<ul class="p-navigation__links sub_menu" role="menu">
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tedshd.github.io/resume/">About</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tysh310246.blogspot.tw/">Blog</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://github.com/tedshd">Github</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
-    </li>
-    
-</ul>
-
-
-
-
-
-
-
-
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
 </script>
 
-<div class="p-strip is-wrapper posts">
-    <div class="row">
-        
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
 
         
 
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/language_and_character_in_digital/">在數位中所定義與使用語言與文字的規範</a></h3>
-
-                
-                
-                <p>
 
 
-<span class=" u-capitalized ">
-    on
+
+
+
+
+    
+        <div class="theme-switcher">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
 </span>
-2020-05-25
-</p>
-                
 
-                
-                <p><h2 id="前言">前言</h2>
-<p>因為最近在做一些語系的整理</p>
-<p>為了字型的關係</p>
-<p>就整理了一下一些在數位資訊上面有關於文字與語言的一些規範</p>
-<p>這裡會概括了系統與軟體開發與輸入裝置的處理</p>
-<p>因為資訊量太廣</p>
-<p>所以不一定會有個脈絡</p>
-<p>基本上只有大概分一段一段的說明</p>
-<h2 id="初心者的誤區">初心者的誤區</h2>
-<ol>
-<li>國家和語言有很強的關聯</li>
-</ol>
-<p>這是很多人一開始處理多國語系都會有個誤解的</p>
-<p>常常在系統中看到 <code>en-US</code>, <code>zh-TW</code>, <code>ja-jp</code></p>
-<p>就會下意識的把語言和國家綁定在一起</p>
-<p>然後結果就是在該國家只能顯示該語言</p>
-<p>但現實是每個國家都不一定都只有使用一個語言啊~~</p>
-<p>新加坡同時普遍用中文和英文(官方語言是英文)</p>
-<ol start="2">
-<li>以為在限定的國家或系統才能使用限定的語言</li>
-</ol>
-<p>這和上一個很類似, 以為用到某個國家的系統或是使用某個系統設定在某些國家就會限制了語言</p>
-<p>這是錯誤的觀念</p>
-<p>記住</p>
-<p><strong>語言和國家沒絕對關係</strong></p>
-<p><strong>語言和國家沒絕對關係</strong></p>
-<p><strong>語言和國家沒絕對關係</strong></p>
-<ol start="3">
-<li>拉丁文就是英文</li>
-</ol>
-<p>這後面會提到</p>
-<ol start="4">
-<li>語言和文字在定義上的有強烈的關係</li>
-</ol>
-<p>在廣義的定義下確實如此</p>
-<p>但真正探究下去其實不應該這樣說</p>
-<p>這後面會提到</p>
-<ol start="5">
-<li>鍵盤上沒有注音符號還是可以打中文啊</li>
-</ol>
-<p>那現在很多鍵盤都沒有倉頡符號</p>
-<p>那不就沒辦法用倉頡輸入法了嗎?</p>
-<h2 id="來講一下文字">來講一下文字</h2>
-<p>有時大家常常聽到拉丁文這個東西</p>
-<p>那麼拉丁文究竟是什麼文字?</p>
-<p>相信不少人就會說英文啊</p>
-<p>沒錯</p>
-<p>但不太正確</p>
-<p>英文就是拉丁文字的其中一部分</p>
-<p>那拉丁文又是從哪裡來呢?</p>
-<p>這又有點牽扯到語言了</p>
-<p>現在最廣泛的語系算是<a href="https://zh.wikipedia.org/wiki/%E5%8D%B0%E6%AC%A7%E8%AF%AD%E7%B3%BB">印歐語系</a></p>
-<p>而其中的<a href="https://zh.wikipedia.org/wiki/%E6%8B%89%E4%B8%81%E8%AF%AD">拉丁語系</a>在古歐洲經由羅馬帝國向外發展</p>
-<p>所以<a href="https://zh.wikipedia.org/wiki/%E6%8B%89%E4%B8%81%E5%AD%97%E6%AF%8D">拉丁字母</a>也就很廣泛的使用(文化侵略的結果)</p>
-<p>上面提到英文是拉丁文部分之一</p>
-<p>是因為實際上拉丁文不只是 A ~ Z 26 個字母</p>
-<p>德文, 法文等也是用拉丁字母</p>
-<p>但是這些語言額外多有各種音對應的字母</p>
-<p>所以會有所謂的<a href="https://zh.wikipedia.org/wiki/%E8%A1%8D%E7%94%9F%E6%8B%89%E4%B8%81%E5%AD%97%E6%AF%8D">延伸拉丁字母</a></p>
-<table>
-<thead>
-<tr>
-<th>尖音</th>
-<th>重音</th>
-<th>折音</th>
-<th>分音/德語變音</th>
-<th>軟音</th>
-<th>鼻音</th>
-<th>鼻化元音</th>
-<th>合字</th>
-<th>來自盧恩字母</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Á É Í Ó Ú Ý</td>
-<td>À È Ì Ò Ù</td>
-<td>Â Ê Î Ô Û</td>
-<td>Ä Ë Ï Ö Ü Ÿ</td>
-<td>Ç Ş</td>
-<td>Ã Õ Ñ</td>
-<td>Ą Ę Į Ų</td>
-<td>Æ Œ Ø Ĳ</td>
-<td>Þ</td>
-</tr>
-<tr>
-<td>á é í ó ú ý</td>
-<td>à è ì ò ù</td>
-<td>â ê î ô û</td>
-<td>ä ë ï ö ü ÿ</td>
-<td>ç ş</td>
-<td>ã õ ñ</td>
-<td>ą ę į ų</td>
-<td>æ œ ø ĳ ß</td>
-<td>þ</td>
-</tr>
-</tbody>
-</table>
-<p>這邊後面再輸入裝置時會在特別提到</p>
-<h2 id="語言與地區規範">語言與地區規範</h2>
-<h3 id="文字">文字</h3>
-<p><a href="https://zh.wikipedia.org/wiki/ISO_15924">ISO 15924</a></p>
-<p>也有應用在字型上</p>
-<p>字型的 metadata 會跟你說該字型有哪些文字可以用</p>
-<p>下圖為 Google 有名的字體 noto 的繁體字型所帶有的資訊</p>
-<p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-26_%E4%B8%8B%E5%8D%884.22.39.png" alt="image"></p>
-<p>額外補充一下</p>
-<p>因為大部分會是用 opentype 的字型</p>
-<p>opentype 是微軟和 Adobe 共同開發的, 所以微軟的文件有詳細的介紹</p>
-<p>所以這裡也貼一下 metadata 裡面的 table format 介紹</p>
-<p><a href="https://docs.microsoft.com/en-us/typography/opentype/spec/chapter2">OpenType™ Layout Common Table Formats</a></p>
-<p>可以用以下網站上傳字型檔(必須是 opentype 格式, 即 <code>.otf</code>, <code>.ttf</code>, <code>.ttc</code>) 確認該字型的資訊</p>
-<p><a href="https://opentype.js.org/font-inspector.html">font-inspector</a></p>
-<p><a href="https://fontdrop.info/">fontdrop</a></p>
-<h3 id="語言">語言</h3>
-<p><a href="https://en.wikipedia.org/wiki/ISO_639">ISO 639</a></p>
-<p>普遍使用於各個系統中的語言代碼</p>
-<p>底下目前有定義到 ISO 639-6</p>
-<p>但是普遍使用的是 639-1 到 639-3</p>
-<p><a href="https://zh.wikipedia.org/wiki/ISO_639-1%E4%BB%A3%E7%A0%81%E8%A1%A8">ISO 639-1</a> 列表</p>
-<h3 id="國家地區">國家(地區)</h3>
-<p><a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1</a></p>
-<p>定義國家的代碼</p>
-<p>都需要大寫</p>
-<p>上述兩者常常以 <code>語言-國家</code> 或 <code>語言_國家</code> 的形式組合在一起</p>
-<p>而大多的語言編碼都是基於 <a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a></p>
-<p><code>language-extlang-script-region-variant-extension-privateuse</code></p>
-<ul>
-<li>language - 語言</li>
-<li>extlang - 地方語言擴充</li>
-<li>script - 文字</li>
-<li>region - 地區</li>
-<li>variant - 方言 <a href="https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority">IANA</a> 定義</li>
-<li>extension</li>
-<li>privateuse</li>
-</ul>
-<p>大多數的組合會是 <code>language-extlang-region</code></p>
-<p>在其中 <a href="https://www.ietf.org/rfc/rfc3066.txt">RFC 3066</a> 主要定義了用 <code>-</code> 連接</p>
-<p>這邊得先提醒</p>
-<p>在不同的系統中所採用的規範是略有所不同的</p>
-<p>所以必須要清楚在哪些系統平台上是採用哪些規範</p>
-<p>以免在程式處理上出現問題</p>
-<p>這裡列舉一下常見的系統平台</p>
-<h3 id="web">Web</h3>
-<p>通常是以 <code>Accept-Language</code> 為判定基礎</p>
-<p>以 <a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a> 定義了語系區域的呈現格式</p>
-<p><a href="https://www.w3.org/International/articles/language-tags/#rfc">W3C - Language tags in HTML and XML</a> 有具體的說明</p>
-<p>比較特別的一點是其實關於 region 並沒有規範強制要大寫</p>
-<p>只是因為在 <a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1</a> 中規定都要大寫</p>
-<p>所以約定成俗</p>
-<h3 id="android">Android</h3>
-<p><a href="https://developer.android.com/reference/java/util/Locale">開發文件</a>其實就有說明了</p>
-<p>也一樣遵循 <a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a></p>
-<ul>
-<li>
-<p>language 使用 ISO 639-2 / ISO 639-3</p>
-</li>
-<li>
-<p>script 使用 ISO <a href="https://zh.wikipedia.org/wiki/ISO_15924">15924-4</a></p>
-</li>
-<li>
-<p>region 使用 <a href="https://zh.wikipedia.org/wiki/ISO_3166-2">ISO 3166-2</a> / <a href="https://en.wikipedia.org/wiki/UN_M49">UN M.49 numeric-3</a></p>
-</li>
-</ul>
-<p>但是有的人應該會發現為何 <code>toString</code> 後會是</p>
-<p><code>language + &quot;_&quot; + country + &quot;_&quot; + (variant + &quot;_#&quot; | &quot;#&quot;) + script + &quot;-&quot; + extensions</code></p>
-<p>這樣的組合</p>
-<p>ex: <strong>zh_CN_#Hans</strong></p>
-<p>因為這是基於 <a href="http://site.icu-project.org/home">ICU - International Components for Unicode</a> 定義的規則</p>
-<p>裡面的 <a href="http://userguide.icu-project.org/locale">Locale</a></p>
-<h3 id="ios">iOS</h3>
-<p><a href="https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html">Language and Locale IDs</a></p>
-<p>由 language 和 locale 組成</p>
-<p>language 走 ISO 639-1 / 639-2</p>
-<p>locale 走 ISO 3166-1</p>
-<p>但是比較特別的是</p>
-<p>locale</p>
-<table>
-<thead>
-<tr>
-<th>Locale ID syntax</th>
-<th>Examples</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[language designator]</td>
-<td>en, fr</td>
-<td>An unspecified region where the language is used.</td>
-</tr>
-<tr>
-<td>[language designator]_[region designator]</td>
-<td>en_GB, zh_HK</td>
-<td>The language used by and regional preference of the user.</td>
-</tr>
-<tr>
-<td>[language designator]-[script designator]</td>
-<td>az-Arab, zh-Hans</td>
-<td>An unspecified region where the script is used.</td>
-</tr>
-<tr>
-<td>[language designator]-[script designator]_[region designator]</td>
-<td>zh-Hans_HK</td>
-<td>The script used by and regional preference of the user.</td>
-</tr>
-</tbody>
-</table>
-<p>這條規則目前沒找到規範</p>
-<p>但是文件也提到如果要更詳細的話也是要遵循 <a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a> 的格式定義</p>
-<h3 id="linux">Linux</h3>
-<p>走 POSIX 平台所定義的標準 <a href="https://en.wikipedia.org/wiki/ISO/IEC_15897">ISO/IEC 15897</a></p>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">地區設定</a></p>
-<p><code>language[_territory[.codeset]][@modifier]</code></p>
-<p>language 用 ISO 639-1</p>
-<p>territory 用 ISO 3166-1</p>
-<h3 id="mac-os">Mac OS</h3>
-<p>一樣走 POSIX 平台所定義的標準 <a href="https://en.wikipedia.org/wiki/ISO/IEC_15897">ISO/IEC 15897</a></p>
-<h3 id="windows">Windows</h3>
-<p>Windowa Vista 之後使用 <a href="https://tools.ietf.org/html/rfc4646">RFC 4646</a></p>
-<p><code>&lt;language&gt;-&lt;Script&gt;-&lt;REGION&gt;_&lt;sort order&gt;</code></p>
-<h2 id="來聊一下鍵盤輸入法">來聊一下鍵盤輸入法</h2>
-<p>鍵盤上面所有的按鍵都是有定義標準的 key code</p>
-<p>基本上就是那兩大家 MS 和 Apple 定義出來的</p>
-<p>當然還有些按鍵因應各個廠商的需求會自己去定義, 這邊就不討論</p>
-<p>所以這就有個問題了</p>
-<p>鍵盤到底可不可以打出任何語言的文字?</p>
-<p>答案是可以的</p>
-<p>而且不分系統</p>
-<p>以 Mac 為例</p>
-<p>Mac 已經內建了所有語言的輸入法</p>
-<p>只要切到該輸入法就可以輸入該語言的文字了</p>
-<p>但會發現一個問題</p>
-<p>有的文字沒有按鍵可以按</p>
-<p>這又要牽扯到一個問題</p>
-<p>鍵盤的 layout</p>
-<p>有分 ISO, ANSI, JIS</p>
-<p>有在用 Mac 外接鍵盤的應該都有看過</p>
-<p>Mac 在外接鍵盤時會叫你按左 shift 右邊和右 shift 左邊</p>
-<p>之後就會叫你選 layout</p>
-<h3 id="iso-對應歐規歐洲的國家">ISO 對應歐規(歐洲的國家)</h3>
-<p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-26_%E4%B8%8B%E5%8D%885.39.26.png" alt="image"></p>
-<h3 id="ansi-對應美規大部分的國家">ANSI 對應美規(大部分的國家)</h3>
-<p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-26_%E4%B8%8B%E5%8D%885.38.54.png" alt="image"></p>
-<h3 id="jis-對應日規日本">JIS 對應日規(日本)</h3>
-<p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-26_%E4%B8%8B%E5%8D%885.40.04.png" alt="image"></p>
-<p>為何要分這三種 layout 是因為打字區需要的按鍵數量是不一樣的</p>
-<p>ISO 需要有延伸拉丁字母</p>
-<p>ANSI 只要 A ~ Z</p>
-<p>JIS 也有一些獨立使用的按鍵</p>
-<p>這些按鍵在系統都是讀得到 key code 的</p>
-<p>只是輸入法有沒有對應的輸出而已</p>
-<p>所以鍵盤底層的韌體會定義好該按鍵是要送什麼 key code</p>
-<p>而判定 key code 是系統和輸入法的工作</p>
-<p>所以真正影響的實際上只有鍵盤的 layout 和輸入法會打出什麼</p>
-<p>和作業系統設定的語言與國家無關, 也和鍵盤上面的印字無關</p>
-<h3 id="結語">結語</h3>
-<p>在整理字型時, 如果上述的東西需要有大概的了解</p>
-<p>這樣對整理字型的使用會是更佳的容易</p>
-<p>比較可惜的是我目前沒找到文字與語言對應的表(可能是搜尋的太少了?</p>
-<p>所以目前只有針對幾個國家自己做對應表</p>
-</p>
-                
-
-                
-
-                
-                <p><a href="https://blog.tedshd.io/posts/language_and_character_in_digital/">Read more</a></p>
-                
-            </div>
         </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+    <script>
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
+
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
+    </script>
+
+
+        <ul class="social-icons noselect">
+
+
+    
         
         
-        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
 
-        
-
-        <div class="col-12">
-            <div class="p-card">
-                <h3><a href="https://blog.tedshd.io/posts/load_large_table_improve_performance/">如何在網頁載入比較大量的資料時增加效能?</a></h3>
-
-                
-                
-                <p>
+    
 
 
-<span class=" u-capitalized ">
-    on
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
 </span>
-2020-05-21
-</p>
-                
 
-                
-                <p><h2 id="前言">前言</h2>
-<p>在後台系統會常遇到的問題就是要呈現大量的資料(表單)</p>
-<p>通常在這情況下會有兩種方式呈現資料</p>
-<ol>
-<li>
-<p>分頁</p>
-</li>
-<li>
-<p>無限滾動</p>
-</li>
-</ol>
-<p>但是這都要在 model 額外做不少工</p>
-<p>例如: 處理分頁, 處理排序, 處理搜尋</p>
-<p>這些都是要再花時間處理的</p>
-<p>這邊將會介紹一下如何在不太改動 model 的情況下提升前端效能</p>
-<p>當然在真的是非常的大量的資料時還是真的要在 model 提供參數去 query DB</p>
-<h2 id="現況">現況</h2>
-<p>因為新的需求需要添加到不少的資料</p>
-<p>但是因為時程短加上再添加的資料量也不會大的誇張(約共 2000 左右的量</p>
-<p>所以還是一次全部載入</p>
-<h2 id="問題點">問題點</h2>
-<p>首先會先遇到的問題就是</p>
-<p>一次載入 2000 多筆資料頁面就開始變很慢(因為還有圖片)</p>
-<p>打開 chrome developtool 就會發現 DOMContentLoaded 要到 13s 左右</p>
-<p>慢到爆炸</p>
-<p>這 13s 還不包含之後要執行的 JavaScript 與畫面渲染</p>
-<p>因為還有圖片</p>
-<p>所以 2000 多個圖片載完後</p>
-<p>整個頁面花了 1 分鐘多&hellip;</p>
-<p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-21_%E4%B8%8B%E5%8D%881.49.36.png" alt="screenshot image"></p>
-<h2 id="解決方案">解決方案</h2>
-<h3 id="先把圖片改成-lazyload">先把圖片改成 lazyload</h3>
-<p>從瀏覽器一次載入 2000 多筆資料瞬間變成只載入頁面會呈現的圖片</p>
-<p>但是 DOMContentLoaded 還是要 12s 左右啊~~</p>
-<p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-21_%E4%B8%8B%E5%8D%883.01.21.png" alt="screenshot image"></p>
-<h3 id="解決-domcontentloaded-問題">解決 DOMContentLoaded 問題</h3>
-<p>因為後台的資料表單是 SSR(server side render) 從 PHP 噴的</p>
-<p>所以一定會有個問題就是 2000 多筆的 table HTML DOM 很多</p>
-<p>然後因為是從 server side 噴到瀏覽器上</p>
-<p>所以會有一個卡的點就是 DB query 的效能(這部分已經優化過了, 在這次的案例是一次全撈出來是要優化什麼啊)</p>
-<p>那只要 DB query 卡到的話</p>
-<p>就會延遲頁面的呈現</p>
-<p>因為 server side 是把所有的 response content 都好了才會噴回去瀏覽器</p>
-<p>當然在 PHP 可以用 <code>ob_flush</code> 和 <code>flush</code> 來處理</p>
-<p><a href="https://blog.longwin.com.tw/2010/12/php-buffer-flush-2010/">Refer - 強迫 PHP 將 Buffer 的資料提前輸出</a></p>
-<p><a href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/240051/">Refer - PHP flush()與ob_flush()的區別詳解</a></p>
-<p>但是目前沒有想要這樣做</p>
-<p>因為目前的程式結構有點複雜, 所以就沒有用這方法實作</p>
-<p>所以最後是決定把這一頁改成 CSR(client side render)</p>
-<p>用 AJAX 拉資料下來</p>
-<h3 id="javascript-優化">JavaScript 優化</h3>
-<p>因為是後台的操作會有 CRUD 的行為, 原本這些行為就都是 AJAX 處理</p>
-<p>所以在 JavaScript 有很多操作行為的事件綁定(event binding)</p>
-<p>所以就把這些行為改成事件委派(event delegation)</p>
-<h3 id="關於分頁-排序和搜尋的處理">關於分頁, 排序和搜尋的處理</h3>
-<p>資料量變多後 PM 最喜歡說我希望有搜尋和排序這樣比較方便看資料誒</p>
-<p>但是我們已經把所以資料經由 AJAX 取回到瀏覽器上了</p>
-<p>這時就可以用一個 jQuery 超好用的 plugin <a href="https://datatables.net/">DataTables</a></p>
-<p>這 plugin 可以把 client 的 data 重新處理成具有分頁排序和搜尋的 table</p>
-<p>也支援把已經在頁面上的 table 或 AJAX response 或是在 JavaScript 中的 data 重新處理</p>
-<h2 id="結論">結論</h2>
-<p>當上述的東西處理完後</p>
-<p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-21_%E4%B8%8B%E5%8D%882.55.41.png" alt="screenshot image"></p>
-<p>DOMContentLoaded 因為改成 AJAX 所以會少很多(12s -&gt; 2s)</p>
-<p>因為資料改成 AJAX 產生, 這速度比 SSR 快多了</p>
-<p>再不看畫面 render 的情況下整個 loading 速度已經也提高很多</p>
-<p>至於 render 時間不太好測試比較所以這邊就不比較了</p>
-<p>基本上上述這些只會動用到前端的程式即可達到成效不錯的優化</p>
-<p>也可以在 chrome 裝上 <a href="https://developers.google.com/web/tools/lighthouse">lighthouse</a> 來檢測</p>
-<p>因為光是這樣改在體感上就提升許多了, 也就沒有再用 lighthouse 測試</p>
-<h2 id="額外補充">額外補充</h2>
-<h3 id="測試-javascript-效能">測試 JavaScript 效能</h3>
-<p>可以用 runtime 來測試</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">startTime</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getTime</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">endTime</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getTime</span>();
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;testName: &#39;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">endTime</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">startTime</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;ms&#39;</span>);
-</span></span></code></pre></div><h3 id="datatables-ajax-處理">DataTables AJAX 處理</h3>
-<p><a href="https://datatables.net/reference/option/ajax">Refer - ajax</a></p>
-<p><a href="https://datatables.net/reference/option/columns.data">Refer - columns.data</a></p>
-<p><a href="https://datatables.net/reference/option/columns.render">Refer - columns.render</a></p>
-<p><a href="https://dotblogs.com.tw/shadow/2018/04/03/065712">Refer - [jQuery] jQuery DataTables 資料行加入checkbox、按鈕，關閉資料行排序、改變下拉選單的每頁顯示幾筆、變更DataTables樣式…等功能 Part5 final</a></p>
-<h3 id="套用-datatables-後的-image-lazyload-處理">套用 DataTables 後的 image lazyload 處理</h3>
-<p>因為現在使用的 image lazyload 會是觀察當前畫面的圖片後在確認這些圖片是否在可視範圍才會加載</p>
-<p>所以當有分頁時</p>
-<p>因為換分頁時會是新的 table DOM(table DOM 會重建) 所以換分頁後的圖片是之前沒有被觀察的</p>
-<p>所以換分頁後得再重新觀察當前頁面的圖片</p>
-<p>DataTables 有 page 的 event 可以監聽分頁切換</p>
-<p><a href="https://datatables.net/reference/event/page">Refer - page</a></p>
-<p>但是當使用 搜尋 , 排序等會造成畫面重新出現的情況的話</p>
-<p>要有效地處理就是使用 datatable 的 draw event</p>
-<p><a href="https://datatables.net/reference/event/draw">Refer - page</a></p>
-<p>只要表單重繪就會觸發</p>
-<p>這邊圖片延遲載入是使用自己參照 Google 的開發文件寫的 code <a href="https://github.com/tedshd/simpleImgLazyLoad">simpleImgLazyLoad</a></p>
-<p>這邊 image lazy 只要圖片載完後 observer 物件就會回收</p>
-<p>不過沒有載到的圖片還是會持續觀察</p>
-<p>只是應該是不會有太大的影響</p>
-<h3 id="datatables-版面寬度問題">DataTables 版面寬度問題</h3>
-<p>因為 DataTables 處理完後有時會自動加上寬度</p>
-<p>所以可以直接先使用 <code>width: 100%</code> 處理</p>
-<p><a href="https://datatables.net/examples/basic_init/flexible_width.html">Refer - DataTables example - Flexible table width</a></p>
-<p>因為 datatable 預設的 table 是固定的</p>
-<p>如果有 responsive 的需求</p>
-<p>要額外用 responsive 的套件來協助</p>
-<p><a href="https://datatables.net/extensions/responsive/">Refer - responsive</a></p>
-</p>
-                
+            </a>
+        </li>
+    
 
-                
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
 
-                
-                <p><a href="https://blog.tedshd.io/posts/load_large_table_improve_performance/">Read more</a></p>
-                
-            </div>
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
+    </div>
+    <div class="header-top-right">
+
+    </div>
+</div>
+
+
+    <nav class="noselect">
+        
+        
+        <a class=" active" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
+
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    <div class="homepage-content">
+        
+    </div>
+
+    <div class="articles h-feed">
+        
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-12-07-detect-mobile-device/">Detect mobile device</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Detect mobile device Use PHP or JavaScript detect mobile device like iPhone, iPad, iPod or Android&hellip;
+## Android ### PHP &lt;?php $ua = strtolower($_SERVER[&#39;HTTP_USER_AGENT&#39;]); if(stripos($ua, &#39;android&#39;) !== false) { echo &#39;Android!!&#39;; exit; } ?&gt; ### JavaScript var ua = navigator.userAgent.toLowerCase(); if(ua.indexOf(&#34;android&#34;) &gt; -1) { document.write(&#39;Android!!&#39;); } Refer - Android Detection with JavaScript or PHP
+## Apple mobile device Refer - How to detect iPhone, iPod and iPad with PHP Refer - How to Identify an Apple iPhone, iPod or iPad Visitor to Your Website
+            ...
         </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-12-07">2013-12-07</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-12-07-detect-mobile-device/">/posts/2013-12-07-detect-mobile-device/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/php/">PHP</a></li>
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+            </ul>
         
         
         
     </div>
 </div>
 
-<div class="p-strip is-wrapper">
-    <div class="row">
-        <footer class="p-article-pagination">
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-12-07-javascript-easy-to-get-dom/">JavaScript - Easy to get DOM</a></h1>
+        </header>
+        
+
+    </div>
+
     
-    <a class="p-article-pagination__link--previous p-article-pagination__link--no-title" href="/page/20/">
-        <span class="p-article-pagination__label">Previous</span>
-    </a>
+        <div class="content post-summary p-summary">
+            # JavaScript - Easy to get DOM It is old way to use getElementById, getElementsByTagName &hellip;
+New method is use querySelector and querySelectorAll
+If use IE, it only for IE8 up.
+Make them as a method
+var node; function node(selector) { if (selector.indexOf(&#39;.&#39;) === -1) { if (document.querySelectorAll(selector).length === 1) { return document.querySelector(selector); } return document.querySelectorAll(selector); } return document.querySelectorAll(selector); } And then use it
+&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;title&gt;querySelector&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;box&#34; class=&#34;area&#34;&gt; test &lt;/div&gt; &lt;div class=&#34;area&#34;&gt; test2 &lt;/div&gt; &lt;div id=&#34;selector&#34; class=&#34;area&#34;&gt; &lt;p class=&#34;con&#34;&gt; content &lt;/p&gt; &lt;/div&gt; &lt;/body&gt; &lt;script&gt; var node; function node(selector) { if (selector.
+            ...
+        </div>
+    
     
 
     
-    <a class="p-article-pagination__link--next p-article-pagination__link--no-title" href="/page/22/">
-        <span class="p-article-pagination__label">Next</span>
-    </a>
+
+
+
+<div class="post-info noselect">
     
-</footer>
+        <div class="post-date dt-published">
+            <time datetime="2013-12-07">2013-12-07</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-12-07-javascript-easy-to-get-dom/">/posts/2013-12-07-javascript-easy-to-get-dom/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+            </ul>
+        
+        
+        
     </div>
 </div>
 
+</article>
 
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Tedshd
-            </p>
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-12-03-google-map-api-research-log/">Google map api - research log</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Google map api - research log ## Introduction 使用 Google Maps JavaScript v3 static map 嵌入地圖到網頁中以圖片方式呈現 使用限制 基本上不要一日載超過 25000 次都沒事 區域化 - 語系
+Library
+## Init map &lt;!DOCTYPE html&gt; &lt;!--使用 &lt;!DOCTYPE html&gt; 宣告，將應用程式宣告為 HTML5--&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;title&gt;Google_map_api_basic&lt;/title&gt; &lt;meta name=&#34;viewport&#34; content=&#34;initial-scale=1.0, user-scalable=no&#34; /&gt; &lt;!--最新的瀏覽器會將使用此 DOCTYPE 宣告的內容以「標準模式」呈現，也就是說，您的應用程式應更具備跨瀏覽器相容性。此外，DOCTYPE 也設計成會逐漸適應，但無法理解它的瀏覽器將會忽略它，而採用「快速模式」顯示內容。請注意，有些 CSS 在快速模式中可以運作，但在標準模式中卻無效。具體來說，所有百分比的大小都必須繼承父區塊項目，但這些上階中如有任何一個無法指定大小，就會假設為 0 x 0 像素大小。基於這個理由，我們加入了下列 &lt;style&gt; 宣告--&gt; &lt;style type=&#34;text/css&#34;&gt; html { height: 100%; } body { height: 100%; margin: 0px; padding: 0px; } #map_canvas { height: 100%; } &lt;/style&gt; &lt;!
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-12-03">2013-12-03</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-12-03-google-map-api-research-log/">/posts/2013-12-03-google-map-api-research-log/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+                    
+                    <li><a href="/categories/google/">Google</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-11-25-facebook-api-get-uid/">Facebook api get UID &amp; AccessToken</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Facebook api get UID &amp; AccessToken Build App in facebook APP_ID is a facebook App id Must set facebook App&rsquo;s web url and use code in it&rsquo;s domain &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;title&gt;fb_oauth&lt;/title&gt; &lt;script src=&#34;http://code.jquery.com/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;fb-root&#34;&gt;&lt;/div&gt; &lt;p&gt; &lt;input id=&#34;FBLogin&#34; type=&#34;button&#34; value=&#34;登入臉書&#34; /&gt; &lt;/p&gt; &lt;p&gt; &lt;span id=&#34;uid&#34;&gt;&lt;/span&gt; &lt;br&gt; &lt;span id=&#34;accessToken&#34;&gt;&lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;script src=&#34;http://connect.facebook.net/zh_TW/all.js&#34;&gt;&lt;/script&gt; &lt;script&gt; FB.init({ appId: &#39;APP_ID&#39;, status: true, cookie: true, xfbml: true, oauth: true }); $(&#39;#FBLogin&#39;).
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-11-25">2013-11-25</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-11-25-facebook-api-get-uid/">/posts/2013-11-25-facebook-api-get-uid/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/facebook/">Facebook</a></li>
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-11-20-sass-compile-two-spaces/">Sass compile two spaces</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Sass compile two spaces Use Sass compile to css css lndent is 2 spaces if want 4 spaces Must modify this sass source code
+sass-3.2.10/lib/sass/tree/visitors/to_css.rb # before tab_str = &#39; &#39; * (@tabs + node.tabs) # after tab_str = &#39; &#39; * (@tabs + node.tabs) Refer - Change indentation in Sass
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-11-20">2013-11-20</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-11-20-sass-compile-two-spaces/">/posts/2013-11-20-sass-compile-two-spaces/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/sass/">Sass</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-11-09-javascript-event/">JavaScript - Event</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # JavaScript - Event event type 事件名稱
+event target 事件發生在哪一個目標上
+event handler or listener 處理或回應的 function, 即監聽或註冊事件
+event object 與事件關聯的物件
+event propagation 氣泡(bubble)現象
+default actions 觸發事件時的預設行為, 有時必須取消該行為
+## GlobalEventHandlers HTML &lt;button id=&#34;btn&#34;&gt;Click&lt;/button&gt; JavaScript var nodeBtn = document.getElementById(&#39;btn&#39;); nodeBtn.onclick = function (e) { alert(&#39;ok&#39;); }; ## event HTML &lt;button id=&#34;btn&#34;&gt;Click&lt;/button&gt; Use addEventListener(only IE9 up) addEventListener
+JavaScript var nodeBtn = document.getElementById(&#39;btn&#39;); nodeBtn.addEventListener(&#39;click&#39;, function () { alert(&#39;ok&#39;); }); ## delegate If use dynamic page the dom maybe not init in the page load So use delegate
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-11-09">2013-11-09</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-11-09-javascript-event/">/posts/2013-11-09-javascript-event/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-11-07-android-noteview/">Android - Note(view)</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Android - Note(view) src java
+res
+drawable layout values view
+px2dpi
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-11-07">2013-11-07</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-11-07-android-noteview/">/posts/2013-11-07-android-noteview/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-10-23-codeigniter-load-data-in-view-for-javascript/">Codeigniter - load data in view for JavaScript</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # load data in view for JavaScript 如果要從後端帶資料給 JavaScript, 很常用 AJAX 的方式, 但假如是頁面在 load 進來時就需要使用後端的資料, 一開始就把資料帶在頁面上然後再用 JavaScript 取得頁面上的資料是一個較佳的方式(至少說省下一個 request).
+## controller &lt;?php ... public function index() { // TODO $server_data load data for JavaScript $server_data = array( &#34;data_01&#34; =&gt; array( &#34;title&#34; =&gt; &#34;title 01&#34;, &#34;num&#34; =&gt; 01, &#34;con&#34; =&gt; array( &#34;con_01&#34; =&gt; &#34;news&#34;, &#34;con_02&#34; =&gt; &#34;sport&#34;, &#34;con_03&#34; =&gt; &#34;tech&#34;, ), ), &#34;data_02&#34; =&gt; array( &#34;title&#34; =&gt; &#34;title 02&#34;, &#34;num&#34; =&gt; 02, &#34;con&#34; =&gt; array( &#34;con_01&#34; =&gt; &#34;life&#34;, &#34;con_02&#34; =&gt; &#34;movie&#34;, &#34;con_03&#34; =&gt; &#34;cars&#34;, ), ), ); // do something $data[&#34;static_data&#34;] = json_encode($server_data); $this-&gt;load-&gt;view(&#34;welcome&#34;, $data); } .
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-10-23">2013-10-23</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-10-23-codeigniter-load-data-in-view-for-javascript/">/posts/2013-10-23-codeigniter-load-data-in-view-for-javascript/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/codeignite/">Codeignite</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-10-23-javascript-handle-json/">JavaScript - handle JSON</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # handle JSON 先了解 Object &amp; JSON JavaScript 物件導向的寫法 你不可不知的 JSON 基本介紹
+// data can get from AJAX or self var data; // init from self // Object Literal data = { &#34;data_01&#34;: { &#34;title&#34;: &#34;title 01&#34;, &#34;num&#34;: 01, &#34;con&#34;: { &#34;con_01&#34;: { &#34;name&#34;: &#34;news&#34;, &#34;desc&#34;: &#34;about news&#34; } &#34;con_02&#34;: { &#34;name&#34;: &#34;sport&#34;, &#34;desc&#34;: &#34;sport like NBA&#34; } &#34;con_03&#34;: { &#34;name&#34;: &#34;tech&#34;, &#34;desc&#34;: &#34;3C info&#34; } } }, &#34;data_02&#34;: { &#34;title&#34;: &#34;title 02&#34;, &#34;num&#34;: 02, &#34;con&#34;: { &#34;con_01&#34;: { &#34;name&#34;: &#34;life&#34;, &#34;desc&#34;: &#34;people&#39;s life&#34; } &#34;con_02&#34;: { &#34;name&#34;: &#34;movie&#34;, &#34;desc&#34;: &#34;Iron man .
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-10-23">2013-10-23</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-10-23-javascript-handle-json/">/posts/2013-10-23-javascript-handle-json/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-10-20-javascript-file-upload/">javascript - file upload</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # javascript - file upload ## Introduction 利用 javascript 達到檔案上傳的功能
+顯示上傳進度 多檔上傳 取消上傳 拖拉上傳 斷點續傳?? chrome 上傳資料夾 盡可能跨 browser(for IE8) 不依攋任一 javascript library 自幹上傳 iframe upload in IE ## Skill files API AJAX iframe FormData &hellip; ## Develop 單純用 javascript 利用 AJAX 上傳 處理 AJAX 上傳在 IE 的問題(利用 iframe 也許可解, Refer) 處理拖拉 處理拖拉資料夾 處理預設樣式 ## Issue FormData AJAX 上傳(IE10 以上) IE 利用 iframe 實作 ## Dseign flow ### Attribute inputFileNode(input type file element) fileName(name=&quot;&quot;) server(the file upload to server url) dropArea(set the drop area) ### Method upload cancel ### Event Use CustomEvent (IE 9 up) Refer - How to Create Custom Events in JavaScript
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-10-20">2013-10-20</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-10-20-javascript-file-upload/">/posts/2013-10-20-javascript-file-upload/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/file_upload/">File_upload</a></li>
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+        
+    
+    
+    <div class="pagination noselect">
+        <div class="left pagination-item ">
+            
+                <a href="/page/20/">to new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/page/22/">to old posts</a>
+            
         </div>
     </div>
+
+
+    </div>
+
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
 </footer>
 
-
-
-
+        
+    </div>
 </body>
 </html>

@@ -1,20 +1,143 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Firefox on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/firefox/</link>
-    <description>Recent content in Firefox on tedshd&#39;s DevNote</description>
+    <title>Firefox on Tedshd&#39;s Dev note</title>
+    <link>/categories/firefox/</link>
+    <description>Tedshd&#39;s Dev note (Firefox)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/firefox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Nov 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/firefox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Firefox 10 週年派對</title>
-      <link>https://blog.tedshd.io/posts/2014-11-15-firefox-10-year-anniversary-party/</link>
+      <link>/posts/2014-11-15-firefox-10-year-anniversary-party/</link>
       <pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-11-15-firefox-10-year-anniversary-party/</guid>
-      <description>Firefox 10 週年歡慶派對 Intro 身為一隻前端攻城獅, 在 Firefox 3 時就開始使用它了 所以在 facebook 上看到這消息就立馬報名了 但最近剛忙完專案, 真的覺得快倒了, 在前一天還在想</description>
+      
+      <guid>/posts/2014-11-15-firefox-10-year-anniversary-party/</guid>
+      <description>&lt;h2 id=&#34;firefox-10-週年歡慶派對&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#firefox-10-%e9%80%b1%e5%b9%b4%e6%ad%a1%e6%85%b6%e6%b4%be%e5%b0%8d&#34;&gt;
+        #
+    &lt;/a&gt;
+    Firefox 10 週年歡慶派對
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/242744/UDqkqfGT5CHSmdIyDqag_2014-11-15%2017.16.53.jpg&#34; alt=&#34;2014-11-15 17.16.53.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/242744/S8GlOaGCSWK9QeYsmLBG_2014-11-15%2013.39.29.jpg&#34; alt=&#34;2014-11-15 13.39.29.jpg&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;身為一隻前端攻城獅, 在 Firefox 3 時就開始使用它了&lt;/p&gt;
+&lt;p&gt;所以在 facebook 上看到這消息就立馬報名了&lt;/p&gt;
+&lt;p&gt;但最近剛忙完專案, 真的覺得快倒了, 在前一天還在想要不要取消報名在家休息&lt;/p&gt;
+&lt;p&gt;但身為一隻攻城獅&lt;strong&gt;熱血&lt;/strong&gt;是必要的條件, 所以還是馬不停蹄地趕來參加了&lt;/p&gt;
+&lt;p&gt;也沒想到會遇到學弟在當 Firefox 志工, 上次看到他是在 COSCUP 2014 也稍微跟他聊了一下&lt;/p&gt;
+&lt;h3 id=&#34;session&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#session&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Session
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;首先大致講了一下-mozilla-taiwan-與-firefox-的發展史&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%a6%96%e5%85%88%e5%a4%a7%e8%87%b4%e8%ac%9b%e4%ba%86%e4%b8%80%e4%b8%8b-mozilla-taiwan-%e8%88%87-firefox-%e7%9a%84%e7%99%bc%e5%b1%95%e5%8f%b2&#34;&gt;
+        ###
+    &lt;/a&gt;
+    首先大致講了一下 Mozilla taiwan 與 Firefox 的發展史
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/242744/9hKiahKtSgWPkBfGCjb3_2014-11-15%2014.02.56.jpg&#34; alt=&#34;2014-11-15 14.02.56.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;因為我是從 2.x 跨 3.0 開始使用&lt;/p&gt;
+&lt;p&gt;當時的印象就是吃記憶體, 很多操作行為會卡卡, 記憶體又一直飆高, 讓我的怒氣也一直飆高&lt;/p&gt;
+&lt;p&gt;當時 Google Chrome 剛起來, 所以就憤而投向 Google 的懷抱&lt;/p&gt;
+&lt;p&gt;就把 Firefox 當成第二瀏覽器&lt;/p&gt;
+&lt;p&gt;因為 Firefox 其他功能像是附加元件、自訂工具列(這功能很早就有了)&amp;hellip;等很方便&lt;/p&gt;
+&lt;p&gt;當時 Developer 必裝的就是 firebug&lt;/p&gt;
+&lt;p&gt;But&lt;/p&gt;
+&lt;p&gt;Firefox 也陸續把一些以前要裝附加元件才能用的好用的開發工具整進去, 真是造福開發者&lt;/p&gt;
+&lt;h4 id=&#34;播放介紹的影片&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%92%ad%e6%94%be%e4%bb%8b%e7%b4%b9%e7%9a%84%e5%bd%b1%e7%89%87&#34;&gt;
+        ###
+    &lt;/a&gt;
+    播放介紹的影片
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;一些關於 Firefox 開發時的發想與秉持的概念&lt;/p&gt;
+&lt;p&gt;還有彩蛋&lt;/p&gt;
+&lt;p&gt;把選單自定的選單都清空&lt;/p&gt;
+&lt;p&gt;Before
+&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/242744/vVJJd7vRYCMUJcrbVWdZ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-11-15%20%E4%B8%8B%E5%8D%887.14.23.png&#34; alt=&#34;螢幕快照 2014-11-15 下午7.14.23.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;After
+&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/242744/B4CHHnABQNCTgR12Xeqv_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-11-15%20%E4%B8%8B%E5%8D%887.15.08.png&#34; alt=&#34;螢幕快照 2014-11-15 下午7.15.08.png&#34;&gt;
+&lt;strong style=&#34;color:red&#34;&gt;獨角獸出現!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong style=&#34;color:red&#34;&gt;獨角獸出現!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong style=&#34;color:red&#34;&gt;獨角獸出現!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;因為很重要, 所以要說三遍&lt;/p&gt;
+&lt;p&gt;其實 &lt;a href=&#34;https://developer.mozilla.org/zh-TW/&#34;&gt;Mozilla Develop Network&lt;/a&gt; 也有彩蛋
+&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/242744/sthoSMZBSr6FYfFqVIkp_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-11-15%20%E4%B8%8B%E5%8D%887.56.07.png&#34; alt=&#34;螢幕快照 2014-11-15 下午7.56.07.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;打開開發者工具到網頁主控台(Chrome 是 console) 可以看到&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/242744/eOqVVCAFQvpVERo1UBGh_2014-11-15%2015.16.39.jpg&#34; alt=&#34;2014-11-15 15.16.39.jpg&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;中途有個自由活動的時間讓我們逛擺設的攤位&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%b8%ad%e9%80%94%e6%9c%89%e5%80%8b%e8%87%aa%e7%94%b1%e6%b4%bb%e5%8b%95%e7%9a%84%e6%99%82%e9%96%93%e8%ae%93%e6%88%91%e5%80%91%e9%80%9b%e6%93%ba%e8%a8%ad%e7%9a%84%e6%94%a4%e4%bd%8d&#34;&gt;
+        ###
+    &lt;/a&gt;
+    中途有個自由活動的時間讓我們逛擺設的攤位
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;有今年最夯的&lt;a href=&#34;http://moztw.org/space/&#34;&gt;摩茲工寮&lt;/a&gt; 還有 CC 創作授權、手作坊、Wiki、Firefox OS、Firefox Developer Edition &amp;hellip;等攤位&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/242744/DkZOxXoRRNeBnIovdyiK_2014-11-15%2014.55.56.jpg&#34; alt=&#34;2014-11-15 14.55.56.jpg&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;介紹新版-firefox-一些功能&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bb%8b%e7%b4%b9%e6%96%b0%e7%89%88-firefox-%e4%b8%80%e4%ba%9b%e5%8a%9f%e8%83%bd&#34;&gt;
+        ###
+    &lt;/a&gt;
+    介紹新版 Firefox 一些功能
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;新的選單列與自訂性更高的工具列&lt;/p&gt;
+&lt;p&gt;清除奇怪的記錄的按鈕(?)&lt;/p&gt;
+&lt;p&gt;速度變快, 記憶體更省&lt;/p&gt;
+&lt;p&gt;更加齊全的開發者工具&lt;/p&gt;
+&lt;h4 id=&#34;接下來也有介紹開發者版本的-firefox&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%8e%a5%e4%b8%8b%e4%be%86%e4%b9%9f%e6%9c%89%e4%bb%8b%e7%b4%b9%e9%96%8b%e7%99%bc%e8%80%85%e7%89%88%e6%9c%ac%e7%9a%84-firefox&#34;&gt;
+        ###
+    &lt;/a&gt;
+    接下來也有介紹開發者版本的 Firefox
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/242744/4DfgmJFPR1ekEPr7CZrq_2014-11-15%2016.30.29.jpg&#34; alt=&#34;2014-11-15 16.30.29.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/zh-TW/Firefox/Developer_Edition&#34;&gt;Firefox Developer Edition&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這次為了 10 週年推出一版, 其實有在關注 Firefox 的人應該都知道 Firefox 有一個 Aurora 來試驗新功能&lt;/p&gt;
+&lt;p&gt;這個版本就是基於 Aurora 開發的版本&lt;/p&gt;
+&lt;p&gt;其中最強的工具是 &lt;strong&gt;valence&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;它的 remote debug 號稱可以 debug iOS 與 Android 的 Safari、Chrome、Firefox 等 Browser&lt;/p&gt;
+&lt;p&gt;有空一定要試驗一下&lt;/p&gt;
+&lt;h3 id=&#34;ending&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ending&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Ending
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;雖然 Netscape 在早期輸掉瀏覽器大戰, 但而後 Mozilla 推出 Firefox 在現在也占有一席之地, 也有部分功歸於它的開放而使得更多人來投入與改善它.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/242744/DHt2jDMQDaOvlIbtejCE_2014-11-15%2019.10.23.jpg&#34; alt=&#34;2014-11-15 19.10.23.jpg&#34;&gt;&lt;/p&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;462&#34; src=&#34;//www.youtube.com/embed/EGcr7QP0XU4&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

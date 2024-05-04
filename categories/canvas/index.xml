@@ -1,20 +1,100 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Canvas on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/canvas/</link>
-    <description>Recent content in Canvas on tedshd&#39;s DevNote</description>
+    <title>Canvas on Tedshd&#39;s Dev note</title>
+    <link>/categories/canvas/</link>
+    <description>Tedshd&#39;s Dev note (Canvas)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Tue, 11 May 2021 16:25:33 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/canvas/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Sep 2020 16:05:40 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/canvas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Html2canvas</title>
-      <link>https://blog.tedshd.io/posts/html2canvas/</link>
+      <link>/posts/html2canvas/</link>
       <pubDate>Thu, 03 Sep 2020 16:05:40 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/html2canvas/</guid>
-      <description>網站直接網頁截圖 基本上就是把要截圖的內容轉成 canvas 物件 再轉成圖片下載即可 現成套件 html2canvas https://html2canvas.hertzen.com/ 但是如果要截圖的內容有用外部 url 載入的圖片需要注意一下 CORS 問題(</description>
+      
+      <guid>/posts/html2canvas/</guid>
+      <description>&lt;h2 id=&#34;網站直接網頁截圖&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b6%b2%e7%ab%99%e7%9b%b4%e6%8e%a5%e7%b6%b2%e9%a0%81%e6%88%aa%e5%9c%96&#34;&gt;
+        #
+    &lt;/a&gt;
+    網站直接網頁截圖
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;基本上就是把要截圖的內容轉成 canvas 物件&lt;/p&gt;
+&lt;p&gt;再轉成圖片下載即可&lt;/p&gt;
+&lt;h3 id=&#34;現成套件-html2canvas&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%8f%be%e6%88%90%e5%a5%97%e4%bb%b6-html2canvas&#34;&gt;
+        ##
+    &lt;/a&gt;
+    現成套件 html2canvas
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://html2canvas.hertzen.com/&#34;&gt;https://html2canvas.hertzen.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但是如果要截圖的內容有用外部 url 載入的圖片需要注意一下 CORS 問題(canvas 的限制)&lt;/p&gt;
+&lt;h3 id=&#34;解決外部-url-載入圖片時-cors-問題&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a7%a3%e6%b1%ba%e5%a4%96%e9%83%a8-url-%e8%bc%89%e5%85%a5%e5%9c%96%e7%89%87%e6%99%82-cors-%e5%95%8f%e9%a1%8c&#34;&gt;
+        ##
+    &lt;/a&gt;
+    解決外部 url 載入圖片時 CORS 問題
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;原理&lt;/p&gt;
+&lt;p&gt;把外部載入的圖片轉換成二進制再轉成 dataurl&lt;/p&gt;
+&lt;p&gt;因為在 browser 上面可以解析與渲染 dataurl&lt;/p&gt;
+&lt;p&gt;所以就可以呈現在 canvas 裡面&lt;/p&gt;
+&lt;p&gt;這樣之後要截圖下載這個 canvas 的內容也沒問題&lt;/p&gt;
+&lt;h3 id=&#34;補充轉換圖片的機制解決載入外部圖片-cors-問題&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a3%9c%e5%85%85%e8%bd%89%e6%8f%9b%e5%9c%96%e7%89%87%e7%9a%84%e6%a9%9f%e5%88%b6%e8%a7%a3%e6%b1%ba%e8%bc%89%e5%85%a5%e5%a4%96%e9%83%a8%e5%9c%96%e7%89%87-cors-%e5%95%8f%e9%a1%8c&#34;&gt;
+        ##
+    &lt;/a&gt;
+    補充轉換圖片的機制(解決載入外部圖片 CORS 問題)
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;處理方式---圖片轉-blob&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%99%95%e7%90%86%e6%96%b9%e5%bc%8f---%e5%9c%96%e7%89%87%e8%bd%89-blob&#34;&gt;
+        ###
+    &lt;/a&gt;
+    處理方式 - 圖片轉 blob
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;圖片轉成 blob&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; toDataURL(url, callback) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; xhr &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; XMLHttpRequest();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    xhr.onload &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; reader &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; FileReader();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        reader.onloadend &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            callback(reader.result);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        reader.readAsDataURL(xhr.response);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    xhr.open(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;, url);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    xhr.responseType &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;blob&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    xhr.send();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;問題更新-20210511&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%95%8f%e9%a1%8c%e6%9b%b4%e6%96%b0-20210511&#34;&gt;
+        ###
+    &lt;/a&gt;
+    問題(更新 2021/05/11)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;CORS 問題越來越嚴格了&lt;/p&gt;
+&lt;p&gt;在瀏覽器上面 XMLHttpRequest 物件處理 binary 現在會有 CORS 問題要處理&lt;/p&gt;
+&lt;p&gt;需要在要處理的圖片 url 處理 CORS(圖片所在的 host 必須有允許 CORS 的 header)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image&#34;&gt;refer - Allowing cross-origin use of images and canvas&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/6fe06667b748&#34;&gt;refer - 解决 canvas 将图片转为base64报错&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

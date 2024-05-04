@@ -1,62 +1,445 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/linux/</link>
-    <description>Recent content in Linux on tedshd&#39;s DevNote</description>
+    <title>Linux on Tedshd&#39;s Dev note</title>
+    <link>/categories/linux/</link>
+    <description>Tedshd&#39;s Dev note (Linux)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Thu, 27 Oct 2022 14:12:03 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Oct 2022 18:36:00 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>SSH 到 Windows Server</title>
-      <link>https://blog.tedshd.io/posts/ssh_to_windows_server/</link>
+      <link>/posts/ssh_to_windows_server/</link>
       <pubDate>Sun, 09 Oct 2022 18:36:00 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/ssh_to_windows_server/</guid>
-      <description>最近因為需求要接手 Windows Server 進行維護與開發 因為只有在很久以前幫別人處理 IIS Server 一點經驗 時間也非常久了 所以筆記一下這次的處理過程 這次處理的 server 版本是 Windows Server 2019</description>
+      
+      <guid>/posts/ssh_to_windows_server/</guid>
+      <description>&lt;p&gt;最近因為需求要接手 Windows Server 進行維護與開發&lt;/p&gt;
+&lt;p&gt;因為只有在很久以前幫別人處理 IIS Server 一點經驗&lt;/p&gt;
+&lt;p&gt;時間也非常久了&lt;/p&gt;
+&lt;p&gt;所以筆記一下這次的處理過程&lt;/p&gt;
+&lt;p&gt;這次處理的 server 版本是 Windows Server 2019&lt;/p&gt;
+&lt;h2 id=&#34;ssh-on-gcp-compute-engine&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ssh-on-gcp-compute-engine&#34;&gt;
+        #
+    &lt;/a&gt;
+    SSH on GCP Compute Engine
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;如果是建置在 Google Cloud 的 Compute Engine 上的話&lt;/p&gt;
+&lt;p&gt;就參考文件 &lt;a href=&#34;https://cloud.google.com/blog/products/compute/using-openssh-on-windows-compute-engine-instances&#34;&gt;Getting started with OpenSSH on Windows Compute Engine instances&lt;/a&gt; 就可以了&lt;/p&gt;
+&lt;h2 id=&#34;前置作業&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%89%8d%e7%bd%ae%e4%bd%9c%e6%a5%ad&#34;&gt;
+        #
+    &lt;/a&gt;
+    前置作業
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;之前似乎是採用 remote desktop 的方式&lt;/p&gt;
+&lt;p&gt;這對習慣命令列操作的人來說會有點不習慣&lt;/p&gt;
+&lt;p&gt;而且交接程式碼和檔案都放在那台機器上&lt;/p&gt;
+&lt;p&gt;所以為了之後方便操作, 首先就要安裝 OpenSSH&lt;/p&gt;
+&lt;h3 id=&#34;安裝-openssh-server&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%ae%89%e8%a3%9d-openssh-server&#34;&gt;
+        ##
+    &lt;/a&gt;
+    安裝 OpenSSH server
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;因為 SSH 會有 server 和 client 的部分&lt;/p&gt;
+&lt;p&gt;因為是需要連進去 Windows Server&lt;/p&gt;
+&lt;p&gt;所以只需要處理 OpenSSH server 的部分&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://learn.microsoft.com/zh-tw/windows-server/administration/openssh/openssh_install_firstuse&#34;&gt;Refer - 安裝 OpenSSH&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;開啟 設定，選取 [應用程式] &amp;gt; 應用程式 &amp;amp; 功能，然後選取 [選用功能]。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.23.05.png?alt=media&amp;amp;token=8e54e549-f3d2-414a-b122-917650205f86&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.25.09.png?alt=media&amp;amp;token=a4217abd-1cd2-424f-9762-0aade608b1c7&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.26.02.png?alt=media&amp;amp;token=b5900fc2-5b5e-4f81-a878-b9bccb97da38&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;掃描清單，查看是否已安裝 OpenSSH。 如果沒有，請在頁面頂端選取 [ 新增功能]，然後：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;尋找 OpenSSH 用戶端，然後按一下 [安裝]。&lt;/li&gt;
+&lt;li&gt;尋找 OpenSSH 伺服器，然後按一下 [安裝]。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.27.27.png?alt=media&amp;amp;token=99f88b20-c30d-49f5-9cc5-e6e2c7a2add1&#34; alt=&#34;尋找 OpenSSH 伺服器，然後按一下 [安裝]。&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;設定-ssh&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a8%ad%e5%ae%9a-ssh&#34;&gt;
+        ##
+    &lt;/a&gt;
+    設定 SSH
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;PowerShell&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PowerShell&#34; data-lang=&#34;PowerShell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;Start-Service&lt;/span&gt; sshd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PowerShell&#34; data-lang=&#34;PowerShell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;Add-WindowsCapability&lt;/span&gt; -Online -Name OpenSSH.Server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這時應該會輸出&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PowerShell&#34; data-lang=&#34;PowerShell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Path          &lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Online        &lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; True
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;RestartNeeded &lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; False
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;設定&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a8%ad%e5%ae%9a&#34;&gt;
+        ##
+    &lt;/a&gt;
+    設定
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;修改 SSH 設定&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PowerShell&#34; data-lang=&#34;PowerShell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;start-process&lt;/span&gt; notepad C:\Programdata\ssh\sshd_config
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;設定防火牆&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a8%ad%e5%ae%9a%e9%98%b2%e7%81%ab%e7%89%86&#34;&gt;
+        ##
+    &lt;/a&gt;
+    設定防火牆
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Server Manager&lt;/code&gt; -&amp;gt; &lt;code&gt;Tool&lt;/code&gt; -&amp;gt; &lt;code&gt;Windows Defender Firewall with Advanced Security&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.46.09.png?alt=media&amp;amp;token=986745f0-c9e1-4fb6-b23f-6184d23e529b&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.47.36.png?alt=media&amp;amp;token=6eef15cc-9f4c-42fd-80cf-3382fb87c218&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Inbound Rules&lt;/code&gt; -&amp;gt; &lt;code&gt;New Rule&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.49.png?alt=media&amp;amp;token=ea1cd8a7-5802-4b52-8b63-f316c8cd03cd&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.57.png?alt=media&amp;amp;token=577864f2-5d34-483a-b3c0-4adcf530649d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.14.png?alt=media&amp;amp;token=2690295a-8c34-4697-b716-a930d6dc1d2a&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.35.png?alt=media&amp;amp;token=15ebdba8-78a5-4235-b7c7-84e0fae388b7&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.vultr.com/docs/how-to-install-openssh-on-windows-server-2019-or-2022/&#34;&gt;Refer - How to Install OpenSSH on Windows Server 2019 or 2022&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ssh-連線&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ssh-%e9%80%a3%e7%b7%9a&#34;&gt;
+        #
+    &lt;/a&gt;
+    SSH 連線
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;因為目前沒有建立 ssh key 來連線的打算&lt;/p&gt;
+&lt;p&gt;這邊是還用帳號密碼來連線&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh &amp;lt;用戶名&amp;gt;@&amp;lt;IP&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之後再填入密碼來登入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;administrator@WINDOWS C:&lt;span style=&#34;color:#5af78e&#34;&gt;\U&lt;/span&gt;sers&lt;span style=&#34;color:#5af78e&#34;&gt;\A&lt;/span&gt;dministrator&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這邊需要注意的因為是連線到 Windows&lt;/p&gt;
+&lt;p&gt;所以要用的指令都得是 Dos 指令&lt;/p&gt;
+&lt;h2 id=&#34;利用-scp-把資料複製下來&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%88%a9%e7%94%a8-scp-%e6%8a%8a%e8%b3%87%e6%96%99%e8%a4%87%e8%a3%bd%e4%b8%8b%e4%be%86&#34;&gt;
+        #
+    &lt;/a&gt;
+    利用 SCP 把資料複製下來
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;這邊的例子是在 Mac scp Windows Server 到 Mac&lt;/p&gt;
+&lt;p&gt;需要注意的是在使用 SCP 時, Windows 路徑的分隔符號得調整&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;scp -r &amp;lt;用戶名&amp;gt;@&amp;lt;IP&amp;gt;:C:/&amp;lt;路徑&amp;gt;/&amp;lt;目標資料夾&amp;gt; &amp;lt;本地端資料夾&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>Mac - Use readlink in Mac OS X</title>
-      <link>https://blog.tedshd.io/posts/2018-10-24-mac-use-readlink-in-mac-os-x/</link>
+      <link>/posts/2018-10-24-mac-use-readlink-in-mac-os-x/</link>
       <pubDate>Wed, 24 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2018-10-24-mac-use-readlink-in-mac-os-x/</guid>
-      <description>Mac - Use readlink in Mac OS X install coreutils brew install coreutils test greadlink greadlink -f &amp;lt;file name&amp;gt; alias command line alias readlink=greadlink refer - How can I get the behavior of GNU&amp;rsquo;s readlink -f on a Mac?;</description>
+      
+      <guid>/posts/2018-10-24-mac-use-readlink-in-mac-os-x/</guid>
+      <description>&lt;h2 id=&#34;mac---use-readlink-in-mac-os-x&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac---use-readlink-in-mac-os-x&#34;&gt;
+        #
+    &lt;/a&gt;
+    Mac - Use readlink in Mac OS X
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;install &lt;code&gt;coreutils&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install coreutils
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;test greadlink&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;greadlink -f &amp;lt;file name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;alias command line&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;readlink&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;greadlink
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/1055671/how-can-i-get-the-behavior-of-gnus-readlink-f-on-a-mac&#34;&gt;refer - How can I get the behavior of GNU&amp;rsquo;s readlink -f on a Mac?&lt;/a&gt;;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Linux - install gogole chrome in debian Linux</title>
-      <link>https://blog.tedshd.io/posts/2016-08-03-linux-install-gogole-chrome-in-debian-linux/</link>
+      <link>/posts/2016-08-03-linux-install-gogole-chrome-in-debian-linux/</link>
       <pubDate>Wed, 03 Aug 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-08-03-linux-install-gogole-chrome-in-debian-linux/</guid>
-      <description>Linux - install gogole chrome in debian Linux wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - sudo sh -c &amp;#39;echo &amp;#34;deb http://dl.google.com/linux/chrome/deb/ stable main&amp;#34; &amp;gt;&amp;gt; /etc/apt/sources.list.d/google.list&amp;#39; sudo apt-get update sudo apt-get install google-chrome-stable refer - How to install Chrome browser properly via command line?</description>
+      
+      <guid>/posts/2016-08-03-linux-install-gogole-chrome-in-debian-linux/</guid>
+      <description>&lt;h2 id=&#34;linux---install-gogole-chrome-in-debian-linux&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#linux---install-gogole-chrome-in-debian-linux&#34;&gt;
+        #
+    &lt;/a&gt;
+    Linux - install gogole chrome in debian Linux
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo sh -c &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;echo &amp;#34;deb http://dl.google.com/linux/chrome/deb/ stable main&amp;#34; &amp;gt;&amp;gt; /etc/apt/sources.list.d/google.list&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install google-chrome-stable
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://askubuntu.com/questions/79280/how-to-install-chrome-browser-properly-via-command-line&#34;&gt;refer - How to install Chrome browser properly via command line?&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5</title>
-      <link>https://blog.tedshd.io/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/</link>
+      <link>/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/</link>
       <pubDate>Sat, 31 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/</guid>
-      <description>php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5 sudo apt-get -y update sudo add-apt-repository ppa:ondrej/php5-5.6 sudo apt-get -y update sudo apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl php5-bcmath if use php -v check version is 5.5.x&#xA;I use&#xA;sudo apt-get -u install php5-cli Refer - PHP 5.5 or 5.6—Ubuntu</description>
+      
+      <guid>/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/</guid>
+      <description>&lt;h2 id=&#34;php---ubuntu-14-php-56-or-to-upgrade-from-php-55&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php---ubuntu-14-php-56-or-to-upgrade-from-php-55&#34;&gt;
+        #
+    &lt;/a&gt;
+    php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get -y update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo add-apt-repository ppa:ondrej/php5-5.6
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get -y update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl php5-bcmath
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;if use &lt;code&gt;php -v&lt;/code&gt; check version is 5.5.x&lt;/p&gt;
+&lt;p&gt;I use&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get -u install php5-cli
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://devdocs.magento.com/guides/v2.0/install-gde/prereq/php-ubuntu.html#instgde-prereq-php56-install-ubuntu&#34;&gt;Refer - PHP 5.5 or 5.6—Ubuntu&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Linux / Unix - terminal control</title>
-      <link>https://blog.tedshd.io/posts/2015-09-30-linux-unix-terminal-control/</link>
+      <link>/posts/2015-09-30-linux-unix-terminal-control/</link>
       <pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-09-30-linux-unix-terminal-control/</guid>
-      <description>Linux / Unix - terminal control 終端機指令列的一些操作 Ctrl + a: 回到此行最前面 Ctrl + e: 到此行的最後面 Ctrl + u: 清除一行中游標之前的所有文字 Ctrl + k: 清除一行字游標之後的所有文</description>
+      
+      <guid>/posts/2015-09-30-linux-unix-terminal-control/</guid>
+      <description>&lt;h2 id=&#34;linux--unix---terminal-control&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#linux--unix---terminal-control&#34;&gt;
+        #
+    &lt;/a&gt;
+    Linux / Unix - terminal control
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;終端機指令列的一些操作&lt;/p&gt;
+&lt;p&gt;Ctrl + a: 回到此行最前面&lt;/p&gt;
+&lt;p&gt;Ctrl + e: 到此行的最後面&lt;/p&gt;
+&lt;p&gt;Ctrl + u: 清除一行中游標之前的所有文字&lt;/p&gt;
+&lt;p&gt;Ctrl + k: 清除一行字游標之後的所有文字&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Linux - Set Encoding In Linux Environment</title>
-      <link>https://blog.tedshd.io/posts/2015-06-16-linux-set-encoding-in-linux-environment/</link>
+      <link>/posts/2015-06-16-linux-set-encoding-in-linux-environment/</link>
       <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-06-16-linux-set-encoding-in-linux-environment/</guid>
-      <description>Linux - Set Encoding In Linux Environment Add&#xA;export LC_ALL=en_US.UTF-8 export LANG=en_US.UTF-8 export LANGUAGE=en_US.UTF-8 in .bashrc or .zshrc&#xA;Refer - How to set up a clean UTF-8 environment in Linux</description>
+      
+      <guid>/posts/2015-06-16-linux-set-encoding-in-linux-environment/</guid>
+      <description>&lt;h2 id=&#34;linux---set-encoding-in-linux-environment&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#linux---set-encoding-in-linux-environment&#34;&gt;
+        #
+    &lt;/a&gt;
+    Linux - Set Encoding In Linux Environment
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Add&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;LC_ALL&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;en_US.UTF-8
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;LANG&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;en_US.UTF-8
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;LANGUAGE&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;en_US.UTF-8
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;in &lt;code&gt;.bashrc&lt;/code&gt; or &lt;code&gt;.zshrc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://perlgeek.de/en/article/set-up-a-clean-utf8-environment&#34;&gt;Refer - How to set up a clean UTF-8 environment in Linux&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Vim</title>
-      <link>https://blog.tedshd.io/posts/2013-08-21-vim/</link>
+      <link>/posts/2013-08-21-vim/</link>
       <pubDate>Wed, 21 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-08-21-vim/</guid>
-      <description>Vim More a 輸入文字 i 插入字元 o 新增一行 :wq 儲存後離開 :w 儲存 :q 離開 :q! 離開不存檔 :w! 儲存 readonly Esc 離開編輯模式 h 左 j 下 k 上 l 右 v 選擇 yy 複製整行 nyy 複製n行 yw 複製</description>
+      
+      <guid>/posts/2013-08-21-vim/</guid>
+      <description>&lt;h2 id=&#34;vim&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#vim&#34;&gt;
+        #
+    &lt;/a&gt;
+    Vim
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.roodo.com/dabinn/archives/16126923.html&#34;&gt;More&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;a
+輸入文字&lt;/p&gt;
+&lt;p&gt;i
+插入字元&lt;/p&gt;
+&lt;p&gt;o
+新增一行&lt;/p&gt;
+&lt;p&gt;:wq
+儲存後離開&lt;/p&gt;
+&lt;p&gt;:w
+儲存&lt;/p&gt;
+&lt;p&gt;:q
+離開&lt;/p&gt;
+&lt;p&gt;:q!
+離開不存檔&lt;/p&gt;
+&lt;p&gt;:w!
+儲存 readonly&lt;/p&gt;
+&lt;p&gt;Esc
+離開編輯模式&lt;/p&gt;
+&lt;p&gt;h
+左&lt;/p&gt;
+&lt;p&gt;j
+下&lt;/p&gt;
+&lt;p&gt;k
+上&lt;/p&gt;
+&lt;p&gt;l
+右&lt;/p&gt;
+&lt;p&gt;v
+選擇&lt;/p&gt;
+&lt;p&gt;yy
+複製整行&lt;/p&gt;
+&lt;p&gt;nyy
+複製n行&lt;/p&gt;
+&lt;p&gt;yw
+複製游標到單字結束&lt;/p&gt;
+&lt;p&gt;nyw
+複製游標到n個單字結束&lt;/p&gt;
+&lt;p&gt;p
+貼上&lt;/p&gt;
+&lt;p&gt;d + &amp;lt;-
+刪除游標前一個字元&lt;/p&gt;
+&lt;p&gt;d + -&amp;gt;
+刪除游標後一個字元&lt;/p&gt;
+&lt;p&gt;d + up
+刪除游標所在和前一行&lt;/p&gt;
+&lt;p&gt;d + down
+刪除游標所在和後一行&lt;/p&gt;
+&lt;p&gt;dd
+刪除游標所在那一行&lt;/p&gt;
+&lt;p&gt;dw
+游標停在某字第一個刪此字
+停在字中刪後面的字&lt;/p&gt;
+&lt;p&gt;x
+刪除游標所在字元&lt;/p&gt;
+&lt;p&gt;X
+刪除游標所在前一個字元&lt;/p&gt;
+&lt;p&gt;nx
+刪除游標所在n個字元&lt;/p&gt;
+&lt;p&gt;nX
+刪除游標所在前n個字元&lt;/p&gt;
+&lt;p&gt;e
+跳到本單字最後一個字元&lt;/p&gt;
+&lt;p&gt;w
+跳到本單字第一個字母(往後)&lt;/p&gt;
+&lt;p&gt;b
+跳到本單字第一個字母(往前)&lt;/p&gt;
+&lt;p&gt;? or /
+輸入要找的字&lt;/p&gt;
+&lt;h1 id=&#34;heading&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#heading&#34;&gt;
+        ##
+    &lt;/a&gt;
+    
+&lt;/div&gt;
+&lt;/h1&gt;
+&lt;p&gt;把當前字元高亮(highlight)&lt;/p&gt;
+&lt;p&gt;N
+移到上一個找到一樣的字&lt;/p&gt;
+&lt;p&gt;n
+移到下一個找到一樣的字&lt;/p&gt;
+&lt;p&gt;r
+直接改游標上的字&lt;/p&gt;
+&lt;p&gt;cc
+直接改游標那一行&lt;/p&gt;
+&lt;p&gt;:g/字串/s//要換的字串/g
+把文件中的某一字串全替換掉&lt;/p&gt;
+&lt;p&gt;:g/字串/s//要換的字串/gc
+文件中某一字串替換掉(可選)&lt;/p&gt;
+&lt;p&gt;u
+取消前一次動作&lt;/p&gt;
+&lt;p&gt;Ctrl + r
+回覆u的動作&lt;/p&gt;
+&lt;p&gt;.
+繼續上一個指令&lt;/p&gt;
+&lt;p&gt;Ctrl+g
+顯示游標所在行數&lt;/p&gt;
+&lt;p&gt;nG
+跳到n行&lt;/p&gt;
+&lt;p&gt;gf
+直接開啓該路徑的檔案&lt;/p&gt;
+&lt;p&gt;Ｃtrl + o
+關閉開啓的檔案&lt;/p&gt;
+&lt;p&gt;Ctrl + w f
+在新視窗開啓該路徑的檔案&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分割視窗&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;:sp
+垂直分割&lt;/p&gt;
+&lt;p&gt;:vsp
+水平分割&lt;/p&gt;
+&lt;p&gt;:sp .
+垂直分割(新視窗為該目錄list)&lt;/p&gt;
+&lt;p&gt;:vsp .
+水平分割(新視窗為該目錄list)&lt;/p&gt;
+&lt;p&gt;:new
+開新垂直分割&lt;/p&gt;
+&lt;p&gt;:vnew
+開新水平分割&lt;/p&gt;
+&lt;p&gt;Ctrl+w hjkl(左下上右)
+切換視窗&lt;/p&gt;
+&lt;p&gt;Ctrl+w =
+等比例分配&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;垂直分割&lt;/strong&gt;
+Ctrl+w Shift++
+該視窗大小加一行&lt;/p&gt;
+&lt;p&gt;Ctrl+w Shift+n++
+該視窗大小加n行&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;水平分割&lt;/strong&gt;
+Ctrl+w &amp;lt;
+向左加一字元的空間&lt;/p&gt;
+&lt;p&gt;Ctrl+w &amp;gt;
+向右加一字元的空間&lt;/p&gt;
+&lt;p&gt;:tabe
+開tab分頁&lt;/p&gt;
+&lt;p&gt;gt
+下一個分頁&lt;/p&gt;
+&lt;p&gt;Ctrl + z
+vim跳至背景(fg跳回前景)&lt;/p&gt;
+&lt;p&gt;:%s/old/new/g
+取代所有字串為新字串&lt;/p&gt;
+&lt;p&gt;:s/old/new/g
+取代所在行數字串為新字串&lt;/p&gt;
+&lt;p&gt;:set paste
+設定成可貼上 terminal 外的的 text&lt;/p&gt;
+&lt;p&gt;:set nu
+顯示行數&lt;/p&gt;
+&lt;p&gt;:set nonu
+不顯示行數&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mac&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;^f
+forward == page down&lt;/p&gt;
+&lt;p&gt;^b
+back == page up&lt;/p&gt;
+&lt;p&gt;$
+end of line&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

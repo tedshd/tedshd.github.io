@@ -1,62 +1,700 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/git/</link>
-    <description>Recent content in Git on tedshd&#39;s DevNote</description>
+    <title>Git on Tedshd&#39;s Dev note</title>
+    <link>/categories/git/</link>
+    <description>Tedshd&#39;s Dev note (Git)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Dec 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>git hooks</title>
-      <link>https://blog.tedshd.io/posts/2014-12-09-git-hooks/</link>
+      <link>/posts/2014-12-09-git-hooks/</link>
       <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-12-09-git-hooks/</guid>
-      <description>git hooks 和其他版本控制系統一樣，當某些重要事件發生時，Git 有方法可以觸發自訂腳本。有兩組掛鉤(hooks)：用戶端和伺服器端。用戶端掛鉤用於用</description>
+      
+      <guid>/posts/2014-12-09-git-hooks/</guid>
+      <description>&lt;h2 id=&#34;git-hooks&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#git-hooks&#34;&gt;
+        #
+    &lt;/a&gt;
+    git hooks
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;和其他版本控制系統一樣，當某些重要事件發生時，Git 有方法可以觸發自訂腳本。有兩組掛鉤(hooks)：用戶端和伺服器端。用戶端掛鉤用於用戶端的操作，如提交和合併。伺服器端掛鉤用於 Git 伺服器端的操作，如接收被推送的提交。你可以為了各種不同的原因使用這些掛鉤，下面會講解其中一些。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;git hooks 簡單的說就是在進行版本控管時可以再額外多做一些事&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://git-scm.com/book/zh-tw/v1/Git-%E5%AE%A2%E8%A3%BD%E5%8C%96-Git-Hooks&#34;&gt;Refer - Git 客製化 - Git Hooks&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在以前我們公司在前端開發上是用前輩大大寫好的 hook 做一些事
+但前輩大大們陸續離開後, 架構又改了
+新專案沒法用原有的 hook
+所以只好跳進來寫 hook 了&lt;/p&gt;
+&lt;h3 id=&#34;可以用來幹嘛&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%8f%af%e4%bb%a5%e7%94%a8%e4%be%86%e5%b9%b9%e5%98%9b&#34;&gt;
+        ##
+    &lt;/a&gt;
+    可以用來幹嘛?
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;client-side&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#client-side&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Client side
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;lint 檢查&lt;/li&gt;
+&lt;li&gt;coding style 檢查&lt;/li&gt;
+&lt;li&gt;完善要推的 code&lt;/li&gt;
+&lt;li&gt;做自動化測試&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;server-side&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#server-side&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Server side
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;deploy code to production&lt;/li&gt;
+&lt;li&gt;auto build&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;打算用來幹嘛&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%89%93%e7%ae%97%e7%94%a8%e4%be%86%e5%b9%b9%e5%98%9b&#34;&gt;
+        ##
+    &lt;/a&gt;
+    打算用來幹嘛?
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;身為一隻前端攻城獅, 只要顧好 client side 就好了
+預計完成&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;phpcs&lt;/li&gt;
+&lt;li&gt;jshint&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;image trans to png8 ?&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;multi-lang file check ?&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;log&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#log&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Log
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;使用 pre-commit
+在 commit 前檢查
+使用 php 撰寫(基本上都可以指定用哪個程式語言寫 ex: php、ruby、python &amp;hellip;)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#!/usr/bin/php
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# first npm install -g jshint&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# jshint&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;?php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$error&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; false;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// &lt;span style=&#34;color:#ff5c57&#34;&gt;$path&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;~/miiitv_plus/&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$path&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;exec&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;git diff --cached --name-only --diff-filter=ACM | grep &amp;#39;\.js&amp;#39;&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$output_js&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$return_var&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;!empty&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$output_js&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    foreach &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$output_js&lt;/span&gt; as &lt;span style=&#34;color:#ff5c57&#34;&gt;$file&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff5c57&#34;&gt;$file_path&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$path&lt;/span&gt; . &lt;span style=&#34;color:#ff5c57&#34;&gt;$file&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;!empty&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;shell_exec&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;jshint &amp;#34;&lt;/span&gt; . &lt;span style=&#34;color:#ff5c57&#34;&gt;$file_path&lt;/span&gt; . &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$file_path&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;--------------------&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; shell_exec&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;jshint &amp;#34;&lt;/span&gt; . &lt;span style=&#34;color:#ff5c57&#34;&gt;$file_path&lt;/span&gt; . &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;====================&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;$error&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; true;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# http://tedshd.logdown.com/posts/246406-php-install-phpcsphp-codesniffer&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# phpcs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;exec&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;git diff --cached --name-only --diff-filter=ACM | grep &amp;#39;\.php&amp;#39;&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$output_php&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$return_var&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;!empty&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$output_php&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    foreach &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$output_php&lt;/span&gt; as &lt;span style=&#34;color:#ff5c57&#34;&gt;$file&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff5c57&#34;&gt;$file_path&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$path&lt;/span&gt; . &lt;span style=&#34;color:#ff5c57&#34;&gt;$file&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;!empty&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;shell_exec&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;phpcs &amp;#34;&lt;/span&gt; . &lt;span style=&#34;color:#ff5c57&#34;&gt;$file_path&lt;/span&gt; . &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$file_path&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;--------------------&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; shell_exec&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;phpcs &amp;#34;&lt;/span&gt; . &lt;span style=&#34;color:#ff5c57&#34;&gt;$file_path&lt;/span&gt; . &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;====================&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;$error&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; true;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$error&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    exit&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;1&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    exit&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;0&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;?&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;不過使用 phpcs 會太悲催, 就跟用 jslint 一樣, 所以之後又請後端改成適合的 sniffer&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tedshd/hooks&#34;&gt;Refer - hooks&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Git - GitHub gh-pages</title>
-      <link>https://blog.tedshd.io/posts/2014-08-16-git-github-gh-pages/</link>
+      <link>/posts/2014-08-16-git-github-gh-pages/</link>
       <pubDate>Sat, 16 Aug 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-08-16-git-github-gh-pages/</guid>
-      <description>Git - GitHub gh-pages 有時在 GitHub 上亂晃 常常發現一個問題就是有一些很有趣的前端實作, 或別人寫的一些功能沒有所謂的 demo page(當然有些是不需要 demo page) 我不知道是把 GitHub</description>
+      
+      <guid>/posts/2014-08-16-git-github-gh-pages/</guid>
+      <description>&lt;h2 id=&#34;git---github-gh-pages&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#git---github-gh-pages&#34;&gt;
+        #
+    &lt;/a&gt;
+    Git - GitHub gh-pages
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;有時在 GitHub 上亂晃
+常常發現一個問題就是有一些很有趣的前端實作, 或別人寫的一些功能沒有所謂的 demo page(當然有些是不需要 demo page)
+我不知道是把 GitHub 當成備份的 codebase 或是覺得 demo 不重要所以沒放, 又或者是根本不知道要怎麼放
+But
+這都不重要
+其實 GitHub 提供一個 gh-pages 的 branch(或者說是功能)可以讓我們這些前端攻城獅快速的建出個 demo page(&lt;strong style=&#34;color:red&#34;&gt;但不包含後端功能&lt;/strong&gt;)&lt;/p&gt;
+&lt;h3 id=&#34;如何使用&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8&#34;&gt;
+        ##
+    &lt;/a&gt;
+    如何使用?
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;1-從-master-建出名為-gh-pages-的-branch&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#1-%e5%be%9e-master-%e5%bb%ba%e5%87%ba%e5%90%8d%e7%82%ba-gh-pages-%e7%9a%84-branch&#34;&gt;
+        ###
+    &lt;/a&gt;
+    1. 從 master 建出名為 &lt;code&gt;gh-pages&lt;/code&gt; 的 branch
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;git branch gh-pages&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/220973/Aig3e92WQniG9jC7k6vg_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_51_52.png&#34; alt=&#34;螢幕快照_2014-08-17_上午12_51_52.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-切到-gh-pahes-的-branch&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2-%e5%88%87%e5%88%b0-gh-pahes-%e7%9a%84-branch&#34;&gt;
+        ##
+    &lt;/a&gt;
+    2. 切到 gh-pahes 的 branch
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;git checkout gh-pages&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/220973/pjRYDGZQ6apuuAPzf7Yb_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_51_53.png&#34; alt=&#34;螢幕快照_2014-08-17_上午12_51_53.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-把-gh-pages-git-push-上-github&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#3-%e6%8a%8a-gh-pages-git-push-%e4%b8%8a-github&#34;&gt;
+        ##
+    &lt;/a&gt;
+    3. 把 gh-pages &lt;code&gt;git push&lt;/code&gt; 上 GitHub
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;git push&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/220973/P9bJMwV8RledVKws4KBG_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_51_54.png&#34; alt=&#34;螢幕快照_2014-08-17_上午12_51_54.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;因為剛建出新的 branch, 該 branch 還未在 GitHub 上所以會提示你要用 &lt;code&gt;git push --set-upstream origin gh-pages&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-快樂的去-github-拿網址&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#4-%e5%bf%ab%e6%a8%82%e7%9a%84%e5%8e%bb-github-%e6%8b%bf%e7%b6%b2%e5%9d%80&#34;&gt;
+        ##
+    &lt;/a&gt;
+    4. 快樂的去 GitHub 拿網址
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/220973/QzdO4XAQ7iYka0DruqTg_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_55_02.png&#34; alt=&#34;螢幕快照_2014-08-17_上午12_55_02.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/220973/kdMyQ6tMQ1SSRBl6Sj9K_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2014-08-17_%E4%B8%8A%E5%8D%8812_55_16.png&#34; alt=&#34;螢幕快照_2014-08-17_上午12_55_16.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;gh-pages 的 url 結構一律都是 http:// + &lt;code&gt;&amp;lt;GitHub user name&amp;gt;&lt;/code&gt; + .github.io/ + &lt;code&gt;&amp;lt;repository name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;5-等等-網頁沒東西&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#5-%e7%ad%89%e7%ad%89-%e7%b6%b2%e9%a0%81%e6%b2%92%e6%9d%b1%e8%a5%bf&#34;&gt;
+        ##
+    &lt;/a&gt;
+    5. 等等.. 網頁沒東西?
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;需注意的是該 url root 的 html 必須是 &lt;code&gt;index.html&lt;/code&gt; 才會出預設的網頁, 其他的檔案路徑都是建立在該 url 上&lt;/p&gt;
+&lt;h3 id=&#34;6-update&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#6-update&#34;&gt;
+        ##
+    &lt;/a&gt;
+    6. Update
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;其實後續維護不太容易, 必須要熟悉 git 才知道要怎麼做
+通常會在 &lt;code&gt;master&lt;/code&gt; or 切出個 &lt;code&gt;dev&lt;/code&gt; 來開發, 等開發完在 merge
+所以在持續開發時, 要更新 demo page, 就必須要在 gh-pages merge 要更新的 branch&lt;/p&gt;
+&lt;p&gt;據說好像 grunt 還是 gulp 有套件可以自動 build, 但還沒試驗就是了&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Git -Tip &amp; Note</title>
-      <link>https://blog.tedshd.io/posts/2014-07-01-git-tip/</link>
+      <link>/posts/2014-07-01-git-tip/</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-07-01-git-tip/</guid>
-      <description>Git -Tip &amp;amp; Note git pull 出現 CONFLICT 要回復到 pull 之前 git reset --hard &amp;lt;commit id&amp;gt; 強制 push 取代 remote git push -f 取消 merage (須知道 merage 前的 commit id) git reset --hard &amp;lt;commit id&amp;gt; 拉 remote 的新 branch 到 local(local 不存在該 branch) git checkout --track -b &amp;lt;local new branch&amp;gt; &amp;lt;remote branch&amp;gt; 不小</description>
+      
+      <guid>/posts/2014-07-01-git-tip/</guid>
+      <description>&lt;h2 id=&#34;git--tip--note&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#git--tip--note&#34;&gt;
+        #
+    &lt;/a&gt;
+    Git -Tip &amp;amp; Note
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;git-pull-出現-conflict-要回復到-pull-之前&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#git-pull-%e5%87%ba%e7%8f%be-conflict-%e8%a6%81%e5%9b%9e%e5%be%a9%e5%88%b0-pull-%e4%b9%8b%e5%89%8d&#34;&gt;
+        ##
+    &lt;/a&gt;
+    git pull 出現 &lt;code&gt;CONFLICT&lt;/code&gt; 要回復到 pull 之前
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git reset --hard &amp;lt;commit id&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;強制-push-取代-remote&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%bc%b7%e5%88%b6-push-%e5%8f%96%e4%bb%a3-remote&#34;&gt;
+        ##
+    &lt;/a&gt;
+    強制 push 取代 remote
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push -f
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;取消-merage-須知道-merage-前的-commit-id&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%8f%96%e6%b6%88-merage-%e9%a0%88%e7%9f%a5%e9%81%93-merage-%e5%89%8d%e7%9a%84-commit-id&#34;&gt;
+        ##
+    &lt;/a&gt;
+    取消 merage (須知道 merage 前的 commit id)
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git reset --hard &amp;lt;commit id&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;拉-remote-的新-branch-到-locallocal-不存在該-branch&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%8b%89-remote-%e7%9a%84%e6%96%b0-branch-%e5%88%b0-locallocal-%e4%b8%8d%e5%ad%98%e5%9c%a8%e8%a9%b2-branch&#34;&gt;
+        ##
+    &lt;/a&gt;
+    拉 remote 的新 branch 到 local(local 不存在該 branch)
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git checkout --track -b &amp;lt;local new branch&amp;gt; &amp;lt;remote branch&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;不小心把-remote--local-的-branch-刪掉&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%b8%8d%e5%b0%8f%e5%bf%83%e6%8a%8a-remote--local-%e7%9a%84-branch-%e5%88%aa%e6%8e%89&#34;&gt;
+        ##
+    &lt;/a&gt;
+    不小心把 remote &amp;amp; local 的 branch 刪掉
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;先用 git reflog&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git reflog
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# show&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# df4bb25 HEAD@{0}: checkout: moving from master to dev&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# df4bb25 HEAD@{1}: checkout: moving from webtv_dev to master&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 9e920fb HEAD@{2}: commit: [Dev] Modify keycode to keyboard.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 16b9a83 HEAD@{3}: checkout: moving from webtv to webtv_dev&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 16b9a83 HEAD@{4}: checkout: moving from master to webtv&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# df4bb25 HEAD@{5}: checkout: moving from webtv to master&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 16b9a83 HEAD@{6}: commit: Responsive video list.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 5eee322 HEAD@{7}: commit: Modify ico_enter to SVG.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# ...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;找到要回復的 commit id, 再把它重建起來&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout -b &amp;lt;new branch name&amp;gt; &amp;lt;git commit id&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://ihower.tw/blog/archives/2620&#34;&gt;Git 版本控制系統(2) 開 branch 分支和操作遠端 repo.&lt;/a&gt;
+&lt;a href=&#34;http://ithelp.ithome.com.tw/question/10138150?tag=ithome.nq&#34;&gt;30 天精通 Git 版本控管 (16)：善用版本日誌 git reflog 追蹤變更軌跡&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;delete-remote-branch&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#delete-remote-branch&#34;&gt;
+        ##
+    &lt;/a&gt;
+    delete remote branch
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push origin --delete &amp;lt;branchName&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;git-log-file&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#git-log-file&#34;&gt;
+        ##
+    &lt;/a&gt;
+    git log file
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git log -p &amp;lt;file name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;view-remote-log&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#view-remote-log&#34;&gt;
+        ##
+    &lt;/a&gt;
+    view remote log
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git log origin/master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;push-commit-id&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#push-commit-id&#34;&gt;
+        ##
+    &lt;/a&gt;
+    push commit id
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Need follow commit log order&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push &amp;lt;remotename&amp;gt; &amp;lt;commit SHA&amp;gt;:&amp;lt;remotebranchname&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# example&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push origin 712acff81033eddc90bb2b45e1e4cd031fefc50f:master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;push-local-branch-to-remote&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#push-local-branch-to-remote&#34;&gt;
+        ##
+    &lt;/a&gt;
+    push local branch to remote
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push -u origin &amp;lt;branch-name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;修改-commit&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bf%ae%e6%94%b9-commit&#34;&gt;
+        ##
+    &lt;/a&gt;
+    修改 commit
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;修改最後一次-commit&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bf%ae%e6%94%b9%e6%9c%80%e5%be%8c%e4%b8%80%e6%ac%a1-commit&#34;&gt;
+        ###
+    &lt;/a&gt;
+    修改最後一次 commit
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;在 push 前處理&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit --amend
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;修改之前的-commit使用-rebase&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bf%ae%e6%94%b9%e4%b9%8b%e5%89%8d%e7%9a%84-commit%e4%bd%bf%e7%94%a8-rebase&#34;&gt;
+        ###
+    &lt;/a&gt;
+    修改之前的 commit(使用 rebase)
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git rebase -i HEAD~7
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick d32cf12 Add a README file
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick d120793 Update year and copyright holders
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick 6a78547 Add agenda section in README
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick 1b263b5 br2 add file.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick ee5f588 br2 Add again.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick 8c19bf6 &lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;test&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt; Add readme add22.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick 71bf708 Modify br2.txt2.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Rebase 505b0cf..71bf708 onto 505b0cf (7 command(s))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Commands:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# p, pick = use commit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# r, reword = use commit, but edit the commit message&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# e, edit = use commit, but stop for amending&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# s, squash = use commit, but meld into previous commit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# f, fixup = like &amp;#34;squash&amp;#34;, but discard this commit&amp;#39;s log message&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# x, exec = run command (the rest of the line) using shell&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# These lines can be re-ordered; they are executed from top to bottom.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# If you remove a line here THAT COMMIT WILL BE LOST.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# However, if you remove everything, the rebase will be aborted.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Note that empty commits are commented out&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;利用 r 處理要改的 commit&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick d32cf12 Add a README file
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick d120793 Update year and copyright holders
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick 6a78547 Add agenda section in README
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;r 1b263b5 br2 add file.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick ee5f588 br2 Add again.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick 8c19bf6 &lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;test&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt; Add readme add22.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pick 71bf708 Modify br2.txt2.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Rebase 505b0cf..71bf708 onto 505b0cf (7 command(s))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Commands:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# p, pick = use commit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# r, reword = use commit, but edit the commit message&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# e, edit = use commit, but stop for amending&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# s, squash = use commit, but meld into previous commit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# f, fixup = like &amp;#34;squash&amp;#34;, but discard this commit&amp;#39;s log message&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# x, exec = run command (the rest of the line) using shell&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# These lines can be re-ordered; they are executed from top to bottom.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# If you remove a line here THAT COMMIT WILL BE LOST.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# However, if you remove everything, the rebase will be aborted.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# Note that empty commits are commented out&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這操作會修改所有之後的 commit 因為相當於重新 commit, 建議在 push 前處理&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://git-scm.com/book/zh-tw/v1/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%AF%AB%E6%AD%B7%E5%8F%B2&#34;&gt;Refer - Git 工具 - 重寫歷史&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;清理不存在的-remote-branch&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%b8%85%e7%90%86%e4%b8%8d%e5%ad%98%e5%9c%a8%e7%9a%84-remote-branch&#34;&gt;
+        ##
+    &lt;/a&gt;
+    清理不存在的 remote branch
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;有時 remote 協作的 branch 砍了&lt;/p&gt;
+&lt;p&gt;但是 &lt;code&gt;git branch -r&lt;/code&gt; 還在就需要清理一下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git remote prune origin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;check-branch-is-create-from&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#check-branch-is-create-from&#34;&gt;
+        ##
+    &lt;/a&gt;
+    check branch is create from
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git reflog --date&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;local&lt;/span&gt; &amp;lt;branch&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;移除-commit&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%a7%bb%e9%99%a4-commit&#34;&gt;
+        ##
+    &lt;/a&gt;
+    移除 commit
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;有時要捨棄最後一次 commit&lt;/p&gt;
+&lt;p&gt;那就可以使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git reset &amp;lt;commit id&amp;gt;^
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就會切到該 commit 的修改狀態&lt;/p&gt;
+&lt;p&gt;reset 有參數可以控制是否要直接連同該 commit 的變動丟掉還是回到修改狀態&lt;/p&gt;
+&lt;p&gt;這時在自己決定即可&lt;/p&gt;
+&lt;p&gt;如果已經 push 的話就很麻煩&lt;/p&gt;
+&lt;p&gt;必須維持在最後一筆且 remote 得是和 local 的 commit 一樣&lt;/p&gt;
+&lt;p&gt;用&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git push origin +&amp;lt;branch name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;強制推上去&lt;/p&gt;
+&lt;p&gt;如果 remote 有別的 commit 更新就需要調整 commit 再來處理以避免強制推送時蓋掉最新的 commit&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitbook.tw/chapters/using-git/reset-commit.html&#34;&gt;ref - 【狀況題】剛才的 Commit 後悔了，想要拆掉重做…&lt;/a&gt;
+&lt;a href=&#34;https://ncona.com/2011/07/how-to-delete-a-commit-in-git-local-and-remote/&#34;&gt;ref - How to delete a commit in git, local and remote&lt;/a&gt;
+&lt;a href=&#34;https://www.ojit.com/article/187397&#34;&gt;ref - git - Git Force推送语法，“ - f”与“+ branch”&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Git - command</title>
-      <link>https://blog.tedshd.io/posts/2013-09-20-git-command/</link>
+      <link>/posts/2013-09-20-git-command/</link>
       <pubDate>Fri, 20 Sep 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-09-20-git-command/</guid>
-      <description>Git - command git status # 查看修改哪些檔案 git diff # 比對修改了的地方與上一個 commit 有何不同 git diff &amp;lt;file&amp;gt; # 比對修改的檔案與上一個 commit 有何不同 git diff &amp;lt;old commit id&amp;gt;..&amp;lt;new commit id&amp;gt; # 比對不同 commit id 的檔</description>
+      
+      <guid>/posts/2013-09-20-git-command/</guid>
+      <description>&lt;h2 id=&#34;git---command&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#git---command&#34;&gt;
+        #
+    &lt;/a&gt;
+    Git - command
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git status
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 查看修改哪些檔案&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git diff
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 比對修改了的地方與上一個 commit 有何不同&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git diff &amp;lt;file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 比對修改的檔案與上一個 commit 有何不同&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git diff &amp;lt;old commit id&amp;gt;..&amp;lt;new commit id&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 比對不同 commit id 的檔案差異&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git coheckout -- &amp;lt;file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 把檔案回復到修改前的樣子&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add &amp;lt;file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 加入要 commit 的檔案&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git rm &amp;lt;file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 移除檔案(有 commit 過的檔案要移除, rm &amp;lt;file&amp;gt; 之後要執行的指令)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git reset HEAD &amp;lt;file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 把 git add 之後的檔案回復到 git add 前&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -m &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;註解&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# or&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# commit 檔案進入版本控管系統&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit --no-verify
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 不驗證 commit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git log
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# git commit log 紀錄&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git log -p
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 詳細的log紀錄(修改哪些部分)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git blame &amp;lt;file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 查看修改的紀錄&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone &amp;lt;repository&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 拉 repository 下來到 local 端&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git branch &amp;lt;branch name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 建立一個 local 端的 branch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout &amp;lt;branch&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 切換到該 branch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git branch
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 查看本地端的 branch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git branch -r
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 查看 remote 端的 branch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git stash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 檔案 不commit 跳 branch (暫存)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git stash pop
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 回復檔案不 commit 狀態(讀回)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git branch -d &amp;lt;&lt;span style=&#34;color:#ff5c57&#34;&gt;local&lt;/span&gt; branch&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 刪除本地端的 branch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git branch -r -d &amp;lt;remote branch&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 刪除 remote 端的 branch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout --track -b &amp;lt;&lt;span style=&#34;color:#ff5c57&#34;&gt;local&lt;/span&gt; branch&amp;gt; origin/&amp;lt;remote branch&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 將遠端的 branch 並在 local 建立 branch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://blog.longwin.com.tw/2009/05/git-learn-initial-command-2009/&#34;&gt;Refer&lt;/a&gt;
+&lt;a href=&#34;http://ihower.tw/blog/archives/2620&#34;&gt;Refer&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Git - 使用別人的 repository</title>
-      <link>https://blog.tedshd.io/posts/2013-09-18-git-uses-someone-elses-repository/</link>
+      <link>/posts/2013-09-18-git-uses-someone-elses-repository/</link>
       <pubDate>Wed, 18 Sep 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-09-18-git-uses-someone-elses-repository/</guid>
-      <description>Git - 使用別人的 repository in GitHub sample use javascript-htmlspecialchars use SSH git clone git@github.com:tedshd/javascript-htmlspecialchars.git // use SSH 單純的 clone 別人的 repository 只是只能使用它 如 commit 之後是無法 push 上去, 因為不是這 repository 的擁有者 只要進去該 repository 的 .git/config 只要看見 [remote</description>
+      
+      <guid>/posts/2013-09-18-git-uses-someone-elses-repository/</guid>
+      <description>&lt;h2 id=&#34;git---使用別人的-repository&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#git---%e4%bd%bf%e7%94%a8%e5%88%a5%e4%ba%ba%e7%9a%84-repository&#34;&gt;
+        #
+    &lt;/a&gt;
+    Git - 使用別人的 repository
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;in GitHub&lt;/p&gt;
+&lt;p&gt;sample
+use &lt;a href=&#34;https://github.com/tedshd/javascript-htmlspecialchars&#34;&gt;javascript-htmlspecialchars&lt;/a&gt;
+use SSH&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git clone git@github.com:tedshd/javascript-htmlspecialchars.git
+// use SSH
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;單純的 clone 別人的 repository 只是只能使用它
+如 commit 之後是無法 push 上去, 因為不是這 repository 的擁有者
+只要進去該 repository 的 &lt;code&gt;.git/config&lt;/code&gt;
+只要看見&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[remote &amp;#34;origin&amp;#34;]
+        url = git@github.com:tedshd/javascript-htmlspecialchars.git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;url 中 &lt;code&gt;git@github.com:&lt;/code&gt; 之後不是自己的 GitHub 帳號就代表是無法 push 的
+就算在這改成自己的 GitHub 帳號也是無用的
+因為沒有該 repository 在自己的 repositories 中&lt;/p&gt;
+&lt;h3 id=&#34;把別人的-repository-改成自己用的&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%8a%8a%e5%88%a5%e4%ba%ba%e7%9a%84-repository-%e6%94%b9%e6%88%90%e8%87%aa%e5%b7%b1%e7%94%a8%e7%9a%84&#34;&gt;
+        ##
+    &lt;/a&gt;
+    把別人的 repository 改成自己用的
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;fork 一份到自己的 GitHub&lt;/li&gt;
+&lt;li&gt;從自己的 repositories git clone fork 來的 repository&lt;/li&gt;
+&lt;li&gt;之後 commit 就可以 push 到自己 fork 的 repository&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
+    
     <item>
       <title>Git - Note</title>
-      <link>https://blog.tedshd.io/posts/2013-09-06-git-note/</link>
+      <link>/posts/2013-09-06-git-note/</link>
       <pubDate>Fri, 06 Sep 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-09-06-git-note/</guid>
-      <description>Git Doc 中文導讀 LearnGitBranching</description>
+      
+      <guid>/posts/2013-09-06-git-note/</guid>
+      <description>&lt;h2 id=&#34;git&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#git&#34;&gt;
+        #
+    &lt;/a&gt;
+    Git
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://git-scm.com/docs&#34;&gt;Doc&lt;/a&gt;
+&lt;a href=&#34;http://git-scm.com/book/zh&#34;&gt;中文導讀&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://pcottle.github.io/learnGitBranching/&#34;&gt;LearnGitBranching&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>gitconfig</title>
-      <link>https://blog.tedshd.io/posts/2013-08-23-gitconfig/</link>
+      <link>/posts/2013-08-23-gitconfig/</link>
       <pubDate>Fri, 23 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-08-23-gitconfig/</guid>
-      <description>gitconfig Mac gitconfig path&#xA;~/.gitconfig [user] name = tedshd email = tedshd@gmail.com [alias] st = status co = checkout br = branch d = difftool [color] diff = auto status = auto branch = auto ui = auto [credential] helper = osxkeychain [push] default = simple [core] editor = vim [diff] tool = vimdiff [difftool] prompt = false vim diff&#xA;git d terminal&#xA;git diff </description>
+      
+      <guid>/posts/2013-08-23-gitconfig/</guid>
+      <description>&lt;h2 id=&#34;gitconfig&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#gitconfig&#34;&gt;
+        #
+    &lt;/a&gt;
+    gitconfig
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Mac gitconfig
+path&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;~/.gitconfig
+&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;user&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; tedshd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;email&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; tedshd@gmail.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;alias&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;st&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; status
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;co&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; checkout
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;br&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; branch
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;d&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; difftool
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;color&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;diff&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; auto
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; auto
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; auto
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;ui&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; auto
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;credential&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;helper&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; osxkeychain
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;push&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; simple
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;core&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;editor&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; vim
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;diff&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;tool&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; vimdiff
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;[&lt;/span&gt;difftool&lt;span style=&#34;color:#ff6ac1&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#ff5c57&#34;&gt;prompt&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;vim diff&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;terminal&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git diff
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
   </channel>
 </rss>

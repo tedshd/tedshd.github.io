@@ -1,20 +1,144 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>DOM on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/dom/</link>
-    <description>Recent content in DOM on tedshd&#39;s DevNote</description>
+    <title>DOM on Tedshd&#39;s Dev note</title>
+    <link>/categories/dom/</link>
+    <description>Tedshd&#39;s Dev note (DOM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/dom/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Aug 2015 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/dom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>JavaScript - something about childNodes and nextSibling why they get DOM is not as you imagine</title>
-      <link>https://blog.tedshd.io/posts/2015-08-28-javascript-something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine/</link>
+      <link>/posts/2015-08-28-javascript-something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine/</link>
       <pubDate>Fri, 28 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-08-28-javascript-something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine/</guid>
-      <description>JavaScript - something about childNodes and nextSibling why they get DOM is not as you imagine childNodes MDN nextSibling - MDN Sometimes we use childNodes HTML &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;item1&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;item2&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;item3&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;item4&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; JavaScript console.log(document.querySelector(&amp;#39;ul&amp;#39;).childNodes); // output [text, li, text, li, text, li, text, li, text] Why? Then HTML &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;item1&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;item2&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;item3&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;item4&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt; JavaScript console.log(document.querySelector(&amp;#39;ul&amp;#39;).childNodes); // output [li, li, li, li] If you log text object, you can find it is wrap. Browser get</description>
+      
+      <guid>/posts/2015-08-28-javascript-something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine/</guid>
+      <description>&lt;h2 id=&#34;javascript---something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript---something-about-childnodes-and-nextsibling-why-they-get-dom-is-not-as-you-imagine&#34;&gt;
+        #
+    &lt;/a&gt;
+    JavaScript - something about childNodes and nextSibling why they get DOM is not as you imagine
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes&#34;&gt;childNodes MDN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling&#34;&gt;nextSibling - MDN&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sometimes-we-use-childnodes&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sometimes-we-use-childnodes&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Sometimes we use childNodes
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;html&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#html&#34;&gt;
+        ###
+    &lt;/a&gt;
+    HTML
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;ul&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;item1&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;item2&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;item3&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;item4&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;ul&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;javascript&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript&#34;&gt;
+        ###
+    &lt;/a&gt;
+    JavaScript
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;ul&amp;#39;&lt;/span&gt;).childNodes);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// output
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;[text, li, text, li, text, li, text, li, text]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/293568/plBejfI1SXq1dBNPNyqr_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-08-29_%E4%B8%8A%E5%8D%8812_08_56.png&#34; alt=&#34;螢幕快照_2015-08-29_上午12_08_56.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Why?&lt;/p&gt;
+&lt;p&gt;Then&lt;/p&gt;
+&lt;h4 id=&#34;html-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#html-1&#34;&gt;
+        ###
+    &lt;/a&gt;
+    HTML
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;ul&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;item1&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;item2&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;item3&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;item4&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;li&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;ul&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;javascript-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript-1&#34;&gt;
+        ###
+    &lt;/a&gt;
+    JavaScript
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;ul&amp;#39;&lt;/span&gt;).childNodes);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// output
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;[li, li, li, li]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/293568/b7H4oj6ZTMeH5jt01zaT_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-08-29_%E4%B8%8A%E5%8D%8812_10_07.png&#34; alt=&#34;螢幕快照_2015-08-29_上午12_10_07.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If you log &lt;code&gt;text&lt;/code&gt; object, you can find it is wrap.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/293568/QKnxVI8fRGWaAS0fagqc_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-08-29_%E4%B8%8A%E5%8D%8812_09_30.png&#34; alt=&#34;螢幕快照_2015-08-29_上午12_09_30.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Browser get nodes include wrap symbol.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;But it can&amp;rsquo;t show in your editor&lt;/p&gt;
+&lt;h4 id=&#34;solution&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#solution&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Solution
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;for IE9 up&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children&#34;&gt;ParentNode.children&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;do a new function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Element.prototype.getChildNodes &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; array &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; [],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      nodes &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;this&lt;/span&gt;.childNodes;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt; nodes.length; i&lt;span style=&#34;color:#ff6ac1&#34;&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; node &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; nodes[i];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (node.nodeType &lt;span style=&#34;color:#ff6ac1&#34;&gt;===&lt;/span&gt; Node.ELEMENT_NODE) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      array.push(node);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; array;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;ul&amp;#39;&lt;/span&gt;).getChildNodes());
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://www.w3schools.com/jsref/prop_node_nodetype.asp&#34;&gt;HTML DOM nodeType Property&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the way &lt;a href=&#34;https://www.facebook.com/rplus.tw&#34;&gt;rplus&lt;/a&gt; provide&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-javscript&#34; data-lang=&#34;javscript&#34;&gt;function getChildNodes(parentNode) {
+  return [].filter.call(
+    parentNode.childNodes,
+    function(_target) {
+      return _target.nodeType === Node.ELEMENT_NODE;
+    });
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;sometimes-we-use-nextsibling&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sometimes-we-use-nextsibling&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Sometimes we use nextSibling
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;As above&lt;/p&gt;
+&lt;p&gt;Sometimes you get &lt;code&gt;text&lt;/code&gt;.&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

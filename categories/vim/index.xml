@@ -1,41 +1,284 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vim on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/vim/</link>
-    <description>Recent content in Vim on tedshd&#39;s DevNote</description>
+    <title>Vim on Tedshd&#39;s Dev note</title>
+    <link>/categories/vim/</link>
+    <description>Tedshd&#39;s Dev note (Vim)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Mar 2016 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Vim - JavaScript auto complete</title>
-      <link>https://blog.tedshd.io/posts/2016-03-08-vim-javascript-auto-complete/</link>
+      <link>/posts/2016-03-08-vim-javascript-auto-complete/</link>
       <pubDate>Tue, 08 Mar 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-03-08-vim-javascript-auto-complete/</guid>
-      <description>Vim - JavaScript auto complete 因為同事幾乎都在用 Vim 但我每次都在看他們一直打字我看了就很痛苦 所以就建議他們用 auto complete 的功能, 但我個人因為很少用 Vim 所以就讓他們自己去找套</description>
+      
+      <guid>/posts/2016-03-08-vim-javascript-auto-complete/</guid>
+      <description>&lt;h2 id=&#34;vim---javascript-auto-complete&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#vim---javascript-auto-complete&#34;&gt;
+        #
+    &lt;/a&gt;
+    Vim - JavaScript auto complete
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;因為同事幾乎都在用 Vim 但我每次都在看他們一直打字我看了就很痛苦 所以就建議他們用 auto complete 的功能, 但我個人因為很少用 Vim 所以就讓他們自己去找套件(我個人不喜歡在 Vim 上裝套件)&lt;/p&gt;
+&lt;p&gt;但他們似乎都遇到困難 所以我就找了一下找到個不用裝套件又可用在 Linux 和 Mac 上最簡單的 JavaScript auto complete 的方式, 應該是因為 Vim 已經內建了&lt;/p&gt;
+&lt;p&gt;只要在 .vimrc 設定&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;autocmd FileType javascript &lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;omnifunc&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;javascriptcomplete#CompleteJS
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用就是輸入部分關鍵字後先按 &lt;code&gt;Ctrl + x&lt;/code&gt; 再按 &lt;code&gt;Ctrl + o&lt;/code&gt; 就可以了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/604214/Au7OUhnSToG9vmSajeRr_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-08%20%E4%B8%8B%E5%8D%8812.09.43.png&#34; alt=&#34;螢幕快照 2016-03-08 下午12.09.43.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;但只支援舊的 JavaScript API&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.oseems.com/general/application/vim/auto-complete-javascript&#34;&gt;Refer - How to auto-complete JavaScript syntax in Vim&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果要新的得再試別的方法
+似乎可以補字庫進去
+More&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://efe.baidu.com/blog/vim-javascript-completion/&#34;&gt;VIM的JavaScript补全&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Vim - colorscheme</title>
-      <link>https://blog.tedshd.io/posts/2014-04-05-vim-colorscheme/</link>
+      <link>/posts/2014-04-05-vim-colorscheme/</link>
       <pubDate>Sat, 05 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-04-05-vim-colorscheme/</guid>
-      <description>Vim - colorscheme Vim 主題 mkdir ~/.vim/colors/ 找到 &amp;lt;colorscheme&amp;gt;.vim 並丟到 ~/.vim/colors/ 即可 在 .vimrc 設定 colorscheme &amp;lt;colorscheme&amp;gt; 就會變成該主題 Some Colorscheme Vim Colorscheme Gallery vimcolorschemetest vim online Newest - Vim Colors Refer - 挑選 Vim 顏色(Color Scheme)</description>
+      
+      <guid>/posts/2014-04-05-vim-colorscheme/</guid>
+      <description>&lt;h2 id=&#34;vim---colorscheme&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#vim---colorscheme&#34;&gt;
+        #
+    &lt;/a&gt;
+    Vim - colorscheme
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Vim 主題&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;mkdir ~/.vim/colors/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;找到 &lt;code&gt;&amp;lt;colorscheme&amp;gt;.vim&lt;/code&gt; 並丟到 &lt;code&gt;~/.vim/colors/&lt;/code&gt; 即可&lt;/li&gt;
+&lt;li&gt;在 &lt;code&gt;.vimrc&lt;/code&gt; 設定 &lt;code&gt;colorscheme &amp;lt;colorscheme&amp;gt;&lt;/code&gt; 就會變成該主題&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;some-colorscheme&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#some-colorscheme&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Some Colorscheme
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://cocopon.me/app/vim-color-gallery/&#34;&gt;Vim Colorscheme Gallery&lt;/a&gt;
+&lt;a href=&#34;https://code.google.com/p/vimcolorschemetest/&#34;&gt;vimcolorschemetest&lt;/a&gt;
+&lt;a href=&#34;http://www.vim.org/scripts/script_search_results.php?keywords=&amp;amp;script_type=color+scheme&amp;amp;order_by=creation_date&amp;amp;direction=descending&amp;amp;search=search&#34;&gt;vim online&lt;/a&gt;
+&lt;a href=&#34;http://vimcolors.com/&#34;&gt;Newest - Vim Colors&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.longwin.com.tw/2009/03/choose-vim-color-scheme-2009/&#34;&gt;Refer - 挑選 Vim 顏色(Color Scheme)&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Vim config in Mac</title>
-      <link>https://blog.tedshd.io/posts/2013-08-27-vim-config-in-mac/</link>
+      <link>/posts/2013-08-27-vim-config-in-mac/</link>
       <pubDate>Tue, 27 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-08-27-vim-config-in-mac/</guid>
-      <description>Some different in Mac PageDown, PageUp, Home, End It is not useful in setting vimrc.&#xA;Solution Terminal-&amp;gt;Preference-&amp;gt;KeyBoard&#xA;Home: \033[1~&#xD;End: \033[4~&#xD;PageUp: \033[5~&#xD;PageDown: \033[6~ </description>
+      
+      <guid>/posts/2013-08-27-vim-config-in-mac/</guid>
+      <description>&lt;h2 id=&#34;some-different-in-mac&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#some-different-in-mac&#34;&gt;
+        #
+    &lt;/a&gt;
+    Some different in Mac
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;pagedown-pageup-home-end&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#pagedown-pageup-home-end&#34;&gt;
+        ##
+    &lt;/a&gt;
+    PageDown, PageUp, Home, End
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;It is not useful in setting vimrc.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;
+Terminal-&amp;gt;Preference-&amp;gt;KeyBoard&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-config&#34; data-lang=&#34;config&#34;&gt;Home:     \033[1~
+End:      \033[4~
+PageUp:   \033[5~
+PageDown: \033[6~
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
+    
     <item>
       <title>Vim</title>
-      <link>https://blog.tedshd.io/posts/2013-08-21-vim/</link>
+      <link>/posts/2013-08-21-vim/</link>
       <pubDate>Wed, 21 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-08-21-vim/</guid>
-      <description>Vim More a 輸入文字 i 插入字元 o 新增一行 :wq 儲存後離開 :w 儲存 :q 離開 :q! 離開不存檔 :w! 儲存 readonly Esc 離開編輯模式 h 左 j 下 k 上 l 右 v 選擇 yy 複製整行 nyy 複製n行 yw 複製</description>
+      
+      <guid>/posts/2013-08-21-vim/</guid>
+      <description>&lt;h2 id=&#34;vim&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#vim&#34;&gt;
+        #
+    &lt;/a&gt;
+    Vim
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.roodo.com/dabinn/archives/16126923.html&#34;&gt;More&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;a
+輸入文字&lt;/p&gt;
+&lt;p&gt;i
+插入字元&lt;/p&gt;
+&lt;p&gt;o
+新增一行&lt;/p&gt;
+&lt;p&gt;:wq
+儲存後離開&lt;/p&gt;
+&lt;p&gt;:w
+儲存&lt;/p&gt;
+&lt;p&gt;:q
+離開&lt;/p&gt;
+&lt;p&gt;:q!
+離開不存檔&lt;/p&gt;
+&lt;p&gt;:w!
+儲存 readonly&lt;/p&gt;
+&lt;p&gt;Esc
+離開編輯模式&lt;/p&gt;
+&lt;p&gt;h
+左&lt;/p&gt;
+&lt;p&gt;j
+下&lt;/p&gt;
+&lt;p&gt;k
+上&lt;/p&gt;
+&lt;p&gt;l
+右&lt;/p&gt;
+&lt;p&gt;v
+選擇&lt;/p&gt;
+&lt;p&gt;yy
+複製整行&lt;/p&gt;
+&lt;p&gt;nyy
+複製n行&lt;/p&gt;
+&lt;p&gt;yw
+複製游標到單字結束&lt;/p&gt;
+&lt;p&gt;nyw
+複製游標到n個單字結束&lt;/p&gt;
+&lt;p&gt;p
+貼上&lt;/p&gt;
+&lt;p&gt;d + &amp;lt;-
+刪除游標前一個字元&lt;/p&gt;
+&lt;p&gt;d + -&amp;gt;
+刪除游標後一個字元&lt;/p&gt;
+&lt;p&gt;d + up
+刪除游標所在和前一行&lt;/p&gt;
+&lt;p&gt;d + down
+刪除游標所在和後一行&lt;/p&gt;
+&lt;p&gt;dd
+刪除游標所在那一行&lt;/p&gt;
+&lt;p&gt;dw
+游標停在某字第一個刪此字
+停在字中刪後面的字&lt;/p&gt;
+&lt;p&gt;x
+刪除游標所在字元&lt;/p&gt;
+&lt;p&gt;X
+刪除游標所在前一個字元&lt;/p&gt;
+&lt;p&gt;nx
+刪除游標所在n個字元&lt;/p&gt;
+&lt;p&gt;nX
+刪除游標所在前n個字元&lt;/p&gt;
+&lt;p&gt;e
+跳到本單字最後一個字元&lt;/p&gt;
+&lt;p&gt;w
+跳到本單字第一個字母(往後)&lt;/p&gt;
+&lt;p&gt;b
+跳到本單字第一個字母(往前)&lt;/p&gt;
+&lt;p&gt;? or /
+輸入要找的字&lt;/p&gt;
+&lt;h1 id=&#34;heading&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#heading&#34;&gt;
+        ##
+    &lt;/a&gt;
+    
+&lt;/div&gt;
+&lt;/h1&gt;
+&lt;p&gt;把當前字元高亮(highlight)&lt;/p&gt;
+&lt;p&gt;N
+移到上一個找到一樣的字&lt;/p&gt;
+&lt;p&gt;n
+移到下一個找到一樣的字&lt;/p&gt;
+&lt;p&gt;r
+直接改游標上的字&lt;/p&gt;
+&lt;p&gt;cc
+直接改游標那一行&lt;/p&gt;
+&lt;p&gt;:g/字串/s//要換的字串/g
+把文件中的某一字串全替換掉&lt;/p&gt;
+&lt;p&gt;:g/字串/s//要換的字串/gc
+文件中某一字串替換掉(可選)&lt;/p&gt;
+&lt;p&gt;u
+取消前一次動作&lt;/p&gt;
+&lt;p&gt;Ctrl + r
+回覆u的動作&lt;/p&gt;
+&lt;p&gt;.
+繼續上一個指令&lt;/p&gt;
+&lt;p&gt;Ctrl+g
+顯示游標所在行數&lt;/p&gt;
+&lt;p&gt;nG
+跳到n行&lt;/p&gt;
+&lt;p&gt;gf
+直接開啓該路徑的檔案&lt;/p&gt;
+&lt;p&gt;Ｃtrl + o
+關閉開啓的檔案&lt;/p&gt;
+&lt;p&gt;Ctrl + w f
+在新視窗開啓該路徑的檔案&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分割視窗&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;:sp
+垂直分割&lt;/p&gt;
+&lt;p&gt;:vsp
+水平分割&lt;/p&gt;
+&lt;p&gt;:sp .
+垂直分割(新視窗為該目錄list)&lt;/p&gt;
+&lt;p&gt;:vsp .
+水平分割(新視窗為該目錄list)&lt;/p&gt;
+&lt;p&gt;:new
+開新垂直分割&lt;/p&gt;
+&lt;p&gt;:vnew
+開新水平分割&lt;/p&gt;
+&lt;p&gt;Ctrl+w hjkl(左下上右)
+切換視窗&lt;/p&gt;
+&lt;p&gt;Ctrl+w =
+等比例分配&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;垂直分割&lt;/strong&gt;
+Ctrl+w Shift++
+該視窗大小加一行&lt;/p&gt;
+&lt;p&gt;Ctrl+w Shift+n++
+該視窗大小加n行&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;水平分割&lt;/strong&gt;
+Ctrl+w &amp;lt;
+向左加一字元的空間&lt;/p&gt;
+&lt;p&gt;Ctrl+w &amp;gt;
+向右加一字元的空間&lt;/p&gt;
+&lt;p&gt;:tabe
+開tab分頁&lt;/p&gt;
+&lt;p&gt;gt
+下一個分頁&lt;/p&gt;
+&lt;p&gt;Ctrl + z
+vim跳至背景(fg跳回前景)&lt;/p&gt;
+&lt;p&gt;:%s/old/new/g
+取代所有字串為新字串&lt;/p&gt;
+&lt;p&gt;:s/old/new/g
+取代所在行數字串為新字串&lt;/p&gt;
+&lt;p&gt;:set paste
+設定成可貼上 terminal 外的的 text&lt;/p&gt;
+&lt;p&gt;:set nu
+顯示行數&lt;/p&gt;
+&lt;p&gt;:set nonu
+不顯示行數&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mac&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;^f
+forward == page down&lt;/p&gt;
+&lt;p&gt;^b
+back == page up&lt;/p&gt;
+&lt;p&gt;$
+end of line&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

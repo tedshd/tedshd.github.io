@@ -1,20 +1,73 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Migrate on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/migrate/</link>
-    <description>Recent content in Migrate on tedshd&#39;s DevNote</description>
+    <title>Migrate on Tedshd&#39;s Dev note</title>
+    <link>/categories/migrate/</link>
+    <description>Tedshd&#39;s Dev note (Migrate)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
     <lastBuildDate>Mon, 29 Apr 2024 11:15:52 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/migrate/index.xml" rel="self" type="application/rss+xml" />
+    
+    <atom:link href="/categories/migrate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>使用 golang migrate 安裝紀錄</title>
-      <link>https://blog.tedshd.io/posts/use_golang_migrate/</link>
+      <link>/posts/use_golang_migrate/</link>
       <pubDate>Mon, 29 Apr 2024 11:15:52 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/use_golang_migrate/</guid>
-      <description>Intro 在使用 golang 的情境下, 有一個很常用的 migration 工具 golang-migrate 但是在不同系統下安裝我覺得不太容易 所以記錄一下 Install github 上有提供不同作業系統的安裝方式 cmd/migrate 目前測試 Mac / Ubuntu 有</description>
+      
+      <guid>/posts/use_golang_migrate/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;在使用 golang 的情境下, 有一個很常用的 migration 工具 &lt;a href=&#34;https://github.com/golang-migrate/migrate&#34;&gt;golang-migrate&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但是在不同系統下安裝我覺得不太容易&lt;/p&gt;
+&lt;p&gt;所以記錄一下&lt;/p&gt;
+&lt;h2 id=&#34;install&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#install&#34;&gt;
+        #
+    &lt;/a&gt;
+    Install
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;github 上有提供不同作業系統的安裝方式&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/golang-migrate/migrate/tree/master/cmd/migrate&#34;&gt;cmd/migrate&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;目前測試 Mac / Ubuntu 有成功&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Mac OS X&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;使用 homebrew 安裝&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install golang-migrate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 mac 上面安裝是蠻容易的&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Ubuntu 20.04&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在 ubuntu 遇到許多權限的問題&lt;/p&gt;
+&lt;p&gt;github 上面的 &lt;code&gt;*.deb&lt;/code&gt; 安裝需要調整指令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey | sudo apt-key add -
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo sh -c &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;echo &amp;#34;deb https://packagecloud.io/golang-migrate/migrate/ubuntu/ $(lsb_release -sc) main&amp;#34; &amp;gt; /etc/apt/sources.list.d/migrate.list&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install -y migrate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usage&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#usage&#34;&gt;
+        #
+    &lt;/a&gt;
+    Usage
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;要連接的 DB 的格式&lt;/p&gt;
+&lt;p&gt;下面是使用 mysql&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mysql://帳號:密碼@tcp(主機位置:PORT)/DB名稱?charset=utf8mb4&amp;amp;loc=UTC&amp;amp;parseTime=True&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;migrate -database &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;DB_URL&amp;#39;&lt;/span&gt; -path schema/migrations up
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
   </channel>
 </rss>

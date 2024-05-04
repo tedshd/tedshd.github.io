@@ -1,34 +1,643 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Amp on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/amp/</link>
-    <description>Recent content in Amp on tedshd&#39;s DevNote</description>
+    <title>Amp on Tedshd&#39;s Dev note</title>
+    <link>/categories/amp/</link>
+    <description>Tedshd&#39;s Dev note (Amp)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/amp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/amp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>AMP - amp analytics &amp; conversion</title>
-      <link>https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/</link>
+      <link>/posts/2018-06-17-amp-amp-analytics/</link>
       <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/</guid>
-      <description>AMP - amp analytics &amp;amp; conversion Use google analytics must use amp-analytics component&#xA;It can use PHP print template function to view&#xA;First include&#xA;&amp;lt;script async custom-element=&amp;#34;amp-analytics&amp;#34; src=&amp;#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; ga click event Refer - Adding Analytics to your AMP pages&#xA;function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &amp;#34;0&amp;#34;) { $template = &amp;lt;&amp;lt;&amp;lt;EOF &amp;lt;amp-analytics type=&amp;#34;googleanalytics&amp;#34;&amp;gt; &amp;lt;script type=&amp;#34;application/json&amp;#34;&amp;gt; { &amp;#34;vars&amp;#34;: { &amp;#34;account&amp;#34;: &amp;#34;%s&amp;#34; }, &amp;#34;triggers&amp;#34;: { &amp;#34;trackClickOnHeader&amp;#34; : { &amp;#34;on&amp;#34;: &amp;#34;click&amp;#34;, &amp;#34;selector&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;request&amp;#34;: &amp;#34;event&amp;#34;, &amp;#34;vars&amp;#34;: { &amp;#34;eventCategory&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;eventAction&amp;#34;: &amp;#34;%s&amp;#34;, &amp;#34;eventLabel&amp;#34;: &amp;#34;%s&amp;#34; }, &amp;#34;extraUrlParams&amp;#34;: { &amp;#34;ni&amp;#34;: &amp;#34;%s&amp;#34; } } } } &amp;lt;/script&amp;gt; &amp;lt;/amp-analytics&amp;gt; EOF; return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction); } google adwords conversion Refer - Using AMP for your AdWords Landing Pages</description>
+      
+      <guid>/posts/2018-06-17-amp-amp-analytics/</guid>
+      <description>&lt;h2 id=&#34;amp---amp-analytics--conversion&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#amp---amp-analytics--conversion&#34;&gt;
+        #
+    &lt;/a&gt;
+    AMP - amp analytics &amp;amp; conversion
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Use google analytics must use &lt;code&gt;amp-analytics&lt;/code&gt; component&lt;/p&gt;
+&lt;p&gt;It can use PHP print template function to view&lt;/p&gt;
+&lt;p&gt;First include&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;custom-element&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;amp-analytics&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ga-click-event&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ga-click-event&#34;&gt;
+        ##
+    &lt;/a&gt;
+    ga click event
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/analytics/devguides/collection/amp-analytics/&#34;&gt;Refer - Adding Analytics to your AMP pages&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;amp_ga_event_click_template&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ga_id&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$selector&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$cate&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$action&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$label&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$non_interaction&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$template&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;EOF&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;lt;amp-analytics type=&amp;#34;googleanalytics&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;lt;script type=&amp;#34;application/json&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;        &amp;#34;vars&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;            &amp;#34;account&amp;#34;: &amp;#34;%s&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;        &amp;#34;triggers&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;            &amp;#34;trackClickOnHeader&amp;#34; : {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                &amp;#34;on&amp;#34;: &amp;#34;click&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                &amp;#34;selector&amp;#34;: &amp;#34;%s&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                &amp;#34;request&amp;#34;: &amp;#34;event&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                &amp;#34;vars&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                    &amp;#34;eventCategory&amp;#34;: &amp;#34;%s&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                    &amp;#34;eventAction&amp;#34;: &amp;#34;%s&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                    &amp;#34;eventLabel&amp;#34;: &amp;#34;%s&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                },
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                &amp;#34;extraUrlParams&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                    &amp;#34;ni&amp;#34;: &amp;#34;%s&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;lt;/script&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;lt;/amp-analytics&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;EOF&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; printf(&lt;span style=&#34;color:#ff5c57&#34;&gt;$template&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$ga_id&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$selector&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$cate&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$action&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$label&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$non_interaction&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;google-adwords-conversion&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-adwords-conversion&#34;&gt;
+        ##
+    &lt;/a&gt;
+    google adwords conversion
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/adwords/amp/landing-pages&#34;&gt;Refer - Using AMP for your AdWords Landing Pages&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For landing page pageview&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;amp_ga_conversion_pageview_template&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$conversion_id&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$lang&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$conversion_label&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$template&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;EOF&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;lt;amp-analytics type=&amp;#34;googleadwords&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;  &amp;lt;script type=&amp;#34;application/json&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;  {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;    &amp;#34;triggers&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;      &amp;#34;onVisible&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;        &amp;#34;on&amp;#34;: &amp;#34;visible&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;        &amp;#34;request&amp;#34;: &amp;#34;conversion&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;    &amp;#34;vars&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;      &amp;#34;googleConversionId&amp;#34;: &amp;#34;%s&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;      &amp;#34;googleConversionLanguage&amp;#34;: &amp;#34;%s&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;      &amp;#34;googleConversionFormat&amp;#34;: &amp;#34;3&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;      &amp;#34;googleConversionLabel&amp;#34;: &amp;#34;%s&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;      &amp;#34;googleRemarketingOnly&amp;#34;: &amp;#34;false&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;  &amp;lt;/script&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;lt;/amp-analytics&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;EOF&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; printf(&lt;span style=&#34;color:#ff5c57&#34;&gt;$template&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$conversion_id&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$lang&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$conversion_label&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For click conversion&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;amp_ga_conversion_click_template&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ga_id&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$selector&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$conversion_id&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$conversion_label&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$non_interaction&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$template&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;EOF&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;lt;amp-analytics type=&amp;#34;googleadwords&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;  &amp;lt;script type=&amp;#34;application/json&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;  {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;    &amp;#34;vars&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;        &amp;#34;account&amp;#34;: &amp;#34;%s&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;    &amp;#34;triggers&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;        &amp;#34;trackClickOnHeader&amp;#34; : {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;            &amp;#34;on&amp;#34;: &amp;#34;click&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;            &amp;#34;selector&amp;#34;: &amp;#34;%s&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;            &amp;#34;request&amp;#34;: &amp;#34;conversion&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;            &amp;#34;vars&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                &amp;#34;googleConversionId&amp;#34;: &amp;#34;%s&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                &amp;#34;googleConversionFormat&amp;#34;: &amp;#34;3&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                &amp;#34;googleConversionLabel&amp;#34;: &amp;#34;%s&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                &amp;#34;googleRemarketingOnly&amp;#34;: &amp;#34;false&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;            },
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;            &amp;#34;extraUrlParams&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;                &amp;#34;ni&amp;#34;: &amp;#34;1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;  &amp;lt;/script&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;lt;/amp-analytics&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;EOF&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; printf(&lt;span style=&#34;color:#ff5c57&#34;&gt;$template&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$ga_id&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$selector&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$conversion_id&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$conversion_label&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$non_interaction&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>AMP - Accelerated Mobile Pages key point</title>
-      <link>https://blog.tedshd.io/posts/2017-08-25-amp-accelerated-mobile-pages-key-point/</link>
+      <link>/posts/2017-08-25-amp-accelerated-mobile-pages-key-point/</link>
       <pubDate>Fri, 25 Aug 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2017-08-25-amp-accelerated-mobile-pages-key-point/</guid>
-      <description>Intro Provide some key point &amp;amp; something we need notice&#xA;1. meta In normal page&#xA;&amp;lt;link rel=&amp;#34;amphtml&amp;#34; href=&amp;#34;https://www.example.com/url/to/amp/document.html&amp;#34;&amp;gt; In AMP page&#xA;&amp;lt;link rel=&amp;#34;canonical&amp;#34; href=&amp;#34;https://www.example.com/url/to/full/document.html&amp;#34;&amp;gt; 2. Default style(Handle render) &amp;lt;style amp-boilerplate&amp;gt;body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}&amp;lt;/style&amp;gt;&amp;lt;noscript&amp;gt;&amp;lt;style amp-boilerplate&amp;gt;body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}&amp;lt;/style&amp;gt;&amp;lt;/noscript&amp;gt; Format&#xA;&amp;lt;style amp-boilerplate&amp;gt; body { -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both; -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both; -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both; animation: -amp-start 8s steps(1, end) 0s 1 normal both } @-webkit-keyframes -amp-start { from { visibility: hidden } to { visibility: visible } } @-moz-keyframes -amp-start { from { visibility: hidden } to { visibility: visible } } @-ms-keyframes -amp-start { from { visibility: hidden } to { visibility: visible } } @-o-keyframes -amp-start { from { visibility: hidden } to { visibility: visible } } @keyframes -amp-start { from { visibility: hidden } to { visibility: visible } } &amp;lt;/style&amp;gt; &amp;lt;noscript&amp;gt; &amp;lt;style amp-boilerplate&amp;gt; body { -webkit-animation: none; -moz-animation: none; -ms-animation: none; animation: none } &amp;lt;/style&amp;gt; &amp;lt;/noscript&amp;gt; 3.</description>
+      
+      <guid>/posts/2017-08-25-amp-accelerated-mobile-pages-key-point/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Provide some key point &amp;amp; something we need notice&lt;/p&gt;
+&lt;h3 id=&#34;1-meta&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#1-meta&#34;&gt;
+        ##
+    &lt;/a&gt;
+    1. meta
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;In normal page&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;amphtml&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;https://www.example.com/url/to/amp/document.html&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In AMP page&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;canonical&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;https://www.example.com/url/to/full/document.html&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;2-default-stylehandle-render&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2-default-stylehandle-render&#34;&gt;
+        ##
+    &lt;/a&gt;
+    2. Default style(Handle render)
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;amp-boilerplate&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;-webkit-&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;amp-start &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;steps&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ff6ac1&#34;&gt;end&lt;/span&gt;) &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;normal&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;both&lt;/span&gt;;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-moz-&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;amp-start &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;steps&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ff6ac1&#34;&gt;end&lt;/span&gt;) &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;normal&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;both&lt;/span&gt;;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-ms-&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;amp-start &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;steps&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ff6ac1&#34;&gt;end&lt;/span&gt;) &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;normal&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;both&lt;/span&gt;;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;amp-start &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;steps&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ff6ac1&#34;&gt;end&lt;/span&gt;) &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;normal&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;both&lt;/span&gt;}@&lt;span style=&#34;color:#ff6ac1&#34;&gt;-webkit-keyframes&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-amp-start&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;hidden&lt;/span&gt;}&lt;span style=&#34;color:#ff6ac1&#34;&gt;to&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;visible&lt;/span&gt;}}@&lt;span style=&#34;color:#ff6ac1&#34;&gt;-moz-keyframes&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-amp-start&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;hidden&lt;/span&gt;}&lt;span style=&#34;color:#ff6ac1&#34;&gt;to&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;visible&lt;/span&gt;}}@&lt;span style=&#34;color:#ff6ac1&#34;&gt;-ms-keyframes&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-amp-start&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;hidden&lt;/span&gt;}&lt;span style=&#34;color:#ff6ac1&#34;&gt;to&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;visible&lt;/span&gt;}}@&lt;span style=&#34;color:#ff6ac1&#34;&gt;-o-keyframes&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-amp-start&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;hidden&lt;/span&gt;}&lt;span style=&#34;color:#ff6ac1&#34;&gt;to&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;visible&lt;/span&gt;}}@&lt;span style=&#34;color:#ff6ac1&#34;&gt;keyframes&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-amp-start&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;hidden&lt;/span&gt;}&lt;span style=&#34;color:#ff6ac1&#34;&gt;to&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;visible&lt;/span&gt;}}&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;style&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;noscript&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;amp-boilerplate&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt;{&lt;span style=&#34;color:#ff6ac1&#34;&gt;-webkit-&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;none&lt;/span&gt;;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-moz-&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;none&lt;/span&gt;;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-ms-&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;none&lt;/span&gt;;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;:&lt;span style=&#34;color:#ff6ac1&#34;&gt;none&lt;/span&gt;}&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;style&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;noscript&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Format&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;amp-boilerplate&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;-webkit-&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;amp-start &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;steps&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;end&lt;/span&gt;) &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;normal&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;both&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;-moz-&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;amp-start &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;steps&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;end&lt;/span&gt;) &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;normal&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;both&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;-ms-&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;amp-start &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;steps&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;end&lt;/span&gt;) &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;normal&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;both&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;amp-start &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;steps&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;end&lt;/span&gt;) &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;normal&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;both&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#ff6ac1&#34;&gt;-webkit-keyframes&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-amp-start&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;hidden&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;to&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;visible&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#ff6ac1&#34;&gt;-moz-keyframes&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-amp-start&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;hidden&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;to&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;visible&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#ff6ac1&#34;&gt;-ms-keyframes&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-amp-start&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;hidden&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;to&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;visible&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#ff6ac1&#34;&gt;-o-keyframes&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-amp-start&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;hidden&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;to&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;visible&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#ff6ac1&#34;&gt;keyframes&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-amp-start&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;hidden&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;to&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;visibility&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;visible&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;style&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;noscript&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;amp-boilerplate&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;-webkit-&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;none&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;-moz-&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;none&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;-ms-&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;none&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;animation&lt;/span&gt;: &lt;span style=&#34;color:#ff6ac1&#34;&gt;none&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;style&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;noscript&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;3-use-style-amp-custom-handle-style&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#3-use-style-amp-custom-handle-style&#34;&gt;
+        ##
+    &lt;/a&gt;
+    3. Use &lt;code&gt;&amp;lt;style amp-custom&amp;gt;&lt;/code&gt; handle style
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;only one tag in one page&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Size limit 50k&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-ga-use-amp-analytics-bind-by-selector&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#4-ga-use-amp-analytics-bind-by-selector&#34;&gt;
+        ##
+    &lt;/a&gt;
+    4. GA use &lt;code&gt;&amp;lt;amp-analytics&amp;gt;&lt;/code&gt; bind by selector
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h3 id=&#34;5-ajax-cors&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#5-ajax-cors&#34;&gt;
+        ##
+    &lt;/a&gt;
+    5. AJAX CORS
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md&#34;&gt;CORS Requests in AMP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6-form-submit-use-amp-form&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#6-form-submit-use-amp-form&#34;&gt;
+        ##
+    &lt;/a&gt;
+    6. form submit use &lt;code&gt;amp-form&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h3 id=&#34;7-absolute-linkmust-include-host-name&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#7-absolute-linkmust-include-host-name&#34;&gt;
+        ##
+    &lt;/a&gt;
+    7. absolute link(Must include host name)
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h3 id=&#34;8-validate-amp-page&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#8-validate-amp-page&#34;&gt;
+        ##
+    &lt;/a&gt;
+    8. Validate AMP page
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Add &lt;code&gt;#development=1&lt;/code&gt; on url and open browser develop tool console tab.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Web tool &lt;a href=&#34;https://validator.ampproject.org&#34;&gt;validator.ampproject.org&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Browser extension &lt;a href=&#34;https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc&#34;&gt;Chrome&lt;/a&gt; or &lt;a href=&#34;https://addons.opera.com/en-gb/extensions/details/amp-validator/&#34;&gt;Opera&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
+    
     <item>
       <title>AMP - Accelerated Mobile Pages 研究筆記</title>
-      <link>https://blog.tedshd.io/posts/2017-02-24-amp-accelerated-mobile-pages/</link>
+      <link>/posts/2017-02-24-amp-accelerated-mobile-pages/</link>
       <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2017-02-24-amp-accelerated-mobile-pages/</guid>
-      <description>AMP - develop log Intro 這是針對對 AMP 有基本概念的筆記, 基本概念請去 amp project 看就好 知道 AMP 是啥的再來看這文章會較有用 &amp;ndash; 我是分隔線 &amp;mdash; 會被 cache 在 Google domain 下 更新分主動 / 被動 主</description>
+      
+      <guid>/posts/2017-02-24-amp-accelerated-mobile-pages/</guid>
+      <description>&lt;h2 id=&#34;amp---develop-log&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#amp---develop-log&#34;&gt;
+        #
+    &lt;/a&gt;
+    AMP - develop log
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;這是針對對 AMP 有基本概念的筆記, 基本概念請去 &lt;a href=&#34;https://www.ampproject.org&#34;&gt;amp project&lt;/a&gt; 看就好&lt;/p&gt;
+&lt;p&gt;知道 AMP 是啥的再來看這文章會較有用&lt;/p&gt;
+&lt;p&gt;&amp;ndash; 我是分隔線 &amp;mdash;&lt;/p&gt;
+&lt;p&gt;會被 cache 在 Google domain 下&lt;/p&gt;
+&lt;p&gt;更新分主動 / 被動&lt;/p&gt;
+&lt;p&gt;主動(跟 Google 說該頁面有更新)&lt;/p&gt;
+&lt;p&gt;被動(當有任何人開啟該 AMP 頁面, Google 會在背後重新跟該頁面 AMP url 重新拉來 cache,但 15s 內不重新拉)&lt;/p&gt;
+&lt;h3 id=&#34;限制&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%99%90%e5%88%b6&#34;&gt;
+        ##
+    &lt;/a&gt;
+    限制
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;廣告問題(需第三方有支援的廣告商, amp-ad 中有支援的)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AJAX cross domain 問題(需 server side allow)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cookie 讀不到&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;user login 問題(需使用 AMP 的元件)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;App Indexing on Google Search &amp;amp; AMP 衝突(Google 正在解這問題)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不能跑 JavaScript, 所以你的 AMP 頁面不能有自己的 JavaScript code(這很這重要)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可以先看一下 AMP 的規範&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/reference/spec&#34;&gt;AMP HTML Specification&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;先把這些問題與情況列出來, 覺得 ok 再往下看&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用新技術一定有風險, 技術使用有賺有賠, 使用前應詳閱文件或他人心得.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這裡會稍微講一下文件中沒提到的一些東西或技術背景, 但沒去挖 source code, 所以只會說明解決了啥問題, 不會涉及技術實作&lt;/p&gt;
+&lt;p&gt;如有錯誤歡迎指正&lt;/p&gt;
+&lt;h3 id=&#34;google-如何知道有-amp-的頁面&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-%e5%a6%82%e4%bd%95%e7%9f%a5%e9%81%93%e6%9c%89-amp-%e7%9a%84%e9%a0%81%e9%9d%a2&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Google 如何知道有 AMP 的頁面
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; tag&lt;/p&gt;
+&lt;p&gt;在非 AMP 頁面使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;amphtml&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;https://www.example.com/url/to/amp/document.html&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 AMP 頁面使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;canonical&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;https://www.example.com/url/to/full/document.html&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以下文章有說明&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/get_started/create/prepare_for_discovery&#34;&gt;Prepare Your Page for Discovery and Distribution&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;基本-amp-結構&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%9f%ba%e6%9c%ac-amp-%e7%b5%90%e6%a7%8b&#34;&gt;
+        ##
+    &lt;/a&gt;
+    基本 AMP 結構
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;html amp lang=&amp;#34;en&amp;#34;&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt;
+    &amp;lt;script async src=&amp;#34;https://cdn.ampproject.org/v0.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;title&amp;gt;Hello, AMPs&amp;lt;/title&amp;gt;
+    &amp;lt;link rel=&amp;#34;canonical&amp;#34; href=&amp;#34;http://example.ampproject.org/article-metadata.html&amp;#34; /&amp;gt;
+    &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width,minimum-scale=1,initial-scale=1&amp;#34;&amp;gt;
+    &amp;lt;script type=&amp;#34;application/ld+json&amp;#34;&amp;gt;
+      {
+        &amp;#34;@context&amp;#34;: &amp;#34;http://schema.org&amp;#34;,
+        &amp;#34;@type&amp;#34;: &amp;#34;NewsArticle&amp;#34;,
+        &amp;#34;headline&amp;#34;: &amp;#34;Open-source framework for publishing content&amp;#34;,
+        &amp;#34;datePublished&amp;#34;: &amp;#34;2015-10-07T12:02:41Z&amp;#34;,
+        &amp;#34;image&amp;#34;: [
+          &amp;#34;logo.jpg&amp;#34;
+        ]
+      }
+    &amp;lt;/script&amp;gt;
+    &amp;lt;style amp-boilerplate&amp;gt;body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}&amp;lt;/style&amp;gt;&amp;lt;noscript&amp;gt;&amp;lt;style amp-boilerplate&amp;gt;body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}&amp;lt;/style&amp;gt;&amp;lt;/noscript&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;h1&amp;gt;Welcome to the mobile web&amp;lt;/h1&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;裡面有個有趣的地方就是 &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt; 的部分&lt;/p&gt;
+&lt;p&gt;因為 amp project 的 js 有處理 amp component, 會影響 UI 渲染, 所以會先讓畫面不可見&lt;/p&gt;
+&lt;p&gt;但實際上是不會那麼慢, 因為 js 提前處理完就會顯示&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/tutorials/create/basic_markup&#34;&gt;Refer - Create Your AMP HTML Page&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;style&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#style&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Style
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;&amp;lt;style amp-custom&amp;gt;&lt;/code&gt; 來放置 style&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;一個頁面只能有一個 tag&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;size 須小於 50k&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可參考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/responsive/style_pages&#34;&gt;Supported CSS – AMP&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;amp-components&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#amp-components&#34;&gt;
+        ##
+    &lt;/a&gt;
+    AMP Components
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/reference/components&#34;&gt;Components / Tags – AMP&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;analytics&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#analytics&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Analytics
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;AMP 有自己的 GA 使用方式&lt;/p&gt;
+&lt;p&gt;是以 &lt;code&gt;&amp;lt;amp-analytics&amp;gt;&lt;/code&gt; 的 component 呈現&lt;/p&gt;
+&lt;p&gt;而非使用 js 的 &lt;code&gt;ga()&lt;/code&gt; 來處理&lt;/p&gt;
+&lt;p&gt;不用這個用一般網頁用的 &lt;code&gt;ga()&lt;/code&gt; 的話 GA 是送不出去的(這跟 Google 確認過了)&lt;/p&gt;
+&lt;p&gt;基本範例&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;amp-analytics&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;googleanalytics&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;application/json&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;vars&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;account&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;UA-XXXXXX-X&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;triggers&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;trackPageview&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;on&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;visible&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;request&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;pageview&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;vars&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;title&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;lt;?php echo htmlspecialchars($title); ?&amp;gt;&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;documentLocation&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;lt;?php echo $site_url; ?&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;amp-analytics&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;目前有個很大的問題就是&lt;/p&gt;
+&lt;p&gt;針對 DOM 的事件每一個都需要用到對應的 &lt;code&gt;&amp;lt;amp-analytics&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;所以舉例來說&lt;/p&gt;
+&lt;p&gt;當有一個 list 有 10 個 items 要記錄點擊的 GA, 那就要出現 10 個 &lt;code&gt;&amp;lt;amp-analytics&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;(這 issue 目前 Google 內部有再討論是否要處理)&lt;/p&gt;
+&lt;p&gt;所以是直接把 &lt;code&gt;&amp;lt;amp-analytics&amp;gt;&lt;/code&gt; 包成一個 functiuon 來處理較方便(server side render 的話)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;amp-analytics&amp;gt;&lt;/code&gt; 是可以動態產生的&lt;/p&gt;
+&lt;p&gt;但需要注意的是當 &lt;code&gt;&amp;lt;amp-analytics&amp;gt;&lt;/code&gt; 能夠被 js parse 下來處理的時候&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;對應的 DOM 必須在頁面上可見的&lt;/strong&gt;, 且是非藏起來不可見的, 不然 GA 是不會運作的&lt;/p&gt;
+&lt;p&gt;具體可以參考以下文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/analytics/devguides/collection/amp-analytics/&#34;&gt;Adding Analytics to your AMP pages&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;關於 AMP 與非 AMP 的 GA 數據可以在&lt;code&gt;維度&lt;/code&gt; 中&lt;code&gt;使用者&lt;/code&gt;的&lt;code&gt;資料來源&lt;/code&gt; 中區分出來&lt;/p&gt;
+&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-28%20%E4%B8%8B%E5%8D%8812.42.10.png?alt=media&amp;amp;token=5ac3278c-44e3-464c-b2bf-58d0fcd6b548&#34;&gt;
+&lt;p&gt;可以使用自訂區隔處理會比較好看數據&lt;/p&gt;
+&lt;p&gt;不建議另外用一個 ga-id 因為 ga session 會斷掉(ga id 不同, 資料的完整性不夠)&lt;/p&gt;
+&lt;p&gt;但目前也有這問題(跨 AMP 到 non-AMP)&lt;/p&gt;
+&lt;p&gt;所以要解決從 AMP 到 non-AMP oogle 提出以下解法&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.google.com/analytics/answer/7486764&#34;&gt;Set up Google AMP Client ID API&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/analytics/devguides/collection/amp-analytics/#amp_vs_non-amp_traffic&#34;&gt;AMP vs non-AMP traffic&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;amp-目的與目標&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#amp-%e7%9b%ae%e7%9a%84%e8%88%87%e7%9b%ae%e6%a8%99&#34;&gt;
+        ##
+    &lt;/a&gt;
+    AMP 目的與目標
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;加速 mobile page 速度(廢話&lt;/p&gt;
+&lt;p&gt;那具體上 AMP 有處理哪些東西&lt;/p&gt;
+&lt;p&gt;我這會列舉一些我有注意到的部分, 但實際上應該還有不少我沒注意到的, 畢竟沒有把所有的東西都試一遍&lt;/p&gt;
+&lt;h4 id=&#34;style-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#style-1&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Style
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;當然能繼續使用 &lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; 去載入你的 CSS&lt;/p&gt;
+&lt;p&gt;但發現在一些情境下會發生 CSS 被延後載入(這應該是跟 amp 的 js 的機制有關, 他不會先處理非同步載入的 CSS&lt;/p&gt;
+&lt;p&gt;我遇到的 case 是當我加上 &lt;code&gt;&amp;lt;amp-analytics&amp;gt;&lt;/code&gt; 後就這樣了&lt;/p&gt;
+&lt;p&gt;但也不是沒解法&lt;/p&gt;
+&lt;p&gt;解法就是直接用 &lt;code&gt;&amp;lt;style amp-custom&amp;gt;&lt;/code&gt; 直接包你的 CSS 樣式&lt;/p&gt;
+&lt;p&gt;不用 &lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; 載入 CSS&lt;/p&gt;
+&lt;p&gt;讓它一起進入 amp 的 js 的處理&lt;/p&gt;
+&lt;p&gt;但要注意的是&lt;strong&gt;一頁只能有一個 &lt;code&gt;&amp;lt;style amp-custom&amp;gt;&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/responsive_amp&#34;&gt;Style &amp;amp; Layout&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;placeholders--fallbacks&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#placeholders--fallbacks&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Placeholders &amp;amp; fallbacks
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;AMP 針對圖片有處理 Placeholders 和 fallback&lt;/p&gt;
+&lt;p&gt;讓使用者輕鬆使用&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/responsive/placeholders&#34;&gt;Placeholders &amp;amp; fallbacks&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;amp-img&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#amp-img&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;code&gt;&amp;lt;amp-img&amp;gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;為何要用 &lt;code&gt;&amp;lt;amp-img&amp;gt;&lt;/code&gt; 並非使用 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; 就好&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;只對第一屏的圖做請求&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;處理延遲載入(lazy load)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/amp_replacements&#34;&gt;Include Images &amp;amp; Video&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;amp-app-banner&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#amp-app-banner&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;code&gt;&amp;lt;amp-app-banner&amp;gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;這更好用了&lt;/p&gt;
+&lt;p&gt;這是針對有 app link 的服務&lt;/p&gt;
+&lt;p&gt;以前有類似的像 &lt;a href=&#34;https://branch.io/&#34;&gt;branch.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但聽使用過的人說還是有機率會 fail&lt;/p&gt;
+&lt;p&gt;iOS 有 smart banner(雖然不錯, 但不理想, user 關掉後再也不會出現, 對 user 而言很合理, 但對服務來說不太想要這樣&lt;/p&gt;
+&lt;p&gt;Android 得自己幹&lt;/p&gt;
+&lt;p&gt;但這元件就是 branch.io 這服務要做的事, 然後 AMP 幫你做了&lt;/p&gt;
+&lt;p&gt;他的機制是當你有設定 app link 時他會 parse 分析出來並出 banner 來提示 user 用 APP 開或到 Google Play 或 Apple store&lt;/p&gt;
+&lt;h3 id=&#34;validate-amp&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#validate-amp&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Validate AMP
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Add &lt;code&gt;#development=1&lt;/code&gt; on url and open browser develop tool console tab.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Web tool &lt;a href=&#34;https://validator.ampproject.org/&#34;&gt;validator.ampproject.org&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Browser extension &lt;a href=&#34;https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc&#34;&gt;Chrome&lt;/a&gt; or &lt;a href=&#34;https://addons.opera.com/en-gb/extensions/details/amp-validator/&#34;&gt;Opera&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/validate&#34;&gt;Validate AMP Pages&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://search.google.com/test/amp&#34;&gt;AMP 測試 - Google Search Console&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;千萬要記住有任何 error 的話 Google 都不會 cacahe 成 AMP&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;amp--app-indexing-on-google-search&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#amp--app-indexing-on-google-search&#34;&gt;
+        ##
+    &lt;/a&gt;
+    AMP &amp;amp; App Indexing on Google Search
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;有 AMP 出現後不會出現 App Indexing on Google Search&lt;/p&gt;
+&lt;p&gt;Google 說這是 &lt;strong&gt;Bug&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;基本上 Google search result 是要 AMP 和 App Indexing on Google Search 都出現&lt;/p&gt;
+&lt;p&gt;Google 正在修這個問題&lt;/p&gt;
+&lt;h3 id=&#34;結語&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b5%90%e8%aa%9e&#34;&gt;
+        ##
+    &lt;/a&gt;
+    結語
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;就目前看到搜尋結果的情況&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;隨然 Google 沒有明示, 但很明顯 AMP 的搜尋結果有都被排在前面&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;所以整體來說對排名還是有影響的&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;更新&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;跟 Google 證實了一下, 不影響 rank, 所以是不影響 SEO 排名&lt;/p&gt;
+&lt;p&gt;為什麼會有這假象, Google 說了可能是因爲原本的頁面 SEO 太爛, 因為 AMP 是 best practice 所以造成該頁面 rankng 變好&lt;/p&gt;
+&lt;p&gt;但對原本就很好的 rankng 的頁面根本沒影響&lt;/p&gt;
+&lt;p&gt;且有趣的是說因為 AMP 還是有諸多限制, 所以很多有 AMP 的服務其實到第二頁或當你點擊上面的東西進入更深層或其他站內的頁面時, 都幾乎直接回到 mobile page 並非 AMP page&lt;/p&gt;
+&lt;p&gt;但單純從 amp 的 js 處理的一些東西就可以看出這 library 非常的有價值, 因為它暗地裡幫你處理許多效能問題&lt;/p&gt;
+&lt;p&gt;如果想稍微優化現有 service 當然也可以用 AMP project 的這套 js 來幫你處理&lt;/p&gt;
+&lt;p&gt;最後補充一下, 因為我們的服務上 AMP 對流量影響會很大所以目前還在測試上線階段也沒有全上&lt;/p&gt;
+&lt;p&gt;所以一開始列舉的一些問題是我們假設上線後可能面臨的情況&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

@@ -1,187 +1,564 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+
+
+<html lang="en-us" data-theme="">
+<head>
     
-
-
-
-
-<title>在數位中所定義與使用語言與文字的規範 | tedshd&#39;s DevNote</title>
+        
 <meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>在數位中所定義與使用語言與文字的規範 - Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="# 前言 因為最近在做一些語系的整理
+為了字型的關係
+就整理了一下一些在數位資訊上面有關於文字與語言的一些規範
+這裡會概括了系統與軟體開發與輸入裝置的處理
+因為資訊量太廣
+所以不一定會有個脈絡
+基本上只有大概分一段一段的說明
+# 初心者的誤區 國家和語言有很強的關聯 這是很多人一開始處理多國語系都會有個誤解的
+常常在系統中看到 en-US, zh-TW, ja-jp
+就會下意識的把語言和國家綁定在一起
+然後結果就是在該國家只能顯示該語言
+但現實是每個國家都不一定都只有使用一個語言啊~~
+新加坡同時普遍用中文和英文(官方語言是英文)
+以為在限定的國家或系統才能使用限定的語言 這和上一個很類似, 以為用到某個國家的系統或是使用某個系統設定在某些國家就會限制了語言
+這是錯誤的觀念
+記住
+語言和國家沒絕對關係
+語言和國家沒絕對關係
+語言和國家沒絕對關係
+拉丁文就是英文 這後面會提到
+語言和文字在定義上的有強烈的關係 在廣義的定義下確實如此
+但真正探究下去其實不應該這樣說
+這後面會提到
+鍵盤上沒有注音符號還是可以打中文啊 那現在很多鍵盤都沒有倉頡符號
+那不就沒辦法用倉頡輸入法了嗎?
+# 來講一下文字 有時大家常常聽到拉丁文這個東西
+那麼拉丁文究竟是什麼文字?
+相信不少人就會說英文啊
+沒錯
+但不太正確
+英文就是拉丁文字的其中一部分
+那拉丁文又是從哪裡來呢?
+這又有點牽扯到語言了
+現在最廣泛的語系算是印歐語系
+而其中的拉丁語系在古歐洲經由羅馬帝國向外發展
+所以拉丁字母也就很廣泛的使用(文化侵略的結果)
+上面提到英文是拉丁文部分之一
+是因為實際上拉丁文不只是 A ~ Z 26 個字母
+德文, 法文等也是用拉丁字母
+但是這些語言額外多有各種音對應的字母
+所以會有所謂的延伸拉丁字母
+尖音 重音 折音 分音/德語變音 軟音 鼻音 鼻化元音 合字 來自盧恩字母 Á É Í Ó Ú Ý À È Ì Ò Ù Â Ê Î Ô Û Ä Ë Ï Ö Ü Ÿ Ç Ş Ã Õ Ñ Ą Ę Į Ų Æ Œ Ø Ĳ Þ á é í ó ú ý à è ì ò ù â ê î ô û ä ë ï ö ü ÿ ç ş ã õ ñ ą ę į ų æ œ ø ĳ ß þ 這邊後面再輸入裝置時會在特別提到">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta name="google" content="notranslate">
-<meta id="viewport" name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='前言 因為最近在做一些語系的整理 為了字型的關係 就整理了一下一些在數位資訊上面有關於文字與語言的一些規範 這裡會概括了系統與軟體開發與輸入裝置的處'>
-<meta name="keywords" content=''>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/language_and_character_in_digital/">
-<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/language_and_character_in_digital/" />
-
-<link rel="canonical" href="https://blog.tedshd.io/posts/language_and_character_in_digital/" />
-<link rel="shortcut icon" href="/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
-<meta name="theme-color" content="">
-<meta name="robots" content="index, follow">
-<meta name="copyright" content="Tedshd">
-
-<meta property="og:title" content="在數位中所定義與使用語言與文字的規範" />
-<meta property="og:description" content="前言 因為最近在做一些語系的整理 為了字型的關係 就整理了一下一些在數位資訊上面有關於文字與語言的一些規範 這裡會概括了系統與軟體開發與輸入裝置的處" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/language_and_character_in_digital/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-05-25T16:56:05+08:00" />
-<meta property="article:modified_time" content="2020-12-10T17:17:28+08:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="在數位中所定義與使用語言與文字的規範"/>
-<meta name="twitter:description" content="前言 因為最近在做一些語系的整理 為了字型的關係 就整理了一下一些在數位資訊上面有關於文字與語言的一些規範 這裡會概括了系統與軟體開發與輸入裝置的處"/>
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-<script data-ad-client="ca-pub-0553186380244641" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
+
+        
+
+
+
+
+
 
 
     
+        <div class="theme-switcher">
+            <span class="inline-svg">
 
     
 
-    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
 
     
-<link>
-
-<link
-    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
-    rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
-
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
 
-    gtag('config', 'G-1NKP3D2ZGG');
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
     </script>
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
-                    tedshd&#39;s DevNote
-                </a>
-            </div>
-            
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
-                <i class="p-icon--menu"></i>
+
+
+        <ul class="social-icons noselect">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
             </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
-                <i class="p-icon--close"></i>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
             </a>
-        </div>
+        </li>
+    
 
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
 
-            <ul class="p-navigation__links" role="menu">
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/categories">Categories</a>
-                </li>
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/tags">tags</a>
-                </li>
-                
-            </ul>
+    
 
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-            
-        </nav>
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
     </div>
-</header><div id="main-content">
-<div class="page-banner">
-    <div class="row u-vertically-center">
-        <div class="col-8 pure-g">
-            <div class="pure-u">
-                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
-                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
-            </div>
-            <div class="pure-u">
-                <h2>tedshd&#39;s DevNote</h2>
-                <p>Develop &amp; Design Note by Ted</p>
-            </div>
-        </div>
+    <div class="header-top-right">
+
     </div>
 </div>
 
-<ul class="p-navigation__links sub_menu" role="menu">
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tedshd.github.io/resume/">About</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tysh310246.blogspot.tw/">Blog</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://github.com/tedshd">Github</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
-    </li>
-    
-</ul>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
 
-<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">在數位中所定義與使用語言與文字的規範</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2020-05-25">2020-05-25</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/language_and_character_in_digital/">/posts/language_and_character_in_digital/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#初心者的誤區">初心者的誤區</a></li>
+    <li><a href="#來講一下文字">來講一下文字</a></li>
+    <li><a href="#語言與地區規範">語言與地區規範</a>
+      <ul>
+        <li><a href="#文字">文字</a></li>
+        <li><a href="#語言">語言</a></li>
+        <li><a href="#國家地區">國家(地區)</a></li>
+        <li><a href="#web">Web</a></li>
+        <li><a href="#android">Android</a></li>
+        <li><a href="#ios">iOS</a></li>
+        <li><a href="#linux">Linux</a></li>
+        <li><a href="#mac-os">Mac OS</a></li>
+        <li><a href="#windows">Windows</a></li>
+      </ul>
+    </li>
+    <li><a href="#來聊一下鍵盤輸入法">來聊一下鍵盤輸入法</a>
+      <ul>
+        <li><a href="#iso-對應歐規歐洲的國家">ISO 對應歐規(歐洲的國家)</a></li>
+        <li><a href="#ansi-對應美規大部分的國家">ANSI 對應美規(大部分的國家)</a></li>
+        <li><a href="#jis-對應日規日本">JIS 對應日規(日本)</a></li>
+        <li><a href="#結語">結語</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
 </script>
 
-
-<header class="">
-    <div class="row">
-        <h1>在數位中所定義與使用語言與文字的規範</h1>
-    </div>
-</header>
-
-
-<section class="p-strip is-shallow">
-    <main class="row post-content">
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2020-05-25
-        </p>
-        
-        <h2 id="前言">前言</h2>
+        <div class="content e-content">
+            <h2 id="前言" >
+<div>
+    <a href="#%e5%89%8d%e8%a8%80">
+        #
+    </a>
+    前言
+</div>
+</h2>
 <p>因為最近在做一些語系的整理</p>
 <p>為了字型的關係</p>
 <p>就整理了一下一些在數位資訊上面有關於文字與語言的一些規範</p>
@@ -189,7 +566,14 @@
 <p>因為資訊量太廣</p>
 <p>所以不一定會有個脈絡</p>
 <p>基本上只有大概分一段一段的說明</p>
-<h2 id="初心者的誤區">初心者的誤區</h2>
+<h2 id="初心者的誤區" >
+<div>
+    <a href="#%e5%88%9d%e5%bf%83%e8%80%85%e7%9a%84%e8%aa%a4%e5%8d%80">
+        #
+    </a>
+    初心者的誤區
+</div>
+</h2>
 <ol>
 <li>國家和語言有很強的關聯</li>
 </ol>
@@ -223,7 +607,14 @@
 </ol>
 <p>那現在很多鍵盤都沒有倉頡符號</p>
 <p>那不就沒辦法用倉頡輸入法了嗎?</p>
-<h2 id="來講一下文字">來講一下文字</h2>
+<h2 id="來講一下文字" >
+<div>
+    <a href="#%e4%be%86%e8%ac%9b%e4%b8%80%e4%b8%8b%e6%96%87%e5%ad%97">
+        #
+    </a>
+    來講一下文字
+</div>
+</h2>
 <p>有時大家常常聽到拉丁文這個東西</p>
 <p>那麼拉丁文究竟是什麼文字?</p>
 <p>相信不少人就會說英文啊</p>
@@ -280,8 +671,22 @@
 </tbody>
 </table>
 <p>這邊後面再輸入裝置時會在特別提到</p>
-<h2 id="語言與地區規範">語言與地區規範</h2>
-<h3 id="文字">文字</h3>
+<h2 id="語言與地區規範" >
+<div>
+    <a href="#%e8%aa%9e%e8%a8%80%e8%88%87%e5%9c%b0%e5%8d%80%e8%a6%8f%e7%af%84">
+        #
+    </a>
+    語言與地區規範
+</div>
+</h2>
+<h3 id="文字" >
+<div>
+    <a href="#%e6%96%87%e5%ad%97">
+        ##
+    </a>
+    文字
+</div>
+</h3>
 <p><a href="https://zh.wikipedia.org/wiki/ISO_15924">ISO 15924</a></p>
 <p>也有應用在字型上</p>
 <p>字型的 metadata 會跟你說該字型有哪些文字可以用</p>
@@ -295,13 +700,27 @@
 <p>可以用以下網站上傳字型檔(必須是 opentype 格式, 即 <code>.otf</code>, <code>.ttf</code>, <code>.ttc</code>) 確認該字型的資訊</p>
 <p><a href="https://opentype.js.org/font-inspector.html">font-inspector</a></p>
 <p><a href="https://fontdrop.info/">fontdrop</a></p>
-<h3 id="語言">語言</h3>
+<h3 id="語言" >
+<div>
+    <a href="#%e8%aa%9e%e8%a8%80">
+        ##
+    </a>
+    語言
+</div>
+</h3>
 <p><a href="https://en.wikipedia.org/wiki/ISO_639">ISO 639</a></p>
 <p>普遍使用於各個系統中的語言代碼</p>
 <p>底下目前有定義到 ISO 639-6</p>
 <p>但是普遍使用的是 639-1 到 639-3</p>
 <p><a href="https://zh.wikipedia.org/wiki/ISO_639-1%E4%BB%A3%E7%A0%81%E8%A1%A8">ISO 639-1</a> 列表</p>
-<h3 id="國家地區">國家(地區)</h3>
+<h3 id="國家地區" >
+<div>
+    <a href="#%e5%9c%8b%e5%ae%b6%e5%9c%b0%e5%8d%80">
+        ##
+    </a>
+    國家(地區)
+</div>
+</h3>
 <p><a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1</a></p>
 <p>定義國家的代碼</p>
 <p>都需要大寫</p>
@@ -324,14 +743,28 @@
 <p>所以必須要清楚在哪些系統平台上是採用哪些規範</p>
 <p>以免在程式處理上出現問題</p>
 <p>這裡列舉一下常見的系統平台</p>
-<h3 id="web">Web</h3>
+<h3 id="web" >
+<div>
+    <a href="#web">
+        ##
+    </a>
+    Web
+</div>
+</h3>
 <p>通常是以 <code>Accept-Language</code> 為判定基礎</p>
 <p>以 <a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a> 定義了語系區域的呈現格式</p>
 <p><a href="https://www.w3.org/International/articles/language-tags/#rfc">W3C - Language tags in HTML and XML</a> 有具體的說明</p>
 <p>比較特別的一點是其實關於 region 並沒有規範強制要大寫</p>
 <p>只是因為在 <a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1</a> 中規定都要大寫</p>
 <p>所以約定成俗</p>
-<h3 id="android">Android</h3>
+<h3 id="android" >
+<div>
+    <a href="#android">
+        ##
+    </a>
+    Android
+</div>
+</h3>
 <p><a href="https://developer.android.com/reference/java/util/Locale">開發文件</a>其實就有說明了</p>
 <p>也一樣遵循 <a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a></p>
 <ul>
@@ -351,7 +784,14 @@
 <p>ex: <strong>zh_CN_#Hans</strong></p>
 <p>因為這是基於 <a href="http://site.icu-project.org/home">ICU - International Components for Unicode</a> 定義的規則</p>
 <p>裡面的 <a href="http://userguide.icu-project.org/locale">Locale</a></p>
-<h3 id="ios">iOS</h3>
+<h3 id="ios" >
+<div>
+    <a href="#ios">
+        ##
+    </a>
+    iOS
+</div>
+</h3>
 <p><a href="https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html">Language and Locale IDs</a></p>
 <p>由 language 和 locale 組成</p>
 <p>language 走 ISO 639-1 / 639-2</p>
@@ -391,18 +831,46 @@
 </table>
 <p>這條規則目前沒找到規範</p>
 <p>但是文件也提到如果要更詳細的話也是要遵循 <a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a> 的格式定義</p>
-<h3 id="linux">Linux</h3>
+<h3 id="linux" >
+<div>
+    <a href="#linux">
+        ##
+    </a>
+    Linux
+</div>
+</h3>
 <p>走 POSIX 平台所定義的標準 <a href="https://en.wikipedia.org/wiki/ISO/IEC_15897">ISO/IEC 15897</a></p>
 <p><a href="https://zh.wikipedia.org/wiki/%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">地區設定</a></p>
 <p><code>language[_territory[.codeset]][@modifier]</code></p>
 <p>language 用 ISO 639-1</p>
 <p>territory 用 ISO 3166-1</p>
-<h3 id="mac-os">Mac OS</h3>
+<h3 id="mac-os" >
+<div>
+    <a href="#mac-os">
+        ##
+    </a>
+    Mac OS
+</div>
+</h3>
 <p>一樣走 POSIX 平台所定義的標準 <a href="https://en.wikipedia.org/wiki/ISO/IEC_15897">ISO/IEC 15897</a></p>
-<h3 id="windows">Windows</h3>
+<h3 id="windows" >
+<div>
+    <a href="#windows">
+        ##
+    </a>
+    Windows
+</div>
+</h3>
 <p>Windowa Vista 之後使用 <a href="https://tools.ietf.org/html/rfc4646">RFC 4646</a></p>
 <p><code>&lt;language&gt;-&lt;Script&gt;-&lt;REGION&gt;_&lt;sort order&gt;</code></p>
-<h2 id="來聊一下鍵盤輸入法">來聊一下鍵盤輸入法</h2>
+<h2 id="來聊一下鍵盤輸入法" >
+<div>
+    <a href="#%e4%be%86%e8%81%8a%e4%b8%80%e4%b8%8b%e9%8d%b5%e7%9b%a4%e8%bc%b8%e5%85%a5%e6%b3%95">
+        #
+    </a>
+    來聊一下鍵盤輸入法
+</div>
+</h2>
 <p>鍵盤上面所有的按鍵都是有定義標準的 key code</p>
 <p>基本上就是那兩大家 MS 和 Apple 定義出來的</p>
 <p>當然還有些按鍵因應各個廠商的需求會自己去定義, 這邊就不討論</p>
@@ -421,11 +889,32 @@
 <p>有在用 Mac 外接鍵盤的應該都有看過</p>
 <p>Mac 在外接鍵盤時會叫你按左 shift 右邊和右 shift 左邊</p>
 <p>之後就會叫你選 layout</p>
-<h3 id="iso-對應歐規歐洲的國家">ISO 對應歐規(歐洲的國家)</h3>
+<h3 id="iso-對應歐規歐洲的國家" >
+<div>
+    <a href="#iso-%e5%b0%8d%e6%87%89%e6%ad%90%e8%a6%8f%e6%ad%90%e6%b4%b2%e7%9a%84%e5%9c%8b%e5%ae%b6">
+        ##
+    </a>
+    ISO 對應歐規(歐洲的國家)
+</div>
+</h3>
 <p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-26_%E4%B8%8B%E5%8D%885.39.26.png" alt="image"></p>
-<h3 id="ansi-對應美規大部分的國家">ANSI 對應美規(大部分的國家)</h3>
+<h3 id="ansi-對應美規大部分的國家" >
+<div>
+    <a href="#ansi-%e5%b0%8d%e6%87%89%e7%be%8e%e8%a6%8f%e5%a4%a7%e9%83%a8%e5%88%86%e7%9a%84%e5%9c%8b%e5%ae%b6">
+        ##
+    </a>
+    ANSI 對應美規(大部分的國家)
+</div>
+</h3>
 <p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-26_%E4%B8%8B%E5%8D%885.38.54.png" alt="image"></p>
-<h3 id="jis-對應日規日本">JIS 對應日規(日本)</h3>
+<h3 id="jis-對應日規日本" >
+<div>
+    <a href="#jis-%e5%b0%8d%e6%87%89%e6%97%a5%e8%a6%8f%e6%97%a5%e6%9c%ac">
+        ##
+    </a>
+    JIS 對應日規(日本)
+</div>
+</h3>
 <p><img src="/images/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2020-05-26_%E4%B8%8B%E5%8D%885.40.04.png" alt="image"></p>
 <p>為何要分這三種 layout 是因為打字區需要的按鍵數量是不一樣的</p>
 <p>ISO 需要有延伸拉丁字母</p>
@@ -437,51 +926,90 @@
 <p>而判定 key code 是系統和輸入法的工作</p>
 <p>所以真正影響的實際上只有鍵盤的 layout 和輸入法會打出什麼</p>
 <p>和作業系統設定的語言與國家無關, 也和鍵盤上面的印字無關</p>
-<h3 id="結語">結語</h3>
+<h3 id="結語" >
+<div>
+    <a href="#%e7%b5%90%e8%aa%9e">
+        ##
+    </a>
+    結語
+</div>
+</h3>
 <p>在整理字型時, 如果上述的東西需要有大概的了解</p>
 <p>這樣對整理字型的使用會是更佳的容易</p>
 <p>比較可惜的是我目前沒找到文字與語言對應的表(可能是搜尋的太少了?</p>
 <p>所以目前只有針對幾個國家自己做對應表</p>
 
-    </main>
-</section>
+        </div>
 
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
+    </article>
+
     
-    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/load_large_table_improve_performance/">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            如何在網頁載入比較大量的資料時增加效能?
-        </span>
-    </a>
     
 
     
-    <a class="p-article-pagination__link--next" href="https://blog.tedshd.io/posts/prepare_resume/">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            如何準備網路資訊業工程師的履歷/簡歷
-        </span>
-    </a>
+        
+        
     
-</div>
-    </div>
-</footer>
 
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Tedshd
-            </p>
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
         </div>
     </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
 </footer>
 
-
-
-
+        
+    </div>
 </body>
 </html>

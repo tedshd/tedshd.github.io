@@ -1,20 +1,77 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PostgreSQL on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/postgresql/</link>
-    <description>Recent content in PostgreSQL on tedshd&#39;s DevNote</description>
+    <title>PostgreSQL on Tedshd&#39;s Dev note</title>
+    <link>/categories/postgresql/</link>
+    <description>Tedshd&#39;s Dev note (PostgreSQL)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>PgREST - build note</title>
-      <link>https://blog.tedshd.io/posts/2014-04-24-pgrest-build-note/</link>
+      <link>/posts/2014-04-24-pgrest-build-note/</link>
       <pubDate>Thu, 24 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-04-24-pgrest-build-note/</guid>
-      <description>PgREST - build note GitHub This is Mac OS X build install PostgreSQL postgres.app PostgreSQL Tutorial&#xA;set PATH in shell(.bashrc, .zshrc, &amp;hellip;) PATH=&amp;#34;/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH&amp;#34; create the plv8 extension -&amp;gt; psql -U Ted_Shiu -c &amp;#34;create extension plv8&amp;#34; CREATE EXTENSION install PgREST(Must install node.js before) npm i -g pgrest Refer - PgREST: Node.js in the Database</description>
+      
+      <guid>/posts/2014-04-24-pgrest-build-note/</guid>
+      <description>&lt;h2 id=&#34;pgrest---build-note&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#pgrest---build-note&#34;&gt;
+        #
+    &lt;/a&gt;
+    PgREST - build note
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;githubhttpsgithubcompgrestpgrest&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#githubhttpsgithubcompgrestpgrest&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;a href=&#34;https://github.com/pgrest/pgrest/&#34;&gt;GitHub&lt;/a&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h2 id=&#34;strong-stylecolorredthis-is-mac-os-x-buildstrong&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#strong-stylecolorredthis-is-mac-os-x-buildstrong&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;strong style=&#34;color:red&#34;&gt;This is Mac OS X build&lt;/strong&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;install-postgresql&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#install-postgresql&#34;&gt;
+        ##
+    &lt;/a&gt;
+    install PostgreSQL
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://postgresapp.com/&#34;&gt;postgres.app&lt;/a&gt;
+&lt;a href=&#34;http://www.tutorialspoint.com/postgresql/index.htm&#34;&gt;PostgreSQL Tutorial&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;set PATH in shell(.bashrc, .zshrc, &amp;hellip;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/Applications/Postgres.app/Contents/Versions/9.3/bin:&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$PATH&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;create the plv8 extension&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-&amp;gt; psql -U Ted_Shiu -c &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;create extension plv8&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CREATE EXTENSION
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;install-pgrestmust-install-nodejs-before&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#install-pgrestmust-install-nodejs-before&#34;&gt;
+        ##
+    &lt;/a&gt;
+    install PgREST(Must install node.js before)
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm i -g pgrest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://pgre.st/&#34;&gt;Refer - PgREST: Node.js in the Database&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

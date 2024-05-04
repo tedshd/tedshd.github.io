@@ -1,20 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Webview on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/webview/</link>
-    <description>Recent content in Webview on tedshd&#39;s DevNote</description>
+    <title>Webview on Tedshd&#39;s Dev note</title>
+    <link>/categories/webview/</link>
+    <description>Tedshd&#39;s Dev note (Webview)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/webview/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/webview/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>webview - handle iOS status bar empty height in webview</title>
-      <link>https://blog.tedshd.io/posts/2018-04-19-webview-handle-ios-status-bar-empty-height-in-webview/</link>
+      <link>/posts/2018-04-19-webview-handle-ios-status-bar-empty-height-in-webview/</link>
       <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2018-04-19-webview-handle-ios-status-bar-empty-height-in-webview/</guid>
-      <description>webview - handle iOS status bar empty height in webview in iOS&#xA;If you use fullscreen webview in app and set app size over iOS device navigation bar.&#xA;So need add height to fill status bar height.&#xA;iPhone6/7/8 is 20px&#xA;iPhoneX is 44px&#xA;You can use is sample code&#xA;header.ios { padding-top: 20px; } @media (width: 375px) and (height: 832px) { header.ios { padding-top: 44px; } } iPhoneX fullscreen webview width is 375px, height is 832px</description>
+      
+      <guid>/posts/2018-04-19-webview-handle-ios-status-bar-empty-height-in-webview/</guid>
+      <description>&lt;h2 id=&#34;webview---handle-ios-status-bar-empty-height-in-webview&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#webview---handle-ios-status-bar-empty-height-in-webview&#34;&gt;
+        #
+    &lt;/a&gt;
+    webview - handle iOS status bar empty height in webview
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;in iOS&lt;/p&gt;
+&lt;p&gt;If you use fullscreen webview in app and set app size over iOS device navigation bar.&lt;/p&gt;
+&lt;p&gt;So need add height to fill status bar height.&lt;/p&gt;
+&lt;p&gt;iPhone6/7/8 is &lt;code&gt;20px&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;iPhoneX is &lt;code&gt;44px&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can use is sample code&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;header.ios {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    padding&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;top&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;20&lt;/span&gt;px;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;@&lt;/span&gt;media (width&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;375&lt;/span&gt;px) and (height&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;832&lt;/span&gt;px)  {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    header.ios {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        padding&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;top&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;44&lt;/span&gt;px;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;iPhoneX fullscreen webview width is &lt;code&gt;375px&lt;/code&gt;, height is &lt;code&gt;832px&lt;/code&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

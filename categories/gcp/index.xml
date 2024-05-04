@@ -1,27 +1,287 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gcp on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/gcp/</link>
-    <description>Recent content in Gcp on tedshd&#39;s DevNote</description>
+    <title>Gcp on Tedshd&#39;s Dev note</title>
+    <link>/categories/gcp/</link>
+    <description>Tedshd&#39;s Dev note (Gcp)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 05 Dec 2022 17:41:54 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Dec 2022 09:58:14 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/gcp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Google Cloud 使用 artifact registry 和 compute engine</title>
-      <link>https://blog.tedshd.io/posts/gcp_artifact_registry_compute_engine/</link>
+      <link>/posts/gcp_artifact_registry_compute_engine/</link>
       <pubDate>Thu, 01 Dec 2022 09:58:14 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/gcp_artifact_registry_compute_engine/</guid>
-      <description>前言 基於公司之前的架構設計 使用 GCP 重現一個簡化版的部署架構 基本是使用 artifact registry 和 compute engine GCP 官方也有 artifact registry + compute engine 的部署設計 但是因為是 side project, 不想搞得太複雜, 所以</description>
+      
+      <guid>/posts/gcp_artifact_registry_compute_engine/</guid>
+      <description>&lt;h2 id=&#34;前言&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%89%8d%e8%a8%80&#34;&gt;
+        #
+    &lt;/a&gt;
+    前言
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;基於公司之前的架構設計&lt;/p&gt;
+&lt;p&gt;使用 GCP 重現一個簡化版的部署架構&lt;/p&gt;
+&lt;p&gt;基本是使用 artifact registry 和 compute engine&lt;/p&gt;
+&lt;p&gt;GCP 官方也有 artifact registry + compute engine 的部署設計&lt;/p&gt;
+&lt;p&gt;但是因為是 side project, 不想搞得太複雜, 所以沒有採用官方的方式(官方的方式再搭配其他的服務比較建議用在正式專案上面, 會是比較有彈性且可以進行高承載的設計, 不過主要還是看預算和承載量的考量)&lt;/p&gt;
+&lt;h2 id=&#34;架構&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%9e%b6%e6%a7%8b&#34;&gt;
+        #
+    &lt;/a&gt;
+    架構
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;side project 是一個單純的 web service&lt;/p&gt;
+&lt;p&gt;目前也不考慮高流量的問題&lt;/p&gt;
+&lt;p&gt;前後端分離, 主要會有前端的服務和 api 的服務&lt;/p&gt;
+&lt;h3 id=&#34;google-cloud&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-cloud&#34;&gt;
+        ##
+    &lt;/a&gt;
+    google cloud
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Compute Engine(1 instance)&lt;/li&gt;
+&lt;li&gt;Cloud SQL(1 sql, 沒有開 HA, 需要注意的是有開 HA, sql 費用會是兩倍計算)&lt;/li&gt;
+&lt;li&gt;Artifact Registry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;code&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#code&#34;&gt;
+        ##
+    &lt;/a&gt;
+    code
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Vue(nuxt SSR)&lt;/li&gt;
+&lt;li&gt;CodeIgniter 4(當作 API server)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因為會有前端和後端的部分, 會有兩個 service&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;node&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所以最簡單的方式就是兩個分開開發&lt;/p&gt;
+&lt;p&gt;因為有使用 docker&lt;/p&gt;
+&lt;p&gt;所以就把分成兩個 docker image&lt;/p&gt;
+&lt;p&gt;要部署的程式和環境都包在 docker image 裡面&lt;/p&gt;
+&lt;p&gt;這樣在 VM 裡面不用考慮環境問題, 只要跑起來 docker container 就可以了&lt;/p&gt;
+&lt;h2 id=&#34;開發與部署&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%96%8b%e7%99%bc%e8%88%87%e9%83%a8%e7%bd%b2&#34;&gt;
+        #
+    &lt;/a&gt;
+    開發與部署
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;本地開發已經是使用 ARM 架構的 mac&lt;/p&gt;
+&lt;p&gt;所以需要注意的是 build image 時會因為不同的 CPU 架構需要 build 對應架構的 docker image&lt;/p&gt;
+&lt;p&gt;還有需要注意的是程式的套件對應開發環境的版本, 基本上除非要集小化 Image, 不然會建議 docker image 使用 Linux ubuntu 來當成 base&lt;/p&gt;
+&lt;p&gt;為了方便開發, 本地直接使用 mac 自己的環境開發&lt;/p&gt;
+&lt;p&gt;另一種做法就是本地就直接啟動使用 docker container 開發, 把要開發的程式 mount 進去&lt;/p&gt;
+&lt;p&gt;開發完後就是 build docker image&lt;/p&gt;
+&lt;p&gt;上面提到做法就是把要執行的程式和環境整個打包成 docker image&lt;/p&gt;
+&lt;p&gt;這樣部署時就不會受到部署環境影響&lt;/p&gt;
+&lt;p&gt;這邊採用的 docker image 管理服務就是 &lt;a href=&#34;https://cloud.google.com/artifact-registry/docs/overview&#34;&gt;Artifact Registry&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;簡單的說就是一個私有的 docker hub&lt;/p&gt;
+&lt;p&gt;AWS 對應的服務是 &lt;a href=&#34;https://aws.amazon.com/tw/ecr/&#34;&gt;Elastic Container Registry&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這邊會著重在 Artifact Registry 的建立與部署&lt;/p&gt;
+&lt;h2 id=&#34;artifact-registry&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#artifact-registry&#34;&gt;
+        #
+    &lt;/a&gt;
+    Artifact Registry
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Artifact Registry provides a single location for storing and managing your packages and Docker container images.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;從上述文件的介紹其實可以知道 Artifact Registry 不只有 docker image 的管理功能&lt;/p&gt;
+&lt;p&gt;其實還包含 Java, Node.js, Python, Debian, RPM 等等的套件管理&lt;/p&gt;
+&lt;p&gt;所以有開發以上的套件又需要有個私有的 repositories 也可以用這個服務&lt;/p&gt;
+&lt;p&gt;因為這服務的文件蠻多且有點複雜&lt;/p&gt;
+&lt;p&gt;這邊會稍微整理專注在使用 docker 相關的文件出來&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;建立 repositories&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;就和使用 docker hub 一樣必須要先建立 repositories 來擺放 image&lt;/p&gt;
+&lt;p&gt;可以直接參考以下文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/artifact-registry/docs/repositories/create-repos&#34;&gt;Create repositories&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這邊建議直接在 google console 的 web 介面建立比較好操作&lt;/p&gt;
+&lt;p&gt;建立 repositories 後需要注意的是能夠操作這個 repositories 的帳號&lt;/p&gt;
+&lt;p&gt;專案擁有者一定是可以操作, 如果要要建立 CI/ÇD 的話建議另外建立 service account 來賦予相關權限&lt;/p&gt;
+&lt;p&gt;有其他開發者要共同操作的話, 就去 IAM 添加並賦予相關權限&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;開始進行 push &amp;amp; pull&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;要在本地端進行 Artifact Registry 的 docker push &amp;amp; pull 操作要先具備以下條件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;要安裝 gcloud 並且登入&lt;/li&gt;
+&lt;li&gt;登入的帳號需要具備 Artifact Registry 權限&lt;/li&gt;
+&lt;li&gt;啟動 &lt;a href=&#34;https://cloud.google.com/artifact-registry/docs/enable-service&#34;&gt;Artifact Registry API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;設定 gcloud config &lt;a href=&#34;https://cloud.google.com/artifact-registry/docs/repositories/gcloud-defaults&#34;&gt;Set defaults for gcloud commands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;docker 設定 repositories &lt;a href=&#34;https://cloud.google.com/artifact-registry/docs/transition/changes-docker#artifact-registry&#34;&gt;Changes for Docker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在 google 其他服務大多已經具備權限了(在正式專案上建議對沒有必要的權限做關閉)&lt;/p&gt;
+&lt;p&gt;可以參考 &lt;a href=&#34;https://cloud.google.com/artifact-registry/docs/deploy&#34;&gt;Deploy to Google Cloud&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;來確認之後要部署時可不可以直接使用&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/sdk/docs/install-sdk&#34;&gt;Install the Google Cloud CLI&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安裝後登入自己的帳號或登入需要使用的 service account&lt;/p&gt;
+&lt;p&gt;其實上面講了那麼多&lt;/p&gt;
+&lt;p&gt;簡單列一下要執行的指令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcloud auth login
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcloud services &lt;span style=&#34;color:#ff5c57&#34;&gt;enable&lt;/span&gt; artifactregistry.googleapis.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcloud config &lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; project &amp;lt;PROJECT ID&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcloud config &lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; artifacts/location &amp;lt;LOCATION&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcloud config &lt;span style=&#34;color:#ff5c57&#34;&gt;set&lt;/span&gt; artifacts/repository &amp;lt;REPOSITORY&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcloud artifacts packages list --repository&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;lt;PROJECT ID&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcloud config list
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcloud services &lt;span style=&#34;color:#ff5c57&#34;&gt;enable&lt;/span&gt; artifactregistry.googleapis.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcloud auth configure-docker &amp;lt;LOCATION&amp;gt;-docker.pkg.dev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這樣之後就可以開始 pull &amp;amp; push 了&lt;/p&gt;
+&lt;p&gt;可以看到要拉取的 path 結構大致上如下&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;us-central1-docker.pkg.dev/my-project/team1/web-app:1.0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;基本上結構就是&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;LOCATION&amp;gt;-docker.pkg.dev/&amp;lt;PROJECT ID&amp;gt;/&amp;lt;REPOSITORY&amp;gt;/&amp;lt;IMAGE NAME&amp;gt;:&amp;lt;VERSION&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;補充&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a3%9c%e5%85%85&#34;&gt;
+        #
+    &lt;/a&gt;
+    補充
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;有時為了指令的便利性可以利用以下設定來避免需要 sudo&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/engine/install/linux-postinstall/&#34;&gt;Manage Docker as a non-root user&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Puppeteer 安裝在 ubuntu server 使用紀錄</title>
-      <link>https://blog.tedshd.io/posts/puppeteer_on_ubuntu_server/</link>
+      <link>/posts/puppeteer_on_ubuntu_server/</link>
       <pubDate>Fri, 20 Nov 2020 10:52:35 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/puppeteer_on_ubuntu_server/</guid>
-      <description>Puppeteer 是 Google 推出的基於 nodejs 的一套工具 可以控制 Chrome 和 Chromium 所以在爬蟲和測試等等需求都很好用 這裡記錄一下在 GCP 上面開一台 Computer Engine 後裝 Puppeteer 的紀錄 1. CE 開一個 instance 之前開 f1-mirco(1vCPU &amp;amp; 0.6G</description>
+      
+      <guid>/posts/puppeteer_on_ubuntu_server/</guid>
+      <description>&lt;p&gt;Puppeteer 是 Google 推出的基於 nodejs 的一套工具
+可以控制 Chrome 和 Chromium
+所以在爬蟲和測試等等需求都很好用&lt;/p&gt;
+&lt;p&gt;這裡記錄一下在 GCP 上面開一台 Computer Engine 後裝 Puppeteer 的紀錄&lt;/p&gt;
+&lt;h2 id=&#34;1-ce-開一個-instance&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#1-ce-%e9%96%8b%e4%b8%80%e5%80%8b-instance&#34;&gt;
+        #
+    &lt;/a&gt;
+    1. CE 開一個 instance
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;之前開 f1-mirco(1vCPU &amp;amp; 0.6G RAM)(共用核心)&lt;/p&gt;
+&lt;p&gt;這樣的等級如果只是 load 完頁面爬內容還是可以撐得住的&lt;/p&gt;
+&lt;p&gt;但是要做一些操作行為或是下滑垃取 AJAX 內容等等就不夠用了&lt;/p&gt;
+&lt;p&gt;所以就開了一台 e2-small (2vCPU &amp;amp; 2GB RAM)(非共用核心) 來跑&lt;/p&gt;
+&lt;p&gt;這次是裝 ubuntu 20.04 LTS&lt;/p&gt;
+&lt;h2 id=&#34;2-安裝-node&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2-%e5%ae%89%e8%a3%9d-node&#34;&gt;
+        #
+    &lt;/a&gt;
+    2. 安裝 node
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;先拉 node 套件庫下來&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;裝 nodejs&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install nodejs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/&#34;&gt;Refer - How to Install Node.js and npm on Ubuntu 18.04&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-裝要啟動-puppeteer-和-chrome-等相關套件&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#3-%e8%a3%9d%e8%a6%81%e5%95%9f%e5%8b%95-puppeteer-%e5%92%8c-chrome-%e7%ad%89%e7%9b%b8%e9%97%9c%e5%a5%97%e4%bb%b6&#34;&gt;
+        #
+    &lt;/a&gt;
+    3. 裝要啟動 Puppeteer 和 chrome 等相關套件
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install ca-certificates fonts-liberation libappindicator3-1 libasound2 libatk-bridge2.0-0 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgbm1 libgcc1 libglib2.0-0 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 lsb-release wget xdg-utils
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#chrome-headless-doesnt-launch-on-unix&#34;&gt;refer - Troubleshooting&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通常裝完 Puppeteer 沒有啟動成功大多是有套件遺漏造成啟動不了 Chrome/Chromium&lt;/p&gt;
+&lt;h2 id=&#34;3-裝-puppeteer&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#3-%e8%a3%9d-puppeteer&#34;&gt;
+        #
+    &lt;/a&gt;
+    3. 裝 Puppeteer
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm i puppeteer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;不要裝 puppeteer-core(因為這不包含 browser), 這個東西要裝請在自己的電腦裝來玩&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/puppeteer/puppeteer&#34;&gt;Github - puppeteer&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4-寫個-sample-code-吧&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#4-%e5%af%ab%e5%80%8b-sample-code-%e5%90%a7&#34;&gt;
+        #
+    &lt;/a&gt;
+    4. 寫個 sample code 吧
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; puppeteer &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;puppeteer&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#ff6ac1&#34;&gt;async&lt;/span&gt; () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; browser &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; puppeteer.launch({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    args&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;--no-sandbox&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; page &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; browser.newPage();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; page.&lt;span style=&#34;color:#ff6ac1&#34;&gt;goto&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;https://google.com&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; page.screenshot({ path&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;example.png&amp;#34;&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;await&lt;/span&gt; browser.close();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;記得加上 &lt;strong&gt;&amp;ndash;no-sandbox&lt;/strong&gt;
+有時在 terminal 有問題是因為沒加這個參數(但這是個選項)&lt;/p&gt;
+&lt;h2 id=&#34;troubleshooting&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#troubleshooting&#34;&gt;
+        #
+    &lt;/a&gt;
+    Troubleshooting
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;在 Puppeteer 有個整理出來的 Troubleshooting&lt;/p&gt;
+&lt;p&gt;如果有任何狀況都可以參考該頁面&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md&#34;&gt;troubleshooting&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;log&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#log&#34;&gt;
+        #
+    &lt;/a&gt;
+    Log
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;在使用時參考 &lt;code&gt;launch&lt;/code&gt; 的 &lt;code&gt;arg&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;使用以下的內容當參考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://peter.sh/experiments/chromium-command-line-switches/&#34;&gt;List of Chromium Command Line Switches&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;puppeteer 文件也是有許多 method 的使用方式&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://pptr.dev/&#34;&gt;https://pptr.dev/&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

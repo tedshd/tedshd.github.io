@@ -1,20 +1,166 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Google SEO on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/google-seo/</link>
-    <description>Recent content in Google SEO on tedshd&#39;s DevNote</description>
+    <title>Google SEO on Tedshd&#39;s Dev note</title>
+    <link>/categories/google-seo/</link>
+    <description>Tedshd&#39;s Dev note (Google SEO)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/google-seo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/google-seo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Google search develop for SEO - research log</title>
-      <link>https://blog.tedshd.io/posts/2017-04-24-google-search-develop-for-seo-research-log/</link>
+      <link>/posts/2017-04-24-google-search-develop-for-seo-research-log/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2017-04-24-google-search-develop-for-seo-research-log/</guid>
-      <description>Google search develop for SEO - research log 對於一個網站上線要讓 Google 容易搜尋到需要做很多事 多到爆炸,而且每年都有新東西出來, 實在看得很煩&amp;hellip; 感覺網路都被 Google 控制</description>
+      
+      <guid>/posts/2017-04-24-google-search-develop-for-seo-research-log/</guid>
+      <description>&lt;h2 id=&#34;google-search-develop-for-seo---research-log&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#google-search-develop-for-seo---research-log&#34;&gt;
+        #
+    &lt;/a&gt;
+    Google search develop for SEO - research log
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;對於一個網站上線要讓 Google 容易搜尋到需要做很多事&lt;/p&gt;
+&lt;p&gt;多到爆炸,而且每年都有新東西出來, 實在看得很煩&amp;hellip;&lt;/p&gt;
+&lt;p&gt;感覺網路都被 Google 控制了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Google 甚至出了一個develop guide&lt;/p&gt;
+&lt;p&gt;如要最新的消息與規範可以到 &lt;a href=&#34;https://developers.google.com/search/docs/guides/&#34;&gt;Introduction | Search | Google Developers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;因為以下寫的東西可能過幾年後又有新的東西要加了&lt;/p&gt;
+&lt;p&gt;最後會再補充一些 social media 的 meta tag&amp;hellip;&lt;/p&gt;
+&lt;p&gt;注意&lt;/p&gt;
+&lt;p&gt;這只是列出提要, 具體細節可以看所附的想關參考連結或拿關鍵字餵 Google&lt;/p&gt;
+&lt;p&gt;不然這文章寫一個禮拜都還不一定寫得完&lt;/p&gt;
+&lt;p&gt;但主要的經驗會在文章中提到&lt;/p&gt;
+&lt;h3 id=&#34;網站上線要給-google-crawler-爬需要注意的東西&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b6%b2%e7%ab%99%e4%b8%8a%e7%b7%9a%e8%a6%81%e7%b5%a6-google-crawler-%e7%88%ac%e9%9c%80%e8%a6%81%e6%b3%a8%e6%84%8f%e7%9a%84%e6%9d%b1%e8%a5%bf&#34;&gt;
+        ##
+    &lt;/a&gt;
+    網站上線要給 Google crawler 爬需要注意的東西
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;metadata&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#metadata&#34;&gt;
+        ###
+    &lt;/a&gt;
+    metadata
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;以下兩種方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;建立 mockuop data&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;建立 &lt;a href=&#34;https://www.google.com/webmasters/#?modal_active=none&#34;&gt;Google search console(webmaster)&lt;/a&gt; or &lt;a href=&#34;https://www.google.com/business/&#34;&gt;Google My Business&lt;/a&gt;(這通常是為了公司品牌或店家使用)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;身為一個攻城獅&lt;/p&gt;
+&lt;p&gt;建立 mockup data 是基本(後續會介紹)&lt;/p&gt;
+&lt;p&gt;Google search console 可以讓你了解關於你的網站在 Google 上的一些情況, 像是被 search 多少次、曝光多少次或被  Google 建立了多少 index 等等, 還有很多東西, 也都會在加入許多新的功能, 所以最好定期去看一下&lt;/p&gt;
+&lt;p&gt;Google My Business 就是像下圖的東西, 但沒用過, 所以不知道具體的細節&lt;/p&gt;
+&lt;img class=&#34;left&#34; src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-04-24%20%E4%B8%8A%E5%8D%8810.59.19.png?alt=media&amp;amp;token=be4bbc76-bbb6-48d1-8cc6-4c6b0178cc49&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/logdown%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202017-04-24%20%E4%B8%8A%E5%8D%8811.00.56.png?alt=media&amp;amp;token=eb25ad74-49e8-4fda-abb4-afac1fd8a963&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;準備接下來的東西&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%ba%96%e5%82%99%e6%8e%a5%e4%b8%8b%e4%be%86%e7%9a%84%e6%9d%b1%e8%a5%bf&#34;&gt;
+        ###
+    &lt;/a&gt;
+    準備接下來的東西
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://firebase.google.com/docs/app-indexing/&#34;&gt;App Indexing&lt;/a&gt;(有 App 的服務才要做, 不管是 iOS 或 Android 都可以做)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/webmasters/mobile-sites/&#34;&gt;Mobile Friendly&lt;/a&gt;(不管你的網站是 RWD 還是 AWD 都要處理, 不然你的 SEO 就準備說掰掰了)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/&#34;&gt;AMP&lt;/a&gt;(Google 提出的, Facebook 有個類似的叫 instant articles)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Markup data(不管是 JSON-LD 還是 sechema 都很重要, sitemap 也不要忘了)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;上述東西的一些細節&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%b8%8a%e8%bf%b0%e6%9d%b1%e8%a5%bf%e7%9a%84%e4%b8%80%e4%ba%9b%e7%b4%b0%e7%af%80&#34;&gt;
+        ##
+    &lt;/a&gt;
+    上述東西的一些細節
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;關於-url-這件事&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%97%9c%e6%96%bc-url-%e9%80%99%e4%bb%b6%e4%ba%8b&#34;&gt;
+        ###
+    &lt;/a&gt;
+    關於 URL 這件事
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Canonical URLs - 主要固定的 url&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;非 mobile url 非 amp url 非 短網址, 需注意的是假如是產品列表頁, 可以不要在這個值加上像是(&lt;code&gt;p=1&lt;/code&gt; or &lt;code&gt;page=2&lt;/code&gt;) 等頁數的 query string 這可以讓分頁的 rank 算到這產品頁來&lt;/p&gt;
+&lt;p&gt;redirect 採用 301&lt;/p&gt;
+&lt;p&gt;儘量使用 &lt;code&gt;https&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;只列出一些要注意的點&lt;/p&gt;
+&lt;p&gt;具體可參考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.google.com/webmasters/answer/139066?hl=zh-Hant&#34;&gt;使用標準網址&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Alternate URLs - 非主要性的 url&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;像是其他語系的 url 或 mobile url 或 amp url 等都是這類型的&lt;/p&gt;
+&lt;p&gt;更多關於 url 要注意的事&lt;/p&gt;
+&lt;p&gt;Google 有份文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/search/docs/guides/associate-resources&#34;&gt;Associate Your Online Resources&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可以參考&lt;/p&gt;
+&lt;p&gt;懶得進去的下面有列舉一下要注意的 url 類型&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AMP page URLs (where supported)&lt;/li&gt;
+&lt;li&gt;App URLs&lt;/li&gt;
+&lt;li&gt;Mobile-specific website URLs&lt;/li&gt;
+&lt;li&gt;Standard website URLs&lt;/li&gt;
+&lt;li&gt;International sites URLs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;怕有人不知道&lt;/p&gt;
+&lt;p&gt;最後補充個 Google crawler 的機制&lt;/p&gt;
+&lt;p&gt;crawler 一進入頁面會抓取頁面中所有連結且如果是站內連結&lt;/p&gt;
+&lt;p&gt;crawler 會再進去站內連結的頁面抓該頁面的資料&lt;/p&gt;
+&lt;p&gt;但如果網站有的頁面是原本的頁面上不會有 link 的那這樣 crawler 就不會抓到了&lt;/p&gt;
+&lt;p&gt;所以這時就要用提交 sitemap 的方式來讓 Google index 這頁面&lt;/p&gt;
+&lt;p&gt;關於 sitemap format 可參考 &lt;a href=&#34;https://www.sitemaps.org/protocol.html&#34;&gt;sitemaps.org - Protocol&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;對於很多頁面可能是 UGC(User Generated Content) 的頁面可以用提交 sitemap 的方式&lt;/p&gt;
+&lt;p&gt;最後針對 SPA 其實也是有解法的, 就目前來說 Google crawler 都可以抓 #! 了&lt;/p&gt;
+&lt;p&gt;可參考 &lt;a href=&#34;https://webmasters.googleblog.com/2015/10/deprecating-our-ajax-crawling-scheme.html&#34;&gt;Webmaster Central Blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但何時會再改就是看 Google 心情了&lt;/p&gt;
+&lt;h4 id=&#34;關於-metadata-這件事&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%97%9c%e6%96%bc-metadata-%e9%80%99%e4%bb%b6%e4%ba%8b&#34;&gt;
+        ###
+    &lt;/a&gt;
+    關於 metadata 這件事
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/search/docs/guides/intro-structured-data&#34;&gt;Introduction to Structured Data&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;眾所皆知的有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Microdata&lt;/li&gt;
+&lt;li&gt;JSON-LD&lt;/li&gt;
+&lt;li&gt;RDFa&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但其實都還是遵循 &lt;a href=&#34;http://schema.org/&#34;&gt;schema.org&lt;/a&gt; 中的規範&lt;/p&gt;
+&lt;p&gt;只是呈現的格式不同而已&lt;/p&gt;
+&lt;p&gt;==待更新==&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

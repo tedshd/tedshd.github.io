@@ -1,20 +1,92 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JavaScript Webpack RequireJS on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/javascript-webpack-requirejs/</link>
-    <description>Recent content in JavaScript Webpack RequireJS on tedshd&#39;s DevNote</description>
+    <title>JavaScript Webpack RequireJS on Tedshd&#39;s Dev note</title>
+    <link>/categories/javascript-webpack-requirejs/</link>
+    <description>Tedshd&#39;s Dev note (JavaScript Webpack RequireJS)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/javascript-webpack-requirejs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jun 2016 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/javascript-webpack-requirejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>JavaScript - Why i from RequireJS to webpack</title>
-      <link>https://blog.tedshd.io/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/</link>
+      <link>/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/</link>
       <pubDate>Tue, 28 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/</guid>
-      <description>Why i from RequireJS to webpack RequireJS is a Asynchronous Module Definition(AMD) lib&#xA;Its powerful to handle modulize on your page and you can handle all loader on JavaScript, you can focus on JavaScript function and web page.&#xA;But if your module is become complex and more module, you can find JavaScript request become more and more.&#xA;You can find it is a serious performance problem.&#xA;Your network has lot of request of js.</description>
+      
+      <guid>/posts/2016-06-28-javascript-why-i-from-requirejs-to-webpack/</guid>
+      <description>&lt;h2 id=&#34;why-i-from-requirejs-to-webpack&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#why-i-from-requirejs-to-webpack&#34;&gt;
+        #
+    &lt;/a&gt;
+    Why i from RequireJS to webpack
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://requirejs.org/&#34;&gt;RequireJS&lt;/a&gt; is a Asynchronous Module Definition(AMD) lib&lt;/p&gt;
+&lt;p&gt;Its powerful to handle modulize on your page and you can handle all loader on JavaScript, you can focus on JavaScript function and web page.&lt;/p&gt;
+&lt;p&gt;But if your module is become complex and more module, you can find JavaScript request become more and more.&lt;/p&gt;
+&lt;p&gt;You can find it is a serious performance problem.&lt;/p&gt;
+&lt;p&gt;Your network has lot of request of js.&lt;/p&gt;
+&lt;p&gt;I want to less or one js request on a page&lt;/p&gt;
+&lt;p&gt;So i choice &lt;a href=&#34;http://webpack.github.io/docs/&#34;&gt;webpack&lt;/a&gt; this tool.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s powerfull tool handle module bundle.&lt;/p&gt;
+&lt;p&gt;This is what i want change.&lt;/p&gt;
+&lt;p&gt;Before&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/745512/GJSJQZt7Si2hu2CVLE3g_requirejs.png&#34; alt=&#34;requirejs.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;After&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/745512/rVQY4FhgRO6ctsPQZwPP_webpack.png&#34; alt=&#34;webpack.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If want to use a lib for global like jQuery&lt;/p&gt;
+&lt;p&gt;Must use npm install &amp;amp; use ProvidePlugin in &lt;code&gt;webpack.config.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plugins&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; webpack.ProvidePlugin({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        $&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;jquery&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        jQuery&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;jquery&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;window.jQuery&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;jquery&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;how-it-run&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#how-it-run&#34;&gt;
+        ##
+    &lt;/a&gt;
+    How it run
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;You can use&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;webpack
+# if you want watch change
+webpack --watch
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;more in &lt;a href=&#34;https://webpack.github.io/docs/cli.html&#34;&gt;https://webpack.github.io/docs/cli.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;use-case&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#use-case&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Use case
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;If you want bundle all file in directory&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; fs &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    entries &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; fs.readdirSync(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./mobile/js/&amp;#39;&lt;/span&gt;).filter(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(file) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; file.match(&lt;span style=&#34;color:#5af78e&#34;&gt;/.*\.js$/&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;entries&lt;/code&gt; is a Array show all file.&lt;/p&gt;
+&lt;h3 id=&#34;my-webpack&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#my-webpack&#34;&gt;
+        ##
+    &lt;/a&gt;
+    My webpack
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;script src=&#34;https://gist.github.com/tedshd/614ee6f36a6ec6b76ffb088482ef7ba8.js&#34;&gt;&lt;/script&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GA4 on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/ga4/</link>
-    <description>Recent content in GA4 on tedshd&#39;s DevNote</description>
+    <title>GA4 on Tedshd&#39;s Dev note</title>
+    <link>/categories/ga4/</link>
+    <description>Tedshd&#39;s Dev note (GA4)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Tue, 30 Mar 2021 11:47:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/ga4/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Mar 2021 10:46:21 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/ga4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>GA4 資料整理</title>
-      <link>https://blog.tedshd.io/posts/ga4_research_list/</link>
+      <link>/posts/ga4_research_list/</link>
       <pubDate>Tue, 30 Mar 2021 10:46:21 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/ga4_research_list/</guid>
-      <description>因為在 2020 年下半年 Google 更新的 GA4 的版本出來 基本上就是全新版本的 GA 了 和舊的 GA 使用方式與數據都不相容 主要是因為因應現在 App 記錄和觀察數據的方式和以前單純</description>
+      
+      <guid>/posts/ga4_research_list/</guid>
+      <description>&lt;p&gt;因為在 2020 年下半年 Google 更新的 GA4 的版本出來&lt;/p&gt;
+&lt;p&gt;基本上就是全新版本的 GA 了&lt;/p&gt;
+&lt;p&gt;和舊的 GA 使用方式與數據都不相容&lt;/p&gt;
+&lt;p&gt;主要是因為因應現在 App 記錄和觀察數據的方式和以前單純在 Web 上面不一樣&lt;/p&gt;
+&lt;p&gt;所以 Google 開發了新的 GA4 來對應這種情況&lt;/p&gt;
+&lt;p&gt;應該也是會漸漸的都要使用新的 GA4 了&lt;/p&gt;
+&lt;p&gt;舊的目前還可以繼續用, 開新的 GA 也可以使用通用型來切成開舊版的 GA&lt;/p&gt;
+&lt;p&gt;但是建議是在使用中的先繼續使用(有餘力再轉換)&lt;/p&gt;
+&lt;p&gt;新的話就開新的 GA4&lt;/p&gt;
+&lt;p&gt;這邊主要是記錄新版的使用&lt;/p&gt;
+&lt;p&gt;但大多也都是會參照其他網站的說明為主(因為很多網站介紹的很詳細)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.turingdigital.com.tw/blog/ga4p-complete-guide&#34;&gt;Refer - 【最全 GA 攻略】2021 最新版 GA4 教學，從新舊比較到自訂報表都 OK！&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這網站介紹的蠻詳細的&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

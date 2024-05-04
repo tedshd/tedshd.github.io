@@ -1,118 +1,1295 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PHP on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/php/</link>
-    <description>Recent content in PHP on tedshd&#39;s DevNote</description>
+    <title>PHP on Tedshd&#39;s Dev note</title>
+    <link>/categories/php/</link>
+    <description>Tedshd&#39;s Dev note (PHP)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 25 Apr 2022 09:52:22 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 15:43:33 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>PHP 爬蟲 抓取 HTML 內容</title>
-      <link>https://blog.tedshd.io/posts/php_crawler_html/</link>
+      <link>/posts/php_crawler_html/</link>
       <pubDate>Fri, 22 Apr 2022 15:43:33 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/php_crawler_html/</guid>
-      <description>Intro 又是久違的寫爬蟲&amp;hellip; 這次是接手大大們的 code 寫的是 PHP 版本 研究了一下寫法 才發現現在可以不使用第三方套件就可以處理了 所以這裡紀錄一下 取</description>
+      
+      <guid>/posts/php_crawler_html/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;又是久違的寫爬蟲&amp;hellip;&lt;/p&gt;
+&lt;p&gt;這次是接手大大們的 code&lt;/p&gt;
+&lt;p&gt;寫的是 PHP 版本&lt;/p&gt;
+&lt;p&gt;研究了一下寫法&lt;/p&gt;
+&lt;p&gt;才發現現在可以不使用第三方套件就可以處理了&lt;/p&gt;
+&lt;p&gt;所以這裡紀錄一下&lt;/p&gt;
+&lt;h2 id=&#34;取得-html-內容&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%8f%96%e5%be%97-html-%e5%85%a7%e5%ae%b9&#34;&gt;
+        #
+    &lt;/a&gt;
+    取得 HTML 內容
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 curl&lt;/li&gt;
+&lt;li&gt;使用 file_get_contents&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;curl 是我常用的方式
+看了大大們的 code 才知道原來 file_get_contents 也可以取 http/https 內容&amp;hellip;&lt;/p&gt;
+&lt;p&gt;這邊簡單貼一下兩種作法的範例&lt;/p&gt;
+&lt;h3 id=&#34;curl&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#curl&#34;&gt;
+        ##
+    &lt;/a&gt;
+    curl
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;httpGet&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff5c57&#34;&gt;$ch&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; curl_init();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  curl_setopt(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ch&lt;/span&gt;,CURLOPT_URL,&lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  curl_setopt(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ch&lt;/span&gt;,CURLOPT_RETURNTRANSFER,&lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  curl_setopt(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ch&lt;/span&gt;,CURLOPT_HEADER, [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff5c57&#34;&gt;$output&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;curl_exec(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ch&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  curl_close(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ch&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$output&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;file_get_contents&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#file_get_contents&#34;&gt;
+        ##
+    &lt;/a&gt;
+    file_get_contents
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;htmlContentGet&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff5c57&#34;&gt;$opts&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;method&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;GET&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;header&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;\r\n&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; file_get_contents(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;false&lt;/span&gt;, stream_context_create(&lt;span style=&#34;color:#ff5c57&#34;&gt;$opts&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果需要一些特別的 header 或是 querystring 就在各自處理&lt;/p&gt;
+&lt;p&gt;另外提一下, 用 file_get_contents 也可以抓取本地檔案, 所以也可以打開本地的 html file(至少我以前用 file_get_contents 都是用來打開本地檔案的)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.php.net/manual/en/function.file-get-contents.php&#34;&gt;refer - PHP: file_get_contents - Manual&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;抓取-dom&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%8a%93%e5%8f%96-dom&#34;&gt;
+        #
+    &lt;/a&gt;
+    抓取 DOM
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;研究了一下也有不少方式可以做&lt;/p&gt;
+&lt;p&gt;因為上面方法回來的是 string&lt;/p&gt;
+&lt;p&gt;所以接下來最重要的事情是如何擷取出想要的內容&lt;/p&gt;
+&lt;p&gt;大致有兩種方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用 preg_replace, str_replace, strpos, substr 等方法處理&lt;/li&gt;
+&lt;li&gt;針對 DOM 轉成物件來處理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;各有優缺點&lt;/p&gt;
+&lt;p&gt;就看最後決定要怎麼做&lt;/p&gt;
+&lt;p&gt;這裡針對 2 的處理方式來處理&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; DOMDocument();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;loadHTML&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$html_string&lt;/span&gt;, LIBXML_NOERROR);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這裡又細分兩種處理方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;DOM HTML&lt;/li&gt;
+&lt;li&gt;XPath&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;dom-html&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#dom-html&#34;&gt;
+        ##
+    &lt;/a&gt;
+    DOM HTML
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; DOMDocument();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;loadHTML&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$html_string&lt;/span&gt;, LIBXML_NOERROR);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$documentElement&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;documentElement&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;xpath&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#xpath&#34;&gt;
+        ##
+    &lt;/a&gt;
+    XPath
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; DOMDocument();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;loadHTML&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$html_string&lt;/span&gt;, LIBXML_NOERROR);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$xpath&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; DOMXpath(&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這兩種的差別就在於支援的取 DOM 的方式不同&lt;/p&gt;
+&lt;p&gt;documentElement 這個 Class 底下取得 DOM 物件的方法名稱大多和 JavaScript 的名稱一樣&lt;/p&gt;
+&lt;p&gt;可以參考以下文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.php.net/manual/en/class.domelement.php&#34;&gt;refer - PHP: DOMElement - Manual&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以下列舉一些範例&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$span&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$documentElement&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;getElementsByTagName&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;span&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;foreach&lt;/span&gt;( &lt;span style=&#34;color:#ff5c57&#34;&gt;$span&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$item&lt;/span&gt; ) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$item&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;textContent&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$img&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$documentElement&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;getElementsByTagName&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;img&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;foreach&lt;/span&gt;( &lt;span style=&#34;color:#ff5c57&#34;&gt;$img&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$item&lt;/span&gt; ) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$item&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;getAttribute&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;src&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;比較可惜的是它沒有抓取 class 的方式&lt;/p&gt;
+&lt;p&gt;這種情況就可以用取 XPath 的方式來做&lt;/p&gt;
+&lt;p&gt;基本上我個人是比較喜歡 XPath 的方式&lt;/p&gt;
+&lt;p&gt;因為相對比較好用&lt;/p&gt;
+&lt;p&gt;後續要調整也相對容易, 只要改動 XPath 就可以了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$xpath&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; DOMXpath(&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$desc&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$xpath&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;query&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/html/body/div[2]/div[2]/div/div[1]/a/img&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;foreach&lt;/span&gt;( &lt;span style=&#34;color:#ff5c57&#34;&gt;$desc&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$item&lt;/span&gt; ) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$item&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;getAttribute&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;src&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://codingreflections.com/how-to-parse-html-using-php-native-classes/&#34;&gt;refer - How to Parse HTML using PHP Native Classes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.php.net/manual/zh/class.domdocument.php&#34;&gt;refer - PHP: DOMDocument - Manual&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b5%90%e8%aa%9e&#34;&gt;
+        #
+    &lt;/a&gt;
+    結語
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;以上的方式都只適用於 SSR 的頁面&lt;/p&gt;
+&lt;p&gt;如果內容是動態產生的一律建議直接用打 API 的方式去拿內容&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>PHP - 使用 urlencode rawurlencode 的差異和使用 http_build_query</title>
-      <link>https://blog.tedshd.io/posts/php_urlencode_rawurlencode_and_http_build_query/</link>
+      <link>/posts/php_urlencode_rawurlencode_and_http_build_query/</link>
       <pubDate>Thu, 14 Jan 2021 17:21:53 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/php_urlencode_rawurlencode_and_http_build_query/</guid>
-      <description>最近剛好遇到個問題就順便筆記一下(但是遇到的問題和要寫的內文無關就是了 XD) 前言 基本上在 url query string 的 value 都要做 url encode URL encode 會用到以下標準 RFC 1738 RFC 2396 RFC 3986 主要會</description>
+      
+      <guid>/posts/php_urlencode_rawurlencode_and_http_build_query/</guid>
+      <description>&lt;h2 id=&#34;最近剛好遇到個問題就順便筆記一下但是遇到的問題和要寫的內文無關就是了-xd&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%9c%80%e8%bf%91%e5%89%9b%e5%a5%bd%e9%81%87%e5%88%b0%e5%80%8b%e5%95%8f%e9%a1%8c%e5%b0%b1%e9%a0%86%e4%be%bf%e7%ad%86%e8%a8%98%e4%b8%80%e4%b8%8b%e4%bd%86%e6%98%af%e9%81%87%e5%88%b0%e7%9a%84%e5%95%8f%e9%a1%8c%e5%92%8c%e8%a6%81%e5%af%ab%e7%9a%84%e5%85%a7%e6%96%87%e7%84%a1%e9%97%9c%e5%b0%b1%e6%98%af%e4%ba%86-xd&#34;&gt;
+        #
+    &lt;/a&gt;
+    最近剛好遇到個問題就順便筆記一下(但是遇到的問題和要寫的內文無關就是了 XD)
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h2 id=&#34;前言&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%89%8d%e8%a8%80&#34;&gt;
+        #
+    &lt;/a&gt;
+    前言
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;基本上在 url query string 的 value 都要做 &lt;strong&gt;url encode&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;URL encode 會用到以下標準&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc1738&#34;&gt;RFC 1738&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc2396&#34;&gt;RFC 2396&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc3986&#34;&gt;RFC 3986&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;主要會使用 &lt;code&gt;%&lt;/code&gt; 字符來針對需要 escape 的字元做編碼&lt;/p&gt;
+&lt;p&gt;ex: &lt;code&gt;/&lt;/code&gt; -&amp;gt; &lt;code&gt;%2F&lt;/code&gt;, &lt;code&gt;+&lt;/code&gt; -&amp;gt; &lt;code&gt;%2B&lt;/code&gt; 等&lt;/p&gt;
+&lt;p&gt;但是主要又有幾個問題是基於 HTTP &lt;code&gt;GET&lt;/code&gt; 和 &lt;code&gt;POST&lt;/code&gt; 與 &lt;code&gt;application/x-www-form-urlencoded&lt;/code&gt; 的問題&lt;/p&gt;
+&lt;p&gt;基本上在使用 HTML form 表單使用時&lt;/p&gt;
+&lt;p&gt;採用的會是把 &lt;code&gt; &lt;/code&gt; 空格轉成 &lt;code&gt;+&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;但這些都不算是大問題&lt;/p&gt;
+&lt;p&gt;因為基於 CGI 和程式語言的實作&lt;/p&gt;
+&lt;p&gt;會把 urldeode 回來&lt;/p&gt;
+&lt;p&gt;所以在程式語言接到 query string 時都是 urldecode 回來的值&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;問題是在於 browser 上發出到 server 的 URL(就是打開 server 的 access log 看到進來的 Path 拉)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;就是該 URL 是不是有在 query string 上是經過 urlencode 的&lt;/p&gt;
+&lt;p&gt;一但是沒有 urlencode 的&lt;/p&gt;
+&lt;p&gt;server 接進來後可能就會有問題&lt;/p&gt;
+&lt;p&gt;給個最簡單的例子&lt;/p&gt;
+&lt;p&gt;我要搜尋 iphone7+&lt;/p&gt;
+&lt;p&gt;URL 就會是 &lt;code&gt;https://www.example.com/?q=iphone7%2B&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如果你的 URL 是 &lt;code&gt;https://www.example.com/?q=iphone7+&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;程式語言接到的 query string 就會變成 &lt;code&gt;iphone7 &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;當然就不是所預期的結果&lt;/p&gt;
+&lt;p&gt;正常的情況下如果是走 HTML submit&lt;/p&gt;
+&lt;p&gt;這樣當然在 input 填入 &lt;code&gt;iphone7+&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在 submit 時 browser 會幫你把 url encode&lt;/p&gt;
+&lt;p&gt;但是如果你是個 &lt;strong&gt;a link&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;是絕對不能用 &lt;code&gt;&amp;lt;a href=&amp;quot;https://www.example.com/?q=iphone7+&amp;quot;&amp;gt;iphone7+&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;得用 &lt;code&gt;&amp;lt;a href=&amp;quot;https://www.example.com/?q=iphone7%2B&amp;quot;&amp;gt;iphone7+&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;所以要記住一個原則&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;要讓 server 收到的 URL 它的 query string 得是經過 url encode 的&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;所以有些地方就得注意了&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;a link 的 url query string 得是 url encode 的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AJAX 在處理 API 時, 如果是 GET, query string 是要經過 url encode 的&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;也許有人會疑惑為啥在寫 web 時 2 的情況在使用時都沒有處理 url encode 阿&lt;/p&gt;
+&lt;p&gt;因為 library 已經幫你處理掉了&lt;/p&gt;
+&lt;p&gt;如果自己手刻一個 XMLHttpRequest 或是用 Postman 之類的工具去試試一個 GET 的 API 然後不處理 url encode 的話&lt;/p&gt;
+&lt;p&gt;就會出現問題了&lt;/p&gt;
+&lt;p&gt;那有人會疑惑說 POST 不用處理嗎?&lt;/p&gt;
+&lt;p&gt;POST 還真的不用處理&lt;/p&gt;
+&lt;p&gt;因為 POST 資料是在 content 裡面的&lt;/p&gt;
+&lt;p&gt;不是帶在 URL 上面&lt;/p&gt;
+&lt;p&gt;講了一堆廢話&lt;/p&gt;
+&lt;p&gt;還有一個要注意的重點&lt;/p&gt;
+&lt;h3 id=&#34;就是關於---和--和-20-的糾葛&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%b0%b1%e6%98%af%e9%97%9c%e6%96%bc---%e5%92%8c--%e5%92%8c-20-%e7%9a%84%e7%b3%be%e8%91%9b&#34;&gt;
+        ##
+    &lt;/a&gt;
+    就是關於 &lt;code&gt; &lt;/code&gt; 和 &lt;code&gt;+&lt;/code&gt; 和 &lt;code&gt;%20&lt;/code&gt; 的糾葛
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;PHP 有兩個 function&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;urlencode&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rawurlencode&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;兩個 function 的實作的 RFC 是不同&lt;/p&gt;
+&lt;p&gt;簡單的說就是如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;php &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; urlencode(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;php &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; rawurlencode(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;20&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;兩種 encode 的結果會是不一樣的&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;所以要注意的是用哪種 encode 就要用哪種 decode&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;個人偏好&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%80%8b%e4%ba%ba%e5%81%8f%e5%a5%bd&#34;&gt;
+        ##
+    &lt;/a&gt;
+    個人偏好
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;因為把 &lt;code&gt; &lt;/code&gt; 轉成 &lt;code&gt;+&lt;/code&gt; 是很古老的用法&lt;/p&gt;
+&lt;p&gt;且在一些情況底下容易出錯(但這種錯誤大多是使用上造成的錯誤), 基本上堅守著 &lt;strong&gt;用哪種方式 encode 就用哪種方式 decode&lt;/strong&gt; 的原則就不太會有問題&lt;/p&gt;
+&lt;p&gt;所以當有問題發生時請先確認兩端的 encode decode 方式是否一致&lt;/p&gt;
+&lt;p&gt;因為大多數都是這個問題&lt;/p&gt;
+&lt;p&gt;所以我比較偏好 &lt;code&gt; &lt;/code&gt; 轉成 &lt;code&gt;%20&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;遇到的問題&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%81%87%e5%88%b0%e7%9a%84%e5%95%8f%e9%a1%8c&#34;&gt;
+        #
+    &lt;/a&gt;
+    遇到的問題
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;扯了那麼多廢話&lt;/p&gt;
+&lt;p&gt;現在才要開始講踩到的一個雷就是&lt;/p&gt;
+&lt;p&gt;在使用 &lt;code&gt;http_build_query&lt;/code&gt; 時沒注意到的部分&amp;hellip;&lt;/p&gt;
+&lt;p&gt;如前面提到的其實在 url query string 接進來時會自動處理 urldecode 回來原來的樣子&lt;/p&gt;
+&lt;p&gt;然後有個需求就是要做一個 redirect&lt;/p&gt;
+&lt;p&gt;redirect 有個重要的要點就是要處理 query string 決定要留哪些 query string 或過濾掉不要的 query string 後在 redirect 到新的 URL&lt;/p&gt;
+&lt;p&gt;所以身為一個懶人工程師當然是會用到 &lt;a href=&#34;https://www.php.net/manual/zh/function.http-build-query.php&#34;&gt;http_build_query&lt;/a&gt; 這個好用的 function&lt;/p&gt;
+&lt;p&gt;首先當然是要把當前的 URL 取出來處理&lt;/p&gt;
+&lt;p&gt;所以很理所當然的就是用到 &lt;a href=&#34;https://www.php.net/manual/en/function.parse-url.php&#34;&gt;parse_url&lt;/a&gt; 這個好用的 function&lt;/p&gt;
+&lt;p&gt;然後再把取出來的 query 用 &lt;a href=&#34;https://www.php.net/manual/en/function.parse-str.php&#34;&gt;parse_str&lt;/a&gt; 轉成 array&lt;/p&gt;
+&lt;p&gt;在做一些處理後就丟到 &lt;code&gt;http_build_query&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;這樣完美的新 query string 就出來了誒&lt;/p&gt;
+&lt;p&gt;太棒了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;url_update_query&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$query_string&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; [])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; parse_url(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$query_array&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; [];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (isset(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;query&amp;#39;&lt;/span&gt;])) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;$query_data&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;query&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      parse_str(&lt;span style=&#34;color:#ff5c57&#34;&gt;$query_data&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$query_array&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;empty&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$query_string&lt;/span&gt;)) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;$query_string&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$key&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$value&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff5c57&#34;&gt;$query_array&lt;/span&gt;[&lt;span style=&#34;color:#ff5c57&#34;&gt;$key&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$value&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;query&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; http_build_query(&lt;span style=&#34;color:#ff5c57&#34;&gt;$query_array&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;null&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;amp;&amp;#39;&lt;/span&gt;, PHP_QUERY_RFC3986);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$scheme&lt;/span&gt;   &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; isset(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;scheme&amp;#39;&lt;/span&gt;]) &lt;span style=&#34;color:#ff6ac1&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;scheme&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;://&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$host&lt;/span&gt;     &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; isset(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;host&amp;#39;&lt;/span&gt;]) &lt;span style=&#34;color:#ff6ac1&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;host&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$port&lt;/span&gt;     &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; isset(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;port&amp;#39;&lt;/span&gt;]) &lt;span style=&#34;color:#ff6ac1&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;:&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;port&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$user&lt;/span&gt;     &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; isset(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;]) &lt;span style=&#34;color:#ff6ac1&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$pass&lt;/span&gt;     &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; isset(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;pass&amp;#39;&lt;/span&gt;]) &lt;span style=&#34;color:#ff6ac1&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;:&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;pass&amp;#39;&lt;/span&gt;]  &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$pass&lt;/span&gt;     &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;$user&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$pass&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;$pass&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;@&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$path&lt;/span&gt;     &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; isset(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;path&amp;#39;&lt;/span&gt;]) &lt;span style=&#34;color:#ff6ac1&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;path&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$query&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; isset(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;query&amp;#39;&lt;/span&gt;]) &lt;span style=&#34;color:#ff6ac1&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;?&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;query&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$fragment&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; isset(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;fragment&amp;#39;&lt;/span&gt;]) &lt;span style=&#34;color:#ff6ac1&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$url_data&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;fragment&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$scheme&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$user&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$pass&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$host&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$port&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$path&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$query&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$fragment&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然後上線後&lt;/p&gt;
+&lt;p&gt;就開始收到 error 了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;一開始以為是處理的 function 有問題&lt;/p&gt;
+&lt;p&gt;這邊我的作法是把 &lt;code&gt;$_SERVER[&#39;QUERY_STRING&#39;]&lt;/code&gt; 接近來這個 function 處理&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$_SERVER[&#39;QUERY_STRING&#39;]&lt;/code&gt; 進來的 query string 是以 STRING 呈現的全部 query string&lt;/p&gt;
+&lt;p&gt;沒有處理 urldecode&lt;/p&gt;
+&lt;p&gt;但是 &lt;code&gt;parse_str&lt;/code&gt; 會處理 url encode(這邊 PHP 會自動把 &lt;code&gt;+&lt;/code&gt; 和 &lt;code&gt;%20&lt;/code&gt; 轉成空白)&lt;/p&gt;
+&lt;p&gt;然後 &lt;code&gt;http_build_query&lt;/code&gt; 會再組成 query string 時做 url encode&lt;/p&gt;
+&lt;p&gt;所以這過程是沒有 url decode 和 encode 的問題&lt;/p&gt;
+&lt;p&gt;雖然使用情境不是上述的例子就是了(但也是一樣是 query string 相關的)&lt;/p&gt;
+&lt;p&gt;那為啥會寫一大串是因為我都照了上面的情況排查了一遍發現都不是上述的問題&amp;hellip;&lt;/p&gt;
+&lt;p&gt;最後去檢查 access log 發現是有的過來的 log 根本就是沒有 url encode&amp;hellip;&lt;/p&gt;
+&lt;p&gt;只是目前還沒找出來為何會有沒有 url encode 的來源&lt;/p&gt;
+&lt;p&gt;因為來源的連結全部都是有處理過的&amp;hellip;&lt;/p&gt;
+&lt;p&gt;而且也不是 100% 的 log 都是沒處理的&amp;hellip;&lt;/p&gt;
+&lt;p&gt;又因為不是重要的頁面所以當初 log 沒有加 User Agent(因為我們有做 log filter, 為了可以倒進去 elasticsearch 去用 kibana 看, 所以只有 filter 重要的值出來)&lt;/p&gt;
+&lt;p&gt;但是為了良好的解決問題&lt;/p&gt;
+&lt;p&gt;這邊就採用了另一個處理方式&lt;/p&gt;
+&lt;h2 id=&#34;解決方案&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a7%a3%e6%b1%ba%e6%96%b9%e6%a1%88&#34;&gt;
+        #
+    &lt;/a&gt;
+    解決方案
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;我們遇到的問題在於因為有部分的 query string 的值是使用 base64&lt;/p&gt;
+&lt;p&gt;在使用 base64 可能會產生 &lt;code&gt;+&lt;/code&gt; 等需要進行百分號編碼處理的字元&lt;/p&gt;
+&lt;p&gt;但正常來說我們在使用時會有 url encode 處理 query string 然後是給使用者這樣的連結&lt;/p&gt;
+&lt;p&gt;但是就是遇到部分的情況造成在 request 過來時是沒有 url encode 的情況&lt;/p&gt;
+&lt;p&gt;就產生問題了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;所以就採用 base64url&lt;/p&gt;
+&lt;p&gt;base64url 是基於 &lt;a href=&#34;https://tools.ietf.org/html/rfc4648#section-4&#34;&gt;RFC 4648&lt;/a&gt; 裡面有提到針對部分情況例如 URL 或是某些系統的檔案名稱無法有效處理需要做百分號編碼的情況額外會再做一次編碼解碼&lt;/p&gt;
+&lt;p&gt;主要的處理有&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;+&lt;/code&gt; =&amp;gt; &lt;code&gt;-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/&lt;/code&gt; =&amp;gt; &lt;code&gt;_&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;還有基於長度編碼&lt;/p&gt;
+&lt;p&gt;用 &lt;code&gt;=&lt;/code&gt; 填滿長度&lt;/p&gt;
+&lt;p&gt;這樣就解決掉一些 request 進來時沒有被有效的 url encode 的問題&lt;/p&gt;
+&lt;p&gt;算是一個有趣的經歷&lt;/p&gt;
+&lt;p&gt;因為這在 QA 和 RD 測試時都沒有遇到&lt;/p&gt;
+&lt;p&gt;真的上線後才遇到&amp;hellip;&lt;/p&gt;
+&lt;p&gt;還好不是百分之百發生的情況&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/55389211/string-based-data-encoding-base64-vs-base64url&#34;&gt;Refer - String based data encoding: Base64 vs Base64url&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_35725321/article/details/52126402&#34;&gt;Refer - Base64的介绍以及Base64URL介绍&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%99%BE%E5%88%86%E5%8F%B7%E7%BC%96%E7%A0%81&#34;&gt;Refer - 百分號編碼&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>HTML form submit same name in php, nodejs, golang</title>
-      <link>https://blog.tedshd.io/posts/form_multi_checked_in_php_nodejs_golang/</link>
+      <link>/posts/form_multi_checked_in_php_nodejs_golang/</link>
       <pubDate>Sat, 24 Oct 2020 15:39:19 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/form_multi_checked_in_php_nodejs_golang/</guid>
-      <description>一直以來大部分時間都在用 PHP 開發 所以也用 PHP 來處理 HTML Form 所以都下意識地認為 &amp;lt;input type=&amp;quot;checkbox&amp;quot; name=&amp;quot;game[]&amp;quot; value=&amp;quot;FGO&amp;quot;&amp;gt; 這樣的 name=&amp;quot;game[]&amp;quot; 的處理方式是正規的處理 HTML Form 的多選的方式 也疑惑為何大多的 HTML</description>
+      
+      <guid>/posts/form_multi_checked_in_php_nodejs_golang/</guid>
+      <description>&lt;p&gt;一直以來大部分時間都在用 PHP 開發&lt;/p&gt;
+&lt;p&gt;所以也用 PHP 來處理 HTML Form&lt;/p&gt;
+&lt;p&gt;所以都下意識地認為 &lt;code&gt;&amp;lt;input type=&amp;quot;checkbox&amp;quot; name=&amp;quot;game[]&amp;quot; value=&amp;quot;FGO&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;這樣的 &lt;code&gt;name=&amp;quot;game[]&amp;quot;&lt;/code&gt; 的處理方式是正規的處理 HTML Form 的多選的方式&lt;/p&gt;
+&lt;p&gt;也疑惑為何大多的 HTML Form 的教學甚至 MDN 都沒有提到這件事&lt;/p&gt;
+&lt;p&gt;就在某一天我在檢視到同事寫的 code 時&lt;/p&gt;
+&lt;p&gt;發現同事用 JavaScript 處理&lt;/p&gt;
+&lt;p&gt;硬爬出來自己組字串送出去&lt;/p&gt;
+&lt;p&gt;我才想起這令人感到恐懼的事情&lt;/p&gt;
+&lt;p&gt;因為公司同事是寫 golang 的專門, 就算前端不熟&lt;/p&gt;
+&lt;p&gt;應該也不至於連這樣概念都沒有就用硬爬的方式處理&lt;/p&gt;
+&lt;p&gt;所以再調整的同時也跟同事確認後&lt;/p&gt;
+&lt;p&gt;我也真正的直視這問題&lt;/p&gt;
+&lt;p&gt;到底要怎麼處理表單中多選的資料?&lt;/p&gt;
+&lt;p&gt;PHP 寫久的人大多都知道要用上面列出的方法&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;name=&amp;quot;game[]&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;就是 &lt;code&gt;game&lt;/code&gt; + &lt;code&gt;[]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;但是當我認真地尋找關於這個問題時&lt;/p&gt;
+&lt;p&gt;意外地發現了一篇 stackoverflow 的問答&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/16552680/several-checkboxes-sharing-the-same-name&#34;&gt;Several Checkboxes sharing the same name&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其實 W3C 根本沒有管你 name=&amp;quot;&amp;quot; 重複要如何處理&lt;/p&gt;
+&lt;p&gt;以下是 PHP, nodejs, golang 的原生方式來測試的結果&lt;/p&gt;
+&lt;h2 id=&#34;php&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php&#34;&gt;
+        #
+    &lt;/a&gt;
+    PHP
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;以下問答有提供了 PHP &lt;a href=&#34;https://www.php.net/manual/en/faq.html.php#faq.html.arrays&#34;&gt;doc&lt;/a&gt; 說明 PHP 如何處理多選&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/14026361/php-multiple-checkbox-array&#34;&gt;PHP Multiple Checkbox Array&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 name 後面添加 &lt;code&gt;[]&lt;/code&gt; 即可處理把相同的 name 組成 Array&lt;/p&gt;
+&lt;p&gt;沒有加的話是會取&lt;strong&gt;最後一個&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;POST &amp;amp; GET 都是如此處理&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game[]&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;FGO&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game[]&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;GirlsFrontline&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;game&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$_POST&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;game&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;nodejs&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#nodejs&#34;&gt;
+        #
+    &lt;/a&gt;
+    nodejs
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;GET 和 POST 用的方式不一樣&lt;/p&gt;
+&lt;p&gt;基本上都會用到 &lt;code&gt;querystring&lt;/code&gt; module&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;querystring&lt;/code&gt; module 主要都在處理 querystring 相關的功能&lt;/p&gt;
+&lt;p&gt;主要靠它 parse querystring format(ex: key=calue&amp;amp;key2=value2)&lt;/p&gt;
+&lt;p&gt;所以 nodejs 會自動把同樣的 name 併在一起組成 array&lt;/p&gt;
+&lt;h3 id=&#34;get&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#get&#34;&gt;
+        ##
+    &lt;/a&gt;
+    GET
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;會需要用 &lt;code&gt;url&lt;/code&gt; module&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;url&lt;/code&gt; module 主要是要拿掉 GET 的 url 的 querystring 再丟給 &lt;code&gt;querystring&lt;/code&gt; 處理&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;FGO&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;GirlsFrontline&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; url &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;url&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; querystring &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;querystring&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; thisUrl &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; URL(req.url, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; req.headers.host);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; query &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; URLSearchParams(thisUrl.search).toString(); &lt;span style=&#34;color:#78787e&#34;&gt;// 這一段是要把 `?key=calue&amp;amp;key2=value2` =&amp;gt; `key=calue&amp;amp;key2=value2`
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;querystring.parse(query)[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;post&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#post&#34;&gt;
+        ##
+    &lt;/a&gt;
+    POST
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;把接進來的 body 組起來再使用 &lt;code&gt;querystring&lt;/code&gt; parse&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; formData &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;req.on(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;data&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; (data) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  formData &lt;span style=&#34;color:#ff6ac1&#34;&gt;+=&lt;/span&gt; data;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;req.on(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;end&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  console.log(querystring.parse(formData)[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://nodejs.org/api/url.html&#34;&gt;URL | Node.js v15.0.1 Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://nodejs.org/api/querystring.html&#34;&gt;Query string | Node.js v15.0.1 Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;golang&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#golang&#34;&gt;
+        #
+    &lt;/a&gt;
+    golang
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;import &lt;code&gt;http&lt;/code&gt; 就可以處理 GET 和 POST 的情況&lt;/p&gt;
+&lt;p&gt;大致上的處理方式和行為和 nodejs 一樣(只差在語言的寫法不一樣)&lt;/p&gt;
+&lt;p&gt;也是會自動把同樣的 name 併在一起&lt;/p&gt;
+&lt;p&gt;組成 slice&lt;/p&gt;
+&lt;h3 id=&#34;get-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#get-1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    GET
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;request struct 裡面有 URL 有 function &lt;code&gt;Query&lt;/code&gt; 可以拿到所有的 querystring&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;FGO&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;GirlsFrontline&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;package&lt;/span&gt; main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;getHandler&lt;/span&gt;(w http.ResponseWriter, r &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt;http.Request) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fmt.&lt;span style=&#34;color:#57c7ff&#34;&gt;Println&lt;/span&gt;(r.URL.&lt;span style=&#34;color:#57c7ff&#34;&gt;Query&lt;/span&gt;()[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    http.&lt;span style=&#34;color:#57c7ff&#34;&gt;HandleFunc&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/get&amp;#34;&lt;/span&gt;, getHandler)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;post-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#post-1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    POST
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;request 有一個 &lt;code&gt;parseForm&lt;/code&gt; 的 function 可以抓取 HTTP &lt;code&gt;POST&lt;/code&gt;, &lt;code&gt;PUT&lt;/code&gt;, and &lt;code&gt;PATCH&lt;/code&gt; 的 body&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;package&lt;/span&gt; main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;postHandler&lt;/span&gt;(w http.ResponseWriter, r &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt;http.Request) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r.&lt;span style=&#34;color:#57c7ff&#34;&gt;ParseForm&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fmt.&lt;span style=&#34;color:#57c7ff&#34;&gt;Println&lt;/span&gt;(r.Form[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    http.&lt;span style=&#34;color:#57c7ff&#34;&gt;HandleFunc&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/post&amp;#34;&lt;/span&gt;, postHandler)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/net/http/#Request.ParseForm&#34;&gt;http - parseForm&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;最後總結&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%9c%80%e5%be%8c%e7%b8%bd%e7%b5%90&#34;&gt;
+        #
+    &lt;/a&gt;
+    最後總結
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;只有 PHP 要在相同的 name 後面添加 &lt;code&gt;[]&lt;/code&gt; 才可以在 PHP 端收到的 name 併在一起&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;nodejs 和 golang 都只要是 name 一樣就可以了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;針對這三種語言都有寫了 demo code&lt;/p&gt;
+&lt;p&gt;只要三種語言的環境裝好&lt;/p&gt;
+&lt;p&gt;都可以直接起 local server 來試驗看看&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tedshd/html_form_multiple_name&#34;&gt;html_form_multiple_name&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>php - 載入文字轉成圖片</title>
-      <link>https://blog.tedshd.io/posts/php_load_font_to_image/</link>
+      <link>/posts/php_load_font_to_image/</link>
       <pubDate>Thu, 14 May 2020 09:50:42 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/php_load_font_to_image/</guid>
-      <description>需求 讀取一段文字後 可以決定字型 最後要轉成圖片 使用的工具 php7.2 freetype 提前說明需要用到 GD(這通常預設就啟動了) freetype 通常會需要另外安裝 如何先檢查有沒有 GD 和</description>
+      
+      <guid>/posts/php_load_font_to_image/</guid>
+      <description>&lt;h2 id=&#34;需求&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%9c%80%e6%b1%82&#34;&gt;
+        #
+    &lt;/a&gt;
+    需求
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;讀取一段文字後&lt;/p&gt;
+&lt;p&gt;可以決定字型&lt;/p&gt;
+&lt;p&gt;最後要轉成圖片&lt;/p&gt;
+&lt;h2 id=&#34;使用的工具&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8%e7%9a%84%e5%b7%a5%e5%85%b7&#34;&gt;
+        #
+    &lt;/a&gt;
+    使用的工具
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;php7.2&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;freetype&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;提前說明需要用到 GD(這通常預設就啟動了)&lt;/p&gt;
+&lt;p&gt;freetype 通常會需要另外安裝&lt;/p&gt;
+&lt;p&gt;如何先檢查有沒有 GD 和 freetype&lt;/p&gt;
+&lt;p&gt;先用 phpinfo 檢查即可&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-&amp;gt; % php -a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Interactive shell
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;php &amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之後再打&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; phpinfo();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就會 output 資訊了&lt;/p&gt;
+&lt;p&gt;在搜尋 &lt;code&gt;gd&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GD &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GD &lt;span style=&#34;color:#ff5c57&#34;&gt;Version&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; bundled &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;2.1.0 compatible&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GIF Read &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GIF Create &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;JPEG &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libJPEG &lt;span style=&#34;color:#ff5c57&#34;&gt;Version&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;9&lt;/span&gt; compatible
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PNG &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libPNG &lt;span style=&#34;color:#ff5c57&#34;&gt;Version&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; 1.6.32
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WBMP &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;XBM &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;有安裝過 freetype 的話&lt;/p&gt;
+&lt;p&gt;就會一起顯示 &lt;strong&gt;FreeType Support&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GD &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GD &lt;span style=&#34;color:#ff5c57&#34;&gt;Version&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; bundled &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;2.1.0 compatible&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;FreeType &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;FreeType &lt;span style=&#34;color:#ff5c57&#34;&gt;Linkage&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; with freetype
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;FreeType &lt;span style=&#34;color:#ff5c57&#34;&gt;Version&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; 2.10.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GIF Read &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GIF Create &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;JPEG &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libJPEG &lt;span style=&#34;color:#ff5c57&#34;&gt;Version&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;9&lt;/span&gt; compatible
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PNG &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libPNG &lt;span style=&#34;color:#ff5c57&#34;&gt;Version&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; 1.6.37
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WBMP &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;XBM &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WebP &lt;span style=&#34;color:#ff5c57&#34;&gt;Support&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&amp;gt; enabled
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;目前環境是 Mac OSX 10.14.6&lt;/p&gt;
+&lt;p&gt;安裝 freetype 的方式大致上有三種&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;重新編譯 PHP&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;brew 安裝新的 PHP&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://php-osx.liip.ch/&#34;&gt;用別人寫的安裝 PHP 的指令&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因為剛好之前是用 Mac 自帶的 PHP 來用(PHP 7.1.23)&lt;/p&gt;
+&lt;p&gt;就順便用 brew 安裝 PHP 7.2 也順便改成用 brew 安裝的 PHP 7.2 當之後本地端的開發&lt;/p&gt;
+&lt;p&gt;brew 安裝完後其實就也一起裝好 freetype 了&lt;/p&gt;
+&lt;p&gt;這裡額外提一下自己其實有部分的開發都用 docker 開發了, 因為 PHP 版本不一(升級成本太高了, 且 PHP 不是開發主力) 所以就用 docker 封裝管理不同的服務&lt;/p&gt;
+&lt;p&gt;所以得注意一下 PHP 語法和 extension 的支援&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/41900/&#34;&gt;Refer - macos缺少freetype終極解決方案&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.si-yee.com/2019/03/19/Mac%E7%BC%BA%E5%B0%91freetype%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&#34;&gt;Refer - Mac缺少freetype解决方案&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;code&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#code&#34;&gt;
+        #
+    &lt;/a&gt;
+    Code
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;先使用 &lt;code&gt;imagettftext&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.php.net/manual/zh/function.imagettftext.php&#34;&gt;Refer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;需要再使用 &lt;code&gt;imagepng&lt;/code&gt; 來輸出成圖片&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.php.net/manual/en/function.imagepng.php&#34;&gt;Refer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以下為簡單的範例&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// 先建立一個畫布
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$im&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; imagecreatetruecolor(&lt;span style=&#34;color:#ff9f43&#34;&gt;1400&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;320&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// 建立顏色
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$white&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; imagecolorallocate(&lt;span style=&#34;color:#ff5c57&#34;&gt;$im&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;255&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;255&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;255&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$black&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; imagecolorallocate(&lt;span style=&#34;color:#ff5c57&#34;&gt;$im&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// 建立一個塗滿背景的區域
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;imagefilledrectangle(&lt;span style=&#34;color:#ff5c57&#34;&gt;$im&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;1400&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;320&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$white&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// 文字
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$text&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;中文繁體 text&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// 字型
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$font&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;NotoSansTC-Regular.otf&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// 輸出的檔案
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$file&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;font.png&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// 添加文字到圖片中
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;imagettftext(&lt;span style=&#34;color:#ff5c57&#34;&gt;$im&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;112&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;160&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$black&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$font&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$text&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// 輸出成 PNG
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;imagepng(&lt;span style=&#34;color:#ff5c57&#34;&gt;$im&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$file&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;9&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;當然要輸出成其他圖片格式 PHP 也有 &lt;code&gt;imagejpeg&lt;/code&gt; 等 function 可以使用&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>PHP -  check HTTP protocol</title>
-      <link>https://blog.tedshd.io/posts/2019-12-02-php-check-http-protocol/</link>
+      <link>/posts/2019-12-02-php-check-http-protocol/</link>
       <pubDate>Mon, 02 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2019-12-02-php-check-http-protocol/</guid>
-      <description>PHP - check HTTP protocol&#xA;Use&#xA;$protocol = (isset($_SERVER[&amp;#39;HTTPS&amp;#39;]) &amp;amp;&amp;amp; ($_SERVER[&amp;#39;HTTPS&amp;#39;] == &amp;#39;on&amp;#39; || $_SERVER[&amp;#39;HTTPS&amp;#39;] == 1) || isset($_SERVER[&amp;#39;HTTP_X_FORWARDED_PROTO&amp;#39;]) &amp;amp;&amp;amp; $_SERVER[&amp;#39;HTTP_X_FORWARDED_PROTO&amp;#39;] == &amp;#39;https&amp;#39;) ? &amp;#39;https&amp;#39; : &amp;#39;http&amp;#39;; </description>
+      
+      <guid>/posts/2019-12-02-php-check-http-protocol/</guid>
+      <description>&lt;p&gt;PHP -  check HTTP protocol&lt;/p&gt;
+&lt;p&gt;Use&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$protocol&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; (isset(&lt;span style=&#34;color:#ff5c57&#34;&gt;$_SERVER&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;HTTPS&amp;#39;&lt;/span&gt;]) &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;$_SERVER&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;HTTPS&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;on&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$_SERVER&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;HTTPS&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;||&lt;/span&gt; isset(&lt;span style=&#34;color:#ff5c57&#34;&gt;$_SERVER&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;HTTP_X_FORWARDED_PROTO&amp;#39;&lt;/span&gt;]) &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$_SERVER&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;HTTP_X_FORWARDED_PROTO&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;https&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;https&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;http&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>php - float 浮點數科學記號轉換</title>
-      <link>https://blog.tedshd.io/posts/2019-10-29-php-float-float-ingress-scientific-marker-conversion/</link>
+      <link>/posts/2019-10-29-php-float-float-ingress-scientific-marker-conversion/</link>
       <pubDate>Tue, 29 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2019-10-29-php-float-float-ingress-scientific-marker-conversion/</guid>
-      <description>php - float 浮點數科學記號轉換 php - float php 的浮點數大小受限於系統, 且會自動轉換成科學記號呈現, 但是一般人不會去看科學記號 echo 0.0000234; // 2.34E-5 在呈現上希望轉換回小數</description>
+      
+      <guid>/posts/2019-10-29-php-float-float-ingress-scientific-marker-conversion/</guid>
+      <description>&lt;h2 id=&#34;php---float-浮點數科學記號轉換&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php---float-%e6%b5%ae%e9%bb%9e%e6%95%b8%e7%a7%91%e5%ad%b8%e8%a8%98%e8%99%9f%e8%bd%89%e6%8f%9b&#34;&gt;
+        #
+    &lt;/a&gt;
+    php - float 浮點數科學記號轉換
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.php.net/manual/en/language.types.float.php&#34;&gt;php - float&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;php 的浮點數大小受限於系統, 且會自動轉換成科學記號呈現, 但是一般人不會去看科學記號&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0.0000234&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// 2.34E-5
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在呈現上希望轉換回小數點的呈現&lt;/p&gt;
+&lt;p&gt;可以用以下方法做到&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$s&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0.0000234&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;trim(rtrim(sprintf(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;%.10f&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;$s&lt;/span&gt;), &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;), &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// 0.0000234
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這邊 &lt;code&gt;sprintf&lt;/code&gt; 只取 10 位數&lt;/p&gt;
+&lt;p&gt;因為就之前遇到的系統超過 10 位數都會是不精確的浮點數&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Mac - php redis install</title>
-      <link>https://blog.tedshd.io/posts/2019-06-19-mac-php-redis-install/</link>
+      <link>/posts/2019-06-19-mac-php-redis-install/</link>
       <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2019-06-19-mac-php-redis-install/</guid>
-      <description>Mac - php redis install Mac Env Mac OSX 10.14.5 Step git clone https://www.github.com/phpredis/phpredis.git cd phpredis phpize &amp;amp;&amp;amp; ./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install test php -r &amp;#34;if (new Redis() == true){ echo \&amp;#34;\r\n OK \r\n\&amp;#34;; }&amp;#34; Troubleshooting phpize 1. $ phpize grep: /usr/include/php/main/php.h: No such file or directory grep: /usr/include/php/Zend/zend_modules.h: No such file or directory grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory Configuring for: PHP Api Version: Zend</description>
+      
+      <guid>/posts/2019-06-19-mac-php-redis-install/</guid>
+      <description>&lt;h2 id=&#34;mac---php-redis-install&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac---php-redis-install&#34;&gt;
+        #
+    &lt;/a&gt;
+    Mac - php redis install
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;mac-env&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mac-env&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Mac Env
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Mac OSX 10.14.5&lt;/p&gt;
+&lt;h3 id=&#34;step&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#step&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Step
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://www.github.com/phpredis/phpredis.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;cd&lt;/span&gt; phpredis
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;phpize &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./configure &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo make install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;test&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;php -r &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;if (new Redis() == true){ echo \&amp;#34;\r\n OK \r\n\&amp;#34;; }&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;troubleshooting&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#troubleshooting&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Troubleshooting
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;phpize&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#phpize&#34;&gt;
+        ###
+    &lt;/a&gt;
+    phpize
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;1.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ phpize
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: /usr/include/php/main/php.h: No such file or directory
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: /usr/include/php/Zend/zend_modules.h: No such file or directory
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: /usr/include/php/Zend/zend_extensions.h: No such file or directory
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Configuring &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PHP Api Version:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Zend Module Api No:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Zend Extension Api No:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;cd&lt;/span&gt; /Library/Developer/CommandLineTools/Packages/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;open macOS_SDK_headers_for_macOS_10.14.pkg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ phpize
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Cannot find autoconf. Please check your autoconf installation and the &lt;span style=&#34;color:#ff5c57&#34;&gt;$PHP_AUTOCONF&lt;/span&gt; environment variable. Then, rerun this script.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install autoconf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/51908004/install-phpredis-mac-osx&#34;&gt;Refer - install-phpredis-mac-osx&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhile.io/2018/09/26/macOS-10.14-install-sdk-headers.html&#34;&gt;Refer - macOS 10.14软件编译时找不到头文件的解决方法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.mayanlong.com/archives/2016/349.html&#34;&gt;Refer - macOS 中使用 phpize 动态添加 PHP 扩展的错误解决方法&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>php - loop directory</title>
-      <link>https://blog.tedshd.io/posts/2017-12-13-php-loop-directory/</link>
+      <link>/posts/2017-12-13-php-loop-directory/</link>
       <pubDate>Wed, 13 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2017-12-13-php-loop-directory/</guid>
-      <description>php - loop directory Sometime need use php loop directory list all file in this directory&#xA;$directory = scandir(&amp;#39;./js&amp;#39;); foreach($directory as $file) { if ($file === &amp;#39;.&amp;#39; || $file === &amp;#39;..&amp;#39;) { continue; } echo $file; echo &amp;#34;\n&amp;#34;; } </description>
+      
+      <guid>/posts/2017-12-13-php-loop-directory/</guid>
+      <description>&lt;h2 id=&#34;php---loop-directory&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php---loop-directory&#34;&gt;
+        #
+    &lt;/a&gt;
+    php - loop directory
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Sometime need use php loop directory list all file in this directory&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$directory&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; scandir(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;./js&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;foreach&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$directory&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$file&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;$file&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$file&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;..&amp;#39;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;continue&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$file&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>php - 比對時間</title>
-      <link>https://blog.tedshd.io/posts/2017-12-04-php-compared-to-time/</link>
+      <link>/posts/2017-12-04-php-compared-to-time/</link>
       <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2017-12-04-php-compared-to-time/</guid>
-      <description>php - 比對時間 記錄一下比對時間的方式(利用 timestamp) time() &amp;gt; strtotime(&amp;#39;2017-11-13 23:59:59&amp;#39;);</description>
+      
+      <guid>/posts/2017-12-04-php-compared-to-time/</guid>
+      <description>&lt;h2 id=&#34;php---比對時間&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php---%e6%af%94%e5%b0%8d%e6%99%82%e9%96%93&#34;&gt;
+        #
+    &lt;/a&gt;
+    php - 比對時間
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;記錄一下比對時間的方式(利用 timestamp)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;time() &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; strtotime(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;2017-11-13 23:59:59&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>Something about XSS(Cross-site scripting)</title>
-      <link>https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/</link>
+      <link>/posts/2015-11-01-something-about-xsscross-site-scripting/</link>
       <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/</guid>
-      <description>Something about XSS(Cross-site scripting) If not set anything Use like &amp;lt;?php echo $_GET[&amp;#39;name&amp;#39;];?&amp;gt; and querystring name = &amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp;amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer</description>
+      
+      <guid>/posts/2015-11-01-something-about-xsscross-site-scripting/</guid>
+      <description>&lt;h2 id=&#34;something-about-xsscross-site-scripting&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#something-about-xsscross-site-scripting&#34;&gt;
+        #
+    &lt;/a&gt;
+    Something about XSS(Cross-site scripting)
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;If not set anything&lt;/p&gt;
+&lt;p&gt;Use like&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;];&lt;span style=&#34;color:#78787e&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and querystring &lt;code&gt;name&lt;/code&gt; = &lt;code&gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And not defence XSS&lt;/p&gt;
+&lt;p&gt;In Firefox&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/307308/G2Ec0H05TgG5yNFaRS6K_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.40.08.png&#34; alt=&#34;螢幕快照 2015-11-01 下午8.40.08.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In Chrome&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/307308/tyAndfVzTqy50xBAJmhI_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.42.45.png&#34; alt=&#34;螢幕快照 2015-11-01 下午8.42.45.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In Safari&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/307308/xfWYDtAnQ7SoVIKdlTIL_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.43.16.png&#34; alt=&#34;螢幕快照 2015-11-01 下午8.43.16.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;result&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#result&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Result
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Chrome &amp;amp; Safari browser has handle XSS default&lt;/p&gt;
+&lt;h3 id=&#34;defence&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#defence&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Defence
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Set header &lt;code&gt;X-XSS-Protection: 1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;if use PHP, can use&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;htmlspecialchars()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// or
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt; htmlentities()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;important&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#important&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Important!
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Finally&lt;/p&gt;
+&lt;p&gt;We must know it is handle encode to avoid run JavaScript on page&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tedshd/javascript-htmlspecialchars&#34;&gt;JavaScript ver htmlspecialchars&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.qa-knowhow.com/?p=2992&#34;&gt;Refer - XSS攻擊的深入探討與防護之道&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5</title>
-      <link>https://blog.tedshd.io/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/</link>
+      <link>/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/</link>
       <pubDate>Sat, 31 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/</guid>
-      <description>php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5 sudo apt-get -y update sudo add-apt-repository ppa:ondrej/php5-5.6 sudo apt-get -y update sudo apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl php5-bcmath if use php -v check version is 5.5.x&#xA;I use&#xA;sudo apt-get -u install php5-cli Refer - PHP 5.5 or 5.6—Ubuntu</description>
+      
+      <guid>/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/</guid>
+      <description>&lt;h2 id=&#34;php---ubuntu-14-php-56-or-to-upgrade-from-php-55&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php---ubuntu-14-php-56-or-to-upgrade-from-php-55&#34;&gt;
+        #
+    &lt;/a&gt;
+    php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get -y update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo add-apt-repository ppa:ondrej/php5-5.6
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get -y update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl php5-bcmath
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;if use &lt;code&gt;php -v&lt;/code&gt; check version is 5.5.x&lt;/p&gt;
+&lt;p&gt;I use&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get -u install php5-cli
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://devdocs.magento.com/guides/v2.0/install-gde/prereq/php-ubuntu.html#instgde-prereq-php56-install-ubuntu&#34;&gt;Refer - PHP 5.5 or 5.6—Ubuntu&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>PHP - Auto update static files cache</title>
-      <link>https://blog.tedshd.io/posts/2015-08-16-php-auto-update-static-files-cache/</link>
+      <link>/posts/2015-08-16-php-auto-update-static-files-cache/</link>
       <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-08-16-php-auto-update-static-files-cache/</guid>
-      <description>PHP - Auto update static files cache We can cache static files(CSS, JavaScript) to client&#xA;When Server update static code.&#xA;We want to update cache then we can modify file or add query string update version.&#xA;We have some choice like modify url ?v=1 to ?v=2&#xA;But I want to auto modify version.&#xA;This is a way i use&#xA;&amp;lt;?php function autoversion($url) { $ver = stat($_SERVER[&amp;#39;DOCUMENT_ROOT&amp;#39;] . $url)[mtime]; return $url .</description>
+      
+      <guid>/posts/2015-08-16-php-auto-update-static-files-cache/</guid>
+      <description>&lt;h2 id=&#34;php---auto-update-static-files-cache&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php---auto-update-static-files-cache&#34;&gt;
+        #
+    &lt;/a&gt;
+    PHP - Auto update static files cache
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;We can cache static files(CSS, JavaScript) to client&lt;/p&gt;
+&lt;p&gt;When Server update static code.&lt;/p&gt;
+&lt;p&gt;We want to update cache then we can modify file or add query string update version.&lt;/p&gt;
+&lt;p&gt;We have some choice like modify url &lt;code&gt;?v=1&lt;/code&gt; to &lt;code&gt;?v=2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;But I want to auto modify version.&lt;/p&gt;
+&lt;p&gt;This is a way i use&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;autoversion&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;$ver&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; stat(&lt;span style=&#34;color:#ff5c57&#34;&gt;$_SERVER&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;DOCUMENT_ROOT&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt;)[mtime];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;?v=&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$ver&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# example
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;lt;link href=&amp;#34;&amp;lt;?php echo autoversion(&amp;#39;/path/to/theme.css&amp;#39;); ?&amp;gt;&amp;#34; rel=&amp;#34;stylesheet&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This way use file last modify time as a version.&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;First i want to use &lt;code&gt;filemtime&lt;/code&gt; but it fail.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;So i give up this way.&lt;/del&gt;&lt;/p&gt;
+&lt;h3 id=&#34;update&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#update&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Update
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Before use &lt;code&gt;filemtime()&lt;/code&gt;, must use &lt;code&gt;clearstatcache();&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And my friend say &lt;code&gt;stat&lt;/code&gt; has IO behavior, so this way is not perfect solution.&lt;/p&gt;
+&lt;p&gt;If service has lot of &lt;code&gt;stat()&lt;/code&gt; or mass request, so many IO can influences performance.&lt;/p&gt;
+&lt;p&gt;Then we can write a script add update version and run it when service deploy.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://css-tricks.com/strategies-for-cache-busting-css/&#34;&gt;Refer - Strategies for Cache-Busting CSS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://php.net/manual/en/function.stat.php&#34;&gt;Refer - stat&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://php.net/manual/en/function.filemtime.php&#34;&gt;filemtime&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>PHP - install phpcs(PHP CodeSniffer)</title>
-      <link>https://blog.tedshd.io/posts/2014-12-18-php-install-phpcsphp-codesniffer/</link>
+      <link>/posts/2014-12-18-php-install-phpcsphp-codesniffer/</link>
       <pubDate>Thu, 18 Dec 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-12-18-php-install-phpcsphp-codesniffer/</guid>
-      <description>PHP - install phpcs(PHP CodeSniffer) Use pear install phpcs&#xA;in Linux(Ubuntu 14.04) sudo pear install --alldeps php_codesniffer in Mac(Mac OS X 10.10.1 Yosemite) install pear sudo curl -O http://pear.php.net/go-pear.phar then&#xA;sudo php -d detect_unicode=0 go-pear.phar Update&#xA;pear upgrade pear pear upgrade install codesniffer sudo pear install --alldeps php_codesniffer check&#xA;phpcs -i return&#xA;The installed coding standards are MySource, PEAR, PHPCS, PSR1, PSR2, Squiz and Zend if return&#xA;Warning: include_once(PHP/CodeSniffer/CLI.php): failed to open stream: No such file or directory in /usr/bin/phpcs on line 22 Warning: include_once(): Failed opening &amp;#39;PHP/CodeSniffer/CLI.</description>
+      
+      <guid>/posts/2014-12-18-php-install-phpcsphp-codesniffer/</guid>
+      <description>&lt;h2 id=&#34;php---install-phpcsphp-codesniffer&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php---install-phpcsphp-codesniffer&#34;&gt;
+        #
+    &lt;/a&gt;
+    PHP - install phpcs(PHP CodeSniffer)
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Use pear install phpcs&lt;/p&gt;
+&lt;h3 id=&#34;in-linuxubuntu-1404&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#in-linuxubuntu-1404&#34;&gt;
+        ##
+    &lt;/a&gt;
+    in Linux(Ubuntu 14.04)
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pear install --alldeps php_codesniffer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;in-macmac-os-x-10101-yosemite&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#in-macmac-os-x-10101-yosemite&#34;&gt;
+        ##
+    &lt;/a&gt;
+    in Mac(Mac OS X 10.10.1 Yosemite)
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;install-pear&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#install-pear&#34;&gt;
+        ###
+    &lt;/a&gt;
+    install pear
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo curl -O  http://pear.php.net/go-pear.phar
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;then&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo php -d &lt;span style=&#34;color:#ff5c57&#34;&gt;detect_unicode&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; go-pear.phar
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Update&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pear upgrade pear
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pear upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;install-codesniffer&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#install-codesniffer&#34;&gt;
+        ###
+    &lt;/a&gt;
+    install codesniffer
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pear install --alldeps php_codesniffer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;check&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;phpcs -i
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;return&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The installed coding standards are MySource, PEAR, PHPCS, PSR1, PSR2, Squiz and Zend
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;if return&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Warning: include_once&lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;PHP/CodeSniffer/CLI.php&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt;: failed to open stream: No such file or directory in /usr/bin/phpcs on line &lt;span style=&#34;color:#ff9f43&#34;&gt;22&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Warning: include_once&lt;span style=&#34;color:#ff6ac1&#34;&gt;()&lt;/span&gt;: Failed opening &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;PHP/CodeSniffer/CLI.php&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; inclusion &lt;span style=&#34;color:#ff6ac1&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;include_path&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;.:&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;)&lt;/span&gt; in /usr/bin/phpcs on line &lt;span style=&#34;color:#ff9f43&#34;&gt;22&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Fatal error: Class &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;PHP_CodeSniffer_CLI&amp;#39;&lt;/span&gt; not found in /usr/bin/phpcs on line &lt;span style=&#34;color:#ff9f43&#34;&gt;25&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Must include pear path&lt;/p&gt;
+&lt;p&gt;Modify php.ini&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo vim /etc/php.ini
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;include_path&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;.:/usr/share/pear&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;usage&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#usage&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Usage
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;phpcs &amp;lt;php file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://pear.php.net/&#34;&gt;Refer - PEAR - PHP Extension and Application Repository&lt;/a&gt;
+&lt;a href=&#34;http://pear.php.net/package/PHP_CodeSniffer/download&#34;&gt;Refer - PHP_CodeSniffer&lt;/a&gt;
+&lt;a href=&#34;https://rtcamp.com/tutorials/standards/php/code-sniffer/&#34;&gt;Refer - Code Sniffer&lt;/a&gt;
+&lt;a href=&#34;http://coolestguidesontheplanet.com/installing-pear-osx-10-9-mavericks-osx10-810-7/&#34;&gt;Refer - Installing PEAR on OSX 10.9 Mavericks and OSX10.8/10.7&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Detect mobile device</title>
-      <link>https://blog.tedshd.io/posts/2013-12-07-detect-mobile-device/</link>
+      <link>/posts/2013-12-07-detect-mobile-device/</link>
       <pubDate>Sat, 07 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-12-07-detect-mobile-device/</guid>
-      <description>Detect mobile device Use PHP or JavaScript detect mobile device like iPhone, iPad, iPod or Android&amp;hellip;&#xA;Android PHP &amp;lt;?php $ua = strtolower($_SERVER[&amp;#39;HTTP_USER_AGENT&amp;#39;]); if(stripos($ua, &amp;#39;android&amp;#39;) !== false) { echo &amp;#39;Android!!&amp;#39;; exit; } ?&amp;gt; JavaScript var ua = navigator.userAgent.toLowerCase(); if(ua.indexOf(&amp;#34;android&amp;#34;) &amp;gt; -1) { document.write(&amp;#39;Android!!&amp;#39;); } Refer - Android Detection with JavaScript or PHP&#xA;Apple mobile device Refer - How to detect iPhone, iPod and iPad with PHP Refer - How to Identify an Apple iPhone, iPod or iPad Visitor to Your Website</description>
+      
+      <guid>/posts/2013-12-07-detect-mobile-device/</guid>
+      <description>&lt;h2 id=&#34;detect-mobile-device&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#detect-mobile-device&#34;&gt;
+        #
+    &lt;/a&gt;
+    Detect mobile device
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Use PHP or JavaScript detect mobile device like iPhone, iPad, iPod or Android&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;android&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#android&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Android
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;php&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php&#34;&gt;
+        ###
+    &lt;/a&gt;
+    PHP
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$ua&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; strtolower(&lt;span style=&#34;color:#ff5c57&#34;&gt;$_SERVER&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;HTTP_USER_AGENT&amp;#39;&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt;(stripos(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ua&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;android&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;!==&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;false&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Android!!&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;exit&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;javascript&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript&#34;&gt;
+        ###
+    &lt;/a&gt;
+    JavaScript
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; ua &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; navigator.userAgent.toLowerCase();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt;(ua.indexOf(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;android&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.write(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Android!!&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://davidwalsh.name/detect-android&#34;&gt;Refer - Android Detection with JavaScript or PHP&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;apple-mobile-device&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#apple-mobile-device&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Apple mobile device
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://php.quicoto.com/how-to-detect-iphone-ipod-and-ipad-with-php/&#34;&gt;Refer - How to detect iPhone, iPod and iPad with PHP&lt;/a&gt;
+&lt;a href=&#34;http://www.sitepoint.com/identify-apple-iphone-ipod-ipad-visitors/&#34;&gt;Refer - How to Identify an Apple iPhone, iPod or iPad Visitor to Your Website&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>PHP Note</title>
-      <link>https://blog.tedshd.io/posts/2013-08-30-php-note/</link>
+      <link>/posts/2013-08-30-php-note/</link>
       <pubDate>Fri, 30 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-08-30-php-note/</guid>
-      <description>PHP Note Notice 處理 db 的部分放到 model 處理來增強可用性 減少邏輯判斷 以錯誤為優先處裡 array to string &amp;lt;?php $arr = array( &amp;#39;val&amp;#39; =&amp;gt; 1, &amp;#39;str&amp;#39; =&amp;gt; &amp;#39;string&amp;#39;, ); $to_string = serialize($arr); echo $to_string; // a:2:{s:3:&amp;#34;val&amp;#34;;i:1;s:3:&amp;#34;str&amp;#34;;s:6:&amp;#34;string&amp;#34;;} $to_array = unserialize($to_string); var_dump($to_array); /* not better * if $to_string can&amp;#39;t unserialize, it has PHP</description>
+      
+      <guid>/posts/2013-08-30-php-note/</guid>
+      <description>&lt;h2 id=&#34;php-note&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php-note&#34;&gt;
+        #
+    &lt;/a&gt;
+    PHP Note
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;notice&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#notice&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Notice
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;處理 db 的部分放到 model 處理來增強可用性&lt;/li&gt;
+&lt;li&gt;減少邏輯判斷&lt;/li&gt;
+&lt;li&gt;以錯誤為優先處裡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;array-to-string&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#array-to-string&#34;&gt;
+        ##
+    &lt;/a&gt;
+    array to string
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$arr&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;array&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;val&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;str&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;string&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$to_string&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; serialize(&lt;span style=&#34;color:#ff5c57&#34;&gt;$arr&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$to_string&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// a:2:{s:3:&amp;#34;val&amp;#34;;i:1;s:3:&amp;#34;str&amp;#34;;s:6:&amp;#34;string&amp;#34;;}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$to_array&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; unserialize(&lt;span style=&#34;color:#ff5c57&#34;&gt;$to_string&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;var_dump(&lt;span style=&#34;color:#ff5c57&#34;&gt;$to_array&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;/* not better
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt; * if $to_string can&amp;#39;t unserialize, it has PHP error
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;coding-style&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#coding-style&#34;&gt;
+        ##
+    &lt;/a&gt;
+    coding style
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;在 PHP 中有許多邏輯判斷
+當有許多條件要去檢查時, 一般來說就是用 &lt;strong&gt;if&lt;/strong&gt; 一直寫下去
+最後就造成下面的情況&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;$a&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$b&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;$c&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;$c&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;$d&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這樣下去就沒完沒了, 而且縮排會越來越多, 要看 code 也很不方便
+所以假如就已作條件檢查來說
+可以用以下的做法&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// check condition 1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;$a&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!==&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$b&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// check condition 2
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$c&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$c&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// check condition 3
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;$c&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;9&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// check condition 4
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;d)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;做個 &lt;strong&gt;反向思考&lt;/strong&gt; , 把不適合的條件列出再一一 return or 作處理
+剩下的便是所需要的&lt;/p&gt;
+&lt;p&gt;有時也會遇到應該用 &lt;strong&gt;switch&lt;/strong&gt; 卻用 &lt;strong&gt;if&lt;/strong&gt; 去一直加下去的情況
+所以當 &lt;strong&gt;if&lt;/strong&gt; 用到 &lt;strong&gt;&lt;em&gt;3 個&lt;/em&gt;&lt;/strong&gt; 以上時, 就要思考要用什麼敘述來達到目的比較好&lt;/p&gt;
+&lt;h3 id=&#34;htmlspecialchars&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#htmlspecialchars&#34;&gt;
+        ##
+    &lt;/a&gt;
+    htmlspecialchars
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;在輸出資料時在 HTML 呈現會有特殊字元或跳脫字元甚至把 script 輸出執行的問題
+所以在輸出的資料是使用者輸入的, 就必須用 htmlspecialchars 包起來&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;htmlspecialchars(&lt;span style=&#34;color:#ff5c57&#34;&gt;$string&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;curl&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#curl&#34;&gt;
+        ##
+    &lt;/a&gt;
+    curl
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://calos-tw.blogspot.tw/2008/12/php-curl.html&#34;&gt;PHP CURL詳解&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

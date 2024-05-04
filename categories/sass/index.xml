@@ -1,34 +1,141 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sass on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/sass/</link>
-    <description>Recent content in Sass on tedshd&#39;s DevNote</description>
+    <title>Sass on Tedshd&#39;s Dev note</title>
+    <link>/categories/sass/</link>
+    <description>Tedshd&#39;s Dev note (Sass)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/sass/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Jul 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/sass/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>CSS - SASS handle index</title>
-      <link>https://blog.tedshd.io/posts/2014-07-10-css-sass-handle-index/</link>
+      <link>/posts/2014-07-10-css-sass-handle-index/</link>
       <pubDate>Thu, 10 Jul 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-07-10-css-sass-handle-index/</guid>
-      <description>CSS - SASS handle index Can use var control z-index $elements: con, slider, masthead; .masthead { /* z-index: 3 */ z-index: index($elements, masthead); } .slider { /* z-index: 2 */ z-index: index($elements, slider); } .con { /* z-index: 1 */ z-index: index($elements, con); } Refer - 使用 sass 有效控管 z-index 圖層順序</description>
+      
+      <guid>/posts/2014-07-10-css-sass-handle-index/</guid>
+      <description>&lt;h2 id=&#34;css---sass-handle-index&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#css---sass-handle-index&#34;&gt;
+        #
+    &lt;/a&gt;
+    CSS - SASS handle index
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Can use var control z-index&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;elements&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;con&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;slider&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;masthead&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#f3f99d&#34;&gt;masthead&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#78787e&#34;&gt;/* z-index: 3 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;z-index&lt;/span&gt;: &lt;span style=&#34;color:#57c7ff&#34;&gt;index&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$&lt;/span&gt;elements, masthead);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#f3f99d&#34;&gt;slider&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#78787e&#34;&gt;/* z-index: 2 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;z-index&lt;/span&gt;: &lt;span style=&#34;color:#57c7ff&#34;&gt;index&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$&lt;/span&gt;elements, slider);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#f3f99d&#34;&gt;con&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#78787e&#34;&gt;/* z-index: 1 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;z-index&lt;/span&gt;: &lt;span style=&#34;color:#57c7ff&#34;&gt;index&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$&lt;/span&gt;elements, con);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://blog.mukispace.com/sass-z-index-management/&#34;&gt;Refer - 使用 sass 有效控管 z-index 圖層順序&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Sass compile two spaces</title>
-      <link>https://blog.tedshd.io/posts/2013-11-20-sass-compile-two-spaces/</link>
+      <link>/posts/2013-11-20-sass-compile-two-spaces/</link>
       <pubDate>Wed, 20 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-11-20-sass-compile-two-spaces/</guid>
-      <description>Sass compile two spaces Use Sass compile to css css lndent is 2 spaces if want 4 spaces Must modify this sass source code&#xA;sass-3.2.10/lib/sass/tree/visitors/to_css.rb # before tab_str = &amp;#39; &amp;#39; * (@tabs + node.tabs) # after tab_str = &amp;#39; &amp;#39; * (@tabs + node.tabs) Refer - Change indentation in Sass</description>
+      
+      <guid>/posts/2013-11-20-sass-compile-two-spaces/</guid>
+      <description>&lt;h2 id=&#34;sass-compile-two-spaces&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sass-compile-two-spaces&#34;&gt;
+        #
+    &lt;/a&gt;
+    Sass compile two spaces
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Use Sass compile to css
+css lndent is 2 spaces
+if want 4 spaces
+Must modify this sass source code&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sass-3.2.10/lib/sass/tree/visitors/to_css.rb
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# before&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tab_str &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;  &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;@tabs&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; node&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;tabs)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# after&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tab_str &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;    &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;@tabs&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; node&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;tabs)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/13689264/change-indentation-in-sass&#34;&gt;Refer - Change indentation in Sass&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Use CSS3 animation in Compass</title>
-      <link>https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/</link>
+      <link>/posts/2013-10-12-use-css3-animation-in-compass/</link>
       <pubDate>Sat, 12 Oct 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-10-12-use-css3-animation-in-compass/</guid>
-      <description>Use CSS3 Animation In Compass Compass default dosen&amp;rsquo;t have mixin in CSS3 animation We can use this method in scss&#xA;/* define */ $animation-support: webkit, moz, o, ms, not khtml; /* use */ .animation { @include experimental(&amp;#39;animation-name&amp;#39;, move, $animation-support); @include experimental(&amp;#39;animation-duration&amp;#39;, 5s, $animation-support); @include experimental(&amp;#39;animation-iteration-count&amp;#39;, 1, $animation-support); } and add keyframes&#xA;/* define */ $animation-support: webkit, moz, o, ms, not khtml; @mixin keyframes($name) { @-webkit-keyframes #{$name} { @content; } @-moz-keyframes #{$name} { @content; } @-ms-keyframes #{$name} { @content; } @keyframes #{$name} { @content; } } /* use */ .</description>
+      
+      <guid>/posts/2013-10-12-use-css3-animation-in-compass/</guid>
+      <description>&lt;h2 id=&#34;use-css3-animation-in-compass&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#use-css3-animation-in-compass&#34;&gt;
+        #
+    &lt;/a&gt;
+    Use CSS3 Animation In Compass
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Compass default dosen&amp;rsquo;t have mixin in CSS3 animation
+We can use this method in &lt;strong&gt;scss&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;/* define */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; webkit&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; moz&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; o&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; ms&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;not&lt;/span&gt; khtml;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;/* use */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f3f99d&#34;&gt;.animation&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; experimental&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;animation-name&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; move&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; experimental&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;animation-duration&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; experimental&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;animation-iteration-count&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and add &lt;code&gt;keyframes&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;/* define */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; webkit&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; moz&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; o&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; ms&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;not&lt;/span&gt; khtml;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;@mixin&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt; keyframes&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$name&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@-webkit-keyframes&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$name&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;}&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;@content&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@-moz-keyframes&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$name&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;}&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;@content&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@-ms-keyframes&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$name&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;}&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;@content&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@keyframes&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$name&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;}&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;@content&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;/* use */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f3f99d&#34;&gt;.animation&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; experimental&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;animation-name&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; move&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; experimental&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;animation-duration&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; experimental&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;animation-iteration-count&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$animation-support&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;@include&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt; keyframes&lt;/span&gt;(move) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;%&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#57c7ff&#34;&gt;top&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;780&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#57c7ff&#34;&gt;opacity&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;%&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#57c7ff&#34;&gt;top&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;450&lt;/span&gt;&lt;span style=&#34;color:#9aedfe&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://gist.github.com/ericam/1607696&#34;&gt;Refer - keyframes-sass-output.css&lt;/a&gt;
+&lt;a href=&#34;http://stackoverflow.com/questions/17618082/getting-compass-to-add-vendor-prefixes-to-animation-selectors&#34;&gt;Refer - Getting Compass to add vendor prefixes to animation selectors&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

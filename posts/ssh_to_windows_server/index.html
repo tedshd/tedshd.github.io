@@ -1,200 +1,567 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+
+
+<html lang="en-us" data-theme="">
+<head>
     
-
-
-
-
-<title>SSH 到 Windows Server | tedshd&#39;s DevNote</title>
+        
 <meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>SSH 到 Windows Server - Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="最近因為需求要接手 Windows Server 進行維護與開發
+因為只有在很久以前幫別人處理 IIS Server 一點經驗
+時間也非常久了
+所以筆記一下這次的處理過程
+這次處理的 server 版本是 Windows Server 2019
+# SSH on GCP Compute Engine 如果是建置在 Google Cloud 的 Compute Engine 上的話
+就參考文件 Getting started with OpenSSH on Windows Compute Engine instances 就可以了
+# 前置作業 之前似乎是採用 remote desktop 的方式
+這對習慣命令列操作的人來說會有點不習慣
+而且交接程式碼和檔案都放在那台機器上
+所以為了之後方便操作, 首先就要安裝 OpenSSH
+## 安裝 OpenSSH server 因為 SSH 會有 server 和 client 的部分
+因為是需要連進去 Windows Server
+所以只需要處理 OpenSSH server 的部分
+Refer - 安裝 OpenSSH">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta name="google" content="notranslate">
-<meta id="viewport" name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='最近因為需求要接手 Windows Server 進行維護與開發 因為只有在很久以前幫別人處理 IIS Server 一點經驗 時間也非常久了 所以筆記一下這次的處理過程 這次處理的 server 版本是 Windows Server 2019'>
-<meta name="keywords" content=''>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/ssh_to_windows_server/">
-<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/ssh_to_windows_server/" />
-
-<link rel="canonical" href="https://blog.tedshd.io/posts/ssh_to_windows_server/" />
-<link rel="shortcut icon" href="/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
-<meta name="theme-color" content="">
-<meta name="robots" content="index, follow">
-<meta name="copyright" content="Tedshd">
-
-<meta property="og:title" content="SSH 到 Windows Server" />
-<meta property="og:description" content="最近因為需求要接手 Windows Server 進行維護與開發 因為只有在很久以前幫別人處理 IIS Server 一點經驗 時間也非常久了 所以筆記一下這次的處理過程 這次處理的 server 版本是 Windows Server 2019" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/ssh_to_windows_server/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-10-09T18:36:00+08:00" />
-<meta property="article:modified_time" content="2022-10-27T14:12:03+08:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="SSH 到 Windows Server"/>
-<meta name="twitter:description" content="最近因為需求要接手 Windows Server 進行維護與開發 因為只有在很久以前幫別人處理 IIS Server 一點經驗 時間也非常久了 所以筆記一下這次的處理過程 這次處理的 server 版本是 Windows Server 2019"/>
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-<script data-ad-client="ca-pub-0553186380244641" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
+
+        
+
+
+
+
+
 
 
     
+        <div class="theme-switcher">
+            <span class="inline-svg">
 
     
 
-    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
 
     
-<link>
-
-<link
-    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
-    rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
-
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
 
-    gtag('config', 'G-1NKP3D2ZGG');
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
     </script>
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
-                    tedshd&#39;s DevNote
-                </a>
-            </div>
-            
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
-                <i class="p-icon--menu"></i>
+
+
+        <ul class="social-icons noselect">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
             </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
-                <i class="p-icon--close"></i>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
             </a>
-        </div>
+        </li>
+    
 
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
 
-            <ul class="p-navigation__links" role="menu">
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/categories">Categories</a>
-                </li>
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/tags">tags</a>
-                </li>
-                
-            </ul>
+    
 
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-            
-        </nav>
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
     </div>
-</header><div id="main-content">
-<div class="page-banner">
-    <div class="row u-vertically-center">
-        <div class="col-8 pure-g">
-            <div class="pure-u">
-                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
-                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
-            </div>
-            <div class="pure-u">
-                <h2>tedshd&#39;s DevNote</h2>
-                <p>Develop &amp; Design Note by Ted</p>
-            </div>
-        </div>
+    <div class="header-top-right">
+
     </div>
 </div>
 
-<ul class="p-navigation__links sub_menu" role="menu">
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tedshd.github.io/resume/">About</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tysh310246.blogspot.tw/">Blog</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://github.com/tedshd">Github</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
-    </li>
-    
-</ul>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
 
-<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">SSH 到 Windows Server</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2022-10-09">2022-10-09</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/ssh_to_windows_server/">/posts/ssh_to_windows_server/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/linux/">Linux</a></li>
+                
+                    
+                    <li><a href="/categories/windows/">Windows</a></li>
+                
+                    
+                    <li><a href="/categories/windows-server/">Windows Server</a></li>
+                
+                    
+                    <li><a href="/categories/ssh/">SSH</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#ssh-on-gcp-compute-engine">SSH on GCP Compute Engine</a></li>
+    <li><a href="#前置作業">前置作業</a>
+      <ul>
+        <li><a href="#安裝-openssh-server">安裝 OpenSSH server</a></li>
+        <li><a href="#設定-ssh">設定 SSH</a></li>
+        <li><a href="#設定">設定</a></li>
+        <li><a href="#設定防火牆">設定防火牆</a></li>
+      </ul>
+    </li>
+    <li><a href="#ssh-連線">SSH 連線</a></li>
+    <li><a href="#利用-scp-把資料複製下來">利用 SCP 把資料複製下來</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
 </script>
 
-
-<header class="">
-    <div class="row">
-        <h1>SSH 到 Windows Server</h1>
-    </div>
-</header>
-
-
-<section class="p-strip is-shallow">
-    <main class="row post-content">
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2022-10-09
-        </p>
-        
-        <p>最近因為需求要接手 Windows Server 進行維護與開發</p>
+        <div class="content e-content">
+            <p>最近因為需求要接手 Windows Server 進行維護與開發</p>
 <p>因為只有在很久以前幫別人處理 IIS Server 一點經驗</p>
 <p>時間也非常久了</p>
 <p>所以筆記一下這次的處理過程</p>
 <p>這次處理的 server 版本是 Windows Server 2019</p>
-<h2 id="ssh-on-gcp-compute-engine">SSH on GCP Compute Engine</h2>
+<h2 id="ssh-on-gcp-compute-engine" >
+<div>
+    <a href="#ssh-on-gcp-compute-engine">
+        #
+    </a>
+    SSH on GCP Compute Engine
+</div>
+</h2>
 <p>如果是建置在 Google Cloud 的 Compute Engine 上的話</p>
 <p>就參考文件 <a href="https://cloud.google.com/blog/products/compute/using-openssh-on-windows-compute-engine-instances">Getting started with OpenSSH on Windows Compute Engine instances</a> 就可以了</p>
-<h2 id="前置作業">前置作業</h2>
+<h2 id="前置作業" >
+<div>
+    <a href="#%e5%89%8d%e7%bd%ae%e4%bd%9c%e6%a5%ad">
+        #
+    </a>
+    前置作業
+</div>
+</h2>
 <p>之前似乎是採用 remote desktop 的方式</p>
 <p>這對習慣命令列操作的人來說會有點不習慣</p>
 <p>而且交接程式碼和檔案都放在那台機器上</p>
 <p>所以為了之後方便操作, 首先就要安裝 OpenSSH</p>
-<h3 id="安裝-openssh-server">安裝 OpenSSH server</h3>
+<h3 id="安裝-openssh-server" >
+<div>
+    <a href="#%e5%ae%89%e8%a3%9d-openssh-server">
+        ##
+    </a>
+    安裝 OpenSSH server
+</div>
+</h3>
 <p>因為 SSH 會有 server 和 client 的部分</p>
 <p>因為是需要連進去 Windows Server</p>
 <p>所以只需要處理 OpenSSH server 的部分</p>
@@ -213,18 +580,39 @@
 <li>尋找 OpenSSH 伺服器，然後按一下 [安裝]。</li>
 </ul>
 <p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.27.27.png?alt=media&amp;token=99f88b20-c30d-49f5-9cc5-e6e2c7a2add1" alt="尋找 OpenSSH 伺服器，然後按一下 [安裝]。"></p>
-<h3 id="設定-ssh">設定 SSH</h3>
+<h3 id="設定-ssh" >
+<div>
+    <a href="#%e8%a8%ad%e5%ae%9a-ssh">
+        ##
+    </a>
+    設定 SSH
+</div>
+</h3>
 <p>使用 <code>PowerShell</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Start-Service sshd
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Add-WindowsCapability -Online -Name OpenSSH.Server
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span><span style="color:#ff5c57">Start-Service</span> sshd
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span><span style="color:#ff5c57">Add-WindowsCapability</span> -Online -Name OpenSSH.Server
 </span></span></code></pre></div><p>這時應該會輸出</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Path          <span style="color:#960050;background-color:#1e0010">:</span>
-</span></span><span style="display:flex;"><span>Online        <span style="color:#960050;background-color:#1e0010">:</span> True
-</span></span><span style="display:flex;"><span>RestartNeeded <span style="color:#960050;background-color:#1e0010">:</span> False
-</span></span></code></pre></div><h3 id="設定">設定</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Path          <span style="color:#ff5c57">:</span>
+</span></span><span style="display:flex;"><span>Online        <span style="color:#ff5c57">:</span> True
+</span></span><span style="display:flex;"><span>RestartNeeded <span style="color:#ff5c57">:</span> False
+</span></span></code></pre></div><h3 id="設定" >
+<div>
+    <a href="#%e8%a8%ad%e5%ae%9a">
+        ##
+    </a>
+    設定
+</div>
+</h3>
 <p>修改 SSH 設定</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>start-process notepad C:\Programdata\ssh\sshd_config
-</span></span></code></pre></div><h3 id="設定防火牆">設定防火牆</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span><span style="color:#ff5c57">start-process</span> notepad C:\Programdata\ssh\sshd_config
+</span></span></code></pre></div><h3 id="設定防火牆" >
+<div>
+    <a href="#%e8%a8%ad%e5%ae%9a%e9%98%b2%e7%81%ab%e7%89%86">
+        ##
+    </a>
+    設定防火牆
+</div>
+</h3>
 <p><code>Server Manager</code> -&gt; <code>Tool</code> -&gt; <code>Windows Defender Firewall with Advanced Security</code></p>
 <p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.46.09.png?alt=media&amp;token=986745f0-c9e1-4fb6-b23f-6184d23e529b" alt=""></p>
 <p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.47.36.png?alt=media&amp;token=6eef15cc-9f4c-42fd-80cf-3382fb87c218" alt=""></p>
@@ -234,58 +622,104 @@
 <p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.14.png?alt=media&amp;token=2690295a-8c34-4697-b716-a930d6dc1d2a" alt=""></p>
 <p><img src="https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E6%88%AA%E5%9C%96%202022-10-09%20%E4%B8%8B%E5%8D%887.57.35.png?alt=media&amp;token=15ebdba8-78a5-4235-b7c7-84e0fae388b7" alt=""></p>
 <p><a href="https://www.vultr.com/docs/how-to-install-openssh-on-windows-server-2019-or-2022/">Refer - How to Install OpenSSH on Windows Server 2019 or 2022</a></p>
-<h2 id="ssh-連線">SSH 連線</h2>
+<h2 id="ssh-連線" >
+<div>
+    <a href="#ssh-%e9%80%a3%e7%b7%9a">
+        #
+    </a>
+    SSH 連線
+</div>
+</h2>
 <p>因為目前沒有建立 ssh key 來連線的打算</p>
 <p>這邊是還用帳號密碼來連線</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh &lt;用戶名&gt;@&lt;IP&gt;
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh &lt;用戶名&gt;@&lt;IP&gt;
 </span></span></code></pre></div><p>之後再填入密碼來登入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>administrator@WINDOWS C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\A</span>dministrator&gt;
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>administrator@WINDOWS C:<span style="color:#5af78e">\U</span>sers<span style="color:#5af78e">\A</span>dministrator&gt;
 </span></span></code></pre></div><p>這邊需要注意的因為是連線到 Windows</p>
 <p>所以要用的指令都得是 Dos 指令</p>
-<h2 id="利用-scp-把資料複製下來">利用 SCP 把資料複製下來</h2>
+<h2 id="利用-scp-把資料複製下來" >
+<div>
+    <a href="#%e5%88%a9%e7%94%a8-scp-%e6%8a%8a%e8%b3%87%e6%96%99%e8%a4%87%e8%a3%bd%e4%b8%8b%e4%be%86">
+        #
+    </a>
+    利用 SCP 把資料複製下來
+</div>
+</h2>
 <p>這邊的例子是在 Mac scp Windows Server 到 Mac</p>
 <p>需要注意的是在使用 SCP 時, Windows 路徑的分隔符號得調整</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>scp -r &lt;用戶名&gt;@&lt;IP&gt;:C:/&lt;路徑&gt;/&lt;目標資料夾&gt; &lt;本地端資料夾&gt;
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>scp -r &lt;用戶名&gt;@&lt;IP&gt;:C:/&lt;路徑&gt;/&lt;目標資料夾&gt; &lt;本地端資料夾&gt;
 </span></span></code></pre></div>
-    </main>
-</section>
+        </div>
 
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
+    </article>
+
     
-    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            在 JavaScript 處理各個時區對應的日期時間
-        </span>
-    </a>
     
 
     
-    <a class="p-article-pagination__link--next" href="https://blog.tedshd.io/posts/unarchived_firebase_console_dynamic_link/">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            Unarchived firebase console dynamic link
-        </span>
-    </a>
+        
+        
     
-</div>
-    </div>
-</footer>
 
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Tedshd
-            </p>
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
         </div>
     </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
 </footer>
 
-
-
-
+        
+    </div>
 </body>
 </html>

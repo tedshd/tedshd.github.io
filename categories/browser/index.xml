@@ -1,20 +1,85 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Browser on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/browser/</link>
-    <description>Recent content in Browser on tedshd&#39;s DevNote</description>
+    <title>Browser on Tedshd&#39;s Dev note</title>
+    <link>/categories/browser/</link>
+    <description>Tedshd&#39;s Dev note (Browser)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 02 Mar 2022 12:59:30 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/browser/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Mar 2022 11:21:17 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/browser/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>在點擊連結或是 redirect 前送出請求</title>
-      <link>https://blog.tedshd.io/posts/send_request_before_click_outbound_or_redirect/</link>
+      <link>/posts/send_request_before_click_outbound_or_redirect/</link>
       <pubDate>Wed, 02 Mar 2022 11:21:17 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/send_request_before_click_outbound_or_redirect/</guid>
-      <description>Intro 有時在看 GA 的 Web 數據時會發現在 Safari 的點擊 click 事件似乎會比較少 其實這背後是有原因的 主要是各個瀏覽器再處理新 direct 時的行為不一致所導致的 在 Safari 上面發生 direct 到</description>
+      
+      <guid>/posts/send_request_before_click_outbound_or_redirect/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;有時在看 GA 的 Web 數據時會發現在 Safari 的點擊 click 事件似乎會比較少&lt;/p&gt;
+&lt;p&gt;其實這背後是有原因的&lt;/p&gt;
+&lt;p&gt;主要是各個瀏覽器再處理新 direct 時的行為不一致所導致的&lt;/p&gt;
+&lt;p&gt;在 Safari 上面發生 direct 到新的 URL 的行為(超連結或是 JS 處理) 時&lt;/p&gt;
+&lt;p&gt;事件觸發過程中的任何請求會中斷甚至不會發出請求&lt;/p&gt;
+&lt;p&gt;所以這就是為何在 GA 中的 Safari 的 click 數量會有些異常的原因&lt;/p&gt;
+&lt;p&gt;雖然 GA 預設會做 setTimeout 處理&lt;/p&gt;
+&lt;p&gt;但是也不一定是百分之百處理成功&lt;/p&gt;
+&lt;p&gt;所以最佳處理方式還是自己在用個 settimeout 包起來後再 direct&lt;/p&gt;
+&lt;p&gt;像是以下範例&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;link.addEventListener(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;, (e) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  e.preventDefault();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.gtag(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;event&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;, {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    event_category&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  setTimeout(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    location.href &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; e.target.href
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }, &lt;span style=&#34;color:#ff9f43&#34;&gt;250&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果真的要確保 GA 送完才做 direct&lt;/p&gt;
+&lt;p&gt;GA 也有提供事件發送的 callback 處理&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/analytics/devguides/collection/gtagjs/sending-data#know_when_an_event_has_been_sent&#34;&gt;Know when an event has been sent&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但是如果網路不好的話或是 GA 事件發送請求太久會造成卡畫面的問題&lt;/p&gt;
+&lt;p&gt;是不太建議使用&lt;/p&gt;
+&lt;p&gt;同理&lt;/p&gt;
+&lt;p&gt;在自己處理 click 要發送紀錄 log 之類的行為更是要這樣處理&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/EyalAr/Tech-Blog-Posts/blob/master/posts/tracking-outbound-link-clicks-in-google-analytics.markdown&#34;&gt;Refer - tracking-outbound-link-clicks-in-google-analytics.markdown&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;加碼&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%8a%a0%e7%a2%bc&#34;&gt;
+        #
+    &lt;/a&gt;
+    加碼
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;在自己設計發送 log 的情況時(例如需要額外的點擊紀錄等)&lt;/p&gt;
+&lt;p&gt;建議直接採用 GET 的方式發送然後也不要等回傳&lt;/p&gt;
+&lt;p&gt;可以使用以下的方式處理&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; apiLog &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; (type, data) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; logImage &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; Image(&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  logImage.classList.add(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;log_image&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  logImage.src &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;https://example.com/log?type=&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; type &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;amp;data=&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; data
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.body.appendChild(logImage)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  setTimeout(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;let&lt;/span&gt; img &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelectorAll(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;.log_image&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (img) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      img.outerHTML &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      img &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;null&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }, &lt;span style=&#34;color:#ff9f43&#34;&gt;100&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
   </channel>
 </rss>

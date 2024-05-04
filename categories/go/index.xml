@@ -1,20 +1,195 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Go on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/go/</link>
-    <description>Recent content in Go on tedshd&#39;s DevNote</description>
+    <title>Go on Tedshd&#39;s Dev note</title>
+    <link>/categories/go/</link>
+    <description>Tedshd&#39;s Dev note (Go)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Fri, 30 Oct 2020 15:20:10 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 15:39:19 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>HTML form submit same name in php, nodejs, golang</title>
-      <link>https://blog.tedshd.io/posts/form_multi_checked_in_php_nodejs_golang/</link>
+      <link>/posts/form_multi_checked_in_php_nodejs_golang/</link>
       <pubDate>Sat, 24 Oct 2020 15:39:19 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/form_multi_checked_in_php_nodejs_golang/</guid>
-      <description>一直以來大部分時間都在用 PHP 開發 所以也用 PHP 來處理 HTML Form 所以都下意識地認為 &amp;lt;input type=&amp;quot;checkbox&amp;quot; name=&amp;quot;game[]&amp;quot; value=&amp;quot;FGO&amp;quot;&amp;gt; 這樣的 name=&amp;quot;game[]&amp;quot; 的處理方式是正規的處理 HTML Form 的多選的方式 也疑惑為何大多的 HTML</description>
+      
+      <guid>/posts/form_multi_checked_in_php_nodejs_golang/</guid>
+      <description>&lt;p&gt;一直以來大部分時間都在用 PHP 開發&lt;/p&gt;
+&lt;p&gt;所以也用 PHP 來處理 HTML Form&lt;/p&gt;
+&lt;p&gt;所以都下意識地認為 &lt;code&gt;&amp;lt;input type=&amp;quot;checkbox&amp;quot; name=&amp;quot;game[]&amp;quot; value=&amp;quot;FGO&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;這樣的 &lt;code&gt;name=&amp;quot;game[]&amp;quot;&lt;/code&gt; 的處理方式是正規的處理 HTML Form 的多選的方式&lt;/p&gt;
+&lt;p&gt;也疑惑為何大多的 HTML Form 的教學甚至 MDN 都沒有提到這件事&lt;/p&gt;
+&lt;p&gt;就在某一天我在檢視到同事寫的 code 時&lt;/p&gt;
+&lt;p&gt;發現同事用 JavaScript 處理&lt;/p&gt;
+&lt;p&gt;硬爬出來自己組字串送出去&lt;/p&gt;
+&lt;p&gt;我才想起這令人感到恐懼的事情&lt;/p&gt;
+&lt;p&gt;因為公司同事是寫 golang 的專門, 就算前端不熟&lt;/p&gt;
+&lt;p&gt;應該也不至於連這樣概念都沒有就用硬爬的方式處理&lt;/p&gt;
+&lt;p&gt;所以再調整的同時也跟同事確認後&lt;/p&gt;
+&lt;p&gt;我也真正的直視這問題&lt;/p&gt;
+&lt;p&gt;到底要怎麼處理表單中多選的資料?&lt;/p&gt;
+&lt;p&gt;PHP 寫久的人大多都知道要用上面列出的方法&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;name=&amp;quot;game[]&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;就是 &lt;code&gt;game&lt;/code&gt; + &lt;code&gt;[]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;但是當我認真地尋找關於這個問題時&lt;/p&gt;
+&lt;p&gt;意外地發現了一篇 stackoverflow 的問答&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/16552680/several-checkboxes-sharing-the-same-name&#34;&gt;Several Checkboxes sharing the same name&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其實 W3C 根本沒有管你 name=&amp;quot;&amp;quot; 重複要如何處理&lt;/p&gt;
+&lt;p&gt;以下是 PHP, nodejs, golang 的原生方式來測試的結果&lt;/p&gt;
+&lt;h2 id=&#34;php&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#php&#34;&gt;
+        #
+    &lt;/a&gt;
+    PHP
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;以下問答有提供了 PHP &lt;a href=&#34;https://www.php.net/manual/en/faq.html.php#faq.html.arrays&#34;&gt;doc&lt;/a&gt; 說明 PHP 如何處理多選&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/14026361/php-multiple-checkbox-array&#34;&gt;PHP Multiple Checkbox Array&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 name 後面添加 &lt;code&gt;[]&lt;/code&gt; 即可處理把相同的 name 組成 Array&lt;/p&gt;
+&lt;p&gt;沒有加的話是會取&lt;strong&gt;最後一個&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;POST &amp;amp; GET 都是如此處理&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game[]&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;FGO&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game[]&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;GirlsFrontline&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;game&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$_POST&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;game&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;nodejs&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#nodejs&#34;&gt;
+        #
+    &lt;/a&gt;
+    nodejs
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;GET 和 POST 用的方式不一樣&lt;/p&gt;
+&lt;p&gt;基本上都會用到 &lt;code&gt;querystring&lt;/code&gt; module&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;querystring&lt;/code&gt; module 主要都在處理 querystring 相關的功能&lt;/p&gt;
+&lt;p&gt;主要靠它 parse querystring format(ex: key=calue&amp;amp;key2=value2)&lt;/p&gt;
+&lt;p&gt;所以 nodejs 會自動把同樣的 name 併在一起組成 array&lt;/p&gt;
+&lt;h3 id=&#34;get&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#get&#34;&gt;
+        ##
+    &lt;/a&gt;
+    GET
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;會需要用 &lt;code&gt;url&lt;/code&gt; module&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;url&lt;/code&gt; module 主要是要拿掉 GET 的 url 的 querystring 再丟給 &lt;code&gt;querystring&lt;/code&gt; 處理&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;FGO&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;GirlsFrontline&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; url &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;url&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; querystring &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;querystring&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; thisUrl &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; URL(req.url, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; req.headers.host);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;const&lt;/span&gt; query &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; URLSearchParams(thisUrl.search).toString(); &lt;span style=&#34;color:#78787e&#34;&gt;// 這一段是要把 `?key=calue&amp;amp;key2=value2` =&amp;gt; `key=calue&amp;amp;key2=value2`
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;querystring.parse(query)[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;post&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#post&#34;&gt;
+        ##
+    &lt;/a&gt;
+    POST
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;把接進來的 body 組起來再使用 &lt;code&gt;querystring&lt;/code&gt; parse&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; formData &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;req.on(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;data&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; (data) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  formData &lt;span style=&#34;color:#ff6ac1&#34;&gt;+=&lt;/span&gt; data;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;req.on(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;end&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  console.log(querystring.parse(formData)[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://nodejs.org/api/url.html&#34;&gt;URL | Node.js v15.0.1 Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://nodejs.org/api/querystring.html&#34;&gt;Query string | Node.js v15.0.1 Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;golang&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#golang&#34;&gt;
+        #
+    &lt;/a&gt;
+    golang
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;import &lt;code&gt;http&lt;/code&gt; 就可以處理 GET 和 POST 的情況&lt;/p&gt;
+&lt;p&gt;大致上的處理方式和行為和 nodejs 一樣(只差在語言的寫法不一樣)&lt;/p&gt;
+&lt;p&gt;也是會自動把同樣的 name 併在一起&lt;/p&gt;
+&lt;p&gt;組成 slice&lt;/p&gt;
+&lt;h3 id=&#34;get-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#get-1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    GET
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;request struct 裡面有 URL 有 function &lt;code&gt;Query&lt;/code&gt; 可以拿到所有的 querystring&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;FGO&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;checkbox&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;GirlsFrontline&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;package&lt;/span&gt; main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;getHandler&lt;/span&gt;(w http.ResponseWriter, r &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt;http.Request) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fmt.&lt;span style=&#34;color:#57c7ff&#34;&gt;Println&lt;/span&gt;(r.URL.&lt;span style=&#34;color:#57c7ff&#34;&gt;Query&lt;/span&gt;()[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    http.&lt;span style=&#34;color:#57c7ff&#34;&gt;HandleFunc&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/get&amp;#34;&lt;/span&gt;, getHandler)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;post-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#post-1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    POST
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;request 有一個 &lt;code&gt;parseForm&lt;/code&gt; 的 function 可以抓取 HTTP &lt;code&gt;POST&lt;/code&gt;, &lt;code&gt;PUT&lt;/code&gt;, and &lt;code&gt;PATCH&lt;/code&gt; 的 body&lt;/p&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;package&lt;/span&gt; main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;postHandler&lt;/span&gt;(w http.ResponseWriter, r &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt;http.Request) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r.&lt;span style=&#34;color:#57c7ff&#34;&gt;ParseForm&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fmt.&lt;span style=&#34;color:#57c7ff&#34;&gt;Println&lt;/span&gt;(r.Form[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;game&amp;#34;&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    http.&lt;span style=&#34;color:#57c7ff&#34;&gt;HandleFunc&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/post&amp;#34;&lt;/span&gt;, postHandler)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/net/http/#Request.ParseForm&#34;&gt;http - parseForm&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;最後總結&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%9c%80%e5%be%8c%e7%b8%bd%e7%b5%90&#34;&gt;
+        #
+    &lt;/a&gt;
+    最後總結
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;只有 PHP 要在相同的 name 後面添加 &lt;code&gt;[]&lt;/code&gt; 才可以在 PHP 端收到的 name 併在一起&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;nodejs 和 golang 都只要是 name 一樣就可以了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;針對這三種語言都有寫了 demo code&lt;/p&gt;
+&lt;p&gt;只要三種語言的環境裝好&lt;/p&gt;
+&lt;p&gt;都可以直接起 local server 來試驗看看&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tedshd/html_form_multiple_name&#34;&gt;html_form_multiple_name&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

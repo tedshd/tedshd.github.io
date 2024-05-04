@@ -1,20 +1,77 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Xss on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/xss/</link>
-    <description>Recent content in Xss on tedshd&#39;s DevNote</description>
+    <title>Xss on Tedshd&#39;s Dev note</title>
+    <link>/categories/xss/</link>
+    <description>Tedshd&#39;s Dev note (Xss)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/xss/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Nov 2015 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/xss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Something about XSS(Cross-site scripting)</title>
-      <link>https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/</link>
+      <link>/posts/2015-11-01-something-about-xsscross-site-scripting/</link>
       <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-11-01-something-about-xsscross-site-scripting/</guid>
-      <description>Something about XSS(Cross-site scripting) If not set anything Use like &amp;lt;?php echo $_GET[&amp;#39;name&amp;#39;];?&amp;gt; and querystring name = &amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt; And not defence XSS In Firefox In Chrome In Safari Result Chrome &amp;amp; Safari browser has handle XSS default Defence Set header X-XSS-Protection: 1 if use PHP, can use htmlspecialchars() // or htmlentities() Important! Finally We must know it is handle encode to avoid run JavaScript on page JavaScript ver htmlspecialchars Refer</description>
+      
+      <guid>/posts/2015-11-01-something-about-xsscross-site-scripting/</guid>
+      <description>&lt;h2 id=&#34;something-about-xsscross-site-scripting&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#something-about-xsscross-site-scripting&#34;&gt;
+        #
+    &lt;/a&gt;
+    Something about XSS(Cross-site scripting)
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;If not set anything&lt;/p&gt;
+&lt;p&gt;Use like&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;?&lt;/span&gt;php &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;];&lt;span style=&#34;color:#78787e&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and querystring &lt;code&gt;name&lt;/code&gt; = &lt;code&gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And not defence XSS&lt;/p&gt;
+&lt;p&gt;In Firefox&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/307308/G2Ec0H05TgG5yNFaRS6K_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.40.08.png&#34; alt=&#34;螢幕快照 2015-11-01 下午8.40.08.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In Chrome&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/307308/tyAndfVzTqy50xBAJmhI_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.42.45.png&#34; alt=&#34;螢幕快照 2015-11-01 下午8.42.45.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In Safari&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/307308/xfWYDtAnQ7SoVIKdlTIL_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-01%20%E4%B8%8B%E5%8D%888.43.16.png&#34; alt=&#34;螢幕快照 2015-11-01 下午8.43.16.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;result&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#result&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Result
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Chrome &amp;amp; Safari browser has handle XSS default&lt;/p&gt;
+&lt;h3 id=&#34;defence&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#defence&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Defence
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Set header &lt;code&gt;X-XSS-Protection: 1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;if use PHP, can use&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;htmlspecialchars()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;// or
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt; htmlentities()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;important&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#important&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Important!
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Finally&lt;/p&gt;
+&lt;p&gt;We must know it is handle encode to avoid run JavaScript on page&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tedshd/javascript-htmlspecialchars&#34;&gt;JavaScript ver htmlspecialchars&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.qa-knowhow.com/?p=2992&#34;&gt;Refer - XSS攻擊的深入探討與防護之道&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

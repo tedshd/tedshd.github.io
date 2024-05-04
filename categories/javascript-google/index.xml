@@ -1,20 +1,110 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JavaScript Google on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/javascript-google/</link>
-    <description>Recent content in JavaScript Google on tedshd&#39;s DevNote</description>
+    <title>JavaScript Google on Tedshd&#39;s Dev note</title>
+    <link>/categories/javascript-google/</link>
+    <description>Tedshd&#39;s Dev note (JavaScript Google)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/javascript-google/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 May 2017 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/javascript-google/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>JavaScript - web call native app</title>
-      <link>https://blog.tedshd.io/posts/2017-05-12-1822543/</link>
+      <link>/posts/2017-05-12-1822543/</link>
       <pubDate>Fri, 12 May 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2017-05-12-1822543/</guid>
-      <description>web call native app 緣由 因為一些原因要 mobile web 可以 call native 的一些東西來分享當前頁面或幹啥事(其實最常用的是聯絡資訊點了直接 call native app) 眾所皆知 HTML5 預設有 mailto: tel: sms: 但每個都要</description>
+      
+      <guid>/posts/2017-05-12-1822543/</guid>
+      <description>&lt;h2 id=&#34;web-call-native-app&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#web-call-native-app&#34;&gt;
+        #
+    &lt;/a&gt;
+    web call native app
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;緣由&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b7%a3%e7%94%b1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    緣由
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;因為一些原因要 mobile web 可以 call native 的一些東西來分享當前頁面或幹啥事(其實最常用的是聯絡資訊點了直接 call native app)&lt;/p&gt;
+&lt;p&gt;眾所皆知 HTML5 預設有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mailto:&lt;/li&gt;
+&lt;li&gt;tel:&lt;/li&gt;
+&lt;li&gt;sms:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但每個都要個別寫入好麻煩
+且 sms 還有 iOS 和 Android 格式不一樣的問題
+於是失心瘋的寫了一個 object 整合一下&lt;/p&gt;
+&lt;p&gt;有空再寫 PHP 版
+(但是需求好像偏向會從 PHP 出誒)&lt;/p&gt;
+&lt;p&gt;我前端工程師當然先寫 js 版
+突然覺得 isomorphic 好好喔&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;github&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#github&#34;&gt;
+        ##
+    &lt;/a&gt;
+    GitHub
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tedshd/webClientProtocol&#34;&gt;webClientProtocol&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;題外話&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%a1%8c%e5%a4%96%e8%a9%b1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    題外話
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;關於 web share content 這件事
+Google 有正在搞一個 web share api
+可以針對你想分享的東西去做到複製到剪貼簿或把內容分享給可以使用的 mobile native app
+但是還在測試狀態&amp;hellip;
+相關文章在底下&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/web/updates/2016/10/navigator-share&#34;&gt;Introducing the Web Share API&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;題外話中的題外話&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%a1%8c%e5%a4%96%e8%a9%b1%e4%b8%ad%e7%9a%84%e9%a1%8c%e5%a4%96%e8%a9%b1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    題外話中的題外話
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;在早期會是用 &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_Intents&#34;&gt;Web Intents&lt;/a&gt; 去開 native app&lt;/p&gt;
+&lt;p&gt;但很麻煩, 且預設是不支持 iOS 的(因為這是 Android 上定義的&lt;/p&gt;
+&lt;p&gt;然後 iOS 早期要處理也是 native app 自己定義 protocol, 然後 web 自己用 native app 定義好的 protocol 去開&lt;/p&gt;
+&lt;p&gt;且要個別處理 failback 的行為&lt;/p&gt;
+&lt;p&gt;然後, 很麻煩的是不同的 native app 的 intent 寫法是不一樣的(因為要 call 的 app 的 package 都不一樣&lt;/p&gt;
+&lt;p&gt;iOS 亦是如此, 因為定義的 protocol 不一樣(廢話&lt;/p&gt;
+&lt;p&gt;一般早期是用來當 app link 用(當然現在很少這樣用了, 因為 app link 已經發展成熟了, 這又是另一件事了&lt;/p&gt;
+&lt;p&gt;順帶一提 iOS 目前最新的是 &lt;a href=&#34;https://developer.apple.com/ios/universal-links/&#34;&gt;universal link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;不過上述算是 app link 發展簡史, 沒有寫得很詳細&lt;/p&gt;
+&lt;p&gt;當然 Google 也發現 intent 不夠理想所以想要發展 share api 來達到真正的需求&lt;/p&gt;
+&lt;p&gt;share api 期望能達到像是 Android intent 所觸發的 share 的機制&lt;/p&gt;
+&lt;p&gt;當然就目前的情況 iOS 的支援應該還是遙遙無期&lt;/p&gt;
+&lt;p&gt;不過如果 iOS 的 Chrome 內部有個 interface 轉接去 call App Extension 也許就可以了(我的猜測&lt;/p&gt;
+&lt;h3 id=&#34;結語&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b5%90%e8%aa%9e&#34;&gt;
+        ##
+    &lt;/a&gt;
+    結語
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;目前做的這個功能是指支持 HTML5 原生的&lt;/p&gt;
+&lt;p&gt;如果是要像是要 call Line 或 twitter 或 fb 等等的請自己處理&lt;/p&gt;
+&lt;p&gt;有看到一個專案在記錄常用的 native app, 但我是沒試過就是了&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://chriswren.github.io/native-social-interactions/&#34;&gt;Native app social interactions on mobile and tablet web&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

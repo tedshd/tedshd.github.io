@@ -1,27 +1,218 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HTML5 on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/html5/</link>
-    <description>Recent content in HTML5 on tedshd&#39;s DevNote</description>
+    <title>HTML5 on Tedshd&#39;s Dev note</title>
+    <link>/categories/html5/</link>
+    <description>Tedshd&#39;s Dev note (HTML5)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/html5/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Jul 2014 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/html5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>HTML5 - Video Introduction</title>
-      <link>https://blog.tedshd.io/posts/2014-07-02-html5-video-introduction/</link>
+      <link>/posts/2014-07-02-html5-video-introduction/</link>
       <pubDate>Wed, 02 Jul 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-07-02-html5-video-introduction/</guid>
-      <description>HTML5 - Video Introduction 這是一篇關於如何用 web 建置一個 video player 的文章, 這裡使用 HTML5 video 與一些 open source library 來建立 player Some Function Main video pause video play video autoPlay or no-autoPlay show current video time show total video time time jump full screen Other keyboard control mute control volume up</description>
+      
+      <guid>/posts/2014-07-02-html5-video-introduction/</guid>
+      <description>&lt;h2 id=&#34;html5---video-introduction&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#html5---video-introduction&#34;&gt;
+        #
+    &lt;/a&gt;
+    HTML5 - Video Introduction
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;這是一篇關於如何用 web 建置一個 video player 的文章, 這裡使用 HTML5 video 與一些 open source library 來建立 player&lt;/p&gt;
+&lt;h3 id=&#34;some-function&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#some-function&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Some Function
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h4 id=&#34;main&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#main&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Main
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;video pause&lt;/li&gt;
+&lt;li&gt;video play&lt;/li&gt;
+&lt;li&gt;video autoPlay or no-autoPlay&lt;/li&gt;
+&lt;li&gt;show current video time&lt;/li&gt;
+&lt;li&gt;show total video time&lt;/li&gt;
+&lt;li&gt;time jump&lt;/li&gt;
+&lt;li&gt;full screen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;other&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#other&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Other
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;keyboard control&lt;/li&gt;
+&lt;li&gt;mute control&lt;/li&gt;
+&lt;li&gt;volume up &amp;amp; down&lt;/li&gt;
+&lt;li&gt;buffer handle&lt;/li&gt;
+&lt;li&gt;set quality&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.jwplayer.com/html5/seeking/&#34;&gt;Refer - Seeking API&lt;/a&gt;
+&lt;a href=&#34;http://www.jwplayer.com/html5/&#34;&gt;Refer - The State of HTML5 Video&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>HTML5 - Full Screen Mode</title>
-      <link>https://blog.tedshd.io/posts/2014-05-08-html5-full-screen-mode/</link>
+      <link>/posts/2014-05-08-html5-full-screen-mode/</link>
       <pubDate>Thu, 08 May 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-05-08-html5-full-screen-mode/</guid>
-      <description>HTML5 - Full Screen Mode It can control full screen the browser IE if it is to be more than IE11 Code function toggleFullScreen() { if (!document.fullscreenElement &amp;amp;&amp;amp; // alternative standard method !document.mozFullScreenElement &amp;amp;&amp;amp; !document.webkitFullscreenElement &amp;amp;&amp;amp; !document.msFullscreenElement ) { // current working methods if (document.documentElement.requestFullscreen) { document.documentElement.requestFullscreen(); } else if (document.documentElement.msRequestFullscreen) { document.documentElement.msRequestFullscreen(); } else if (document.documentElement.mozRequestFullScreen) { document.documentElement.mozRequestFullScreen(); } else if (document.documentElement.webkitRequestFullscreen) { document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT); } } else { if</description>
+      
+      <guid>/posts/2014-05-08-html5-full-screen-mode/</guid>
+      <description>&lt;h2 id=&#34;html5---full-screen-mode&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#html5---full-screen-mode&#34;&gt;
+        #
+    &lt;/a&gt;
+    HTML5 - Full Screen Mode
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;It can control full screen the browser
+IE if it is to be more than IE11&lt;/p&gt;
+&lt;h3 id=&#34;code&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#code&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Code
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; toggleFullScreen() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.fullscreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// alternative standard method
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozFullScreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitFullscreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msFullscreenElement ) {  &lt;span style=&#34;color:#78787e&#34;&gt;// current working methods
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.requestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.requestFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.msRequestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.msRequestFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.mozRequestFullScreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.mozRequestFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.webkitRequestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.exitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.exitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msExitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msExitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozCancelFullScreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozCancelFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitExitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitExitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;example&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#example&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Example
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;HTML&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;button&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;full&amp;#34;&lt;/span&gt;&amp;gt;Full Screen&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;button&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;JavaScript&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#full&amp;#39;&lt;/span&gt;).addEventListener(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    toggleFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; toggleFullScreen() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.fullscreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// alternative standard method
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozFullScreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitFullscreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msFullscreenElement ) {  &lt;span style=&#34;color:#78787e&#34;&gt;// current working methods
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.requestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.requestFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.msRequestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.msRequestFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.mozRequestFullScreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.mozRequestFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.webkitRequestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.exitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.exitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msExitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msExitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozCancelFullScreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozCancelFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitExitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitExitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;codepen&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#codepen&#34;&gt;
+        ##
+    &lt;/a&gt;
+    CodePen
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p data-height=&#34;268&#34; data-theme-id=&#34;2982&#34; data-slug-hash=&#34;ExLCA&#34; data-default-tab=&#34;result&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/tedshd/pen/ExLCA/&#39;&gt;full screen mode&lt;/a&gt; by Ted (&lt;a href=&#39;http://codepen.io/tedshd&#39;&gt;@tedshd&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;
+&lt;h3 id=&#34;other-use&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#other-use&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Other use
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Use it make youtube api player full screen
+If render player on &lt;code&gt;&amp;lt;div id=&amp;quot;player&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#full&amp;#39;&lt;/span&gt;).addEventListener(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  toggleFullScreen(&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#player&amp;#39;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; toggleFullScreen(el) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.fullscreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;    &lt;span style=&#34;color:#78787e&#34;&gt;// alternative standard method
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozFullScreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitFullscreenElement &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msFullscreenElement ) {  &lt;span style=&#34;color:#78787e&#34;&gt;// current working methods
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.requestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      el.requestFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.msRequestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      el.msRequestFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.mozRequestFullScreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      el.mozRequestFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.documentElement.webkitRequestFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      el.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.exitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.exitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msExitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.msExitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozCancelFullScreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.mozCancelFullScreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitExitFullscreen) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.webkitExitFullscreen();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode&#34;&gt;Refer - Using fullscreen mode - Web developer guide | MDN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/zh-tw/library/ie/dn265028(v=vs.85).aspx&#34;&gt;Refer - 全螢幕 API (Windows)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.sitepoint.com/use-html5-full-screen-api/&#34;&gt;Refer - How to Use the HTML5 Full-Screen API (Again) - SitePoint&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

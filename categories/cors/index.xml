@@ -1,20 +1,50 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cors on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/cors/</link>
-    <description>Recent content in Cors on tedshd&#39;s DevNote</description>
+    <title>Cors on Tedshd&#39;s Dev note</title>
+    <link>/categories/cors/</link>
+    <description>Tedshd&#39;s Dev note (Cors)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Fri, 30 Apr 2021 18:40:48 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/cors/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Apr 2021 15:51:04 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/cors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Nginx 使用 refer 處理 CORS header</title>
-      <link>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</link>
+      <link>/posts/nginx_add_refer_handle_cors/</link>
       <pubDate>Fri, 30 Apr 2021 15:51:04 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/nginx_add_refer_handle_cors/</guid>
-      <description>處理 CORS 算是許多 Web 開發者會處理的情況 其中要又有一個比較重要的部分就是要設定 Access-Control-Allow-Origin 這個允許來源的 header 通常為了安全性問題, 都是只會設定允許的 host 上去 但是常</description>
+      
+      <guid>/posts/nginx_add_refer_handle_cors/</guid>
+      <description>&lt;p&gt;處理 CORS 算是許多 Web 開發者會處理的情況&lt;/p&gt;
+&lt;p&gt;其中要又有一個比較重要的部分就是要設定 &lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt; 這個允許來源的 header&lt;/p&gt;
+&lt;p&gt;通常為了安全性問題, 都是只會設定允許的 host 上去&lt;/p&gt;
+&lt;p&gt;但是常常設定而且在不同環境設定也是有點麻煩&lt;/p&gt;
+&lt;p&gt;所以這邊就用了直接在 server 設定的方式來處理&lt;/p&gt;
+&lt;p&gt;這樣直接看 server 的 rule 設定即可&lt;/p&gt;
+&lt;p&gt;也可以快速的條列不同環境的 host&lt;/p&gt;
+&lt;h2 id=&#34;用法&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%94%a8%e6%b3%95&#34;&gt;
+        #
+    &lt;/a&gt;
+    用法
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-conf&#34; data-lang=&#34;conf&#34;&gt;if ($http_referer ~* example.com) {
+    add_header &amp;#39;Access-Control-Allow-Origin&amp;#39; &amp;#39;https://example.com&amp;#39;;
+}
+
+if ($http_referer ~* dev.example.com) {
+    add_header &amp;#39;Access-Control-Allow-Origin&amp;#39; &amp;#39;https://dev.example.com&amp;#39;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;這個判斷沒有固定的寫法&lt;/p&gt;
+&lt;p&gt;可以參考底下 Nginx 對 &lt;code&gt;http_referer&lt;/code&gt; 的介紹來針對需要判斷 host 的方式進行修改&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS&#34;&gt;Refer - 跨來源資源共用（CORS）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://nginx.org/en/docs/http/ngx_http_referer_module.html&#34;&gt;Refer - Module ngx_http_referer_module&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

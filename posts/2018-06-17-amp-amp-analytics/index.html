@@ -1,339 +1,702 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+
+
+<html lang="en-us" data-theme="">
+<head>
     
-
-
-
-
-<title>AMP - amp analytics &amp; conversion | tedshd&#39;s DevNote</title>
+        
 <meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>AMP - amp analytics &amp; conversion - Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="# AMP - amp analytics &amp; conversion Use google analytics must use amp-analytics component
+It can use PHP print template function to view
+First include
+&lt;script async custom-element=&#34;amp-analytics&#34; src=&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;&gt;&lt;/script&gt; ## ga click event Refer - Adding Analytics to your AMP pages
+function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &#34;0&#34;) { $template = &lt;&lt;&lt;EOF &lt;amp-analytics type=&#34;googleanalytics&#34;&gt; &lt;script type=&#34;application/json&#34;&gt; { &#34;vars&#34;: { &#34;account&#34;: &#34;%s&#34; }, &#34;triggers&#34;: { &#34;trackClickOnHeader&#34; : { &#34;on&#34;: &#34;click&#34;, &#34;selector&#34;: &#34;%s&#34;, &#34;request&#34;: &#34;event&#34;, &#34;vars&#34;: { &#34;eventCategory&#34;: &#34;%s&#34;, &#34;eventAction&#34;: &#34;%s&#34;, &#34;eventLabel&#34;: &#34;%s&#34; }, &#34;extraUrlParams&#34;: { &#34;ni&#34;: &#34;%s&#34; } } } } &lt;/script&gt; &lt;/amp-analytics&gt; EOF; return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction); } ## google adwords conversion Refer - Using AMP for your AdWords Landing Pages">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta name="google" content="notranslate">
-<meta id="viewport" name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='AMP - amp analytics &amp; conversion Use google analytics must use amp-analytics component
-It can use PHP print template function to view
-First include
-&lt;script async custom-element=&#34;amp-analytics&#34; src=&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;&gt;&lt;/script&gt; ga click event Refer - Adding Analytics to your AMP pages
-function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &#34;0&#34;) { $template = &lt;&lt;&lt;EOF &lt;amp-analytics type=&#34;googleanalytics&#34;&gt; &lt;script type=&#34;application/json&#34;&gt; { &#34;vars&#34;: { &#34;account&#34;: &#34;%s&#34; }, &#34;triggers&#34;: { &#34;trackClickOnHeader&#34; : { &#34;on&#34;: &#34;click&#34;, &#34;selector&#34;: &#34;%s&#34;, &#34;request&#34;: &#34;event&#34;, &#34;vars&#34;: { &#34;eventCategory&#34;: &#34;%s&#34;, &#34;eventAction&#34;: &#34;%s&#34;, &#34;eventLabel&#34;: &#34;%s&#34; }, &#34;extraUrlParams&#34;: { &#34;ni&#34;: &#34;%s&#34; } } } } &lt;/script&gt; &lt;/amp-analytics&gt; EOF; return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction); } google adwords conversion Refer - Using AMP for your AdWords Landing Pages'>
-<meta name="keywords" content=''>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/">
-<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/" />
-
-<link rel="canonical" href="https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/" />
-<link rel="shortcut icon" href="/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
-<meta name="theme-color" content="">
-<meta name="robots" content="index, follow">
-<meta name="copyright" content="Tedshd">
-
-<meta property="og:title" content="AMP - amp analytics &amp; conversion" />
-<meta property="og:description" content="AMP - amp analytics &amp; conversion Use google analytics must use amp-analytics component
-It can use PHP print template function to view
-First include
-&lt;script async custom-element=&#34;amp-analytics&#34; src=&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;&gt;&lt;/script&gt; ga click event Refer - Adding Analytics to your AMP pages
-function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &#34;0&#34;) { $template = &lt;&lt;&lt;EOF &lt;amp-analytics type=&#34;googleanalytics&#34;&gt; &lt;script type=&#34;application/json&#34;&gt; { &#34;vars&#34;: { &#34;account&#34;: &#34;%s&#34; }, &#34;triggers&#34;: { &#34;trackClickOnHeader&#34; : { &#34;on&#34;: &#34;click&#34;, &#34;selector&#34;: &#34;%s&#34;, &#34;request&#34;: &#34;event&#34;, &#34;vars&#34;: { &#34;eventCategory&#34;: &#34;%s&#34;, &#34;eventAction&#34;: &#34;%s&#34;, &#34;eventLabel&#34;: &#34;%s&#34; }, &#34;extraUrlParams&#34;: { &#34;ni&#34;: &#34;%s&#34; } } } } &lt;/script&gt; &lt;/amp-analytics&gt; EOF; return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction); } google adwords conversion Refer - Using AMP for your AdWords Landing Pages" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2018-06-17-amp-amp-analytics/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2018-06-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="AMP - amp analytics &amp; conversion"/>
-<meta name="twitter:description" content="AMP - amp analytics &amp; conversion Use google analytics must use amp-analytics component
-It can use PHP print template function to view
-First include
-&lt;script async custom-element=&#34;amp-analytics&#34; src=&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;&gt;&lt;/script&gt; ga click event Refer - Adding Analytics to your AMP pages
-function amp_ga_event_click_template($ga_id, $selector, $cate, $action, $label, $non_interaction = &#34;0&#34;) { $template = &lt;&lt;&lt;EOF &lt;amp-analytics type=&#34;googleanalytics&#34;&gt; &lt;script type=&#34;application/json&#34;&gt; { &#34;vars&#34;: { &#34;account&#34;: &#34;%s&#34; }, &#34;triggers&#34;: { &#34;trackClickOnHeader&#34; : { &#34;on&#34;: &#34;click&#34;, &#34;selector&#34;: &#34;%s&#34;, &#34;request&#34;: &#34;event&#34;, &#34;vars&#34;: { &#34;eventCategory&#34;: &#34;%s&#34;, &#34;eventAction&#34;: &#34;%s&#34;, &#34;eventLabel&#34;: &#34;%s&#34; }, &#34;extraUrlParams&#34;: { &#34;ni&#34;: &#34;%s&#34; } } } } &lt;/script&gt; &lt;/amp-analytics&gt; EOF; return printf($template, $ga_id, $selector, $cate, $action, $label, $non_interaction); } google adwords conversion Refer - Using AMP for your AdWords Landing Pages"/>
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-<script data-ad-client="ca-pub-0553186380244641" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
+
+        
+
+
+
+
+
 
 
     
+        <div class="theme-switcher">
+            <span class="inline-svg">
 
     
 
-    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
 
     
-<link>
-
-<link
-    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
-    rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
-
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
 
-    gtag('config', 'G-1NKP3D2ZGG');
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
     </script>
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
-                    tedshd&#39;s DevNote
-                </a>
-            </div>
-            
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
-                <i class="p-icon--menu"></i>
+
+
+        <ul class="social-icons noselect">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
             </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
-                <i class="p-icon--close"></i>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
             </a>
-        </div>
+        </li>
+    
 
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
 
-            <ul class="p-navigation__links" role="menu">
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/categories">Categories</a>
-                </li>
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/tags">tags</a>
-                </li>
-                
-            </ul>
+    
 
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-            
-        </nav>
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
     </div>
-</header><div id="main-content">
-<div class="page-banner">
-    <div class="row u-vertically-center">
-        <div class="col-8 pure-g">
-            <div class="pure-u">
-                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
-                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
-            </div>
-            <div class="pure-u">
-                <h2>tedshd&#39;s DevNote</h2>
-                <p>Develop &amp; Design Note by Ted</p>
-            </div>
-        </div>
+    <div class="header-top-right">
+
     </div>
 </div>
 
-<ul class="p-navigation__links sub_menu" role="menu">
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tedshd.github.io/resume/">About</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tysh310246.blogspot.tw/">Blog</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://github.com/tedshd">Github</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
-    </li>
-    
-</ul>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
 
-<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">AMP - amp analytics &amp; conversion</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2018-06-17">2018-06-17</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2018-06-17-amp-amp-analytics/">/posts/2018-06-17-amp-amp-analytics/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/amp/">Amp</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#amp---amp-analytics--conversion">AMP - amp analytics &amp; conversion</a>
+      <ul>
+        <li><a href="#ga-click-event">ga click event</a></li>
+        <li><a href="#google-adwords-conversion">google adwords conversion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
 </script>
 
-
-<header class="">
-    <div class="row">
-        <h1>AMP - amp analytics &amp; conversion</h1>
-    </div>
-</header>
-
-
-<section class="p-strip is-shallow">
-    <main class="row post-content">
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2018-06-17
-        </p>
-        
-        <h2 id="amp---amp-analytics--conversion">AMP - amp analytics &amp; conversion</h2>
+        <div class="content e-content">
+            <h2 id="amp---amp-analytics--conversion" >
+<div>
+    <a href="#amp---amp-analytics--conversion">
+        #
+    </a>
+    AMP - amp analytics &amp; conversion
+</div>
+</h2>
 <p>Use google analytics must use <code>amp-analytics</code> component</p>
 <p>It can use PHP print template function to view</p>
 <p>First include</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">custom-element</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;amp-analytics&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><h3 id="ga-click-event">ga click event</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#ff6ac1">script</span> <span style="color:#57c7ff">async</span> <span style="color:#57c7ff">custom-element</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;amp-analytics&#34;</span> <span style="color:#57c7ff">src</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&#34;</span>&gt;&lt;/<span style="color:#ff6ac1">script</span>&gt;
+</span></span></code></pre></div><h3 id="ga-click-event" >
+<div>
+    <a href="#ga-click-event">
+        ##
+    </a>
+    ga click event
+</div>
+</h3>
 <p><a href="https://developers.google.com/analytics/devguides/collection/amp-analytics/">Refer - Adding Analytics to your AMP pages</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">amp_ga_event_click_template</span>($ga_id, $selector, $cate, $action, $label, $non_interaction <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">function</span> <span style="color:#57c7ff">amp_ga_event_click_template</span>(<span style="color:#ff5c57">$ga_id</span>, <span style="color:#ff5c57">$selector</span>, <span style="color:#ff5c57">$cate</span>, <span style="color:#ff5c57">$action</span>, <span style="color:#ff5c57">$label</span>, <span style="color:#ff5c57">$non_interaction</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;0&#34;</span>)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$template <span style="color:#f92672">=</span> <span style="color:#e6db74">&lt;&lt;&lt;</span><span style="color:#e6db74">EOF</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;amp-analytics type=&#34;googleanalytics&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;script type=&#34;application/json&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;vars&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;account&#34;: &#34;%s&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        },
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;triggers&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;trackClickOnHeader&#34; : {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;on&#34;: &#34;click&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;selector&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;request&#34;: &#34;event&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;vars&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;eventCategory&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;eventAction&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;eventLabel&#34;: &#34;%s&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                },
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;extraUrlParams&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;ni&#34;: &#34;%s&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/script&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/amp-analytics&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">EOF</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">printf</span>($template, $ga_id, $selector, $cate, $action, $label, $non_interaction);
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$template</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&lt;&lt;&lt;</span><span style="color:#5af78e">EOF</span><span style="color:#5af78e">
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">&lt;amp-analytics type=&#34;googleanalytics&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">&lt;script type=&#34;application/json&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">    {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">        &#34;vars&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">            &#34;account&#34;: &#34;%s&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">        },
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">        &#34;triggers&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">            &#34;trackClickOnHeader&#34; : {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                &#34;on&#34;: &#34;click&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                &#34;selector&#34;: &#34;%s&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                &#34;request&#34;: &#34;event&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                &#34;vars&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                    &#34;eventCategory&#34;: &#34;%s&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                    &#34;eventAction&#34;: &#34;%s&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                    &#34;eventLabel&#34;: &#34;%s&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                },
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                &#34;extraUrlParams&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                    &#34;ni&#34;: &#34;%s&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                }
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">            }
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">&lt;/script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">&lt;/amp-analytics&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e"></span><span style="color:#5af78e">EOF</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> printf(<span style="color:#ff5c57">$template</span>, <span style="color:#ff5c57">$ga_id</span>, <span style="color:#ff5c57">$selector</span>, <span style="color:#ff5c57">$cate</span>, <span style="color:#ff5c57">$action</span>, <span style="color:#ff5c57">$label</span>, <span style="color:#ff5c57">$non_interaction</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="google-adwords-conversion">google adwords conversion</h3>
+</span></span></code></pre></div><h3 id="google-adwords-conversion" >
+<div>
+    <a href="#google-adwords-conversion">
+        ##
+    </a>
+    google adwords conversion
+</div>
+</h3>
 <p><a href="https://developers.google.com/adwords/amp/landing-pages">Refer - Using AMP for your AdWords Landing Pages</a></p>
 <p>For landing page pageview</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">amp_ga_conversion_pageview_template</span>($conversion_id, $lang <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;en&#34;</span>, $conversion_label)
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">function</span> <span style="color:#57c7ff">amp_ga_conversion_pageview_template</span>(<span style="color:#ff5c57">$conversion_id</span>, <span style="color:#ff5c57">$lang</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;en&#34;</span>, <span style="color:#ff5c57">$conversion_label</span>)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$template <span style="color:#f92672">=</span> <span style="color:#e6db74">&lt;&lt;&lt;</span><span style="color:#e6db74">EOF</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;amp-analytics type=&#34;googleadwords&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;script type=&#34;application/json&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;triggers&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;onVisible&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;on&#34;: &#34;visible&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;request&#34;: &#34;conversion&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    },
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;vars&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;googleConversionId&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;googleConversionLanguage&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;googleConversionFormat&#34;: &#34;3&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;googleConversionLabel&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;googleRemarketingOnly&#34;: &#34;false&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/script&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/amp-analytics&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">EOF</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">printf</span>($template, $conversion_id, $lang, $conversion_label);
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$template</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&lt;&lt;&lt;</span><span style="color:#5af78e">EOF</span><span style="color:#5af78e">
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">&lt;amp-analytics type=&#34;googleadwords&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">  &lt;script type=&#34;application/json&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">  {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">    &#34;triggers&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">      &#34;onVisible&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">        &#34;on&#34;: &#34;visible&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">        &#34;request&#34;: &#34;conversion&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">    },
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">    &#34;vars&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">      &#34;googleConversionId&#34;: &#34;%s&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">      &#34;googleConversionLanguage&#34;: &#34;%s&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">      &#34;googleConversionFormat&#34;: &#34;3&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">      &#34;googleConversionLabel&#34;: &#34;%s&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">      &#34;googleRemarketingOnly&#34;: &#34;false&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">  }
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">  &lt;/script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">&lt;/amp-analytics&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e"></span><span style="color:#5af78e">EOF</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> printf(<span style="color:#ff5c57">$template</span>, <span style="color:#ff5c57">$conversion_id</span>, <span style="color:#ff5c57">$lang</span>, <span style="color:#ff5c57">$conversion_label</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>For click conversion</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">amp_ga_conversion_click_template</span>($ga_id, $selector, $conversion_id, $conversion_label, $non_interaction <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">function</span> <span style="color:#57c7ff">amp_ga_conversion_click_template</span>(<span style="color:#ff5c57">$ga_id</span>, <span style="color:#ff5c57">$selector</span>, <span style="color:#ff5c57">$conversion_id</span>, <span style="color:#ff5c57">$conversion_label</span>, <span style="color:#ff5c57">$non_interaction</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;0&#34;</span>)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$template <span style="color:#f92672">=</span> <span style="color:#e6db74">&lt;&lt;&lt;</span><span style="color:#e6db74">EOF</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;amp-analytics type=&#34;googleadwords&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;script type=&#34;application/json&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;vars&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;account&#34;: &#34;%s&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    },
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;triggers&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;trackClickOnHeader&#34; : {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;on&#34;: &#34;click&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;selector&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;request&#34;: &#34;conversion&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;vars&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;googleConversionId&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;googleConversionFormat&#34;: &#34;3&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;googleConversionLabel&#34;: &#34;%s&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;googleRemarketingOnly&#34;: &#34;false&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            },
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;extraUrlParams&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;ni&#34;: &#34;1&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/script&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/amp-analytics&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">EOF</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$template</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&lt;&lt;&lt;</span><span style="color:#5af78e">EOF</span><span style="color:#5af78e">
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">&lt;amp-analytics type=&#34;googleadwords&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">  &lt;script type=&#34;application/json&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">  {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">    &#34;vars&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">        &#34;account&#34;: &#34;%s&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">    },
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">    &#34;triggers&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">        &#34;trackClickOnHeader&#34; : {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">            &#34;on&#34;: &#34;click&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">            &#34;selector&#34;: &#34;%s&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">            &#34;request&#34;: &#34;conversion&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">            &#34;vars&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                &#34;googleConversionId&#34;: &#34;%s&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                &#34;googleConversionFormat&#34;: &#34;3&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                &#34;googleConversionLabel&#34;: &#34;%s&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                &#34;googleRemarketingOnly&#34;: &#34;false&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">            },
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">            &#34;extraUrlParams&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">                &#34;ni&#34;: &#34;1&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">            }
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">  }
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">  &lt;/script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e">&lt;/amp-analytics&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#5af78e"></span><span style="color:#5af78e">EOF</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">printf</span>($template, $ga_id, $selector, $conversion_id, $conversion_label, $non_interaction);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> printf(<span style="color:#ff5c57">$template</span>, <span style="color:#ff5c57">$ga_id</span>, <span style="color:#ff5c57">$selector</span>, <span style="color:#ff5c57">$conversion_id</span>, <span style="color:#ff5c57">$conversion_label</span>, <span style="color:#ff5c57">$non_interaction</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
-    </main>
-</section>
+        </div>
 
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
+    </article>
+
     
-    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/2018-05-11-paypal-paypal-ec/">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            paypal - 利用 paypal 開發一個簡單的 EC
-        </span>
-    </a>
     
 
     
-    <a class="p-article-pagination__link--next" href="https://blog.tedshd.io/posts/2018-08-23-what-is-web-viewport-do-you-really-understand-the-screen-size-of-the-mobile-device-its-ancient/">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            Web - viewport 是啥?你真的了解移動裝置的畫面大小處理嗎?來講古了
-        </span>
-    </a>
+        
+        
     
-</div>
-    </div>
-</footer>
 
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Tedshd
-            </p>
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
         </div>
     </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
 </footer>
 
-
-
-
+        
+    </div>
 </body>
 </html>

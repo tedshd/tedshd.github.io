@@ -1,20 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>FlashPlayer on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/flashplayer/</link>
-    <description>Recent content in FlashPlayer on tedshd&#39;s DevNote</description>
+    <title>FlashPlayer on Tedshd&#39;s Dev note</title>
+    <link>/categories/flashplayer/</link>
+    <description>Tedshd&#39;s Dev note (FlashPlayer)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/flashplayer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Sep 2013 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/flashplayer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Adobe Flash Player 11.8.800.168 upload file issue</title>
-      <link>https://blog.tedshd.io/posts/2013-09-12-adobe-flash-player-118800168-upload-file-issue/</link>
+      <link>/posts/2013-09-12-adobe-flash-player-118800168-upload-file-issue/</link>
       <pubDate>Thu, 12 Sep 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-09-12-adobe-flash-player-118800168-upload-file-issue/</guid>
-      <description>Adobe Flash Player 11.8.800.168 upload file issue 筆記一下 在 IE 中 當 Flash Player 更新到 11.8.800.168 時, 發現一個問題 就是用 flash 上傳檔案時, 中文的檔名會用 Big5 去解, 所以就造成亂碼 測試的 OS Windows 7 繁體中文語系 在</description>
+      
+      <guid>/posts/2013-09-12-adobe-flash-player-118800168-upload-file-issue/</guid>
+      <description>&lt;h2 id=&#34;adobe-flash-player-118800168-upload-file-issue&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#adobe-flash-player-118800168-upload-file-issue&#34;&gt;
+        #
+    &lt;/a&gt;
+    Adobe Flash Player 11.8.800.168 upload file issue
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;筆記一下
+在 IE 中
+當 Flash Player 更新到 11.8.800.168 時, 發現一個問題
+就是用 flash 上傳檔案時, 中文的檔名會用 Big5 去解, 所以就造成亂碼
+測試的 OS
+Windows 7
+繁體中文語系&lt;/p&gt;
+&lt;p&gt;在網路上有人也提出這&lt;a href=&#34;http://forums.adobe.com/message/5672196&#34;&gt;問題&lt;/a&gt;了&lt;/p&gt;
+&lt;h3 id=&#34;update&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#update&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Update
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Adobe Flash Player 已更新到 11.8.800.174 修正這問題了&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

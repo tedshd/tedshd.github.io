@@ -1,20 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Emoji on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/emoji/</link>
-    <description>Recent content in Emoji on tedshd&#39;s DevNote</description>
+    <title>Emoji on Tedshd&#39;s Dev note</title>
+    <link>/categories/emoji/</link>
+    <description>Tedshd&#39;s Dev note (Emoji)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Tue, 04 Jan 2022 06:23:51 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/emoji/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Jan 2022 05:42:00 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/emoji/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>JavaScript 計算 emoji</title>
-      <link>https://blog.tedshd.io/posts/javascript_count_emoji/</link>
+      <link>/posts/javascript_count_emoji/</link>
       <pubDate>Tue, 04 Jan 2022 05:42:00 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/javascript_count_emoji/</guid>
-      <description>在 Web 中的 emoji 處理 在普遍的字串計算長度的部分 一個字元是單位是一 但是因為 emoji 的 unicode 是比較後面定義的 這超出了原有 JavaScript 原有定義的範圍 可以參照網站的介紹 Unicode – The</description>
+      
+      <guid>/posts/javascript_count_emoji/</guid>
+      <description>&lt;h2 id=&#34;在-web-中的-emoji-處理&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%9c%a8-web-%e4%b8%ad%e7%9a%84-emoji-%e8%99%95%e7%90%86&#34;&gt;
+        #
+    &lt;/a&gt;
+    在 Web 中的 emoji 處理
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;在普遍的字串計算長度的部分&lt;/p&gt;
+&lt;p&gt;一個字元是單位是一&lt;/p&gt;
+&lt;p&gt;但是因為 emoji 的 unicode 是比較後面定義的&lt;/p&gt;
+&lt;p&gt;這超出了原有 JavaScript 原有定義的範圍&lt;/p&gt;
+&lt;p&gt;可以參照網站的介紹&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://home.unicode.org/&#34;&gt;Unicode – The World Standard for Text and Emoji&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;所以 emoji 的字串長度在 JavaScript 一率都是從 2 起跳&lt;/p&gt;
+&lt;p&gt;這在 Web 中會造成有需要處理字串長度的地方就會出現問題&lt;/p&gt;
+&lt;p&gt;例如:&lt;/p&gt;
+&lt;p&gt;input 文字的長度限制的使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;text&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;maxlength&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;10&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;字串需要計算長度時&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;string.length;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;尤其是在現在行動裝置的普及, 內建的鍵盤已經有 emoji 的輸入可以使用&lt;/p&gt;
+&lt;p&gt;更會大大的增加在需要的邏輯處理會出現問題&lt;/p&gt;
+&lt;h2 id=&#34;如何解決&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%a6%82%e4%bd%95%e8%a7%a3%e6%b1%ba&#34;&gt;
+        #
+    &lt;/a&gt;
+    如何解決
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;有一個方便的套件 &lt;a href=&#34;https://github.com/dotcypress/runes&#34;&gt;runes&lt;/a&gt; 會把 emoji 識別出來&lt;/p&gt;
+&lt;p&gt;所以就可以解決掉 emoji 的問題了&lt;/p&gt;
+&lt;h2 id=&#34;背後原理&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%83%8c%e5%be%8c%e5%8e%9f%e7%90%86&#34;&gt;
+        #
+    &lt;/a&gt;
+    背後原理
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;其實背後的原理也不難&lt;/p&gt;
+&lt;p&gt;就是去比對 emoji 的 unicode 碼&lt;/p&gt;
+&lt;p&gt;比對該字串是不是 emoji 的 unicode 碼&lt;/p&gt;
+&lt;p&gt;以下有 emoji 的網站可以試試看&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://getemoji.com/&#34;&gt;https://getemoji.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;後續補充&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%be%8c%e7%ba%8c%e8%a3%9c%e5%85%85&#34;&gt;
+        #
+    &lt;/a&gt;
+    後續補充
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;所以在處理字串長度時就可以用 runes 套件得到的長度去限制&lt;/p&gt;
+&lt;p&gt;不使用原有的方式去限制&lt;/p&gt;
+&lt;p&gt;作者使用 runes 這個名稱也很有意思&lt;/p&gt;
+&lt;p&gt;runes 是盧恩文的意思, 也是拉丁文的起源, 相當於中文中的甲骨文&lt;/p&gt;
+&lt;p&gt;也是屬於以形會意&lt;/p&gt;
+&lt;p&gt;所以用來代表 emoji 也是以形會意真的是蠻有意思的命名&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

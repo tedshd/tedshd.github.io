@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Encoding on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/encoding/</link>
-    <description>Recent content in Encoding on tedshd&#39;s DevNote</description>
+    <title>Encoding on Tedshd&#39;s Dev note</title>
+    <link>/categories/encoding/</link>
+    <description>Tedshd&#39;s Dev note (Encoding)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/encoding/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Jun 2015 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/encoding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Linux - Set Encoding In Linux Environment</title>
-      <link>https://blog.tedshd.io/posts/2015-06-16-linux-set-encoding-in-linux-environment/</link>
+      <link>/posts/2015-06-16-linux-set-encoding-in-linux-environment/</link>
       <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-06-16-linux-set-encoding-in-linux-environment/</guid>
-      <description>Linux - Set Encoding In Linux Environment Add&#xA;export LC_ALL=en_US.UTF-8 export LANG=en_US.UTF-8 export LANGUAGE=en_US.UTF-8 in .bashrc or .zshrc&#xA;Refer - How to set up a clean UTF-8 environment in Linux</description>
+      
+      <guid>/posts/2015-06-16-linux-set-encoding-in-linux-environment/</guid>
+      <description>&lt;h2 id=&#34;linux---set-encoding-in-linux-environment&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#linux---set-encoding-in-linux-environment&#34;&gt;
+        #
+    &lt;/a&gt;
+    Linux - Set Encoding In Linux Environment
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Add&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;LC_ALL&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;en_US.UTF-8
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;LANG&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;en_US.UTF-8
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;LANGUAGE&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;en_US.UTF-8
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;in &lt;code&gt;.bashrc&lt;/code&gt; or &lt;code&gt;.zshrc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://perlgeek.de/en/article/set-up-a-clean-utf8-environment&#34;&gt;Refer - How to set up a clean UTF-8 environment in Linux&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

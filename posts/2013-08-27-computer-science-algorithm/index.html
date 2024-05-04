@@ -1,196 +1,561 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+
+
+<html lang="en-us" data-theme="">
+<head>
     
-
-
-
-
-<title>Computer Science - 演算法 | tedshd&#39;s DevNote</title>
+        
 <meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Computer Science - 演算法 - Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="# 演算法 ## 演算法與啟發式解法 不論是不是用來處理數字,演算法(algorithm)是一種萬全的程序,保證能達成特定的目的.[演算法]一詞源自阿拉伯數學家花拉子密(al-Khwarizmi),它在9世紀時發明許多演算法.在英文中代數(algebra)這個字其實源自於調換(al jabr)之意.花拉子密的許多演算法至今仍被廣泛使用.
+電腦演算法通常以程式描述,由於演算法一詞主要描述的是操作順序,因此相同的演算法可以用不同的電腦語言描述,甚至連接適當的暫存器及邏輯閘於硬體上,以建立另一種演算法.
+通常,很多演算法都可以得到相同的結果,只是不同的演算法完成同一件工作的時間不同.某些演算法可能有其他的優點,也許它所需的記憶體較少,或是使用的的訊息模式特別簡單,因此很容易將線路連接於硬體中.好的演算法和壞的演算法對時間與記憶體的需求往往相差超過數千倍,甚至數百萬倍.有時發現新的演算法可以讓你解決一個困擾多時的問題.
+由於演算法能以各種方式執行,而且能應用在不同難易度的問題上,因此無法只用解決某個問題所花的時間來評斷演算法的速度,因為解題時間是依執行方式及問題大小而異.通常我們會以解題時間與問題大小之間的關係來描述演算法的速度.撰寫電腦程式最大的樂趣再於找到一種更新更快更有效率的方式來處理問題.
+## 最佳演算法 最佳演算法往往不是那麼顯而易見.現在我們想辦法將一疊依序編號的卡片,按遞增順序排列.有一種排列方式是先找出最小的卡片,將它取出後放到一邊.然後在剩下的卡片中再取出編號最小的卡片,將它放在剛才取出的第一張卡片上面.重複這過程直到所有的卡片抽完,會得到一疊依遞增順序排的卡片.以這種方式抽出每一張卡片時,都要先檢視剩下未排序的卡片,若剩下 n 張卡片,則每一次都要比較 n 張卡片上的數字,因此這個演算法執行時間的級數為n**2(n 張卡片 X 比較 n 次).
+若我們知道卡片上的編號為 1~n,則可以用另一種方式排序.這方式是利用遞迴定義.要以遞迴檢視一疊卡片時,首先檢視全部的卡片,將所有小於平均值的卡片湊一堆,而大於平均值的卡片置於另一堆,再以同樣的方式處理這2堆卡片,則會得到4堆卡片,以此類推,每遞迴一次,每疊卡片的數量便會減半,最後當每疊卡都只剩一張時,排序工作就完成了.由於這個演算法會反覆將卡片對分,直到剩下一張卡為止,因此他所需要的時間與n張卡片可以對分的次數成正比,也就是以2為底,取 n 的對數(log n),所以這演算法的時間級數為 nlog n.除此之外還有一個更優雅的遞迴演算法,卡片的排列方式不必依序編號,它是將名片依英文字母順序排列時所用的演算法.這種演算法蠻有用的,稱為合併排序(merge sort).雖然不太容易理解.若有兩疊已排序的卡片,則我們只要不斷選取兩疊卡片中,頂端那張字母順序較前的卡片,便可以輕易得到一疊排序過的卡片,合併排序就是利用這個特性.這個合併過程只是合併排序的副程式,而整個演算法運作方式如下-若每疊只有一張卡片,則卡片已完成排序,否則將卡片分成兩半,再以遞迴的方式對這兩半作排序合併的動作,合併排序演算法式展現遞迴及簡潔的絕佳示範.
+## 旅行推銷員問題 有一個典型的難題叫旅行推銷員問題(traveling salesman problem).想象有個到處旅行的旅行員要拜訪n個城市,假使已知任兩個城市的距離,那旅行員應以什麼樣的順序走訪這n個城市,才能使總距離最短?沒人知道這問題應以多少級數的演算法才能解決,是 n2 還是 n 的任何次方?若已知的最佳演算法級數為 2n,這表示解題時間隨時間大小呈指數次方成長, Ex.若我們將推銷員拜訪的城市個數增加10個,則問題的難度就增加了1000倍(210=1024),若增加30個,則難度將變成10億倍(230約為10**9).指數演算法在問題變大時就沒什麼用處,但對旅行推銷旅行員問題而言,這是目前所知最佳的演算法.旅行推銷員問題看起來也許不重要,但它卻和許多問題是相當的,也就是所謂的N-P完全問題(N-P complete problem,N-P表示[nondeteministic polynomial],非決定性多項式),而這樣的演算法對這些問題都很有用.若能迅速解答旅行推銷員問題,也就能立刻得到這些問題的解答,果真如此的話,要破解機密資料的密碼就變得輕而易舉了.電腦科技在解決旅行推銷員問題仍然沒什麼突破,即使是運算速對非常快的電腦,也會因多加了幾個城市而變的遲緩.
+像旅行推銷員這樣的難題,對電腦來說並不是最最困難的,有些問題的解題時間甚至超過指數級數.也有些無法用演算法解不可計算問題,即使某些問題有演算法可解,但也未必是最好的解法,但依定義來看,演算法是保證能夠完成所要執行的工作,但這樣的保證往往需要付出相當高的代價,在許多型況下,使用[幾乎]能夠得到正確答案的程序更切何實際.一般來說,[幾乎]就已經夠不錯了,若一個法則傾向於得到正解,卻不能保證得到正解,則我們稱之為啟發式解法(heuristic).使用啟發式解法往往比演算法來得實際. 啟發式解法在使用上,最間單的例子就是西洋棋遊戲程式.一個聰明的程式設計師,即使他只有普通的棋藝,卻可以寫出打敗自己的西洋棋程式.這種程式並非演算法,因為它不保證穩贏.啟發式解法是利用經驗及知識做各種猜測,而好的啟發式解法往往能做出正確的判斷.電腦的某些最令人印象深刻的行為都是啟發式解法,而非演算法.要寫出良好的下棋程式,則可以下列啟發式解法作為依據:
+1 計算棋盤上所剩的棋子,以評估每位玩家相對的局勢. 2 將棋子下在往後幾步內所能預料的最佳位置. 3 假設對手採取與你相似的策略.
+這些法則只是大概的策略,我們也可以想像它們失誤的情況.玩家的相對局勢除了要看所剩的棋子外,棋子所在的位置也很重要.好的位置往往比多一個子來得有利.
+利用這些啟發式法則,可以寫出一個下棋程式,模擬往後幾步內所有看起來可行的棋路.最好能同時考慮所有看起來可行與不可行的棋路,並盡可能延長到遊戲結束.
+對井字遊戲而言是很容易,但對西洋棋來說,這麼做是不切實際的,即使是用最快的電腦也是如此.在西洋棋遊戲中,玩家有36種移動方式,而每一種移動方式又導致對方有36種回應的可能,平均來說,玩西洋棋時至少都會持續80步以上,因此電腦必須在36**80種可能的狀態中搜尋,這種搜尋即使是最快的電腦也要花上百年的時間才能完成.假設(2)是正確的,並同意最佳路線即為未來幾步內使玩家處於最有利地位的棋路,再指定下棋程式檢視往後的六個步驟.根據(1),下棋程式會檢視六個步驟後雙方的局勢.有了這些假設,再接下來的六個步驟中,電腦不能只選它最想走的路,因為其中還參雜著對手所下的棋子.因此我們必須假設對手會選擇對他自己有利的棋路,這就是(3).因此電腦會沿著六個步驟的所有可能棋路,輪流扮演黑白雙方的棋子.程式在電腦記憶體中的虛擬棋盤上遊走,就像西洋棋大師在腦海中摹想它的棋路一樣.評估黑白棋形式的程式會遞迴的呼叫副程式.
+大部分的下棋程式會加入一些額外的啟發式法則,已停止搜尋工作,並對可能的棋路做更深度的搜尋,包括犧牲自己的棋子兌換對方的棋子.這些啟發式法則只是一些附加的揣測,在某些情況下可以改善搜尋品質,但同時可能會造成其他方面的失誤.精雕細琢之後,這個基本搜尋程式幾乎就是所有下棋程式的核心.由於電腦的速度足以考慮數百萬條可能的路線因此它非常有效率,而在這幾百萬條棋路中,總有一條出乎程式設計師意料之外的,甚至連西洋棋高手也無法預測,這就是為什麼在與電腦下棋時,程式設計師往往被電腦打敗. 在電腦程式中,利用啟發式法則在可能狀態中搜尋是相當普遍的,而且也有比玩遊戲更重要的應用,它通常也是電腦尋找[創造性]答案的一種方式,這類問題的解答通常落在一組非常龐大卻有限的可能狀態所成的集合中,我們稱這個集合為搜尋空間(search space).西洋棋的搜尋空間是由一組所有能的棋路所成的集合,而旅行推銷員問題的搜尋空間是連接每個城市的所有可能路徑.由於這些空間非常龐大,無法條列式一一搜索,因此必須靠啟發式法則縮小搜尋範圍,像井字遊戲這種搜尋空間很小的問題,條列式搜尋則是最佳的方式,因為它能保證得到正確答案.
+搜尋空間之所以龐大,乃因那些可能狀態是產生於簡單元素的組合,這些元素導致了可能狀態的[組合爆炸],它隨著組合元素的增加呈指數倍爆炸性成長.由於可能狀態是由元素組合所產生的,因此在這個空間中會有距離的觀念,公有元素組合出來的距離比稀有元素組合出來更為接近.
+可以想像這些可能狀態是落在一處二維風景中,有時也稱為適切度風景(fitness landscape).每個可能解答的適切度或分數以風景中某一點的高度來表示.若相似的可能解有相近的分數,則相鄰的點有相似的高度,因此可以明確的定義出山丘及溪谷,找尋最佳解就等於尋找最高峰.
+要搜尋這樣的空間,最簡單的方式就是隨機挑選一些點加以比較,並紀錄其中最好的點.這種方式所能搜尋的點數只受限於時間,而且它可以應用在任一空間上,這就好像叫一群傘兵跳到這風景的不同位置上,然後叫他們回報所在位置的高度.這種搜尋方式並不是很有效率.
+在旅行推銷員問題這樣的搜尋空間裡,鄰近的點可能有著相近的分數,通常較適合的搜尋方式是在相鄰的點跟點之間遊走,就如在丘陵地上只有往上攀爬才能找到頂峰一樣,所對應的啟發式法則就是在搜尋空間裡選擇相鄰的兩解中最佳者.
+這方法稱為登山法則(hill climbing),弱點在於你即使登上了某座山的山頂也不保證是最高的山頂.登山法則是一種啟發式法則,並非演算法.還有其他類似登山法則的啟發式法則,而且比較部會困於某座山的頂端.Ex.可由一些隨機抽出的位置開始反覆以登山法則向上攀豋,或往下走,避免困於山頂.登山法則這類的啟發式方法在處理旅行者問題時非常有效,它可以再短時間內得到一組不錯的解,即使有數千個城市,由合理的猜測為出發點,並逐次改善,找出最佳解.利用啟發式法則,我們幾乎能得到幾乎是最佳途徑.要想出針對旅行推銷員問題的迅速啟發式解法並不難,困難的是如何找到最快的演算法.
+在許多問題上,並不需要每次都得到最佳解,只要一個能被接受的次佳解即可,因為即使有最完美的解答,我們也未必做得到.對這類的問題電腦會根據知識經驗猜出一個深思熟慮的答案,由於電腦能考慮的組合及可能性極多,因此它所做的猜測常常讓程式設計師驚訝.當電腦使用啟發式法則時,它可能讓我們驚喜,但不免犯錯,因此使它變得有點像人類而不像機器.">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta name="google" content="notranslate">
-<meta id="viewport" name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='演算法 演算法與啟發式解法 不論是不是用來處理數字,演算法(algorithm)是一種萬全的程序,保證能達成特定的目的.[演算法]一詞源自阿拉伯'>
-<meta name="keywords" content=''>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/2013-08-27-computer-science-algorithm/">
-<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/2013-08-27-computer-science-algorithm/" />
-
-<link rel="canonical" href="https://blog.tedshd.io/posts/2013-08-27-computer-science-algorithm/" />
-<link rel="shortcut icon" href="/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
-<meta name="theme-color" content="">
-<meta name="robots" content="index, follow">
-<meta name="copyright" content="Tedshd">
-
-<meta property="og:title" content="Computer Science - 演算法" />
-<meta property="og:description" content="演算法 演算法與啟發式解法 不論是不是用來處理數字,演算法(algorithm)是一種萬全的程序,保證能達成特定的目的.[演算法]一詞源自阿拉伯" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2013-08-27-computer-science-algorithm/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2013-08-27T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="Computer Science - 演算法"/>
-<meta name="twitter:description" content="演算法 演算法與啟發式解法 不論是不是用來處理數字,演算法(algorithm)是一種萬全的程序,保證能達成特定的目的.[演算法]一詞源自阿拉伯"/>
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-<script data-ad-client="ca-pub-0553186380244641" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
+
+        
+
+
+
+
+
 
 
     
+        <div class="theme-switcher">
+            <span class="inline-svg">
 
     
 
-    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
 
     
-<link>
-
-<link
-    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
-    rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
-
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
 
-    gtag('config', 'G-1NKP3D2ZGG');
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
     </script>
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
-                    tedshd&#39;s DevNote
-                </a>
-            </div>
-            
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
-                <i class="p-icon--menu"></i>
+
+
+        <ul class="social-icons noselect">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
             </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
-                <i class="p-icon--close"></i>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
             </a>
-        </div>
+        </li>
+    
 
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
 
-            <ul class="p-navigation__links" role="menu">
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/categories">Categories</a>
-                </li>
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/tags">tags</a>
-                </li>
-                
-            </ul>
+    
 
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-            
-        </nav>
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
     </div>
-</header><div id="main-content">
-<div class="page-banner">
-    <div class="row u-vertically-center">
-        <div class="col-8 pure-g">
-            <div class="pure-u">
-                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
-                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
-            </div>
-            <div class="pure-u">
-                <h2>tedshd&#39;s DevNote</h2>
-                <p>Develop &amp; Design Note by Ted</p>
-            </div>
-        </div>
+    <div class="header-top-right">
+
     </div>
 </div>
 
-<ul class="p-navigation__links sub_menu" role="menu">
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tedshd.github.io/resume/">About</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tysh310246.blogspot.tw/">Blog</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://github.com/tedshd">Github</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
-    </li>
-    
-</ul>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
 
-<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Computer Science - 演算法</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-08-27">2013-08-27</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-08-27-computer-science-algorithm/">/posts/2013-08-27-computer-science-algorithm/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/computer-science/">Computer Science</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#演算法">演算法</a>
+      <ul>
+        <li><a href="#演算法與啟發式解法">演算法與啟發式解法</a></li>
+        <li><a href="#最佳演算法">最佳演算法</a></li>
+        <li><a href="#旅行推銷員問題">旅行推銷員問題</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
 </script>
 
-
-<header class="">
-    <div class="row">
-        <h1>Computer Science - 演算法</h1>
-    </div>
-</header>
-
-
-<section class="p-strip is-shallow">
-    <main class="row post-content">
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2013-08-27
-        </p>
-        
-        <h2 id="演算法">演算法</h2>
-<h3 id="演算法與啟發式解法">演算法與啟發式解法</h3>
+        <div class="content e-content">
+            <h2 id="演算法" >
+<div>
+    <a href="#%e6%bc%94%e7%ae%97%e6%b3%95">
+        #
+    </a>
+    演算法
+</div>
+</h2>
+<h3 id="演算法與啟發式解法" >
+<div>
+    <a href="#%e6%bc%94%e7%ae%97%e6%b3%95%e8%88%87%e5%95%9f%e7%99%bc%e5%bc%8f%e8%a7%a3%e6%b3%95">
+        ##
+    </a>
+    演算法與啟發式解法
+</div>
+</h3>
 <p>不論是不是用來處理數字,演算法(algorithm)是一種萬全的程序,保證能達成特定的目的.[演算法]一詞源自阿拉伯數學家花拉子密(al-Khwarizmi),它在9世紀時發明許多演算法.在英文中代數(algebra)這個字其實源自於調換(al jabr)之意.花拉子密的許多演算法至今仍被廣泛使用.</p>
 <p>電腦演算法通常以程式描述,由於演算法一詞主要描述的是操作順序,因此相同的演算法可以用不同的電腦語言描述,甚至連接適當的暫存器及邏輯閘於硬體上,以建立另一種演算法.</p>
 <p>通常,很多演算法都可以得到相同的結果,只是不同的演算法完成同一件工作的時間不同.某些演算法可能有其他的優點,也許它所需的記憶體較少,或是使用的的訊息模式特別簡單,因此很容易將線路連接於硬體中.好的演算法和壞的演算法對時間與記憶體的需求往往相差超過數千倍,甚至數百萬倍.有時發現新的演算法可以讓你解決一個困擾多時的問題.</p>
 <p>由於演算法能以各種方式執行,而且能應用在不同難易度的問題上,因此無法只用解決某個問題所花的時間來評斷演算法的速度,因為解題時間是依執行方式及問題大小而異.通常我們會以解題時間與問題大小之間的關係來描述演算法的速度.撰寫電腦程式最大的樂趣再於找到一種更新更快更有效率的方式來處理問題.</p>
-<h3 id="最佳演算法">最佳演算法</h3>
+<h3 id="最佳演算法" >
+<div>
+    <a href="#%e6%9c%80%e4%bd%b3%e6%bc%94%e7%ae%97%e6%b3%95">
+        ##
+    </a>
+    最佳演算法
+</div>
+</h3>
 <p>最佳演算法往往不是那麼顯而易見.現在我們想辦法將一疊依序編號的卡片,按遞增順序排列.有一種排列方式是先找出最小的卡片,將它取出後放到一邊.然後在剩下的卡片中再取出編號最小的卡片,將它放在剛才取出的第一張卡片上面.重複這過程直到所有的卡片抽完,會得到一疊依遞增順序排的卡片.以這種方式抽出每一張卡片時,都要先檢視剩下未排序的卡片,若剩下 n 張卡片,則每一次都要比較 n 張卡片上的數字,因此這個演算法執行時間的級數為n**2(n 張卡片 X 比較 n 次).</p>
 <p>若我們知道卡片上的編號為 1~n,則可以用另一種方式排序.這方式是利用遞迴定義.要以遞迴檢視一疊卡片時,首先檢視全部的卡片,將所有小於平均值的卡片湊一堆,而大於平均值的卡片置於另一堆,再以同樣的方式處理這2堆卡片,則會得到4堆卡片,以此類推,每遞迴一次,每疊卡片的數量便會減半,最後當每疊卡都只剩一張時,排序工作就完成了.由於這個演算法會反覆將卡片對分,直到剩下一張卡為止,因此他所需要的時間與n張卡片可以對分的次數成正比,也就是以2為底,取 n 的對數(log n),所以這演算法的時間級數為 nlog n.除此之外還有一個更優雅的遞迴演算法,卡片的排列方式不必依序編號,它是將名片依英文字母順序排列時所用的演算法.這種演算法蠻有用的,稱為合併排序(merge sort).雖然不太容易理解.若有兩疊已排序的卡片,則我們只要不斷選取兩疊卡片中,頂端那張字母順序較前的卡片,便可以輕易得到一疊排序過的卡片,合併排序就是利用這個特性.這個合併過程只是合併排序的副程式,而整個演算法運作方式如下-若每疊只有一張卡片,則卡片已完成排序,否則將卡片分成兩半,再以遞迴的方式對這兩半作排序合併的動作,合併排序演算法式展現遞迴及簡潔的絕佳示範.</p>
-<h3 id="旅行推銷員問題">旅行推銷員問題</h3>
+<h3 id="旅行推銷員問題" >
+<div>
+    <a href="#%e6%97%85%e8%a1%8c%e6%8e%a8%e9%8a%b7%e5%93%a1%e5%95%8f%e9%a1%8c">
+        ##
+    </a>
+    旅行推銷員問題
+</div>
+</h3>
 <p>有一個典型的難題叫旅行推銷員問題(traveling salesman problem).想象有個到處旅行的旅行員要拜訪n個城市,假使已知任兩個城市的距離,那旅行員應以什麼樣的順序走訪這n個城市,才能使總距離最短?沒人知道這問題應以多少級數的演算法才能解決,是 n<strong>2 還是 n 的任何次方?若已知的最佳演算法級數為 2</strong>n,這表示解題時間隨時間大小呈指數次方成長, Ex.若我們將推銷員拜訪的城市個數增加10個,則問題的難度就增加了1000倍(2<strong>10=1024),若增加30個,則難度將變成10億倍(2</strong>30約為10**9).指數演算法在問題變大時就沒什麼用處,但對旅行推銷旅行員問題而言,這是目前所知最佳的演算法.旅行推銷員問題看起來也許不重要,但它卻和許多問題是相當的,也就是所謂的N-P完全問題(N-P complete problem,N-P表示[nondeteministic polynomial],非決定性多項式),而這樣的演算法對這些問題都很有用.若能迅速解答旅行推銷員問題,也就能立刻得到這些問題的解答,果真如此的話,要破解機密資料的密碼就變得輕而易舉了.電腦科技在解決旅行推銷員問題仍然沒什麼突破,即使是運算速對非常快的電腦,也會因多加了幾個城市而變的遲緩.</p>
 <p>像旅行推銷員這樣的難題,對電腦來說並不是最最困難的,有些問題的解題時間甚至超過指數級數.也有些無法用演算法解不可計算問題,即使某些問題有演算法可解,但也未必是最好的解法,但依定義來看,演算法是保證能夠完成所要執行的工作,但這樣的保證往往需要付出相當高的代價,在許多型況下,使用[幾乎]能夠得到正確答案的程序更切何實際.一般來說,[幾乎]就已經夠不錯了,若一個法則傾向於得到正解,卻不能保證得到正解,則我們稱之為啟發式解法(heuristic).使用啟發式解法往往比演算法來得實際.
 啟發式解法在使用上,最間單的例子就是西洋棋遊戲程式.一個聰明的程式設計師,即使他只有普通的棋藝,卻可以寫出打敗自己的西洋棋程式.這種程式並非演算法,因為它不保證穩贏.啟發式解法是利用經驗及知識做各種猜測,而好的啟發式解法往往能做出正確的判斷.電腦的某些最令人印象深刻的行為都是啟發式解法,而非演算法.要寫出良好的下棋程式,則可以下列啟發式解法作為依據:</p>
@@ -209,45 +574,77 @@
 <p>這方法稱為登山法則(hill climbing),弱點在於你即使登上了某座山的山頂也不保證是最高的山頂.登山法則是一種啟發式法則,並非演算法.還有其他類似登山法則的啟發式法則,而且比較部會困於某座山的頂端.Ex.可由一些隨機抽出的位置開始反覆以登山法則向上攀豋,或往下走,避免困於山頂.登山法則這類的啟發式方法在處理旅行者問題時非常有效,它可以再短時間內得到一組不錯的解,即使有數千個城市,由合理的猜測為出發點,並逐次改善,找出最佳解.利用啟發式法則,我們幾乎能得到幾乎是最佳途徑.要想出針對旅行推銷員問題的迅速啟發式解法並不難,困難的是如何找到最快的演算法.</p>
 <p>在許多問題上,並不需要每次都得到最佳解,只要一個能被接受的次佳解即可,因為即使有最完美的解答,我們也未必做得到.對這類的問題電腦會根據知識經驗猜出一個深思熟慮的答案,由於電腦能考慮的組合及可能性極多,因此它所做的猜測常常讓程式設計師驚訝.當電腦使用啟發式法則時,它可能讓我們驚喜,但不免犯錯,因此使它變得有點像人類而不像機器.</p>
 
-    </main>
-</section>
+        </div>
 
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
+    </article>
+
     
-    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/2013-08-27-computer-hardware-and-science-dialogue/">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            Computer Science - 與硬體對話
-        </span>
-    </a>
     
 
     
-    <a class="p-article-pagination__link--next" href="https://blog.tedshd.io/posts/2013-08-27-computer-science-fluid-machine/">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            Computer Science - 流體電腦
-        </span>
-    </a>
+        
+        
     
-</div>
-    </div>
-</footer>
 
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Tedshd
-            </p>
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
         </div>
     </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
 </footer>
 
-
-
-
+        
+    </div>
 </body>
 </html>

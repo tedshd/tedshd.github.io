@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Chrome on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/chrome/</link>
-    <description>Recent content in Chrome on tedshd&#39;s DevNote</description>
+    <title>Chrome on Tedshd&#39;s Dev note</title>
+    <link>/categories/chrome/</link>
+    <description>Tedshd&#39;s Dev note (Chrome)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/chrome/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/chrome/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Linux - install gogole chrome in debian Linux</title>
-      <link>https://blog.tedshd.io/posts/2016-08-03-linux-install-gogole-chrome-in-debian-linux/</link>
+      <link>/posts/2016-08-03-linux-install-gogole-chrome-in-debian-linux/</link>
       <pubDate>Wed, 03 Aug 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-08-03-linux-install-gogole-chrome-in-debian-linux/</guid>
-      <description>Linux - install gogole chrome in debian Linux wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - sudo sh -c &amp;#39;echo &amp;#34;deb http://dl.google.com/linux/chrome/deb/ stable main&amp;#34; &amp;gt;&amp;gt; /etc/apt/sources.list.d/google.list&amp;#39; sudo apt-get update sudo apt-get install google-chrome-stable refer - How to install Chrome browser properly via command line?</description>
+      
+      <guid>/posts/2016-08-03-linux-install-gogole-chrome-in-debian-linux/</guid>
+      <description>&lt;h2 id=&#34;linux---install-gogole-chrome-in-debian-linux&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#linux---install-gogole-chrome-in-debian-linux&#34;&gt;
+        #
+    &lt;/a&gt;
+    Linux - install gogole chrome in debian Linux
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo sh -c &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;echo &amp;#34;deb http://dl.google.com/linux/chrome/deb/ stable main&amp;#34; &amp;gt;&amp;gt; /etc/apt/sources.list.d/google.list&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install google-chrome-stable
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://askubuntu.com/questions/79280/how-to-install-chrome-browser-properly-via-command-line&#34;&gt;refer - How to install Chrome browser properly via command line?&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

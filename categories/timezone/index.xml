@@ -1,20 +1,172 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TimeZone on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/timezone/</link>
-    <description>Recent content in TimeZone on tedshd&#39;s DevNote</description>
+    <title>TimeZone on Tedshd&#39;s Dev note</title>
+    <link>/categories/timezone/</link>
+    <description>Tedshd&#39;s Dev note (TimeZone)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Tue, 08 Nov 2022 17:24:23 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/timezone/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Oct 2022 11:16:31 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/timezone/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>在 JavaScript 處理各個時區對應的日期時間</title>
-      <link>https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/</link>
+      <link>/posts/handle_datetime_and_timezone_in_js/</link>
       <pubDate>Tue, 04 Oct 2022 11:16:31 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/handle_datetime_and_timezone_in_js/</guid>
-      <description>Intro 在 JavaScript 中的日期時間是個當初沒有定義出良好設計的東西 這裡先舉幾個常見的問題 日期格式問題 日期呈現的語系問題 時區問題 12 小時 24 小時問題 &amp;hellip; 以原生的 API 在</description>
+      
+      <guid>/posts/handle_datetime_and_timezone_in_js/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;在 JavaScript 中的日期時間是個當初沒有定義出良好設計的東西&lt;/p&gt;
+&lt;p&gt;這裡先舉幾個常見的問題&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;日期格式問題&lt;/li&gt;
+&lt;li&gt;日期呈現的語系問題&lt;/li&gt;
+&lt;li&gt;時區問題&lt;/li&gt;
+&lt;li&gt;12 小時 24 小時問題
+&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以原生的 API 在處理日期時間大多得自己額外做許多事情或是套用一些第三方 libary 來協助達成目的&lt;/p&gt;
+&lt;h2 id=&#34;時區問題&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%99%82%e5%8d%80%e5%95%8f%e9%a1%8c&#34;&gt;
+        #
+    &lt;/a&gt;
+    時區問題
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;這次主要是討論關於時區的問題&lt;/p&gt;
+&lt;p&gt;在早期只能用 &lt;code&gt;getTimezoneOffset()&lt;/code&gt; 的方法搭配時區表去換算各地時區&lt;/p&gt;
+&lt;p&gt;現在倒是可以使用 &lt;code&gt;Intl.DateTimeFormat&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset&#34;&gt;refer - Date.prototype.getTimezoneOffset()&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat&#34;&gt;refer - Intl.DateTimeFormat&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其實上述的問題, 在使用 &lt;code&gt;Intl.DateTimeFormat&lt;/code&gt; 基本上都可以解決掉&lt;/p&gt;
+&lt;p&gt;詳細方式可以參以下文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat&#34;&gt;refer - Intl.DateTimeFormat() constructor&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在時區中又有一個常常被忽視的的問題就是夏令時間(daylight savings time) 這個在夏季時就得把時間提前一小時的問題&lt;/p&gt;
+&lt;p&gt;如果自己處理時區就得記得處理這問題&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;Intl.DateTimeFormat&lt;/code&gt; 的話系統已經自動處理了&lt;/p&gt;
+&lt;h2 id=&#34;intldatetimeformat&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intldatetimeformat&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intl.DateTimeFormat
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;這邊簡單介紹一下 &lt;code&gt;Intl.DateTimeFormat&lt;/code&gt; 的一些用法與注意事項&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; Intl.DateTimeFormat(navigator.language, {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  timeZone&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;America/Los_Angeles&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  dateStyle&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;full&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  timeStyle&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;full&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}).format(&lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;Date&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這個範例就表示了當前洛杉磯的時間&lt;/p&gt;
+&lt;p&gt;第一個參數是語系, 採用 BCP 47 標準, 基本上建議使用 &lt;code&gt;navigator.language&lt;/code&gt; 或是自己寫死(特定情況時使用)或是另外帶入&lt;/p&gt;
+&lt;p&gt;第二個參數的物件除了 &lt;code&gt;timeZone&lt;/code&gt; 是為了顯示指定時區之外其他的參數基本上都在定義顯示的型式&lt;/p&gt;
+&lt;p&gt;例如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; Intl.DateTimeFormat(navigator.language, {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  year&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;numeric&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  month&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;2-digit&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  day&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;2-digit&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  hour&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;2-digit&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  minute&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;2-digit&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  second&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;2-digit&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  hourCycle&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;h24&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}).format(&lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;Date&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這樣就會返回 &lt;code&gt;YYYY/MM/dd HH:mm:ss&lt;/code&gt; 的顯示方式&lt;/p&gt;
+&lt;p&gt;額外提幾個比較特別的參數&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;timeZone: 時區的值使採用 IANA 所定義出的標準名稱基本就是像是 Asia/Taipei 這樣的格式, 有一個比較特別值是可以使用 &amp;lsquo;UTC&amp;rsquo; 表示當前的 UTC+0 時間(簡單說明就是時區零的時間)&lt;/li&gt;
+&lt;li&gt;calendar: 是設定要使用的曆法, 例如: &lt;code&gt;calendar: &#39;chinese&#39;&lt;/code&gt; 就是農曆&lt;/li&gt;
+&lt;li&gt;hour12: 是表示是要用 12 小時制或 24 小時制顯示, 用 24 小時制就不會另外顯示上午或下午&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;剩下的可以參考文件來使用&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat&#34;&gt;refer - Intl.DateTimeFormat() constructor&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;處理全球性的活動時間問題&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%99%95%e7%90%86%e5%85%a8%e7%90%83%e6%80%a7%e7%9a%84%e6%b4%bb%e5%8b%95%e6%99%82%e9%96%93%e5%95%8f%e9%a1%8c&#34;&gt;
+        #
+    &lt;/a&gt;
+    處理全球性的活動時間問題
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;接下來來處理實作面的問題&lt;/p&gt;
+&lt;p&gt;當服務擴及全球是需要在全球各地或是各別國家的特別節日等舉辦活動&lt;/p&gt;
+&lt;p&gt;時間就很重要&lt;/p&gt;
+&lt;p&gt;如果時間搞錯, 使用者根本無法在正確的時間參與到活動, 那就準備等著收到一堆抱怨&lt;/p&gt;
+&lt;p&gt;所以都會有以下策略來處理這樣的問題&lt;/p&gt;
+&lt;h3 id=&#34;說明活動開始的時間是對應哪個時區的時間&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%aa%aa%e6%98%8e%e6%b4%bb%e5%8b%95%e9%96%8b%e5%a7%8b%e7%9a%84%e6%99%82%e9%96%93%e6%98%af%e5%b0%8d%e6%87%89%e5%93%aa%e5%80%8b%e6%99%82%e5%8d%80%e7%9a%84%e6%99%82%e9%96%93&#34;&gt;
+        ##
+    &lt;/a&gt;
+    說明活動開始的時間是對應哪個時區的時間
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;例如活動指定開始時間是 2022/12/25 08:00 GTM-7(洛杉磯時間)&lt;/p&gt;
+&lt;p&gt;這公告發在美國地區還沒什麼問題, 因為全美國只有大概橫跨了 5 個時區&lt;/p&gt;
+&lt;p&gt;但這公告對在亞洲和歐洲地區的人就很痛苦, 因為還得使用者自己換算成自己當地的時間&lt;/p&gt;
+&lt;p&gt;所以如果以全球性的活動來說這對跨比較多時區的人來說很不友善&lt;/p&gt;
+&lt;p&gt;但這也是有解法的&lt;/p&gt;
+&lt;p&gt;只要在 client 轉換成 client 當地的時間就可以了, 才比較容易讓使用者了解到正確的時間&lt;/p&gt;
+&lt;h3 id=&#34;針對不同區開始對應區域的公告與活動&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%87%9d%e5%b0%8d%e4%b8%8d%e5%90%8c%e5%8d%80%e9%96%8b%e5%a7%8b%e5%b0%8d%e6%87%89%e5%8d%80%e5%9f%9f%e7%9a%84%e5%85%ac%e5%91%8a%e8%88%87%e6%b4%bb%e5%8b%95&#34;&gt;
+        ##
+    &lt;/a&gt;
+    針對不同區開始對應區域的公告與活動
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;這是比較常見的做法&lt;/p&gt;
+&lt;p&gt;大多時候可以針對像是不同國家的節慶活動或是各個區域不同的活動來處理&lt;/p&gt;
+&lt;p&gt;所以只要針對該地區的的時區設定就可以了&lt;/p&gt;
+&lt;h2 id=&#34;管理系統的設計&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%ae%a1%e7%90%86%e7%b3%bb%e7%b5%b1%e7%9a%84%e8%a8%ad%e8%a8%88&#34;&gt;
+        #
+    &lt;/a&gt;
+    管理系統的設計
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;下面說明一個比較麻煩的情況&lt;/p&gt;
+&lt;p&gt;當需要設計一個面對全球性的推播或公告系統時會遇到上述的問題&lt;/p&gt;
+&lt;p&gt;在管理人員或運營人員在操作系統時&lt;/p&gt;
+&lt;p&gt;會有一個很基本的思維是&lt;/p&gt;
+&lt;p&gt;想要在美國國慶的時候設定推播通知&lt;/p&gt;
+&lt;p&gt;那很理所當然地在介面會希望就是選美國當地的時區, 之後再選美國當地的日期時間&lt;/p&gt;
+&lt;p&gt;不會希望要自己換算美國國慶的時間轉成自己當地的時間是什麼時間再去設定&lt;/p&gt;
+&lt;p&gt;這在時間處理上就會是一個很有趣的問題&lt;/p&gt;
+&lt;p&gt;JavaScript 的 Date 是帶有時區的(client 裝置設定的時區)&lt;/p&gt;
+&lt;p&gt;所以是需要做額外處理的&lt;/p&gt;
+&lt;p&gt;但原理也很簡單&lt;/p&gt;
+&lt;p&gt;先用 &lt;code&gt;new Date(value)&lt;/code&gt; 把設定的時間取出來轉成 timestamp&lt;/p&gt;
+&lt;p&gt;例如: &lt;code&gt;new Date(&#39;2022-10-04T17:00:00&#39;)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;這會返回 &lt;strong&gt;1664874000000&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;但這是當前 client 設定時區的 2022-10-04 下午五點的 timestamp&lt;/p&gt;
+&lt;p&gt;並非期望時區的時間&lt;/p&gt;
+&lt;p&gt;這時就要做時區的校正&lt;/p&gt;
+&lt;p&gt;公式大概如下&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;new Date(設定推播的時間).getTime() + 當前時區 - 設定推播的時區&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;所以大概就是&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;new Date(dateString).getTime() - new Date().getTimezoneOffset()*60*1000 - 設定推播的時區(毫秒)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;那只要把這個丟給後端讓後端依照這時間發送就可以了&lt;/p&gt;
+&lt;p&gt;到了這邊, 大概剩下一個問題就是麻煩的夏令時間(daylight savings time) 問題&lt;/p&gt;
+&lt;p&gt;因為不可能自己處理這問題&lt;/p&gt;
+&lt;p&gt;所以這邊採用了一個 &lt;a href=&#34;https://timezonedb.com/&#34;&gt;timezonedb&lt;/a&gt; 的服務&lt;/p&gt;
+&lt;p&gt;這個服務的 api 會返回當前所有時區而且是已經校正過夏令時間的時區&lt;/p&gt;
+&lt;p&gt;所以就可以拿取得這個服務的資料來當成自己的時區資料&lt;/p&gt;
+&lt;p&gt;最後的最後&lt;/p&gt;
+&lt;p&gt;剩下一個尷尬的小問題就是如果設定的時間和要推送的時間剛好是跨夏令時間的開始和結束時, 就會有一小時的誤差, 目前還沒想到比較好的解法, 只能在設定時儘量避掉這樣的情況&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

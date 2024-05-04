@@ -1,20 +1,58 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fierbase on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/fierbase/</link>
-    <description>Recent content in Fierbase on tedshd&#39;s DevNote</description>
+    <title>Fierbase on Tedshd&#39;s Dev note</title>
+    <link>/categories/fierbase/</link>
+    <description>Tedshd&#39;s Dev note (Fierbase)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Sat, 22 Oct 2022 22:47:38 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/fierbase/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Oct 2022 21:05:11 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/fierbase/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Unarchived firebase console dynamic link</title>
-      <link>https://blog.tedshd.io/posts/unarchived_firebase_console_dynamic_link/</link>
+      <link>/posts/unarchived_firebase_console_dynamic_link/</link>
       <pubDate>Sat, 22 Oct 2022 21:05:11 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/unarchived_firebase_console_dynamic_link/</guid>
-      <description>Sometimes a dynamic link is accidentally archived.&#xA;But doesn&amp;rsquo;t have any option show archived dynamic link list.&#xA;BTW&#xA;You have a way to unarchived this dynamic link.&#xA;Use POST API update this dynamic link Find your filebase console auth data You can edit dynamic link data and then catch request when save it.&#xA;Find this request https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;amp;key=&amp;lt;YOUR KEY&amp;gt; and copy header&#xA;Build POST data curl --location --request POST &amp;#39;https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;amp;key=&amp;lt;YOUR KEY&amp;gt;&amp;#39; \ --header &amp;#39;Authorization: &amp;lt;YOUR Authorization&amp;gt;&amp;#39; \ --header &amp;#39;Origin: https://console.</description>
+      
+      <guid>/posts/unarchived_firebase_console_dynamic_link/</guid>
+      <description>&lt;p&gt;Sometimes a dynamic link is accidentally archived.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2FScreen_Shot_2022-10-22_at_9_17_52_PM.png?alt=media&amp;amp;token=af826e6a-8d67-40bb-8f17-f8c5fd2ca7c8&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;But doesn&amp;rsquo;t have any option show archived dynamic link list.&lt;/p&gt;
+&lt;p&gt;BTW&lt;/p&gt;
+&lt;p&gt;You have a way to unarchived this dynamic link.&lt;/p&gt;
+&lt;h2 id=&#34;use-post-api-update-this-dynamic-link&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#use-post-api-update-this-dynamic-link&#34;&gt;
+        #
+    &lt;/a&gt;
+    Use POST API update this dynamic link
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Find your filebase console auth data&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can edit dynamic link data and then catch request when save it.&lt;/p&gt;
+&lt;p&gt;Find this request &lt;code&gt;https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;amp;key=&amp;lt;YOUR KEY&amp;gt;&lt;/code&gt; and copy header&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Build POST data&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl --location --request POST &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;amp;key=&amp;lt;YOUR KEY&amp;gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&lt;/span&gt;--header &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Authorization: &amp;lt;YOUR Authorization&amp;gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&lt;/span&gt;--header &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Origin: https://console.firebase.google.com&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&lt;/span&gt;--header &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&lt;/span&gt;--header &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Referer: &amp;lt;REFER YOUR PROJECT LINK&amp;gt;?linkUrl=&amp;lt;YOUR ARCHIVED DYNAMIC LINK&amp;gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&lt;/span&gt;--header &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Host: firebasedurablelinks-pa.clients6.google.com&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&lt;/span&gt;--header &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Cookie: &amp;lt;YOUR COOKIE&amp;gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&lt;/span&gt;--header &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;X-Goog-AuthUser: &amp;lt;REFER YOUR ORIGIN REQUEST&amp;gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&lt;/span&gt;--header &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Content-Type: text/plain&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&lt;/span&gt;--data-raw &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;{&amp;#34;durableLink&amp;#34;:{&amp;#34;shortDurableLink&amp;#34;:{&amp;#34;link&amp;#34;:&amp;#34;&amp;lt;YOUR ARCHIVED DYNAMIC LINK&amp;gt;&amp;#34;}},&amp;#34;newDurableLink&amp;#34;:{&amp;#34;shortDurableLink&amp;#34;:{&amp;#34;visibility&amp;#34;:&amp;#34;UNARCHIVED&amp;#34;}},&amp;#34;newDurableLinkMask&amp;#34;:&amp;#34;short_durable_link&amp;#34;,&amp;#34;projectInfo&amp;#34;:{&amp;#34;projectNumber&amp;#34;:&amp;#34;&amp;lt;YOUR PROJECT NUMBER&amp;gt;&amp;#34;}}&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally you can unarchived this dynamic link.&lt;/p&gt;
+&lt;p&gt;Have a nice day.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/54086964/where-are-archived-dynamic-links&#34;&gt;Refer - Where are archived Dynamic Links?&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

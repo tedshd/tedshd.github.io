@@ -1,20 +1,328 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Webdriver BDD on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/webdriver-bdd/</link>
-    <description>Recent content in Webdriver BDD on tedshd&#39;s DevNote</description>
+    <title>Webdriver BDD on Tedshd&#39;s Dev note</title>
+    <link>/categories/webdriver-bdd/</link>
+    <description>Tedshd&#39;s Dev note (Webdriver BDD)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/webdriver-bdd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jul 2016 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/webdriver-bdd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>webdriver.io - 前端測試入門筆記...</title>
-      <link>https://blog.tedshd.io/posts/2016-07-19-webdriverio-introduction-to-front-end-test-notes/</link>
+      <link>/posts/2016-07-19-webdriverio-introduction-to-front-end-test-notes/</link>
       <pubDate>Tue, 19 Jul 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-07-19-webdriverio-introduction-to-front-end-test-notes/</guid>
-      <description>webdriver.io - 前端測試入門筆記&amp;hellip; 前端測試工具很多種 我這裡的需求是要做自動化測試 不知為何就選了這套 webdriver.io 可能就只是單純名字很炫(誤 當然一開始要</description>
+      
+      <guid>/posts/2016-07-19-webdriverio-introduction-to-front-end-test-notes/</guid>
+      <description>&lt;h2 id=&#34;webdriverio---前端測試入門筆記&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#webdriverio---%e5%89%8d%e7%ab%af%e6%b8%ac%e8%a9%a6%e5%85%a5%e9%96%80%e7%ad%86%e8%a8%98&#34;&gt;
+        #
+    &lt;/a&gt;
+    webdriver.io - 前端測試入門筆記&amp;hellip;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;前端測試工具很多種&lt;/p&gt;
+&lt;p&gt;我這裡的需求是要做自動化測試&lt;/p&gt;
+&lt;p&gt;不知為何就選了這套 &lt;a href=&#34;http://webdriver.io/&#34;&gt;webdriver.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可能就只是單純名字很炫(誤&lt;/p&gt;
+&lt;p&gt;當然一開始要先要有 &lt;a href=&#34;http://www.seleniumhq.org/&#34;&gt;Selenium&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但為何 Selenium 跟我以前的印象有差別了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;我發現它的 firefox add-on 不能把錄製的動作輸出成 code 了, 是我的錯覺嗎?還是改方式了&lt;/p&gt;
+&lt;p&gt;但我想說就算了, 直接用寫的也罷&lt;/p&gt;
+&lt;p&gt;webdriver.io 只是因為是在我看過的關於測試文章中最後有印象的東西所以就去找它了(這是事實&amp;hellip;&lt;/p&gt;
+&lt;p&gt;也還好我的記憶沒錯, 看了介紹和文件覺得 webdriver.io 有符合我的需求且又是用 Node.js 來寫, 所以對我較友善&lt;/p&gt;
+&lt;p&gt;先記錄一下使用流程&lt;/p&gt;
+&lt;h3 id=&#34;base-tool&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#base-tool&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Base tool
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;java -version
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install default-jre
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install default-jdk
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Node.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://nodejs.org/en/download/package-manager/&#34;&gt;Install&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;on-local&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#on-local&#34;&gt;
+        ##
+    &lt;/a&gt;
+    On Local
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://webdriver.io/guide.html&#34;&gt;Get Started&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;突然發現文件寫得很詳細了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;雖然在做設定那有些選項不同但也影響不大&lt;/p&gt;
+&lt;p&gt;但想玩進階的方式可參考以下文章&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://siteobservers.zendesk.com/hc/en-us/articles/201989070-Start-selenium-server-with-additional-command-line-arguments&#34;&gt;設定 Selenium 參數可參考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;基本上以下是我建的順序&lt;/p&gt;
+&lt;h4 id=&#34;1-先建-packagejson&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#1-%e5%85%88%e5%bb%ba-packagejson&#34;&gt;
+        ###
+    &lt;/a&gt;
+    1 先建 &lt;code&gt;package.json&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;webdriver&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;automation test&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;devDependencies&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;2-下載-selenium-server&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2-%e4%b8%8b%e8%bc%89-selenium-server&#34;&gt;
+        ###
+    &lt;/a&gt;
+    2 下載 Selenium server
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;之後有新版請再去確認版本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -O http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;3-裝-webdriver&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#3-%e8%a3%9d-webdriver&#34;&gt;
+        ###
+    &lt;/a&gt;
+    3 裝 webdriver
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install webdriverio --save-dev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;4-安裝各個-os-對應的-webdriver&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#4-%e5%ae%89%e8%a3%9d%e5%90%84%e5%80%8b-os-%e5%b0%8d%e6%87%89%e7%9a%84-webdriver&#34;&gt;
+        ###
+    &lt;/a&gt;
+    4 安裝各個 OS 對應的 webdriver
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/package/selenium-webdriver&#34;&gt;selenium-webdriver&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可以不必裝 &lt;code&gt;selenium-webdriver&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;只要去下載各個 OS 對應要用的 browser 的 webdriver 放在專案資料夾就好了&lt;/p&gt;
+&lt;h4 id=&#34;5-這樣就好了&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#5-%e9%80%99%e6%a8%a3%e5%b0%b1%e5%a5%bd%e4%ba%86&#34;&gt;
+        ###
+    &lt;/a&gt;
+    5 這樣就好了
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;h4 id=&#34;6-啟動-selenium-server-並開始寫一個簡單的自動化測試的-test-case&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#6-%e5%95%9f%e5%8b%95-selenium-server-%e4%b8%a6%e9%96%8b%e5%a7%8b%e5%af%ab%e4%b8%80%e5%80%8b%e7%b0%a1%e5%96%ae%e7%9a%84%e8%87%aa%e5%8b%95%e5%8c%96%e6%b8%ac%e8%a9%a6%e7%9a%84-test-case&#34;&gt;
+        ###
+    &lt;/a&gt;
+    6 啟動 Selenium server 並開始寫一個簡單的自動化測試的 test case
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;java -jar selenium-server-standalone-2.53.0.jar
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;test.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; webdriverio &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;webdriverio&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; options &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    desiredCapabilities&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        browserName&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;firefox&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;webdriverio
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .remote(options)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .init()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .url(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;http://www.google.com&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .getTitle().then(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(title) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        console.log(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Title was: &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; title);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    })
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .end();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;node test.js
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// output Title was: Google
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這時你就會發現你的 firefox 被打開連到 Google 後就自動關掉&lt;/p&gt;
+&lt;p&gt;然後 terminal 就會 output &lt;code&gt;Title was: Google&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;關於測試的的 script 攥寫請參考 API 文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://webdriver.io/api.html&#34;&gt;WebdriverIO - API Docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我預設使用 &lt;a href=&#34;https://mochajs.org/&#34;&gt;mocha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;有用 &lt;a href=&#34;http://chaijs.com/&#34;&gt;chai&lt;/a&gt; 加強攥寫 script&lt;/p&gt;
+&lt;h3 id=&#34;進階應用&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%80%b2%e9%9a%8e%e6%87%89%e7%94%a8&#34;&gt;
+        ##
+    &lt;/a&gt;
+    進階應用
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;基本上 webdriver 分兩種測試方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Standalone Mode&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The WDIO Testrunner&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;各有優缺點, 就看習慣用哪種方式來跑測試&lt;/p&gt;
+&lt;p&gt;我較喜歡用 The WDIO 的方式, 因為他是把設定檔抽出來, 較好管理且可用 hook 做其他事情&lt;/p&gt;
+&lt;p&gt;依我所做的較特別的設定就是把 test case 切很細(因為測試的 scope 需求), 這就需要設定能跑個別的測試&lt;/p&gt;
+&lt;p&gt;就需要在 config 設定 &lt;code&gt;suites&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;就可以這樣下 command&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./node_modules/.bin/wdio wdio.conf.js --suite test_a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// or
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./node_modules/.bin/wdio wdio.conf.js --suite test_b
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可參考以下文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://webdriver.io/guide/getstarted/configuration.html&#34;&gt;WebdriverIO - Configuration&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://webdriver.io/guide/testrunner/gettingstarted.html&#34;&gt;WebdriverIO - Test Runner&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一般都會要把測試結果 output 出來, webdriver 提供自訂 reporter 的功能&lt;/p&gt;
+&lt;p&gt;就看個人喜好選擇&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://webdriver.io/guide/reporters/dot.html&#34;&gt;WebdriverIO - Dot Reporter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但我這需求簡單且需要讓其他人可在測試當下就輕易看到結果, 所以就在 config 設定 hook&lt;/p&gt;
+&lt;p&gt;讓測試跑完時儲存測試結果並有個頁面讓別人看&lt;/p&gt;
+&lt;p&gt;config 的 hook&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;afterTest&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; (test) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    console.log(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;HOOK - afterTest:&amp;#39;&lt;/span&gt;, test);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;},
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;test 就是測試結果&lt;/p&gt;
+&lt;p&gt;hook 也有很多狀態可用&lt;/p&gt;
+&lt;h3 id=&#34;strong-stylecolorred廢棄方法因為一直試驗失敗strong&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#strong-stylecolorred%e5%bb%a2%e6%a3%84%e6%96%b9%e6%b3%95%e5%9b%a0%e7%82%ba%e4%b8%80%e7%9b%b4%e8%a9%a6%e9%a9%97%e5%a4%b1%e6%95%97strong&#34;&gt;
+        ##
+    &lt;/a&gt;
+    &lt;strong style=&#34;color:red&#34;&gt;廢棄方法(因為一直試驗失敗&amp;hellip;&lt;/strong&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h3 id=&#34;on-remote-server&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#on-remote-server&#34;&gt;
+        ##
+    &lt;/a&gt;
+    On remote Server
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;基本上用 webdriver 做測試是需要有 browser 和 UI&lt;/p&gt;
+&lt;p&gt;所以需裝 xwindow 或 Xvfb&lt;/p&gt;
+&lt;h4 id=&#34;firefox&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#firefox&#34;&gt;
+        ###
+    &lt;/a&gt;
+    firefox
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt search firefox
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install firefox firefox-locale-en
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果顯示&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Gtk-WARNING **: Locale not supported by C library.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Using the fallback &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;C&amp;#39;&lt;/span&gt; locale.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;請設定 locale&lt;/p&gt;
+&lt;p&gt;我是設定 en_US&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;LC_ALL&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;en_US.UTF-8
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;xvfb&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#xvfb&#34;&gt;
+        ###
+    &lt;/a&gt;
+    &lt;del&gt;xvfb&lt;/del&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install xvfb
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;```&lt;/span&gt;shell
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;然後啟動與指派到哪個 port
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;```&lt;/span&gt;shell
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo Xvfb :10 -ac
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;指定輸出的 DISPLAY&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;DISPLAY&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;:10
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firefox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之後再啟動測試&lt;/p&gt;
+&lt;p&gt;但&lt;/p&gt;
+&lt;p&gt;這裡就遇到問題了&lt;/p&gt;
+&lt;p&gt;出現錯誤訊息&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error: no display specified
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;但奇怪的是明明都 export DISPLAY 了還出這 error&amp;hellip;&lt;/p&gt;
+&lt;p&gt;目前都還沒解決這問題&amp;hellip;&lt;/p&gt;
+&lt;p&gt;所以直接採用下面的兩個備案&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;裝一台有 GUI 的 Linux 到實體機器上, 非 VM&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 &lt;a href=&#34;https://saucelabs.com/&#34;&gt;SAUCE LABS&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;個人是建議公司肯出錢就採用 SAUCE LABS 的服務, 隨然有點小貴, 因為涵蓋的 OS 和 browser 很多, 且有 mobile web 的測試(雖然 android  都只有到 4.X 而已&lt;/p&gt;
+&lt;p&gt;下面說明一下如何設定 SAUCE LABS 與 SAUCE LABS 是如何運作的&lt;/p&gt;
+&lt;h3 id=&#34;sauce-labs&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sauce-labs&#34;&gt;
+        ##
+    &lt;/a&gt;
+    SAUCE LABS
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;SAUCE LABS 提供多個 OS 與 browser 版本的 VM 以供測試且有 native app 的測試&lt;/p&gt;
+&lt;p&gt;有 14 天的免費試用, 且有 opensource 的 free 方案&lt;/p&gt;
+&lt;p&gt;在 price 方面須注意的是 Manual 的方案是不含自動化測試的&lt;/p&gt;
+&lt;p&gt;他有提供 API 去處理測試結果與資訊, 但因為我不會用到所以就沒細看有哪些功能&lt;/p&gt;
+&lt;p&gt;基本上使用 SAUCE LABS 的流程如下&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/774036/8YR4x8nTOSagnQ0MoRx2_test.png&#34; alt=&#34;test.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;基本上就是連上 SAUCE LABS 的 host 用 SAUCE LABS 的 VM 測試&lt;/p&gt;
+&lt;p&gt;下面會說一下設定方式&lt;/p&gt;
+&lt;p&gt;跟跑 webdriver 一樣設定可分兩種去 run&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Standalone Mode&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The WDIO Testrunner&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;1 可參考官方文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wiki.saucelabs.com/display/DOCS/Node.js+Test+Setup+Example&#34;&gt;Node.js Test Setup Example - The Sauce Labs Cookbook - Sauce Labs Documentation Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我是採用 2&lt;/p&gt;
+&lt;p&gt;所以需追加的設定是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;capabilities:&lt;/span&gt; [{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;#39;browserName&amp;#39;:&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;#39;chrome&amp;#39;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;#39;platform&amp;#39;:&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;#39;Windows&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;10&amp;#39;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;#39;username&amp;#39;:&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;lt;username&amp;gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;#39;accessKey&amp;#39;:&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;lt;accessKey&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}]&lt;span style=&#34;color:#ff5c57&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;host:&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;lt;username&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;#39;:&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;lt;accessKey&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;#39;@ondemand.saucelabs.com&amp;#39;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;port:&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;80&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;path:&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;&amp;#39;/wd/hub&amp;#39;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;&amp;lt;username&amp;gt;&lt;/code&gt; 和 &lt;code&gt;&amp;lt;accessKey&amp;gt;&lt;/code&gt; 都可以經由 SAUCE LABS 後台取得&lt;/p&gt;
+&lt;p&gt;這樣就可以使用 SAUCE LABS 來跑測試程式了&lt;/p&gt;
+&lt;h3 id=&#34;note&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#note&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Note
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;當你一段時間沒跑, 之後又再跑時有錯&lt;/p&gt;
+&lt;p&gt;有可能向我遇到JAVA 更新&lt;/p&gt;
+&lt;p&gt;那這時 &lt;code&gt;Selenium Standalone Server&lt;/code&gt; 就要更新 &lt;a href=&#34;http://www.seleniumhq.org/download/&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;browser driver 也要更新&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://slides.com/alincode/jsdc2016_webdriverio/fullscreen#/&#34;&gt;2016 JSDC 淺談網站自動化測試&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

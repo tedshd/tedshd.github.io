@@ -1,20 +1,184 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Crawler on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/crawler/</link>
-    <description>Recent content in Crawler on tedshd&#39;s DevNote</description>
+    <title>Crawler on Tedshd&#39;s Dev note</title>
+    <link>/categories/crawler/</link>
+    <description>Tedshd&#39;s Dev note (Crawler)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 25 Apr 2022 09:52:22 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/crawler/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 15:43:33 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/crawler/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>PHP 爬蟲 抓取 HTML 內容</title>
-      <link>https://blog.tedshd.io/posts/php_crawler_html/</link>
+      <link>/posts/php_crawler_html/</link>
       <pubDate>Fri, 22 Apr 2022 15:43:33 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/php_crawler_html/</guid>
-      <description>Intro 又是久違的寫爬蟲&amp;hellip; 這次是接手大大們的 code 寫的是 PHP 版本 研究了一下寫法 才發現現在可以不使用第三方套件就可以處理了 所以這裡紀錄一下 取</description>
+      
+      <guid>/posts/php_crawler_html/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;又是久違的寫爬蟲&amp;hellip;&lt;/p&gt;
+&lt;p&gt;這次是接手大大們的 code&lt;/p&gt;
+&lt;p&gt;寫的是 PHP 版本&lt;/p&gt;
+&lt;p&gt;研究了一下寫法&lt;/p&gt;
+&lt;p&gt;才發現現在可以不使用第三方套件就可以處理了&lt;/p&gt;
+&lt;p&gt;所以這裡紀錄一下&lt;/p&gt;
+&lt;h2 id=&#34;取得-html-內容&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%8f%96%e5%be%97-html-%e5%85%a7%e5%ae%b9&#34;&gt;
+        #
+    &lt;/a&gt;
+    取得 HTML 內容
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 curl&lt;/li&gt;
+&lt;li&gt;使用 file_get_contents&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;curl 是我常用的方式
+看了大大們的 code 才知道原來 file_get_contents 也可以取 http/https 內容&amp;hellip;&lt;/p&gt;
+&lt;p&gt;這邊簡單貼一下兩種作法的範例&lt;/p&gt;
+&lt;h3 id=&#34;curl&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#curl&#34;&gt;
+        ##
+    &lt;/a&gt;
+    curl
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;httpGet&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff5c57&#34;&gt;$ch&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; curl_init();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  curl_setopt(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ch&lt;/span&gt;,CURLOPT_URL,&lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  curl_setopt(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ch&lt;/span&gt;,CURLOPT_RETURNTRANSFER,&lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  curl_setopt(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ch&lt;/span&gt;,CURLOPT_HEADER, [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff5c57&#34;&gt;$output&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;curl_exec(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ch&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  curl_close(&lt;span style=&#34;color:#ff5c57&#34;&gt;$ch&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$output&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;file_get_contents&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#file_get_contents&#34;&gt;
+        ##
+    &lt;/a&gt;
+    file_get_contents
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;htmlContentGet&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff5c57&#34;&gt;$opts&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;method&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;GET&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;header&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;\r\n&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; file_get_contents(&lt;span style=&#34;color:#ff5c57&#34;&gt;$url&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;false&lt;/span&gt;, stream_context_create(&lt;span style=&#34;color:#ff5c57&#34;&gt;$opts&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果需要一些特別的 header 或是 querystring 就在各自處理&lt;/p&gt;
+&lt;p&gt;另外提一下, 用 file_get_contents 也可以抓取本地檔案, 所以也可以打開本地的 html file(至少我以前用 file_get_contents 都是用來打開本地檔案的)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.php.net/manual/en/function.file-get-contents.php&#34;&gt;refer - PHP: file_get_contents - Manual&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;抓取-dom&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%8a%93%e5%8f%96-dom&#34;&gt;
+        #
+    &lt;/a&gt;
+    抓取 DOM
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;研究了一下也有不少方式可以做&lt;/p&gt;
+&lt;p&gt;因為上面方法回來的是 string&lt;/p&gt;
+&lt;p&gt;所以接下來最重要的事情是如何擷取出想要的內容&lt;/p&gt;
+&lt;p&gt;大致有兩種方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用 preg_replace, str_replace, strpos, substr 等方法處理&lt;/li&gt;
+&lt;li&gt;針對 DOM 轉成物件來處理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;各有優缺點&lt;/p&gt;
+&lt;p&gt;就看最後決定要怎麼做&lt;/p&gt;
+&lt;p&gt;這裡針對 2 的處理方式來處理&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; DOMDocument();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;loadHTML&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$html_string&lt;/span&gt;, LIBXML_NOERROR);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這裡又細分兩種處理方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;DOM HTML&lt;/li&gt;
+&lt;li&gt;XPath&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;dom-html&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#dom-html&#34;&gt;
+        ##
+    &lt;/a&gt;
+    DOM HTML
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; DOMDocument();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;loadHTML&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$html_string&lt;/span&gt;, LIBXML_NOERROR);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$documentElement&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;documentElement&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;xpath&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#xpath&#34;&gt;
+        ##
+    &lt;/a&gt;
+    XPath
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; DOMDocument();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;loadHTML&lt;/span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;$html_string&lt;/span&gt;, LIBXML_NOERROR);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$xpath&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; DOMXpath(&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這兩種的差別就在於支援的取 DOM 的方式不同&lt;/p&gt;
+&lt;p&gt;documentElement 這個 Class 底下取得 DOM 物件的方法名稱大多和 JavaScript 的名稱一樣&lt;/p&gt;
+&lt;p&gt;可以參考以下文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.php.net/manual/en/class.domelement.php&#34;&gt;refer - PHP: DOMElement - Manual&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以下列舉一些範例&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$span&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$documentElement&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;getElementsByTagName&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;span&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;foreach&lt;/span&gt;( &lt;span style=&#34;color:#ff5c57&#34;&gt;$span&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$item&lt;/span&gt; ) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$item&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;textContent&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$img&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$documentElement&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;getElementsByTagName&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;img&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;foreach&lt;/span&gt;( &lt;span style=&#34;color:#ff5c57&#34;&gt;$img&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$item&lt;/span&gt; ) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$item&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;getAttribute&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;src&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;比較可惜的是它沒有抓取 class 的方式&lt;/p&gt;
+&lt;p&gt;這種情況就可以用取 XPath 的方式來做&lt;/p&gt;
+&lt;p&gt;基本上我個人是比較喜歡 XPath 的方式&lt;/p&gt;
+&lt;p&gt;因為相對比較好用&lt;/p&gt;
+&lt;p&gt;後續要調整也相對容易, 只要改動 XPath 就可以了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$xpath&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;new&lt;/span&gt; DOMXpath(&lt;span style=&#34;color:#ff5c57&#34;&gt;$dom&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;$desc&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$xpath&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;query&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/html/body/div[2]/div[2]/div/div[1]/a/img&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;foreach&lt;/span&gt;( &lt;span style=&#34;color:#ff5c57&#34;&gt;$desc&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$item&lt;/span&gt; ) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;$item&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;getAttribute&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;src&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://codingreflections.com/how-to-parse-html-using-php-native-classes/&#34;&gt;refer - How to Parse HTML using PHP Native Classes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.php.net/manual/zh/class.domdocument.php&#34;&gt;refer - PHP: DOMDocument - Manual&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b5%90%e8%aa%9e&#34;&gt;
+        #
+    &lt;/a&gt;
+    結語
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;以上的方式都只適用於 SSR 的頁面&lt;/p&gt;
+&lt;p&gt;如果內容是動態產生的一律建議直接用打 API 的方式去拿內容&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

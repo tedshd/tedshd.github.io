@@ -1,20 +1,66 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HTML Image on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/html-image/</link>
-    <description>Recent content in HTML Image on tedshd&#39;s DevNote</description>
+    <title>HTML Image on Tedshd&#39;s Dev note</title>
+    <link>/categories/html-image/</link>
+    <description>Tedshd&#39;s Dev note (HTML Image)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/html-image/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/html-image/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>HTML - image load error handle</title>
-      <link>https://blog.tedshd.io/posts/2018-04-18-image-load-error-handle/</link>
+      <link>/posts/2018-04-18-image-load-error-handle/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2018-04-18-image-load-error-handle/</guid>
-      <description>HTML - image load error handle 2 way&#xA;Use onerror &amp;lt;img src=&amp;#34;&amp;lt;image url&amp;gt;&amp;#34; onerror=&amp;#34;this.src=&amp;#39;&amp;lt;d4 image url&amp;gt;&amp;#39;&amp;#34; /&amp;gt; Use Magic Image Pseudo Element img.imgd4 {&#xD;position: relative;&#xD;display: block;&#xD;}&#xD;img.imgd4:after {&#xD;display: block;&#xD;position: absolute;&#xD;top: 0;&#xD;left: 0;&#xD;background: url(&amp;lt;d4 image url&amp;gt;) no-repeat;&#xD;background-size: contain;&#xD;width: 100%;&#xD;height: 100%;&#xD;content: &amp;#39;&amp;#39;;&#xD;} </description>
+      
+      <guid>/posts/2018-04-18-image-load-error-handle/</guid>
+      <description>&lt;h2 id=&#34;html---image-load-error-handle&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#html---image-load-error-handle&#34;&gt;
+        #
+    &lt;/a&gt;
+    HTML - image load error handle
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;2 way&lt;/p&gt;
+&lt;h3 id=&#34;use-onerror&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#use-onerror&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Use &lt;code&gt;onerror&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;img&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;lt;image url&amp;gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;onerror&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;this.src=&amp;#39;&amp;lt;d4 image url&amp;gt;&amp;#39;&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;use-magic-image-pseudo-element&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#use-magic-image-pseudo-element&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Use Magic Image Pseudo Element
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;img.imgd4 {
+    position: relative;
+    display: block;
+}
+
+img.imgd4:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(&amp;lt;d4 image url&amp;gt;) no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    content: &amp;#39;&amp;#39;;
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
+    
   </channel>
 </rss>

@@ -1,34 +1,280 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Facebook on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/facebook/</link>
-    <description>Recent content in Facebook on tedshd&#39;s DevNote</description>
+    <title>Facebook on Tedshd&#39;s Dev note</title>
+    <link>/categories/facebook/</link>
+    <description>Tedshd&#39;s Dev note (Facebook)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:42:46 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/facebook/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/categories/facebook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>JavaScript - facebook save to facebook button</title>
-      <link>https://blog.tedshd.io/posts/2016-04-20-javascript-facebook-save-to-facebook-button/</link>
+      <link>/posts/2016-04-20-javascript-facebook-save-to-facebook-button/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2016-04-20-javascript-facebook-save-to-facebook-button/</guid>
-      <description>JavaScript - facebook save to facebook button 2016 F8 Facebook release new function - save to facebook Then we can use it now Step 1 Go to facebook developer Save Button - Social Plugins - Documentation - Facebook for Developers Step 2 Build or use facebook application If you had facebook application can skip this step If you build facebook application and you can get this code window.fbAsyncInit = function()</description>
+      
+      <guid>/posts/2016-04-20-javascript-facebook-save-to-facebook-button/</guid>
+      <description>&lt;h2 id=&#34;javascript---facebook-save-to-facebook-button&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript---facebook-save-to-facebook-button&#34;&gt;
+        #
+    &lt;/a&gt;
+    JavaScript - facebook save to facebook button
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;2016 F8&lt;/p&gt;
+&lt;p&gt;Facebook release new function - save to facebook&lt;/p&gt;
+&lt;p&gt;Then we can use it now&lt;/p&gt;
+&lt;h3 id=&#34;step-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#step-1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Step 1
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Go to facebook developer
+&lt;a href=&#34;https://developers.facebook.com/docs/plugins/save&#34;&gt;Save Button - Social Plugins - Documentation - Facebook for Developers&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;step-2&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#step-2&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Step 2
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Build or use facebook application&lt;/p&gt;
+&lt;p&gt;If you had facebook application can skip this step&lt;/p&gt;
+&lt;p&gt;If you build facebook application and you can get this code&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.fbAsyncInit &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  FB.init({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    appId      &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;lt;YOUR APP ID&amp;gt;&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    xfbml      &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    version    &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;v2.6&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(d, s, id){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; js, fjs &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; d.getElementsByTagName(s)[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (d.getElementById(id)) {&lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt;;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  js &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; d.createElement(s); js.id &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; id;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  js.src &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;//connect.facebook.net/en_US/sdk.js&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  fjs.parentNode.insertBefore(js, fjs);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}(&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;facebook-jssdk&amp;#39;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Put it in your website&lt;/p&gt;
+&lt;h3 id=&#34;step-3finally&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#step-3finally&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Step 3(Finally
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Add &lt;code&gt;&amp;lt;div class=&amp;quot;fb-save&amp;quot; data-uri=&amp;quot;http://www.your-domain.com/your-page.html&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;data-uri&lt;/code&gt; is your current page url&lt;/p&gt;
+&lt;p&gt;You can use this js code dynamic add url&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelectorAll(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;.fb-save&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;].setAttribute(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;data-uri&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.location.href);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;demo&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#demo&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Demo
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/712381/4iebHGpaQISinQCS9jOg_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-20%20%E4%B8%8A%E5%8D%8811.15.59.png&#34; alt=&#34;螢幕快照 2016-04-20 上午11.15.59.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/712381/6Q0VZKZDSFqokWePRTeZ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-20%20%E4%B8%8A%E5%8D%8811.16.09.png&#34; alt=&#34;螢幕快照 2016-04-20 上午11.16.09.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Then it can show on facebook saved&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/712381/mreqYMbgTFqW9IaWLCTE_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-20%20%E4%B8%8A%E5%8D%8811.16.17.png&#34; alt=&#34;螢幕快照 2016-04-20 上午11.16.17.png&#34;&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>JavaScript - custom facebook share button</title>
-      <link>https://blog.tedshd.io/posts/2014-05-23-javascript-custom-facebook-share-button/</link>
+      <link>/posts/2014-05-23-javascript-custom-facebook-share-button/</link>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2014-05-23-javascript-custom-facebook-share-button/</guid>
-      <description>JavaScript - custom facebook share button Facebook support share API to people and it is easy to use. But sometimes we need customize share button style in our web. We can use 2 way.&#xA;1. Link share api link Simple way&#xA;HTML &amp;lt;a href=&amp;#34;http://www.facebook.com/share.php&amp;#34; class=&amp;#34;custom&amp;#34;&amp;gt;Share&amp;lt;/a&amp;gt; and then you can use CSS custom a style.&#xA;But this only can catch current url to share to facebook.&#xA;2. Use facebook JavaScript SDK This way is powerful</description>
+      
+      <guid>/posts/2014-05-23-javascript-custom-facebook-share-button/</guid>
+      <description>&lt;h2 id=&#34;javascript---custom-facebook-share-button&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript---custom-facebook-share-button&#34;&gt;
+        #
+    &lt;/a&gt;
+    JavaScript - custom facebook share button
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;strong style=&#34;color:red&#34;&gt;
+Before use facebook API, must create facebook app on facebook&#39;s [developer website](https://developers.facebook.com/) to get a app id
+&lt;/strong&gt;
+&lt;p&gt;Facebook support share API to people and it is easy to use.
+But sometimes we need customize share button style in our web.
+We can use 2 way.&lt;/p&gt;
+&lt;h2 id=&#34;1-link-share-api-link&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#1-link-share-api-link&#34;&gt;
+        #
+    &lt;/a&gt;
+    1. Link share api link
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Simple way&lt;/p&gt;
+&lt;h3 id=&#34;html&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#html&#34;&gt;
+        ##
+    &lt;/a&gt;
+    HTML
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://www.facebook.com/share.php&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;custom&amp;#34;&lt;/span&gt;&amp;gt;Share&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and then you can use CSS custom &lt;code&gt;a&lt;/code&gt; style.&lt;/p&gt;
+&lt;p&gt;But this only can catch current url to share to facebook.&lt;/p&gt;
+&lt;h2 id=&#34;2-use-facebook-javascript-sdk&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#2-use-facebook-javascript-sdk&#34;&gt;
+        #
+    &lt;/a&gt;
+    2. Use facebook JavaScript SDK
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;This way is powerful&lt;/p&gt;
+&lt;h3 id=&#34;html-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#html-1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    HTML
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;fb-root&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://www.google.com/&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;data-image&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Article img url&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;data-title&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Article Title&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;data-desc&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Some description for this article&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;fb_share&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;img&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://www.synermous.com/data/images/fb-icon.svg&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;alt&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;50&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;50&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;javascript&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#javascript&#34;&gt;
+        ##
+    &lt;/a&gt;
+    JavaScript
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;window&lt;/span&gt;.fbAsyncInit &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    FB.init({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        appId&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;your facebook app id&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        status&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        cookie&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        xfbml&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(d, debug){&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; js, id &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;facebook-jssdk&amp;#39;&lt;/span&gt;, ref &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; d.getElementsByTagName(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;];&lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt;   (d.getElementById(id)) {&lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt;;}js &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; d.createElement(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;); js.id &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; id; js.&lt;span style=&#34;color:#ff6ac1&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;;js.src &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;//connect.facebook.net/en_US/all&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; (debug &lt;span style=&#34;color:#ff6ac1&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/debug&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;.js&amp;#34;&lt;/span&gt;;ref.parentNode.insertBefore(js, ref);}(&lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;, &lt;span style=&#34;color:#78787e&#34;&gt;/*debug*/&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;false&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; postToFeed(title, desc, url, image) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; obj &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; {method&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;feed&amp;#39;&lt;/span&gt;,link&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; url, picture&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; image,name&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; title,description&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; desc};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; callback(response) {}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    FB.ui(obj, callback);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; fbShareBtn &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;document&lt;/span&gt;.querySelector(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;.fb_share&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fbShareBtn.addEventListener(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt;(e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    e.preventDefault();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; title &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; fbShareBtn.getAttribute(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;data-title&amp;#39;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        desc &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; fbShareBtn.getAttribute(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;data-desc&amp;#39;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        url &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; fbShareBtn.getAttribute(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        image &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; fbShareBtn.getAttribute(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;data-image&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    postToFeed(title, desc, url, image);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;false&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This way can customize share url facebook og information
+&lt;code&gt;href&lt;/code&gt; = url you want share, must have link
+&lt;code&gt;data-image&lt;/code&gt; = image you want show on facebook, if not value it can catch origin og
+&lt;code&gt;data-title&lt;/code&gt; = title you want show on facebook, if not value it can catch origin og
+&lt;code&gt;data-desc&lt;/code&gt; = description you want show on facebook, if not value it can catch origin og&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.facebook.com/docs/opengraph&#34;&gt;facebook opengraph&lt;/a&gt;
+&lt;a href=&#34;http://stackoverflow.com/questions/22037021/custom-facebook-share-button&#34;&gt;custom facebook share button&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Facebook api get UID &amp; AccessToken</title>
-      <link>https://blog.tedshd.io/posts/2013-11-25-facebook-api-get-uid/</link>
+      <link>/posts/2013-11-25-facebook-api-get-uid/</link>
       <pubDate>Mon, 25 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2013-11-25-facebook-api-get-uid/</guid>
-      <description>Facebook api get UID &amp;amp; AccessToken Build App in facebook APP_ID is a facebook App id Must set facebook App&amp;rsquo;s web url and use code in it&amp;rsquo;s domain &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;fb_oauth&amp;lt;/title&amp;gt; &amp;lt;script src=&amp;#34;http://code.jquery.com/jquery-1.10.2.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;fb-root&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;p&amp;gt; &amp;lt;input id=&amp;#34;FBLogin&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;登入臉書&amp;#34; /&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; &amp;lt;span id=&amp;#34;uid&amp;#34;&amp;gt;&amp;lt;/span&amp;gt;</description>
+      
+      <guid>/posts/2013-11-25-facebook-api-get-uid/</guid>
+      <description>&lt;h2 id=&#34;facebook-api-get-uid--accesstoken&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#facebook-api-get-uid--accesstoken&#34;&gt;
+        #
+    &lt;/a&gt;
+    Facebook api get UID &amp;amp; AccessToken
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Build App in facebook&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;APP_ID&lt;/code&gt; is a facebook App id&lt;/li&gt;
+&lt;li&gt;Must set facebook App&amp;rsquo;s web url and use code in it&amp;rsquo;s domain&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;title&lt;/span&gt;&amp;gt;fb_oauth&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;title&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://code.jquery.com/jquery-1.10.2.min.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;fb-root&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;FBLogin&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;button&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;登入臉書&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;span&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;uid&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;span&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;br&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;span&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;accessToken&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;span&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;http://connect.facebook.net/zh_TW/all.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    FB.init({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        appId&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;APP_ID&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        status&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        cookie&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        xfbml&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        oauth&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    $(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#FBLogin&amp;#39;&lt;/span&gt;).click(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        FB.login(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; (response) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#78787e&#34;&gt;// 登入之後執行的語法
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            scope&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;email&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    FB.getLoginStatus(&lt;span style=&#34;color:#ff5c57&#34;&gt;function&lt;/span&gt; (response) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (response.status &lt;span style=&#34;color:#ff6ac1&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;connected&amp;#39;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#78787e&#34;&gt;// 程式有連結到 Facebook 帳號
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#78787e&#34;&gt;// 取得 UID
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; uid &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; response.authResponse.userID;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#78787e&#34;&gt;// 取得 accessToken
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#ff5c57&#34;&gt;var&lt;/span&gt; accessToken &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; response.authResponse.accessToken;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            $(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#uid&amp;#39;&lt;/span&gt;).html(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;UID：&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; uid);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            $(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;#accessToken&amp;#39;&lt;/span&gt;).html(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;accessToken：&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; accessToken);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (response.status &lt;span style=&#34;color:#ff6ac1&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;not_authorized&amp;#39;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#78787e&#34;&gt;// 帳號沒有連結到 Facebook 程式
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;            alert(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;請允許授權！&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } &lt;span style=&#34;color:#ff6ac1&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#78787e&#34;&gt;// 帳號沒有登入
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;&lt;/span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff6ac1&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://tedshd.lionfree.net/demo/facebook_oauth/fb_oauth.html&#34;&gt;Demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://coding.anyun.tw/2012/03/07/using-facebook-javascript-sdk-get-uid-or-accesstoken/&#34;&gt;Refer - 使用 Facebook JavaScript SDK 來取得使用者 UID 或 AccessToken&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

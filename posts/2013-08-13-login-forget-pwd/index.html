@@ -1,194 +1,525 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+
+
+<html lang="en-us" data-theme="">
+<head>
     
-
-
-
-
-<title>Login forget pwd | tedshd&#39;s DevNote</title>
+        
 <meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Login forget pwd - Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="# function account captcha validation use bootatrap model # result captcha fail captcha ok backend check account success fail(not exist) # method ajax # mockup link
+# flow click forget password show model enter account &amp; captcha(validation from js not null) submit(ajax) account fail(from backend) -&gt; show message captcha fail(from backend) -&gt; show message success -&gt; show message
+# flow(detail) 點擊忘記密碼 秀 bootstrap model 輸入帳號與驗證碼(利用 validation 作必填的檢查) 用 ajax 的方式送出">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta name="google" content="notranslate">
-<meta id="viewport" name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='function account captcha validation use bootatrap model result captcha fail captcha ok backend check account success fail(not exist) method ajax mockup link flow click forget password show model enter account &amp; captcha(validation from js not null) submit(ajax) account fail(from backend) -&gt; show message captcha fail(from backend) -&gt; show message success -&gt; show message flow(detail) 點擊忘記密碼 秀 bootstrap model 輸入帳號與驗證'>
-<meta name="keywords" content=''>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/2013-08-13-login-forget-pwd/">
-<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/2013-08-13-login-forget-pwd/" />
-
-<link rel="canonical" href="https://blog.tedshd.io/posts/2013-08-13-login-forget-pwd/" />
-<link rel="shortcut icon" href="/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
-<meta name="theme-color" content="">
-<meta name="robots" content="index, follow">
-<meta name="copyright" content="Tedshd">
-
-<meta property="og:title" content="Login forget pwd" />
-<meta property="og:description" content="function account captcha validation use bootatrap model result captcha fail captcha ok backend check account success fail(not exist) method ajax mockup link flow click forget password show model enter account &amp; captcha(validation from js not null) submit(ajax) account fail(from backend) -&gt; show message captcha fail(from backend) -&gt; show message success -&gt; show message flow(detail) 點擊忘記密碼 秀 bootstrap model 輸入帳號與驗證" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/2013-08-13-login-forget-pwd/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2013-08-13T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-29T17:42:46+08:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="Login forget pwd"/>
-<meta name="twitter:description" content="function account captcha validation use bootatrap model result captcha fail captcha ok backend check account success fail(not exist) method ajax mockup link flow click forget password show model enter account &amp; captcha(validation from js not null) submit(ajax) account fail(from backend) -&gt; show message captcha fail(from backend) -&gt; show message success -&gt; show message flow(detail) 點擊忘記密碼 秀 bootstrap model 輸入帳號與驗證"/>
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-<script data-ad-client="ca-pub-0553186380244641" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
+
+        
+
+
+
+
+
 
 
     
+        <div class="theme-switcher">
+            <span class="inline-svg">
 
     
 
-    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
 
     
-<link>
-
-<link
-    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
-    rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
-
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
 
-    gtag('config', 'G-1NKP3D2ZGG');
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
     </script>
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
-                    tedshd&#39;s DevNote
-                </a>
-            </div>
-            
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
-                <i class="p-icon--menu"></i>
+
+
+        <ul class="social-icons noselect">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
             </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
-                <i class="p-icon--close"></i>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
             </a>
-        </div>
+        </li>
+    
 
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
 
-            <ul class="p-navigation__links" role="menu">
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/categories">Categories</a>
-                </li>
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/tags">tags</a>
-                </li>
-                
-            </ul>
+    
 
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-            
-        </nav>
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
     </div>
-</header><div id="main-content">
-<div class="page-banner">
-    <div class="row u-vertically-center">
-        <div class="col-8 pure-g">
-            <div class="pure-u">
-                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
-                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
-            </div>
-            <div class="pure-u">
-                <h2>tedshd&#39;s DevNote</h2>
-                <p>Develop &amp; Design Note by Ted</p>
-            </div>
-        </div>
+    <div class="header-top-right">
+
     </div>
 </div>
 
-<ul class="p-navigation__links sub_menu" role="menu">
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tedshd.github.io/resume/">About</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tysh310246.blogspot.tw/">Blog</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://github.com/tedshd">Github</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
-    </li>
-    
-</ul>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
 
-<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Login forget pwd</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-08-13">2013-08-13</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-08-13-login-forget-pwd/">/posts/2013-08-13-login-forget-pwd/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#function">function</a></li>
+    <li><a href="#result">result</a></li>
+    <li><a href="#method">method</a></li>
+    <li><a href="#mockup">mockup</a></li>
+    <li><a href="#flow">flow</a></li>
+    <li><a href="#flowdetail">flow(detail)</a>
+      <ul>
+        <li><a href="#token-verify">token verify</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
 </script>
 
-
-<header class="">
-    <div class="row">
-        <h1>Login forget pwd</h1>
-    </div>
-</header>
-
-
-<section class="p-strip is-shallow">
-    <main class="row post-content">
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2013-08-13
-        </p>
-        
-        <h2 id="function">function</h2>
+        <div class="content e-content">
+            <h2 id="function" >
+<div>
+    <a href="#function">
+        #
+    </a>
+    function
+</div>
+</h2>
 <ul>
 <li>account</li>
 <li>captcha</li>
 <li>validation</li>
 <li>use bootatrap model</li>
 </ul>
-<h2 id="result">result</h2>
+<h2 id="result" >
+<div>
+    <a href="#result">
+        #
+    </a>
+    result
+</div>
+</h2>
 <ul>
 <li>captcha fail</li>
 <li>captcha ok</li>
@@ -196,13 +527,34 @@
 <li>success</li>
 <li>fail(not exist)</li>
 </ul>
-<h2 id="method">method</h2>
+<h2 id="method" >
+<div>
+    <a href="#method">
+        #
+    </a>
+    method
+</div>
+</h2>
 <ul>
 <li>ajax</li>
 </ul>
-<h2 id="mockup">mockup</h2>
+<h2 id="mockup" >
+<div>
+    <a href="#mockup">
+        #
+    </a>
+    mockup
+</div>
+</h2>
 <p><a href="https://moqups.com/tedshd/guwR4fO3/">link</a></p>
-<h2 id="flow">flow</h2>
+<h2 id="flow" >
+<div>
+    <a href="#flow">
+        #
+    </a>
+    flow
+</div>
+</h2>
 <p>click forget password
 show model
 enter account &amp; captcha(validation from js not null)
@@ -210,7 +562,14 @@ submit(ajax)
 account fail(from backend) -&gt; show message
 captcha fail(from backend) -&gt; show message
 success -&gt; show message</p>
-<h2 id="flowdetail">flow(detail)</h2>
+<h2 id="flowdetail" >
+<div>
+    <a href="#flowdetail">
+        #
+    </a>
+    flow(detail)
+</div>
+</h2>
 <p>點擊忘記密碼
 秀 bootstrap model
 輸入帳號與驗證碼(利用 validation 作必填的檢查)
@@ -257,85 +616,138 @@ success -&gt; show message</p>
 <li>成功 -&gt; redirect 到成功頁面</li>
 <li>失敗 -&gt; 秀訊息(儲存失敗, 請再試一次)</li>
 </ul>
-<h3 id="token-verify">token verify</h3>
-<h4 id="gen-token">gen token</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#75715e">// load memcache
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#39;Memcache&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// load encrypt
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#39;encrypt&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$token <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;rand_str&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">md5</span>(<span style="color:#a6e22e">uniqid</span>(<span style="color:#a6e22e">rand</span>(), <span style="color:#66d9ef">true</span>)),
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;account&#39;</span> <span style="color:#f92672">=&gt;</span> $user,
-</span></span><span style="display:flex;"><span>);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// array to string
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$to_str <span style="color:#f92672">=</span> <span style="color:#a6e22e">serialize</span>($token);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// encrypt
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$encrypted_str <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">encrypt</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">encode</span>($to_str);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// save to memcache
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">memcache</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;key&#39;</span>, $encrypted_str);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// token to verify
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">token</span>[<span style="color:#e6db74">&#39;rand_str&#39;</span>]
-</span></span></code></pre></div><h4 id="get-and-verify-data">get and verify data</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#75715e">// get $encrypted_str
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// decode
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$decode_token <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">encrypt</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">decode</span>($encrypted_str);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// string to array
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$token <span style="color:#f92672">=</span> <span style="color:#a6e22e">unserialize</span>($decode_token);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// check $token exist
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($token[<span style="color:#e6db74">&#39;rand_str&#39;</span>])
-</span></span><span style="display:flex;"><span>$get_token <span style="color:#f92672">=</span> <span style="color:#a6e22e">token</span>[<span style="color:#e6db74">&#39;rand_str&#39;</span>];
-</span></span><span style="display:flex;"><span>$account
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// load memcache
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$load_mem <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">memcache</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;key&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// decode memcache
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$decode_mem <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">encrypt</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">decode</span>($load_mem);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// string to array
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$to_array <span style="color:#f92672">=</span> <span style="color:#a6e22e">unserialize</span>($decode_mem);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// verify
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$get_token <span style="color:#f92672">===</span> $to_array[<span style="color:#e6db74">&#39;rand_str&#39;</span>]
-</span></span><span style="display:flex;"><span>$account <span style="color:#f92672">===</span> $to_array[<span style="color:#e6db74">&#39;account&#39;</span>]
-</span></span></code></pre></div>
-    </main>
-</section>
-
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
-    
-    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/2013-08-08-jquery-design-pattern/">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            jQuery-design pattern
-        </span>
+<h3 id="token-verify" >
+<div>
+    <a href="#token-verify">
+        ##
     </a>
-    
-
-    
-    <a class="p-article-pagination__link--next" href="https://blog.tedshd.io/posts/2013-08-14-linux-unix-command/">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            Linux/unix command
-        </span>
-    </a>
-    
+    token verify
 </div>
-    </div>
-</footer>
+</h3>
+<h4 id="gen-token" >
+<div>
+    <a href="#gen-token">
+        ###
+    </a>
+    gen token
+</div>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#78787e">// load memcache
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$this</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">load</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">library</span>(<span style="color:#5af78e">&#39;Memcache&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#78787e">// load encrypt
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$this</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">load</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">library</span>(<span style="color:#5af78e">&#39;encrypt&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$token</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">array</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#39;rand_str&#39;</span> <span style="color:#ff6ac1">=&gt;</span> md5(uniqid(rand(), <span style="color:#ff6ac1">true</span>)),
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#39;account&#39;</span> <span style="color:#ff6ac1">=&gt;</span> <span style="color:#ff5c57">$user</span>,
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span><span style="color:#78787e">// array to string
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$to_str</span> <span style="color:#ff6ac1">=</span> serialize(<span style="color:#ff5c57">$token</span>);
+</span></span><span style="display:flex;"><span><span style="color:#78787e">// encrypt
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$encrypted_str</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">$this</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">encrypt</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">encode</span>(<span style="color:#ff5c57">$to_str</span>);
+</span></span><span style="display:flex;"><span><span style="color:#78787e">// save to memcache
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$this</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">memcache</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">set</span>(<span style="color:#5af78e">&#39;key&#39;</span>, <span style="color:#ff5c57">$encrypted_str</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e">// token to verify
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>token[<span style="color:#5af78e">&#39;rand_str&#39;</span>]
+</span></span></code></pre></div><h4 id="get-and-verify-data" >
+<div>
+    <a href="#get-and-verify-data">
+        ###
+    </a>
+    get and verify data
+</div>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#78787e">// get $encrypted_str
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e">// decode
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$decode_token</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">$this</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">encrypt</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">decode</span>(<span style="color:#ff5c57">$encrypted_str</span>);
+</span></span><span style="display:flex;"><span><span style="color:#78787e">// string to array
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$token</span> <span style="color:#ff6ac1">=</span> unserialize(<span style="color:#ff5c57">$decode_token</span>);
+</span></span><span style="display:flex;"><span><span style="color:#78787e">// check $token exist
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff6ac1">if</span> (<span style="color:#ff5c57">$token</span>[<span style="color:#5af78e">&#39;rand_str&#39;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$get_token</span> <span style="color:#ff6ac1">=</span> token[<span style="color:#5af78e">&#39;rand_str&#39;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$account</span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e">// load memcache
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$load_mem</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">$this</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">memcache</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">get</span>(<span style="color:#5af78e">&#39;key&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#78787e">// decode memcache
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$decode_mem</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">$this</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">encrypt</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">decode</span>(<span style="color:#ff5c57">$load_mem</span>);
+</span></span><span style="display:flex;"><span><span style="color:#78787e">// string to array
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$to_array</span> <span style="color:#ff6ac1">=</span> unserialize(<span style="color:#ff5c57">$decode_mem</span>);
+</span></span><span style="display:flex;"><span><span style="color:#78787e">// verify
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$get_token</span> <span style="color:#ff6ac1">===</span> <span style="color:#ff5c57">$to_array</span>[<span style="color:#5af78e">&#39;rand_str&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$account</span> <span style="color:#ff6ac1">===</span> <span style="color:#ff5c57">$to_array</span>[<span style="color:#5af78e">&#39;account&#39;</span>]
+</span></span></code></pre></div>
+        </div>
 
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Tedshd
-            </p>
+    </article>
+
+    
+    
+
+    
+        
+        
+    
+
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
         </div>
     </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
 </footer>
 
-
-
-
+        
+    </div>
 </body>
 </html>

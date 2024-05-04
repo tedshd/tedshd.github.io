@@ -1,20 +1,294 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Imap on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/imap/</link>
-    <description>Recent content in Imap on tedshd&#39;s DevNote</description>
+    <title>Imap on Tedshd&#39;s Dev note</title>
+    <link>/categories/imap/</link>
+    <description>Tedshd&#39;s Dev note (Imap)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Mon, 01 Feb 2021 12:24:41 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/imap/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Jan 2021 10:18:11 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/imap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>使用 IMAP &amp; SMTP 來加強處理 Gmail</title>
-      <link>https://blog.tedshd.io/posts/use_imap_and_smtp_handle_email/</link>
+      <link>/posts/use_imap_and_smtp_handle_email/</link>
       <pubDate>Tue, 12 Jan 2021 10:18:11 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/use_imap_and_smtp_handle_email/</guid>
-      <description>Intro Gmail 提供 IMAP &amp;amp; SMTP 的功能 內送郵件 (IMAP) 伺服器 imap.gmail.com 需要安全資料傳輸層 (SSL)：是 通訊埠：993 外寄郵件 (SMTP) 伺服器 smtp.gmail.com 需要安全資料傳輸層 (SSL)：是 需要傳</description>
+      
+      <guid>/posts/use_imap_and_smtp_handle_email/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Gmail 提供 IMAP &amp;amp; SMTP 的功能&lt;/p&gt;
+&lt;h4 id=&#34;內送郵件-imap-伺服器&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%85%a7%e9%80%81%e9%83%b5%e4%bb%b6-imap-%e4%bc%ba%e6%9c%8d%e5%99%a8&#34;&gt;
+        ###
+    &lt;/a&gt;
+    內送郵件 (IMAP) 伺服器
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;imap.gmail.com&lt;/li&gt;
+&lt;li&gt;需要安全資料傳輸層 (SSL)：是&lt;/li&gt;
+&lt;li&gt;通訊埠：993&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;外寄郵件-smtp-伺服器&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%a4%96%e5%af%84%e9%83%b5%e4%bb%b6-smtp-%e4%bc%ba%e6%9c%8d%e5%99%a8&#34;&gt;
+        ###
+    &lt;/a&gt;
+    外寄郵件 (SMTP) 伺服器
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;smtp.gmail.com&lt;/li&gt;
+&lt;li&gt;需要安全資料傳輸層 (SSL)：是&lt;/li&gt;
+&lt;li&gt;需要傳輸層安全性 (TLS)：是 (如果可用)&lt;/li&gt;
+&lt;li&gt;需要驗證：是&lt;/li&gt;
+&lt;li&gt;安全資料傳輸層 (SSL) 通訊埠：465&lt;/li&gt;
+&lt;li&gt;傳輸層安全性 (TLS)/STARTTLS 通訊埠：587&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.google.com/mail/answer/7126229&#34;&gt;Refer - 透過其他電子郵件平台查看 Gmail&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;簡單的說 IMAP(Internet Message Access Protocol) 可以存取該 mail 的信件&lt;/p&gt;
+&lt;p&gt;SMTP(Simple Mail Transfer Protocol) 是可以利用該 mail 發信&lt;/p&gt;
+&lt;p&gt;詳細說明可以參照 wiki&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%9B%A0%E7%89%B9%E7%BD%91%E4%BF%A1%E6%81%AF%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE&#34;&gt;Refer - 網際網路資訊存取協定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE&#34;&gt;Refer - 簡單郵件傳輸協定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;另外還有 POP3(Post Office Protocol) 這個和 IMAP 類似的協定&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%83%B5%E5%B1%80%E5%8D%94%E5%AE%9A&#34;&gt;Refer - 郵局協定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;主要 POP3 和 IMAP 的差異主要差在 POP3 是把信件內容拉下來, IMAP 不會, IMAP 是即時連線存取, 但是 IMAP 的好處就是即時連線同步, 這樣在多個裝置就可以即時的更新信件的狀態&lt;/p&gt;
+&lt;p&gt;所以在一些常見的客戶端程式例如 outlook 或是 Mac OS 裡面的郵件都是利用這些協定在處理 email&lt;/p&gt;
+&lt;p&gt;這邊當然也可以利用支援這些協定的程式語言寫一些功能來處理 email&lt;/p&gt;
+&lt;h2 id=&#34;使用情境&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8%e6%83%85%e5%a2%83&#34;&gt;
+        #
+    &lt;/a&gt;
+    使用情境
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;因為公司的服務每天會有大量的 feedback mail 寄到設定的 Gmail 信箱&lt;/p&gt;
+&lt;p&gt;雖然會有實習生協助整理和處理 feedback mail 但是還是很花人力&lt;/p&gt;
+&lt;p&gt;這年頭最貴的就是人力了&lt;/p&gt;
+&lt;p&gt;所以公司有個基於 Python 的程式在協助處理 feedback mail&lt;/p&gt;
+&lt;p&gt;那程式主要做的事情就是簡單的辨識 SPAM 與替 feedback 的內容打上 tag 以便於之後快速處理使用者的 feedback&lt;/p&gt;
+&lt;h2 id=&#34;how-to-do&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#how-to-do&#34;&gt;
+        #
+    &lt;/a&gt;
+    How to do?
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;先開啟 Gmail 裡面的 IMAP 的功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202021-01-11%20%E4%B8%8B%E5%8D%884.04.52.png?alt=media&amp;amp;token=be7f6b2c-28bf-4716-bda3-35e8a890507c&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;設定用於第三方應用程式驗證的密碼(並非 Google OAuth)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202021-01-11%20%E4%B8%8B%E5%8D%884.09.50.png?alt=media&amp;amp;token=85f3770d-ee49-4163-b0d1-c3bb8cb49cc2&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://firebasestorage.googleapis.com/v0/b/storage-bucket-83851.appspot.com/o/blog%2F%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202021-01-11%20%E4%B8%8B%E5%8D%884.11.15.png?alt=media&amp;amp;token=84d05c47-29c7-4bae-8786-735afad5f7a4&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;開始寫程式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;怎麼開始寫-code&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%80%8e%e9%ba%bc%e9%96%8b%e5%a7%8b%e5%af%ab-code&#34;&gt;
+        #
+    &lt;/a&gt;
+    怎麼開始寫 code?
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;這邊以 Python 為例&lt;/p&gt;
+&lt;p&gt;在開始前得先搞懂流程要幹什麼&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;連接 IMAP server&lt;/li&gt;
+&lt;li&gt;撈信件&lt;/li&gt;
+&lt;li&gt;讀取信件主旨(subject) 和信件內容(content) 和確認附件(attachement)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;smaple-code&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#smaple-code&#34;&gt;
+        ##
+    &lt;/a&gt;
+    smaple code
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;以下使用 Python&lt;/p&gt;
+&lt;h4 id=&#34;建立-imap-server-連去信箱讀取信件&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%bb%ba%e7%ab%8b-imap-server-%e9%80%a3%e5%8e%bb%e4%bf%a1%e7%ae%b1%e8%ae%80%e5%8f%96%e4%bf%a1%e4%bb%b6&#34;&gt;
+        ###
+    &lt;/a&gt;
+    建立 IMAP server 連去信箱讀取信件
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; datetime &lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; datetime, timedelta, date
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; imaplib
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; email
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; email.header &lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; decode_header
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# pip install imap-tools&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; imap_tools.imap_utf7 &lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; encode, decode
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ACCOUNT &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;@gmail.com&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PWD &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mail &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; imaplib&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;IMAP4_SSL(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;imap.gmail.com&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;login(ACCOUNT, PWD)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;status, data &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;list()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;select(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;inbox&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 取前一天的時間&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;today &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; (date&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;today() &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt; timedelta(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;))&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;strftime(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;%d&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;-%b-%Y&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 找出前一天未讀的信件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;typ, data &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;search(&lt;span style=&#34;color:#ff6ac1&#34;&gt;None&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;(UNSEEN)&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;(SENTSINCE &lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;{0}&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;)&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;format(today))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 取到 message id list(message id 就是每封信的 id)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ids &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; data[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;id_list &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; ids&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;split()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; id_list:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    typ, data &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;fetch(i, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;(RFC822)&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; typ &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;OK&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff5c57&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;get mail ok&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; response_part &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; data:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;isinstance&lt;/span&gt;(response_part, &lt;span style=&#34;color:#ff5c57&#34;&gt;tuple&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                rawMail &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; response_part[&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;]&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;decode()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;# 取得信件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                msg &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; email&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;message_from_string(rawMail)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#ff5c57&#34;&gt;print&lt;/span&gt;(msg)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;基本上到這裡拿到 msg 就是這封信件的資訊了&lt;/p&gt;
+&lt;p&gt;就可以取出來做一些處理&lt;/p&gt;
+&lt;p&gt;例如: 判斷來信者來回信, 判斷內容替信件添加標籤 等等&lt;/p&gt;
+&lt;p&gt;關於 &lt;code&gt;imap.search&lt;/code&gt; 可以如何使用可參考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://coderwall.com/p/gorteg/python-s-imaplib&#34;&gt;Refer - Python&amp;rsquo;s imaplib (Example)&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;回信&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%9b%9e%e4%bf%a1&#34;&gt;
+        ###
+    &lt;/a&gt;
+    回信
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;幾本上回信也是寄信的一種&lt;/p&gt;
+&lt;p&gt;寄信的部分就是得用到 SMTP&lt;/p&gt;
+&lt;p&gt;幾本上的流程就是&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;連接 Gmail 的 SMTP server&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;寫信&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;寄信&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;關閉連接&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以下為寄信範例&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; email
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; smtplib
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; email.mime.multipart &lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; MIMEMultipart
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; email.mime.text &lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; MIMEText
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;smtp_server &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; smtplib&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;SMTP_SSL(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;smtp.gmail.com&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ACCOUNT &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;@gmail.com&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PWD &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;smtp_server&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;login(ACCOUNT, PWD)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;send_mail &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; MIMEMultipart(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;mixed&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;body &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; MIMEMultipart(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;alternative&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;body&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;attach(MIMEText(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;test send mail&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;plain&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;body&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;attach(MIMEText(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;lt;div&amp;gt;test send mail&amp;lt;div&amp;gt;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;html&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;send_mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;attach(body)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;send_mail[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;message-id&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; email&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;utils&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;make_msgid()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;send_mail[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;subject&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;send_mail[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;to&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;send_mail[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;from&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;@gmail.com&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;smtp_server&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;sendmail(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;@gmail.com&amp;#39;&lt;/span&gt;, send_mail[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;to&amp;#39;&lt;/span&gt;], send_mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;as_string())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;smtp_server&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;quit()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;需要回信的話就得在發送時指定 references 和指定要回覆給哪封信(每一封信都有獨立的 message id)&lt;/p&gt;
+&lt;p&gt;所以會先用 imap 取到 mail list 這樣就會有 message id 的資訊了&lt;/p&gt;
+&lt;p&gt;以下為回信的範例&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; datetime &lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; datetime, timedelta, date
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; imaplib
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; email
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; email.header &lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; decode_header
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# pip install imap-tools&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;from&lt;/span&gt; imap_tools.imap_utf7 &lt;span style=&#34;color:#ff6ac1&#34;&gt;import&lt;/span&gt; encode, decode
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ACCOUNT &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;@gmail.com&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PWD &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mail &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; imaplib&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;IMAP4_SSL(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;imap.gmail.com&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;login(ACCOUNT, PWD)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;status, data &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;list()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;select(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;inbox&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 取前一天的時間&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;today &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; (date&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;today() &lt;span style=&#34;color:#ff6ac1&#34;&gt;-&lt;/span&gt; timedelta(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;))&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;strftime(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;%d&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;-%b-%Y&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 找出前一天未讀的信件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;typ, data &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;search(&lt;span style=&#34;color:#ff6ac1&#34;&gt;None&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;(UNSEEN)&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;(SENTSINCE &lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;{0}&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;)&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;format(today))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 取到 message id list(message id 就是每封信的 id)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ids &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; data[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;id_list &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; ids&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;split()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; id_list:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    typ, data &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;fetch(i, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;(RFC822)&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; typ &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;OK&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff5c57&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;get mail ok&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; response_part &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; data:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;isinstance&lt;/span&gt;(response_part, &lt;span style=&#34;color:#ff5c57&#34;&gt;tuple&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                raw_mail &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; response_part[&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;]&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;decode()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;# 取得信件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                msg &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; email&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;message_from_string(raw_mail)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#ff5c57&#34;&gt;print&lt;/span&gt;(msg)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                var_subject &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; msg[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;subject&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                subject, encoding &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; decode_header(var_subject)[&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#78787e&#34;&gt;# add origin content&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#ff6ac1&#34;&gt;for&lt;/span&gt; part &lt;span style=&#34;color:#ff6ac1&#34;&gt;in&lt;/span&gt; msg&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;walk():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#ff6ac1&#34;&gt;if&lt;/span&gt; (part&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Content-Disposition&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#ff6ac1&#34;&gt;and&lt;/span&gt; part&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Content-Disposition&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;startswith(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;attachment&amp;#34;&lt;/span&gt;)):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        part&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;set_type(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;text/plain&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        part&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;set_payload(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Attachment removed: &lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; (&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;, &lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;%d&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; bytes)&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;%&lt;/span&gt; (part&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;get_filename(), part&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;get_content_type(), &lt;span style=&#34;color:#ff5c57&#34;&gt;len&lt;/span&gt;(part&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;get_payload(decode&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;True&lt;/span&gt;))))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#ff6ac1&#34;&gt;del&lt;/span&gt; part[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Content-Disposition&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#ff6ac1&#34;&gt;del&lt;/span&gt; part[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;Content-Transfer-Encoding&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                reply_mail &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; MIMEMultipart(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;mixed&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                body &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; MIMEMultipart(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;alternative&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                body&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;attach(MIMEText(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;reply mail&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;plain&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                body&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;attach(MIMEText(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;&amp;lt;div&amp;gt;reply mail&amp;lt;/div&amp;gt;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;html&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                reply_mail&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;attach(body)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                reply_mail[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;message-id&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; email&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;utils&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;make_msgid()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                reply_mail[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;in-reply-to&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; msg[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;message-id&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                reply_mail[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;references&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; msg[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;message-id&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                reply_mail[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;subject&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;re: &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;+&lt;/span&gt; msg[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;subject&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                reply_mail[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;to&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; msg[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;reply-to&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;or&lt;/span&gt; msg[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;from&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                reply_mail[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;from&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;@gmail.com&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                smtp_server&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;sendmail(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;@gmail.com&amp;#39;&lt;/span&gt;, new[&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;to&amp;#39;&lt;/span&gt;], new&lt;span style=&#34;color:#ff6ac1&#34;&gt;.&lt;/span&gt;as_string())
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
   </channel>
 </rss>

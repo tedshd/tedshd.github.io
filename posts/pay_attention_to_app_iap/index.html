@@ -1,256 +1,718 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+
+
+<html lang="en-us" data-theme="">
+<head>
     
-
-
-
-
-<title>App store &amp; Google Play IAP((In-App Purchase)) 內購與訂閱注意事項 | tedshd&#39;s DevNote</title>
+        
 <meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>App store &amp; Google Play IAP((In-App Purchase)) 內購與訂閱注意事項 - Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="# 前期比較花時間的準備 收款銀行帳戶
+公司登記資料
+# 是否需要試用期 # 不同地區設定不同價格 避開匯率的問題
+# 退款處理 由於是可以在商店平台做退款(所以需要客戶端或是服務端定期確認商店的訂閱狀態)
+https://support.apple.com/en-us/HT204084
+https://support.google.com/googleplay/answer/2479637
+# 取消續訂處理 取消續訂也是需要服務端或是客戶端確認訂閱狀態
+https://support.apple.com/en-us/HT202039
+https://support.google.com/googleplay/answer/7018481
+# 取消訂閱流程 提供商店的 support 網址
+https://support.apple.com/en-us/HT202039
+https://support.google.com/googleplay/answer/7018481
+# 價格對應的訂閱 id 需要有後端配置下發給客戶端以利於價格調整 避免用戶使用舊版 app 訂閱舊價格
+# 訂閱量與續訂的數據埋點(取消訂閱也需要上報) 須注意訂閱量與預估收入的計算
+# 購買 / 訂閱狀態是跟著 Google 或是 Apple 帳號 需要注意自己服務如何和 Google 帳號或是 Apple 帳號關聯(或是訂單 id 關聯)
+# 客戶端需要和商店確認訂單與後端確認訂閱狀態(增強安全性) # App store 文案需要添加訂閱相關事項與協議 Guideline 3.1.2 - Business - Payments - Subscriptions
+這部分可以參考其他有訂閱或購買制的 App 的 App store 頁面">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta name="google" content="notranslate">
-<meta id="viewport" name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content='前期比較花時間的準備 收款銀行帳戶 公司登記資料 是否需要試用期 不同地區設定不同價格 避開匯率的問題 退款處理 由於是可以在商店平台做退款(所以需要客戶'>
-<meta name="keywords" content=''>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://blog.tedshd.io/posts/pay_attention_to_app_iap/">
-<link rel="alternate" media="handheld" href="https://blog.tedshd.io/posts/pay_attention_to_app_iap/" />
-
-<link rel="canonical" href="https://blog.tedshd.io/posts/pay_attention_to_app_iap/" />
-<link rel="shortcut icon" href="/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aa6">
-<meta name="theme-color" content="">
-<meta name="robots" content="index, follow">
-<meta name="copyright" content="Tedshd">
-
-<meta property="og:title" content="App store &amp; Google Play IAP((In-App Purchase)) 內購與訂閱注意事項" />
-<meta property="og:description" content="前期比較花時間的準備 收款銀行帳戶 公司登記資料 是否需要試用期 不同地區設定不同價格 避開匯率的問題 退款處理 由於是可以在商店平台做退款(所以需要客戶" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tedshd.io/posts/pay_attention_to_app_iap/" /><meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-01-12T14:51:11+08:00" />
-<meta property="article:modified_time" content="2023-01-17T10:24:18+08:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://s3.amazonaws.com/logdown-production/system/blog/3202/og_image/logdown.png" /><meta name="twitter:title" content="App store &amp; Google Play IAP((In-App Purchase)) 內購與訂閱注意事項"/>
-<meta name="twitter:description" content="前期比較花時間的準備 收款銀行帳戶 公司登記資料 是否需要試用期 不同地區設定不同價格 避開匯率的問題 退款處理 由於是可以在商店平台做退款(所以需要客戶"/>
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-<script data-ad-client="ca-pub-0553186380244641" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
+
+        
+
+
+
+
+
 
 
     
+        <div class="theme-switcher">
+            <span class="inline-svg">
 
     
 
-    <link rel="stylesheet" href='https://blog.tedshd.io/css/style.css'>
 
     
-<link>
-
-<link
-    href="https://fonts.googleapis.com/css?family=Hanuman:400,700|Inconsolata|Roboto:400,400i,700,700i&display=swap&subset=khmer"
-    rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/grids-responsive-min.css">
-
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
 
-    gtag('config', 'G-1NKP3D2ZGG');
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
     </script>
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.tedshd.io/">
-                    tedshd&#39;s DevNote
-                </a>
-            </div>
-            
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">
-                <i class="p-icon--menu"></i>
+
+
+        <ul class="social-icons noselect">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
             </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">
-                <i class="p-icon--close"></i>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
             </a>
-        </div>
+        </li>
+    
 
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
 
-            <ul class="p-navigation__links" role="menu">
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/categories">Categories</a>
-                </li>
-                
-                <li class="p-navigation__link" role="menuitem">
-                    <a href="/tags">tags</a>
-                </li>
-                
-            </ul>
+    
 
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.tedshd.io/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-            
-        </nav>
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
     </div>
-</header><div id="main-content">
-<div class="page-banner">
-    <div class="row u-vertically-center">
-        <div class="col-8 pure-g">
-            <div class="pure-u">
-                <img src="https://graph.facebook.com/100004089951579/picture?type=large" alt="tedshd&#39;s DevNote" width="100" height="100"
-                    style="border-radius: 50%;display: inline; margin: 1rem;box-shadow: 0 0 5px rgba(0, 0, 0, 1);vertical-align: middle;">
-            </div>
-            <div class="pure-u">
-                <h2>tedshd&#39;s DevNote</h2>
-                <p>Develop &amp; Design Note by Ted</p>
-            </div>
-        </div>
+    <div class="header-top-right">
+
     </div>
 </div>
 
-<ul class="p-navigation__links sub_menu" role="menu">
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tedshd.github.io/resume/">About</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="http://tysh310246.blogspot.tw/">Blog</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://www.facebook.com/chander.shiu">Facebook</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://github.com/tedshd">Github</a>
-    </li>
-    
-    <li class="p-navigation__link" role="menuitem">
-        <a href="https://tw.linkedin.com/in/tedshd">Linkedin</a>
-    </li>
-    
-</ul>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
 
-<ins class="adsbygoogle" style="display:block;text-align: center;" data-ad-client="ca-pub-0553186380244641"
-    data-ad-slot="1505807492" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">App store &amp; Google Play IAP((In-App Purchase)) 內購與訂閱注意事項</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2023-01-12">2023-01-12</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/pay_attention_to_app_iap/">/posts/pay_attention_to_app_iap/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/iap/">Iap</a></li>
+                
+                    
+                    <li><a href="/categories/google-play/">Google Play</a></li>
+                
+                    
+                    <li><a href="/categories/app-store/">App Store</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前期比較花時間的準備">前期比較花時間的準備</a></li>
+    <li><a href="#是否需要試用期">是否需要試用期</a></li>
+    <li><a href="#不同地區設定不同價格">不同地區設定不同價格</a></li>
+    <li><a href="#退款處理">退款處理</a></li>
+    <li><a href="#取消續訂處理">取消續訂處理</a></li>
+    <li><a href="#取消訂閱流程">取消訂閱流程</a></li>
+    <li><a href="#價格對應的訂閱-id-需要有後端配置下發給客戶端以利於價格調整">價格對應的訂閱 id 需要有後端配置下發給客戶端以利於價格調整</a></li>
+    <li><a href="#訂閱量與續訂的數據埋點取消訂閱也需要上報">訂閱量與續訂的數據埋點(取消訂閱也需要上報)</a></li>
+    <li><a href="#購買--訂閱狀態是跟著-google-或是-apple-帳號">購買 / 訂閱狀態是跟著 Google 或是 Apple 帳號</a></li>
+    <li><a href="#客戶端需要和商店確認訂單與後端確認訂閱狀態增強安全性">客戶端需要和商店確認訂單與後端確認訂閱狀態(增強安全性)</a></li>
+    <li><a href="#app-store-文案需要添加訂閱相關事項與協議">App store 文案需要添加訂閱相關事項與協議</a></li>
+    <li><a href="#ios-需要添加恢復訂閱功能">iOS 需要添加恢復訂閱功能</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
 </script>
 
-
-<header class="">
-    <div class="row">
-        <h1>App store &amp; Google Play IAP((In-App Purchase)) 內購與訂閱注意事項</h1>
-    </div>
-</header>
-
-
-<section class="p-strip is-shallow">
-    <main class="row post-content">
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2023-01-12
-        </p>
-        
-        <h2 id="前期比較花時間的準備">前期比較花時間的準備</h2>
+        <div class="content e-content">
+            <h2 id="前期比較花時間的準備" >
+<div>
+    <a href="#%e5%89%8d%e6%9c%9f%e6%af%94%e8%bc%83%e8%8a%b1%e6%99%82%e9%96%93%e7%9a%84%e6%ba%96%e5%82%99">
+        #
+    </a>
+    前期比較花時間的準備
+</div>
+</h2>
 <p>收款銀行帳戶</p>
 <p>公司登記資料</p>
-<h2 id="是否需要試用期">是否需要試用期</h2>
-<h2 id="不同地區設定不同價格">不同地區設定不同價格</h2>
+<h2 id="是否需要試用期" >
+<div>
+    <a href="#%e6%98%af%e5%90%a6%e9%9c%80%e8%a6%81%e8%a9%a6%e7%94%a8%e6%9c%9f">
+        #
+    </a>
+    是否需要試用期
+</div>
+</h2>
+<h2 id="不同地區設定不同價格" >
+<div>
+    <a href="#%e4%b8%8d%e5%90%8c%e5%9c%b0%e5%8d%80%e8%a8%ad%e5%ae%9a%e4%b8%8d%e5%90%8c%e5%83%b9%e6%a0%bc">
+        #
+    </a>
+    不同地區設定不同價格
+</div>
+</h2>
 <p>避開匯率的問題</p>
-<h2 id="退款處理">退款處理</h2>
+<h2 id="退款處理" >
+<div>
+    <a href="#%e9%80%80%e6%ac%be%e8%99%95%e7%90%86">
+        #
+    </a>
+    退款處理
+</div>
+</h2>
 <p>由於是可以在商店平台做退款(所以需要客戶端或是服務端定期確認商店的訂閱狀態)</p>
 <p><a href="https://support.apple.com/en-us/HT204084">https://support.apple.com/en-us/HT204084</a></p>
 <p><a href="https://support.google.com/googleplay/answer/2479637">https://support.google.com/googleplay/answer/2479637</a></p>
-<h2 id="取消續訂處理">取消續訂處理</h2>
+<h2 id="取消續訂處理" >
+<div>
+    <a href="#%e5%8f%96%e6%b6%88%e7%ba%8c%e8%a8%82%e8%99%95%e7%90%86">
+        #
+    </a>
+    取消續訂處理
+</div>
+</h2>
 <p>取消續訂也是需要服務端或是客戶端確認訂閱狀態</p>
 <p><a href="https://support.apple.com/en-us/HT202039">https://support.apple.com/en-us/HT202039</a></p>
 <p><a href="https://support.google.com/googleplay/answer/7018481">https://support.google.com/googleplay/answer/7018481</a></p>
-<h2 id="取消訂閱流程">取消訂閱流程</h2>
+<h2 id="取消訂閱流程" >
+<div>
+    <a href="#%e5%8f%96%e6%b6%88%e8%a8%82%e9%96%b1%e6%b5%81%e7%a8%8b">
+        #
+    </a>
+    取消訂閱流程
+</div>
+</h2>
 <p>提供商店的 support 網址</p>
 <p><a href="https://support.apple.com/en-us/HT202039">https://support.apple.com/en-us/HT202039</a></p>
 <p><a href="https://support.google.com/googleplay/answer/7018481">https://support.google.com/googleplay/answer/7018481</a></p>
-<h2 id="價格對應的訂閱-id-需要有後端配置下發給客戶端以利於價格調整">價格對應的訂閱 id 需要有後端配置下發給客戶端以利於價格調整</h2>
+<h2 id="價格對應的訂閱-id-需要有後端配置下發給客戶端以利於價格調整" >
+<div>
+    <a href="#%e5%83%b9%e6%a0%bc%e5%b0%8d%e6%87%89%e7%9a%84%e8%a8%82%e9%96%b1-id-%e9%9c%80%e8%a6%81%e6%9c%89%e5%be%8c%e7%ab%af%e9%85%8d%e7%bd%ae%e4%b8%8b%e7%99%bc%e7%b5%a6%e5%ae%a2%e6%88%b6%e7%ab%af%e4%bb%a5%e5%88%a9%e6%96%bc%e5%83%b9%e6%a0%bc%e8%aa%bf%e6%95%b4">
+        #
+    </a>
+    價格對應的訂閱 id 需要有後端配置下發給客戶端以利於價格調整
+</div>
+</h2>
 <p>避免用戶使用舊版 app 訂閱舊價格</p>
-<h2 id="訂閱量與續訂的數據埋點取消訂閱也需要上報">訂閱量與續訂的數據埋點(取消訂閱也需要上報)</h2>
+<h2 id="訂閱量與續訂的數據埋點取消訂閱也需要上報" >
+<div>
+    <a href="#%e8%a8%82%e9%96%b1%e9%87%8f%e8%88%87%e7%ba%8c%e8%a8%82%e7%9a%84%e6%95%b8%e6%93%9a%e5%9f%8b%e9%bb%9e%e5%8f%96%e6%b6%88%e8%a8%82%e9%96%b1%e4%b9%9f%e9%9c%80%e8%a6%81%e4%b8%8a%e5%a0%b1">
+        #
+    </a>
+    訂閱量與續訂的數據埋點(取消訂閱也需要上報)
+</div>
+</h2>
 <p>須注意訂閱量與預估收入的計算</p>
-<h2 id="購買--訂閱狀態是跟著-google-或是-apple-帳號">購買 / 訂閱狀態是跟著 Google 或是 Apple 帳號</h2>
+<h2 id="購買--訂閱狀態是跟著-google-或是-apple-帳號" >
+<div>
+    <a href="#%e8%b3%bc%e8%b2%b7--%e8%a8%82%e9%96%b1%e7%8b%80%e6%85%8b%e6%98%af%e8%b7%9f%e8%91%97-google-%e6%88%96%e6%98%af-apple-%e5%b8%b3%e8%99%9f">
+        #
+    </a>
+    購買 / 訂閱狀態是跟著 Google 或是 Apple 帳號
+</div>
+</h2>
 <p>需要注意自己服務如何和 Google 帳號或是 Apple 帳號關聯(或是訂單 id 關聯)</p>
-<h2 id="客戶端需要和商店確認訂單與後端確認訂閱狀態增強安全性">客戶端需要和商店確認訂單與後端確認訂閱狀態(增強安全性)</h2>
-<h2 id="app-store-文案需要添加訂閱相關事項與協議">App store 文案需要添加訂閱相關事項與協議</h2>
+<h2 id="客戶端需要和商店確認訂單與後端確認訂閱狀態增強安全性" >
+<div>
+    <a href="#%e5%ae%a2%e6%88%b6%e7%ab%af%e9%9c%80%e8%a6%81%e5%92%8c%e5%95%86%e5%ba%97%e7%a2%ba%e8%aa%8d%e8%a8%82%e5%96%ae%e8%88%87%e5%be%8c%e7%ab%af%e7%a2%ba%e8%aa%8d%e8%a8%82%e9%96%b1%e7%8b%80%e6%85%8b%e5%a2%9e%e5%bc%b7%e5%ae%89%e5%85%a8%e6%80%a7">
+        #
+    </a>
+    客戶端需要和商店確認訂單與後端確認訂閱狀態(增強安全性)
+</div>
+</h2>
+<h2 id="app-store-文案需要添加訂閱相關事項與協議" >
+<div>
+    <a href="#app-store-%e6%96%87%e6%a1%88%e9%9c%80%e8%a6%81%e6%b7%bb%e5%8a%a0%e8%a8%82%e9%96%b1%e7%9b%b8%e9%97%9c%e4%ba%8b%e9%a0%85%e8%88%87%e5%8d%94%e8%ad%b0">
+        #
+    </a>
+    App store 文案需要添加訂閱相關事項與協議
+</div>
+</h2>
 <p><a href="https://developer.apple.com/forums/thread/112963">Guideline 3.1.2 - Business - Payments - Subscriptions</a></p>
 <p>這部分可以參考其他有訂閱或購買制的 App 的 App store 頁面</p>
-<h2 id="ios-需要添加恢復訂閱功能">iOS 需要添加恢復訂閱功能</h2>
+<h2 id="ios-需要添加恢復訂閱功能" >
+<div>
+    <a href="#ios-%e9%9c%80%e8%a6%81%e6%b7%bb%e5%8a%a0%e6%81%a2%e5%be%a9%e8%a8%82%e9%96%b1%e5%8a%9f%e8%83%bd">
+        #
+    </a>
+    iOS 需要添加恢復訂閱功能
+</div>
+</h2>
 <p>因為服務和訂閱並非緊密關聯, 所以需要實作恢復訂閱來讓服務的帳號和訂閱能重新關聯起來</p>
 
-    </main>
-</section>
+        </div>
 
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
+    </article>
+
     
-    <a class="p-article-pagination__link--previous" href="https://blog.tedshd.io/posts/fix_mac_m1_startup_can_not_detect_monitor/">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            修復 mac m1 開機偵測不到 type-c 螢幕
-        </span>
-    </a>
     
 
     
-    <a class="p-article-pagination__link--next" href="https://blog.tedshd.io/posts/fixed_mac_android_file_transfer_not_work/">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            Fixed android file transfer not work in mac
-        </span>
-    </a>
+        
+        
     
-</div>
-    </div>
-</footer>
 
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Tedshd
-            </p>
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
         </div>
     </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
 </footer>
 
-
-
-
+        
+    </div>
 </body>
 </html>

@@ -1,41 +1,434 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on tedshd&#39;s DevNote</title>
-    <link>https://blog.tedshd.io/categories/docker/</link>
-    <description>Recent content in Docker on tedshd&#39;s DevNote</description>
+    <title>Docker on Tedshd&#39;s Dev note</title>
+    <link>/categories/docker/</link>
+    <description>Tedshd&#39;s Dev note (Docker)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2022 Tedshd</copyright>
-    <lastBuildDate>Sat, 08 Apr 2023 14:31:02 +0800</lastBuildDate>
-    <atom:link href="https://blog.tedshd.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 10:45:39 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>docker 建立不同平台的 image</title>
-      <link>https://blog.tedshd.io/posts/build_different_platform_docker_image/</link>
+      <link>/posts/build_different_platform_docker_image/</link>
       <pubDate>Wed, 29 Jun 2022 10:45:39 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/build_different_platform_docker_image/</guid>
-      <description>前言 現在在開發與線上環境常常會遇到不同 CPU 架構的問題 不同 CPU 架構底層的指令集也不一樣 最常見的影響就是在其中一個平台編譯出來的程式會無法在另一個平</description>
+      
+      <guid>/posts/build_different_platform_docker_image/</guid>
+      <description>&lt;h2 id=&#34;前言&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%89%8d%e8%a8%80&#34;&gt;
+        #
+    &lt;/a&gt;
+    前言
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;現在在開發與線上環境常常會遇到不同 CPU 架構的問題&lt;/p&gt;
+&lt;p&gt;不同 CPU 架構底層的指令集也不一樣&lt;/p&gt;
+&lt;p&gt;最常見的影響就是在其中一個平台編譯出來的程式會無法在另一個平台執行&lt;/p&gt;
+&lt;p&gt;這情況尤其是會在接近底層的程式上見到&lt;/p&gt;
+&lt;p&gt;現在普遍來說會發現在 ARM 架構底下有些程式執行起來效率更高&lt;/p&gt;
+&lt;p&gt;所以有部分公司的服務也會在線上環境的機器選用 ARM 架構的機器&lt;/p&gt;
+&lt;h2 id=&#34;情境&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%83%85%e5%a2%83&#34;&gt;
+        #
+    &lt;/a&gt;
+    情境
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;雖然以前公司的情況是開發在 x86-64 上&lt;/p&gt;
+&lt;p&gt;線上是 ARM 的情況&lt;/p&gt;
+&lt;p&gt;但現在自己在試驗的情況是反過來的 XD&lt;/p&gt;
+&lt;p&gt;現在 Macbook 是 M1 晶片了, M 系列是 ARM 架構&lt;/p&gt;
+&lt;p&gt;我在 GCP 開的機器是 x86-64 架構&lt;/p&gt;
+&lt;p&gt;所以在 Mac 上面 build 的 docker image 是沒法在 GCP 開的機器運行&lt;/p&gt;
+&lt;p&gt;只要執行 docker run 就會出現錯誤提示說架構不同無法執行&lt;/p&gt;
+&lt;h2 id=&#34;解決方案&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%a7%a3%e6%b1%ba%e6%96%b9%e6%a1%88&#34;&gt;
+        #
+    &lt;/a&gt;
+    解決方案
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;docker 有提供可以建構不同平台的 image 的指令&lt;/p&gt;
+&lt;p&gt;只要多一個 &lt;code&gt;buildx&lt;/code&gt; 和 &lt;code&gt;--platform&lt;/code&gt; 的指令與參數&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker buildx build --platform=linux/amd64,linux/arm64 .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/&#34;&gt;Faster Multi-Platform Builds: Dockerfile Cross-Compilation Guide&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Mac M1 run MySQL in local docker</title>
-      <link>https://blog.tedshd.io/posts/mysql_in_docker/</link>
+      <link>/posts/mysql_in_docker/</link>
       <pubDate>Tue, 03 May 2022 15:53:18 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/mysql_in_docker/</guid>
-      <description>Usage docker hub&#xA;In Apple M1&#xA;no-official image&#xA;amd64/mysql&#xA;MySQL 5.7&#xA;docker pull amd64/mysql:5.7 Run docker in local Sample for M1(different of image name)&#xA;docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d amd64/mysql:latest Container run in 0.0.0.0&#xA;mysql --default-character-set=utf8mb4 -u root -h 0.0.0.0 -P 3306 -p -A </description>
+      
+      <guid>/posts/mysql_in_docker/</guid>
+      <description>&lt;h2 id=&#34;usage&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#usage&#34;&gt;
+        #
+    &lt;/a&gt;
+    Usage
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/_/mysql&#34;&gt;docker hub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In Apple M1&lt;/p&gt;
+&lt;p&gt;no-official image&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/amd64/mysql/&#34;&gt;amd64/mysql&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;MySQL 5.7&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker pull amd64/mysql:5.7
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;run-docker-in-local&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#run-docker-in-local&#34;&gt;
+        #
+    &lt;/a&gt;
+    Run docker in local
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Sample for M1(different of image name)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run --name mysql -p 3306:3306 -e &lt;span style=&#34;color:#ff5c57&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;password -d amd64/mysql:latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Container run in &lt;code&gt;0.0.0.0&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql --default-character-set&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;utf8mb4 -u root -h 0.0.0.0 -P &lt;span style=&#34;color:#ff9f43&#34;&gt;3306&lt;/span&gt; -p -A
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
+    
     <item>
       <title>docker 使用紀錄</title>
-      <link>https://blog.tedshd.io/posts/docker_usage/</link>
+      <link>/posts/docker_usage/</link>
       <pubDate>Thu, 24 Dec 2020 10:12:17 +0800</pubDate>
-      <guid>https://blog.tedshd.io/posts/docker_usage/</guid>
-      <description>docker images 列出所有拉下來的 docker image docker images REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE ubuntu latest 07f8e8c5e660 3 weeks ago 188.3 MB build dockerfile 使用 dockerfile 建立 docker image 直接建立 docker build . 預設會找當前的目錄的 Dockerfile -t 可以設定建立的 image &amp;amp; tag name docker build</description>
+      
+      <guid>/posts/docker_usage/</guid>
+      <description>&lt;h2 id=&#34;docker-images&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-images&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker images&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;列出所有拉下來的 docker image&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker images
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ubuntu              latest              07f8e8c5e660        &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt; weeks ago         188.3 MB
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;build-dockerfile&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#build-dockerfile&#34;&gt;
+        #
+    &lt;/a&gt;
+    build dockerfile
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;使用 dockerfile 建立 docker image&lt;/p&gt;
+&lt;p&gt;直接建立&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker build .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;預設會找當前的目錄的 &lt;code&gt;Dockerfile&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-t&lt;/code&gt; 可以設定建立的 image &amp;amp; tag name&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker build . -t image_name:tag_name
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;-f&lt;/code&gt; 指定用哪個 dockerfile 建立&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker build . -t ubuntu_dev:16.04 -f local.Dockerfile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;dockerfile-使用&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#dockerfile-%e4%bd%bf%e7%94%a8&#34;&gt;
+        #
+    &lt;/a&gt;
+    dockerfile 使用
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;使用-nginx-official-image-建立&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8-nginx-official-image-%e5%bb%ba%e7%ab%8b&#34;&gt;
+        ##
+    &lt;/a&gt;
+    使用 nginx official image 建立
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; nginx:1.19.6-alpine&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;COPY&lt;/span&gt; ~/www /usr/share/nginx/html&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;EXPOSE&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; 80&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;multi-stage-多次-build-image&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#multi-stage-%e5%a4%9a%e6%ac%a1-build-image&#34;&gt;
+        ##
+    &lt;/a&gt;
+    multi stage 多次 build image
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;有時最終要包起來的 image 會做多次處理&lt;/p&gt;
+&lt;p&gt;兩種做法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;要多次處理的部份&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;依照要處理的部份個別建立 docker 處理&lt;/p&gt;
+&lt;p&gt;最後在把要包起來的東西包成 docker&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;用 multi stage&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; golang:1.7.3 AS builder&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;WORKDIR&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; /go/src/github.com/alexellis/href-counter/&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;RUN&lt;/span&gt; go get -d -v golang.org/x/net/html&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;COPY&lt;/span&gt; app.go    .&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;RUN&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;CGO_ENABLED&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff5c57&#34;&gt;GOOS&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;linux go build -a -installsuffix cgo -o app .&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; alpine:latest&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;RUN&lt;/span&gt; apk --no-cache add ca-certificates&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;WORKDIR&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; /root/&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;COPY&lt;/span&gt; --from&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;builder /go/src/github.com/alexellis/href-counter/app .&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;CMD&lt;/span&gt; [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;./app&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;都是放在一起 build, build 完之後可以把結果複製到會後再使用的 image 裡面&lt;/p&gt;
+&lt;p&gt;大致上就是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; image_a AS a&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# dosomething...&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt; image_b&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;COPY&lt;/span&gt; --from&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;a path ./&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# dosomething...&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;多用於要先編譯的情況&lt;/p&gt;
+&lt;p&gt;先在其他 image 編譯完&lt;/p&gt;
+&lt;p&gt;最後在之前在其他 image 編譯完的結果和要執行的環境包成 image&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds&#34;&gt;Refer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但是 build 完之後會有個問題, 就是之前 stage build 出來的 image 基本上沒有必要保留&lt;/p&gt;
+&lt;p&gt;所以可以用 &lt;code&gt;docker image prune f&lt;/code&gt; 移除掉之前 stage 建立的 image&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/50126741/how-to-remove-intermediate-images-from-a-build-after-the-build&#34;&gt;Refer - How to remove intermediate images from a build after the build?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/config/pruning/&#34;&gt;Refer - Prune unused Docker objects&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;建立-container-docker-run&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%bb%ba%e7%ab%8b-container-docker-run&#34;&gt;
+        #
+    &lt;/a&gt;
+    建立 container &lt;code&gt;docker run&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;docker run -t -i ubuntu /bin/bash&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -t -i ubuntu /bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root@b0cdeb409841:/#
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;建立 container 並執行 bash&lt;/p&gt;
+&lt;h3 id=&#34;docker-run&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-run&#34;&gt;
+        ##
+    &lt;/a&gt;
+    docker run
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -idt --name &amp;lt;container name&amp;gt; -v &amp;lt;mount absolute path or ~ path&amp;gt;:&amp;lt;docker path&amp;gt; &amp;lt;IMAGE&amp;gt;:&amp;lt;TAG&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;docker-ps--a&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-ps--a&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker ps -a&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;列出所有已經建立的 container&lt;/p&gt;
+&lt;h2 id=&#34;docker-ps&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-ps&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker ps&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;列出所有正在執行的 container&lt;/p&gt;
+&lt;h2 id=&#34;docker-start-container_id&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-start-container_id&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker start &amp;lt;container_id&amp;gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;執行 container&lt;/p&gt;
+&lt;h2 id=&#34;docker-stop-container_id&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-stop-container_id&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker stop &amp;lt;container_id&amp;gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;停止 container&lt;/p&gt;
+&lt;h2 id=&#34;docker-logs-container_id&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-logs-container_id&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker logs &amp;lt;container_id&amp;gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;查看 docker 處理的紀錄&lt;/p&gt;
+&lt;h2 id=&#34;docker-cp-file-container_idfile&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-cp-file-container_idfile&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker cp &amp;lt;file&amp;gt; &amp;lt;container_id&amp;gt;:/&amp;lt;file&amp;gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;把檔案複製到 docker container 裡面&lt;/p&gt;
+&lt;h2 id=&#34;docker-cp-container_idfile-file&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-cp-container_idfile-file&#34;&gt;
+        #
+    &lt;/a&gt;
+    &lt;code&gt;docker cp &amp;lt;container_id&amp;gt;:/&amp;lt;file&amp;gt; &amp;lt;file&amp;gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;把檔案從 container 裡面複製出來&lt;/p&gt;
+</description>
     </item>
+    
     <item>
       <title>Docker - Mac research log</title>
-      <link>https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/</link>
+      <link>/posts/2015-05-15-docker-mac-research-log/</link>
       <pubDate>Fri, 15 May 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.tedshd.io/posts/2015-05-15-docker-mac-research-log/</guid>
-      <description>Docker - Mac research log Install by Mac Register Docker Hub Docker Hub Use Kitematic kitematic Install Ubuntu Search ubuntu on docker hub Run command docker pull ubuntu Use docker images docker images REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE ubuntu latest 07f8e8c5e660 3 weeks ago 188.3 MB build dockerfile docker build . -t ubuntu_dev:16.04 -f local.Dockerfile run container docker run -t -i ubuntu /bin/bash docker run -t -i ubuntu</description>
+      
+      <guid>/posts/2015-05-15-docker-mac-research-log/</guid>
+      <description>&lt;h2 id=&#34;docker---mac-research-log&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker---mac-research-log&#34;&gt;
+        #
+    &lt;/a&gt;
+    Docker - Mac research log
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;del&gt;&lt;a href=&#34;http://docs.docker.com/installation/mac/&#34;&gt;Install by Mac&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
+&lt;h3 id=&#34;register-docker-hub&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#register-docker-hub&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Register Docker Hub
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/&#34;&gt;Docker Hub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;use-kitematic&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#use-kitematic&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Use Kitematic
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://kitematic.com/&#34;&gt;kitematic&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;install-ubuntu&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#install-ubuntu&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Install Ubuntu
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Search ubuntu on docker hub&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/276146/Ff44CHSxS5qn7co6RsdJ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-05-27_%E4%B8%8A%E5%8D%8812_36_02.png&#34; alt=&#34;螢幕快照_2015-05-27_上午12_36_02.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Run command&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://user-image.logdown.io/user/3170/blog/3202/post/276146/qDNHEI6YQcS9QbfQsbio_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2015-05-27_%E4%B8%8A%E5%8D%8812_36_51.png&#34; alt=&#34;螢幕快照_2015-05-27_上午12_36_51.png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker pull ubuntu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;use-docker-images&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#use-docker-images&#34;&gt;
+        ###
+    &lt;/a&gt;
+    Use &lt;code&gt;docker images&lt;/code&gt;
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker images
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ubuntu              latest              07f8e8c5e660        &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt; weeks ago         188.3 MB
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;build-dockerfile&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#build-dockerfile&#34;&gt;
+        ###
+    &lt;/a&gt;
+    build dockerfile
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker build . -t ubuntu_dev:16.04 -f local.Dockerfile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;run-container&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#run-container&#34;&gt;
+        ###
+    &lt;/a&gt;
+    run container
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;docker run -t -i ubuntu /bin/bash&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -t -i ubuntu /bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root@b0cdeb409841:/#
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;docker-run&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#docker-run&#34;&gt;
+        ###
+    &lt;/a&gt;
+    docker run
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -idt --name &amp;lt;container name&amp;gt; -v &amp;lt;mount absolute path or ~ path&amp;gt;:&amp;lt;docker path&amp;gt; &amp;lt;IMAGE&amp;gt;:&amp;lt;TAG&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;end-container&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#end-container&#34;&gt;
+        ###
+    &lt;/a&gt;
+    end container
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;exit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;show-container&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#show-container&#34;&gt;
+        ###
+    &lt;/a&gt;
+    show container
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;docker ps -a&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;show-running-container&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#show-running-container&#34;&gt;
+        ###
+    &lt;/a&gt;
+    show running container
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;docker ps&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;show-images&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#show-images&#34;&gt;
+        ###
+    &lt;/a&gt;
+    show images
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;docker images&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;enter-docker-container&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#enter-docker-container&#34;&gt;
+        ###
+    &lt;/a&gt;
+    enter docker container
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;docker exec -it &amp;lt;container id&amp;gt; bash&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;show-log&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#show-log&#34;&gt;
+        ###
+    &lt;/a&gt;
+    show log
+&lt;/div&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;docker logs &amp;lt;container id&amp;gt;&lt;/code&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>
