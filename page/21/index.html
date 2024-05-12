@@ -424,6 +424,63 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-12-08-website-switch-layout/">Website switch layout</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Website switch layout 之前看過不少網站有切換 layout 的功能 於是就試著做做看
+Demo
+主要利用定義在 body 上的 class 去做不同 layout 的切換
+Sample code
+var node; function node(selector) { return document.querySelector(selector); } // set style var layoutList = &#39;layoutList&#39;, layoutGrid = &#39;layoutGrid&#39;, layoutFull = &#39;layoutFull&#39;, layoutCard = &#39;layoutCard&#39;; function changeLayout(style) { // maybe make loading? node(&#39;body&#39;).setAttribute(&#39;class&#39;, style); } // bind click change style node(&#39;#style_1&#39;).addEventListener(&#39;click&#39;, function () { changeLayout(layoutGrid); }); node(&#39;#style_2&#39;).addEventListener(&#39;click&#39;, function () { changeLayout(layoutList); }); node(&#39;#style_3&#39;).
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-12-08">2013-12-08</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-12-08-website-switch-layout/">/posts/2013-12-08-website-switch-layout/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/css/">Css</a></li>
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-12-07-detect-mobile-device/">Detect mobile device</a></h1>
         </header>
         
@@ -881,60 +938,6 @@ px2dpi
     <div class="post-taxonomies">
         
             <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-10-20-javascript-file-upload/">javascript - file upload</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # javascript - file upload ## Introduction 利用 javascript 達到檔案上傳的功能
-顯示上傳進度 多檔上傳 取消上傳 拖拉上傳 斷點續傳?? chrome 上傳資料夾 盡可能跨 browser(for IE8) 不依攋任一 javascript library 自幹上傳 iframe upload in IE ## Skill files API AJAX iframe FormData &hellip; ## Develop 單純用 javascript 利用 AJAX 上傳 處理 AJAX 上傳在 IE 的問題(利用 iframe 也許可解, Refer) 處理拖拉 處理拖拉資料夾 處理預設樣式 ## Issue FormData AJAX 上傳(IE10 以上) IE 利用 iframe 實作 ## Dseign flow ### Attribute inputFileNode(input type file element) fileName(name=&quot;&quot;) server(the file upload to server url) dropArea(set the drop area) ### Method upload cancel ### Event Use CustomEvent (IE 9 up) Refer - How to Create Custom Events in JavaScript
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2013-10-20">2013-10-20</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2013-10-20-javascript-file-upload/">/posts/2013-10-20-javascript-file-upload/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/file_upload/">File_upload</a></li>
                 
                     
                     <li><a href="/categories/javascript/">JavaScript</a></li>

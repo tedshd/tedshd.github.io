@@ -424,6 +424,61 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-05-25-nodejs-direct-instruction/">Node.js - 直接執行指令</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Node.js - 直接執行指令 因為最近要用 nodejs 做一些事, 所以就趕鴨子上架的先把功能做出來再說
+然後就立馬遇到問題了&hellip;
+在 PHP 中要直接執行 command line 是使用 exec
+因為之前都用 PHP 寫 Shell Scripts 所以找了一下用 nodejs 要如何寫
+先是找到了以下的 code
+function run_cmd(cmd, args, callBack ) { var spawn = require(&#39;child_process&#39;).spawn; var child = spawn(cmd, args); var resp = &#34;&#34;; child.stdout.on(&#39;data&#39;, function (buffer) { resp += buffer.toString(); }); child.stdout.on(&#39;end&#39;, function() { callBack (resp); }); } // example run_cmd( &#34;ls&#34;, [&#34;-l&#34;], function(text) { console.log (text) ; }); 但是發現如果是要用像是 mkdir 或者要 run shell 就會出 ENOENT 的 error
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2016-05-25">2016-05-25</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2016-05-25-nodejs-direct-instruction/">/posts/2016-05-25-nodejs-direct-instruction/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/nodejs/">Nodejs</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-04-20-javascript-facebook-save-to-facebook-button/">JavaScript - facebook save to facebook button</a></h1>
         </header>
         
@@ -946,64 +1001,6 @@ We must know it is handle encode to avoid run JavaScript on page
                 
                     
                     <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/">php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # php - Ubuntu 14 PHP 5.6 or to upgrade from PHP 5.5 sudo apt-get -y update sudo add-apt-repository ppa:ondrej/php5-5.6 sudo apt-get -y update sudo apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl php5-bcmath if use php -v check version is 5.5.x
-I use
-sudo apt-get -u install php5-cli Refer - PHP 5.5 or 5.6—Ubuntu
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2015-10-31">2015-10-31</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/">/posts/2015-10-31-php-ubuntu-14-php-56-or-to-upgrade-from-php-55/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/php/">PHP</a></li>
-                
-                    
-                    <li><a href="/categories/ubuntu/">Ubuntu</a></li>
-                
-                    
-                    <li><a href="/categories/linux/">Linux</a></li>
                 
             </ul>
         

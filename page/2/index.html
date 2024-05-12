@@ -424,6 +424,76 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/fix_mac_m1_startup_can_not_detect_monitor/">修復 mac m1 開機偵測不到 type-c 螢幕</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            最近突然發現 mac 在重開機或是關閉後開機時
+type-c 的螢幕無法被偵測到
+拔插 type-c 和 mac 那端的連接也沒用
+得拔插螢幕端的 type-c
+就覺得很奇怪, 因為之前都是正常的
+所以先推測是 mac OS 的版本問題
+從 12.x -&gt; 13.1 後發現還是一樣&hellip;
+所以就認真在網路找了一下有沒有人碰過這樣的問題
+先找到一個類似的
+但是裡面說 12.x 後修復的問題
+所以我推測應該是別的問題
+就繼續找
+最後找的了這篇文章
+17 Ways To Fix External Monitors Not Working On Mac (inc. M1/ M2 Macs, Ventura &amp; Monterey)
+17 種慢慢試總算可以找到原因吧
+但也不是傻了從第一條開始試
+所以先看了一下有哪些方法
+結果就馬上喵到一個最有可能的問題
+一改完就恢復正常了
+內文是說到
+macOS Ventura introduced a new feature “USB Restricted Mode” for M1 and M2 Macs which requires you to allow USB-C devices such as monitors to connect to your Mac.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2023-01-08">2023-01-08</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/fix_mac_m1_startup_can_not_detect_monitor/">/posts/fix_mac_m1_startup_can_not_detect_monitor/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/mac/">Mac</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/work_for_10_year_in_front_engineer/">前端工程師工作 10 年心得</a></h1>
         </header>
         
@@ -989,66 +1059,6 @@ Android 那邊說無法用
                 
                     
                     <li><a href="/categories/youtube/">YouTube</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/ios_sms_support_video_meta/">在 iOS Messages 呈現帶影片預覽的連結</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            最近添加了一個小功能要來測試成效
-就是因為 PM 有看到一些服務的連結在 iOS Messages 上呈現並非常見的圖片而是影片
-PM 說好像是 iOS 15 以上支援(我自己是沒找到相關的資料證明這件事)
-不過應該沒支援的話就呈現圖片
-查了一下文件, 其實也不難
-基本上就是定義 open graph
-多定義
-&lt;meta property=&#34;og:video&#34; content=&#34;http://www.example.com/sample.mp4&#34; /&gt; &lt;meta property=&#34;og:video:type&#34; content=&#34;video/mp4&#34; /&gt; &lt;meta property=&#34;og:video:width&#34; content=&#34;1280&#34; /&gt; &lt;meta property=&#34;og:video:height&#34; content=&#34;720&#34; /&gt; 這邊有個要注意的點是
-原來是產出 1:1 的影片, 但發現會上下截掉
-所以最後採用 16:9 的比例
-# demo Your browser does not support the video tag. Refer - Best Practices for Link Previews in Messages
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2022-07-20">2022-07-20</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/ios_sms_support_video_meta/">/posts/ios_sms_support_video_meta/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/ios/">Ios</a></li>
                 
             </ul>
         

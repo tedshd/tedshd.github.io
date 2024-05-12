@@ -3,7 +3,6 @@
 
 <html lang="en-us" data-theme="">
 <head>
-	<meta name="generator" content="Hugo 0.125.4">
     
         
 <meta charset="utf-8">
@@ -11,15 +10,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Tedshd&rsquo;s Dev note</title>
+<title>在 cloud functions 或是 firebase functions 處理 nodejs 使用 import 的方式 - Tedshd&rsquo;s Dev note</title>
 
-<meta name="description" content="">
+<meta name="description" content="# Intro 現在在使用 nodejs 時可以使用副檔名 .mjs 的方式和 package.js 添加 &quot;type&quot;: &quot;module&quot; 來使用 import 來取代 require 關於這件事也是因為有許多歷史因素無法完全取代掉 require
+但是如果我們想要在 cloud functions 或是 firebase functions 使用時就沒那麼順利
+因為光是要使用 .mjs 就是個問題
+但是參考下面的文章後發現有取巧的方式
+refer - ES6&#43; in Cloud Functions for Firebase #2
+# Solution 先說結論
+其實就是先用 babel build 完 code
+最後把 build 完的 code 部署到 functions 上面
+以 firebase functions 專案的例子
+我自己的做法是 多建立一個 src 的目錄來當成再開發的 code
+在部署前 build 到 functions 的目錄
+package.json
+添加
+&#34;scripts&#34;: { &#34;build&#34;: &#34;babel src --out-dir functions&#34; } npm run build">
 
 
 
 
 
-<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Tedshd's Dev note" />
 <link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
 
@@ -395,7 +406,7 @@ gtag('config', 'G-1NKP3D2ZGG');
     <nav class="noselect">
         
         
-        <a class=" active" href="https://blog.tedshd.io/" title="">Home</a>
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
         
         <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
         
@@ -414,43 +425,28 @@ gtag('config', 'G-1NKP3D2ZGG');
         </header>
         <main id="main" tabindex="-1">
             
-    <div class="homepage-content">
-        
-    </div>
-
-    <div class="articles h-feed">
-        
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-03-jquery-selector/">jQuery selector</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            * 所有元素E 所有E元素，E:nth-child(n) 傳回在所屬父元素下，排行第 n 的元素 E。(注意: 從 1 開始算，而非從 0)E:first-child 傳回在所屬父元素下，排行第一的元素(老大)E:last-child 傳回在所屬父元素下，排行最後的元素(老么)E:only-child 傳回在所屬父元素下，是唯一子元素(獨子)E:empty 沒有任何子元素者(有文字也不算，例如 &lt;span&gt;TEXT&lt;/span&gt; 就不合格)E:enabled 未被停用的 UI 元素 EE:disabled 被停用的 UI 元素 EE:checked 被勾選的 UI 元素 E(適用於 Radio, Checkbox)E:selected 被選取的 UI 元素 E(適用於 Select 下的 Option 元素)E.myClassName CSS 類別設為 myClassName 的元素 EE#myId id=&#34;myId&#34; 的元素 EE:not(s) 不符合 s 條件的元素 E，例如: $(&#34;span:not(:empty)&#34;) 即為找出有包含子元素的 spanE F 由包含在 E 底下的 F 元素，不必直接為父子關係，例如: F 可以是 E 的子元素的子元素。E &gt; F 找出父元素為 E 的 F 元素E + F 找出緊接在 E 元素後方的 F 元素E ~ F 找出緊接在 E 元素前方的 F 元素E,F,G 利用逗號可以呈現 &#34; 或 &#34; 的聯集效果，指 E 元素或 F 元素或 G 元素E[foo] 具有 foo 屬性 (Attribute) 的E元素(1.
-            ...
-        </div>
-    
     
 
-    
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">在 cloud functions 或是 firebase functions 處理 nodejs 使用 import 的方式</h1>
+                
+
+            </header>
+            
 
 
 
 <div class="post-info noselect">
     
         <div class="post-date dt-published">
-            <time datetime="2013-08-03">2013-08-03</time>
+            <time datetime="2024-05-13">2024-05-13</time>
             
         </div>
     
 
-    <a class="post-hidden-url u-url" href="/posts/2013-08-03-jquery-selector/">/posts/2013-08-03-jquery-selector/</a>
+    <a class="post-hidden-url u-url" href="/posts/handle_nodejs_import_for_firebase_functions/">/posts/handle_nodejs_import_for_firebase_functions/</a>
     <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
 
 
@@ -459,60 +455,10 @@ gtag('config', 'G-1NKP3D2ZGG');
             <ul class="post-categories">
                 
                     
-                    <li><a href="/categories/jquery/">Jquery</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-03-performance-test-javascript/">performance-test</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-             # performance jsPerf — JavaScript performance playground http://jsperf.com/
-HTML5 test http://html5test.com/
-JavaScript Benchmark http://www.webkit.org/perf/sunspider/sunspider.html
-var perf = function (testName, fn) { var startTime = new Date().getTime(); fn(); var endTime = new Date().getTime(); console.log(testName + &#34;: &#34; + (endTime - startTime) + &#34;ms&#34;); } jQuery console.time(&#34;timerName&#34;); // javascript console.timeEnd(&#34;timerName&#34;); 
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2013-08-03">2013-08-03</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2013-08-03-performance-test-javascript/">/posts/2013-08-03-performance-test-javascript/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
+                    <li><a href="/categories/nodejs/">Nodejs</a></li>
                 
                     
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                    <li><a href="/categories/firebase/">Firebase</a></li>
                 
             </ul>
         
@@ -521,231 +467,115 @@ var perf = function (testName, fn) { var startTime = new Date().getTime(); fn();
     </div>
 </div>
 
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-02-check-browser/">Browser 判斷</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # Browser Browser detect 由於各大瀏覽器都有部分CSS或Javascript相容問題,所以找了判斷各家瀏覽器的語法
-在github 上更新
-github
-            ...
         </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2013-08-02">2013-08-02</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2013-08-02-check-browser/">/posts/2013-08-02-check-browser/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
         
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#solution">Solution</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
+<script>
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
+</script>
+
+        <div class="content e-content">
+            <h2 id="intro" >
+<div>
+    <a href="#intro">
+        #
+    </a>
+    Intro
 </div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-02-fileupload-by-yui-library/">fileUpload by yui library</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # fileUpload by yui library ## init upload button JavaScript bind click event in IE use JavaScript move CSS position
-uploader : Upload file uploaderOut : handle not drag area ## event ### fileSelect select file &amp; render upload list check file status handle fileList _upload
-### uploadprogress upload file progress
-### uploadcomplete upload complete check ok or fail _upload
-### uploaderror cancel &amp; upload next
-### _upload check file status &amp; upload status upload upload fileList[uploadfile]
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2013-08-02">2013-08-02</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2013-08-02-fileupload-by-yui-library/">/posts/2013-08-02-fileupload-by-yui-library/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/file_upload/">File_upload</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
+</h2>
+<p>現在在使用 nodejs 時可以使用副檔名 <strong>.mjs</strong> 的方式和 <code>package.js</code> 添加 <code>&quot;type&quot;: &quot;module&quot;</code> 來使用 <code>import</code> 來取代 <code>require</code> 關於這件事也是因為有許多歷史因素無法完全取代掉 <code>require</code></p>
+<p>但是如果我們想要在 cloud functions 或是 firebase functions 使用時就沒那麼順利</p>
+<p>因為光是要使用 <code>.mjs</code> 就是個問題</p>
+<p>但是參考下面的文章後發現有取巧的方式</p>
+<p><a href="https://codeburst.io/es6-in-cloud-functions-for-firebase-2-415d15205468">refer - ES6+ in Cloud Functions for Firebase #2</a></p>
+<h2 id="solution" >
+<div>
+    <a href="#solution">
+        #
+    </a>
+    Solution
 </div>
+</h2>
+<p>先說結論</p>
+<p>其實就是先用 babel build 完 code</p>
+<p>最後把 build 完的 code 部署到 functions 上面</p>
+<p>以 firebase functions 專案的例子</p>
+<p>我自己的做法是 多建立一個 src 的目錄來當成再開發的 code</p>
+<p>在部署前 build 到 functions 的目錄</p>
+<p><code>package.json</code></p>
+<p>添加</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#5af78e">&#34;scripts&#34;</span><span style="color:#ff5c57">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff6ac1">&#34;build&#34;</span>: <span style="color:#5af78e">&#34;babel src --out-dir functions&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>npm run build</code></p>
+<p>就會把 <code>src</code> 目錄的檔案編譯到 <code>functions</code> 目錄</p>
 
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-02-hello-world/">Hello World</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            Hi, This a demo post of Logdown.
-Logdown use Markdown as main syntax, you can find more example by reading this document on Wikipedia
-Logdown also support drag &amp; drop image uploading ( required Beta / Premium membership). The picture syntax is like this:
-# Bloging with code snippet: inline code
-## Plain Code puts &#34;Hello World!&#34; ## Code with Language puts &#34;Hello World!&#34; ## Code with Title puts &#34;Hello World!
-            ...
         </div>
-    
-    
 
-    
+    </article>
 
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2013-08-02">2013-08-02</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2013-08-02-hello-world/">/posts/2013-08-02-hello-world/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-02-javascript-function/">JavaScript function</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-             # function function fun() { // do something } fun(); var fun = function () { // do something }; fun(); 立即函數(建立後立即執行，只執行此次)
-var fun = (function () { // do something }()); 
-            ...
-        </div>
     
     
 
     
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2013-08-02">2013-08-02</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2013-08-02-javascript-function/">/posts/2013-08-02-javascript-function/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
         
         
     
+
     
-    <div class="pagination noselect">
-        <div class="left pagination-item ">
-            
-                <a href="/page/26/">to new posts</a>
-            
-        </div>
-        <div class="right pagination-item disabled">
-            
-        </div>
-    </div>
+
+    
+        
 
 
-    </div>
 
+
+
+
+
+
+
+    
+
+    
+
+    
 
         </main>
         

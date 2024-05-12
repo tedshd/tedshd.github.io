@@ -424,6 +424,67 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-09-19-content-security-policy-on-the-feasibility-of-general-site-placed/">Content Security Policy - 論一般網站放置的可行性</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Content Security Policy - 論一般網站放置的可行性 ## 前言 Content Security Policy 出來也有一段時間了
+他的目的是為了從 header 下手去抵禦一些攻擊, 基本上遵循它的rule 就可以避掉一些 XSS 攻擊
+但有時加入這功能會需要變動程式的架構或者某些性質的服務是根本就是設定到可以動的話安全係數會降低許多
+這裏會稍微舉一些例子來說明
+關於 Content Security Policy 以下有一些連結可以幫助瞭解這個 header
+Refer - An Introduction to Content Security Policy
+Refer - Content Security Policy 入门教程
+Refer - Content-Security-Policy - HTTP Headers 的資安議題 (2)
+Refer - Content Security Policy Reference
+目前有只用的知名服務有 github 和 dropbox
+## 簡介 簡單說就是會限制頁面上出現的東西
+domain inline style inline script iframe, frame object https 可以用 html &lt;meta&gt; 或用 http header 的方式使用, 所以純靜態網頁也是可以用的
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2016-09-19">2016-09-19</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2016-09-19-content-security-policy-on-the-feasibility-of-general-site-placed/">/posts/2016-09-19-content-security-policy-on-the-feasibility-of-general-site-placed/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/csp-security/">CSP Security</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-09-07-javascript-touch-and-click-behavior-in-mobile-browser/">JavaScript - touch and click behavior in mobile browser</a></h1>
         </header>
         
@@ -929,61 +990,6 @@ Slack bot client 是用 nodejs 寫的, 但基本上會寫 JavaScript 就可以�
                 
                     
                     <li><a href="/categories/slack/">Slack</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-05-25-nodejs-direct-instruction/">Node.js - 直接執行指令</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # Node.js - 直接執行指令 因為最近要用 nodejs 做一些事, 所以就趕鴨子上架的先把功能做出來再說
-然後就立馬遇到問題了&hellip;
-在 PHP 中要直接執行 command line 是使用 exec
-因為之前都用 PHP 寫 Shell Scripts 所以找了一下用 nodejs 要如何寫
-先是找到了以下的 code
-function run_cmd(cmd, args, callBack ) { var spawn = require(&#39;child_process&#39;).spawn; var child = spawn(cmd, args); var resp = &#34;&#34;; child.stdout.on(&#39;data&#39;, function (buffer) { resp += buffer.toString(); }); child.stdout.on(&#39;end&#39;, function() { callBack (resp); }); } // example run_cmd( &#34;ls&#34;, [&#34;-l&#34;], function(text) { console.log (text) ; }); 但是發現如果是要用像是 mkdir 或者要 run shell 就會出 ENOENT 的 error
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2016-05-25">2016-05-25</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2016-05-25-nodejs-direct-instruction/">/posts/2016-05-25-nodejs-direct-instruction/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/nodejs/">Nodejs</a></li>
                 
             </ul>
         

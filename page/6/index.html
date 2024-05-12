@@ -424,6 +424,75 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2019-12-20-firebase-firebase-functions/">Firebase - Firebase functions 使用紀錄</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Firebase - Firebase functions 使用紀錄 最近想把一些自己在用的小東西丟到 severless 的服務
+因為之前發生過一次 server 掛掉過一次的情況
+當時是 GCP CE 不知為何 VM 中的網卡設定出問題
+整個網卡消失
+然後外部根本連不進去
+最後請教大大後
+只好開一個新的 instance 然後把原本的那個儲存空間掛到新開的 instance
+因為那台平常在試驗的 server
+裡面亂七八糟而且大多的 code 都不會做 git 控管
+所以就想說把一些常用的功能用 serverless 拆出來好了
+就想說來研究一下火了一陣子然後設定沒設定好就會噴一堆預算和安全性問題的 Firebase 所推出的 functions
+其實 GCP 自己本身也有 cloud functions
+但我這是玩票性質的
+所以就先用 firebase functions 來試試啦
+先說一下目前 firebase functions 只支援 Nodejs
+但是 Google cloud 的 cloud functions 支援 Nodejs python golnag
+首先先裝 firebase-tools CLI npm install -g firebase-tools 執行 firebase login firebase login 到要建立 functions 的資料夾 這時候要注意如果你要做版本控管
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2019-12-20">2019-12-20</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2019-12-20-firebase-firebase-functions/">/posts/2019-12-20-firebase-firebase-functions/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/firebase/">Firebase</a></li>
+                
+                    
+                    <li><a href="/categories/functions/">Functions</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2019-12-02-header-accept-language/">Header -  Accept-Language &amp; Content-Language</a></h1>
         </header>
         
@@ -915,60 +984,6 @@ type &lt;KEY&gt; 來確認存的類型
                 
                     
                     <li><a href="/categories/redis/">Redis</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2019-09-03-golang-note/">golang - note</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-             # golang - note log ## 時間格式的雷 2006-01-02 15:04:05
-https://golang.org/pkg/time/#Time.Format
-Golang 时间格式化的奇怪设定 —— 为什么你一直出错
-## Array Array
-## 確認 type import &#34;reflect&#34; x := 7 reflect.TypeOf(x).Kind(); ## Convert interface to string var x interface{} = &#34;abc&#34; str := fmt.Sprintf(&#34;%v&#34;, x) ## Print statuct fmt.Printf(&#34;%+v\n&#34;, struct) 
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2019-09-03">2019-09-03</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2019-09-03-golang-note/">/posts/2019-09-03-golang-note/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/golang/">Golang</a></li>
                 
             </ul>
         

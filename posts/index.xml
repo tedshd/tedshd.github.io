@@ -6,10 +6,53 @@
     <description>Tedshd&#39;s Dev note (Posts)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 May 2024 03:46:07 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2024 01:17:42 +0800</lastBuildDate>
     
     <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在 cloud functions 或是 firebase functions 處理 nodejs 使用 import 的方式</title>
+      <link>/posts/handle_nodejs_import_for_firebase_functions/</link>
+      <pubDate>Mon, 13 May 2024 01:17:42 +0800</pubDate>
+      
+      <guid>/posts/handle_nodejs_import_for_firebase_functions/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;現在在使用 nodejs 時可以使用副檔名 &lt;strong&gt;.mjs&lt;/strong&gt; 的方式和 &lt;code&gt;package.js&lt;/code&gt; 添加 &lt;code&gt;&amp;quot;type&amp;quot;: &amp;quot;module&amp;quot;&lt;/code&gt; 來使用 &lt;code&gt;import&lt;/code&gt; 來取代 &lt;code&gt;require&lt;/code&gt; 關於這件事也是因為有許多歷史因素無法完全取代掉 &lt;code&gt;require&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;但是如果我們想要在 cloud functions 或是 firebase functions 使用時就沒那麼順利&lt;/p&gt;
+&lt;p&gt;因為光是要使用 &lt;code&gt;.mjs&lt;/code&gt; 就是個問題&lt;/p&gt;
+&lt;p&gt;但是參考下面的文章後發現有取巧的方式&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://codeburst.io/es6-in-cloud-functions-for-firebase-2-415d15205468&#34;&gt;refer - ES6+ in Cloud Functions for Firebase #2&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;solution&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#solution&#34;&gt;
+        #
+    &lt;/a&gt;
+    Solution
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;先說結論&lt;/p&gt;
+&lt;p&gt;其實就是先用 babel build 完 code&lt;/p&gt;
+&lt;p&gt;最後把 build 完的 code 部署到 functions 上面&lt;/p&gt;
+&lt;p&gt;以 firebase functions 專案的例子&lt;/p&gt;
+&lt;p&gt;我自己的做法是 多建立一個 src 的目錄來當成再開發的 code&lt;/p&gt;
+&lt;p&gt;在部署前 build 到 functions 的目錄&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;添加&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;scripts&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;build&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;babel src --out-dir functions&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;npm run build&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;就會把 &lt;code&gt;src&lt;/code&gt; 目錄的檔案編譯到 &lt;code&gt;functions&lt;/code&gt; 目錄&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>MySQL export import 紀錄</title>

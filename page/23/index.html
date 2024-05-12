@@ -424,6 +424,61 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-09-10-coding-style/">Coding Style</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Coding Style ## 條件判斷 在 PHP &amp; JavaScript 中有許多邏輯判斷 當有許多條件要去檢查時, 一般來說就是用 if 一直寫下去 最後就造成下面的情況(以 PHP 為例)
+if ($a === $b) { if ($c) { if ($c &gt;= 10) { if ($d) { // do something // ... } return; } return; } } 這樣下去就沒完沒了, 而且縮排會越來越多, 要看 code 也很不方便 所以假如就已作條件檢查來說 可以用以下的做法
+// check condition 1 if ($a !== $b) { return; } // check condition 2 if (!$c || $c === &#39;&#39;) { return; } // check condition 3 if ($c &lt; 9) { return; } // check condition 4 if (!
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-09-10">2013-09-10</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-09-10-coding-style/">/posts/2013-09-10-coding-style/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+                    
+                    <li><a href="/categories/develop/">Develop</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-09-10-place-on-and-embed-code-from-internet/">Place on and embed code from internet</a></h1>
         </header>
         
@@ -892,57 +947,6 @@ Preferences-&gt;Settings-User
                 
                     
                     <li><a href="/categories/sublime-text/">Sublime-Text</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-30-php-note/">PHP Note</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # PHP Note ## Notice 處理 db 的部分放到 model 處理來增強可用性 減少邏輯判斷 以錯誤為優先處裡 ## array to string &lt;?php $arr = array( &#39;val&#39; =&gt; 1, &#39;str&#39; =&gt; &#39;string&#39;, ); $to_string = serialize($arr); echo $to_string; // a:2:{s:3:&#34;val&#34;;i:1;s:3:&#34;str&#34;;s:6:&#34;string&#34;;} $to_array = unserialize($to_string); var_dump($to_array); /* not better * if $to_string can&#39;t unserialize, it has PHP error */ ?&gt; ## coding style 在 PHP 中有許多邏輯判斷 當有許多條件要去檢查時, 一般來說就是用 if 一直寫下去 最後就造成下面的情況
-if ($a === $b) { if ($c) { if ($c &gt;= 10) { if ($d) { // do something // .
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2013-08-30">2013-08-30</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2013-08-30-php-note/">/posts/2013-08-30-php-note/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/php/">PHP</a></li>
                 
             </ul>
         

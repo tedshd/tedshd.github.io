@@ -424,6 +424,76 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/javascript_count_emoji/">JavaScript 計算 emoji</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # 在 Web 中的 emoji 處理 在普遍的字串計算長度的部分
+一個字元是單位是一
+但是因為 emoji 的 unicode 是比較後面定義的
+這超出了原有 JavaScript 原有定義的範圍
+可以參照網站的介紹
+Unicode – The World Standard for Text and Emoji
+所以 emoji 的字串長度在 JavaScript 一率都是從 2 起跳
+這在 Web 中會造成有需要處理字串長度的地方就會出現問題
+例如:
+input 文字的長度限制的使用
+&lt;input type=&#34;text&#34; maxlength=&#34;10&#34;&gt; 字串需要計算長度時
+string.length; 尤其是在現在行動裝置的普及, 內建的鍵盤已經有 emoji 的輸入可以使用
+更會大大的增加在需要的邏輯處理會出現問題
+# 如何解決 有一個方便的套件 runes 會把 emoji 識別出來
+所以就可以解決掉 emoji 的問題了
+# 背後原理 其實背後的原理也不難
+就是去比對 emoji 的 unicode 碼
+比對該字串是不是 emoji 的 unicode 碼
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2022-01-04">2022-01-04</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/javascript_count_emoji/">/posts/javascript_count_emoji/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+                    
+                    <li><a href="/categories/emoji/">Emoji</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/firebase_remote_config/">Firebase remote config rest 更新</a></h1>
         </header>
         
@@ -981,66 +1051,6 @@ Several Checkboxes sharing the same name
                 
                     
                     <li><a href="/categories/nodejs/">Nodejs</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/html2canvas/">Html2canvas</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # 網站直接網頁截圖 基本上就是把要截圖的內容轉成 canvas 物件
-再轉成圖片下載即可
-## 現成套件 html2canvas https://html2canvas.hertzen.com/
-但是如果要截圖的內容有用外部 url 載入的圖片需要注意一下 CORS 問題(canvas 的限制)
-## 解決外部 url 載入圖片時 CORS 問題 原理
-把外部載入的圖片轉換成二進制再轉成 dataurl
-因為在 browser 上面可以解析與渲染 dataurl
-所以就可以呈現在 canvas 裡面
-這樣之後要截圖下載這個 canvas 的內容也沒問題
-## 補充轉換圖片的機制(解決載入外部圖片 CORS 問題) ### 處理方式 - 圖片轉 blob 圖片轉成 blob
-function toDataURL(url, callback) { var xhr = new XMLHttpRequest(); xhr.onload = function() { var reader = new FileReader(); reader.onloadend = function() { callback(reader.result); } reader.
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2020-09-03">2020-09-03</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/html2canvas/">/posts/html2canvas/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/canvas/">Canvas</a></li>
                 
             </ul>
         

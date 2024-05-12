@@ -424,6 +424,66 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2017-09-11-html-dns-prefetch-preconnect-prefetch-and-prerender-research-notes/">HTML - dns-prefetch, preconnect, prefetch, prerender 研究筆記</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # HTML - dns-prefetch, preconnect, prefetch, prerender 研究筆記 ## Intro 這幾個 meta 屬性早在幾年前就有不少外國文章和少部分的國內大神介紹過了
+但當時我一直抱持這它還在 W3C 草案, 所以不急著用的心態, 且瀏覽器支持不高, 所以一直無視它&hellip;
+直到最近不知怎麼地想說來繼續增加我們服務的 head 中的 HTML tag 的數量吧 XD
+就來研究一下這些屬性
+## dns-prefetch 預先解析 DNS, 簡單說一句就是把你的網站會用到的 domain 都塞上去
+但我有點質疑實用性就是了, 因為通常會用到的 domain 都幾乎在該頁面用到了, 幾乎功效不大
+因為在 head 預讀時有可能還沒解析完, 實際頁面已經需要對該 domain 發 request 了&hellip;
+結論: 會改善但感覺改善幅度不大, 且你的服務內有用到多個 domain 或 subdomain 才有影響
+## preconnect 會對設定的 domain 做 DNS 解析與 handshake
+不過我覺得最大的好處是預先對該 domain 做 handshake
+但就像上述所說大部分的情況是會用到的 domain 幾乎都在頁面上了
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2017-09-11">2017-09-11</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2017-09-11-html-dns-prefetch-preconnect-prefetch-and-prerender-research-notes/">/posts/2017-09-11-html-dns-prefetch-preconnect-prefetch-and-prerender-research-notes/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/html/">HTML</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2017-09-05-2262937/">Node.js - 簡單起一個 local server 進行測試</a></h1>
         </header>
         
@@ -939,67 +999,6 @@ Browser support FCM - Chrome(desktop &amp; Android) &amp; Firefox(desktop &amp; 
                 
                     
                     <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-09-19-content-security-policy-on-the-feasibility-of-general-site-placed/">Content Security Policy - 論一般網站放置的可行性</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # Content Security Policy - 論一般網站放置的可行性 ## 前言 Content Security Policy 出來也有一段時間了
-他的目的是為了從 header 下手去抵禦一些攻擊, 基本上遵循它的rule 就可以避掉一些 XSS 攻擊
-但有時加入這功能會需要變動程式的架構或者某些性質的服務是根本就是設定到可以動的話安全係數會降低許多
-這裏會稍微舉一些例子來說明
-關於 Content Security Policy 以下有一些連結可以幫助瞭解這個 header
-Refer - An Introduction to Content Security Policy
-Refer - Content Security Policy 入门教程
-Refer - Content-Security-Policy - HTTP Headers 的資安議題 (2)
-Refer - Content Security Policy Reference
-目前有只用的知名服務有 github 和 dropbox
-## 簡介 簡單說就是會限制頁面上出現的東西
-domain inline style inline script iframe, frame object https 可以用 html &lt;meta&gt; 或用 http header 的方式使用, 所以純靜態網頁也是可以用的
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2016-09-19">2016-09-19</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2016-09-19-content-security-policy-on-the-feasibility-of-general-site-placed/">/posts/2016-09-19-content-security-policy-on-the-feasibility-of-general-site-placed/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/csp-security/">CSP Security</a></li>
                 
             </ul>
         
