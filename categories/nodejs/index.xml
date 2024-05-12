@@ -25,7 +25,8 @@
     Intro
 &lt;/div&gt;
 &lt;/h2&gt;
-&lt;p&gt;現在在使用 nodejs 時可以使用副檔名 &lt;strong&gt;.mjs&lt;/strong&gt; 的方式和 &lt;code&gt;package.js&lt;/code&gt; 添加 &lt;code&gt;&amp;quot;type&amp;quot;: &amp;quot;module&amp;quot;&lt;/code&gt; 來使用 &lt;code&gt;import&lt;/code&gt; 來取代 &lt;code&gt;require&lt;/code&gt; 關於這件事也是因為有許多歷史因素無法完全取代掉 &lt;code&gt;require&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;現在在使用 nodejs 時可以使用副檔名 &lt;strong&gt;.mjs&lt;/strong&gt; 的方式和 &lt;code&gt;package.js&lt;/code&gt; 添加 &lt;code&gt;&amp;quot;type&amp;quot;: &amp;quot;module&amp;quot;&lt;/code&gt; 來使用 &lt;code&gt;import&lt;/code&gt; 來取代 &lt;code&gt;require&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;關於這件事也是因為有許多歷史因素無法完全取代掉 &lt;code&gt;require&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;但是如果我們想要在 cloud functions 或是 firebase functions 使用時就沒那麼順利&lt;/p&gt;
 &lt;p&gt;因為光是要使用 &lt;code&gt;.mjs&lt;/code&gt; 就是個問題&lt;/p&gt;
 &lt;p&gt;但是參考下面的文章後發現有取巧的方式&lt;/p&gt;

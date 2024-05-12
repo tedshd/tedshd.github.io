@@ -12,7 +12,8 @@
 
 <title>在 cloud functions 或是 firebase functions 處理 nodejs 使用 import 的方式 - Tedshd&rsquo;s Dev note</title>
 
-<meta name="description" content="# Intro 現在在使用 nodejs 時可以使用副檔名 .mjs 的方式和 package.js 添加 &quot;type&quot;: &quot;module&quot; 來使用 import 來取代 require 關於這件事也是因為有許多歷史因素無法完全取代掉 require
+<meta name="description" content="# Intro 現在在使用 nodejs 時可以使用副檔名 .mjs 的方式和 package.js 添加 &quot;type&quot;: &quot;module&quot; 來使用 import 來取代 require
+關於這件事也是因為有許多歷史因素無法完全取代掉 require
 但是如果我們想要在 cloud functions 或是 firebase functions 使用時就沒那麼順利
 因為光是要使用 .mjs 就是個問題
 但是參考下面的文章後發現有取巧的方式
@@ -519,7 +520,8 @@ gtag('config', 'G-1NKP3D2ZGG');
     Intro
 </div>
 </h2>
-<p>現在在使用 nodejs 時可以使用副檔名 <strong>.mjs</strong> 的方式和 <code>package.js</code> 添加 <code>&quot;type&quot;: &quot;module&quot;</code> 來使用 <code>import</code> 來取代 <code>require</code> 關於這件事也是因為有許多歷史因素無法完全取代掉 <code>require</code></p>
+<p>現在在使用 nodejs 時可以使用副檔名 <strong>.mjs</strong> 的方式和 <code>package.js</code> 添加 <code>&quot;type&quot;: &quot;module&quot;</code> 來使用 <code>import</code> 來取代 <code>require</code></p>
+<p>關於這件事也是因為有許多歷史因素無法完全取代掉 <code>require</code></p>
 <p>但是如果我們想要在 cloud functions 或是 firebase functions 使用時就沒那麼順利</p>
 <p>因為光是要使用 <code>.mjs</code> 就是個問題</p>
 <p>但是參考下面的文章後發現有取巧的方式</p>
