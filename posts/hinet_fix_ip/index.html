@@ -10,15 +10,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Ip - Tedshd&rsquo;s Dev note</title>
+<title>中華電信設定固定 IP - Tedshd&rsquo;s Dev note</title>
 
-<meta name="description" content="">
+<meta name="description" content="# 中華電信設定固定 IP 中華可以申請一組固定 IP 來使用
+有時候都忘記要怎麼處理
+紀錄一下
+去中華電信網站申請 HiNet非固定制固定IP申請 或是 Google 搜尋 中華固定ip申請
+登入中華電信網站 -&gt; 寬頻 -&gt; HiNet非固定制固定IP申請 會顯示固定 IP
+router 設定 PPPOE 連線
+## 說明 中華電信有可能維護或是調整會導致固定 IP 變換, 但都會寄信通知, 留意信箱就可以了
+中華電信設定 PPPOE 連線是 &lt;用戶號碼&gt;@hinet.net
+設定固定 IP 的話是要用 &lt;用戶號碼&gt;@ip.hinet.net
+因為家裡有兩台 wifi router
+所以一台設定非固定 IP 設定 &lt;用戶號碼&gt;@hinet.net
+固定 IP 設定 &lt;用戶號碼&gt;@ip.hinet.net">
 
 
 
 
 
-<link rel="alternate" type="application/rss+xml" href="/categories/ip/index.xml" title="Tedshd's Dev note" />
 <link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
 
@@ -413,41 +423,16 @@ gtag('config', 'G-1NKP3D2ZGG');
         </header>
         <main id="main" tabindex="-1">
             
-    <h1>Category: Ip</h1>
-    <div class="post-info">
-        <a href="/categories/">To all categories</a>
-    </div>
-    
-    
-        <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/hinet_fix_ip/">中華電信設定固定 IP</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # 中華電信設定固定 IP 中華可以申請一組固定 IP 來使用
-有時候都忘記要怎麼處理
-紀錄一下
-去中華電信網站申請 HiNet非固定制固定IP申請 或是 Google 搜尋 中華固定ip申請
-登入中華電信網站 -&gt; 寬頻 -&gt; HiNet非固定制固定IP申請 會顯示固定 IP
-router 設定 PPPOE 連線
-## 說明 中華電信有可能維護或是調整會導致固定 IP 變換, 但都會寄信通知, 留意信箱就可以了
-中華電信設定 PPPOE 連線是 &lt;用戶號碼&gt;@hinet.net
-設定固定 IP 的話是要用 &lt;用戶號碼&gt;@ip.hinet.net
-因為家裡有兩台 wifi router
-所以一台設定非固定 IP 設定 &lt;用戶號碼&gt;@hinet.net
-固定 IP 設定 &lt;用戶號碼&gt;@ip.hinet.net
-            ...
-        </div>
-    
     
 
-    
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">中華電信設定固定 IP</h1>
+                
+
+            </header>
+            
 
 
 
@@ -480,81 +465,120 @@ router 設定 PPPOE 連線
     </div>
 </div>
 
-</article>
-
-    
-        <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/web_how_to_check_ip/">Web 服務確認 IP Location 的幾種做法</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # Intro 在很多實務上的需求, 需要了解 client 過來的請求是來自哪裡或來自哪個國家
-最常見的方式就是依靠來源的 IP 判斷(這裡排除 proxy, VPN 或造假來源的因素)
-而在 HTTP protocol 中, 會把 IP 附在 header(至於帶在哪個 header 與支援哪些 header 主要取決於各個語言對 HTTP 的實作)
-header Sample
-上述範例只是取幾個比較常見的會帶上去的 header
-至於更加詳細的 header 支援與取得 IP 時需要注意哪些事情可以參考以下文章
-Refer - 如何正確的取得使用者 IP？
-而為何可以用 IP 能夠確認出是在哪個地區國家甚至城市呢?
-主要是因為有 IANA(Internet Assigned Numbers Authority) 進行了 IP 網段的分配
-又有細分 ABCDE 級網段
-這裡先大略講一下
-相關資訊可以去看網路概論等相關的資料
-Refer - 各國IPv4位址分配列表
-Refer - 已分配的/8 IPv4位址網段列表
-# 方法 現在有幾種方法可以處理這件事情
-但是經有上述的介紹可以知道其實最主要的基本判斷就是得知道哪些 IP 段對應哪些國家
-那接下來就是有哪些方法可以來做這件事了
-            ...
         </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2022-04-25">2022-04-25</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/web_how_to_check_ip/">/posts/web_how_to_check_ip/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
         
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/web/">Web</a></li>
-                
-                    
-                    <li><a href="/categories/ip/">Ip</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#中華電信設定固定-ip">中華電信設定固定 IP</a>
+      <ul>
+        <li><a href="#說明">說明</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
+<script>
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
+</script>
+
+        <div class="content e-content">
+            <h2 id="中華電信設定固定-ip" >
+<div>
+    <a href="#%e4%b8%ad%e8%8f%af%e9%9b%bb%e4%bf%a1%e8%a8%ad%e5%ae%9a%e5%9b%ba%e5%ae%9a-ip">
+        #
+    </a>
+    中華電信設定固定 IP
 </div>
+</h2>
+<p>中華可以申請一組固定 IP 來使用</p>
+<p>有時候都忘記要怎麼處理</p>
+<p>紀錄一下</p>
+<ol>
+<li>
+<p>去中華電信網站申請 <a href="https://123.cht.com.tw/HiNetStaticIp">HiNet非固定制固定IP申請</a> 或是 Google 搜尋 <code>中華固定ip申請</code></p>
+</li>
+<li>
+<p>登入中華電信網站 -&gt; 寬頻 -&gt; HiNet非固定制固定IP申請 會顯示固定 IP</p>
+</li>
+<li>
+<p>router 設定 PPPOE 連線</p>
+</li>
+</ol>
+<h3 id="說明" >
+<div>
+    <a href="#%e8%aa%aa%e6%98%8e">
+        ##
+    </a>
+    說明
+</div>
+</h3>
+<p>中華電信有可能維護或是調整會導致固定 IP 變換, 但都會寄信通知, 留意信箱就可以了</p>
+<p>中華電信設定 PPPOE 連線是 &lt;用戶號碼&gt;@hinet.net</p>
+<p>設定固定 IP 的話是要用 &lt;用戶號碼&gt;@ip.hinet.net</p>
+<p>因為家裡有兩台 wifi router</p>
+<p>所以一台設定非固定 IP 設定 &lt;用戶號碼&gt;@hinet.net</p>
+<p>固定 IP 設定 &lt;用戶號碼&gt;@ip.hinet.net</p>
 
-</article>
+        </div>
+
+    </article>
 
     
     
 
+    
+        
+        
+    
 
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
 
         </main>
         

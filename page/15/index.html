@@ -424,6 +424,70 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2015-05-02-maker-gh60-revchn/">Maker - GH60 RevCHN</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Maker - GH60 RevCHN 拿了這板子有段時間了
+一開始有試著用 Windows 刷 layout 進去, 但一直失敗(應該跟 Windows 不合吧
+但直到前一陣子有人分享用 Mac 刷, 這真是太好了, 終於可以開工了
+經過漫長的收集材料加焊接(詳情請見 GH-60 刷刷刷~開發月誌?)
+廢話不多說
+## Install crosspack &amp; dfu-programmer 利用 homebrew 安裝
+brew install Caskroom/cask/crosspack-avr brew install dfu-programmer ## git clone Firmware tmk_keyboard_custom
+git clone https://github.com/kairyu/tmk_keyboard_custom.git ## Modify Config 進到拉下來的 tmk_keyboard_custom 目錄, 再進到 gh60 的目錄
+cd keyboard/gh60 vim config.h 找到 #define CONFIG_H
+在底下加上 #define GH60_REV_CHN
+vim Makefile 註解或刪掉下面的
+KEYMAP_IN_EEPROM_ENABLE = yes # Read keymap from eeprom ## Check Device 接上 gh60
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2015-05-02">2015-05-02</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2015-05-02-maker-gh60-revchn/">/posts/2015-05-02-maker-gh60-revchn/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/keyboard/">Keyboard</a></li>
+                
+                    
+                    <li><a href="/categories/maker/">Maker</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2015-04-14-javascript-use-createelement-or-string/">JavaScript - Use createElement or string?</a></h1>
         </header>
         
@@ -904,61 +968,6 @@ The installed coding standards are MySource, PEAR, PHPCS, PSR1, PSR2, Squiz and 
                 
                     
                     <li><a href="/categories/php/">PHP</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2014-12-09-git-hooks/">git hooks</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # git hooks 和其他版本控制系統一樣，當某些重要事件發生時，Git 有方法可以觸發自訂腳本。有兩組掛鉤(hooks)：用戶端和伺服器端。用戶端掛鉤用於用戶端的操作，如提交和合併。伺服器端掛鉤用於 Git 伺服器端的操作，如接收被推送的提交。你可以為了各種不同的原因使用這些掛鉤，下面會講解其中一些。
-git hooks 簡單的說就是在進行版本控管時可以再額外多做一些事
-Refer - Git 客製化 - Git Hooks
-在以前我們公司在前端開發上是用前輩大大寫好的 hook 做一些事 但前輩大大們陸續離開後, 架構又改了 新專案沒法用原有的 hook 所以只好跳進來寫 hook 了
-## 可以用來幹嘛? ### Client side lint 檢查 coding style 檢查 完善要推的 code 做自動化測試 &hellip; ### Server side deploy code to production auto build &hellip; ## 打算用來幹嘛? 身為一隻前端攻城獅, 只要顧好 client side 就好了 預計完成
-phpcs jshint image trans to png8 ? multi-lang file check ?
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2014-12-09">2014-12-09</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2014-12-09-git-hooks/">/posts/2014-12-09-git-hooks/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/git/">Git</a></li>
                 
             </ul>
         

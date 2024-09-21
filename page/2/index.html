@@ -424,6 +424,78 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/pay_attention_to_app_iap/">App store &amp; Google Play IAP((In-App Purchase)) 內購與訂閱注意事項</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # 前期比較花時間的準備 收款銀行帳戶
+公司登記資料
+# 是否需要試用期 # 不同地區設定不同價格 避開匯率的問題
+# 退款處理 由於是可以在商店平台做退款(所以需要客戶端或是服務端定期確認商店的訂閱狀態)
+https://support.apple.com/en-us/HT204084
+https://support.google.com/googleplay/answer/2479637
+# 取消續訂處理 取消續訂也是需要服務端或是客戶端確認訂閱狀態
+https://support.apple.com/en-us/HT202039
+https://support.google.com/googleplay/answer/7018481
+# 取消訂閱流程 提供商店的 support 網址
+https://support.apple.com/en-us/HT202039
+https://support.google.com/googleplay/answer/7018481
+# 價格對應的訂閱 id 需要有後端配置下發給客戶端以利於價格調整 避免用戶使用舊版 app 訂閱舊價格
+# 訂閱量與續訂的數據埋點(取消訂閱也需要上報) 須注意訂閱量與預估收入的計算
+# 購買 / 訂閱狀態是跟著 Google 或是 Apple 帳號 需要注意自己服務如何和 Google 帳號或是 Apple 帳號關聯(或是訂單 id 關聯)
+# 客戶端需要和商店確認訂單與後端確認訂閱狀態(增強安全性) # App store 文案需要添加訂閱相關事項與協議 Guideline 3.1.2 - Business - Payments - Subscriptions
+這部分可以參考其他有訂閱或購買制的 App 的 App store 頁面
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2023-01-12">2023-01-12</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/pay_attention_to_app_iap/">/posts/pay_attention_to_app_iap/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/iap/">Iap</a></li>
+                
+                    
+                    <li><a href="/categories/google-play/">Google Play</a></li>
+                
+                    
+                    <li><a href="/categories/app-store/">App Store</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/fix_mac_m1_startup_can_not_detect_monitor/">修復 mac m1 開機偵測不到 type-c 螢幕</a></h1>
         </header>
         
@@ -993,72 +1065,6 @@ new Intl.DateTimeFormat(navigator.language, { timeZone: &#39;America/Los_Angeles
                 
                     
                     <li><a href="/categories/timezone/">TimeZone</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/use_youtube_player_sdk_in_2022/">2022 年使用 YouTube player sdk</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # 前言 距離上次使用 YouTube Player API 已經是 2014 年的事了
-不知不覺也過了超久了
-剛好最近公司有相關的需求需要在 App 中能夠播放 YouTube 的影片
-原本想說 App 應該和我沒關係了
-所以這次準備躺平(誤
-結果還是被牽扯進來了&hellip;
-# 2022 年當前如何使用 YouTube player SDK 沒想到不看還好, 一看就準備 GG
-一開始把文件丟給 Android 和 iOS
-Android 那邊說無法用
-我當下????
-文件都寫得好好的, 為何說無法用
-和 Android 一起討論了一下, 才確認了一件事
-原來 Android 為了統一 libary, 在 2018 年開始推行 Androidx 要取代 android.support
-最大的改變是 namespace 的變動, 雖然官方有工具可以對第三方 lib 做轉換, 但也會是一個大換血, 而且對比較老舊的套件還會需要處理 activity 和 fragment 的處理, 因為現今大多的 Android 都以 fragment 實作 UI 了
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2022-08-02">2022-08-02</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/use_youtube_player_sdk_in_2022/">/posts/use_youtube_player_sdk_in_2022/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-                    
-                    <li><a href="/categories/youtube/">YouTube</a></li>
                 
             </ul>
         

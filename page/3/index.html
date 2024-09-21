@@ -424,6 +424,72 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/use_youtube_player_sdk_in_2022/">2022 年使用 YouTube player sdk</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # 前言 距離上次使用 YouTube Player API 已經是 2014 年的事了
+不知不覺也過了超久了
+剛好最近公司有相關的需求需要在 App 中能夠播放 YouTube 的影片
+原本想說 App 應該和我沒關係了
+所以這次準備躺平(誤
+結果還是被牽扯進來了&hellip;
+# 2022 年當前如何使用 YouTube player SDK 沒想到不看還好, 一看就準備 GG
+一開始把文件丟給 Android 和 iOS
+Android 那邊說無法用
+我當下????
+文件都寫得好好的, 為何說無法用
+和 Android 一起討論了一下, 才確認了一件事
+原來 Android 為了統一 libary, 在 2018 年開始推行 Androidx 要取代 android.support
+最大的改變是 namespace 的變動, 雖然官方有工具可以對第三方 lib 做轉換, 但也會是一個大換血, 而且對比較老舊的套件還會需要處理 activity 和 fragment 的處理, 因為現今大多的 Android 都以 fragment 實作 UI 了
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2022-08-02">2022-08-02</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/use_youtube_player_sdk_in_2022/">/posts/use_youtube_player_sdk_in_2022/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+                    
+                    <li><a href="/categories/youtube/">YouTube</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/ios_sms_support_video_meta/">在 iOS Messages 呈現帶影片預覽的連結</a></h1>
         </header>
         
@@ -994,68 +1060,6 @@ GA 也有提供事件發送的 callback 處理
                 
                     
                     <li><a href="/categories/browser/">Browser</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/javascript_parse_url/">Javascript 判斷並且取出 url</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            因為工作上的需要
-需要把使用者輸入的訊息中含有 url 的部分把它取出來轉成超連結
-參照以下範例
-https://gist.github.com/metafeather/202974/34c2d31bd82f59c2486f38790054bbbc0b10ca8b
-不知為何他的正規有點問題
-所以又做了修正
-function urlParse(str) { var urlArray = []; var urlRegex = /((http[s]?|ftp):\/)\/?([^:\/\s]+)(?::([0-9]+))?((\/\w+)*\/)?([\w\-\.]*)?([#?\w\=]+)?([\&amp;\w=\w]+.*)?([\w\+\-\/\%]*)?[A-Za-z0-9_\/]/g; var arr = str.split(/[\n,&#39; &#39;]+/gm); for (let u = 0; u &lt; arr.length; u++) { const element = arr[u]; var validate = element.match(urlRegex); if (validate) { urlArray.push(validate[0]); } } return urlArray; } url 格式遵循 RFC3986
-refer - rfc3986
-這邊可以在實作一個白名單機制限制只有白名單中的域名所屬的 url 才可以轉成超連結
-function urlWhitrList(url) { var list = [ &#39;www.instagram.com/&#39;, &#39;youtu.be/&#39;, &#39;www.youtube.com/&#39;, &#39;www.
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2022-01-04">2022-01-04</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/javascript_parse_url/">/posts/javascript_parse_url/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-                    
-                    <li><a href="/categories/regex/">Regex</a></li>
                 
             </ul>
         

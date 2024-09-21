@@ -424,6 +424,68 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-05-28-slack-bot-research-notes/">Slack - bot 研究雜記</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Slack - bot 研究雜記 最近 bot 很夯
+再加上公司需要一些自動部署與指令化的一些流程要改善, 所以就來研究一下
+剛好我們是用 Slack 所以就先來試試 Slack bot 了
+## Intro 先說明下最簡單的指令化處理事件的流程
+大致上就是如此
+再來說明一下 Slack bot 流程
+所以我們需要做兩件事
+在 Slack 建立一支 bot
+建立 bot client 的程式
+在此先說明一下 bot client
+Slack bot client 是用 nodejs 寫的, 但基本上會寫 JavaScript 就可以了, 而 bot client 是放在任何可以連上網路的機器, 只要能跑 nodejs 的環境即可, 所以基本上可以先在 local 測完再上到線上的機器
+## 建立 Slack bot Bot Users
+### 建立 bot Go to url https://&lt;your team name&gt;.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2016-05-28">2016-05-28</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2016-05-28-slack-bot-research-notes/">/posts/2016-05-28-slack-bot-research-notes/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/slack/">Slack</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-05-25-nodejs-direct-instruction/">Node.js - 直接執行指令</a></h1>
         </header>
         
@@ -934,73 +996,6 @@ refer - currentStyle object (Internet Explorer)
                 
                     
                     <li><a href="/categories/postcss/">Postcss</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2015-11-01-something-about-xsscross-site-scripting/">Something about XSS(Cross-site scripting)</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # Something about XSS(Cross-site scripting) If not set anything
-Use like
-&lt;?php echo $_GET[&#39;name&#39;];?&gt; and querystring name = &lt;script&gt;alert(document.cookie)&lt;/script&gt;
-And not defence XSS
-In Firefox
-In Chrome
-In Safari
-## Result Chrome &amp; Safari browser has handle XSS default
-## Defence Set header X-XSS-Protection: 1
-if use PHP, can use
-htmlspecialchars() // or htmlentities() ## Important! Finally
-We must know it is handle encode to avoid run JavaScript on page
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2015-11-01">2015-11-01</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2015-11-01-something-about-xsscross-site-scripting/">/posts/2015-11-01-something-about-xsscross-site-scripting/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/xss/">Xss</a></li>
-                
-                    
-                    <li><a href="/categories/php/">PHP</a></li>
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
                 
             </ul>
         

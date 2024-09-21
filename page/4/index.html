@@ -424,6 +424,68 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/javascript_parse_url/">Javascript 判斷並且取出 url</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            因為工作上的需要
+需要把使用者輸入的訊息中含有 url 的部分把它取出來轉成超連結
+參照以下範例
+https://gist.github.com/metafeather/202974/34c2d31bd82f59c2486f38790054bbbc0b10ca8b
+不知為何他的正規有點問題
+所以又做了修正
+function urlParse(str) { var urlArray = []; var urlRegex = /((http[s]?|ftp):\/)\/?([^:\/\s]+)(?::([0-9]+))?((\/\w+)*\/)?([\w\-\.]*)?([#?\w\=]+)?([\&amp;\w=\w]+.*)?([\w\+\-\/\%]*)?[A-Za-z0-9_\/]/g; var arr = str.split(/[\n,&#39; &#39;]+/gm); for (let u = 0; u &lt; arr.length; u++) { const element = arr[u]; var validate = element.match(urlRegex); if (validate) { urlArray.push(validate[0]); } } return urlArray; } url 格式遵循 RFC3986
+refer - rfc3986
+這邊可以在實作一個白名單機制限制只有白名單中的域名所屬的 url 才可以轉成超連結
+function urlWhitrList(url) { var list = [ &#39;www.instagram.com/&#39;, &#39;youtu.be/&#39;, &#39;www.youtube.com/&#39;, &#39;www.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2022-01-04">2022-01-04</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/javascript_parse_url/">/posts/javascript_parse_url/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+                    
+                    <li><a href="/categories/regex/">Regex</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/javascript_count_emoji/">JavaScript 計算 emoji</a></h1>
         </header>
         
@@ -964,93 +1026,6 @@ sudo apt install nodejs Refer - How to Install Node.
                 
                     
                     <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/form_multi_checked_in_php_nodejs_golang/">HTML form submit same name in php, nodejs, golang</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            一直以來大部分時間都在用 PHP 開發
-所以也用 PHP 來處理 HTML Form
-所以都下意識地認為 &lt;input type=&quot;checkbox&quot; name=&quot;game[]&quot; value=&quot;FGO&quot;&gt;
-這樣的 name=&quot;game[]&quot; 的處理方式是正規的處理 HTML Form 的多選的方式
-也疑惑為何大多的 HTML Form 的教學甚至 MDN 都沒有提到這件事
-就在某一天我在檢視到同事寫的 code 時
-發現同事用 JavaScript 處理
-硬爬出來自己組字串送出去
-我才想起這令人感到恐懼的事情
-因為公司同事是寫 golang 的專門, 就算前端不熟
-應該也不至於連這樣概念都沒有就用硬爬的方式處理
-所以再調整的同時也跟同事確認後
-我也真正的直視這問題
-到底要怎麼處理表單中多選的資料?
-PHP 寫久的人大多都知道要用上面列出的方法
-name=&quot;game[]&quot;
-就是 game + []
-但是當我認真地尋找關於這個問題時
-意外地發現了一篇 stackoverflow 的問答
-Several Checkboxes sharing the same name
-其實 W3C 根本沒有管你 name=&quot;&quot; 重複要如何處理
-以下是 PHP, nodejs, golang 的原生方式來測試的結果
-# PHP 以下問答有提供了 PHP doc 說明 PHP 如何處理多選
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2020-10-24">2020-10-24</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/form_multi_checked_in_php_nodejs_golang/">/posts/form_multi_checked_in_php_nodejs_golang/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/html/">HTML</a></li>
-                
-                    
-                    <li><a href="/categories/form/">Form</a></li>
-                
-                    
-                    <li><a href="/categories/php/">PHP</a></li>
-                
-                    
-                    <li><a href="/categories/go/">Go</a></li>
-                
-                    
-                    <li><a href="/categories/golang/">Golang</a></li>
-                
-                    
-                    <li><a href="/categories/nodejs/">Nodejs</a></li>
                 
             </ul>
         

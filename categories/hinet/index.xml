@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hinet on Tedshd&#39;s Dev note</title>
+    <link>/categories/hinet/</link>
+    <description>Tedshd&#39;s Dev note (Hinet)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Sep 2024 21:00:51 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/hinet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>中華電信設定固定 IP</title>
+      <link>/posts/hinet_fix_ip/</link>
+      <pubDate>Sat, 21 Sep 2024 21:00:51 +0800</pubDate>
+      
+      <guid>/posts/hinet_fix_ip/</guid>
+      <description>&lt;h2 id=&#34;中華電信設定固定-ip&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%b8%ad%e8%8f%af%e9%9b%bb%e4%bf%a1%e8%a8%ad%e5%ae%9a%e5%9b%ba%e5%ae%9a-ip&#34;&gt;
+        #
+    &lt;/a&gt;
+    中華電信設定固定 IP
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;中華可以申請一組固定 IP 來使用&lt;/p&gt;
+&lt;p&gt;有時候都忘記要怎麼處理&lt;/p&gt;
+&lt;p&gt;紀錄一下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;去中華電信網站申請 &lt;a href=&#34;https://123.cht.com.tw/HiNetStaticIp&#34;&gt;HiNet非固定制固定IP申請&lt;/a&gt; 或是 Google 搜尋 &lt;code&gt;中華固定ip申請&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;登入中華電信網站 -&amp;gt; 寬頻 -&amp;gt; HiNet非固定制固定IP申請 會顯示固定 IP&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;router 設定 PPPOE 連線&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;說明&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%aa%aa%e6%98%8e&#34;&gt;
+        ##
+    &lt;/a&gt;
+    說明
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;中華電信有可能維護或是調整會導致固定 IP 變換, 但都會寄信通知, 留意信箱就可以了&lt;/p&gt;
+&lt;p&gt;中華電信設定 PPPOE 連線是 &amp;lt;用戶號碼&amp;gt;@hinet.net&lt;/p&gt;
+&lt;p&gt;設定固定 IP 的話是要用 &amp;lt;用戶號碼&amp;gt;@ip.hinet.net&lt;/p&gt;
+&lt;p&gt;因為家裡有兩台 wifi router&lt;/p&gt;
+&lt;p&gt;所以一台設定非固定 IP 設定 &amp;lt;用戶號碼&amp;gt;@hinet.net&lt;/p&gt;
+&lt;p&gt;固定 IP 設定 &amp;lt;用戶號碼&amp;gt;@ip.hinet.net&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

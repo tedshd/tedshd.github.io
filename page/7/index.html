@@ -424,6 +424,64 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2019-09-05-redis-note/">redis - note</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # redis - note doc
+http://redisdoc.com/index.html
+php redis
+https://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html
+go redis
+https://godoc.org/github.com/go-redis/redis
+## 連到 redis server local server redis-cli remote server redis-cli -h host -p port -a password ## Get all key KEYS &#39;*&#39; # Troubleshooting ## ERR Operation against a key holding the wrong kind of value 取 Key 的類型不對
+用
+type &lt;KEY&gt; 來確認存的類型
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2019-09-05">2019-09-05</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2019-09-05-redis-note/">/posts/2019-09-05-redis-note/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/redis/">Redis</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2019-09-03-golang-note/">golang - note</a></h1>
         </header>
         
@@ -936,74 +994,6 @@ chromium-browser --headless --screenshot=test.png --disable-gpu --window-size=32
                 
                     
                     <li><a href="/categories/google-gcp/">Google GCP</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2018-11-21-javascript-calculate-exposure-of-web-page-components/">JavaScript - 計算網頁元件的曝光</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # JavaScript - 計算網頁元件的曝光 因為某些需求需要精確計算某些網頁上的 UI 元件的曝光
-沒錯
-就是要像廣告計算 impression 一樣
-之前只要確認有該元件的 request 就好了
-但是為了精確追求計算曝光, 所以必須做到像 Google Ad 一樣
-要到該網頁元件讓使用者看到後才能計算曝光
-聽起來這要求不太容易
-但是實作下去其實發現還好誒!!
-## 概念 DOM 元件進入可視範圍觸發 impression
-所以需要能夠釐清一些問題
-如何確認可視範圍?
-如何確認要記錄 impression 的 DOM 元件在可視範圍?
-如何在進入可視範圍時觸發?
-看似困難
-但是如果熟悉 JavaScript Window 物件和 DOM 物件的話就會發現很好解
-## 實作 ### 如何確認可視範圍? window.document.documentElement.clientHeight window.document.documentElement.clientWidth 完美解決
-### 如何確認要記錄 impression 的 DOM 元件在可視範圍? &lt;DOM Object&gt;.getBoundingClientRect(); 完美解決
-但是要取到對應可是範圍的位置建議使用(top, left), x y IE 和 Edge 不支援
-還有一點要注意就是該 DOM 要先長在 browser 上面且不是 display: none 的狀態才能拿到值
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2018-11-21">2018-11-21</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2018-11-21-javascript-calculate-exposure-of-web-page-components/">/posts/2018-11-21-javascript-calculate-exposure-of-web-page-components/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
                 
             </ul>
         

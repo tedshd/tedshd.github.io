@@ -424,6 +424,93 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/form_multi_checked_in_php_nodejs_golang/">HTML form submit same name in php, nodejs, golang</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            一直以來大部分時間都在用 PHP 開發
+所以也用 PHP 來處理 HTML Form
+所以都下意識地認為 &lt;input type=&quot;checkbox&quot; name=&quot;game[]&quot; value=&quot;FGO&quot;&gt;
+這樣的 name=&quot;game[]&quot; 的處理方式是正規的處理 HTML Form 的多選的方式
+也疑惑為何大多的 HTML Form 的教學甚至 MDN 都沒有提到這件事
+就在某一天我在檢視到同事寫的 code 時
+發現同事用 JavaScript 處理
+硬爬出來自己組字串送出去
+我才想起這令人感到恐懼的事情
+因為公司同事是寫 golang 的專門, 就算前端不熟
+應該也不至於連這樣概念都沒有就用硬爬的方式處理
+所以再調整的同時也跟同事確認後
+我也真正的直視這問題
+到底要怎麼處理表單中多選的資料?
+PHP 寫久的人大多都知道要用上面列出的方法
+name=&quot;game[]&quot;
+就是 game + []
+但是當我認真地尋找關於這個問題時
+意外地發現了一篇 stackoverflow 的問答
+Several Checkboxes sharing the same name
+其實 W3C 根本沒有管你 name=&quot;&quot; 重複要如何處理
+以下是 PHP, nodejs, golang 的原生方式來測試的結果
+# PHP 以下問答有提供了 PHP doc 說明 PHP 如何處理多選
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2020-10-24">2020-10-24</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/form_multi_checked_in_php_nodejs_golang/">/posts/form_multi_checked_in_php_nodejs_golang/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/html/">HTML</a></li>
+                
+                    
+                    <li><a href="/categories/form/">Form</a></li>
+                
+                    
+                    <li><a href="/categories/php/">PHP</a></li>
+                
+                    
+                    <li><a href="/categories/go/">Go</a></li>
+                
+                    
+                    <li><a href="/categories/golang/">Golang</a></li>
+                
+                    
+                    <li><a href="/categories/nodejs/">Nodejs</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/html2canvas/">Html2canvas</a></h1>
         </header>
         
@@ -957,68 +1044,6 @@ npm link &lt;package path&gt; Refer - Installing a local module using npm?
                 
                     
                     <li><a href="/categories/node/">Node</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2019-12-23-seo-enhanced-youtube-video-seo/">SEO - 增強 Youtube video SEO</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            ## Intro 最近因為公司的需求開始研究這潭深水
-剛好看到一篇文章介紹的還不錯
-雖然已經是 2016 的文章
-但它寫的一些觀點我覺得現在還是適用
-雖然這文章有在業配服務 XD
-稍微整理記錄一下
-英文的片段都是原文
-中文會是我的總結
-就當作一個紀錄吧
-## Video Information ### Video Content 以解決需求為優先 產品介紹 教程 知識分享 ### Video Length While aggregated clicks are still counted, the amount of engagement on your videos play a huge role like the likes, dislikes, comments, watch time, shares, views on other sites, engagement on other sites. This required YouTubers to create better videos with more engaging content in order to rank higher.
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2019-12-23">2019-12-23</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2019-12-23-seo-enhanced-youtube-video-seo/">/posts/2019-12-23-seo-enhanced-youtube-video-seo/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/youtube/">YouTube</a></li>
-                
-                    
-                    <li><a href="/categories/seo/">SEO</a></li>
                 
             </ul>
         

@@ -424,6 +424,70 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/hinet_fix_ip/">中華電信設定固定 IP</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # 中華電信設定固定 IP 中華可以申請一組固定 IP 來使用
+有時候都忘記要怎麼處理
+紀錄一下
+去中華電信網站申請 HiNet非固定制固定IP申請 或是 Google 搜尋 中華固定ip申請
+登入中華電信網站 -&gt; 寬頻 -&gt; HiNet非固定制固定IP申請 會顯示固定 IP
+router 設定 PPPOE 連線
+## 說明 中華電信有可能維護或是調整會導致固定 IP 變換, 但都會寄信通知, 留意信箱就可以了
+中華電信設定 PPPOE 連線是 &lt;用戶號碼&gt;@hinet.net
+設定固定 IP 的話是要用 &lt;用戶號碼&gt;@ip.hinet.net
+因為家裡有兩台 wifi router
+所以一台設定非固定 IP 設定 &lt;用戶號碼&gt;@hinet.net
+固定 IP 設定 &lt;用戶號碼&gt;@ip.hinet.net
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2024-09-21">2024-09-21</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/hinet_fix_ip/">/posts/hinet_fix_ip/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/hinet/">Hinet</a></li>
+                
+                    
+                    <li><a href="/categories/ip/">Ip</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/handle_nodejs_import_for_firebase_functions/">在 cloud functions 或是 firebase functions 處理 nodejs 使用 import 的方式</a></h1>
         </header>
         
@@ -961,78 +1025,6 @@ And then i found out quit the Dropbox app solved the problem
                 
                     
                     <li><a href="/categories/mac/">Mac</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/pay_attention_to_app_iap/">App store &amp; Google Play IAP((In-App Purchase)) 內購與訂閱注意事項</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # 前期比較花時間的準備 收款銀行帳戶
-公司登記資料
-# 是否需要試用期 # 不同地區設定不同價格 避開匯率的問題
-# 退款處理 由於是可以在商店平台做退款(所以需要客戶端或是服務端定期確認商店的訂閱狀態)
-https://support.apple.com/en-us/HT204084
-https://support.google.com/googleplay/answer/2479637
-# 取消續訂處理 取消續訂也是需要服務端或是客戶端確認訂閱狀態
-https://support.apple.com/en-us/HT202039
-https://support.google.com/googleplay/answer/7018481
-# 取消訂閱流程 提供商店的 support 網址
-https://support.apple.com/en-us/HT202039
-https://support.google.com/googleplay/answer/7018481
-# 價格對應的訂閱 id 需要有後端配置下發給客戶端以利於價格調整 避免用戶使用舊版 app 訂閱舊價格
-# 訂閱量與續訂的數據埋點(取消訂閱也需要上報) 須注意訂閱量與預估收入的計算
-# 購買 / 訂閱狀態是跟著 Google 或是 Apple 帳號 需要注意自己服務如何和 Google 帳號或是 Apple 帳號關聯(或是訂單 id 關聯)
-# 客戶端需要和商店確認訂單與後端確認訂閱狀態(增強安全性) # App store 文案需要添加訂閱相關事項與協議 Guideline 3.1.2 - Business - Payments - Subscriptions
-這部分可以參考其他有訂閱或購買制的 App 的 App store 頁面
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2023-01-12">2023-01-12</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/pay_attention_to_app_iap/">/posts/pay_attention_to_app_iap/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/iap/">Iap</a></li>
-                
-                    
-                    <li><a href="/categories/google-play/">Google Play</a></li>
-                
-                    
-                    <li><a href="/categories/app-store/">App Store</a></li>
                 
             </ul>
         

@@ -424,6 +424,59 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/">gulp.js - Concatenate File When Gulp Watch</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # gulp.js - Concatenate File When Gulp Watch ## package.json { &#34;name&#34;: &#34;gulp&#34;, &#34;version&#34;: &#34;3.8.7&#34;, &#34;devDependencies&#34;: { &#34;gulp&#34;: &#34;^3.9.0&#34;, &#34;gulp-concat&#34;: &#34;^2.6.0&#34;, &#34;gulp-watch&#34;: &#34;^4.3.4&#34; } } ## gulpfile.js var gulp = require(&#39;gulp&#39;), watch = require(&#39;gulp-watch&#39;), concat = require(&#39;gulp-concat&#39;); var js; gulp.task(&#39;concat&#39;, function (cb) { var options = {}; watch(&#39;dev/*.js&#39;, options, function (e) { // console.log(&#39;e:&#39;+JSON.stringify(e)); // console.log(&#39;\n&#39;); console.log(new Date() + &#39; -- &#39; + e.history[0].replace(e.base, &#39;&#39;)); js = e.history[0].replace(e.base, &#39;&#39;); gulp.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2015-08-09">2015-08-09</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/">/posts/2015-08-09-gulpjs-concatenate-file-when-gulp-watch/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+                    
+                    <li><a href="/categories/gulp/">Gulp</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2015-08-05-apache-apache-command-line-on-mac-ubuntu/">Apache - Apache Command Line on Mac / Ubuntu</a></h1>
         </header>
         
@@ -898,70 +951,6 @@ Add
                 
                     
                     <li><a href="/categories/apache/">Apache</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2015-05-02-maker-gh60-revchn/">Maker - GH60 RevCHN</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # Maker - GH60 RevCHN 拿了這板子有段時間了
-一開始有試著用 Windows 刷 layout 進去, 但一直失敗(應該跟 Windows 不合吧
-但直到前一陣子有人分享用 Mac 刷, 這真是太好了, 終於可以開工了
-經過漫長的收集材料加焊接(詳情請見 GH-60 刷刷刷~開發月誌?)
-廢話不多說
-## Install crosspack &amp; dfu-programmer 利用 homebrew 安裝
-brew install Caskroom/cask/crosspack-avr brew install dfu-programmer ## git clone Firmware tmk_keyboard_custom
-git clone https://github.com/kairyu/tmk_keyboard_custom.git ## Modify Config 進到拉下來的 tmk_keyboard_custom 目錄, 再進到 gh60 的目錄
-cd keyboard/gh60 vim config.h 找到 #define CONFIG_H
-在底下加上 #define GH60_REV_CHN
-vim Makefile 註解或刪掉下面的
-KEYMAP_IN_EEPROM_ENABLE = yes # Read keymap from eeprom ## Check Device 接上 gh60
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2015-05-02">2015-05-02</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2015-05-02-maker-gh60-revchn/">/posts/2015-05-02-maker-gh60-revchn/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/keyboard/">Keyboard</a></li>
-                
-                    
-                    <li><a href="/categories/maker/">Maker</a></li>
                 
             </ul>
         
