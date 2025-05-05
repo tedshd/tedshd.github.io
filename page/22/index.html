@@ -424,6 +424,57 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-10-23-codeigniter-load-data-in-view-for-javascript/">Codeigniter - load data in view for JavaScript</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # load data in view for JavaScript 如果要從後端帶資料給 JavaScript, 很常用 AJAX 的方式, 但假如是頁面在 load 進來時就需要使用後端的資料, 一開始就把資料帶在頁面上然後再用 JavaScript 取得頁面上的資料是一個較佳的方式(至少說省下一個 request).
+## controller &lt;?php ... public function index() { // TODO $server_data load data for JavaScript $server_data = array( &#34;data_01&#34; =&gt; array( &#34;title&#34; =&gt; &#34;title 01&#34;, &#34;num&#34; =&gt; 01, &#34;con&#34; =&gt; array( &#34;con_01&#34; =&gt; &#34;news&#34;, &#34;con_02&#34; =&gt; &#34;sport&#34;, &#34;con_03&#34; =&gt; &#34;tech&#34;, ), ), &#34;data_02&#34; =&gt; array( &#34;title&#34; =&gt; &#34;title 02&#34;, &#34;num&#34; =&gt; 02, &#34;con&#34; =&gt; array( &#34;con_01&#34; =&gt; &#34;life&#34;, &#34;con_02&#34; =&gt; &#34;movie&#34;, &#34;con_03&#34; =&gt; &#34;cars&#34;, ), ), ); // do something $data[&#34;static_data&#34;] = json_encode($server_data); $this-&gt;load-&gt;view(&#34;welcome&#34;, $data); } .
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-10-23">2013-10-23</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-10-23-codeigniter-load-data-in-view-for-javascript/">/posts/2013-10-23-codeigniter-load-data-in-view-for-javascript/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/codeignite/">Codeignite</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-10-23-javascript-handle-json/">JavaScript - handle JSON</a></h1>
         </header>
         
@@ -906,61 +957,6 @@ git clone git@github.com:tedshd/javascript-htmlspecialchars.git// use SSH 單�
 </article>
 
         
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-09-12-adobe-flash-player-118800168-upload-file-issue/">Adobe Flash Player 11.8.800.168 upload file issue</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # Adobe Flash Player 11.8.800.168 upload file issue 筆記一下 在 IE 中 當 Flash Player 更新到 11.8.800.168 時, 發現一個問題 就是用 flash 上傳檔案時, 中文的檔名會用 Big5 去解, 所以就造成亂碼 測試的 OS Windows 7 繁體中文語系
-在網路上有人也提出這問題了
-## Update Adobe Flash Player 已更新到 11.8.800.174 修正這問題了
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2013-09-12">2013-09-12</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2013-09-12-adobe-flash-player-118800168-upload-file-issue/">/posts/2013-09-12-adobe-flash-player-118800168-upload-file-issue/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/flashplayer/">FlashPlayer</a></li>
-                
-                    
-                    <li><a href="/categories/issue/">Issue</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
         
     
     
@@ -991,7 +987,7 @@ git clone git@github.com:tedshd/javascript-htmlspecialchars.git// use SSH 單�
         
 
         <div style="display: flex; align-items: center; gap:8px">
-            © Tedshd, 2024
+            © Tedshd, 2025
             
         </div>
         <div style="display:flex;align-items: center">

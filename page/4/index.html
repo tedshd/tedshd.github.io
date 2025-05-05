@@ -424,6 +424,73 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/send_request_before_click_outbound_or_redirect/">在點擊連結或是 redirect 前送出請求</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Intro 有時在看 GA 的 Web 數據時會發現在 Safari 的點擊 click 事件似乎會比較少
+其實這背後是有原因的
+主要是各個瀏覽器再處理新 direct 時的行為不一致所導致的
+在 Safari 上面發生 direct 到新的 URL 的行為(超連結或是 JS 處理) 時
+事件觸發過程中的任何請求會中斷甚至不會發出請求
+所以這就是為何在 GA 中的 Safari 的 click 數量會有些異常的原因
+雖然 GA 預設會做 setTimeout 處理
+但是也不一定是百分之百處理成功
+所以最佳處理方式還是自己在用個 settimeout 包起來後再 direct
+像是以下範例
+link.addEventListener(&#39;click&#39;, (e) =&gt; { e.preventDefault(); window.gtag(&#39;event&#39;, &#39;click&#39;, { event_category: &#39;link&#39; }); setTimeout(() =&gt; { location.href = e.target.href }, 250) }) 如果真的要確保 GA 送完才做 direct
+GA 也有提供事件發送的 callback 處理
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2022-03-02">2022-03-02</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/send_request_before_click_outbound_or_redirect/">/posts/send_request_before_click_outbound_or_redirect/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+                    
+                    <li><a href="/categories/safari/">Safari</a></li>
+                
+                    
+                    <li><a href="/categories/browser/">Browser</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/javascript_parse_url/">Javascript 判斷並且取出 url</a></h1>
         </header>
         
@@ -985,58 +1052,6 @@ sudo apt install nodejs Refer - How to Install Node.
 </article>
 
         
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/sort_case_handle_in_javascript/">JavaScript - 處理一些排序的方式</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            常常會遇到用 JavaScript 處理一些資料結構的排序
-這裡會列舉一些使用情境與案例
-# 取出排名前幾名的資料(排名的值不重複) ## 資料 var data = { 123: { count: 123, type: &#34;video&#34;, source: &#34;&#34;, }, 345: { count: 345, type: &#34;video&#34;, source: &#34;&#34;, }, 99: { count: 99, type: &#34;image&#34;, source: &#34;&#34;, }, 1: { count: 1, type: &#34;video&#34;, source: &#34;&#34;, }, 9786: { count: 9786, type: &#34;image&#34;, source: &#34;&#34;, }, 347: { count: 347, type: &#34;video&#34;, source: &#34;&#34;, }, }; ## 處理方式 function topNine(data) { var arr = []; (tmp = Object.
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2020-11-18">2020-11-18</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/sort_case_handle_in_javascript/">/posts/sort_case_handle_in_javascript/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
         
     
     
@@ -1067,7 +1082,7 @@ sudo apt install nodejs Refer - How to Install Node.
         
 
         <div style="display: flex; align-items: center; gap:8px">
-            © Tedshd, 2024
+            © Tedshd, 2025
             
         </div>
         <div style="display:flex;align-items: center">

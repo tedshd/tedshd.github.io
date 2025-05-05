@@ -424,6 +424,63 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-06-10-javascript-the-abstract-an-action-instance/">JavaScript - 動作行為抽象化實例</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # JavaScript - 動作行為抽象化實例 其實標題真的不知道要怎麼定
+因為只是要說明一個實例, 但又不想扯到其他太制式的東西(設計模式), 但這範例又可用於其他地方, 所以到最後就用了個似是而非的標題了&hellip;
+先說一下可能的使用情境
+當你在做一個動作時要做一件事 ex: 呼叫 API、紀錄 GA、狀態改變之類的事情
+sample code
+document.querySelector(&#39;a&#39;).addEventListener(&#39;click&#39;, function () { // GA or call API or do somethong }); 以紀錄 GA 為例
+但是如果是紀錄 GA 點擊事件就會有許多區域要記錄點擊來瞭解使用者點哪個區域較多, 就要在不同區域綁定不同的 GA 但日子一久或程式變大的情況要找哪有綁 GA 就很不好找, 所以這時就需要有個 interface 來統整這事情
+document.querySelector(&#39;#item&#39;).addEventListener(&#39;click&#39;, function () { // GA or call API or do somethong interfaceGa(this); }); document.querySelector(&#39;#banner&#39;).addEventListener(&#39;click&#39;, function () { // GA or call API or do somethong interfaceGa(this); }); function interfaceGa(argument) { var name = argument.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2016-06-10">2016-06-10</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2016-06-10-javascript-the-abstract-an-action-instance/">/posts/2016-06-10-javascript-the-abstract-an-action-instance/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-05-28-slack-bot-research-notes/">Slack - bot 研究雜記</a></h1>
         </header>
         
@@ -941,72 +998,6 @@ refer - currentStyle object (Internet Explorer)
 </article>
 
         
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2015-11-20-css4-css4-thoughts-and-postcss/">CSS4 - 關於 css4 and postcss 的一些想法</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # CSS4 - 關於 css4 and postcss 的一些想法 ## 前言 在年末才來發這篇文&hellip;
-在今年大家開始瘋 react(咦? AngularJS 勒&hellip;), Babel, postcss
-好像沒聽過上述這幾個詞就沒法自稱前端工程師(還好我現在都自稱打字員)
-到了最近才有空閒研究 postcss 到底在做啥
-一開始聽說可以無痛接軌未來(welcome to feature), 不像 Sass 未來如果要轉換就不好轉換(其實見仁見智啦)
-聽起來好潮喔, 但很忙沒時間搭理它
-而且這年頭的 tool 都越來越多步驟和許多工具要搞, 除非靜下心來專心研究, 不然哪有時間搞啊(感覺像是逃避的藉口&hellip;)
-直到了最近自己有些小東西要改, 需要用到變數的功能, 就想到 CSS4 不是有大家夢寐以求的 var() 功能嗎(感覺潮潮的)
-就花了點時間研究一下 postcss 這在 github 的專案
-一看下去不得了, 包山包海一卡車功能, 還包含了之前聽別人介紹的連 Sass 的部分寫法的功能都有&hellip;
-看完的瞬間想翻桌, 只是要寫個 CSS, RD 何苦為難 RD 呢, 我不需要那麼多功能啊~
-還好有仔細看到主要 CSS4[註] 是用 cssnext 這專案來處理(網站還用回到未來的梗&hellip;)
-所以我就果斷使用 cssnext 就好了(我真的很討厭用一套工具還要裝許多套件, 然後有的套件還不一定是你需要的不然就是有套件的部分功能是重複的&hellip;)
-## gulpfile 設定 現在有一大堆 build tool 像是 grunt, gulp, browserify, webpack 等工具
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2015-11-20">2015-11-20</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2015-11-20-css4-css4-thoughts-and-postcss/">/posts/2015-11-20-css4-css4-thoughts-and-postcss/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/css/">Css</a></li>
-                
-                    
-                    <li><a href="/categories/postcss/">Postcss</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
         
     
     
@@ -1037,7 +1028,7 @@ refer - currentStyle object (Internet Explorer)
         
 
         <div style="display: flex; align-items: center; gap:8px">
-            © Tedshd, 2024
+            © Tedshd, 2025
             
         </div>
         <div style="display:flex;align-items: center">

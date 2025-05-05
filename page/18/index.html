@@ -424,6 +424,61 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2014-05-25-angularjs-do-something-after-ng-repeat/">AngularJS - do something after ng-repeat</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # AngularJS - do something after ng-repeat 在學習用 AngularJS 的過程中遇到個問題就是 ng-repeat 好厲害喔, code 變得好少喔 但我想再 ng-repeat 完移掉 loading view 要怎麼移啊? 用 setTimeout 跟白癡一樣, 又不知道時間要設多久 只好向 fb 求救 沒想到有人立馬給出解決方案 原文來源 blog
+由於對 AngularJS 不是了解的很透徹, 所以在此不詳加說明(原文內有說明) 這裡只上 code
+## HTML &lt;div id=&#39;list&#39; ng-app=&#34;testApp&#34;&gt; &lt;div ng-controller=&#34;blogger&#34; &gt; &lt;ul&gt; &lt;li ng-repeat=&#34;list in blog&#34; on-last-repeat&gt; {{list.title.$t}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/div&gt; ## JavaScript var module = angular.module(&#39;testApp&#39;, []) .directive(&#39;onLastRepeat&#39;, function() { return function(scope, element, attrs) { if (scope.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2014-05-25">2014-05-25</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2014-05-25-angularjs-do-something-after-ng-repeat/">/posts/2014-05-25-angularjs-do-something-after-ng-repeat/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/angularjs/">AngularJS</a></li>
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2014-05-25-angularjs-routing/">AngularJS - routing</a></h1>
         </header>
         
@@ -912,68 +967,6 @@ Refer - 挑選 Vim 顏色(Color Scheme)
 </article>
 
         
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2014-04-04-nodejs-install/">Node.js - install</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # Node.js - install ## Mac 利用 homebrew 安裝
-brew install node node.js Refer - Install Node.js and npm using Homebrew on OS X
-## Ubuntu sudo apt-get install nodejs-legacy sudo apt-get install npm Refer - Can not install packages using node package manager in Ubuntu
-## Update Now node merge iojs and version update to v4
-But now homebrew not updgrade to v4
-So i use nvm
-Refer - Node.
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2014-04-04">2014-04-04</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2014-04-04-nodejs-install/">/posts/2014-04-04-nodejs-install/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-                    
-                    <li><a href="/categories/mac/">Mac</a></li>
-                
-                    
-                    <li><a href="/categories/node.js/">Node.js</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
         
     
     
@@ -1004,7 +997,7 @@ Refer - Node.
         
 
         <div style="display: flex; align-items: center; gap:8px">
-            © Tedshd, 2024
+            © Tedshd, 2025
             
         </div>
         <div style="display:flex;align-items: center">

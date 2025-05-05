@@ -6,10 +6,39 @@
     <description>Tedshd&#39;s Dev note (Web)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Apr 2022 10:15:23 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 May 2025 08:32:05 +0800</lastBuildDate>
     
     <atom:link href="/categories/web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PWA(progressive web app) 漸進式網路應用程式 研究筆記</title>
+      <link>/posts/pwa/</link>
+      <pubDate>Mon, 05 May 2025 08:32:05 +0800</pubDate>
+      
+      <guid>/posts/pwa/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;關於 PWA(progressive web app) &lt;a href=&#34;https://developer.mozilla.org/zh-TW/docs/Web/Progressive_web_apps&#34;&gt;MDN&lt;/a&gt; 已經有詳細的介紹了, 所以就不多說了&lt;/p&gt;
+&lt;p&gt;主要記錄以目前 2025 年的當下對瀏覽器的支援現況&lt;/p&gt;
+&lt;h2 id=&#34;系統支援度&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b3%bb%e7%b5%b1%e6%94%af%e6%8f%b4%e5%ba%a6&#34;&gt;
+        #
+    &lt;/a&gt;
+    系統支援度
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;目前在 mac chrome / Safari 和 windows chrome / Edge 都可以支援&lt;/p&gt;
+&lt;p&gt;mobile device 的話, iPhone Safari 支援, Android 大多支援, 少部分因為 OEM 品牌可能因為魔改了 Android 系統, 會導致 PWA 安裝了, 但是不會出現, 相當於沒有安裝成功, 目前也嘗試不出來有其他的解決方案, 所以會建議在統一的使用體驗上不要去支援 PWA, 這樣在 mobile device 上面就只會是單純的添加捷徑的功能&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Web 服務確認 IP Location 的幾種做法</title>

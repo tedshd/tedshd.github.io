@@ -3,18 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
         <loc>https://blog.tedshd.io/categories/</loc>
-        <lastmod>2024-09-21T21:00:51+08:00</lastmod>
+        <lastmod>2025-05-05T08:32:05+08:00</lastmod>
+      </url><url>
+        <loc>https://blog.tedshd.io/posts/</loc>
+        <lastmod>2025-05-05T08:32:05+08:00</lastmod>
+      </url><url>
+        <loc>https://blog.tedshd.io/categories/pwa/</loc>
+        <lastmod>2025-05-05T08:32:05+08:00</lastmod>
+      </url><url>
+        <loc>https://blog.tedshd.io/posts/pwa/</loc>
+        <lastmod>2025-05-05T08:32:05+08:00</lastmod>
+      </url><url>
+        <loc>https://blog.tedshd.io/</loc>
+        <lastmod>2025-05-05T08:32:05+08:00</lastmod>
+      </url><url>
+        <loc>https://blog.tedshd.io/categories/web/</loc>
+        <lastmod>2025-05-05T08:32:05+08:00</lastmod>
       </url><url>
         <loc>https://blog.tedshd.io/categories/hinet/</loc>
         <lastmod>2024-09-21T21:00:51+08:00</lastmod>
       </url><url>
         <loc>https://blog.tedshd.io/categories/ip/</loc>
-        <lastmod>2024-09-21T21:00:51+08:00</lastmod>
-      </url><url>
-        <loc>https://blog.tedshd.io/posts/</loc>
-        <lastmod>2024-09-21T21:00:51+08:00</lastmod>
-      </url><url>
-        <loc>https://blog.tedshd.io/</loc>
         <lastmod>2024-09-21T21:00:51+08:00</lastmod>
       </url><url>
         <loc>https://blog.tedshd.io/posts/hinet_fix_ip/</loc>
@@ -187,9 +196,6 @@
       </url><url>
         <loc>https://blog.tedshd.io/categories/mysql/</loc>
         <lastmod>2022-05-03T15:53:18+08:00</lastmod>
-      </url><url>
-        <loc>https://blog.tedshd.io/categories/web/</loc>
-        <lastmod>2022-04-25T10:15:23+08:00</lastmod>
       </url><url>
         <loc>https://blog.tedshd.io/posts/web_how_to_check_ip/</loc>
         <lastmod>2022-04-25T10:15:23+08:00</lastmod>
