@@ -65,6 +65,16 @@
 &lt;/div&gt;
 &lt;/h2&gt;
 &lt;p&gt;目前也嘗試不出來有其他的解決方案, 所以會建議在統一的使用體驗上不要去支援 PWA, 這樣在 mobile device 上面就只會是單純的添加捷徑的功能&lt;/p&gt;
+&lt;h2 id=&#34;測試&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%b8%ac%e8%a9%a6&#34;&gt;
+        #
+    &lt;/a&gt;
+    測試
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;可以用以下連結測試 PWA&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://pwa2.tedshd.io/&#34;&gt;https://pwa2.tedshd.io/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
