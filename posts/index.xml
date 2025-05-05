@@ -36,7 +36,7 @@
 &lt;/div&gt;
 &lt;/h2&gt;
 &lt;p&gt;目前在 mac chrome / Safari 和 windows chrome / Edge 都可以支援&lt;/p&gt;
-&lt;p&gt;mobile device 的話, iPhone Safari 支援, Android 大多支援, 少部分因為 OEM 品牌可能因為魔改了 Android 系統, 會導致 PWA 安裝了, 但是不會出現, 相當於沒有安裝成功, 目前也嘗試不出來有其他的解決方案, 所以會建議在統一的使用體驗上不要去支援 PWA, 這樣在 mobile device 上面就只會是單純的添加捷徑的功能&lt;/p&gt;
+&lt;p&gt;mobile device 的話, iPhone Safari 支援, Android 大多支援, 少部分因為 OEM 品牌可能因為魔改了 Android 系統, 會導致 PWA 安裝了, 但是不會出現, 相當於沒有安裝成功&lt;/p&gt;
 &lt;p&gt;以下整成表格&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -56,6 +56,15 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;h2 id=&#34;不支援的解決方案&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%b8%8d%e6%94%af%e6%8f%b4%e7%9a%84%e8%a7%a3%e6%b1%ba%e6%96%b9%e6%a1%88&#34;&gt;
+        #
+    &lt;/a&gt;
+    不支援的解決方案
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;目前也嘗試不出來有其他的解決方案, 所以會建議在統一的使用體驗上不要去支援 PWA, 這樣在 mobile device 上面就只會是單純的添加捷徑的功能&lt;/p&gt;
 </description>
     </item>
     
