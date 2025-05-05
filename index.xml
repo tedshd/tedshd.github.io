@@ -75,6 +75,17 @@
 &lt;/h2&gt;
 &lt;p&gt;可以用以下連結測試 PWA&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pwa2.tedshd.io/&#34;&gt;https://pwa2.tedshd.io/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;other&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#other&#34;&gt;
+        #
+    &lt;/a&gt;
+    other
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;因為研究 PWA&lt;/p&gt;
+&lt;p&gt;順便讓之前自己設計的簡易框架也支援一下 PWA&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tedshd/WebSimpleFrame&#34;&gt;https://github.com/tedshd/WebSimpleFrame&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
