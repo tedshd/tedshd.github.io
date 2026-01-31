@@ -140,7 +140,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 全域安裝（所有專案可用）&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp add -s user playwright npx @playwright/mcp@latest
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;claude-desktop&#34; &gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這種通用的工具建議使用全域安裝。&lt;/p&gt;
+&lt;h3 id=&#34;claude-desktop&#34; &gt;
 &lt;div&gt;
     &lt;a href=&#34;#claude-desktop&#34;&gt;
         ##
@@ -166,11 +167,13 @@
     前置需求
 &lt;/div&gt;
 &lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Chrome DevTools MCP 需要 Node.js v20.19 以上：&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;安裝 Node.js（從 &lt;a href=&#34;https://nodejs.org&#34;&gt;nodejs.org&lt;/a&gt; 下載 LTS 版本）&lt;/li&gt;
 &lt;li&gt;瀏覽器會在首次使用時自動安裝&lt;/li&gt;
 &lt;/ol&gt;
-&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;node --version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h2 id=&#34;安裝-chrome-devtools-mcp&#34; &gt;
 &lt;div&gt;
     &lt;a href=&#34;#%e5%ae%89%e8%a3%9d-chrome-devtools-mcp&#34;&gt;
