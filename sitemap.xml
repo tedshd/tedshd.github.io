@@ -2,19 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+        <loc>https://blog.tedshd.io/categories/browser-automation/</loc>
+        <lastmod>2026-01-31T22:53:03+08:00</lastmod>
+      </url><url>
         <loc>https://blog.tedshd.io/categories/</loc>
-        <lastmod>2025-05-05T08:32:05+08:00</lastmod>
+        <lastmod>2026-01-31T22:53:03+08:00</lastmod>
+      </url><url>
+        <loc>https://blog.tedshd.io/categories/chrome-devtools/</loc>
+        <lastmod>2026-01-31T22:53:03+08:00</lastmod>
+      </url><url>
+        <loc>https://blog.tedshd.io/categories/claude/</loc>
+        <lastmod>2026-01-31T22:53:03+08:00</lastmod>
+      </url><url>
+        <loc>https://blog.tedshd.io/posts/claude_mcp_about_browser/</loc>
+        <lastmod>2026-01-31T22:53:03+08:00</lastmod>
+      </url><url>
+        <loc>https://blog.tedshd.io/categories/mcp/</loc>
+        <lastmod>2026-01-31T22:53:03+08:00</lastmod>
+      </url><url>
+        <loc>https://blog.tedshd.io/categories/playwright/</loc>
+        <lastmod>2026-01-31T22:53:03+08:00</lastmod>
       </url><url>
         <loc>https://blog.tedshd.io/posts/</loc>
-        <lastmod>2025-05-05T08:32:05+08:00</lastmod>
+        <lastmod>2026-01-31T22:53:03+08:00</lastmod>
+      </url><url>
+        <loc>https://blog.tedshd.io/</loc>
+        <lastmod>2026-01-31T22:53:03+08:00</lastmod>
       </url><url>
         <loc>https://blog.tedshd.io/categories/pwa/</loc>
         <lastmod>2025-05-05T08:32:05+08:00</lastmod>
       </url><url>
         <loc>https://blog.tedshd.io/posts/pwa/</loc>
-        <lastmod>2025-05-05T08:32:05+08:00</lastmod>
-      </url><url>
-        <loc>https://blog.tedshd.io/</loc>
         <lastmod>2025-05-05T08:32:05+08:00</lastmod>
       </url><url>
         <loc>https://blog.tedshd.io/categories/web/</loc>

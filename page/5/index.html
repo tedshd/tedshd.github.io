@@ -424,6 +424,71 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/puppeteer_on_ubuntu_server/">Puppeteer 安裝在 ubuntu server 使用紀錄</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            Puppeteer 是 Google 推出的基於 nodejs 的一套工具 可以控制 Chrome 和 Chromium 所以在爬蟲和測試等等需求都很好用
+這裡記錄一下在 GCP 上面開一台 Computer Engine 後裝 Puppeteer 的紀錄
+# 1. CE 開一個 instance 之前開 f1-mirco(1vCPU &amp; 0.6G RAM)(共用核心)
+這樣的等級如果只是 load 完頁面爬內容還是可以撐得住的
+但是要做一些操作行為或是下滑垃取 AJAX 內容等等就不夠用了
+所以就開了一台 e2-small (2vCPU &amp; 2GB RAM)(非共用核心) 來跑
+這次是裝 ubuntu 20.04 LTS
+# 2. 安裝 node 先拉 node 套件庫下來
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - 裝 nodejs
+sudo apt install nodejs Refer - How to Install Node.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2020-11-20">2020-11-20</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/puppeteer_on_ubuntu_server/">/posts/puppeteer_on_ubuntu_server/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/puppeteer/">Puppeteer</a></li>
+                
+                    
+                    <li><a href="/categories/ubuntu/">Ubuntu</a></li>
+                
+                    
+                    <li><a href="/categories/gcp/">Gcp</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/sort_case_handle_in_javascript/">JavaScript - 處理一些排序的方式</a></h1>
         </header>
         
@@ -1007,55 +1072,6 @@ mobile search result 的 image 是抓到頁面中的 image 而非 structure data
 </article>
 
         
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/canvas_research_log/">Canvas research log</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # Online edit image ## Use canvas &amp; how to do Upload image -&gt; trans to canvas -&gt; download canvas to png
-upload use files api
-new canvas object
-toDataURL download
-# Some tips toDataURL default to PNG &amp; resolution is 96 dpi Refer - HTMLCanvasElement.toDataURL() - Web APIs | MDN
-Need notice device pixelRatio Use Window.devicePixelRatio as base on canvas width &amp; height
-var canvas = document.getElementById(&#34;canvas&#34;); // Set display size (css pixels).
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2020-02-04">2020-02-04</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/canvas_research_log/">/posts/canvas_research_log/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
         
     
     
@@ -1086,7 +1102,7 @@ var canvas = document.getElementById(&#34;canvas&#34;); // Set display size (css
         
 
         <div style="display: flex; align-items: center; gap:8px">
-            © Tedshd, 2025
+            © Tedshd, 2026
             
         </div>
         <div style="display:flex;align-items: center">

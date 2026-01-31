@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Claude on Tedshd&#39;s Dev note</title>
+    <link>/categories/claude/</link>
+    <description>Tedshd&#39;s Dev note (Claude)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Jan 2026 22:53:03 +0800</lastBuildDate>
+    
+    <atom:link href="/categories/claude/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Claude MCP 瀏覽器自動化：Playwright 與 Chrome DevTools 指南</title>
+      <link>/posts/claude_mcp_about_browser/</link>
+      <pubDate>Sat, 31 Jan 2026 22:53:03 +0800</pubDate>
+      
+      <guid>/posts/claude_mcp_about_browser/</guid>
+      <description>&lt;h1 id=&#34;claude-mcp-安裝與使用指南&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#claude-mcp-%e5%ae%89%e8%a3%9d%e8%88%87%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Claude MCP 安裝與使用指南
+&lt;/div&gt;
+&lt;/h1&gt;
+&lt;h2 id=&#34;什麼是-mcp&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bb%80%e9%ba%bc%e6%98%af-mcp&#34;&gt;
+        #
+    &lt;/a&gt;
+    什麼是 MCP
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;MCP（Model Context Protocol）是一個開放協議，讓 Claude 能夠連接外部工具和資料來源，例如瀏覽器自動化、檔案系統存取、API 整合等。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;確認已安裝的-mcp&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%a2%ba%e8%aa%8d%e5%b7%b2%e5%ae%89%e8%a3%9d%e7%9a%84-mcp&#34;&gt;
+        #
+    &lt;/a&gt;
+    確認已安裝的 MCP
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;claude-code命令列&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#claude-code%e5%91%bd%e4%bb%a4%e5%88%97&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Claude Code（命令列）
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 列出所有已設定的 MCP 伺服器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp list
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 查看特定伺服器的詳細資訊&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp get &amp;lt;server-name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 在 Claude Code 互動模式中檢查伺服器狀態&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/mcp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;claude-desktop桌面應用程式&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#claude-desktop%e6%a1%8c%e9%9d%a2%e6%87%89%e7%94%a8%e7%a8%8b%e5%bc%8f&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Claude Desktop（桌面應用程式）
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;設定檔位置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt;：&lt;code&gt;~/Library/Application Support/Claude/claude_desktop_config.json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;：&lt;code&gt;%APPDATA%\Claude\claude_desktop_config.json&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;成功連線後，在對話輸入框的右下角會看到 MCP 伺服器指示器。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;mcp-安裝範圍&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mcp-%e5%ae%89%e8%a3%9d%e7%af%84%e5%9c%8d&#34;&gt;
+        #
+    &lt;/a&gt;
+    MCP 安裝範圍
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;範圍&lt;/th&gt;
+&lt;th&gt;說明&lt;/th&gt;
+&lt;th&gt;參數&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;local&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;僅當前專案目錄可用（預設）&lt;/td&gt;
+&lt;td&gt;無需參數&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;project&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;專案層級，可與團隊共享&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-s project&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;全域，所有專案都可用&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-s user&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;安裝為全域&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%ae%89%e8%a3%9d%e7%82%ba%e5%85%a8%e5%9f%9f&#34;&gt;
+        ##
+    &lt;/a&gt;
+    安裝為全域
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp add -s user &amp;lt;server-name&amp;gt; &amp;lt;command&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;安裝-playwright-mcp&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%ae%89%e8%a3%9d-playwright-mcp&#34;&gt;
+        #
+    &lt;/a&gt;
+    安裝 Playwright MCP
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Playwright MCP 提供瀏覽器自動化功能，適合 UI 測試、截圖、填表單、網頁爬取等任務。&lt;/p&gt;
+&lt;h3 id=&#34;claude-code&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#claude-code&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Claude Code
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 本地安裝（僅當前專案）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp add playwright npx @playwright/mcp@latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 全域安裝（所有專案可用）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp add -s user playwright npx @playwright/mcp@latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;claude-desktop&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#claude-desktop&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Claude Desktop
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;編輯設定檔，加入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;mcpServers&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;playwright&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;npx&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;@playwright/mcp@latest&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;儲存後完全關閉並重啟 Claude Desktop。&lt;/p&gt;
+&lt;h3 id=&#34;前置需求&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%89%8d%e7%bd%ae%e9%9c%80%e6%b1%82&#34;&gt;
+        ##
+    &lt;/a&gt;
+    前置需求
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;安裝 Node.js（從 &lt;a href=&#34;https://nodejs.org&#34;&gt;nodejs.org&lt;/a&gt; 下載 LTS 版本）&lt;/li&gt;
+&lt;li&gt;瀏覽器會在首次使用時自動安裝&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;安裝-chrome-devtools-mcp&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%ae%89%e8%a3%9d-chrome-devtools-mcp&#34;&gt;
+        #
+    &lt;/a&gt;
+    安裝 Chrome DevTools MCP
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Chrome DevTools MCP 提供深度調試和性能分析功能。&lt;/p&gt;
+&lt;h3 id=&#34;claude-code-1&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#claude-code-1&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Claude Code
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 全域安裝&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp add -s user chrome-devtools npx chrome-devtools-mcp@latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 或使用 headless 模式&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp add -s user chrome-devtools -- npx chrome-devtools-mcp@latest --headless
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;連線失敗的解決方法&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%80%a3%e7%b7%9a%e5%a4%b1%e6%95%97%e7%9a%84%e8%a7%a3%e6%b1%ba%e6%96%b9%e6%b3%95&#34;&gt;
+        ##
+    &lt;/a&gt;
+    連線失敗的解決方法
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Chrome DevTools MCP 需要連接到正在運行的 Chrome 瀏覽器。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;啟動帶有遠端調試的 Chrome：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Windows：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;C:\Program Files\Google\Chrome\Application\chrome.exe&amp;#34;&lt;/span&gt; --remote-debugging-port&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;9222&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;macOS：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/Applications/Google&lt;span style=&#34;color:#5af78e&#34;&gt;\ &lt;/span&gt;Chrome.app/Contents/MacOS/Google&lt;span style=&#34;color:#5af78e&#34;&gt;\ &lt;/span&gt;Chrome --remote-debugging-port&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;9222&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;playwright-vs-chrome-devtools-mcp-比較&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#playwright-vs-chrome-devtools-mcp-%e6%af%94%e8%bc%83&#34;&gt;
+        #
+    &lt;/a&gt;
+    Playwright vs Chrome DevTools MCP 比較
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;特性&lt;/th&gt;
+&lt;th&gt;Playwright MCP&lt;/th&gt;
+&lt;th&gt;Chrome DevTools MCP&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;主要用途&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;瀏覽器自動化、UI 測試&lt;/td&gt;
+&lt;td&gt;深度調試、性能分析&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;瀏覽器支援&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Chrome、Firefox、WebKit&lt;/td&gt;
+&lt;td&gt;僅 Chromium 系列&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;工具數量&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;21 個工具&lt;/td&gt;
+&lt;td&gt;26 個工具&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Token 消耗&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;~13.7k tokens&lt;/td&gt;
+&lt;td&gt;~18k tokens&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;需要手動啟動瀏覽器&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;否（自動管理）&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;適合場景&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;截圖、填表單、爬資料、E2E 測試&lt;/td&gt;
+&lt;td&gt;Console 監控、網路請求分析、性能追蹤&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;建議&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%bb%ba%e8%ad%b0&#34;&gt;
+        ##
+    &lt;/a&gt;
+    建議
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;大多數情況下，Playwright MCP 就夠用了&lt;/strong&gt;，除非你需要：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;深度性能分析（Performance traces）&lt;/li&gt;
+&lt;li&gt;Heap snapshots&lt;/li&gt;
+&lt;li&gt;詳細網路請求監控&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;claude-如何選擇使用哪個-mcp&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#claude-%e5%a6%82%e4%bd%95%e9%81%b8%e6%93%87%e4%bd%bf%e7%94%a8%e5%93%aa%e5%80%8b-mcp&#34;&gt;
+        #
+    &lt;/a&gt;
+    Claude 如何選擇使用哪個 MCP
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;可用性優先&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%8f%af%e7%94%a8%e6%80%a7%e5%84%aa%e5%85%88&#34;&gt;
+        ##
+    &lt;/a&gt;
+    可用性優先
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Claude 只會使用&lt;strong&gt;連線成功&lt;/strong&gt;的 MCP。如果 Chrome DevTools 連線失敗，會自動使用 Playwright。&lt;/p&gt;
+&lt;h3 id=&#34;任務類型&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%bb%bb%e5%8b%99%e9%a1%9e%e5%9e%8b&#34;&gt;
+        ##
+    &lt;/a&gt;
+    任務類型
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;如果兩個都可用，Claude 會根據任務選擇：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;任務&lt;/th&gt;
+&lt;th&gt;選擇&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;截圖、填表單、點擊&lt;/td&gt;
+&lt;td&gt;Playwright&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;性能分析、網路請求監控&lt;/td&gt;
+&lt;td&gt;Chrome DevTools&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;讀取 console&lt;/td&gt;
+&lt;td&gt;兩者皆可&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;明確指定&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%98%8e%e7%a2%ba%e6%8c%87%e5%ae%9a&#34;&gt;
+        ##
+    &lt;/a&gt;
+    明確指定
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;你也可以在提示中指定使用哪個工具：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;用 Playwright 幫我打開 example.com 並截圖
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&#34;常用指令彙整&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%b8%b8%e7%94%a8%e6%8c%87%e4%bb%a4%e5%bd%99%e6%95%b4&#34;&gt;
+        #
+    &lt;/a&gt;
+    常用指令彙整
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 列出所有 MCP&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp list
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 新增 MCP（本地）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp add &amp;lt;name&amp;gt; &amp;lt;command&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 新增 MCP（全域）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp add -s user &amp;lt;name&amp;gt; &amp;lt;command&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 查看特定 MCP&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp get &amp;lt;name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 移除 MCP&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp remove &amp;lt;name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 在互動模式中檢查狀態&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/mcp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;疑難排解&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%96%91%e9%9b%a3%e6%8e%92%e8%a7%a3&#34;&gt;
+        #
+    &lt;/a&gt;
+    疑難排解
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;問題&lt;/th&gt;
+&lt;th&gt;解決方法&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MCP 連線失敗&lt;/td&gt;
+&lt;td&gt;確認 Node.js 已安裝（&lt;code&gt;node --version&lt;/code&gt;）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Chrome DevTools 連不上&lt;/td&gt;
+&lt;td&gt;手動啟動帶 &lt;code&gt;--remote-debugging-port=9222&lt;/code&gt; 的 Chrome&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;設定沒生效&lt;/td&gt;
+&lt;td&gt;完全重啟 Claude Desktop（包括背景程序）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;JSON 格式錯誤&lt;/td&gt;
+&lt;td&gt;檢查設定檔的 JSON 語法是否正確&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

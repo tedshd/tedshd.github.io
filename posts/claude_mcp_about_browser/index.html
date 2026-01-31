@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Claude MCP 瀏覽器自動化：Playwright 與 Chrome DevTools 指南 - Tedshd&rsquo;s Dev note</title>
+
+<meta name="description" content="## Claude MCP 安裝與使用指南 # 什麼是 MCP MCP（Model Context Protocol）是一個開放協議，讓 Claude 能夠連接外部工具和資料來源，例如瀏覽器自動化、檔案系統存取、API 整合等。
+# 確認已安裝的 MCP ## Claude Code（命令列） # 列出所有已設定的 MCP 伺服器 claude mcp list # 查看特定伺服器的詳細資訊 claude mcp get &lt;server-name&gt; # 在 Claude Code 互動模式中檢查伺服器狀態 /mcp ## Claude Desktop（桌面應用程式） 設定檔位置：
+macOS：~/Library/Application Support/Claude/claude_desktop_config.json Windows：%APPDATA%\Claude\claude_desktop_config.json 成功連線後，在對話輸入框的右下角會看到 MCP 伺服器指示器。
+# MCP 安裝範圍 範圍 說明 參數 local 僅當前專案目錄可用（預設） 無需參數 project 專案層級，可與團隊共享 -s project user 全域，所有專案都可用 -s user ## 安裝為全域 claude mcp add -s user &lt;server-name&gt; &lt;command&gt; # 安裝 Playwright MCP Playwright MCP 提供瀏覽器自動化功能，適合 UI 測試、截圖、填表單、網頁爬取等任務。">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.42c77dbe264b081b6f3745aedeb79de572b52fe570748653a57a0f103228f037.css" integrity="sha256-Qsd9viZLCBtvN0Wu3red5XK1L&#43;VwdIZTpXoPEDIo8Dc=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-0553186380244641" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta name="google" content="notranslate">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NKP3D2ZGG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1NKP3D2ZGG');
+</script>
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Tedshd&#39;s Dev note</a>
+</h1>
+
+        
+
+
+
+
+
+
+
+    
+        <div class="theme-switcher">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
+    <script>
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
+
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
+    </script>
+
+
+        <ul class="social-icons noselect">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/tedshd" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://tw.linkedin.com/in/tedshd" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://www.facebook.com/chander.shiu" title="Facebook" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
+    </div>
+    <div class="header-top-right">
+
+    </div>
+</div>
+
+
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
+        
+        <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
+        
+        <a class="" href="https://blog.tedshd.io/categories" title="">Categories</a>
+        
+    </nav>
+
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Claude MCP 瀏覽器自動化：Playwright 與 Chrome DevTools 指南</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2026-01-31">2026-01-31</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/claude_mcp_about_browser/">/posts/claude_mcp_about_browser/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/claude/">Claude</a></li>
+                
+                    
+                    <li><a href="/categories/mcp/">MCP</a></li>
+                
+                    
+                    <li><a href="/categories/playwright/">Playwright</a></li>
+                
+                    
+                    <li><a href="/categories/chrome-devtools/">Chrome DevTools</a></li>
+                
+                    
+                    <li><a href="/categories/browser-automation/">Browser Automation</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什麼是-mcp">什麼是 MCP</a></li>
+    <li><a href="#確認已安裝的-mcp">確認已安裝的 MCP</a>
+      <ul>
+        <li><a href="#claude-code命令列">Claude Code（命令列）</a></li>
+        <li><a href="#claude-desktop桌面應用程式">Claude Desktop（桌面應用程式）</a></li>
+      </ul>
+    </li>
+    <li><a href="#mcp-安裝範圍">MCP 安裝範圍</a>
+      <ul>
+        <li><a href="#安裝為全域">安裝為全域</a></li>
+      </ul>
+    </li>
+    <li><a href="#安裝-playwright-mcp">安裝 Playwright MCP</a>
+      <ul>
+        <li><a href="#claude-code">Claude Code</a></li>
+        <li><a href="#claude-desktop">Claude Desktop</a></li>
+        <li><a href="#前置需求">前置需求</a></li>
+      </ul>
+    </li>
+    <li><a href="#安裝-chrome-devtools-mcp">安裝 Chrome DevTools MCP</a>
+      <ul>
+        <li><a href="#claude-code-1">Claude Code</a></li>
+        <li><a href="#連線失敗的解決方法">連線失敗的解決方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#playwright-vs-chrome-devtools-mcp-比較">Playwright vs Chrome DevTools MCP 比較</a>
+      <ul>
+        <li><a href="#建議">建議</a></li>
+      </ul>
+    </li>
+    <li><a href="#claude-如何選擇使用哪個-mcp">Claude 如何選擇使用哪個 MCP</a>
+      <ul>
+        <li><a href="#可用性優先">可用性優先</a></li>
+        <li><a href="#任務類型">任務類型</a></li>
+        <li><a href="#明確指定">明確指定</a></li>
+      </ul>
+    </li>
+    <li><a href="#常用指令彙整">常用指令彙整</a></li>
+    <li><a href="#疑難排解">疑難排解</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
+<script>
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
+</script>
+
+        <div class="content e-content">
+            <h1 id="claude-mcp-安裝與使用指南" >
+<div>
+    <a href="#claude-mcp-%e5%ae%89%e8%a3%9d%e8%88%87%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97">
+        ##
+    </a>
+    Claude MCP 安裝與使用指南
+</div>
+</h1>
+<h2 id="什麼是-mcp" >
+<div>
+    <a href="#%e4%bb%80%e9%ba%bc%e6%98%af-mcp">
+        #
+    </a>
+    什麼是 MCP
+</div>
+</h2>
+<p>MCP（Model Context Protocol）是一個開放協議，讓 Claude 能夠連接外部工具和資料來源，例如瀏覽器自動化、檔案系統存取、API 整合等。</p>
+<hr>
+<h2 id="確認已安裝的-mcp" >
+<div>
+    <a href="#%e7%a2%ba%e8%aa%8d%e5%b7%b2%e5%ae%89%e8%a3%9d%e7%9a%84-mcp">
+        #
+    </a>
+    確認已安裝的 MCP
+</div>
+</h2>
+<h3 id="claude-code命令列" >
+<div>
+    <a href="#claude-code%e5%91%bd%e4%bb%a4%e5%88%97">
+        ##
+    </a>
+    Claude Code（命令列）
+</div>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#78787e"># 列出所有已設定的 MCP 伺服器</span>
+</span></span><span style="display:flex;"><span>claude mcp list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e"># 查看特定伺服器的詳細資訊</span>
+</span></span><span style="display:flex;"><span>claude mcp get &lt;server-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e"># 在 Claude Code 互動模式中檢查伺服器狀態</span>
+</span></span><span style="display:flex;"><span>/mcp
+</span></span></code></pre></div><h3 id="claude-desktop桌面應用程式" >
+<div>
+    <a href="#claude-desktop%e6%a1%8c%e9%9d%a2%e6%87%89%e7%94%a8%e7%a8%8b%e5%bc%8f">
+        ##
+    </a>
+    Claude Desktop（桌面應用程式）
+</div>
+</h3>
+<p>設定檔位置：</p>
+<ul>
+<li><strong>macOS</strong>：<code>~/Library/Application Support/Claude/claude_desktop_config.json</code></li>
+<li><strong>Windows</strong>：<code>%APPDATA%\Claude\claude_desktop_config.json</code></li>
+</ul>
+<p>成功連線後，在對話輸入框的右下角會看到 MCP 伺服器指示器。</p>
+<hr>
+<h2 id="mcp-安裝範圍" >
+<div>
+    <a href="#mcp-%e5%ae%89%e8%a3%9d%e7%af%84%e5%9c%8d">
+        #
+    </a>
+    MCP 安裝範圍
+</div>
+</h2>
+<table>
+<thead>
+<tr>
+<th>範圍</th>
+<th>說明</th>
+<th>參數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>local</strong></td>
+<td>僅當前專案目錄可用（預設）</td>
+<td>無需參數</td>
+</tr>
+<tr>
+<td><strong>project</strong></td>
+<td>專案層級，可與團隊共享</td>
+<td><code>-s project</code></td>
+</tr>
+<tr>
+<td><strong>user</strong></td>
+<td>全域，所有專案都可用</td>
+<td><code>-s user</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="安裝為全域" >
+<div>
+    <a href="#%e5%ae%89%e8%a3%9d%e7%82%ba%e5%85%a8%e5%9f%9f">
+        ##
+    </a>
+    安裝為全域
+</div>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude mcp add -s user &lt;server-name&gt; &lt;command&gt;
+</span></span></code></pre></div><hr>
+<h2 id="安裝-playwright-mcp" >
+<div>
+    <a href="#%e5%ae%89%e8%a3%9d-playwright-mcp">
+        #
+    </a>
+    安裝 Playwright MCP
+</div>
+</h2>
+<p>Playwright MCP 提供瀏覽器自動化功能，適合 UI 測試、截圖、填表單、網頁爬取等任務。</p>
+<h3 id="claude-code" >
+<div>
+    <a href="#claude-code">
+        ##
+    </a>
+    Claude Code
+</div>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#78787e"># 本地安裝（僅當前專案）</span>
+</span></span><span style="display:flex;"><span>claude mcp add playwright npx @playwright/mcp@latest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e"># 全域安裝（所有專案可用）</span>
+</span></span><span style="display:flex;"><span>claude mcp add -s user playwright npx @playwright/mcp@latest
+</span></span></code></pre></div><h3 id="claude-desktop" >
+<div>
+    <a href="#claude-desktop">
+        ##
+    </a>
+    Claude Desktop
+</div>
+</h3>
+<p>編輯設定檔，加入：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff6ac1">&#34;mcpServers&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">&#34;playwright&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff6ac1">&#34;command&#34;</span>: <span style="color:#5af78e">&#34;npx&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff6ac1">&#34;args&#34;</span>: [<span style="color:#5af78e">&#34;@playwright/mcp@latest&#34;</span>]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>儲存後完全關閉並重啟 Claude Desktop。</p>
+<h3 id="前置需求" >
+<div>
+    <a href="#%e5%89%8d%e7%bd%ae%e9%9c%80%e6%b1%82">
+        ##
+    </a>
+    前置需求
+</div>
+</h3>
+<ol>
+<li>安裝 Node.js（從 <a href="https://nodejs.org">nodejs.org</a> 下載 LTS 版本）</li>
+<li>瀏覽器會在首次使用時自動安裝</li>
+</ol>
+<hr>
+<h2 id="安裝-chrome-devtools-mcp" >
+<div>
+    <a href="#%e5%ae%89%e8%a3%9d-chrome-devtools-mcp">
+        #
+    </a>
+    安裝 Chrome DevTools MCP
+</div>
+</h2>
+<p>Chrome DevTools MCP 提供深度調試和性能分析功能。</p>
+<h3 id="claude-code-1" >
+<div>
+    <a href="#claude-code-1">
+        ##
+    </a>
+    Claude Code
+</div>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#78787e"># 全域安裝</span>
+</span></span><span style="display:flex;"><span>claude mcp add -s user chrome-devtools npx chrome-devtools-mcp@latest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e"># 或使用 headless 模式</span>
+</span></span><span style="display:flex;"><span>claude mcp add -s user chrome-devtools -- npx chrome-devtools-mcp@latest --headless
+</span></span></code></pre></div><h3 id="連線失敗的解決方法" >
+<div>
+    <a href="#%e9%80%a3%e7%b7%9a%e5%a4%b1%e6%95%97%e7%9a%84%e8%a7%a3%e6%b1%ba%e6%96%b9%e6%b3%95">
+        ##
+    </a>
+    連線失敗的解決方法
+</div>
+</h3>
+<p>Chrome DevTools MCP 需要連接到正在運行的 Chrome 瀏覽器。</p>
+<p><strong>啟動帶有遠端調試的 Chrome：</strong></p>
+<p>Windows：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#5af78e">&#34;C:\Program Files\Google\Chrome\Application\chrome.exe&#34;</span> --remote-debugging-port<span style="color:#ff6ac1">=</span><span style="color:#ff9f43">9222</span>
+</span></span></code></pre></div><p>macOS：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/Applications/Google<span style="color:#5af78e">\ </span>Chrome.app/Contents/MacOS/Google<span style="color:#5af78e">\ </span>Chrome --remote-debugging-port<span style="color:#ff6ac1">=</span><span style="color:#ff9f43">9222</span>
+</span></span></code></pre></div><hr>
+<h2 id="playwright-vs-chrome-devtools-mcp-比較" >
+<div>
+    <a href="#playwright-vs-chrome-devtools-mcp-%e6%af%94%e8%bc%83">
+        #
+    </a>
+    Playwright vs Chrome DevTools MCP 比較
+</div>
+</h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Playwright MCP</th>
+<th>Chrome DevTools MCP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>主要用途</strong></td>
+<td>瀏覽器自動化、UI 測試</td>
+<td>深度調試、性能分析</td>
+</tr>
+<tr>
+<td><strong>瀏覽器支援</strong></td>
+<td>Chrome、Firefox、WebKit</td>
+<td>僅 Chromium 系列</td>
+</tr>
+<tr>
+<td><strong>工具數量</strong></td>
+<td>21 個工具</td>
+<td>26 個工具</td>
+</tr>
+<tr>
+<td><strong>Token 消耗</strong></td>
+<td>~13.7k tokens</td>
+<td>~18k tokens</td>
+</tr>
+<tr>
+<td><strong>需要手動啟動瀏覽器</strong></td>
+<td>否（自動管理）</td>
+<td>是</td>
+</tr>
+<tr>
+<td><strong>適合場景</strong></td>
+<td>截圖、填表單、爬資料、E2E 測試</td>
+<td>Console 監控、網路請求分析、性能追蹤</td>
+</tr>
+</tbody>
+</table>
+<h3 id="建議" >
+<div>
+    <a href="#%e5%bb%ba%e8%ad%b0">
+        ##
+    </a>
+    建議
+</div>
+</h3>
+<p><strong>大多數情況下，Playwright MCP 就夠用了</strong>，除非你需要：</p>
+<ul>
+<li>深度性能分析（Performance traces）</li>
+<li>Heap snapshots</li>
+<li>詳細網路請求監控</li>
+</ul>
+<hr>
+<h2 id="claude-如何選擇使用哪個-mcp" >
+<div>
+    <a href="#claude-%e5%a6%82%e4%bd%95%e9%81%b8%e6%93%87%e4%bd%bf%e7%94%a8%e5%93%aa%e5%80%8b-mcp">
+        #
+    </a>
+    Claude 如何選擇使用哪個 MCP
+</div>
+</h2>
+<h3 id="可用性優先" >
+<div>
+    <a href="#%e5%8f%af%e7%94%a8%e6%80%a7%e5%84%aa%e5%85%88">
+        ##
+    </a>
+    可用性優先
+</div>
+</h3>
+<p>Claude 只會使用<strong>連線成功</strong>的 MCP。如果 Chrome DevTools 連線失敗，會自動使用 Playwright。</p>
+<h3 id="任務類型" >
+<div>
+    <a href="#%e4%bb%bb%e5%8b%99%e9%a1%9e%e5%9e%8b">
+        ##
+    </a>
+    任務類型
+</div>
+</h3>
+<p>如果兩個都可用，Claude 會根據任務選擇：</p>
+<table>
+<thead>
+<tr>
+<th>任務</th>
+<th>選擇</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>截圖、填表單、點擊</td>
+<td>Playwright</td>
+</tr>
+<tr>
+<td>性能分析、網路請求監控</td>
+<td>Chrome DevTools</td>
+</tr>
+<tr>
+<td>讀取 console</td>
+<td>兩者皆可</td>
+</tr>
+</tbody>
+</table>
+<h3 id="明確指定" >
+<div>
+    <a href="#%e6%98%8e%e7%a2%ba%e6%8c%87%e5%ae%9a">
+        ##
+    </a>
+    明確指定
+</div>
+</h3>
+<p>你也可以在提示中指定使用哪個工具：</p>
+<pre tabindex="0"><code>用 Playwright 幫我打開 example.com 並截圖
+</code></pre><hr>
+<h2 id="常用指令彙整" >
+<div>
+    <a href="#%e5%b8%b8%e7%94%a8%e6%8c%87%e4%bb%a4%e5%bd%99%e6%95%b4">
+        #
+    </a>
+    常用指令彙整
+</div>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#78787e"># 列出所有 MCP</span>
+</span></span><span style="display:flex;"><span>claude mcp list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e"># 新增 MCP（本地）</span>
+</span></span><span style="display:flex;"><span>claude mcp add &lt;name&gt; &lt;command&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e"># 新增 MCP（全域）</span>
+</span></span><span style="display:flex;"><span>claude mcp add -s user &lt;name&gt; &lt;command&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e"># 查看特定 MCP</span>
+</span></span><span style="display:flex;"><span>claude mcp get &lt;name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e"># 移除 MCP</span>
+</span></span><span style="display:flex;"><span>claude mcp remove &lt;name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e"># 在互動模式中檢查狀態</span>
+</span></span><span style="display:flex;"><span>/mcp
+</span></span></code></pre></div><hr>
+<h2 id="疑難排解" >
+<div>
+    <a href="#%e7%96%91%e9%9b%a3%e6%8e%92%e8%a7%a3">
+        #
+    </a>
+    疑難排解
+</div>
+</h2>
+<table>
+<thead>
+<tr>
+<th>問題</th>
+<th>解決方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MCP 連線失敗</td>
+<td>確認 Node.js 已安裝（<code>node --version</code>）</td>
+</tr>
+<tr>
+<td>Chrome DevTools 連不上</td>
+<td>手動啟動帶 <code>--remote-debugging-port=9222</code> 的 Chrome</td>
+</tr>
+<tr>
+<td>設定沒生效</td>
+<td>完全重啟 Claude Desktop（包括背景程序）</td>
+</tr>
+<tr>
+<td>JSON 格式錯誤</td>
+<td>檢查設定檔的 JSON 語法是否正確</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+
+    </article>
+
+    
+    
+
+    
+        
+        
+    
+
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            © Tedshd, 2026
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.tedshd.io/ class="p-name u-url url fn" rel="me"></a>
+
+    
+
+    
+</p>
+
+</footer>
+
+        
+    </div>
+</body>
+</html>

@@ -424,6 +424,76 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/fixed_mac_external_hard_drive_not_detect/">解決 Mac 外接硬碟讀不到 / 沒有顯示</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Intro 有時 Mac 會讀不到外接硬碟
+可以試試以下方式解決問題
+# 重新開機 可能一些未知的因素導致當下讀取不到
+可以重新開機後再重新連接外接硬碟
+# 啟用外接硬碟的可見性 如果你的電腦系統為在 macOS Big Sur 或 Catalina，那你就需要啟用外接硬碟的可見性。你可以根據以下步驟進行操作。
+前往「Finder」&gt;「偏好設定」&gt;「一般」。
+此時，你可以看到「在桌面上顯示這些項目」的欄位，勾選「硬碟」和「外接硬碟」的選項。
+# 檢查系統資訊中的外部硬碟驅動程式 系統資訊 將會顯示所有連接至Mac的外部裝置、軟體、硬體和網路等所有訊息的地方。因此，你可以先在該位置進行檢測。
+前往「應用程式」&gt;「工具程式」&gt;「系統資訊」。
+在左側欄位點選「USB」，然後查看外接硬碟的資訊。
+如果你可以看見相關資訊，Mac 卻無法顯示外接硬碟，那它可能正在被 macOS 修復。你可以前往「活動監視器」，以檢查是否有「fsck_hfs」或「fsck_exfat」的活動。
+# 運行「Apple診斷」以檢測硬體問題 Mac 電腦擁有一套內建的診斷程式「Apple診斷」，以讓你查找故障的硬體問題。修復損壞的硬體也有可能解決Mac讀不到外接硬碟的情況。
+拔除所有外接裝置，除了鍵盤、滑鼠等有用的裝置。
+重啟Mac，並在電腦啟動時按住鍵盤的「D」鍵，直到看到選擇語言的視窗才放手。
+接著，系統就會開始診斷動作，而你也會在介面看到進度列。
+完成診斷後，你就會看到電腦所面對的硬體問題以及相對的解決方案。
+# 重置 Mac 的 NVRAM 或 PRAM NVRAM 和 PRAM 是 Mac 電腦中的部分暫存。不管開機或關機，它都會保存特定數據。
+如果你的Mac無法讀取外接硬碟是基於硬體受損，那你也可以嘗試使用這個方法解決。
+重啟 Mac，然後在電腦啟動時同時按住「control + option + P + R」鍵。
+按住這些按鍵長達大約 20 秒，直到你聽到電腦重啟的音效，或是看到蘋果標誌出現並消失後才放手。
+# 重置 Mac SMC SMC（System Management Controller）負責演算 Mac 的低階功能，因此如果重置 NVRAM或 PRAM 仍無法解決 Mac 外接硬碟無法顯示的問題，那你也可以嘗試重置 SMC。
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2023-10-29">2023-10-29</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/fixed_mac_external_hard_drive_not_detect/">/posts/fixed_mac_external_hard_drive_not_detect/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/mac/">Mac</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/fixed_mac_android_file_transfer_not_work/">Fixed android file transfer not work in mac</a></h1>
         </header>
         
@@ -989,79 +1059,6 @@ Build POST data curl --location --request POST &#39;https://firebasedurablelinks
 </article>
 
         
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/ssh_to_windows_server/">SSH 到 Windows Server</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            最近因為需求要接手 Windows Server 進行維護與開發
-因為只有在很久以前幫別人處理 IIS Server 一點經驗
-時間也非常久了
-所以筆記一下這次的處理過程
-這次處理的 server 版本是 Windows Server 2019
-# SSH on GCP Compute Engine 如果是建置在 Google Cloud 的 Compute Engine 上的話
-就參考文件 Getting started with OpenSSH on Windows Compute Engine instances 就可以了
-# 前置作業 之前似乎是採用 remote desktop 的方式
-這對習慣命令列操作的人來說會有點不習慣
-而且交接程式碼和檔案都放在那台機器上
-所以為了之後方便操作, 首先就要安裝 OpenSSH
-## 安裝 OpenSSH server 因為 SSH 會有 server 和 client 的部分
-因為是需要連進去 Windows Server
-所以只需要處理 OpenSSH server 的部分
-Refer - 安裝 OpenSSH
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2022-10-09">2022-10-09</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/ssh_to_windows_server/">/posts/ssh_to_windows_server/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/linux/">Linux</a></li>
-                
-                    
-                    <li><a href="/categories/windows/">Windows</a></li>
-                
-                    
-                    <li><a href="/categories/windows-server/">Windows Server</a></li>
-                
-                    
-                    <li><a href="/categories/ssh/">SSH</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
         
     
     
@@ -1092,7 +1089,7 @@ Refer - 安裝 OpenSSH
         
 
         <div style="display: flex; align-items: center; gap:8px">
-            © Tedshd, 2025
+            © Tedshd, 2026
             
         </div>
         <div style="display:flex;align-items: center">

@@ -424,6 +424,79 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/ssh_to_windows_server/">SSH 到 Windows Server</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            最近因為需求要接手 Windows Server 進行維護與開發
+因為只有在很久以前幫別人處理 IIS Server 一點經驗
+時間也非常久了
+所以筆記一下這次的處理過程
+這次處理的 server 版本是 Windows Server 2019
+# SSH on GCP Compute Engine 如果是建置在 Google Cloud 的 Compute Engine 上的話
+就參考文件 Getting started with OpenSSH on Windows Compute Engine instances 就可以了
+# 前置作業 之前似乎是採用 remote desktop 的方式
+這對習慣命令列操作的人來說會有點不習慣
+而且交接程式碼和檔案都放在那台機器上
+所以為了之後方便操作, 首先就要安裝 OpenSSH
+## 安裝 OpenSSH server 因為 SSH 會有 server 和 client 的部分
+因為是需要連進去 Windows Server
+所以只需要處理 OpenSSH server 的部分
+Refer - 安裝 OpenSSH
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2022-10-09">2022-10-09</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/ssh_to_windows_server/">/posts/ssh_to_windows_server/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/linux/">Linux</a></li>
+                
+                    
+                    <li><a href="/categories/windows/">Windows</a></li>
+                
+                    
+                    <li><a href="/categories/windows-server/">Windows Server</a></li>
+                
+                    
+                    <li><a href="/categories/ssh/">SSH</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/handle_datetime_and_timezone_in_js/">在 JavaScript 處理各個時區對應的日期時間</a></h1>
         </header>
         
@@ -993,86 +1066,6 @@ Refer - 已分配的/8 IPv4位址網段列表
 </article>
 
         
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/web_text_rtl_handle/">網頁處理 RTL(Right To Left) 右到左的文字排版</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # 前言 在 web 的世界中有一個需要處理的是文字排版的呈現
-因為從電腦到整個計算機科學的領域都是在拉丁語系為主宗的國家發展的
-所以在介面的文字排版上自然以從左到右為主
-但是在這世界上的文字排版有從左到右, 上到下, 右到左等呈現方式
-所以需要依照需求或不同語系的文字上有相對應的處理, 尤其是在多語系的情況下
-上到下的排版大多是書面用的排版, 相對在資訊領域比較少呈現, 且因為上到下的排版方式也大多是亞洲地區的國家, 在標準化的話語權不高
-但也漸漸在 web 領域中有開始支援上到下的排版(writing-mode)
-且在資訊領域也大多是用左到右的呈現, 所以影響相對小
-額外補充一下大部分的方塊文字像是中文、日文、韓文等其實左到右、右到左、上到下都可以書寫與呈現
-但在部份語系像是
-阿拉伯文 烏爾都文 庫德文 波斯文 希伯來文 上述文字排版就固定都是從右到左
-除了希伯來文以外都是從阿拉伯文字延伸的, 就像是英文、德文、法文都是拉丁文延伸出來一樣
-至於為何在世界各地的文字排版會有差異其實主要是起源於早期該文字書寫的方式與被書寫在什麼材質上面為主
-右到左主要起源於早期是文字是刻在石板上面, 左手拿鑿子, 右手拿錘子, 這樣從右到左是相對順手的
-中文早期大多從上到下從右到左的排列主要起源於以前是在竹片上捲成冊的(竹簡)
-在單片竹片上面書寫自然是上到下, 那捲成冊之後在閱讀時為了方便持握, 會是左手拿著竹簡, 右手打開來看內容, 自然就變成了右到左來閱讀
-不過現在大多也因為資訊科學的發展後在電子載體上就沿用左到右的排版(前面提到電腦乃至資訊科學都是在拉丁語系的國家發展出來的)
-不過在亞洲地區的國家部分書面印刷還是有保留上到下右到左的排版
-不過有點扯遠了
-# 實作 RTL(Right To Left) 的方式 這次主要是要處理 RTL 的問題
-但其實在實作上也很好解
-HTML tag 有個屬性是 dir 只要設定是 rtl 或是 ltr 就可以了
-那麼要在什麼情況下設定這個東西?
-大致上會在兩種情況設定
-## 1. 多語系且有右到左語系 網站是多語系的網站且有右到左語系提供切換呈現
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2022-04-15">2022-04-15</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/web_text_rtl_handle/">/posts/web_text_rtl_handle/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/html/">HTML</a></li>
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-                    
-                    <li><a href="/categories/rtl/">RTL</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
         
     
     
@@ -1103,7 +1096,7 @@ HTML tag 有個屬性是 dir 只要設定是 rtl 或是 ltr 就可以了
         
 
         <div style="display: flex; align-items: center; gap:8px">
-            © Tedshd, 2025
+            © Tedshd, 2026
             
         </div>
         <div style="display:flex;align-items: center">
