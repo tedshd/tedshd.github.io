@@ -424,6 +424,67 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/php_crawler_html/">PHP 爬蟲 抓取 HTML 內容</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Intro 又是久違的寫爬蟲&hellip;
+這次是接手大大們的 code
+寫的是 PHP 版本
+研究了一下寫法
+才發現現在可以不使用第三方套件就可以處理了
+所以這裡紀錄一下
+# 取得 HTML 內容 使用 curl 使用 file_get_contents curl 是我常用的方式 看了大大們的 code 才知道原來 file_get_contents 也可以取 http/https 內容&hellip;
+這邊簡單貼一下兩種作法的範例
+## curl function httpGet($url) { $ch = curl_init(); curl_setopt($ch,CURLOPT_URL,$url); curl_setopt($ch,CURLOPT_RETURNTRANSFER,true); curl_setopt($ch,CURLOPT_HEADER, [ &#39;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36&#39; ]); $output=curl_exec($ch); curl_close($ch); return $output; } ## file_get_contents function htmlContentGet($url) { $opts = [ &#34;http&#34; =&gt; [ &#34;method&#34; =&gt; &#34;GET&#34;, &#34;header&#34; =&gt; &#34;User-Agent: Mozilla/5.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2022-04-22">2022-04-22</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/php_crawler_html/">/posts/php_crawler_html/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/php/">PHP</a></li>
+                
+                    
+                    <li><a href="/categories/crawler/">Crawler</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/web_text_rtl_handle/">網頁處理 RTL(Right To Left) 右到左的文字排版</a></h1>
         </header>
         
@@ -997,65 +1058,6 @@ Refer - 郵局協定
                 
                     
                     <li><a href="/categories/smtp/">Smtp</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/docker_usage/">docker 使用紀錄</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # docker images 列出所有拉下來的 docker image
-docker images REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE ubuntu latest 07f8e8c5e660 3 weeks ago 188.3 MB # build dockerfile 使用 dockerfile 建立 docker image
-直接建立
-docker build . 預設會找當前的目錄的 Dockerfile
--t 可以設定建立的 image &amp; tag name
-docker build . -t image_name:tag_name -f 指定用哪個 dockerfile 建立
-docker build . -t ubuntu_dev:16.04 -f local.Dockerfile # dockerfile 使用 ## 使用 nginx official image 建立 FROM nginx:1.
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2020-12-24">2020-12-24</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/docker_usage/">/posts/docker_usage/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/docker/">Docker</a></li>
-                
-                    
-                    <li><a href="/categories/mac/">Mac</a></li>
                 
             </ul>
         

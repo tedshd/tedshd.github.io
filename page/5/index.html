@@ -424,6 +424,65 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/docker_usage/">docker 使用紀錄</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # docker images 列出所有拉下來的 docker image
+docker images REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE ubuntu latest 07f8e8c5e660 3 weeks ago 188.3 MB # build dockerfile 使用 dockerfile 建立 docker image
+直接建立
+docker build . 預設會找當前的目錄的 Dockerfile
+-t 可以設定建立的 image &amp; tag name
+docker build . -t image_name:tag_name -f 指定用哪個 dockerfile 建立
+docker build . -t ubuntu_dev:16.04 -f local.Dockerfile # dockerfile 使用 ## 使用 nginx official image 建立 FROM nginx:1.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2020-12-24">2020-12-24</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/docker_usage/">/posts/docker_usage/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/docker/">Docker</a></li>
+                
+                    
+                    <li><a href="/categories/mac/">Mac</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/puppeteer_on_ubuntu_server/">Puppeteer 安裝在 ubuntu server 使用紀錄</a></h1>
         </header>
         
@@ -1015,50 +1074,6 @@ mobile search result 的 image 是抓到頁面中的 image 而非 structure data
     
 
     <a class="post-hidden-url u-url" href="/posts/google_search_result_structure_data_research_log/">/posts/google_search_result_structure_data_research_log/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/mobile_web_remove_touch_background/">Mobile web remove touch background</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # Intro Mobile web touch fire event or a link can show blue background
-# How to remove -webkit-tap-highlight-color: transparent; Refer - How to remove the blue background of button on mobile?
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2020-03-04">2020-03-04</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/mobile_web_remove_touch_background/">/posts/mobile_web_remove_touch_background/</a>
     <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
 
 

@@ -6,10 +6,322 @@
     <description>Tedshd&#39;s Dev note (Posts)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Jan 2026 22:53:03 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 23:51:33 +0800</lastBuildDate>
     
     <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How_to_build_mcp</title>
+      <link>/posts/how_to_build_mcp/</link>
+      <pubDate>Tue, 30 Jun 2026 23:51:33 +0800</pubDate>
+      
+      <guid>/posts/how_to_build_mcp/</guid>
+      <description>&lt;h2 id=&#34;intro&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#intro&#34;&gt;
+        #
+    &lt;/a&gt;
+    Intro
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;因為 RD 常用 markdown 格式來記錄
+但是有時要交付給其他非開發的人或是要提供出去
+就得轉成 PDF
+很麻煩
+所以想了一下
+乾脆寫了一個處理 markdown 轉成 pdf 的程式
+然後再包成 mcp&lt;/p&gt;
+&lt;h2 id=&#34;mcp-的連接方式&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#mcp-%e7%9a%84%e9%80%a3%e6%8e%a5%e6%96%b9%e5%bc%8f&#34;&gt;
+        #
+    &lt;/a&gt;
+    MCP 的連接方式
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;MCP 目前主要有兩種連接方式：&lt;strong&gt;Local MCP&lt;/strong&gt; 和 &lt;strong&gt;Remote MCP&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;local-mcp&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#local-mcp&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Local MCP
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;透過 &lt;code&gt;stdio&lt;/code&gt;（標準輸入輸出）在本機執行，AI client 直接啟動一個子程序來溝通。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;優點：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;設定簡單，不需要架伺服器&lt;/li&gt;
+&lt;li&gt;可以直接存取本機檔案系統和資源&lt;/li&gt;
+&lt;li&gt;不需要網路連線&lt;/li&gt;
+&lt;li&gt;安全性較高，資料不會離開本機&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;缺點：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;只能在本機使用，無法共享給其他人&lt;/li&gt;
+&lt;li&gt;每個使用者都要自己安裝和設定&lt;/li&gt;
+&lt;li&gt;不適合需要多人協作或雲端使用的情境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;remote-mcp&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#remote-mcp&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Remote MCP
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;透過 HTTP + SSE（Server-Sent Events）或 WebSocket 連接到遠端伺服器。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;優點：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以共享給團隊成員，統一管理&lt;/li&gt;
+&lt;li&gt;不需要在每台機器上安裝&lt;/li&gt;
+&lt;li&gt;可以部署到雲端，隨時隨地使用&lt;/li&gt;
+&lt;li&gt;適合整合需要後端服務的工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;缺點：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;需要架設並維護伺服器&lt;/li&gt;
+&lt;li&gt;需要處理認證和安全性問題&lt;/li&gt;
+&lt;li&gt;有網路延遲，效能不如 local&lt;/li&gt;
+&lt;li&gt;資料會經過網路傳輸，需要注意隱私&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;選擇建議&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e9%81%b8%e6%93%87%e5%bb%ba%e8%ad%b0&#34;&gt;
+        ##
+    &lt;/a&gt;
+    選擇建議
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;個人開發工具、需要存取本機資源的情境 → &lt;strong&gt;Local MCP&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;團隊共用工具、需要整合雲端服務的情境 → &lt;strong&gt;Remote MCP&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;md2pdf-開發說明&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#md2pdf-%e9%96%8b%e7%99%bc%e8%aa%aa%e6%98%8e&#34;&gt;
+        #
+    &lt;/a&gt;
+    md2pdf 開發說明
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;技術選型&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%8a%80%e8%a1%93%e9%81%b8%e5%9e%8b&#34;&gt;
+        ##
+    &lt;/a&gt;
+    技術選型
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Node.js&lt;/strong&gt; 作為執行環境&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Puppeteer&lt;/strong&gt;（Headless Chrome）負責將 HTML 渲染成 PDF&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;highlight.js&lt;/strong&gt; 處理程式碼語法高亮&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mermaid&lt;/strong&gt; 支援流程圖、sequence diagram 等圖表渲染&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;轉換流程是先將 Markdown 轉成 HTML，再交給 Puppeteer 渲染輸出 A4 PDF。&lt;/p&gt;
+&lt;h3 id=&#34;local-mcp-開發方式&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#local-mcp-%e9%96%8b%e7%99%bc%e6%96%b9%e5%bc%8f&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Local MCP 開發方式
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;本機版透過 &lt;code&gt;stdio&lt;/code&gt; 通訊，tool 接收的是&lt;strong&gt;檔案路徑&lt;/strong&gt;，由 server 直接讀取本機檔案轉換，Markdown 內容不會進入 Claude context，&lt;strong&gt;token 消耗少&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;安裝與設定：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# clone 專案並安裝相依套件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/&amp;lt;your-username&amp;gt;/md2pdf.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;cd&lt;/span&gt; md2pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;加入 Claude Code CLI：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp add md2pdf node /path/to/md2pdf/src/mcp-server.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;加入 Claude Desktop，編輯 &lt;code&gt;~/Library/Application Support/Claude/claude_desktop_config.json&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;mcpServers&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;md2pdf&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;node&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;/path/to/md2pdf/src/mcp-server.js&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;設定完成後直接用自然語言觸發：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;幫我把 /Users/yourname/docs/report.md 轉成 PDF&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;remote-mcp-開發方式&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#remote-mcp-%e9%96%8b%e7%99%bc%e6%96%b9%e5%bc%8f&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Remote MCP 開發方式
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;遠端版透過 HTTP 部署，tool 接收的是&lt;strong&gt;完整 Markdown 內容字串&lt;/strong&gt;，server 轉換完成後儲存 PDF 並回傳下載連結。&lt;/p&gt;
+&lt;p&gt;運作流程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用者傳送 Markdown 內容給 server&lt;/li&gt;
+&lt;li&gt;Server 轉換成 PDF 並儲存&lt;/li&gt;
+&lt;li&gt;回傳下載連結（&lt;code&gt;GET /files/&amp;lt;id&amp;gt;.pdf&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;使用者點連結下載&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;本機測試：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm start
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# 健康檢查&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl http://localhost:3000/health
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;部署推薦使用 &lt;strong&gt;Render&lt;/strong&gt; 或 &lt;strong&gt;Railway&lt;/strong&gt;，兩者都支援 Docker 部署，有免費方案可以先測試。&lt;/p&gt;
+&lt;p&gt;Docker 部署：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker build -t md2pdf-mcp .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -p 3000:3000 -e &lt;span style=&#34;color:#ff5c57&#34;&gt;BASE_URL&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;https://your-domain.com md2pdf-mcp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;加入 Claude Code CLI（遠端版）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;claude mcp add --transport http md2pdf https://&amp;lt;your-app&amp;gt;.onrender.com/mcp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;注意事項&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a0%85&#34;&gt;
+        #
+    &lt;/a&gt;
+    注意事項
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;中文字型問題&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e4%b8%ad%e6%96%87%e5%ad%97%e5%9e%8b%e5%95%8f%e9%a1%8c&#34;&gt;
+        ##
+    &lt;/a&gt;
+    中文字型問題
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;部署到 Linux 環境（Render、Railway、Docker）時，容器預設不含中文字型，PDF 中文字會變成方塊或亂碼。&lt;/p&gt;
+&lt;p&gt;解法是在 Dockerfile 安裝 &lt;code&gt;fonts-noto-cjk&lt;/code&gt;（Google 思源黑體）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;RUN&lt;/span&gt; apt-get install -y fonts-noto-cjk&lt;span style=&#34;color:#ff5c57&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;注意：&lt;code&gt;fonts-noto-cjk&lt;/code&gt; 約 400 MB，會讓 image 變大、首次部署時間較長，但字型品質最完整。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;ci--docker-環境需要停用-sandbox&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#ci--docker-%e7%92%b0%e5%a2%83%e9%9c%80%e8%a6%81%e5%81%9c%e7%94%a8-sandbox&#34;&gt;
+        ##
+    &lt;/a&gt;
+    CI / Docker 環境需要停用 sandbox
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Puppeteer 預設會啟用 Chrome sandbox，在 Docker 或 CI 環境通常沒有對應的 kernel 權限，需要加上 &lt;code&gt;--no-sandbox&lt;/code&gt; 參數，否則轉換會失敗。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;node src/cli.js docs/README.md --no-sandbox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或設定環境變數：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;PUPPETEER_NO_SANDBOX&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff5c57&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;remote-mcp-的-token-消耗&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#remote-mcp-%e7%9a%84-token-%e6%b6%88%e8%80%97&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Remote MCP 的 token 消耗
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;遠端版需要把完整 Markdown 內容傳給 server，這些內容同時也會進入 Claude context，文件越長消耗的 token 越多。如果主要是自己使用、文件又有隱私疑慮，建議選 local 版本。&lt;/p&gt;
+&lt;h3 id=&#34;render-free-方案的冷啟動&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#render-free-%e6%96%b9%e6%a1%88%e7%9a%84%e5%86%b7%e5%95%9f%e5%8b%95&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Render Free 方案的冷啟動
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Render Free 方案閒置 15 分鐘後會休眠，冷啟動需要 30-60 秒。如果需要穩定使用，升級到 Starter 方案（$7/月）或改用 Railway。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;實測比較remote-mcp-vs-local-mcp&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e5%af%a6%e6%b8%ac%e6%af%94%e8%bc%83remote-mcp-vs-local-mcp&#34;&gt;
+        #
+    &lt;/a&gt;
+    實測比較：Remote MCP vs Local MCP
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;以一份 15,674 bytes（6,846 字元）的 Markdown 文件做實測，結果如下。&lt;/p&gt;
+&lt;h3 id=&#34;耗時比較&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e8%80%97%e6%99%82%e6%af%94%e8%bc%83&#34;&gt;
+        ##
+    &lt;/a&gt;
+    耗時比較
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;測試&lt;/th&gt;
+&lt;th&gt;環境&lt;/th&gt;
+&lt;th&gt;耗時&lt;/th&gt;
+&lt;th&gt;備註&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Remote 第一次&lt;/td&gt;
+&lt;td&gt;Render（冷啟動）&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;158 秒&lt;/strong&gt;（約 2.6 分鐘）&lt;/td&gt;
+&lt;td&gt;含 server cold start + 渲染&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Remote 第二次&lt;/td&gt;
+&lt;td&gt;Render（已熱機）&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;10.45 秒&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;服務已啟動，速度大幅提升&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Local&lt;/td&gt;
+&lt;td&gt;本機 stdio&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;10 秒&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;穩定，無冷啟動問題&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;token-消耗比較&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#token-%e6%b6%88%e8%80%97%e6%af%94%e8%bc%83&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Token 消耗比較
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;環境&lt;/th&gt;
+&lt;th&gt;傳入內容&lt;/th&gt;
+&lt;th&gt;估算 Token 數&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Remote MCP&lt;/td&gt;
+&lt;td&gt;完整 Markdown 內容字串&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;~7,800 tokens&lt;/strong&gt;（5,300–10,300）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Local MCP&lt;/td&gt;
+&lt;td&gt;檔案路徑（絕對路徑字串）&lt;/td&gt;
+&lt;td&gt;極少，幾乎可忽略&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;結論&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#%e7%b5%90%e8%ab%96&#34;&gt;
+        ##
+    &lt;/a&gt;
+    結論
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Remote 冷啟動很痛&lt;/strong&gt;：Render Free 方案閒置後首次呼叫要等將近 3 分鐘，不適合需要即時轉換的情境&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;熱機後 Remote 和 Local 速度差不多&lt;/strong&gt;：兩者都在 10 秒左右完成渲染&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Local MCP token 消耗遠低於 Remote&lt;/strong&gt;：Remote 每次轉換要額外消耗約 7,800 tokens，文件越長差距越大&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自己用選 Local 最划算&lt;/strong&gt;：速度相當、token 省、資料不離開本機&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Claude MCP 瀏覽器自動化：Playwright 與 Chrome DevTools 指南</title>

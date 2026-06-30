@@ -424,6 +424,68 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/angular_build_custom_element/">Angular build custom element</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # Intro 當使用 Angular 時, 有時會有需要自己建立一個自定義的元素
+通常這個都是為了重複使用
+這時會有兩種作法
+自己建立一個元件, 再把這元件處理成 module, 這樣就可以有自定義元素了
+使用 angular create lib 的方式(https://angular.io/guide/creating-libraries)
+如果是在公司內部自己使用, 用 1 或是 2 都沒差
+如果是要做成給外部或是別人使用, 甚至是開源出去, 那就是得用 2
+順帶一提如果要使用自己定義的元素, 需要安裝 @angular/elements
+yarn add @angular/elements # 自己建立元件 這邊會用 custom-element 當成元件名字舉例
+ng generate component custom-element 建立起一個 custom-element 元件
+之後就是依照寫元件的方式開發
+只是得自己手動處理一下在 custom-element/custom-element.module.ts 得添加和輸出與建立自定義元素的設定
+import { createCustomElement } from &#39;@angular/elements&#39;; import { createCustomElement } from &#39;@angular/elements&#39;; import { NgModule, Injector } from &#39;@angular/core&#39;; import { CustomElementComponent } from &#39;.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2023-10-30">2023-10-30</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/angular_build_custom_element/">/posts/angular_build_custom_element/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/angular/">Angular</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/fixed_mac_external_hard_drive_not_detect/">解決 Mac 外接硬碟讀不到 / 沒有顯示</a></h1>
         </header>
         
@@ -992,62 +1054,6 @@ const http = require(&#39;http&#39;); const url = require(&#39;url&#39;); var ad
                 
                     
                     <li><a href="/categories/firebase/">Firebase</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/unarchived_firebase_console_dynamic_link/">Unarchived firebase console dynamic link</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            Sometimes a dynamic link is accidentally archived.
-But doesn&rsquo;t have any option show archived dynamic link list.
-BTW
-You have a way to unarchived this dynamic link.
-# Use POST API update this dynamic link Find your filebase console auth data You can edit dynamic link data and then catch request when save it.
-Find this request https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;key=&lt;YOUR KEY&gt; and copy header
-Build POST data curl --location --request POST &#39;https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;key=&lt;YOUR KEY&gt;&#39; \ --header &#39;Authorization: &lt;YOUR Authorization&gt;&#39; \ --header &#39;Origin: https://console.
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2022-10-22">2022-10-22</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/unarchived_firebase_console_dynamic_link/">/posts/unarchived_firebase_console_dynamic_link/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/fierbase/">Fierbase</a></li>
                 
             </ul>
         

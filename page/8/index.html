@@ -424,6 +424,75 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">JavaScript - 半形 全形 轉換</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # JavaScript - 半形 全形 轉換 因為一個奇怪的需求?
+需要把使用者輸入的東西轉成可以方便驗證的格式(這應該後端做吧?)
+反正因為以前也做過半形轉成全形(痛苦的回憶, 為啥政府的 opendata 各縣市格式不一致就算了, 竟然還有全形半形的問題&hellip;)
+這邊就簡單的只針對最前面的基本拉丁字母字元符號集作轉換
+因為大部分的需求應該這樣就可以應付了?
+但是空白字元要特殊處理
+那接下來只要知道需要轉換的字元範圍即可
+全形從 U+FF01 到 U+FF5E
+半形從 U+0021 到 U+007E
+把 16 進制轉換回來就是
+65281 到 65374
+33 到 126
+上述怎麼轉的?
+就是這樣
+parseInt(&#39;0xFF01&#39;, 16) 只要判斷輸入的字元這這些編碼區間就進行轉換
+trans char
+所以簡單做了一個 demo 頁面
+程式檢視原始碼即可
+Refer - Wiki
+Refer - Unicode / UTF-8 字元編碼區間表 - 2013
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2019-01-30">2019-01-30</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">/posts/2019-01-30-javascript-half-angle-full-angle-conversion/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2018-12-26-chrome-headless-research-notes/">Chrome headless 研究筆記</a></h1>
         </header>
         
@@ -900,55 +969,6 @@ Refer - How to get PayPal API username, password and signature information?
                     <li><a href="/categories/paypal/">Paypal</a></li>
                 
             </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2018-09-20-javascript-use-the-right-time/">JavaScript - 使用與處理正確的時間</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # JavaScript - 使用與處理正確的時間 這是個很有趣的議題
-舉凡使用倒數計時器或限時開賣等
-只要在網頁上牽扯到時間的動態呈現都需要處理這問題
-會列舉了幾個情況與介紹一些跟時間相關的的概念與 API
-Refer - 深入理解定时器系列第一篇——理解setTimeout和setInterval
-var options = { timeZone: &#39;Europe/London&#39;, year: &#39;numeric&#39;, month: &#39;numeric&#39;, day: &#39;numeric&#39;, hour: &#39;numeric&#39;, minute: &#39;numeric&#39;, second: &#39;numeric&#39;, }; formatter = new Intl.DateTimeFormat([], options); formatter.format(new Date()); Refer - Get time of specific timezone [duplicate] Refer - Getting To Know The JavaScript Internationalization API
-Refer - Javascript 的 EventLoop
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2018-09-20">2018-09-20</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2018-09-20-javascript-use-the-right-time/">/posts/2018-09-20-javascript-use-the-right-time/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
         
         
         

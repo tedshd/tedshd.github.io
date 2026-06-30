@@ -424,6 +424,64 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-01-27-javascript-get-css-style/">JavaScript - get CSS style</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # JavaScript - get CSS style Sometimes i want to use JavaScript get dom CSS style.
+Use DOM.currentStyle and window.getComputedStyle(DOM)
+For IE use DOM.currentStyle
+Other use window.getComputedStyle(DOM)
+var dom = document.getElementById(&#34;target&#34;), style = dom.currentStyle || window.getComputedStyle(dom); console.log(style.marginTop); refer - Window.getComputedStyle() - Web APIs | MDN
+refer - currentStyle object (Internet Explorer)
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2016-01-27">2016-01-27</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2016-01-27-javascript-get-css-style/">/posts/2016-01-27-javascript-get-css-style/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+                    
+                    <li><a href="/categories/css/">Css</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2015-12-20-google-cloud-platform-not-enough-space-set-the-swap-kernel-upgrades/">Google Cloud Platform - 空間不足, 設定 swap, kernel 升級</a></h1>
         </header>
         
@@ -933,65 +991,6 @@ Then
                 
                     
                     <li><a href="/categories/dom/">DOM</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2015-08-16-php-auto-update-static-files-cache/">PHP - Auto update static files cache</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # PHP - Auto update static files cache We can cache static files(CSS, JavaScript) to client
-When Server update static code.
-We want to update cache then we can modify file or add query string update version.
-We have some choice like modify url ?v=1 to ?v=2
-But I want to auto modify version.
-This is a way i use
-&lt;?php function autoversion($url) { $ver = stat($_SERVER[&#39;DOCUMENT_ROOT&#39;] . $url)[mtime]; return $url .
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2015-08-16">2015-08-16</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2015-08-16-php-auto-update-static-files-cache/">/posts/2015-08-16-php-auto-update-static-files-cache/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/php/">PHP</a></li>
-                
-                    
-                    <li><a href="/categories/css/">Css</a></li>
                 
             </ul>
         

@@ -424,6 +424,62 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/unarchived_firebase_console_dynamic_link/">Unarchived firebase console dynamic link</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            Sometimes a dynamic link is accidentally archived.
+But doesn&rsquo;t have any option show archived dynamic link list.
+BTW
+You have a way to unarchived this dynamic link.
+# Use POST API update this dynamic link Find your filebase console auth data You can edit dynamic link data and then catch request when save it.
+Find this request https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;key=&lt;YOUR KEY&gt; and copy header
+Build POST data curl --location --request POST &#39;https://firebasedurablelinks-pa.clients6.google.com/v1/updateDurableLink?alt=json&amp;key=&lt;YOUR KEY&gt;&#39; \ --header &#39;Authorization: &lt;YOUR Authorization&gt;&#39; \ --header &#39;Origin: https://console.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2022-10-22">2022-10-22</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/unarchived_firebase_console_dynamic_link/">/posts/unarchived_firebase_console_dynamic_link/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/fierbase/">Fierbase</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/ssh_to_windows_server/">SSH 到 Windows Server</a></h1>
         </header>
         
@@ -994,67 +1050,6 @@ Refer - 已分配的/8 IPv4位址網段列表
                 
                     
                     <li><a href="/categories/ip/">Ip</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/php_crawler_html/">PHP 爬蟲 抓取 HTML 內容</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # Intro 又是久違的寫爬蟲&hellip;
-這次是接手大大們的 code
-寫的是 PHP 版本
-研究了一下寫法
-才發現現在可以不使用第三方套件就可以處理了
-所以這裡紀錄一下
-# 取得 HTML 內容 使用 curl 使用 file_get_contents curl 是我常用的方式 看了大大們的 code 才知道原來 file_get_contents 也可以取 http/https 內容&hellip;
-這邊簡單貼一下兩種作法的範例
-## curl function httpGet($url) { $ch = curl_init(); curl_setopt($ch,CURLOPT_URL,$url); curl_setopt($ch,CURLOPT_RETURNTRANSFER,true); curl_setopt($ch,CURLOPT_HEADER, [ &#39;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36&#39; ]); $output=curl_exec($ch); curl_close($ch); return $output; } ## file_get_contents function htmlContentGet($url) { $opts = [ &#34;http&#34; =&gt; [ &#34;method&#34; =&gt; &#34;GET&#34;, &#34;header&#34; =&gt; &#34;User-Agent: Mozilla/5.
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2022-04-22">2022-04-22</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/php_crawler_html/">/posts/php_crawler_html/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/php/">PHP</a></li>
-                
-                    
-                    <li><a href="/categories/crawler/">Crawler</a></li>
                 
             </ul>
         

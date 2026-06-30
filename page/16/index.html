@@ -424,6 +424,64 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2014-12-30-javascript-detect-css3-transitionend/">JavaScript - detect CSS3 transitionEnd</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # JavaScript - Detect CSS3 transitionEnd transitionend
+It is a event can fired when CSS3 transition end.
+function transitionEnd() { var el = document.createElement(&#39;div&#39;), //what the hack is bootstrap transEndEventNames = { WebkitTransition : &#39;webkitTransitionEnd&#39;, MozTransition : &#39;transitionend&#39;, OTransition : &#39;oTransitionEnd otransitionend&#39;, transition : &#39;transitionend&#39; }; for (var name in transEndEventNames) { if (el.style[name] !== undefined) { return transEndEventNames[name]; } } return false; // explicit for ie8 ( ._.) } // Usage document.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2014-12-30">2014-12-30</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2014-12-30-javascript-detect-css3-transitionend/">/posts/2014-12-30-javascript-detect-css3-transitionend/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+                    
+                    <li><a href="/categories/css/">Css</a></li>
+                
+                    
+                    <li><a href="/categories/css3/">Css3</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2014-12-21-javascript-converting-a-javascript-string-to-a-html-object/">JavaScript - Converting a JavaScript string to a html object</a></h1>
         </header>
         
@@ -904,65 +962,6 @@ Usage
                 
                     
                     <li><a href="/categories/github/">Github</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2014-08-07-gulpjs-use-log/">gulp.js - Use Log</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # gulp.js - Use Log ## Intro gulp.js
-Getting Started
-Grunt vs Gulp - Beyond the Numbers
-## package.json version setting dependencies
-## How to pipe to another task in Gulp? gulp.task(&#39;first&#39;, function() { // first task }); gulp.task(&#39;second&#39;, [&#39;first&#39;], function() { // this occurs after &#39;first&#39; finishes }); Refer - How to pipe to another task in Gulp?
-## Use Package ## Compass First, must install compass
-gulp-compass
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2014-08-07">2014-08-07</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2014-08-07-gulpjs-use-log/">/posts/2014-08-07-gulpjs-use-log/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-                    
-                    <li><a href="/categories/gulp/">Gulp</a></li>
                 
             </ul>
         

@@ -424,6 +424,61 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2019-10-29-php-float-float-ingress-scientific-marker-conversion/">php - float 浮點數科學記號轉換</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # php - float 浮點數科學記號轉換 php - float
+php 的浮點數大小受限於系統, 且會自動轉換成科學記號呈現, 但是一般人不會去看科學記號
+echo 0.0000234; // 2.34E-5 在呈現上希望轉換回小數點的呈現
+可以用以下方法做到
+$s = 0.0000234; trim(rtrim(sprintf(&#34;%.10f&#34;, $s), &#39;0&#39;), &#39;.&#39;); // 0.0000234 這邊 sprintf 只取 10 位數
+因為就之前遇到的系統超過 10 位數都會是不精確的浮點數
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2019-10-29">2019-10-29</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2019-10-29-php-float-float-ingress-scientific-marker-conversion/">/posts/2019-10-29-php-float-float-ingress-scientific-marker-conversion/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/php/">PHP</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2019-10-03-web-html-metadata-image-size-with-open-graph-etc/">Web - HTML metadata image size with open graph&hellip;etc</a></h1>
         </header>
         
@@ -916,75 +971,6 @@ Golang version manger
 
 
     <div class="post-taxonomies">
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">JavaScript - 半形 全形 轉換</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # JavaScript - 半形 全形 轉換 因為一個奇怪的需求?
-需要把使用者輸入的東西轉成可以方便驗證的格式(這應該後端做吧?)
-反正因為以前也做過半形轉成全形(痛苦的回憶, 為啥政府的 opendata 各縣市格式不一致就算了, 竟然還有全形半形的問題&hellip;)
-這邊就簡單的只針對最前面的基本拉丁字母字元符號集作轉換
-因為大部分的需求應該這樣就可以應付了?
-但是空白字元要特殊處理
-那接下來只要知道需要轉換的字元範圍即可
-全形從 U+FF01 到 U+FF5E
-半形從 U+0021 到 U+007E
-把 16 進制轉換回來就是
-65281 到 65374
-33 到 126
-上述怎麼轉的?
-就是這樣
-parseInt(&#39;0xFF01&#39;, 16) 只要判斷輸入的字元這這些編碼區間就進行轉換
-trans char
-所以簡單做了一個 demo 頁面
-程式檢視原始碼即可
-Refer - Wiki
-Refer - Unicode / UTF-8 字元編碼區間表 - 2013
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2019-01-30">2019-01-30</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2019-01-30-javascript-half-angle-full-angle-conversion/">/posts/2019-01-30-javascript-half-angle-full-angle-conversion/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-            </ul>
         
         
         
