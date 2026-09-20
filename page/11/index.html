@@ -424,6 +424,73 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2017-04-25-1747072/">JavaScript - browser zoom detect</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # JavaScript - browser zoom detect 強者我朋友身為一個設計師問我一個很奇耙的需求
+就是可不可以知道瀏覽器的縮放狀態
+因為她的 BOSS 要求縮放不破版, 所以她希望設計在縮放狀態時的 layout 讓工程師套版
+於是來問我說是否有辦法知道瀏覽器的縮放狀態
+先說一下其實要縮放不破版只要設計彈性的 layout 例如使用 grid 的設計基本上都不會破版, 以我的經驗縮放破版通常是一些特殊的 layout 或用一些奇特的 CSS 的寫法
+但正妹設計師求助
+魯蛇工程師只好默默的來看看有啥方法
+在新的 JavaScript api 有個 devicePixelRatio 可以取得目前 device 的像素比
+一般是用來判斷是否是 high resolution 的螢幕
+但是當 browser 縮放時其實這個值也會改變(尚未在 mobile device 試驗
+所以可以用這特性來做處理
+但這有問題就是當本身螢幕就是 high resolution 得螢幕像是 2K or 4K or MBPR 的螢幕
+它們的 window.devicePixelRatio 就不會是 1
+所以縮放後也不好知道縮放的比例
+所以非完美解&hellip;
+且目前 browser 支援度不佳
+下面是範例
+var browserZoomLevel = Math.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2017-04-25">2017-04-25</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2017-04-25-1747072/">/posts/2017-04-25-1747072/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2017-04-24-google-search-develop-for-seo-research-log/">Google search develop for SEO - research log</a></h1>
         </header>
         
@@ -926,74 +993,6 @@ So in webkit browser doesn&rsquo;t has display: -webkit-flex; and layout will be
                 
                     
                     <li><a href="/categories/chrome/">Chrome</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2016-07-19-webdriverio-introduction-to-front-end-test-notes/">webdriver.io - 前端測試入門筆記&hellip;</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # webdriver.io - 前端測試入門筆記&hellip; 前端測試工具很多種
-我這裡的需求是要做自動化測試
-不知為何就選了這套 webdriver.io
-可能就只是單純名字很炫(誤
-當然一開始要先要有 Selenium
-但為何 Selenium 跟我以前的印象有差別了&hellip;
-我發現它的 firefox add-on 不能把錄製的動作輸出成 code 了, 是我的錯覺嗎?還是改方式了
-但我想說就算了, 直接用寫的也罷
-webdriver.io 只是因為是在我看過的關於測試文章中最後有印象的東西所以就去找它了(這是事實&hellip;
-也還好我的記憶沒錯, 看了介紹和文件覺得 webdriver.io 有符合我的需求且又是用 Node.js 來寫, 所以對我較友善
-先記錄一下使用流程
-## Base tool Java sudo apt-get update java -version sudo apt-get install default-jre sudo apt-get install default-jdk Node.js Install
-## On Local Get Started
-突然發現文件寫得很詳細了&hellip;
-雖然在做設定那有些選項不同但也影響不大
-但想玩進階的方式可參考以下文章
-設定 Selenium 參數可參考
-基本上以下是我建的順序
-### 1 先建 package.json { &#34;name&#34;: &#34;webdriver&#34;, &#34;description&#34;: &#34;automation test&#34;, &#34;devDependencies&#34;: { } } ### 2 下載 Selenium server 之後有新版請再去確認版本
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2016-07-19">2016-07-19</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2016-07-19-webdriverio-introduction-to-front-end-test-notes/">/posts/2016-07-19-webdriverio-introduction-to-front-end-test-notes/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/webdriver-bdd/">Webdriver BDD</a></li>
                 
             </ul>
         

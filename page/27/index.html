@@ -424,6 +424,59 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-20-file-upload-notice-issue/">file upload 123</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            ## File Upload # Server side setting ## php.ini in Mac
+/etc/php.ini file_uploads = On upload_max_filesize = 10M post_max_size = 10M file_uploads # 預設為on,允許用HTTP協定上傳 upload_tmp_dir # 上傳檔案暫存目錄,wamp5中,c:/wamp/tmp upload_max_filesize # 上傳檔案最大值 post_max_size # 利用 post 傳送數據所用最大值(利用 AJAX 或 post 上傳會有影響) max_execution_time # PHP執行時間最大值,預設為30秒 # style 由於預設的 &lt;input type=&quot;file&quot;&gt; 樣式不好改，且每一個 broswer 預設的樣式都不一樣，所以都會希望用統一化的客制化樣式，但基本上不太可能把它的樣式改成所想要的客制化的樣式，除非直接用像 Bootstrap 之類的框架
+## solution 1(hack) 把 &lt;input type=&quot;file&quot;&gt; 的 style 設成 opacity: 0; 蓋在客制化的 button 上，也必須要設成跟客制化寬高一樣，以免覆蓋面積不一樣
+CSS .btn, .file-select { width: 80px; height: 30px; } .
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-08-20">2013-08-20</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-08-20-file-upload-notice-issue/">/posts/2013-08-20-file-upload-notice-issue/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/file_upload/">File_upload</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-14-linux-unix-command/">Linux/unix command</a></h1>
         </header>
         
@@ -884,57 +937,6 @@ Logdown also support drag &amp; drop image uploading ( required Beta / Premium m
 </article>
 
         
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-02-javascript-function/">JavaScript function</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-             # function function fun() { // do something } fun(); var fun = function () { // do something }; fun(); 立即函數(建立後立即執行，只執行此次)
-var fun = (function () { // do something }()); 
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2013-08-02">2013-08-02</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2013-08-02-javascript-function/">/posts/2013-08-02-javascript-function/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
         
     
     
@@ -944,7 +946,9 @@ var fun = (function () { // do something }());
                 <a href="/page/26/">to new posts</a>
             
         </div>
-        <div class="right pagination-item disabled">
+        <div class="right pagination-item ">
+            
+                <a href="/page/28/">to old posts</a>
             
         </div>
     </div>

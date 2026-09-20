@@ -3,7 +3,6 @@
 
 <html lang="en-us" data-theme="">
 <head>
-	<meta name="generator" content="Hugo 0.125.4">
     
         
 <meta charset="utf-8">
@@ -11,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Tedshd&rsquo;s Dev note</title>
+<title>Ai - Tedshd&rsquo;s Dev note</title>
 
 <meta name="description" content="">
 
@@ -19,7 +18,7 @@
 
 
 
-<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Tedshd's Dev note" />
+<link rel="alternate" type="application/rss+xml" href="/categories/ai/index.xml" title="Tedshd's Dev note" />
 <link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
 
@@ -395,7 +394,7 @@ gtag('config', 'G-1NKP3D2ZGG');
     <nav class="noselect">
         
         
-        <a class=" active" href="https://blog.tedshd.io/" title="">Home</a>
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
         
         <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
         
@@ -414,17 +413,16 @@ gtag('config', 'G-1NKP3D2ZGG');
         </header>
         <main id="main" tabindex="-1">
             
-    <div class="homepage-content">
-        
+    <h1>Category: Ai</h1>
+    <div class="post-info">
+        <a href="/categories/">To all categories</a>
     </div>
-
-    <div class="articles h-feed">
-        
-        
-            <article class="post-list h-feed post-card">
+    
+    
+        <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-02-javascript-function/">JavaScript function</a></h1>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/claude_code_send_mail/">claude code 操作發送信件</a></h1>
         </header>
         
 
@@ -432,8 +430,21 @@ gtag('config', 'G-1NKP3D2ZGG');
 
     
         <div class="content post-summary p-summary">
-             # function function fun() { // do something } fun(); var fun = function () { // do something }; fun(); 立即函數(建立後立即執行，只執行此次)
-var fun = (function () { // do something }()); 
+            ## claude code 操作發送信件 # 前言 因為公司業務需求有時候要常常臨時發信或是批次發信
+甚至需要臨時要有 cc 或是 bcc 的情況
+在後台寫一個介面功能要顧及所有功能也是很麻煩
+所以嘗試用 LLM 來操作發信的情況
+# 前置作業 準備能夠發信的 client 程式
+我這邊的案例是使用 mailgun + PHP
+這個對不懂程式的人來說可以直接叫 claude code 或是 gemini 去完成
+剩下的就是規劃流程和工作方式
+# 流程 每個人可以依照情境和需求自己規劃流程和工作方式
+我的規劃會有以下檔案
+mail_template_xxx.md mail_list.csv mail_log.csv send_mail.php config.json ## mail_template_xxx.md 信件範本的 markdown
+例如 mail_template_反饋追蹤.md, mail_template_新功能發佈.md, 等等
+markdown 內容格式
+## subject [服務名稱] 功能反饋問題回覆 ## content ```text [使用者名稱]，您好：&lt;br&gt;&lt;br&gt; 感謝貴機關共同支持 XXX 建置與推動！&lt;br&gt;&lt;br&gt; 如操作上有任何疑問，歡迎來信洽詢，我們將盡快協助您。&lt;br&gt; 感謝您的支持與配合&lt;br&gt;&lt;br&gt; ``` ## mail_list.csv 收件人的列表
+email, fullname, ted@xxx.
             ...
         </div>
     
@@ -446,12 +457,12 @@ var fun = (function () { // do something }());
 <div class="post-info noselect">
     
         <div class="post-date dt-published">
-            <time datetime="2013-08-02">2013-08-02</time>
+            <time datetime="2026-09-20">2026-09-20</time>
             
         </div>
     
 
-    <a class="post-hidden-url u-url" href="/posts/2013-08-02-javascript-function/">/posts/2013-08-02-javascript-function/</a>
+    <a class="post-hidden-url u-url" href="/posts/claude_code_send_mail/">/posts/claude_code_send_mail/</a>
     <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
 
 
@@ -460,7 +471,10 @@ var fun = (function () { // do something }());
             <ul class="post-categories">
                 
                     
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                    <li><a href="/categories/claude-code/">Claude Code</a></li>
+                
+                    
+                    <li><a href="/categories/ai/">Ai</a></li>
                 
             </ul>
         
@@ -471,23 +485,9 @@ var fun = (function () { // do something }());
 
 </article>
 
-        
-        
     
     
-    <div class="pagination noselect">
-        <div class="left pagination-item ">
-            
-                <a href="/page/27/">to new posts</a>
-            
-        </div>
-        <div class="right pagination-item disabled">
-            
-        </div>
-    </div>
 
-
-    </div>
 
 
         </main>

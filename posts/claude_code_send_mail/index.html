@@ -3,7 +3,6 @@
 
 <html lang="en-us" data-theme="">
 <head>
-	<meta name="generator" content="Hugo 0.125.4">
     
         
 <meta charset="utf-8">
@@ -11,15 +10,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Tedshd&rsquo;s Dev note</title>
+<title>claude code 操作發送信件 - Tedshd&rsquo;s Dev note</title>
 
-<meta name="description" content="">
+<meta name="description" content="## claude code 操作發送信件 # 前言 因為公司業務需求有時候要常常臨時發信或是批次發信
+甚至需要臨時要有 cc 或是 bcc 的情況
+在後台寫一個介面功能要顧及所有功能也是很麻煩
+所以嘗試用 LLM 來操作發信的情況
+# 前置作業 準備能夠發信的 client 程式
+我這邊的案例是使用 mailgun &#43; PHP
+這個對不懂程式的人來說可以直接叫 claude code 或是 gemini 去完成
+剩下的就是規劃流程和工作方式
+# 流程 每個人可以依照情境和需求自己規劃流程和工作方式
+我的規劃會有以下檔案
+mail_template_xxx.md mail_list.csv mail_log.csv send_mail.php config.json ## mail_template_xxx.md 信件範本的 markdown
+例如 mail_template_反饋追蹤.md, mail_template_新功能發佈.md, 等等
+markdown 內容格式
+## subject [服務名稱] 功能反饋問題回覆 ## content ```text [使用者名稱]，您好：&lt;br&gt;&lt;br&gt; 感謝貴機關共同支持 XXX 建置與推動！&lt;br&gt;&lt;br&gt; 如操作上有任何疑問，歡迎來信洽詢，我們將盡快協助您。&lt;br&gt; 感謝您的支持與配合&lt;br&gt;&lt;br&gt; ``` ## mail_list.csv 收件人的列表
+email, fullname, ted@xxx.">
 
 
 
 
 
-<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Tedshd's Dev note" />
 <link rel="icon" type="image/x-icon" href="https://blog.tedshd.io/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://blog.tedshd.io/favicon.png">
 
@@ -395,7 +407,7 @@ gtag('config', 'G-1NKP3D2ZGG');
     <nav class="noselect">
         
         
-        <a class=" active" href="https://blog.tedshd.io/" title="">Home</a>
+        <a class="" href="https://blog.tedshd.io/" title="">Home</a>
         
         <a class="" href="https://blog.tedshd.io/posts/" title="">Posts</a>
         
@@ -414,44 +426,28 @@ gtag('config', 'G-1NKP3D2ZGG');
         </header>
         <main id="main" tabindex="-1">
             
-    <div class="homepage-content">
-        
-    </div>
-
-    <div class="articles h-feed">
-        
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-02-javascript-function/">JavaScript function</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-             # function function fun() { // do something } fun(); var fun = function () { // do something }; fun(); 立即函數(建立後立即執行，只執行此次)
-var fun = (function () { // do something }()); 
-            ...
-        </div>
-    
     
 
-    
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">claude code 操作發送信件</h1>
+                
+
+            </header>
+            
 
 
 
 <div class="post-info noselect">
     
         <div class="post-date dt-published">
-            <time datetime="2013-08-02">2013-08-02</time>
+            <time datetime="2026-09-20">2026-09-20</time>
             
         </div>
     
 
-    <a class="post-hidden-url u-url" href="/posts/2013-08-02-javascript-function/">/posts/2013-08-02-javascript-function/</a>
+    <a class="post-hidden-url u-url" href="/posts/claude_code_send_mail/">/posts/claude_code_send_mail/</a>
     <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
 
 
@@ -460,7 +456,10 @@ var fun = (function () { // do something }());
             <ul class="post-categories">
                 
                     
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                    <li><a href="/categories/claude-code/">Claude Code</a></li>
+                
+                    
+                    <li><a href="/categories/ai/">Ai</a></li>
                 
             </ul>
         
@@ -469,26 +468,232 @@ var fun = (function () { // do something }());
     </div>
 </div>
 
-</article>
+        </div>
+        
 
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#前置作業">前置作業</a></li>
+    <li><a href="#流程">流程</a>
+      <ul>
+        <li><a href="#mail_template_xxxmd">mail_template_xxx.md</a></li>
+        <li><a href="#mail_listcsv">mail_list.csv</a></li>
+        <li><a href="#mail_logcsv">mail_log.csv</a></li>
+        <li><a href="#send_mailphp">send_mail.php</a></li>
+        <li><a href="#configjson">config.json</a></li>
+      </ul>
+    </li>
+    <li><a href="#實戰">實戰</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
+<script>
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
+</script>
+
+        <div class="content e-content">
+            <h1 id="claude-code-操作發送信件" >
+<div>
+    <a href="#claude-code-%e6%93%8d%e4%bd%9c%e7%99%bc%e9%80%81%e4%bf%a1%e4%bb%b6">
+        ##
+    </a>
+    claude code 操作發送信件
+</div>
+</h1>
+<h2 id="前言" >
+<div>
+    <a href="#%e5%89%8d%e8%a8%80">
+        #
+    </a>
+    前言
+</div>
+</h2>
+<p>因為公司業務需求有時候要常常臨時發信或是批次發信</p>
+<p>甚至需要臨時要有 cc 或是 bcc 的情況</p>
+<p>在後台寫一個介面功能要顧及所有功能也是很麻煩</p>
+<p>所以嘗試用 LLM 來操作發信的情況</p>
+<h2 id="前置作業" >
+<div>
+    <a href="#%e5%89%8d%e7%bd%ae%e4%bd%9c%e6%a5%ad">
+        #
+    </a>
+    前置作業
+</div>
+</h2>
+<p>準備能夠發信的 client 程式</p>
+<p>我這邊的案例是使用 mailgun + PHP</p>
+<p>這個對不懂程式的人來說可以直接叫 claude code 或是 gemini 去完成</p>
+<p>剩下的就是規劃流程和工作方式</p>
+<h2 id="流程" >
+<div>
+    <a href="#%e6%b5%81%e7%a8%8b">
+        #
+    </a>
+    流程
+</div>
+</h2>
+<p>每個人可以依照情境和需求自己規劃流程和工作方式</p>
+<p>我的規劃會有以下檔案</p>
+<ul>
+<li>mail_template_xxx.md</li>
+<li>mail_list.csv</li>
+<li>mail_log.csv</li>
+<li>send_mail.php</li>
+<li>config.json</li>
+</ul>
+<h3 id="mail_template_xxxmd" >
+<div>
+    <a href="#mail_template_xxxmd">
+        ##
+    </a>
+    mail_template_xxx.md
+</div>
+</h3>
+<p>信件範本的 markdown</p>
+<p>例如 <code>mail_template_反饋追蹤.md</code>, <code>mail_template_新功能發佈.md</code>, 等等</p>
+<p>markdown 內容格式</p>
+<pre tabindex="0"><code>    ## subject
+
+    [服務名稱] 功能反饋問題回覆
+
+    ## content
+
+    ```text
+    [使用者名稱]，您好：&lt;br&gt;&lt;br&gt;
+
+    感謝貴機關共同支持 XXX 建置與推動！&lt;br&gt;&lt;br&gt;
+
+    如操作上有任何疑問，歡迎來信洽詢，我們將盡快協助您。&lt;br&gt;
+    感謝您的支持與配合&lt;br&gt;&lt;br&gt;
+    ```
+</code></pre><h3 id="mail_listcsv" >
+<div>
+    <a href="#mail_listcsv">
+        ##
+    </a>
+    mail_list.csv
+</div>
+</h3>
+<p>收件人的列表</p>
+<pre tabindex="0"><code class="language-csv" data-lang="csv">email, fullname,
+ted@xxx.com.tw,許OO
+lin@xxx.com.tw,林OO
+</code></pre><h3 id="mail_logcsv" >
+<div>
+    <a href="#mail_logcsv">
+        ##
+    </a>
+    mail_log.csv
+</div>
+</h3>
+<p>信件發送的紀錄</p>
+<p>必須讓 <code>send_mail.php</code> 裡面有發信後把該次發信紀錄到這個檔案的功能</p>
+<p>我這邊自己定義了</p>
+<p>收信信箱,姓名,主旨,內容,發送時間</p>
+<h3 id="send_mailphp" >
+<div>
+    <a href="#send_mailphp">
+        ##
+    </a>
+    send_mail.php
+</div>
+</h3>
+<p>發信的程式</p>
+<h3 id="configjson" >
+<div>
+    <a href="#configjson">
+        ##
+    </a>
+    config.json
+</div>
+</h3>
+<p>mailgun 設定</p>
+<h2 id="實戰" >
+<div>
+    <a href="#%e5%af%a6%e6%88%b0">
+        #
+    </a>
+    實戰
+</div>
+</h2>
+<p>最好全程在 <code>plan mode</code> 或是 <code>manual mode</code></p>
+<pre tabindex="0"><code>現在我要確認寄信的功能
+目前都還是規劃
+不要寄出
+現在有新的 backend/scripts/mail_send/mail_list.csv
+要依照 backend/scripts/mail_send/mail_template_新功能發佈.md
+當作範本寄出
+## content 裡面的 [使用者名稱]
+要換成 backend/scripts/mail_send/mail_list.csv 裡面的 fullname
+幫我確認
+backend/scripts/mail_send/standalone_send_mail.php 能夠滿足需求嗎?
+另外也要確認發信後是不是會更新記錄到 backend/scripts/mail_send/mail_log.csv
+</code></pre><pre tabindex="0"><code>幫我跑第一個
+backend/scripts/mail_send/mail_list.csv
+ted@xxx.com.tw,許OO
+試試看
+</code></pre><pre tabindex="0"><code>好,那就正式寄給全部 81 位收件人吧
+</code></pre>
+        </div>
+
+    </article>
+
+    
+    
+
+    
         
         
     
+
     
-    <div class="pagination noselect">
-        <div class="left pagination-item ">
-            
-                <a href="/page/27/">to new posts</a>
-            
-        </div>
-        <div class="right pagination-item disabled">
-            
-        </div>
-    </div>
+
+    
+        
 
 
-    </div>
 
+
+
+
+
+
+
+    
+
+    
+
+    
 
         </main>
         

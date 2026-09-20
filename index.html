@@ -424,6 +424,73 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/claude_code_send_mail/">claude code 操作發送信件</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            ## claude code 操作發送信件 # 前言 因為公司業務需求有時候要常常臨時發信或是批次發信
+甚至需要臨時要有 cc 或是 bcc 的情況
+在後台寫一個介面功能要顧及所有功能也是很麻煩
+所以嘗試用 LLM 來操作發信的情況
+# 前置作業 準備能夠發信的 client 程式
+我這邊的案例是使用 mailgun + PHP
+這個對不懂程式的人來說可以直接叫 claude code 或是 gemini 去完成
+剩下的就是規劃流程和工作方式
+# 流程 每個人可以依照情境和需求自己規劃流程和工作方式
+我的規劃會有以下檔案
+mail_template_xxx.md mail_list.csv mail_log.csv send_mail.php config.json ## mail_template_xxx.md 信件範本的 markdown
+例如 mail_template_反饋追蹤.md, mail_template_新功能發佈.md, 等等
+markdown 內容格式
+## subject [服務名稱] 功能反饋問題回覆 ## content ```text [使用者名稱]，您好：&lt;br&gt;&lt;br&gt; 感謝貴機關共同支持 XXX 建置與推動！&lt;br&gt;&lt;br&gt; 如操作上有任何疑問，歡迎來信洽詢，我們將盡快協助您。&lt;br&gt; 感謝您的支持與配合&lt;br&gt;&lt;br&gt; ``` ## mail_list.csv 收件人的列表
+email, fullname, ted@xxx.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2026-09-20">2026-09-20</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/claude_code_send_mail/">/posts/claude_code_send_mail/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/claude-code/">Claude Code</a></li>
+                
+                    
+                    <li><a href="/categories/ai/">Ai</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/how_to_build_mcp/">如何自己建立 mcp 服務</a></h1>
         </header>
         
@@ -965,56 +1032,6 @@ let zoom = window.outerWidth / window.innerWidth; function isMobileDevice() { re
                 
                     
                     <li><a href="/categories/mobile/">Mobile</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/multi_line_ellipsis_css/">CSS 處理多行省略</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            .multiline-ellipsis { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */ white-space: pre-wrap; /* let the text wrap preserving spaces */ } refer - Easiest Way to Truncate Text With Ellipsis in CSS
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2023-11-06">2023-11-06</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/multi_line_ellipsis_css/">/posts/multi_line_ellipsis_css/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/css/">Css</a></li>
                 
             </ul>
         

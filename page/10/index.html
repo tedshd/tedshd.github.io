@@ -424,6 +424,72 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2018-01-09-php-geoip-set-the-record/">PHP - Geoip 設定 隨手紀錄</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # PHP - Geoip 設定 隨手紀錄 之前有依照 php.net 中的文章設定
+http://php.net/manual/en/book.geoip.php#117240
+但在某次 php 升版後有點問題
+所以放棄該用法
+改採用 GeoIP2-php 這套件來處理
+這是一個 MAXMIND 的服務出的套件, 也有其他程式語言的套件
+其實 php.net 那方法是 MAXMIND 舊的方法, geoip2 是他們現在新的用法與服務
+這服務有做 GeoIP 和 欺詐檢測 的服務
+具體欺詐檢測有做啥我就沒研究了
+官網
+過程我就不詳細介紹了
+因為文件都有
+這邊會介紹一些要注意的地方
+主要是用 composer 安裝
+然後用 autoload 載入
+這流程應該 php 開發者會比較清楚, 反正也有 step by step 的教學與 sample code 可以看
+&lt;?php require_once &#39;vendor/autoload.php&#39;; use GeoIp2\Database\Reader; // This creates the Reader object, which should be reused across // lookups.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2018-01-09">2018-01-09</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2018-01-09-php-geoip-set-the-record/">/posts/2018-01-09-php-geoip-set-the-record/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/php-geoip/">PHP Geoip</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2017-12-13-php-loop-directory/">php - loop directory</a></h1>
         </header>
         
@@ -905,73 +971,6 @@ Refer - CSS Content | CSS-Tricks
                 
                     
                     <li><a href="/categories/css/">Css</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2017-04-25-1747072/">JavaScript - browser zoom detect</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # JavaScript - browser zoom detect 強者我朋友身為一個設計師問我一個很奇耙的需求
-就是可不可以知道瀏覽器的縮放狀態
-因為她的 BOSS 要求縮放不破版, 所以她希望設計在縮放狀態時的 layout 讓工程師套版
-於是來問我說是否有辦法知道瀏覽器的縮放狀態
-先說一下其實要縮放不破版只要設計彈性的 layout 例如使用 grid 的設計基本上都不會破版, 以我的經驗縮放破版通常是一些特殊的 layout 或用一些奇特的 CSS 的寫法
-但正妹設計師求助
-魯蛇工程師只好默默的來看看有啥方法
-在新的 JavaScript api 有個 devicePixelRatio 可以取得目前 device 的像素比
-一般是用來判斷是否是 high resolution 的螢幕
-但是當 browser 縮放時其實這個值也會改變(尚未在 mobile device 試驗
-所以可以用這特性來做處理
-但這有問題就是當本身螢幕就是 high resolution 得螢幕像是 2K or 4K or MBPR 的螢幕
-它們的 window.devicePixelRatio 就不會是 1
-所以縮放後也不好知道縮放的比例
-所以非完美解&hellip;
-且目前 browser 支援度不佳
-下面是範例
-var browserZoomLevel = Math.
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2017-04-25">2017-04-25</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2017-04-25-1747072/">/posts/2017-04-25-1747072/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/javascript/">JavaScript</a></li>
                 
             </ul>
         

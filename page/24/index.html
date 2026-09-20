@@ -424,6 +424,60 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-09-03-javascript-onbeforeunload/">JavaScript - onbeforeunload</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            # onbeforeunload onbeforeunload 是在 browser 在轉換頁面時會觸發的事件 當有 return 值時, 會出現 confirm 視窗, 並停住觸發的行為 目前試過會觸發的行為有
+上一頁 / 下一頁 重新整理 關閉視窗 前往其它 URL submit 事件 URL 改變時 這幾種較常見 用法如下
+var fun = function () { return &#39;Exit?&#39;; } window.onbeforeunload = fun; return 的值是 confirm 的訊息 可 return string or array 無法 return fuinction
+也可以用條件判斷
+var fun = function () { var value = document.getElementsByTagName(&#39;textarea&#39;)[0].value; if (value) { return &#39;Exit?&#39;; } return; } window.
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2013-09-03">2013-09-03</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/2013-09-03-javascript-onbeforeunload/">/posts/2013-09-03-javascript-onbeforeunload/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/javascript/">JavaScript</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-09-02-codeigniter-note/">Codeigniter - Note</a></h1>
         </header>
         
@@ -876,59 +930,6 @@ status; create database database_name; drop database database_name; show databas
     
 
     <a class="post-hidden-url u-url" href="/posts/2013-08-27-computer-random-number-science/">/posts/2013-08-27-computer-random-number-science/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/computer-science/">Computer Science</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/2013-08-27-computer-science-and-logical-block/">Computer Science - 位元和邏輯區組</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # 位元和邏輯區組 任何可以表示兩種不同訊息的信號就叫二元(binary)信號,或稱為位元.
-And Or Invert 函數稱為邏輯區組,把他們依序組合還可以得到其他函數.
-EX. Or 輸出端接 Invert,便得到 Nor(輸入端均不為 1 時,輸出便為 1) 兩個 Invert 接在 Or 輸入端,輸出端接上 Invert,便得到 And(兩輸入端為 1,輸出為 1)
-早期計算機裝置是由機械元件組成的.17 世紀,巴斯卡(Blaise Pascal)建造了一個機械式加法機,也因此激發了萊布尼茲(Gottfried Wilhelm Leibniz)和英國博學家虎克(Robert Hooke)的靈感而製造了可以乘除甚至開根號的機器.1833 年,英國數學家兼發明家巴比奇(Charles Babbage)設計並建構出可程式化機械電腦的一部分.
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2013-08-27">2013-08-27</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/2013-08-27-computer-science-and-logical-block/">/posts/2013-08-27-computer-science-and-logical-block/</a>
     <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
 
 

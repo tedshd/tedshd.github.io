@@ -424,6 +424,56 @@ gtag('config', 'G-1NKP3D2ZGG');
             <article class="post-list h-feed post-card">
     <div class="post-header">
         <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/multi_line_ellipsis_css/">CSS 處理多行省略</a></h1>
+        </header>
+        
+
+    </div>
+
+    
+        <div class="content post-summary p-summary">
+            .multiline-ellipsis { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */ white-space: pre-wrap; /* let the text wrap preserving spaces */ } refer - Easiest Way to Truncate Text With Ellipsis in CSS
+            ...
+        </div>
+    
+    
+
+    
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2023-11-06">2023-11-06</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/multi_line_ellipsis_css/">/posts/multi_line_ellipsis_css/</a>
+    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="/categories/css/">Css</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+</article>
+
+        
+            <article class="post-list h-feed post-card">
+    <div class="post-header">
+        <header>
             <h1 class="p-name post-title"><a class="u-url" href="/posts/angular_build_custom_element/">Angular build custom element</a></h1>
         </header>
         
@@ -991,69 +1041,6 @@ pm2 start &lt;要啟動的 js&gt; 通常建議啟動時的指令搭配以下參�
                 
                     
                     <li><a href="/categories/pm2/">Pm2</a></li>
-                
-            </ul>
-        
-        
-        
-    </div>
-</div>
-
-</article>
-
-        
-            <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/firebase_app_check/">Firebase app check 使用紀錄</a></h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            # 前言 因為公司有使用部分的 firebase 服務
-那就順便用一下前一陣子推出的 app check 的服務(雖然我覺得這服務還沒到完善的地步)
-這服務主要是要協助驗證來自 client 的請求是否合法
-不只單純是 firebase 的服務可以用
-一般 API 也可以使用
-# 使用 目前 SDK 只支持 Node.js
-Verify App Check tokens from a custom backend
-因為原本的後端不是 Node 的環境
-所以使用 Node.js 建立起一個 middleware 以便讓原有的 API server 來串接
-# 流程 # 所需作業 app 需要使用相關對應的 SDK
-在 firebase console 把 app check 選單中建立的 app 做註冊
-因為是改為單獨建立 Node.js 的服務
-所以會針對文件範例做調整
-const http = require(&#39;http&#39;); const url = require(&#39;url&#39;); var admin = require(&#39;firebase-admin&#39;); var serviceAccount = require(__dirname + &#39;/serviceAccountKey.
-            ...
-        </div>
-    
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2022-10-31">2022-10-31</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/firebase_app_check/">/posts/firebase_app_check/</a>
-    <a href="https://blog.tedshd.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
-
-
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    
-                    <li><a href="/categories/firebase/">Firebase</a></li>
                 
             </ul>
         
